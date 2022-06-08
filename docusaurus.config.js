@@ -42,7 +42,7 @@ module.exports = {
         {
           type: 'doc',
           docId: 'index',
-          label: 'Guide',
+          label: 'Docs',
           position: 'left',
         },
         {
@@ -62,12 +62,6 @@ module.exports = {
           docId: 'native',
           label: 'Native',
           position: 'left',
-        },
-        {
-          type: 'cta',
-          position: 'left',
-          text: 'Ionic v6.0.0 Upgrade Guide',
-          href: `/intro/upgrading-to-ionic-6`,
         },
         {
           type: 'docsVersionDropdown',
@@ -201,7 +195,10 @@ module.exports = {
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: ['shell-session', 'http'],
+      additionalLanguages: [
+        'shell-session',
+        'http'
+      ],
     },
     algolia: {
       appId: 'O9QSL985BS',
