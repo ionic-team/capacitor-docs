@@ -145,10 +145,10 @@ module.exports = {
       collapsed: false,
       items: [
         'plugins',
-        //'plugins/official',
-        //'plugins/community',
-        //'plugins/cordova',
-        //'plugins/enterprise'
+        'plugins/overview/official',
+        'plugins/overview/community',
+        'plugins/overview/cordova',
+        'plugins/overview/enterprise'
       ],
     },
     {
@@ -159,15 +159,32 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Creating Plugins - TODO MIGRATE',
+      label: 'Creating Plugins',
       collapsed: false,
-      items: ['plugins',],
+      items: [
+        'plugins/creating-plugins/overview',
+        'plugins/creating-plugins/development-workflow',
+        'plugins/creating-plugins/ios-guide',
+        'plugins/creating-plugins/android-guide',
+        'plugins/creating-plugins/web-guide',
+        'plugins/creating-plugins/method-types',
+        'plugins/creating-plugins/configuration-values',
+      ],
     },
     {
       type: 'category',
-      label: 'Plugin Tutorial - TODO MIGRATE',
+      label: 'Plugin Tutorial',
       collapsed: false,
-      items: ['plugins',],
+      items: [
+        'plugins/tutorial/getting-started',
+        'plugins/tutorial/designing-api',
+        'plugins/tutorial/using-api',
+        'plugins/tutorial/code-abstraction',
+        'plugins/tutorial/implementing-for-web',
+        'plugins/tutorial/implementing-for-ios',
+        'plugins/tutorial/implementing-for-android',
+        'plugins/tutorial/packaging',
+      ],
     }
   ],
 
