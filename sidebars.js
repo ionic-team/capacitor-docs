@@ -121,7 +121,9 @@ module.exports = {
       collapsed: false,
       items: [
         'reference/config',
-        'reference/core-apis',
+        'reference/core-apis/ios',
+        'reference/core-apis/android',
+        'reference/core-apis/web',
         {
           type: 'link',
           label: 'Plugin APIs',
