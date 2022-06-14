@@ -2,7 +2,7 @@
 title: Capacitor Community Plugins
 description: Capacitor Community Plugins
 sidebar_label: Community Plugins
-slug: /docs/plugins/community
+slug: /plugins/community
 ---
 
 # Capacitor Community Plugins

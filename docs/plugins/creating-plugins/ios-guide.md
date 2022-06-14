@@ -5,7 +5,7 @@ contributors:
   - mlynch
   - jcesarmobile
 sidebar_label: iOS Guide
-slug: /docs/plugins/ios
+slug: /plugins/ios
 ---
 
 # Capacitor iOS Plugin Guide

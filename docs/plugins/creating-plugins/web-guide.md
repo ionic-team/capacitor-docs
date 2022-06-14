@@ -6,7 +6,7 @@ contributors:
   - jcesarmobile
   - dotNetkow
 sidebar_label: Web/PWA Guide
-slug: /docs/plugins/web
+slug: /plugins/web
 ---
 
 # Capacitor Web/PWA Plugin Guide

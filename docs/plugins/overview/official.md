@@ -6,7 +6,7 @@ contributors:
   - mlynch
   - jcesarmobile
   - ehorodyski-ionic
-slug: /docs/apis
+slug: /apis
 ---
 
 # Official Plugins

@@ -4,7 +4,7 @@ description: Building a Capacitor Plugin - Implementing for Web/PWA
 contributors:
   - eric-horodyski
 sidebar_label: Implementing for Web/PWA
-slug: /docs/plugins/tutorial/web
+slug: /plugins/tutorial/web
 ---
 
 # Implementing for Web/PWAs

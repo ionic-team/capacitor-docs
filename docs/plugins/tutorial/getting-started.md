@@ -4,7 +4,7 @@ description: Building a Capacitor Plugin
 contributors:
   - eric-horodyski
 sidebar_label: Getting Started
-slug: /docs/plugins/tutorial/introduction
+slug: /plugins/tutorial/introduction
 ---
 
 # Building a Capacitor Plugin

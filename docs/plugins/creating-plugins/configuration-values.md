@@ -4,7 +4,7 @@ description: Capacitor Plugin Configuration Values
 contributors:
   - eric-horodyski
 sidebar_label: Configuration Values
-slug: /docs/plugins/configuration-values
+slug: /plugins/configuration-values
 ---
 
 # Configuration Values

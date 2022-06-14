@@ -4,7 +4,7 @@ description: Building a Capacitor Plugin - Packaging the Plugin
 contributors:
   - eric-horodyski
 sidebar_label: Packaging the Plugin
-slug: /docs/plugins/tutorial/packaging-the-plugin
+slug: /plugins/tutorial/packaging-the-plugin
 ---
 
 # Packaging the Plugin

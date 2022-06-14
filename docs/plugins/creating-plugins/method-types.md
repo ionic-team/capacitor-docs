@@ -4,7 +4,7 @@ description: Capacitor Plugin Method Types
 contributors:
   - ikeith
 sidebar_label: Method Types
-slug: /docs/plugins/method-types
+slug: /plugins/method-types
 ---
 
 # Method Types

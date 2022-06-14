@@ -4,7 +4,7 @@ description: Building a Capacitor Plugin - Implementing for Android
 contributors:
   - eric-horodyski
 sidebar_label: Implementing for Android
-slug: /docs/plugins/tutorial/android-implementation
+slug: /plugins/tutorial/android-implementation
 ---
 
 # Implementing for Android

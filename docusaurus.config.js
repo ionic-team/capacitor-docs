@@ -58,12 +58,6 @@ module.exports = {
           position: 'left',
         },
         {
-          type: 'doc',
-          docId: 'native',
-          label: 'Native',
-          position: 'left',
-        },
-        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [

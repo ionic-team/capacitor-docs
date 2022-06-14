@@ -4,7 +4,7 @@ description: Building a Capacitor Plugin - Designing the Plugin API
 contributors:
   - eric-horodyski
 sidebar_label: Designing the Plugin API
-slug: /docs/plugins/tutorial/designing-the-plugin-api
+slug: /plugins/tutorial/designing-the-plugin-api
 ---
 
 # Designing the Plugin API

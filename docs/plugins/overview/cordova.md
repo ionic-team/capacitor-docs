@@ -2,7 +2,7 @@
 title: Cordova Plugins
 description: Using Cordova Plugins and Ionic Native
 sidebar_label: Cordova Plugins
-slug: /docs/plugins/cordova
+slug: /plugins/cordova
 ---
 
 # Cordova Plugins and Ionic Native

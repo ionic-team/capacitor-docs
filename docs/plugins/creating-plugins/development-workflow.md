@@ -4,7 +4,7 @@ description: Capacitor Plugin Development Workflow
 contributors:
   - dotNetkow
 sidebar_label: Development Workflow
-slug: /docs/plugins/workflow
+slug: /plugins/workflow
 ---
 
 # Plugin Development Workflow

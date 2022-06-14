@@ -4,7 +4,7 @@ description: Building a Capacitor Plugin - Code Abstraction Patterns
 contributors:
   - eric-horodyski
 sidebar_label: Code Abstraction Patterns
-slug: /docs/plugins/tutorial/code-abstraction-patterns
+slug: /plugins/tutorial/code-abstraction-patterns
 ---
 
 # Capacitor Plugin Abstraction Patterns

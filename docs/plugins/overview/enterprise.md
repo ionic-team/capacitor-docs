@@ -2,7 +2,7 @@
 title: Capacitor for Enterprise
 description: Capacitor offers powerful native features and support for enterprise
 sidebar_label: Enterprise Plugins
-slug: /docs/plugins/enterprise
+slug: /plugins/enterprise
 ---
 
 # Capacitor for Enterprise

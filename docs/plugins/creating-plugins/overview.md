@@ -6,7 +6,7 @@ contributors:
   - jcesarmobile
   - dotNetkow
 sidebar_label: Overview
-slug: /docs/plugins/creating-plugins
+slug: /plugins/creating-plugins
 ---
 
 # Creating Capacitor Plugins

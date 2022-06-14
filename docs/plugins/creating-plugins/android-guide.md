@@ -5,7 +5,7 @@ contributors:
   - mlynch
   - jcesarmobile
 sidebar_label: Android Guide
-slug: /docs/plugins/android
+slug: /plugins/android
 ---
 
 # Capacitor Android Plugin Guide

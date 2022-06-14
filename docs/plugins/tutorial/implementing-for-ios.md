@@ -4,7 +4,7 @@ description: Building a Capacitor Plugin - Implementing for iOS
 contributors:
   - eric-horodyski
 sidebar_label: Implementing for iOS
-slug: /docs/plugins/tutorial/ios-implementation
+slug: /plugins/tutorial/ios-implementation
 ---
 
 # Implementing for iOS
