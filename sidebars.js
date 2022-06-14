@@ -141,7 +141,7 @@ module.exports = {
   api: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Overview',
       collapsed: false,
       items: [
         'plugins',
