@@ -47,8 +47,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'components',
-          label: 'Components',
+          docId: 'plugins',
+          label: 'Plugins',
           position: 'left',
         },
         {
