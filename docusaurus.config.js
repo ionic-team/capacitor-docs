@@ -53,7 +53,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'cli',
+          docId: 'cli/index',
           label: 'CLI',
           position: 'left',
         },

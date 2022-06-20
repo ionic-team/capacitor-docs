@@ -1,3 +1,4 @@
+/*
 const fs = require('fs');
 const utils = require('./utils');
 const cliJSON = require('./data/cli.json');
@@ -240,3 +241,4 @@ ${utils.renderReference(options, {
 
 // `;
 // }
+*/

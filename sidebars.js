@@ -194,15 +194,8 @@ module.exports = {
       label: 'CLI Documentation',
       collapsed: false,
       items: [
-        'cli',
-        'cli/configuration',
-        'cli/livereload',
-        'cli/using-a-proxy',
-        {
-          type: 'link',
-          label: 'Changelog',
-          href: 'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md',
-        },
+        'cli/index',
+        'cli/hooks'
       ],
     },
     {
