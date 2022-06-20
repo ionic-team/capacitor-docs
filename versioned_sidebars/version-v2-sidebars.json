@@ -1,0 +1,169 @@
+{
+  "version-v2/docs": [
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "collapsed": false,
+      "items": [
+        "version-v2/index",
+        "version-v2/getting-started/dependencies",
+        "version-v2/getting-started/index",
+        "version-v2/getting-started/with-ionic"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Basics",
+      "collapsed": false,
+      "items": [
+        "version-v2/basics/workflow",
+        "version-v2/basics/using-plugins",
+        "version-v2/basics/configuring-your-app",
+        "version-v2/basics/utilities"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Cordova/PhoneGap",
+      "collapsed": false,
+      "items": [
+        "version-v2/cordova/index",
+        "version-v2/cordova/migration-strategy",
+        "version-v2/cordova/migrating-from-cordova-to-capacitor"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Concepts",
+      "collapsed": false,
+      "items": [
+        "version-v2/guides/ads",
+        "version-v2/guides/ci-cd",
+        "version-v2/guides/deep-links",
+        "version-v2/guides/deploying-updates",
+        "version-v2/guides/in-app-purchases",
+        "version-v2/guides/live-reload",
+        "version-v2/guides/push-notifications-firebase",
+        "version-v2/guides/react-hooks",
+        "version-v2/guides/screen-orientation",
+        "version-v2/guides/security",
+        "version-v2/guides/splash-screens-and-icons",
+        "version-v2/guides/storage",
+        "version-v2/guides/community"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "iOS",
+      "collapsed": false,
+      "items": [
+        "version-v2/ios/index",
+        "version-v2/ios/configuration",
+        "version-v2/ios/custom-code",
+        "version-v2/ios/deploying-to-app-store",
+        "version-v2/ios/updating",
+        "version-v2/ios/troubleshooting"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Android",
+      "collapsed": false,
+      "items": [
+        "version-v2/android/index",
+        "version-v2/android/configuration",
+        "version-v2/android/custom-code",
+        "version-v2/android/deploying-to-google-play",
+        "version-v2/android/updating",
+        "version-v2/android/troubleshooting"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Web/PWA",
+      "collapsed": false,
+      "items": [
+        "version-v2/web/index",
+        "version-v2/web/pwa-elements"
+      ]
+    }
+  ],
+
+  "version-v2/api": [
+    {
+      "type": "category",
+      "label": "Overview",
+      "collapsed": false,
+      "items": [
+        "version-v2/plugins/index",
+        "version-v2/plugins/community",
+        "version-v2/plugins/enterprise"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Creating Plugins",
+      "collapsed": false,
+      "items": [
+        "version-v2/plugins/creating-plugins",
+        "version-v2/plugins/workflow",
+        "version-v2/plugins/ios",
+        "version-v2/plugins/android",
+        "version-v2/plugins/web",
+        "version-v2/plugins/js"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Official Plugins",
+      "collapsed": false,
+      "items": [
+        "version-v2/apis/index",
+        "version-v2/apis/accessibility/index",
+        "version-v2/apis/app/index",
+        "version-v2/apis/background-task/index",
+        "version-v2/apis/camera/index",
+        "version-v2/apis/clipboard/index",
+        "version-v2/apis/console/index",
+        "version-v2/apis/device/index",
+        "version-v2/apis/filesystem/index",
+        "version-v2/apis/geolocation/index",
+        "version-v2/apis/haptics/index",
+        "version-v2/apis/keyboard/index",
+        "version-v2/apis/local-notifications/index",
+        "version-v2/apis/modals/index",
+        "version-v2/apis/motion/index",
+        "version-v2/apis/network/index",
+        "version-v2/apis/permissions/index",
+        "version-v2/apis/photos/index",
+        "version-v2/apis/push-notifications/index",
+        "version-v2/apis/share/index",
+        "version-v2/apis/splash-screen/index",
+        "version-v2/apis/status-bar/index",
+        "version-v2/apis/storage/index",
+        "version-v2/apis/toast/index"
+      ]
+    }
+  ],
+
+  "version-v2/cli": [
+    {
+      "type": "category",
+      "label": "CLI Documentation",
+      "collapsed": false,
+      "items": [
+        "version-v2/cli/index",
+        "version-v2/cli/add",
+        "version-v2/cli/cap",
+        "version-v2/cli/copy",
+        "version-v2/cli/create",
+        "version-v2/cli/list",
+        "version-v2/cli/open",
+        "version-v2/cli/plugin-generate",
+        "version-v2/cli/serve",
+        "version-v2/cli/sync",
+        "version-v2/cli/update"
+      ]
+    }
+  ]
+}
