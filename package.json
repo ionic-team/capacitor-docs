@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prebuild": "npm run generate-markdown; scripts/i18n.sh; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
+    "prebuild": "npm run generate-plugin-docs; scripts/i18n.sh; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
     "build": "npm run build:${VERCEL_ENV:-preview}",
     "build:preview": "docusaurus build --locale en",
     "build:production": "docusaurus build",
@@ -11,9 +11,9 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
-    "generate-markdown": "concurrently \"node scripts/api.mjs\" \"node scripts/cli\"",
+    "generate-plugin-docs": "node scripts/api.mjs",
     "serve": "docusaurus serve",
-    "prestart": "npm run generate-markdown",
+    "prestart": "npm run generate-plugin-docs",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle --danger"
   },
@@ -48,7 +48,6 @@
     "@prismicio/client": "^6.4.2",
     "@prismicio/react": "^2.2.0",
     "clsx": "^1.1.1",
-    "concurrently": "^6.2.0",
     "crowdin": "^3.5.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-sass": "^0.2.1",

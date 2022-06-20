@@ -6,20 +6,20 @@ slug: /
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Capacitor: Cross-platform Native Runtime for Web Apps
 
-Capacitor is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web. Representing the next evolution of Hybrid apps, Capacitor creates **Web Native apps**, providing a modern native container approach for teams who want to build web-first without sacrificing full access to native SDKs when they need it.
+Capacitor is a cross-platform native runtime that makes it easy to build performant mobile applications that run natively on iOS, Android, and more using modern web tooling. You can think of it like [Electron](https://www.electronjs.org/) or [Tauri](https://tauri.studio/), but for mobile apps. Representing the next evolution of Hybrid apps, Capacitor creates **Web Native apps**, providing a modern native container approach for teams who want to build web-first without sacrificing full access to native SDKs when they need it.
 
 <img
-  src="/docs/img/docs/capacitor-index.png"
+  src={require('/img/v4/docs/capacitor-index.png').default}
   loading="eager"
 />
 
 ## Introduction
 
-Capacitor provides a consistent, web-focused set of APIs that enable an app to stay as close to web standards as possible, while accessing rich native device features on platforms that support them. Adding native functionality is easy with a simple Plugin API for Swift on iOS, Java on Android, and JavaScript for the web.
-
-Capacitor is a spiritual successor to [Apache Cordova](https://cordova.apache.org/) and [Adobe PhoneGap](https://phonegap.com/), with inspiration from other popular cross-platform tools like [React Native](http://facebook.github.io/react-native/) and [Turbolinks](https://github.com/turbolinks/turbolinks), but focused entirely on enabling modern web apps to run on all major platforms with ease. Capacitor is backward-compatible with many existing [Cordova plugins](https://cordova.apache.org/plugins/).
+Capacitor provides a consistent, web-focused set of APIs that enable an app to stay as close to web standards as possible, while accessing rich native device features on platforms that support them. If it works in the browser, it probably works in a mobile app when using Capacitor. Adding native functionality is straightforward with a Plugin API for Swift on iOS, Java on Android, and JavaScript for the web.
 
 ## Get Started
 

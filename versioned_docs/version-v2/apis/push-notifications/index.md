@@ -19,7 +19,7 @@ On iOS you must enable Push Notifications Capabilities in your project to enable
 
 This change adds the push capabilites to the app and creates an entitlements file in the project.
 
-![Enabling Push Notifications Capabilities](../../../../static/img/docs/ios/enable-push-capabilities.png)
+![Enabling Push Notifications Capabilities](../../../../static/img/v3/docs/ios/enable-push-capabilities.png)
 
 On Android just download the app project's `google-services.json` file from the Firebase console, and place it in the `projectName/android/app` folder.
 
@@ -43,7 +43,7 @@ Apple sends that mail just to make sure you didn't make a mistake and forgot to 
 
 In case you don't want to receive the mail, you can disable the Push Notifications plugin by removing `USE_PUSH` from `Active Compilation Conditions` in your project's Build Settings section.
 
-![Disable Push Notifications](../../../../static/img/docs/ios/disable-push-plugin.png)
+![Disable Push Notifications](../../../../static/img/v3/docs/ios/disable-push-plugin.png)
 
 ## Push notifications appearance in foreground
 

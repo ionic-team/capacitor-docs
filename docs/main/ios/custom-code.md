@@ -21,7 +21,7 @@ The easiest way to communicate between JavaScript and native code is to build a 
 
 First, create a `EchoPlugin.swift` file by [opening Xcode](/docs/ios#opening-the-ios-project), right-clicking on the **App** group (under the **App** target), selecting **New File...** from the context menu, choosing **Swift File** in the window, and creating the file.
 
-![New Swift File in Xcode](../../../static/img/docs/ios/xcode-new-swift-file.png)
+![New Swift File in Xcode](../../../static/img/v4/docs/ios/xcode-new-swift-file.png)
 
 Copy the following Swift code into `EchoPlugin.swift`:
 
