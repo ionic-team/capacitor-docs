@@ -36,7 +36,6 @@ async function buildPluginApiDocs(pluginId) {
     getReadme(pluginId),
     getPkgJsonData(pluginId),
   ]);
-  console.log(pluginId)
 
   const apiContent = createApiPage(pluginId, readme, pkgJson);
   const fileName = `${pluginId}.md`;

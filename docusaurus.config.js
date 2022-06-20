@@ -84,19 +84,13 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://www.meetup.com/topics/ionic-framework/',
-              label: 'Meetups',
-              target: '_blank',
-              rel: null,
-            },
-            {
               href: 'https://blog.ionicframework.com/',
               label: 'Blog',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://twitter.com/ionicframework',
+              href: 'https://twitter.com/capacitorjs',
               label: 'Twitter',
               target: '_blank',
               rel: null,
@@ -153,7 +147,7 @@ module.exports = {
           icon: {
             alt: 'twitter logo',
             src: `/logos/twitter.svg`,
-            href: 'https://twitter.com/Ionicframework',
+            href: 'https://twitter.com/capacitorjs',
             target: '_blank',
           },
         },
@@ -163,7 +157,7 @@ module.exports = {
           icon: {
             alt: 'github logo',
             src: `/logos/github.svg`,
-            href: 'https://github.com/ionic-team/ionic-framework',
+            href: 'https://github.com/ionic-team/capacitor',
             target: '_blank',
           },
         },

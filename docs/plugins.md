@@ -13,7 +13,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
 <DocsCards>
   <DocsCard 
     header="Official plugins" 
-    img="/img/docs/core-plugins.png" 
+    img="/img/docs/capacitor-card.png" 
     href="/apis"
   >
     <p>
@@ -22,7 +22,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
   </DocsCard>
   <DocsCard 
     header="Community plugins"
-    img="/img/docs/community-plugins.png"
+    img="/img/docs/community-card.png"
     href="/plugins/community"
   >
     <p>
