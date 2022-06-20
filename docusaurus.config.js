@@ -5,10 +5,10 @@ const fetch = require('node-fetch');
 const BASE_URL = '/docs';
 
 module.exports = {
-  title: 'Ionic Documentation',
+  title: 'Capacitor Documentation',
   tagline:
-    'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
-  url: 'https://ionicframework.com',
+    'Capacitor is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web.',
+  url: 'https://capacitorjs.com',
   baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: 'en',
@@ -20,9 +20,9 @@ module.exports = {
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/meta/favicon-96x96.png',
+  favicon: 'img/meta/favicon.png',
   organizationName: 'ionic-team',
-  projectName: 'ionic-docs',
+  projectName: 'capacitor-docs',
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
@@ -31,12 +31,12 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: 'Site Logo',
-        src: `/logos/ionic-text-docs-dark.svg`,
-        srcDark: `/logos/ionic-text-docs-light.svg`,
+        src: `/logos/capacitor-text-docs-light.svg`,
+        srcDark: `/logos/capacitor-text-docs-dark.svg`,
         href: '/',
         target: '_self',
-        width: 139,
-        height: 28,
+        width: 200,
+        height: 24,
       },
       items: [
         {
