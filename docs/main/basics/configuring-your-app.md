@@ -1,25 +1,20 @@
 ---
 title: Configuring Your App
 description: Native Project Configuration
-contributors:
-  - jcesarmobile
-  - dotNetkow
 slug: /basics/configuring-your-app
 ---
 
 # Configuring Your App
 
-Much of Capacitor is configured per-platform instead of in an abstracted system like Cordova's `config.xml`. This means that you will make most configuration changes in the native project using native tooling.
+Most of Capacitor is configured per-platform; meaning that you will make most configuration changes in the native project using native tooling.
 
-## Per-platform Management
+## Native Project Management
 
-Capacitor requires you to be more involved in the native project configuration than with Cordova. We think this approach makes it easy to follow existing iOS/Android guides, get help on Stack Overflow, and have complete control over your project.
+Configuring a Capacitor project is no different from configuring any iOS or Android project. Existing native developers  can easily work alongside web developers; with each side using the tools and SDKs they know best. While mobile application is a bit different than web development, we believe web developers can handle all the required native configuration on their own, and the Capacitor team provides documentation on things like how to deploy to [the Apple App Stores](/docs/ios/deploying-to-app-store) or [the Google Play Store](/docs/android/deploying-to-google-play) to help fill in knowledge gaps.
 
-Additionally, since configuring a Capacitor project is no different from configuring any iOS or Android project, existing native development teams can easily work alongside web developers, with each side using the tools and SDKs they are familiar with. Of course, we believe web developers can handle all the required native configuration on their own, and the Capacitor documentation exists to help web developers do just that.
+## Capacitor Configuration File
 
-## Capacitor Configuration
-
-Capacitor specific configuration is handled in the [Capacitor configuration file](/docs/config). These generally don't modify native functionality, but control Capacitor's tooling.
+Capacitor specific configuration is handled in the [Capacitor Configuration File](/docs/config). These generally don't modify native functionality, but control Capacitor's tooling. This config file includes things such as, setting the web directory to copy on `npx cap sync`, specifying the Android or iOS project folder, or setting the App ID/Name in your native project.
 
 ## Native Configuration
 
