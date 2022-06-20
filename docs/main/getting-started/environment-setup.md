@@ -6,13 +6,15 @@ slug: /getting-started/environment-setup
 
 # Environment Setup
 
-Capacitor has three officially supported application targets: Android, iOS, and Progressive Web Application (PWA). Additionally, you can use the community supported [Capacitor Electron](https://github.com/capacitor-community/electron) to make a desktop application with Capacitor.
+Capacitor has three officially supported application targets: Android, iOS, and Web. In order to create applications for all three platforms, you'll need to install all of the following dependencies. If you are not targeting one of the native mobile targets, you can skip the associated section.
 
-In order to create applications for all three platforms, you'll need to install all of the following dependencies. If you are not targeting one of the native mobile targets, you can skip the associated section.
+:::info
+Do you need to support Desktops? You can use Capacitor to build [Windows](https://ionic.io/docs/windows/usage) or [Electron](https://github.com/capacitor-community/electron) apps as well!
+:::
 
 ## Core Requirements
 
-In order to develop any application with Capacitor, you will need NodeJS 14 or higher installed. You can install Node by using the installer on [the Node website](https://nodejs.org), using [Volta: a JavaScript tools manager](https://volta.sh/), or installing it with a package manager like [homebrew](https://brew.sh/), or [Chocolatey](https://chocolatey.org/).
+In order to develop any application with Capacitor, you will need NodeJS 14 or higher installed. You can install Node by using the installer on [the Node website](https://nodejs.org), using [Volta](https://volta.sh/): a JavaScript tools manager, or installing it with a package manager like [homebrew](https://brew.sh/), or [Chocolatey](https://chocolatey.org/).
 
 Once you have installed Node, open your terminal of choice and type in the following command to make sure node is properly installed
 
@@ -21,7 +23,7 @@ node --version
 # v18.3.0
 ```
 
-With Node installed, you can get started with creating PWAs with Capacitor.
+With Node installed, you can get started with creating Progressive Web Applications (PWA) with Capacitor.
 
 ## iOS Requirements
 
@@ -31,6 +33,7 @@ In order to develop iOS applications using Capacitor, you will need three additi
 
 - Xcode
 - Xcode Command Line Tools
+- Homebrew
 - Cocoapods
 
 Once you've installed the core requirements, as well as Xcode, Xcode Command Line Tools, and Cocoapods, you'll be able to create both iOS applications and PWAs.
@@ -54,12 +57,55 @@ xcode-select -p
 # /Applications/Xcode.app/Contents/Developer
 ```
 
+### Homebrew
+
+Homebrew is a package manager for macOS package. You need to install it in order to install CocoaPods for both Intel and Apple Silicon Macs.
+
+To install Homebrew, run the following bash command:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+:::info
+Don't just trust us! This is how [brew.sh](https://brew.sh) recommends installing Homebrew.
+:::
+
+If you do not want to install Homebrew, alternative, but not recommended, instructions can be found below.
+
 ### CocoaPods
 
 Cocoapods is an iOS dependency manager that Capacitor uses to install and manage native dependencies for your iOS project. You can install [CocoaPods](https://cocoapods.org/) by running the following command in your terminal
 
 ```bash
+brew install cocoapods
+```
+
+You can verify that CocoaPods has installed correctly by running the following command.
+
+```bash
+pod --version
+# 1.11.3
+```
+
+#### Installing CocoaPods without Homebrew
+
+You can install CocoaPods directly with Ruby Gem. To install it, you can run the following command.
+```
 sudo gem install cocoapods
+```
+
+However, installing CocoaPods this way **will not** work on Apple Silicon Macs. You will need to run CocoaPods through Rosetta enabled. To do this, you can run the following commands.
+
+```bash
+sudo arch -x86_64 gem install ffi
+```
+
+Then, whenever you want to update your application to use a newer version of your web code, you will need to run the following commands.
+
+```bash
+npx cap copy
+arch -x86_64 pod install
 ```
 
 ## Android Requirements
@@ -69,13 +115,16 @@ In order to develop Android applications using Capacitor, you will need two addi
 - Android Studio
 - An Android SDK installation
 
+:::note
+You do not need to separately install the Java Development Kit (JDK). Android Studio
+will automatically install the proper JDK for you.
+:::
+
 Once you've installed the core requirements, as well as an Android SDK with Android Studio, you'll be able to create both Android applications and PWAs.
 
 ### Android Studio
 
 Android Studio is Google's IDE for creating native Android applications. You can install Android Studio by going to the [Android Studio download page](https://developer.android.com/studio). Capacitor 4 requires a minimum of Android Studio 2020.1.
-
-**Note:** You _do not_ need to separately install the Java Development Kit (JDK) as it comes bundled with Android Studio.
 
 ### Android SDK
 
