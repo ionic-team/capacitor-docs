@@ -14,7 +14,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
   <DocsCard 
     header="Official plugins" 
     img="/img/docs/core-plugins.png" 
-    href="https://capacitorjs.com/docs/plugins"
+    href="/apis"
   >
     <p>
       Official Plugins are maintained by the Capacitor Team
@@ -23,7 +23,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
   <DocsCard 
     header="Community plugins"
     img="/img/docs/community-plugins.png"
-    href="/native/community"
+    href="/plugins/community"
   >
     <p>
       Community Plugins are maintained by the Capacitor Community
