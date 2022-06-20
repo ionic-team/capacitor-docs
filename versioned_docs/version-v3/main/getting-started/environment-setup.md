@@ -30,7 +30,7 @@ sudo gem install cocoapods
 
 Install the **Xcode Command Line Tools** by opening **Xcode -> Preferences -> Locations** and selecting the latest version in the dropdown.
 
-![Xcode locations preferences](../../../../static/img/docs/ios/xcode-preferences-location.png)
+![Xcode locations preferences](../../../../static/img/v3/docs/ios/xcode-preferences-location.png)
 
 ## Android Development
 
@@ -42,7 +42,7 @@ Developing Android apps requires some Android SDK packages to be installed. Make
 
 In Android Studio open **Tools -> SDK Manager** from the menu and install the platform versions you'd like to test with in the **SDK Platforms** tab:
 
-![SDK Platforms](../../../../static/img/docs/android/sdk-platforms.png)
+![SDK Platforms](../../../../static/img/v3/docs/android/sdk-platforms.png)
 
 In the **SDK Tools** tab, make sure to install at least the following:
 
@@ -51,4 +51,4 @@ In the **SDK Tools** tab, make sure to install at least the following:
 - Android Emulator
 - Android SDK Platform-Tools
 
-![SDK Tools](../../../../static/img/docs/android/sdk-tools.png)
+![SDK Tools](../../../../static/img/v3/docs/android/sdk-tools.png)
