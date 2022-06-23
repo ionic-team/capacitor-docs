@@ -211,10 +211,10 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
-            return 'https://crowdin.com/project/ionic-docs';
+            return 'https://crowdin.com/project/capacitor-docs';
           }
           if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
+            return `https://github.com/ionic-team/capacitor-docs/tree/main/docs/api/${match[1]}.md`;
           }
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
@@ -225,7 +225,7 @@ module.exports = {
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
           }
-          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
         lastVersion: 'current',
