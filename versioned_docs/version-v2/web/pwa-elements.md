@@ -11,7 +11,7 @@ canonicalUrl: https://capacitorjs.com/docs/web/pwa-elements
 
 Some Capacitor plugins, such as `Camera` or `Toast`, have web-based UI available when not running natively. For example, calling `Camera.getPhoto()` will load a responsive photo-taking experience when running on the web:
 
-<img src="/assets/img/docs/pwa-elements.png" style="height: 200px" />
+<img src="/assets/img/docs/pwa-elements.png" style={{ height: "200px" }} />
 
 This UI is implemented using web components. Due the elements being encapsulated by the [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), these components should not conflict
 with your own UI.
