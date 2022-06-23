@@ -1,34 +1,20 @@
 ---
 title: Development Workflow
 description: Capacitor Workflow
-contributors:
-  - dotNetkow
-  - mlynch
 slug: /basics/workflow
 ---
 
 # Capacitor Workflow
 
-Working with Capacitor involves several key additions to your workflow.
+Working with Capacitor is slightly different than working with a traditional web app. To make your web native Capacitor application, you'll need to do the following steps.
 
-## Develop and build your Web App
+## Building your web code
 
-Capacitor turns your web app into a native binary for each platform. Thus, much of your work will consist of developing and then building a mobile-focused web app.
+Once you are ready to test your web app on a mobile device, you'll need to build your web app for distribution. If you are using a tool like [Create React App](https://create-react-app.dev/) or [Vite](https://vitejs.dev/) that command will be `npm build`; while a tool like [Angular](https://angular.io/) uses the command `ng build`. Whatever your command is, you will need to build your web code for distribution in order to use it with Capacitor.
 
-You will interact with the native platform underneath using Capacitor's plugins (such as [Camera](/docs/apis/camera)), or by using existing Cordova plugins with Capacitor's [Cordova Compatibility](/docs/cordova).
+## Syncing your web code to your Capacitor project
 
-To deploy your web app to native devices, you will first need to build the web assets into an output directory. Consult your JavaScript framework's documentation for the exact command. For most, it's `npm run build`.
-
-## Sync your Project
-
-You may wish to sync your web app with your native project(s) in the following circumstances:
-
-- When you want to copy web assets into your native project(s).
-- Before you run your project using a Native IDE.
-- After you install a new Capacitor plugin.
-- After you clone your project.
-- When you want to setup or reconfigure the native project(s) for Capacitor.
-- When you want to install native dependencies (e.g. with Gradle or CocoaPods).
+Once your web code has been built for distribution, you will need to push your web code to the web native Capacitor application. To do this, you can use the [Capacitor CLI](/docs/cli) to "sync" your web code and install/update the required native dependencies.
 
 To sync your project, run:
 
@@ -36,59 +22,70 @@ To sync your project, run:
 npx cap sync
 ```
 
-> If you get an error about not being able to find the web assets directory, you may need to configure `webDir` in the [Capacitor configuration](/docs/config).
+Running `npx cap sync` will **copy** over your already built web bundle to both your Android and iOS projects as well as **update** the native dependencies that Capacitor uses.
 
-[Learn more about `sync` &#8250;](/docs/cli/sync)
+You can [read our docs](/docs/cli/sync) on `sync` and more on the [Capacitor CLI reference](/docs/cli) documentation.
 
-## Run your Project
+:::info
+Did you get an error about "not being able to find the web assets directory?" Update your [Capacitor configuration](/docs/config) file to use the proper `webDir`.
+:::
 
-There are a few ways to deploy your project on native devices, depending on your use case. Most common is on the command-line with `npx cap run`.
 
-[Learn more about running your app on iOS &#8250;](/docs/ios#running-your-app)
+## Testing your Capacitor app
 
-[Learn more about running your app on Android &#8250;](/docs/android#running-your-app)
+Once you've synced over your web bundle to your native project, it is time to test your application on a mobile device. There are a few different ways to do this, but the easiest way is to use the built in Capacitor CLI commands.
 
-## Build your Project
+To run a debug build of your Capacitor app on an iOS device, you can run:
+```bash
+npx cap run ios
+```
 
-After you build your web assets (e.g. with `npm run build`) and copy them into your native project(s) with `npx cap sync`, you are ready to build a native binary.
+Similarly, to run a debug build of your Capacitor app on an Android device, you can run:
+```bash
+npx cap run android
+```
 
-Capacitor does not have a "build" command. After `sync`, you are encouraged to open your target platform's IDE for building your native app.
 
-For building your app on the command-line or in CI environments, you are encouraged to use your target platform's tooling: Gradle for Android and `xcodebuild` for iOS. Third-party tools such as [Fastlane](https://fastlane.tools) may make this easier. Cloud builds and more are available when using [Appflow](https://useappflow.com).
+Once you've iterated and tested your application, it is time to compile the final binary to distribute to other mobile devices.
 
-To see what the release process looks like for Capacitor, read the publishing guides for [iOS](/docs/ios/deploying-to-app-store) and [Android](/docs/android/deploying-to-google-play).
+:::info
+You can also [run your app on iOS via Xcode](/docs/ios#running-in-xcode) or [run your app on Android via Android Studio](/docs/android#running-with-android-studio) as well. Both options are valid for development. Go ahead and try both to see which option you prefer!
+:::
 
-## Open your Native IDE
+### Open your Native IDE
 
-You may wish to open your project in a Native IDE (e.g. Xcode and Android Studio) in the following circumstances:
+If you'd like more control over your native project you can quickly open the native IDEs using the Capacitor CLI.
 
-- When you want to run your project on a native device using the IDE.
-- When you want to debug native Java/Kotlin or Swift/Objective-C code.
-- When you want to work on the native side of your app.
-- When you want to compile a release build for the app store.
+To [open the iOS Capacitor `.xcworkspace` project in Xcode](/docs/ios#opening-the-ios-project), you can run:
+```bash
+npx cap open ios
+```
 
-[Learn more about opening your app in Xcode &#8250;](/docs/ios#opening-the-ios-project)
+Similarly, to [open the Android Capacitor project in Android Studio](/docs/android#opening-the-android-project), you can run:
+```bash
+npx cap open android
+```
 
-[Learn more about opening your app in Android Studio &#8250;](/docs/android#opening-the-android-project)
+Opening the native project can give you full control over the native runtime of your application. You can [create plugins](/docs/plugins), [add custom native code](/docs/ios/custom-code#custom-native-ios-code), or [compile your application](#compiling-your-native-binary) for releasing.
+
+## Compiling your native binary
+
+Capacitor does not have a `build` or `compile` command, nor will there ever be one. After `sync`, you are encouraged to open your target platform's IDE: Xcode for iOS or Android Studio for Android, for compiling your native app.
+
+To compile your app in a terminal or in CI environments, you can use `gradle` or `xcodebuild` directly. We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/docs/ios/deploying-to-app-store) and [Android](/docs/android/deploying-to-google-play) for more info on how to deploy to the Apple App Store or the Google Play Store.
 
 ## Updating Capacitor
 
-To update Capacitor Core and CLI:
+Updating your Capacitor runtime is as straightforward as runnin an `npm install`.
 
 ```bash
-npm install @capacitor/cli
-npm install @capacitor/core
+npm i @capacitor/core @capacitor/ios @capacitor/android
+npm i -D @capacitor/cli
 ```
 
-To update any or all of the platforms you are using:
+When updating Capacitor, you want to make sure your Core, Android, and iOS libraries are all the same version. Capacitor Core, Android, and iOS releases are all uploaded simultaneously, meaning that if you install all of the libraries at the same time, you'll be fine!
 
-```bash
-npm install @capacitor/ios
-npm install @capacitor/android
-```
+:::info
+You can subscribe to the [Capacitor repo](https://github.com/ionic-team/capacitor) to be notified of new releases. At the top of the repository index, click **Watch** -> **Releases only**.
+:::
 
-> You can subscribe to the [Capacitor repo](https://github.com/ionic-team/capacitor) to be notified of new releases. At the top of the repository index, click **Watch** -> **Releases only**.
-
-## Hooks
-
-Need to tie into the capacitor cli command events? Check out the [hooks here](/docs/cli/hooks).
