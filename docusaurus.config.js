@@ -230,7 +230,7 @@ module.exports = {
         lastVersion: 'current',
         versions: {
           current: {
-            label: 'v4',
+            label: 'v4 (beta)',
             banner: 'none',
           },
         },
