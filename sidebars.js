@@ -10,7 +10,8 @@ module.exports = {
         'main/getting-started/installation',
         'main/getting-started/with-ionic',
         'main/getting-started/vscode-extension',
-        'main/getting-started/templates'
+        'main/getting-started/templates',
+        'main/getting-started/faqs'
       ],
     },
     {
