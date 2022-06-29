@@ -30,6 +30,7 @@ module.exports = {
       label: 'Upgrade Guides',
       collapsed: false,
       items: [
+        'main/updating/4-0',
         'main/updating/3-0',
         'main/updating/2-0',
         'main/updating/1-1',
