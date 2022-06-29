@@ -60,7 +60,7 @@ However, this by itself isn't enough. To avoid possible [man-in-the-middle](http
 
 ### Content Security Policy
 
-[Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is a set of security features available in the browser (and, thus, your Capacitor Web View). CSP can be used to limit the resources the user agent is allowed to load in the Web View (such as images, XHR, videos, Web Sockets, etc).
+[Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/v3/Web/HTTP/CSP) is a set of security features available in the browser (and, thus, your Capacitor Web View). CSP can be used to limit the resources the user agent is allowed to load in the Web View (such as images, XHR, videos, Web Sockets, etc).
 
 CSP can be configured in your Capacitor app by adding a `meta` tag to the `<head>` with an acceptable CSP format (CSP can be configured both server and client side using the same format). For example, this configuration would allow all requests to the current origin and `foo.com`:
 
@@ -71,7 +71,7 @@ CSP can be configured in your Capacitor app by adding a `meta` tag to the `<head
 />
 ```
 
-CSP supports a wide variety of configurations, and the [CSP reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is a must-read. Another useful resource is [content-security-policy.com](https://content-security-policy.com/).
+CSP supports a wide variety of configurations, and the [CSP reference](https://developer.mozilla.org/en-US/docs/v3/Web/HTTP/CSP) is a must-read. Another useful resource is [content-security-policy.com](https://content-security-policy.com/).
 
 ### JavaScript Security Techniques
 

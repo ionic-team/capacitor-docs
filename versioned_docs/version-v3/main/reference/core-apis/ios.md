@@ -68,7 +68,7 @@ func triggerJSEvent(eventName: String, target: String)
 func triggerJSEvent(eventName: String, target: String, data: String)
 ```
 
-Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](/docs/plugins/ios#plugin-events) instead.
+Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/v3/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](/docs/v3/plugins/ios#plugin-events) instead.
 
 Examples:
 
@@ -106,10 +106,10 @@ Translate a file URL for native iOS into a URL to load in the web view.
 
 ## Passing data
 
-Notes on how to work with data that is passed between environments can be [found here](/docs/core-apis/data-types#ios).
+Notes on how to work with data that is passed between environments can be [found here](/docs/v3/core-apis/data-types#ios).
 
 ---
 
 ## Saving CAPPluginCall
 
-Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/docs/core-apis/saving-calls).
+Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/docs/v3/core-apis/saving-calls).

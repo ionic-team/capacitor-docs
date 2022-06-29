@@ -90,7 +90,7 @@ Represents the data to be written to the clipboard.
 | Prop         | Type                | Description                                                                                                     | Since |
 | ------------ | ------------------- | --------------------------------------------------------------------------------------------------------------- | ----- |
 | **`string`** | <code>string</code> | Text value to copy.                                                                                             | 1.0.0 |
-| **`image`**  | <code>string</code> | Image in [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) format to copy. | 1.0.0 |
+| **`image`**  | <code>string</code> | Image in [Data URL](https://developer.mozilla.org/en-US/docs/v3/Web/HTTP/Basics_of_HTTP/Data_URIs) format to copy. | 1.0.0 |
 | **`url`**    | <code>string</code> | URL string to copy.                                                                                             | 1.0.0 |
 | **`label`**  | <code>string</code> | User visible label to accompany the copied data (Android Only).                                                 | 1.0.0 |
 

@@ -8,7 +8,7 @@ sidebar_label: sync
 
 # Capacitor CLI - cap sync
 
-This command runs [`copy`](/docs/cli/copy) and then [`update`](/docs/cli/update).
+This command runs [`copy`](/docs/v3/cli/copy) and then [`update`](/docs/v3/cli/update).
 
 ```bash
 npx cap sync [options] [<platform>]

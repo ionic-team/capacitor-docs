@@ -157,7 +157,7 @@ export interface CapacitorConfig {
      * Enable mixed content in the Capacitor Web View for Android.
      *
      * [Mixed
-     * content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content)
+     * content](https://developer.mozilla.org/en-US/docs/v3/Web/Security/Mixed_content)
      * is disabled by default for security. During development, you may need to
      * enable it to allow the Web View to load files from different schemes.
      *
@@ -355,11 +355,11 @@ export interface CapacitorConfig {
      *
      * It is recommended to keep this as `localhost` as it allows the use of
      * Web APIs that would otherwise require a [secure
-     * context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts)
+     * context](https://developer.mozilla.org/en-US/docs/v3/Web/Security/Secure_Contexts)
      * such as
-     * [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)
+     * [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/v3/Web/API/Navigator/geolocation)
      * and
-     * [`MediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
+     * [`MediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/v3/Web/API/MediaDevices/getUserMedia).
      *
      * @since 1.0.0
      * @default localhost

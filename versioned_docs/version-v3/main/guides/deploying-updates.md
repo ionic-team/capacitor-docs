@@ -38,4 +38,4 @@ Appflow powers major consumer and enterprise apps with hundreds of millions of u
 
 And, because the team behind Appflow works closely with the Capacitor team, Appflow is optimized to work best with Capacitor.
 
-Appflow is free to get started and uses the same Ionic account you may have used in the past. To get started, visit [useappflow.com](https://useappflow.com/) or browse the [documentation](https://ionicframework.com/docs/appflow) to learn more about how Appflow works.
+Appflow is free to get started and uses the same Ionic account you may have used in the past. To get started, visit [useappflow.com](https://useappflow.com/) or browse the [documentation](https://ionicframework.com/docs/v3/appflow) to learn more about how Appflow works.

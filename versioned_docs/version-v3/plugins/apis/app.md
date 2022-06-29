@@ -19,7 +19,7 @@ npx cap sync
 
 ## iOS
 
-For being able to open the app from a custom scheme you need to register the scheme first. You can do it by editing the [`Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) file and adding this lines.
+For being able to open the app from a custom scheme you need to register the scheme first. You can do it by editing the [`Info.plist`](https://capacitorjs.com/docs/v3/ios/configuration#configuring-infoplist) file and adding this lines.
 
 
 ```xml

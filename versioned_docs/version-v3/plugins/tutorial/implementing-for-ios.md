@@ -15,7 +15,7 @@ You may want to implement the web first because it sits closer to the plugin’s
 
 ## Register the plugin with Capacitor
 
-> **Prerequisite:** Familiarize yourself with the <a href="https://capacitorjs.com/docs/ios/custom-code" target="_blank">Capacitor Custom Native iOS Code documentation</a> before continuing.
+> **Prerequisite:** Familiarize yourself with the <a href="https://capacitorjs.com/docs/v3/ios/custom-code" target="_blank">Capacitor Custom Native iOS Code documentation</a> before continuing.
 
 Open up the Capacitor application’s iOS project in Xcode by running `npx cap open ios`. Right-click the **App** group (under the **App** target) and select **New Group** from the context menu. Name this new group **plugins**. Add a new group to **plugins** and name it **ScreenOrientation**.
 

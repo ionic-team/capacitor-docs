@@ -25,7 +25,7 @@ iOS requires the following usage description be added and filled out for your ap
 - `NSPhotoLibraryAddUsageDescription` (`Privacy - Photo Library Additions Usage Description`)
 - `NSPhotoLibraryUsageDescription` (`Privacy - Photo Library Usage Description`)
 
-Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
+Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/v3/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/v3/ios) for more information on setting iOS permissions in Xcode
 
 ## Android
 
@@ -38,7 +38,7 @@ This API requires the following permissions be added to your `AndroidManifest.xm
 
 The storage permissions are for reading/saving photo files.
 
-Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
+Read about [Setting Permissions](https://capacitorjs.com/docs/v3/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/v3/android) for more information on setting Android permissions.
 
 Additionally, because the Camera API launches a separate Activity to handle taking the photo, you should listen for `appRestoredResult` in the `App` plugin to handle any camera data that was sent in the case your app was terminated by the operating system while the Activity was running.
 
@@ -51,7 +51,7 @@ This plugin will use the following project variables (defined in your app's `var
 
 ## PWA Notes
 
-[PWA Elements](https://capacitorjs.com/docs/web/pwa-elements) are required for Camera plugin to work.
+[PWA Elements](https://capacitorjs.com/docs/v3/web/pwa-elements) are required for Camera plugin to work.
 
 ## Example
 
@@ -198,7 +198,7 @@ Request camera and photo album permissions
 | **`source`**              | <code><a href="#camerasource">CameraSource</a></code>         | The source to get the photo from. By default this prompts the user to select either the photo album or take a photo.                                                                                                                                                   | <code>: CameraSource.Prompt</code>  | 1.0.0 |
 | **`direction`**           | <code><a href="#cameradirection">CameraDirection</a></code>   | iOS and Web only: The camera direction.                                                                                                                                                                                                                                | <code>: CameraDirection.Rear</code> | 1.0.0 |
 | **`presentationStyle`**   | <code>'fullscreen' \| 'popover'</code>                        | iOS only: The presentation style of the Camera.                                                                                                                                                                                                                        | <code>: 'fullscreen'</code>         | 1.0.0 |
-| **`webUseInput`**         | <code>boolean</code>                                          | Web only: Whether to use the PWA Element experience or file input. The default is to use PWA Elements if installed and fall back to file input. To always use file input, set this to `true`. Learn more about PWA Elements: https://capacitorjs.com/docs/pwa-elements |                                     | 1.0.0 |
+| **`webUseInput`**         | <code>boolean</code>                                          | Web only: Whether to use the PWA Element experience or file input. The default is to use PWA Elements if installed and fall back to file input. To always use file input, set this to `true`. Learn more about PWA Elements: https://capacitorjs.com/docs/v3/pwa-elements |                                     | 1.0.0 |
 | **`promptLabelHeader`**   | <code>string</code>                                           | Text value to use when displaying the prompt.                                                                                                                                                                                                                          | <code>: 'Photo'</code>              | 1.0.0 |
 | **`promptLabelCancel`**   | <code>string</code>                                           | Text value to use when displaying the prompt. iOS only: The label of the 'cancel' button.                                                                                                                                                                              | <code>: 'Cancel'</code>             | 1.0.0 |
 | **`promptLabelPhoto`**    | <code>string</code>                                           | Text value to use when displaying the prompt. The label of the button to select a saved image.                                                                                                                                                                         | <code>: 'From Photos'</code>        | 1.0.0 |

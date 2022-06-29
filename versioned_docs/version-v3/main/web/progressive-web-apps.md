@@ -31,15 +31,15 @@ Progressive Web Apps should have an App Manifest and a Service Worker.
 
 ### App Manifest
 
-First, you'll need an [App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) file ([manifest.json](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json)) that sits alongside your `index.html` file and provides metadata about your app, such as its name, theme colors, and icons. This information will be used when your app is installed on the home screen, for example.
+First, you'll need an [App Manifest](https://developer.mozilla.org/en-US/docs/v3/Web/Manifest) file ([manifest.json](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json)) that sits alongside your `index.html` file and provides metadata about your app, such as its name, theme colors, and icons. This information will be used when your app is installed on the home screen, for example.
 
 ### Service Worker
 
-Next, in order to send push notifications and store data offline, a [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) will enable your web app to proxy network requests and perform background tasks needed to process and sync data.
+Next, in order to send push notifications and store data offline, a [Service Worker](https://developer.mozilla.org/en-US/docs/v3/Web/API/Service_Worker_API) will enable your web app to proxy network requests and perform background tasks needed to process and sync data.
 
 Service Workers are powerful, but complicated. Generally, writing them from scratch is not recommended. Instead, take a look at tools like [Workbox](https://developers.google.com/web/tools/workbox/) that provide common Service Worker recipes that you can easily incorporate into your app.
 
-Read more about using Service Workers, including how to register them, on the [Using Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) page on MDN.
+Read more about using Service Workers, including how to register them, on the [Using Service Workers](https://developer.mozilla.org/en-US/docs/v3/Web/API/Service_Worker_API/Using_Service_Workers) page on MDN.
 
 ## Progressive Web App Performance
 

@@ -24,7 +24,7 @@ Apple requires privacy descriptions to be specified in `Info.plist` for location
 - `NSLocationAlwaysUsageDescription` (`Privacy - Location Always Usage Description`)
 - `NSLocationWhenInUseUsageDescription` (`Privacy - Location When In Use Usage Description`)
 
-Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
+Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/v3/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/v3/ios) for more information on setting iOS permissions in Xcode
 
 ## Android
 
@@ -39,7 +39,7 @@ This API requires the following permissions be added to your `AndroidManifest.xm
 
 The first two permissions ask for location data, both fine and coarse, and the last line is optional but necessary if your app _requires_ GPS to function. You may leave it out, though keep in mind that this may mean your app is installed on devices lacking GPS hardware.
 
-Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
+Read about [Setting Permissions](https://capacitorjs.com/docs/v3/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/v3/android) for more information on setting Android permissions.
 
 ### Variables
 

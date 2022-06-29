@@ -21,7 +21,7 @@ npx cap sync
 
 This plugin requires "View controller-based status bar appearance"
 (`UIViewControllerBasedStatusBarAppearance`) set to `YES` in `Info.plist`. Read
-about [Configuring iOS](https://capacitorjs.com/docs/ios/configuration) for
+about [Configuring iOS](https://capacitorjs.com/docs/v3/ios/configuration) for
 help.
 
 The status bar visibility defaults to visible and the style defaults to

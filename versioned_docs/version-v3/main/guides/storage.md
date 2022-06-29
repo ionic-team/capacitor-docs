@@ -16,11 +16,11 @@ Most apps need to persist and read local data. Depending on the specific use cas
 
 Since Capacitor apps run primarily in a web view or browser, Web APIs for storage are available to Capacitor developers. However, there are some major caveats to keep in mind with these APIs.
 
-Local Storage can be used for small amounts of temporary data, such as a user id, but _must be considered transient_, meaning your app needs to expect that the data will be lost eventually. This is because the OS will reclaim local storage from Web Views if a device is running low on space. The same can be said for IndexedDB at least on iOS (on Android, the [persisted storage API](https://web.dev/persistent-storage/) is available to mark IndexedDB as persisted). Read more on [data storage eviction policies](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria) in the browser.
+Local Storage can be used for small amounts of temporary data, such as a user id, but _must be considered transient_, meaning your app needs to expect that the data will be lost eventually. This is because the OS will reclaim local storage from Web Views if a device is running low on space. The same can be said for IndexedDB at least on iOS (on Android, the [persisted storage API](https://web.dev/persistent-storage/) is available to mark IndexedDB as persisted). Read more on [data storage eviction policies](https://developer.mozilla.org/en-US/docs/v3/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria) in the browser.
 
 ## Capacitor Storage API
 
-Capacitor comes with a native [Storage API](/docs/apis/storage) that avoids the eviction issues above, but is meant for small amounts of data.
+Capacitor comes with a native [Storage API](/docs/v3/apis/storage) that avoids the eviction issues above, but is meant for small amounts of data.
 
 The Storage API provides a simple key/value API with no advanced query support:
 

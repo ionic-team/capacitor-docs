@@ -82,7 +82,7 @@ Text-to-Speech functionality.
 This function will only work if a Screen Reader is currently active.
 
 On web, browsers must support the [SpeechSynthesis
-API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis), or
+API](https://developer.mozilla.org/en-US/docs/v3/Web/API/SpeechSynthesis), or
 this method will throw an error.
 
 For more text-to-speech capabilities, please see the [Capacitor Community

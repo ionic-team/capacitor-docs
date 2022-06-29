@@ -57,7 +57,7 @@ window.screen.orientation.lock('landscape');
 window.screen.orientation.unlock();
 ```
 
-See the [Orientation Plugin Docs](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-screen-orientation/) for the full range of possible orientation values and configuration options.
+See the [Orientation Plugin Docs](https://cordova.apache.org/docs/v3/en/latest/reference/cordova-plugin-screen-orientation/) for the full range of possible orientation values and configuration options.
 
 ### iPad Orientation Lock
 

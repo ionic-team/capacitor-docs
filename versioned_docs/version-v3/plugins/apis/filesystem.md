@@ -27,7 +27,7 @@ If using <a href="#directory">`Directory.Documents`</a> or
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
+Read about [Setting Permissions](https://capacitorjs.com/docs/v3/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/v3/android) for more information on setting Android permissions.
 
 Note that <a href="#directory">`Directory.Documents`</a> and
 `Directory.ExternalStorage` are only available on Android 9 or older.

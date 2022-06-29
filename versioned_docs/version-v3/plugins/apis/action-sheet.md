@@ -25,7 +25,7 @@ This plugin will use the following project variables (defined in your app's `var
 
 ## PWA Notes
 
-[PWA Elements](https://capacitorjs.com/docs/web/pwa-elements) are required for Action Sheet plugin to work.
+[PWA Elements](https://capacitorjs.com/docs/v3/web/pwa-elements) are required for Action Sheet plugin to work.
 
 ## Example
 

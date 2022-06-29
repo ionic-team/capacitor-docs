@@ -13,7 +13,7 @@ Development for the plugin is nearly complete. All that’s left is the Android 
 
 ## Register the plugin with Capacitor
 
-> **Prerequisite:** Familiarize yourself with the <a href="https://capacitorjs.com/docs/android/custom-code" target="_blank">Capacitor Custom Native Android Code documentation</a> before continuing.
+> **Prerequisite:** Familiarize yourself with the <a href="https://capacitorjs.com/docs/v3/android/custom-code" target="_blank">Capacitor Custom Native Android Code documentation</a> before continuing.
 
 Open up the Capacitor application’s Android project in Android Studio by running `npx cap open android`. Expand the **app** module and the **java** folder and right-click on your app’s Java package. Select **New -> Package** from the context menu and create a subpackage named **plugins**. Right-click the **plugins** package and repeat the preceding process to create a subpackage named **ScreenOrientation**.
 

@@ -12,4 +12,4 @@ slug: /guides/ionic-framework-app
 
 Capacitor makes it easy to build web apps that run natively on iOS, Android, desktop, and the web. In this guide, we'll build a complete Photo Gallery app that works on all platforms.
 
-> This guide is now maintained over in the Ionic docs. The [latest version](https://ionicframework.com/docs/intro/next) contains tutorials for Angular, React, and Vue.
+> This guide is now maintained over in the Ionic docs. The [latest version](https://ionicframework.com/docs/v3/intro/next) contains tutorials for Angular, React, and Vue.

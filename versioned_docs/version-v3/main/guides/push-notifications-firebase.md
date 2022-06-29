@@ -12,13 +12,13 @@ slug: /guides/push-notifications-firebase
 **Web Framework**: Angular
 **Platforms**: iOS, Android
 
-One of the most common features provided by application developers to their users is push notifications. In this tutorial, we'll walk through all the steps needed to get [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) working on iOS and Android.
+One of the most common features provided by application developers to their users is push notifications. In this tutorial, we'll walk through all the steps needed to get [Firebase Cloud Messaging](https://firebase.google.com/docs/v3/cloud-messaging) working on iOS and Android.
 
-For the purposes of registering and monitoring for push notifications from Firebase, we'll make use of the [Push Notification API for Capacitor](https://capacitorjs.com/docs/apis/push-notifications) in an Ionic + Angular application.
+For the purposes of registering and monitoring for push notifications from Firebase, we'll make use of the [Push Notification API for Capacitor](https://capacitorjs.com/docs/v3/apis/push-notifications) in an Ionic + Angular application.
 
 ## Required Dependencies
 
-Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/docs/getting-started/environment-setup) before continuing.
+Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/docs/v3/getting-started/environment-setup) before continuing.
 
 To test push notifications on iOS, Apple requires that you have [a paid Apple Developer account](https://developer.apple.com/) and a _physical_ iOS device.
 
@@ -224,7 +224,7 @@ Name the project, accept the Firebase ToS and click **Create project** to contin
 
 ### Integrating Firebase with the Android app
 
-This section more-or-less mirrors the [setting up Firebase using the Firebase console documentation](https://firebase.google.com/docs/android/setup?authuser=0). See below for specific Capacitor-related notes.
+This section more-or-less mirrors the [setting up Firebase using the Firebase console documentation](https://firebase.google.com/docs/v3/android/setup?authuser=0). See below for specific Capacitor-related notes.
 
 Go to the Project Overview page for your Firebase project and at the top, click on the **Android** icon to add a new android application.
 
@@ -257,7 +257,7 @@ iOS push notifications are significantly more complicated to set up than Android
 1. [Setup the proper Development or Production certificates & provisioning profiles](https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7) for your iOS application in the Apple Developer Portal
 2. [Create an APNS certificate or key](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns) for either Development or Production in the Apple Developer Portal
 3. [Ensure Push Notification capabilities have been enabled](https://help.apple.com/xcode/mac/current/#/dev88ff319e7) in your application in Xcode
-4. Have a physical iOS device as per the guidelines in the [Environment Setup](/docs/getting-started/environment-setup) documentation
+4. Have a physical iOS device as per the guidelines in the [Environment Setup](/docs/v3/getting-started/environment-setup) documentation
 
 ### Integrating Firebase with our native iOS app
 

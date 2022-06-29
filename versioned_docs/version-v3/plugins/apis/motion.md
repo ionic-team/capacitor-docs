@@ -58,7 +58,7 @@ const removeListeners = () => {
 ```
 
 See the
-[`DeviceMotionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent)
+[`DeviceMotionEvent`](https://developer.mozilla.org/en-US/docs/v3/Web/API/DeviceMotionEvent)
 API to understand the data supplied in the 'accel' event.
 
 ## API

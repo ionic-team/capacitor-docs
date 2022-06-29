@@ -15,7 +15,7 @@ Capacitor utilizes a web/native compatibility layer, making it easy to build plu
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins#plugin-generator) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](/docs/v3/plugins/creating-plugins#plugin-generator) section of the Plugin guide.
 
 Next, open `echo/src/web.ts` in your editor of choice.
 
@@ -53,7 +53,7 @@ You will need to develop one or more aliases for abstracting and grouping permis
 
 These are represented by the `PermissionState` type exported from `@capacitor/core`.
 
-It is also possible to define custom states for aliases, if need be. For example, the official [Camera plugin](/docs/apis/camera) also defines a `limited` state for the `camera` and `photos` aliases.
+It is also possible to define custom states for aliases, if need be. For example, the official [Camera plugin](/docs/v3/apis/camera) also defines a `limited` state for the `camera` and `photos` aliases.
 
 Aliases are cross-platform, so make sure to take iOS, Android, and web permissions into account when deciding on the aliases for your plugin.
 
@@ -108,7 +108,7 @@ In `src/web.ts`, add the `checkPermissions()` and `requestPermissions()` methods
 
 #### `checkPermissions()`
 
-This method should return the current status of permissions in your plugin. This information may be available on the specific web API directly, or from the [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API).
+This method should return the current status of permissions in your plugin. This information may be available on the specific web API directly, or from the [Permissions API](https://developer.mozilla.org/en-US/docs/v3/Web/API/Permissions_API).
 
 Remember, when working with web APIs with spotty browser adoption (such as the Permissions API), you should implement feature detection and throw an appropriate error when the end user's browser is not supported.
 

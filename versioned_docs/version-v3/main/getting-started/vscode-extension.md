@@ -18,7 +18,7 @@ With Capacitor integrated, you can now run your app on web, Android, and iOS wit
 
 ## Migrating from Cordova
 
-If you are [migrating from Cordova to Capacitor](https://capacitorjs.com/docs/cordova/migrating-from-cordova-to-capacitor), the Ionic VS Code extension can speed up that process.
+If you are [migrating from Cordova to Capacitor](https://capacitorjs.com/docs/v3/cordova/migrating-from-cordova-to-capacitor), the Ionic VS Code extension can speed up that process.
 
 The extension:
 

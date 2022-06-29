@@ -28,7 +28,7 @@ The Google Maps SDK supports the use of showing the users current location via `
 - `NSLocationAlwaysUsageDescription` (`Privacy - Location Always Usage Description`)
 - `NSLocationWhenInUseUsageDescription` (`Privacy - Location When In Use Usage Description`)
 
-Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode.
+Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/v3/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/v3/ios) for more information on setting iOS permissions in Xcode.
 
 > The Google Maps SDK currently does not support running on simulators using the new M1-based Macbooks. This is a [known and acknowledged issue](https://developers.google.com/maps/faq#arm-based-macs) and requires a fix from Google. If you are developing on a M1 Macbook, building and running on physical devices is still supported and is the recommended approach.
 

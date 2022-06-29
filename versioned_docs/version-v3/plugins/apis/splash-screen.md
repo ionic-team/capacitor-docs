@@ -43,7 +43,7 @@ By default, the Splash Screen is set to automatically hide after 500 ms.
 
 If you want to be sure the splash screen never disappears before your app is ready, set `launchAutoHide` to `false`; the splash screen will then stay visible until manually hidden. For the best user experience, your app should call `hide()` as soon as possible.
 
-If, instead, you want to show the splash screen for a fixed amount of time, set `launchShowDuration` in your [Capacitor configuration file](https://capacitorjs.com/docs/config).
+If, instead, you want to show the splash screen for a fixed amount of time, set `launchShowDuration` in your [Capacitor configuration file](https://capacitorjs.com/docs/v3/config).
 
 
 ## Background Color
@@ -54,7 +54,7 @@ Possible values for `backgroundColor` are either `#RRGGBB` or `#RRGGBBAA`.
 
 ## Spinner
 
-If you want to show a spinner on top of the splash screen, set `showSpinner` to `true` in your [Capacitor configuration file](https://capacitorjs.com/docs/config).
+If you want to show a spinner on top of the splash screen, set `showSpinner` to `true` in your [Capacitor configuration file](https://capacitorjs.com/docs/v3/config).
 
 You can customize the appearance of the spinner with the following configuration.
 

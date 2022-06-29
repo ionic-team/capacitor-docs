@@ -9,7 +9,7 @@ slug: /plugins/tutorial/code-abstraction-patterns
 
 # Capacitor Plugin Abstraction Patterns
 
-Plugins that get built for Capacitor can vary in complexity. Let’s use the <a href="https://capacitorjs.com/docs/plugins" target="_blank">Official Capacitor Plugins</a> as an example: the Android implementation of the <a href="https://github.com/ionic-team/capacitor-plugins/blob/main/toast/android/src/main/java/com/capacitorjs/plugins/toast/Toast.java" target="_blank">Toast plugin</a> is simple, while <a href="https://github.com/ionic-team/capacitor-plugins/tree/main/push-notifications/android/src/main/java/com/capacitorjs/plugins/pushnotifications" target="_blank">Push Notifications</a> is quite complex with multiple files.
+Plugins that get built for Capacitor can vary in complexity. Let’s use the <a href="https://capacitorjs.com/docs/v3/plugins" target="_blank">Official Capacitor Plugins</a> as an example: the Android implementation of the <a href="https://github.com/ionic-team/capacitor-plugins/blob/main/toast/android/src/main/java/com/capacitorjs/plugins/toast/Toast.java" target="_blank">Toast plugin</a> is simple, while <a href="https://github.com/ionic-team/capacitor-plugins/tree/main/push-notifications/android/src/main/java/com/capacitorjs/plugins/pushnotifications" target="_blank">Push Notifications</a> is quite complex with multiple files.
 
 Depending on the plugin’s complexity and requirements, it would not be a stretch to scope the work required to build a plugin as its own software project, specifically if implementing requirements vary between iOS and Android.
 

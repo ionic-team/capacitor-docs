@@ -38,7 +38,7 @@ Appflow provides frequently updated, managed iOS and Android build environments.
 
 For Capacitor developers, Appflow also offers the ability to push real-time updates to apps without app store submission, as long as those updates are at the JS/HTML/CSS layer of an app.
 
-For more details, see the [Appflow Documentation](https://ionicframework.com/docs/appflow).
+For more details, see the [Appflow Documentation](https://ionicframework.com/docs/v3/appflow).
 
 ## Using a traditional CI/CD service with Appflow
 

@@ -13,7 +13,7 @@ The `ScreenOrientation` plugin is functionally complete and integrated into the 
 
 Let’s go ahead and package the plugin for publishing to make the `ScreenOrientation` plugin globally available.
 
-> **Note:** This section references steps and procedures from the <a href="https://capacitorjs.com/docs/plugins/creating-plugins" target="_blank">Creating Capacitor Plugins</a> portion of the Capacitor documentation. Please refer to the documentation for details beyond the scope of this tutorial.
+> **Note:** This section references steps and procedures from the <a href="https://capacitorjs.com/docs/v3/plugins/creating-plugins" target="_blank">Creating Capacitor Plugins</a> portion of the Capacitor documentation. Please refer to the documentation for details beyond the scope of this tutorial.
 
 ## Generating a new plugin project
 
@@ -57,7 +57,7 @@ Finally, let’s verify that no issues occurred when porting over the code by ru
 npm run verify
 ```
 
-> **Note:** You can test the plugin before publishing it by linking the plugin folder to a Capacitor project. See <a href="https://capacitorjs.com/docs/plugins/workflow#local-testing" target="_blank">Plugin Development Workflow</a> for details.
+> **Note:** You can test the plugin before publishing it by linking the plugin folder to a Capacitor project. See <a href="https://capacitorjs.com/docs/v3/plugins/workflow#local-testing" target="_blank">Plugin Development Workflow</a> for details.
 
 ## Update the plugin documentation
 
