@@ -1,13 +1,13 @@
 ---
 title: Cordova Plugins
-description: Using Cordova Plugins and Ionic Native
+description: Using Cordova Plugins
 sidebar_label: Cordova Plugins
 slug: /plugins/cordova
 ---
 
-# Cordova Plugins and Ionic Native
+# Cordova Plugins
 
-When developing an app that uses Capacitor, it's possible to use both Cordova and Ionic Native plugins.
+When developing an app that uses Capacitor, it's possible to use Cordova plugins.
 
 ## Installing Cordova Plugins
 
@@ -20,10 +20,10 @@ npm install cordova-plugin-name
 npx cap sync
 ```
 
-> If the Cordova plugin has an [Ionic Native](https://ionicframework.com/docs/native) wrapper, you can also install it for TypeScript support:
+> If the Cordova plugin has an [`@awesome-cordova-plugins`](https://ionicframework.com/docs/native) wrapper, you can also install it for TypeScript support:
 >
 > ```bash
-> npm install @ionic-native/plugin-name
+> npm install @awesome-cordova-plugins/plugin-name
 > ```
 
 ## Updating Cordova Plugins

@@ -127,20 +127,6 @@ module.exports = {
           position: 'right',
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
-          dropdownItemsBefore: [],
-          dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/translate',
-              label: 'Translate',
-              target: '_blank',
-              rel: null,
-            },
-          ],
-          className: 'icon-link language navbar__item',
-        },
-        {
           type: 'iconLink',
           position: 'right',
           icon: {
