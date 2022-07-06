@@ -54,8 +54,6 @@ Network security deals with making sure network requests are to trusted endpoint
 
 Apps should only make requests to SSL-enabled endpoints. This means never make request to endpoints with `http://`, but rather always use `https://`. This makes sure data is never sent in plain text.
 
-However, this by itself isn't enough. To avoid possible [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks, SSL certificates should be pinned so only known certificates are accepted. This must be done natively and on both the client and server. Today, the [cordova-plugin-advanced-http](https://github.com/silkimen/cordova-plugin-advanced-http) plugin supports this and there may be other plugins that do as well.
-
 ## Web View Security
 
 ### Content Security Policy
