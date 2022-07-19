@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 
 const BASE_URL = '/docs';
 
+// comment to push
 module.exports = {
   title: 'Capacitor Documentation',
   tagline:
