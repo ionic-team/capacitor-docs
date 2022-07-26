@@ -156,6 +156,19 @@ module.exports = {
             target: '_blank',
           },
         },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+          dropdownItemsAfter: [
+            {
+              to: 'https://capacitorjs.jp/',
+              label: '日本語',
+              target: '_blank',
+              rel: null,
+            },
+          ],
+          className: 'icon-link language navbar__item',
+        },
       ],
     },
     tagManager: {
@@ -164,10 +177,7 @@ module.exports = {
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: [
-        'shell-session',
-        'http'
-      ],
+      additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {
       appId: 'O9QSL985BS',
