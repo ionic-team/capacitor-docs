@@ -180,9 +180,9 @@ module.exports = {
       additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {
-      appId: 'O9QSL985BS',
-      apiKey: 'ceb5366064b8fbf70959827cf9f69227',
-      indexName: 'ionicframework',
+      appId: '3IVALO5OU4',
+      apiKey: '8e1906b285e3adb69097c2d79722f8bd',
+      indexName: 'capacitorjs',
       contextualSearch: true,
     },
   },
