@@ -4,6 +4,9 @@ import fetch from 'node-fetch';
 
 const API_DIR = new URL('../docs/plugins/apis/', import.meta.url);
 
+// replace with latest once it's relased
+const tag = 'next';
+
 const pluginApis = [
   'action-sheet',
   'app',
@@ -21,12 +24,12 @@ const pluginApis = [
   'local-notifications',
   'motion',
   'network',
+  'preferences',
   'push-notifications',
   'screen-reader',
   'share',
   'splash-screen',
   'status-bar',
-  'storage',
   'text-zoom',
   'toast',
 ];
@@ -71,13 +74,14 @@ ${readme}`.trim();
 }
 
 async function getReadme(pluginId) {
-  const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}/README.md`;
+  const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/README.md`;
   const rsp = await fetch(url);
   return rsp.text();
 }
 
 async function getPkgJsonData(pluginId) {
-  const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}/package.json`;
+  const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/package.json`;
+  console.log('url',url);
   const rsp = await fetch(url);
   return rsp.json();
 }
