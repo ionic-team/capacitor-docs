@@ -226,7 +226,7 @@ module.exports = {
         lastVersion: 'current',
         versions: {
           current: {
-            label: 'v4 (beta)',
+            label: 'v4',
             banner: 'none',
           },
         },
