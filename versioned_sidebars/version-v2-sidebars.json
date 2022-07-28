@@ -82,10 +82,7 @@
       "type": "category",
       "label": "Web/PWA",
       "collapsed": false,
-      "items": [
-        "version-v2/web/index",
-        "version-v2/web/pwa-elements"
-      ]
+      "items": ["version-v2/web/index", "version-v2/web/pwa-elements"]
     }
   ],
 
@@ -94,11 +91,7 @@
       "type": "category",
       "label": "Overview",
       "collapsed": false,
-      "items": [
-        "version-v2/plugins/index",
-        "version-v2/plugins/community",
-        "version-v2/plugins/enterprise"
-      ]
+      "items": ["version-v2/plugins", "version-v2/plugins/community", "version-v2/plugins/enterprise"]
     },
     {
       "type": "category",
