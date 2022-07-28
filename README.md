@@ -8,3 +8,4 @@ The official (eventual) [Capacitor](https://capacitorjs.com) documentation, buil
 
 - [Contributing Guide](./CONTRIBUTING.md) :flashlight: 
 <!-- - [Project Board](https://github.com/ionic-team/ionic-docs/projects/3) :pushpin: -->
+
