@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
-const API_DIR = new URL('../docs/plugins/apis/', import.meta.url);
+const API_DIR = new URL('../docs/apis/', import.meta.url);
 
 // replace with latest once it's relased
 const tag = 'next';
@@ -35,10 +35,7 @@ const pluginApis = [
 ];
 
 async function buildPluginApiDocs(pluginId) {
-  const [readme, pkgJson] = await Promise.all([
-    getReadme(pluginId),
-    getPkgJsonData(pluginId),
-  ]);
+  const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
   const apiContent = createApiPage(pluginId, readme, pkgJson);
   const fileName = `${pluginId}.md`;
@@ -48,18 +45,13 @@ async function buildPluginApiDocs(pluginId) {
 
 function createApiPage(pluginId, readme, pkgJson) {
   const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
-  const desc = pkgJson.description
-    ? pkgJson.description.replace(/\n/g, ' ')
-    : title;
+  const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/README.md`;
   const editApiUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
   const sidebarLabel = toTitleCase(pluginId);
 
   // removes JSDoc HTML comments as they break docusauurs
-  readme = readme.replaceAll(
-    /<!--.*-->/g,
-    '',
-  );
+  readme = readme.replaceAll(/<!--.*-->/g, '');
 
   return `
 ---
@@ -81,7 +73,7 @@ async function getReadme(pluginId) {
 
 async function getPkgJsonData(pluginId) {
   const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/package.json`;
-  console.log('url',url);
+  console.log('url', url);
   const rsp = await fetch(url);
   return rsp.json();
 }
