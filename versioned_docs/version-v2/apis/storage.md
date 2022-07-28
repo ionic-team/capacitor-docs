@@ -9,8 +9,6 @@ canonicalUrl: https://capacitorjs.com/docs/apis/storage
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Storage
-
 The Storage API provides a key-value store for simple data.
 
 Mobile OS's may periodically clear data set in `window.localStorage`, so this API should be used instead of `window.localStorage`. This API will fall back to using `localStorage` when running as a Progressive Web App.
@@ -19,15 +17,11 @@ On iOS this plugin will use [UserDefaults](https://developer.apple.com/documenta
 
 Note: this API is not meant for high-performance data storage applications. Take a look at using SQLite or a separate data engine if your application will store a lot of items, have high read/write load, or require complex querying.
 
-
-
 - [`get(...)`](#get)
 - [`set(...)`](#set)
 - [`remove(...)`](#remove)
 - [`clear()`](#clear)
 - [`keys()`](#keys)
-
-
 
 ## Working with JSON
 
@@ -88,9 +82,6 @@ async clear() {
 ```
 
 ## API
-
-
-
 
 ### get(...)
 
@@ -157,5 +148,3 @@ Return the list of known keys
 **Returns:** <code>Promise&lt;{ keys: string[]; }&gt;</code>
 
 ---
-
-

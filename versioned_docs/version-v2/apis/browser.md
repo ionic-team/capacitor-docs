@@ -9,10 +9,6 @@ canonicalUrl: https://capacitorjs.com/docs/apis/browser
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Browser
-
-
-
 - [`open(...)`](#open)
 - [`prefetch(...)`](#prefetch)
 - [`close()`](#close)
@@ -20,8 +16,6 @@ canonicalUrl: https://capacitorjs.com/docs/apis/browser
 - [`addListener(...)`](#addlistener)
 - [`removeAllListeners()`](#removealllisteners)
 - [Interfaces](#interfaces)
-
-
 
 The Browser API makes it easy to open an in-app browser session to show external web content,
 handle authentication flows, and more.
@@ -37,9 +31,6 @@ await Browser.open({ url: 'http://capacitorjs.com/' });
 ```
 
 ## API
-
-
-
 
 ### open(...)
 
@@ -144,5 +135,3 @@ Remove all native listeners for this plugin
 | Prop         | Type                       |
 | ------------ | -------------------------- |
 | **`remove`** | <code>() =&gt; void</code> |
-
-

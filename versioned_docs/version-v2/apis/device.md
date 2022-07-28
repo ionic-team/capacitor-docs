@@ -9,19 +9,13 @@ canonicalUrl: https://capacitorjs.com/docs/apis/device
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Device
-
 The Device API exposes internal information about the device, such as the model and operating system version, along with user information
 such as unique ids.
-
-
 
 - [`getInfo()`](#getinfo)
 - [`getBatteryInfo()`](#getbatteryinfo)
 - [`getLanguageCode()`](#getlanguagecode)
 - [Interfaces](#interfaces)
-
-
 
 ## Example
 
@@ -62,9 +56,6 @@ console.log(info);
 ```
 
 ## API
-
-
-
 
 ### getInfo()
 
@@ -136,5 +127,3 @@ Get the device's current language locale code
 | Prop        | Type                |
 | ----------- | ------------------- |
 | **`value`** | <code>string</code> |
-
-

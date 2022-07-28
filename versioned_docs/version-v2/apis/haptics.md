@@ -9,11 +9,7 @@ canonicalUrl: https://capacitorjs.com/docs/apis/haptics
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Haptics
-
 The Haptics API provides physical feedback to the user through touch or vibration.
-
-
 
 - [`impact(...)`](#impact)
 - [`notification(...)`](#notification)
@@ -23,8 +19,6 @@ The Haptics API provides physical feedback to the user through touch or vibratio
 - [`selectionEnd()`](#selectionend)
 - [Interfaces](#interfaces)
 - [Enums](#enums)
-
-
 
 ## Android Notes
 
@@ -75,9 +69,6 @@ export class HapticsExample {
 ```
 
 ## API
-
-
-
 
 ### impact(...)
 
@@ -181,5 +172,3 @@ For example, call this when a user has lifted their finger from a control
 | **`SUCCESS`** | <code>"SUCCESS"</code> |
 | **`WARNING`** | <code>"WARNING"</code> |
 | **`ERROR`**   | <code>"ERROR"</code>   |
-
-
