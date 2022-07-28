@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 const API_DIR = new URL('../docs/apis/', import.meta.url);
 
 // replace with latest once it's relased
-const tag = 'next';
+const tag = 'latest';
 
 const pluginApis = [
   'action-sheet',
@@ -73,7 +73,6 @@ async function getReadme(pluginId) {
 
 async function getPkgJsonData(pluginId) {
   const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/package.json`;
-  console.log('url', url);
   const rsp = await fetch(url);
   return rsp.json();
 }
