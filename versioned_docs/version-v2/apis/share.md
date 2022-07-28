@@ -9,18 +9,12 @@ canonicalUrl: https://capacitorjs.com/docs/apis/share
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Share
-
 The Share API provides methods for sharing content in any sharing-enabled apps the user may have installed.
 
 The Share API works on iOS, Android, and the Web (using the new [Web Share API](https://developers.google.com/web/updates/2016/09/navigator-share)), though web support is currently spotty.
 
-
-
 - [`share(...)`](#share)
 - [Interfaces](#interfaces)
-
-
 
 ## Example
 
@@ -39,9 +33,6 @@ let shareRet = await Share.share({
 Each platform uses a different set of fields, but you should supply them all.
 
 ## API
-
-
-
 
 ### share(...)
 
@@ -69,5 +60,3 @@ Show a Share modal for sharing content in your app with other apps
 | **`text`**        | <code>string</code> | Set some text to share                                                    |
 | **`url`**         | <code>string</code> | Set a URL to share, can be http, https or file URL                        |
 | **`dialogTitle`** | <code>string</code> | Set a title for the share modal. Android only                             |
-
-

@@ -9,19 +9,13 @@ canonicalUrl: https://capacitorjs.com/docs/apis/geolocation
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Geolocation
-
 The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along
 with altitude, heading, and speed information if available.
-
-
 
 - [`getCurrentPosition(...)`](#getcurrentposition)
 - [`watchPosition(...)`](#watchposition)
 - [`clearWatch(...)`](#clearwatch)
 - [Interfaces](#interfaces)
-
-
 
 ## iOS Notes
 
@@ -70,9 +64,6 @@ class GeolocationExample {
 ```
 
 ## API
-
-
-
 
 ### getCurrentPosition(...)
 
@@ -138,5 +129,3 @@ Clear a given watch
 | **`enableHighAccuracy`** | <code>boolean</code> |
 | **`timeout`**            | <code>number</code>  |
 | **`maximumAge`**         | <code>number</code>  |
-
-

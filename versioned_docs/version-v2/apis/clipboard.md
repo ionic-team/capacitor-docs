@@ -9,18 +9,12 @@ canonicalUrl: https://capacitorjs.com/docs/apis/clipboard
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Clipboard
-
 The Clipboard API enables copy and pasting to/from the clipboard. On iOS this API also allows
 copying images and URLs.
-
-
 
 - [`write(...)`](#write)
 - [`read()`](#read)
 - [Interfaces](#interfaces)
-
-
 
 ## Example
 
@@ -38,9 +32,6 @@ console.log('Got', result.type, 'from clipboard:', result.value);
 ```
 
 ## API
-
-
-
 
 ### write(...)
 
@@ -85,5 +76,3 @@ Read a value from the clipboard (the "paste" action)
 | ----------- | ------------------- |
 | **`value`** | <code>string</code> |
 | **`type`**  | <code>string</code> |
-
-

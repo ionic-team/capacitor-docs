@@ -8,12 +8,8 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Modals
-
 The Modals API provides methods for triggering native modal windows for alerts, confirmations, and input prompts, as
 well as Action Sheets.
-
-
 
 - [`alert(...)`](#alert)
 - [`prompt(...)`](#prompt)
@@ -21,8 +17,6 @@ well as Action Sheets.
 - [`showActions(...)`](#showactions)
 - [Interfaces](#interfaces)
 - [Enums](#enums)
-
-
 
 ## Example
 
@@ -76,9 +70,6 @@ async showActions() {
 ```
 
 ## API
-
-
-
 
 ### alert(...)
 
@@ -217,5 +208,3 @@ to select.
 | **`Default`**     | <code>"DEFAULT"</code>     |
 | **`Destructive`** | <code>"DESTRUCTIVE"</code> |
 | **`Cancel`**      | <code>"CANCEL"</code>      |
-
-

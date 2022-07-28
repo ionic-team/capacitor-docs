@@ -9,18 +9,12 @@ canonicalUrl: https://capacitorjs.com/docs/apis/network
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Network
-
 The Network API provides events for monitoring network status changes, along with querying the current state of the network.
-
-
 
 - [`getStatus()`](#getstatus)
 - [`addListener(...)`](#addlistener)
 - [`removeAllListeners()`](#removealllisteners)
 - [Interfaces](#interfaces)
-
-
 
 ## Example
 
@@ -56,9 +50,6 @@ The Network API requires the following permission be added to your `AndroidManif
 This permission allows the app to access information about the current network, such as whether it is connected to wifi or cellular.
 
 ## API
-
-
-
 
 ### getStatus()
 
@@ -113,5 +104,3 @@ Remove all native listeners for this plugin
 | Prop         | Type                       |
 | ------------ | -------------------------- |
 | **`remove`** | <code>() =&gt; void</code> |
-
-

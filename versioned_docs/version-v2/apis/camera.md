@@ -9,18 +9,12 @@ canonicalUrl: https://capacitorjs.com/docs/apis/camera
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Camera
-
 The Camera API allows a user to pick a photo from their photo album or take a picture. On iOS, this uses `UIImagePickerController`, and on Android this
 API sends an intent which will be handled by the core Camera app by default.
-
-
 
 - [`getPhoto(...)`](#getphoto)
 - [Interfaces](#interfaces)
 - [Enums](#enums)
-
-
 
 ## iOS Notes
 
@@ -85,9 +79,6 @@ async takePicture() {
 [Building an Ionic Framework Camera App](/docs/guides/ionic-framework-app)
 
 ## API
-
-
-
 
 ### getPhoto(...)
 
@@ -164,5 +155,3 @@ with the camera.
 | ----------- | -------------------- |
 | **`Rear`**  | <code>"REAR"</code>  |
 | **`Front`** | <code>"FRONT"</code> |
-
-

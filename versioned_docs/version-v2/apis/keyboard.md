@@ -9,11 +9,7 @@ canonicalUrl: https://capacitorjs.com/docs/apis/keyboard
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Keyboard
-
 The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
-
-
 
 - [`show()`](#show)
 - [`hide()`](#hide)
@@ -28,8 +24,6 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 - [`removeAllListeners()`](#removealllisteners)
 - [Interfaces](#interfaces)
 - [Enums](#enums)
-
-
 
 ## Window Events for cordova-plugin-ionic-keyboard compatibility
 
@@ -65,11 +59,11 @@ Keyboard.addListener('keyboardDidHide', () => {
 
 // window events
 
-window.addEventListener('keyboardWillShow', e => {
+window.addEventListener('keyboardWillShow', (e) => {
   console.log('keyboard will show with height', (<any>e).keyboardHeight);
 });
 
-window.addEventListener('keyboardDidShow', e => {
+window.addEventListener('keyboardDidShow', (e) => {
   console.log('keyboard did show with height', (<any>e).keyboardHeight);
 });
 
@@ -116,9 +110,6 @@ The keyboard plugin allows the following configuration values to be added in `ca
 ```
 
 ## API
-
-
-
 
 ### show()
 
@@ -310,5 +301,3 @@ Remove all native listeners for this plugin
 | **`Ionic`**  | <code>"ionic"</code>  |
 | **`Native`** | <code>"native"</code> |
 | **`None`**   | <code>"none"</code>   |
-
-

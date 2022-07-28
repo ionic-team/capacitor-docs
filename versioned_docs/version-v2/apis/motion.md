@@ -9,18 +9,12 @@ canonicalUrl: https://capacitorjs.com/docs/apis/motion
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Motion
-
 The Motion API tracks accelerometer and device orientation (compass heading, etc.)
-
-
 
 - [`addListener(...)`](#addlistener)
 - [`addListener(...)`](#addlistener)
 - [`removeAllListeners()`](#removealllisteners)
 - [Interfaces](#interfaces)
-
-
 
 ## Permissions
 
@@ -37,7 +31,7 @@ myButton.addEventListener('click', async () => {
 
   // Once the user approves, can start listening:
   const { Motion } = Capacitor.Plugins;
-  Capacitor.Plugins.Motion.addListener('accel', event => {});
+  Capacitor.Plugins.Motion.addListener('accel', (event) => {});
 });
 ```
 
@@ -45,15 +39,12 @@ myButton.addEventListener('click', async () => {
 
 ```typescript
 const { Motion } = Capacitor.Plugins;
-Motion.addListener('accel', event => {});
+Motion.addListener('accel', (event) => {});
 ```
 
 See the [DeviceMotionEvent](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) API to understand the data supplied in `event`.
 
 ## API
-
-
-
 
 ### addListener(...)
 
@@ -123,5 +114,3 @@ Remove all native listeners for this plugin
 | **`alpha`** | <code>number</code> |
 | **`beta`**  | <code>number</code> |
 | **`gamma`** | <code>number</code> |
-
-

@@ -9,16 +9,10 @@ canonicalUrl: https://capacitorjs.com/docs/apis/toast
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Toast
-
 The Toast API provides a notification pop up for displaying important information to a user. Just like real toast!
-
-
 
 - [`show(...)`](#show)
 - [Interfaces](#interfaces)
-
-
 
 ## PWA Notes
 
@@ -38,9 +32,6 @@ async show() {
 ```
 
 ## API
-
-
-
 
 ### show(...)
 
@@ -63,5 +54,3 @@ show(options: ToastShowOptions) => Promise<void>
 | **`text`**     | <code>string</code>                        |                                                                            |
 | **`duration`** | <code>"short" \| "long"</code>             | Duration of the toast, either 'short' (2000ms, default) or 'long' (3500ms) |
 | **`position`** | <code>"center" \| "bottom" \| "top"</code> |                                                                            |
-
-

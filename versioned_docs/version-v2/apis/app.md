@@ -9,14 +9,10 @@ canonicalUrl: https://capacitorjs.com/docs/apis/app
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# App
-
 The App API handles high level App state and events.
 
 For example, this API emits events when the app enters and leaves the foreground, handles
 deeplinks, opens other apps, and manages persisted plugin state.
-
-
 
 - [`exitApp()`](#exitapp)
 - [`canOpenUrl(...)`](#canopenurl)
@@ -29,8 +25,6 @@ deeplinks, opens other apps, and manages persisted plugin state.
 - [`addListener(...)`](#addlistener)
 - [`removeAllListeners()`](#removealllisteners)
 - [Interfaces](#interfaces)
-
-
 
 ## Note about `canOpenUrl`
 
@@ -88,9 +82,6 @@ Once you have that result (if any), you can update the UI to restore a logical e
 We recommend every Android app using plugins that rely on external Activities (for example, Camera) to have this event and process handled.
 
 ## API
-
-
-
 
 ### exitApp()
 
@@ -283,5 +274,3 @@ Remove all native listeners for this plugin
 | **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` |
 | **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded                                                                                                   |
 | **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message                                                                              |
-
-

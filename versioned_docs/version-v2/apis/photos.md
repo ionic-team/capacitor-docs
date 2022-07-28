@@ -8,14 +8,9 @@ contributors:
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Photos
-
 The Photos API provides methods to load photos and albums from the user's photo library, along with saving photos.
 
 ## API
-
-
-
 
 ### getPhotos(...)
 
@@ -170,5 +165,3 @@ Create an album in the user's photo library
 | **`Smart`**  | <code>"smart"</code>  | Album is a "smart" album (such as Favorites or Recently Added) |
 | **`Shared`** | <code>"shared"</code> | Album is a cloud-shared album                                  |
 | **`User`**   | <code>"user"</code>   | Album is a user-created album                                  |
-
-

@@ -9,11 +9,7 @@ canonicalUrl: https://capacitorjs.com/docs/apis/filesystem
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Filesystem
-
 The Filesystem API provides a NodeJS-like API for working with files on the device.
-
-
 
 - [`readFile(...)`](#readfile)
 - [`writeFile(...)`](#writefile)
@@ -28,8 +24,6 @@ The Filesystem API provides a NodeJS-like API for working with files on the devi
 - [`copy(...)`](#copy)
 - [Interfaces](#interfaces)
 - [Enums](#enums)
-
-
 
 ## Understanding Directories and Files
 
@@ -169,9 +163,6 @@ async copy() {
 ```
 
 ## API
-
-
-
 
 ### readFile(...)
 
@@ -498,5 +489,3 @@ Copy a file or directory
 | **`UTF8`**  | <code>"utf8"</code>  |
 | **`ASCII`** | <code>"ascii"</code> |
 | **`UTF16`** | <code>"utf16"</code> |
-
-
