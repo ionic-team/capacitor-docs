@@ -1,6 +1,18 @@
 {
+  "headers": [
+    {
+      "source": "/ds-test",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ],
   "redirects": [
-    { "source": "/", "destination": "/docs" }
+    { "source": "/", "destination": "/docs" },
+    { "source": "/docs/apis/storage", "destination": "/docs/apis/preferences" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },
