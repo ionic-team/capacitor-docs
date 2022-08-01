@@ -18,18 +18,18 @@ Since Capacitor apps run primarily in a web view or browser, Web APIs for storag
 
 Local Storage can be used for small amounts of temporary data, such as a user id, but _must be considered transient_, meaning your app needs to expect that the data will be lost eventually. This is because the OS will reclaim local storage from Web Views if a device is running low on space. The same can be said for IndexedDB at least on iOS (on Android, the [persisted storage API](https://web.dev/persistent-storage/) is available to mark IndexedDB as persisted). Read more on [data storage eviction policies](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria) in the browser.
 
-## Capacitor Storage API
+## Capacitor Preferences API
 
-Capacitor comes with a native [Storage API](/docs/apis/storage) that avoids the eviction issues above, but is meant for small amounts of data.
+Capacitor comes with a native [Preferences API](/docs/apis/preferences) that avoids the eviction issues above, but is meant for small amounts of data.
 
-The Storage API provides a simple key/value API with no advanced query support:
+The Preferences API provides a simple key/value API with no advanced query support:
 
 ```typescript
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 
 // JSON "set" example
 async setObject() {
-  await Storage.set({
+  await Preferences.set({
     key: 'user',
     value: JSON.stringify({
       id: 1,
@@ -40,7 +40,7 @@ async setObject() {
 
 // JSON "get" example
 async getObject() {
-  const ret = await Storage.get({ key: 'user' });
+  const ret = await Preferences.get({ key: 'user' });
   const user = JSON.parse(ret.value);
 }
 ```
