@@ -62,8 +62,8 @@ In your app's `MainActivity.java`, use `registerPlugin()` or `registerPlugins()`
  public class MainActivity extends BridgeActivity {
      @Override
      public void onCreate(Bundle savedInstanceState) {
-         super.onCreate(savedInstanceState);
 +        registerPlugin(EchoPlugin.class);
+         super.onCreate(savedInstanceState);
      }
  }
 ```
