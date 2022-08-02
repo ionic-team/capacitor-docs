@@ -46,6 +46,8 @@ bridge.triggerJSEvent("myCustomEvent", "window");
 bridge.triggerJSEvent("myCustomEvent", "document", "{ 'dataKey': 'dataValue' }");
 ```
 
+Note: `data` must be a serialized JSON string value.
+
 ---
 
 ## Passing data

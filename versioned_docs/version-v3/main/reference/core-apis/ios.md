@@ -74,8 +74,10 @@ Examples:
 
 ```swift
 bridge.triggerJSEvent(eventName: "myCustomEvent", target: "window")
-bridge.triggerJSEvent(eventName: "myCustomEvent", target: "document", data: "my custom data")
+bridge.triggerJSEvent(eventName: "myCustomEvent", target: "document", data: "{ 'dataKey': 'dataValue' }")
 ```
+
+Note: `data` must be a serialized JSON string value.
 
 ---
 

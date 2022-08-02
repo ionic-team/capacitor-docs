@@ -253,6 +253,8 @@ window.addEventListener('myCustomEvent', function () {
 });
 ```
 
+Note: `data` must be a serialized JSON string value.
+
 #### Plugin Events
 
 Plugins can emit their own events that you can listen by attaching a listener to the plugin Object like this:
