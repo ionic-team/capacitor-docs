@@ -155,17 +155,17 @@ Capacitor provides all this functions to fire events:
 //If you want to provide the target
 self.bridge.triggerJSEvent(eventName: "myCustomEvent", target: "window")
 
-self.bridge.triggerJSEvent(eventName: "myCustomEvent", target: "document", data: "my custom data")
+self.bridge.triggerJSEvent(eventName: "myCustomEvent", target: "document", data: "{ 'dataKey': 'dataValue' }")
 
 // Window Events
 self.bridge.triggerWindowJSEvent(eventName: "myCustomEvent")
 
-self.bridge.triggerWindowJSEvent(eventName: "myCustomEvent", data: "my custom data")
+self.bridge.triggerWindowJSEvent(eventName: "myCustomEvent", data: "{ 'dataKey': 'dataValue' }")
 
 // Document events
 self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent")
 
-self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent", data: "my custom data")
+self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent", data: "{ 'dataKey': 'dataValue' }")
 ```
 
 And to listen for it, just use regular javascript:
@@ -175,6 +175,8 @@ window.addEventListener('myCustomEvent', function () {
   console.log('myCustomEvent was fired');
 });
 ```
+
+Note: `data` must be a serialized JSON string value.
 
 #### Plugin Events
 
