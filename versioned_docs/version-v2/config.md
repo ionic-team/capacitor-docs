@@ -18,7 +18,7 @@ Here is a full example of available configuration options for `capacitor.config.
   // The package name for Android and the bundle identifier for iOS.
   "appId": "com.company.appname",
 
-  // Your app"s name.
+  // Your app's name.
   "appName": "Capacitor Kitchen Sink",
 
   // Sets the directory of your built web assets. This is the directory that will be
