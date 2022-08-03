@@ -89,7 +89,7 @@
       "label": "Reference",
       "collapsed": false,
       "items": [
-        "version-v2/config/index",
+        "version-v2/config",
         {
           "type": "link",
           "label": "CLI",
