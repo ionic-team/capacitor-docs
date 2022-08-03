@@ -39,7 +39,7 @@ Here is a full example of available configuration options for `capacitor.config.
   // On Windows, we aren't able to automatically open Android Studio
   // without knowing the full path. The default is set to the default
   // Android Studio install path, but you may change it manually.
-  "windowsAndroidStudioPath": "C:Program FilesAndroidAndroid Studio\binstudio64.exe",
+  "windowsAndroidStudioPath": "C:\\Program Files\Android\Android Studio\binstudio64.exe",
 
   // A Boolean value that determines whether to hide native logs for iOS and Android. The preference is ignored if it's also declared inside ios or android
   // Default is false
