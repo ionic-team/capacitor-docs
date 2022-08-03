@@ -33,7 +33,7 @@ Here is a full example of available configuration options for `capacitor.config.
   // typescript/babel/webpack/rollup workflow.
   //
   // The starter project sets this to true, but if you"re using Ionic or another framework,
-  // you"ll probably want this to be false (default is false)
+  // you'll probably want this to be false (default is false)
   "bundledWebRuntime": false,
 
   // On Windows, we aren"t able to automatically open Android Studio
@@ -41,7 +41,7 @@ Here is a full example of available configuration options for `capacitor.config.
   // Android Studio install path, but you may change it manually.
   "windowsAndroidStudioPath": "C:Program FilesAndroidAndroid Studio\binstudio64.exe",
 
-  // A Boolean value that determines whether to hide native logs for iOS and Android. The preference is ignored if it"s also declared inside ios or android
+  // A Boolean value that determines whether to hide native logs for iOS and Android. The preference is ignored if it's also declared inside ios or android
   // Default is false
   "hideLogs": true,
 
@@ -49,7 +49,7 @@ Here is a full example of available configuration options for `capacitor.config.
   "server": {
     // You can make the app to load an external url (i.e. to live reload)
     "url": "http://192.168.1.33:8100",
-    // You can configure the local hostname, but it"s recommended to keep localhost
+    // You can configure the local hostname, but it's recommended to keep localhost
     // as it allows to run web APIs that require a secure context such as
     // navigator.geolocation and MediaDevices.getUserMedia.
     "hostname": "app",
@@ -79,7 +79,7 @@ Here is a full example of available configuration options for `capacitor.config.
     // protocol, you need to enable mixed content mode to allow the WebView to load
     // files from different schemes such as capacitor-content:// or capacitor-file://
     "allowMixedContent": true,
-    // Android"s default keyboard doesn"t allow proper JS key capture
+    // Android's default keyboard doesn"t allow proper JS key capture
     // You can use a simpler keyboard enabling this preference
     // Be aware that this keyboard has some problems and limitations
     "captureInput": true,
@@ -100,7 +100,7 @@ Here is a full example of available configuration options for `capacitor.config.
     "appendUserAgent": "string to append for iOS",
     // Background color of Capacitor WebView for iOS only
     "backgroundColor": "#ffffff",
-    // Configure the WebView"s UIScrollView"s content inset behavior
+    // Configure the WebView's UIScrollView's content inset behavior
     // Default is never
     // Possible values are "automatic", "scrollableAxes", "never" and "always"
     // https://developer.apple.com/documentation/uikit/uiscrollview/contentinsetadjustmentbehavior
