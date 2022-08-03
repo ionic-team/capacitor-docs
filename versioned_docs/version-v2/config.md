@@ -32,11 +32,11 @@ Here is a full example of available configuration options for `capacitor.config.
   // or require it to be bundled/imported through a typical
   // typescript/babel/webpack/rollup workflow.
   //
-  // The starter project sets this to true, but if you"re using Ionic or another framework,
+  // The starter project sets this to true, but if you're using Ionic or another framework,
   // you'll probably want this to be false (default is false)
   "bundledWebRuntime": false,
 
-  // On Windows, we aren"t able to automatically open Android Studio
+  // On Windows, we aren't able to automatically open Android Studio
   // without knowing the full path. The default is set to the default
   // Android Studio install path, but you may change it manually.
   "windowsAndroidStudioPath": "C:Program FilesAndroidAndroid Studio\binstudio64.exe",
@@ -79,7 +79,7 @@ Here is a full example of available configuration options for `capacitor.config.
     // protocol, you need to enable mixed content mode to allow the WebView to load
     // files from different schemes such as capacitor-content:// or capacitor-file://
     "allowMixedContent": true,
-    // Android's default keyboard doesn"t allow proper JS key capture
+    // Android's default keyboard doesn't allow proper JS key capture
     // You can use a simpler keyboard enabling this preference
     // Be aware that this keyboard has some problems and limitations
     "captureInput": true,
