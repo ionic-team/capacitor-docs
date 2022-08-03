@@ -1,10 +1,10 @@
 ---
-title": Capacitor Configuration File
-description": Configuring Capacitor
+title: Capacitor Configuration File
+description: Configuring Capacitor
 contributors:
   - mlynch
   - jcesarmobile
-canonicalUrl": https://capacitorjs.com/docs/config
+canonicalUrl: https://capacitorjs.com/docs/config
 ---
 
 # Configuration File
