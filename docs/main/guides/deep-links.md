@@ -209,7 +209,6 @@ An example of the `apple-app-site-association` file is below. Be sure to replace
 ```json
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
         "appID": "TEAMID.BUNDLEID",
@@ -313,7 +312,7 @@ The complete Activity should look similar to this:
 </activity>
 ```
 
-## Details: Website Configuration
+## Website Configuration
 
 Website configuration will vary based on the tools and backend used. A few suggestions are below.
 
