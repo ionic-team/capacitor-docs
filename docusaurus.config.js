@@ -32,7 +32,7 @@ module.exports = {
         alt: 'Site Logo',
         src: `/logos/capacitor-text-docs-light.svg`,
         srcDark: `/logos/capacitor-text-docs-dark.svg`,
-        href: '/',
+        href: 'https://capacitorjs.com',
         target: '_self',
         width: 200,
         height: 24,
