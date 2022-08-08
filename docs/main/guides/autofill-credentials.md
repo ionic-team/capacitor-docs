@@ -5,6 +5,8 @@ contributors:
   - dtarnawsky
 slug: /guides/autofill-credentials
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Auto Filling Credentials
 Android, iOS and the Web have built in password managers that will automatically detect username and password fields and securely store and recall these credentials.
@@ -15,43 +17,61 @@ In order for Apple and Google to autofill and save credentials, a two-way associ
 
 Your application will need an `ion-input` for the username and password which must use the attribute [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete). An example is shown below:
 
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }]}>
+<TabItem value="angular">
+
 ```html
 <form>
   <ion-list>
     <ion-item>
       <ion-label>E-Mail Address</ion-label>
-      <ion-input type="email" name="email" autocomplete="email" [(ngModel)]="email" required email></ion-input>
+      <ion-input appAutofill type="email" name="email" autocomplete="email" [(ngModel)]="email" required email></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Password</ion-label>
-      <ion-input type="password" name="password" autocomplete="current-password" required [(ngModel)]="password" id="pwd"></ion-input>
+      <ion-input appAutofill type="password" name="password" autocomplete="current-password" required [(ngModel)]="password"></ion-input>
     </ion-item>
   </ion-list>
   <ion-button type="submit">Submit</ion-button>
 </form>
 ```
 
-:::note
- The `autocomplete` attribute allows auto filling of credential types like `username`, `current-pasword`, `new-password`. It can also be used without this additional configuration for phone numbers, one time codes, credit card information and [more](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete). 
-:::
+Due to a [webkit bug](https://bugs.webkit.org/show_bug.cgi?id=226023) related to `ion-input` with automatic filling of fields you will need a workaround by copying this [this directive](https://gist.github.com/dtarnawsky/fc92869c1c67b9c74c66de8af3e081b2) into your code.
 
-### iOS Bug
-Due to a [webkit bug](https://bugs.webkit.org/show_bug.cgi?id=226023) with automatic filling of fields you will need a workaround:
+This [sample application](https://github.com/ionic-enterprise/cs-autofill-credendials) uses the techniques in this guide to allow auto filling of credentials on iOS, Android and the Web.
+</TabItem>
 
-For Angular users copy [this directive](https://gist.github.com/dtarnawsky/fc92869c1c67b9c74c66de8af3e081b2) into your code and use like:
+<TabItem value="javascript">
+
 ```html
-<ion-input appAutofill type="...
+<form (ngSubmit)="onSubmit()">
+  <ion-list>
+    <ion-item>
+      <ion-label>E-Mail Address</ion-label>
+      <ion-input type="email" name="email" autocomplete="email" required email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input id="pwd" type="password" name="password" autocomplete="current-password" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button type="submit">Submit</ion-button>
+</form>
 ```
 
-Alternatively, you can use the following code on display of your page to copy the value that was auto filled into the expected place:
-```typescript
+Due to a [webkit bug](https://bugs.webkit.org/show_bug.cgi?id=226023) related to `ion-input` with automatic filling of fields you will need this workaround code:
+```javascript
     document.getElementById('pwd').children[0].addEventListener('change', (e) => {
       this.password = (e.target as any).value;      
     });
 ```
+</TabItem>
+
+
+</Tabs>
 
 :::note
-A patch for this problem is [proposed](https://github.com/ionic-team/ionic-framework/discussions/25532) in Ionic Framework v7.
+ The `autocomplete` attribute allows auto filling of credential types like `username`, `current-pasword`, `new-password`. It can also be used without this additional configuration for phone numbers, one time codes, credit card information and [more](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete). 
 :::
 
 ## Set Capacitor Server Hostname
@@ -124,7 +144,7 @@ Branch provide a [tool](https://branch.io/resources/aasa-validator) that validat
 
 ### Save Credentials
 
-To control the saving of username and password credentials with the native iOS Password Manager you will need to use the `capacitor-ios-autofill-save-password` plugin:
+To control the saving of username and password credentials with the native iOS Password Manager you will need to use the [capacitor-ios-autofill-save-password](https://github.com/cuongpl/capacitor-ios-autofill-save-password) plugin:
 ```bash
 npm install capacitor-ios-autofill-save-password
 ```
@@ -160,10 +180,6 @@ Follow the [Deep Links Guide](deep-links#details-website-configuration) if you a
 If you have your app installed on a device, when you visit your website in iOS Safari you will see a banner at the top giving the option to open the app. Consider having a separate subdomain for your application if you want to avoid this behavior.
 
 ![iOS Safari](../../../static/img/v4/docs/guides/autofill-credentials/ios-safari.png)
-
-## Sample Source Code
-
-You are free to view [this repository](https://github.com/ionic-enterprise/cs-autofill-credendials) which is a Capacitor 4 project which uses the techniques in this guide to allow auto filling of credentials on iOS, Android and the Web.
 
 ## iOS Troubleshooting
 There are many ways to misconfigure an application that will cause it to not be able to save or recall credentials on iOS.
