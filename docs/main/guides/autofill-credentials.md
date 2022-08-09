@@ -44,7 +44,7 @@ This [sample application](https://github.com/ionic-enterprise/cs-autofill-creden
 <TabItem value="javascript">
 
 ```html
-<form (ngSubmit)="onSubmit()">
+<form>
   <ion-list>
     <ion-item>
       <ion-label>E-Mail Address</ion-label>
