@@ -33,12 +33,12 @@ The API documentation for these plugins can be found below.
 - [Local Notifications](/docs/apis/local-notifications)
 - [Motion](/docs/apis/motion)
 - [Network](/docs/apis/network)
+- [Preferences](/docs/apis/preferences)
 - [Push Notifications](/docs/apis/push-notifications)
 - [Screen Reader](/docs/apis/screen-reader)
 - [Share](/docs/apis/share)
 - [Splash Screen](/docs/apis/splash-screen)
 - [Status Bar](/docs/apis/status-bar)
-- [Storage](/docs/apis/storage)
 - [Text Zoom](/docs/apis/text-zoom)
 - [Toast](/docs/apis/toast)
 
