@@ -83,6 +83,19 @@
       "label": "Web/PWA",
       "collapsed": false,
       "items": ["version-v2/web/index", "version-v2/web/pwa-elements"]
+    },
+    {
+      "type": "category",
+      "label": "Reference",
+      "collapsed": false,
+      "items": [
+        "version-v2/config",
+        {
+          "type": "link",
+          "label": "CLI",
+          "href": "/docs/v2/cli/index"
+        }
+      ]
     }
   ],
 
