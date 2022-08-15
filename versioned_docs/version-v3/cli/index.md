@@ -26,13 +26,13 @@ npx cap [-V] [-h] [<command>]
 
 View all available CLI commands and options.
 
-- [`add`](/docs/v3/cli/add)
-- [`copy`](/docs/v3/cli/copy)
-- [`list`](/docs/v3/cli/list)
-- [`open`](/docs/v3/cli/open)
-- [`run`](/docs/v3/cli/run)
-- [`sync`](/docs/v3/cli/sync)
-- [`update`](/docs/v3/cli/update)
+- [`add`](/docs/v3/cli/commands/add)
+- [`copy`](/docs/v3/cli/commands/copy)
+- [`list`](/docs/v3/cli/commands/list)
+- [`open`](/docs/v3/cli/commands/open)
+- [`run`](/docs/v3/cli/commands/run)
+- [`sync`](/docs/v3/cli/commands/sync)
+- [`update`](/docs/v3/cli/commands/update)
 
 ## Additional Resources
 
