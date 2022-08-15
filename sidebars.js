@@ -54,6 +54,7 @@ module.exports = {
       items: [
         'main/guides/ads',
         'main/guides/angular',
+        'main/guides/autofill-credentials',
         'main/guides/automated-configuration',
         'main/guides/ci-cd',
         'main/guides/deep-links',
