@@ -181,7 +181,7 @@ module.exports = {
     },
     algolia: {
       appId: '3IVALO5OU4',
-      apiKey: '8e1906b285e3adb69097c2d79722f8bd',
+      apiKey: '5fdbbcbd186f2a1265494810dd0bf09c',
       indexName: 'capacitorjs',
       contextualSearch: true,
     },
