@@ -21,6 +21,7 @@ npx cap sync [options] [<platform>]
 <strong>Options:</strong>
 
 - `--deployment`: Podfile.lock won't be deleted and pod install will use `--deployment` option.
+- `--inline`: After syncing, all JS source maps will be inlined allowing for debugging an Android Web View in Chromium based browsers.
 
 ## Hooks
 
