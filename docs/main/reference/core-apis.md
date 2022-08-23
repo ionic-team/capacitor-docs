@@ -16,3 +16,5 @@ These docs are organized by platform.
 - [iOS](/docs/core-apis/ios)
 - [Android](/docs/core-apis/android)
 - [Web](/docs/core-apis/web)
+- [Data Types](/docs/core-apis/data-types)
+- [Saving Calls](/docs/core-apis/saving-calls)
