@@ -1,6 +1,7 @@
 ---
 title: Persisting Plugin Calls
 description: How to save plugin calls in Capacitor
+slug: /core-apis/saving-calls
 ---
 
 # Saving Plugin Calls
