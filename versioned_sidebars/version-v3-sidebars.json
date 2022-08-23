@@ -124,6 +124,8 @@
         "version-v3/main/reference/core-apis/ios",
         "version-v3/main/reference/core-apis/android",
         "version-v3/main/reference/core-apis/web",
+        "version-v3/main/reference/core-apis/data-types",
+        "version-v3/main/reference/core-apis/saving-calls",
         {
           "type": "link",
           "label": "Plugin APIs",

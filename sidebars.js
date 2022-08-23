@@ -123,6 +123,8 @@ module.exports = {
         'main/reference/core-apis/ios',
         'main/reference/core-apis/android',
         'main/reference/core-apis/web',
+        'main/reference/core-apis/data-types',
+        'main/reference/core-apis/saving-calls',
         {
           type: 'link',
           label: 'Plugin APIs',
