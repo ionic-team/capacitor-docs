@@ -50,25 +50,26 @@
     "clsx": "^1.1.1",
     "crowdin": "^3.5.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
-    "docusaurus-plugin-sass": "^0.2.2",
     "fs-extra": "^9.1.0",
     "modern-normalize": "^1.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "remark-html": "^13.0.1",
     "remark-parse": "^8.0.3",
     "sass": "^1.44.0",
+    "sass-loader": "^10.1.1",
     "semver": "^7.3.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "0.0.0-4192",
     "@ionic/prettier-config": "^2.0.0",
     "@tsconfig/docusaurus": "^1.0.4",
-    "@types/react": "^17.0.37",
+    "@types/react": "^16.9.49",
     "prettier": "^2.5.0",
     "typescript": "^4.5.2"
   },
   "volta": {
-    "node": "16.15.1"
+    "node": "16.17.0",
+    "npm": "8.15.0"
   }
 }
