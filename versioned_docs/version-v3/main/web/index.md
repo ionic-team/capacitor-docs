@@ -31,7 +31,7 @@ Most commonly, apps will be using a framework with a build system that supports 
 
 To use the Capacitor runtime in a web app that is not using a build system or bundler/module loader, do the following:
 
-1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/docs/v3/v3/config)
+1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/docs/v3/config)
 
 ```json
 "bundledWebRuntime": true
