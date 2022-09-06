@@ -76,6 +76,15 @@ export interface CapacitorConfig {
   bundledWebRuntime?: boolean;
 
   /**
+   * Hide or show the native logs for iOS and Android.
+   *
+   * @since 2.1.0
+   * @deprecated 3.0.0
+   * @default false
+   */
+  hideLogs?: boolean;
+
+  /**
    * The build configuration (as defined by the native app) under which Capacitor
    * will send statements to the log system. This applies to log statements in
    * native code as well as statements redirected from JavaScript (`console.debug`,
@@ -190,7 +199,18 @@ export interface CapacitorConfig {
     webContentsDebuggingEnabled?: boolean;
 
     /**
-     * The build configuration under which Capacitor will generate logs.
+     * Hide or show the native logs for Android.
+     *
+     * Overrides global `hideLogs` option.
+     *
+     * @since 2.1.0
+     * @deprecated 3.0.0
+     * @default false
+     */
+    hideLogs?: boolean;
+
+    /**
+     * The build configuration under which Capacitor will generate logs on Android.
      *
      * Overrides global `loggingBehavior` option.
      *
@@ -217,6 +237,24 @@ export interface CapacitorConfig {
      * @since 3.1.0
      */
     flavor?: string;
+
+    /**
+     * Whether to give the webview initial focus.
+     *
+     * @since 3.5.1
+     * @default true
+     */
+    initialFocus?: boolean;
+
+    /**
+     * The minimum supported webview version on Android supported by your app.
+     *
+     * The minimum supported cannot be lower than version `55`, which is required for Capacitor.
+     *
+     * @since 4.0.0
+     * @default 60
+     */
+    minWebViewVersion?: number;
   };
 
   ios?: {
@@ -234,7 +272,9 @@ export interface CapacitorConfig {
      * Usually this matches your app's target in Xcode. You can use the
      * following command to list schemes:
      *
-     * `xcodebuild -workspace ios/App/App.xcworkspace -list`
+     * ```shell
+     * xcodebuild -workspace ios/App/App.xcworkspace -list
+     * ```
      *
      * @since 3.0.0
      * @default App
@@ -315,7 +355,18 @@ export interface CapacitorConfig {
     allowsLinkPreview?: boolean;
 
     /**
-     * The build configuration under which Capacitor will generate logs.
+     * Hide or show the native logs for iOS.
+     *
+     * Overrides global `hideLogs` option.
+     *
+     * @since 1.1.0
+     * @deprecated 3.0.0
+     * @default false
+     */
+    hideLogs?: boolean;
+
+    /**
+     * The build configuration under which Capacitor will generate logs on iOS.
      *
      * Overrides global `loggingBehavior` option.
      *
@@ -347,6 +398,18 @@ export interface CapacitorConfig {
      * @default false
      */
     limitsNavigationsToAppBoundDomains?: boolean;
+
+    /**
+     * The content mode for the web view to use when it loads and renders web content.
+     *
+     * - 'recommended': The content mode that is appropriate for the current device.
+     * - 'desktop': The content mode that represents a desktop experience.
+     * - 'mobile': The content mode that represents a mobile experience.
+     *
+     * @since 4.0.0
+     * @default recommended
+     */
+    preferredContentMode?: 'recommended' | 'desktop' | 'mobile';
   };
 
   server?: {
@@ -425,6 +488,14 @@ export interface CapacitorConfig {
      * @default []
      */
     allowNavigation?: string[];
+
+    /**
+     * Specify path to a local html page to display in case of errors.
+     *
+     * @since 4.0.0
+     * @default null
+     */
+    errorPath?: string;
   };
 
   cordova?: {
@@ -476,6 +547,21 @@ export interface CapacitorConfig {
   includePlugins?: string[];
 }
 
+export interface Portal {
+  name: string;
+  webDir: string;
+  liveUpdateConfig?: LiveUpdateConfig;
+}
+
+export interface LiveUpdateConfig {
+  appId: string;
+  channel: string;
+  autoUpdateMethod: AutoUpdateMethod;
+  maxVersions?: number;
+}
+
+export type AutoUpdateMethod = 'none' | 'background';
+
 export interface PluginsConfig {
   /**
    * Plugin configuration by class name.
@@ -487,6 +573,16 @@ export interface PluginsConfig {
         [key: string]: any;
       }
     | undefined;
+
+  /**
+   * Capacitor Portals plugin configuration
+   *
+   * @since 3.5.0
+   */
+  Portals?: {
+    shell: Portal;
+    apps: Portal[];
+  };
 }
 ```
 
