@@ -31,7 +31,7 @@ Since this is a plain JavaScript object and not a proxy object, it is very easy 
 
 ### Jest
 
-The Jest testing framework has <a href="https://jestjs.io/docs/v3/manual-mocks" _target="blank">manual mocks</a> built in to it. Create a `__mocks__/@capacitor` folder at the root of your project, and Jest will automatically load files from there rather than from `node_modules`.
+The Jest testing framework has <a href="https://jestjs.io/docs/manual-mocks" _target="blank">manual mocks</a> built in to it. Create a `__mocks__/@capacitor` folder at the root of your project, and Jest will automatically load files from there rather than from `node_modules`.
 
 For example, let's say you have the following directory structure:
 
