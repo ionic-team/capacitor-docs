@@ -110,13 +110,15 @@ Create the site association file called `apple-app-site-association` similar to 
 
 
 ```json
-"applinks": {
+{
+  "applinks": {
     "details": [
       {
         "appID": "TEAMID.BUNDLEID",
         "paths": ["*"]
       }
     ]
+  }
 }
 ```
 
