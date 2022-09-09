@@ -16,6 +16,10 @@ Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to in
 
 To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins) section of the Plugin guide.
 
+First, you need to install cocoa pods on our machine: `sudo gem install cocoapods`.
+
+After you need to install the dependencies, go inside the ios folder and type `pod install`.
+
 Next, open `echo/ios/Plugin.xcworkspace` in Xcode. You then want to navigate to the .swift file for your plugin.
 
 For example, for a plugin with the Plugin Class Name `Echo`, you should open `EchoPlugin.swift`.
