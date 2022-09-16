@@ -251,6 +251,10 @@ export interface CapacitorConfig {
      *
      * The minimum supported cannot be lower than version `55`, which is required for Capacitor.
      *
+     * If the device uses a lower WebView version, an error message will be shown on Logcat.
+     * If `server.errorPath` is configured, the WebView will redirect to that file, so can be
+     * used to show a custom error.
+     *
      * @since 4.0.0
      * @default 60
      */
@@ -491,6 +495,7 @@ export interface CapacitorConfig {
 
     /**
      * Specify path to a local html page to display in case of errors.
+     * On Android the html file won't have access to Capacitor plugins.
      *
      * @since 4.0.0
      * @default null
@@ -558,6 +563,7 @@ export interface LiveUpdateConfig {
   channel: string;
   autoUpdateMethod: AutoUpdateMethod;
   maxVersions?: number;
+  key?: string;
 }
 
 export type AutoUpdateMethod = 'none' | 'background';
@@ -583,6 +589,13 @@ export interface PluginsConfig {
     shell: Portal;
     apps: Portal[];
   };
+
+  /**
+   * Capacitor Live Updates plugin configuration
+   *
+   * @since 4.2.0
+   */
+  LiveUpdates?: LiveUpdateConfig;
 }
 ```
 
