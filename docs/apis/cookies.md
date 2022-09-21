@@ -8,6 +8,45 @@ sidebar_label: Cookies
 
 The Capacitor Cookies API provides native cookie support via patching `document.cookie` to use native libraries. It also provides methods for modifying cookies at a specific url. This plugin is bundled with `@capacitor/core` and will be enabled by default.
 
+## Configuration
+
+By default, the patching of `document.cookie` to use native libraries is disabled.
+If you would like to enable this feature, modify the configuration below in the `capacitor.config` file.
+
+| Prop          | Type                 | Description                                                               | Default            |
+| ------------- | -------------------- | ------------------------------------------------------------------------- | ------------------ |
+| **`enabled`** | <code>boolean</code> | Enable the patching of `document.cookie` to use native libraries instead. | <code>false</code> |
+
+### Example Configuration
+
+In `capacitor.config.json`:
+
+```json
+{
+  "plugins": {
+    "CapacitorCookies": {
+      "enabled": true
+    }
+  }
+}
+```
+
+In `capacitor.config.ts`:
+
+```ts
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  plugins: {
+    CapacitorCookies: {
+      enabled: true,
+    },
+  },
+};
+
+export default config;
+```
+
 ## Example
 
 ```typescript
