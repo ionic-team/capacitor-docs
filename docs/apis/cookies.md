@@ -61,15 +61,24 @@ const setCookie = () => {
 };
 
 const setCapacitorCookie = async () => {
-  await CapacitorCookies.setCookie({ url, key, value, path, expires });
+  await CapacitorCookies.setCookie({
+    url: 'http://example.com',
+    key: 'language',
+    value: 'en',
+  });
 };
 
 const deleteCookie = async () => {
-  await CapacitorCookies.deleteCookie({ url, key });
+  await CapacitorCookies.deleteCookie({
+    url: 'https://example.com',
+    key: 'language',
+  });
 };
 
 const clearCookiesOnUrl = async () => {
-  await CapacitorCookies.clearCookies({ url });
+  await CapacitorCookies.clearCookies({
+    url: 'https://example.com',
+  });
 };
 
 const clearAllCookies = async () => {

@@ -56,7 +56,7 @@ import { CapacitorHttp } from '@capacitor/core';
 const doGet = () => {
   const options = {
     url: 'https://example.com/my/api',
-    headers: { 'X-Fake-Header': 'Max was here' },
+    headers: { 'X-Fake-Header': 'Fake-Value' },
     params: { size: 'XL' },
   };
 
@@ -71,8 +71,8 @@ const doGet = () => {
 const doPost = () => {
   const options = {
     url: 'https://example.com/my/api',
-    headers: { 'X-Fake-Header': 'Thomas was here' },
-    data: { foo: 'bar', cool: true },
+    headers: { 'X-Fake-Header': 'Fake-Value' },
+    data: { foo: 'bar' },
   };
 
   const response: HttpResponse = await CapacitorHttp.post(options);
