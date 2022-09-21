@@ -15,7 +15,7 @@ The Capacitor team maintains [a set of Capacitor plugins](/docs/apis) for common
 [Learn more about Capacitor plugins &#8250;](/docs/plugins)
 
 :::info
-Do you want to **make** Capacitor plugins? Browse the same proposal repo and try to make one [following our plugin creation guides](/docs/plugins/creating-plugin)!
+Do you want to **make** Capacitor plugins? Browse the same proposal repo and try to make one [following our plugin creation guides](/docs/plugins/creating-plugins)!
 :::
 
 ## Cordova Plugins
