@@ -6,7 +6,7 @@ sidebar_label: Cookies
 
 # CapacitorCookies
 
-The Capacitor Cookies API provides native cookie support via patching `document.cookie` to use native libraries. It also provides methods for modifying cookies at a specific url. This plugin is bundled with `@capacitor/core` and will be enabled by default.
+The Capacitor Cookies API provides native cookie support via patching `document.cookie` to use native libraries. It also provides methods for modifying cookies at a specific url. This plugin is bundled with `@capacitor/core`.
 
 ## Configuration
 
