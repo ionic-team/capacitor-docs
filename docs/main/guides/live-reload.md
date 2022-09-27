@@ -48,11 +48,11 @@ npm run start
 
 > With react-scripts, use `HOST=0.0.0.0 npm run start`
 
-Within `capacitor.config.json`, create a `server` entry then configure the `url` field using the local web server's IP address and port:
+Within `capacitor.config.json`, create a `server` entry then configure the `url` field using the local web server's IP address and the port where your application is exposed:
 
 ```json
 "server": {
-  "url": "http://192.168.1.68:8100",
+  "url": "http://192.168.1.68:XXXX",
   "cleartext": true
 },
 ```
