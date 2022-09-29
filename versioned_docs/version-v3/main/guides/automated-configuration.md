@@ -33,7 +33,7 @@ const config: MobileProjectConfig = {
   },
 };
 
-const project = new MobileProjectConfig(config);
+const project = new MobileProject(process.cwd(), config);
 await project.load();
 ```
 
