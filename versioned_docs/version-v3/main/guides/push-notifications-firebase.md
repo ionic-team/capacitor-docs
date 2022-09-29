@@ -12,7 +12,7 @@ slug: /guides/push-notifications-firebase
 **Web Framework**: Angular
 **Platforms**: iOS, Android
 
-One of the most common features provided by application developers to their users is push notifications. In this tutorial, we'll walk through all the steps needed to get [Firebase Cloud Messaging](https://firebase.google.com/docs/v3/cloud-messaging) working on iOS and Android.
+One of the most common features provided by application developers to their users is push notifications. In this tutorial, we'll walk through all the steps needed to get [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) working on iOS and Android.
 
 For the purposes of registering and monitoring for push notifications from Firebase, we'll make use of the [Push Notification API for Capacitor](https://capacitorjs.com/docs/v3/apis/push-notifications) in an Ionic + Angular application.
 
@@ -224,7 +224,7 @@ Name the project, accept the Firebase ToS and click **Create project** to contin
 
 ### Integrating Firebase with the Android app
 
-This section more-or-less mirrors the [setting up Firebase using the Firebase console documentation](https://firebase.google.com/docs/v3/android/setup?authuser=0). See below for specific Capacitor-related notes.
+This section more-or-less mirrors the [setting up Firebase using the Firebase console documentation](https://firebase.google.com/docs/android/setup?authuser=0). See below for specific Capacitor-related notes.
 
 Go to the Project Overview page for your Firebase project and at the top, click on the **Android** icon to add a new android application.
 
