@@ -10,7 +10,7 @@ Working with Capacitor is slightly different than working with a traditional web
 
 ## Building your web code
 
-Once you are ready to test your web app on a mobile device, you'll need to build your web app for distribution. If you are using a tool like [Create React App](https://create-react-app.dev/) or [Vite](https://vitejs.dev/) that command will be `npm build`; while a tool like [Angular](https://angular.io/) uses the command `ng build`. Whatever your command is, you will need to build your web code for distribution in order to use it with Capacitor.
+Once you are ready to test your web app on a mobile device, you'll need to build your web app for distribution. If you are using a tool like [Create React App](https://create-react-app.dev/) or [Vite](https://vitejs.dev/) that command will be `npm run build`; while a tool like [Angular](https://angular.io/) uses the command `ng build`. Whatever your command is, you will need to build your web code for distribution in order to use it with Capacitor.
 
 ## Syncing your web code to your Capacitor project
 
