@@ -75,4 +75,5 @@ Capacitor requires Android 5.1 as well as a WebView version of 60 or higher. If 
 
 ## Why am I getting CocoaPods errors on my Apple Silicon Device?
 
+If you are getting CocoaPods errors first ensure that you have the latest versions of both xCode and CocoaPods installed. 
 
