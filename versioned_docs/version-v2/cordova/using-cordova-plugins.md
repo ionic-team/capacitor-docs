@@ -65,4 +65,4 @@ Consult the [iOS](/docs/ios/configuration) and [Android](/docs/android/configura
 
 ## Compatibility Issues
 
-Some Cordova plugins don't work with Capacitor or Capacitor provides a conflicting alternative. [See here](/docs/cordova/known-incompatible-plugins) for details and a known incompatibility list.
+Some Cordova plugins don't work with Capacitor or Capacitor provides a conflicting alternative. [See here](/docs/v2/cordova/known-incompatible-plugins) for details and a known incompatibility list.
