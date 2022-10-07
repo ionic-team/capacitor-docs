@@ -106,8 +106,6 @@ exitApp() => Promise<void>
 Force exit the app. This should only be used in conjunction with the `backButton` handler for Android to
 exit the app when navigation is complete.
 
-Ionic handles this itself so you shouldn't need to call this if using Ionic.
-
 **Since:** 1.0.0
 
 --------------------
