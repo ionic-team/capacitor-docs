@@ -36,6 +36,30 @@ If using <a href="#directory">`Directory.Documents`</a> or
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
+If your app targets Android 13 or higher and needs to [access media files that other apps have created](https://developer.android.com/training/data-storage/shared/media#storage-permission),  a [granular media permissions](https://developer.android.com/about/versions/13/behavior-changes-13) have to be requested, instead of the `READ_EXTERNAL_STORAGE`
+
+```xml
+<!-- Required only if your app needs to access images or photos
+     that other apps created. -->
+<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+<!-- Required only if your app needs to access videos
+     that other apps created. -->
+<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+<!-- Required only if your app needs to access audio files
+     that other apps created. -->
+<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+<!-- If your app doesn't need to access media files that other apps created,
+     set the "maxSdkVersion" attribute to "28" instead. -->
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+                 android:maxSdkVersion="32" />
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                 android:maxSdkVersion="29" />
+```
+
 Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
 
 Note that <a href="#directory">`Directory.Documents`</a> and
