@@ -6,7 +6,7 @@ slug: /getting-started
 
 # Installing Capacitor
 
-There are two ways to create your Capacitor application. You can using the `@capacitor/create-app` package to create a Capacitor application from scratch, or you can add Capacitor to your already existing web project.
+There are two ways to create your Capacitor application. You can use the `@capacitor/create-app` package to create a Capacitor application from scratch, or you can add Capacitor to your already existing web project.
 
 Remember to make sure your [environment is set up](/docs/getting-started/environment-setup) for the platforms you will be building for.
 
