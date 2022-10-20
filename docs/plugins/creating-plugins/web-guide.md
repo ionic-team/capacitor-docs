@@ -74,7 +74,7 @@ export interface PermissionStatus {
 
 Then, add the definitions for `checkPermissions()` and `requestPermissions()` in your plugin interface. Both of these methods will return the current status of permissions in your plugin as defined by `PermissionStatus`.
 
-```diff-typescript
+```diff
  export interface EchoPlugin {
    echo(options: { value: string }): Promise<{ value: string }>;
 +  checkPermissions(): Promise<PermissionStatus>;
@@ -88,7 +88,7 @@ Because these methods are added to your plugin interface, they must be implement
 
 In `src/web.ts`, add the `checkPermissions()` and `requestPermissions()` methods to your web implementation.
 
-```diff-typescript
+```diff
 +import { PermissionStatus } from './definitions';
 
  export class EchoWeb extends WebPlugin implements EchoPlugin {
@@ -112,7 +112,7 @@ This method should return the current status of permissions in your plugin. This
 
 Remember, when working with web APIs with spotty browser adoption (such as the Permissions API), you should implement feature detection and throw an appropriate error when the end user's browser is not supported.
 
-```diff-typescript
+```diff
  async checkPermissions(): Promise<PermissionStatus> {
 +  if (typeof navigator === 'undefined' || !navigator.permissions) {
 +    throw this.unavailable('Permissions API not available in this browser.');

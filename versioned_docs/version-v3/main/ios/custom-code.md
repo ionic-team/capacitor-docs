@@ -81,7 +81,7 @@ export default Echo;
 
 We can define types on our linked object by defining an interface and using it in the call to `registerPlugin()`.
 
-```diff-typescript
+```diff
  import { registerPlugin } from '@capacitor/core';
 
 +export interface EchoPlugin {
