@@ -141,7 +141,7 @@ Before following this section, make sure you've set up your permission aliases a
 
 > Still using `@NativePlugin`? See the [upgrade guide](/docs/v3/updating/plugins/3-0#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
 
-```diff-java
+```diff
  @CapacitorPlugin(
      name = "FooBar",
 +    permissions = {
@@ -207,7 +207,7 @@ Permission requests are initiated by calling one of the request helper methods.
 
 For a single alias `requestPermissionForAlias` may be used. Multiple aliases can be provided to `requestPermissionForAliases`. Use `requestAllPermissions` to request all permissions defined in the plugin annotation.
 
-```diff-java
+```diff
  @PluginMethod()
  public void takePhoto(PluginCall call) {
    if (!hasRequiredPermissions()) {
@@ -227,7 +227,7 @@ For a single alias `requestPermissionForAlias` may be used. Multiple aliases can
 
 Place any required [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime permissions (permissions that prompts users to accept). These should be added to the manifest of a Capacitor app by the app developer. Make sure your plugin documents any required runtime permissions that should be added in the app.
 
-```diff-xml
+```diff
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.mycompany.plugins.network">
 +     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
