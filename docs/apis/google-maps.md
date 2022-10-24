@@ -158,12 +158,12 @@ import { GoogleMap } from '@capacitor/google-maps';
 
 @Component({
   template: `
-    <capacitor-google-maps #map></capacitor-google-maps>
+    <capacitor-google-map #map></capacitor-google-map>
     <button (click)="createMap()">Create Map</button>
   `,
   styles: [
     `
-      capacitor-google-maps {
+      capacitor-google-map {
         display: inline-block;
         width: 275px;
         height: 400px;
@@ -691,16 +691,21 @@ An interface containing the options used when creating a map.
 
 #### GoogleMapConfig
 
-| Prop                   | Type                                      | Description                                                    | Default            |
-| ---------------------- | ----------------------------------------- | -------------------------------------------------------------- | ------------------ |
-| **`width`**            | <code>number</code>                       | Override width for native map.                                 |                    |
-| **`height`**           | <code>number</code>                       | Override height for native map.                                |                    |
-| **`x`**                | <code>number</code>                       | Override absolute x coordinate position for native map.        |                    |
-| **`y`**                | <code>number</code>                       | Override absolute y coordinate position for native map.        |                    |
-| **`center`**           | <code><a href="#latlng">LatLng</a></code> | Default location on the Earth towards which the camera points. |                    |
-| **`zoom`**             | <code>number</code>                       | Sets the zoom of the map.                                      |                    |
-| **`androidLiteMode`**  | <code>boolean</code>                      | Enables image-based lite mode on Android.                      | <code>false</code> |
-| **`devicePixelRatio`** | <code>number</code>                       | Override pixel ratio for native map.                           |                    |
+For web, all the javascript Google Maps options are available as
+GoogleMapConfig extends google.maps.MapOptions.
+For iOS and Android only the config options declared on <a href="#googlemapconfig">GoogleMapConfig</a> are available.
+
+| Prop                   | Type                                      | Description                                                                                                                                               | Default            | Since |
+| ---------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
+| **`width`**            | <code>number</code>                       | Override width for native map.                                                                                                                            |                    |       |
+| **`height`**           | <code>number</code>                       | Override height for native map.                                                                                                                           |                    |       |
+| **`x`**                | <code>number</code>                       | Override absolute x coordinate position for native map.                                                                                                   |                    |       |
+| **`y`**                | <code>number</code>                       | Override absolute y coordinate position for native map.                                                                                                   |                    |       |
+| **`center`**           | <code><a href="#latlng">LatLng</a></code> | Default location on the Earth towards which the camera points.                                                                                            |                    |       |
+| **`zoom`**             | <code>number</code>                       | Sets the zoom of the map.                                                                                                                                 |                    |       |
+| **`androidLiteMode`**  | <code>boolean</code>                      | Enables image-based lite mode on Android.                                                                                                                 | <code>false</code> |       |
+| **`devicePixelRatio`** | <code>number</code>                       | Override pixel ratio for native map.                                                                                                                      |                    |       |
+| **`styles`**           | <code>MapTypeStyle[] \| null</code>       | Styles to apply to each of the default map types. Note that for satellite, hybrid and terrain modes, these styles will only apply to labels and geometry. |                    | 4.3.0 |
 
 
 #### LatLng
@@ -731,7 +736,7 @@ A marker is an icon placed at a particular point on the map's surface.
 | **`title`**      | <code>string</code>                                          | Title, a short description of the overlay.                                                                                                                                                |                    |       |
 | **`snippet`**    | <code>string</code>                                          | Snippet text, shown beneath the title in the info window when selected.                                                                                                                   |                    |       |
 | **`isFlat`**     | <code>boolean</code>                                         | Controls whether this marker should be flat against the Earth's surface or a billboard facing the camera.                                                                                 | <code>false</code> |       |
-| **`iconUrl`**    | <code>string</code>                                          | Path to a marker icon to render, relative to the web app public directory. **SVGs are not supported on native platforms.**                                                                |                    | 4.2.0 |
+| **`iconUrl`**    | <code>string</code>                                          | Path to a marker icon to render. It can be relative to the web app public directory, or a https url of a remote marker icon. **SVGs are not supported on native platforms.**              |                    | 4.2.0 |
 | **`iconSize`**   | <code><a href="#size">Size</a></code>                        | Controls the scaled size of the marker image set in `iconUrl`.                                                                                                                            |                    | 4.2.0 |
 | **`iconOrigin`** | <code><a href="#point">Point</a></code>                      | The position of the image within a sprite, if any. By default, the origin is located at the top left corner of the image .                                                                |                    | 4.2.0 |
 | **`iconAnchor`** | <code><a href="#point">Point</a></code>                      | The position at which to anchor an image in correspondence to the location of the marker on the map. By default, the anchor is located along the center point of the bottom of the image. |                    | 4.2.0 |
