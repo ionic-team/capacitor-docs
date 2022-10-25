@@ -57,7 +57,7 @@ To run the project on a device or simulator, run:
 npx cap run ios
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/docs/cli/run).
+The command will prompt you to select a target. [Learn more about `run`](/docs/cli/commands/run).
 
 ### Running in Xcode
 
