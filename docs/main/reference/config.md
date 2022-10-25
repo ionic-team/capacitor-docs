@@ -259,6 +259,44 @@ export interface CapacitorConfig {
      * @default 60
      */
     minWebViewVersion?: number;
+
+    buildOptions?: {
+      /**
+       * Path to your keystore
+       *
+       * @since 4.4.0
+       */
+      keystorePath?: string;
+
+      /**
+       * Password to your keystore
+       *
+       * @since 4.4.0
+       */
+      keystorePassword?: string;
+
+      /**
+       * Alias in the keystore to use
+       *
+       * @since 4.4.0
+       */
+      keystoreAlias?: string;
+
+      /**
+       * Password for the alias in the keystore to use
+       *
+       * @since 4.4.0
+       */
+      keystoreAliasPassword?: string;
+
+      /**
+       * Bundle type for your release build
+       *
+       * @since 4.4.0
+       * @default "AAB"
+       */
+      releaseType?: 'AAB' | 'APK';
+    };
   };
 
   ios?: {
@@ -588,6 +626,7 @@ export interface PluginsConfig {
   Portals?: {
     shell: Portal;
     apps: Portal[];
+    liveUpdatesKey?: string;
   };
 
   /**
@@ -596,6 +635,34 @@ export interface PluginsConfig {
    * @since 4.2.0
    */
   LiveUpdates?: LiveUpdateConfig;
+
+  /**
+   * Capacitor Cookies plugin configuration
+   *
+   * @since 4.3.0
+   */
+  CapacitorCookies?: {
+    /**
+     * Enable CapacitorCookies to override the global `document.cookie` on native.
+     *
+     * @default false
+     */
+    enabled?: boolean;
+  };
+
+  /**
+   * Capacitor Http plugin configuration
+   *
+   * @since 4.3.0
+   */
+  CapacitorHttp?: {
+    /**
+     * Enable CapacitorHttp to override the global `fetch` and `XMLHttpRequest` on native.
+     *
+     * @default false
+     */
+    enabled?: boolean;
+  };
 }
 ```
 
