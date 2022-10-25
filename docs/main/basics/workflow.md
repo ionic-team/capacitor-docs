@@ -24,7 +24,7 @@ npx cap sync
 
 Running `npx cap sync` will **copy** over your already built web bundle to both your Android and iOS projects as well as **update** the native dependencies that Capacitor uses.
 
-You can [read our docs](/docs/cli/sync) on `sync` and more on the [Capacitor CLI reference](/docs/cli) documentation.
+You can [read our docs](/docs/cli/commands/sync) on `sync` and more on the [Capacitor CLI reference](/docs/cli) documentation.
 
 :::info
 Did you get an error about "not being able to find the web assets directory?" Update your [Capacitor configuration](/docs/config) file to use the proper `webDir`.
