@@ -50,7 +50,7 @@ Ready to begin? Capacitor has [a plugin generator](https://github.com/ionic-team
 In a new terminal, run the following:
 
 ```bash
-npm init @capacitor/plugin
+npm init @capacitor/plugin@latest
 ```
 
 The generator will prompt you for input. You can also supply command-line options (see the [GitHub repo](https://github.com/ionic-team/create-capacitor-plugin/)).
