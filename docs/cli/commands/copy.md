@@ -18,6 +18,10 @@ npx cap copy [<platform>]
 
 - `platform` (optional): `android`, `ios`
 
+<strong>Options:</strong>
+
+- `--inline`: After syncing, all JS source maps will be inlined allowing for debugging an Android Web View in Chromium based browsers.
+
 ## Hooks
 
 The following hooks are available for copy command:
