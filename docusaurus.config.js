@@ -215,7 +215,7 @@ module.exports = {
             return `https://github.com/ionic-team/capacitor-docs/tree/main/docs/cli/commands/${match[1].replace(
               '-',
               '/'
-            )}.ts`;
+            )}.md`;
           }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
