@@ -209,6 +209,9 @@ module.exports = {
             return 'https://crowdin.com/project/capacitor-docs';
           }
           if ((match = docPath.match(/apis\/(.*)\.md/)) != null) {
+            if (match[1] === 'cookies' || match[1] === 'http') {
+              return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${match[1]}.md`;
+            }
             return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
           }
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
