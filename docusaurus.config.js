@@ -209,7 +209,7 @@ module.exports = {
             return 'https://crowdin.com/project/capacitor-docs';
           }
           if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/capacitor-docs/tree/main/docs/api/${match[1]}.md`;
+            return `https://github.com/ionic-team/capacitor-plugins/tree/main/${match[1]}/README.md`;
           }
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/capacitor-docs/tree/main/docs/cli/commands/${match[1].replace(
