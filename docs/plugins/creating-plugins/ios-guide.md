@@ -139,7 +139,7 @@ Before following this section, make sure you've set up your permission aliases a
 
 Add the `checkPermissions()` and `requestPermissions()` methods to your Swift plugin class.
 
-```diff-swift
+```diff
  import Capacitor
 
  @objc(EchoPlugin)

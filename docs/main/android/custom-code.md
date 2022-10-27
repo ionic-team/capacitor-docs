@@ -58,7 +58,7 @@ We must register custom plugins on both Android and web so that Capacitor can br
 
 In your app's `MainActivity.java`, use `registerPlugin()` or `registerPlugins()` to register your custom plugin(s).
 
-```diff-java
+```diff
  public class MainActivity extends BridgeActivity {
      @Override
      public void onCreate(Bundle savedInstanceState) {
@@ -86,7 +86,7 @@ export default Echo;
 
 We can define types on our linked object by defining an interface and using it in the call to `registerPlugin()`.
 
-```diff-typescript
+```diff
  import { registerPlugin } from '@capacitor/core';
 
 +export interface EchoPlugin {

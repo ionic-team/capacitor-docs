@@ -17,7 +17,7 @@ To implement new functionality in your plugin, begin by defining the method's si
 
 In the example below, the `openMap()` method is added which takes a `latitude` and `longitude`. It is good practice to define interfaces for method parameters that can be imported and used in apps.
 
-```diff-typescript
+```diff
  export interface EchoPlugin {
    echo(options: { value: string }): Promise<{ value: string }>;
 +  openMap(options: OpenMapOptions): Promise<void>;
@@ -31,7 +31,7 @@ In the example below, the `openMap()` method is added which takes a `latitude` a
 
 Implement the web implementation in `src/web.ts`:
 
-```diff-typescript
+```diff
  import type {
    EchoPlugin,
 +  OpenMapOptions,
@@ -130,7 +130,7 @@ To document plugin functionality, add [JSDoc](https://jsdoc.app) comment blocks 
 
 Using our `openMap()` method as an example, open `src/definitions.ts` and start documenting!
 
-```diff-typescript
+```diff
  export interface EchoPlugin {
    echo(options: { value: string }): Promise<{ value: string }>;
 

@@ -353,4 +353,4 @@ Connect a device to your computer, build and deploy the native apps, then test b
 - Branch.io: [What is Deep Linking?](https://branch.io/what-is-deep-linking/)
 - Android: [App Links](https://developer.android.com/training/app-links)
 - iOS: [Universal Links](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content)
-- iOS: [Enabling Universal Links](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/enabling_universal_links)
+- iOS: [Supporting Universal Links in Your App](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app)

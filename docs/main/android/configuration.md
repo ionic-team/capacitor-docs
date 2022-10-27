@@ -22,7 +22,7 @@ This article covers the basic modifications you'll need to make to your app. Rea
 
 To change your app's Package ID (aka **Application ID** for Android), edit `applicationId` at the top of `android/app/build.gradle`:
 
-```diff-groovy
+```diff
 defaultConfig {
 -       applicationId "com.capacitorjs.app"
 +       applicationId "com.mycompany.myapp"
