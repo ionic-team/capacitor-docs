@@ -90,12 +90,14 @@ const clearAllCookies = async () => {
 
 As of iOS 14, you cannot use 3rd party cookies by default. Add the following lines to your Info.plist file to get better support for cookies on iOS. You can add up to 10 domains.
 
+```xml
 <key>WKAppBoundDomains</key>
 <array>
   <string>www.mydomain.com</string>
   <string>api.mydomain.com</string>
   <string>www.myothercooldomain.com</string>
 </array>
+```
 
 ## API
 
