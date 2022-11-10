@@ -69,7 +69,7 @@ The only solution is to Force Close Xcode (using Activity Monitor) and start it 
 
 ## Apple Silicon: `ffi` Bus Error
 
-If you're using an Apple Silicon-powered Mac, you might encounter something like this when running `npx cap update`:
+If you installed CocoaPods with `sudo gem install cocoapods` and you're using an Apple Silicon-powered Mac, you might encounter something like this when running `npx cap update`:
 
 ```
 [error] Analyzing dependencies
@@ -77,7 +77,9 @@ If you're using an Apple Silicon-powered Mac, you might encounter something like
         ruby 2.6.3p62 (2019-04-16 revision 67580) [universal.arm64e-darwin20]
 ```
 
-This is a CocoaPods bug related to `ffi` not installing on M1. For now, you need to have Rosetta installed, install `ffi` on a `x86_64` architecture and run `pod install` using the simulated Intel architecture for the first time.
+This is a CocoaPods bug related to `ffi` not installing on Apple Silicon computers.
+We recommend using [Homebrew to installl CocoaPods](/docs/getting-started/environment-setup#homebrew).
+Alternatively, if you have Rosetta installed, you can install `ffi` on a `x86_64` architecture and run `pod install` using the simulated Intel architecture for the first time.
 
 ```
 $ sudo arch -x86_64 gem install ffi

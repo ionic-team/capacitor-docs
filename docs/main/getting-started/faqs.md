@@ -75,4 +75,21 @@ Capacitor requires Android 5.1 as well as a WebView version of 60 or higher. If 
 
 ## Why am I getting CocoaPods errors on my Apple Silicon Device?
 
+If you installed CocoaPods with `sudo gem install cocoapods` and you're using an Apple Silicon-powered Mac, you might encounter something like this when running `npx cap update`:
 
+```
+[error] Analyzing dependencies
+        /Library/Ruby/Gems/2.6.0/gems/ffi-1.15.3/lib/ffi/library.rb:275: [BUG] Bus Error at 0x0000000000000000
+        ruby 2.6.3p62 (2019-04-16 revision 67580) [universal.arm64e-darwin20]
+```
+
+This is a CocoaPods bug related to `ffi` not installing on Apple Silicon computers.
+We recommend using [Homebrew to installl CocoaPods](/docs/getting-started/environment-setup#homebrew).
+Alternatively, if you have Rosetta installed, you can install `ffi` on a `x86_64` architecture and run `pod install` using the simulated Intel architecture for the first time.
+
+```
+$ sudo arch -x86_64 gem install ffi
+$ arch -x86_64 pod install
+```
+
+After that, running Capacitor should work as expected.
