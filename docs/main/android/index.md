@@ -58,7 +58,7 @@ npx cap run android
 
 The command will prompt you to select a target. [Learn more about `run`](/docs/cli/commands/run).
 
-> An Android Virtual Device (AVD) is required to use the `run` command. See the [documentation here for creating and installing AVD modules](https://developer.android.com/studio/run/managing-avds).
+> Either a physical Android device or a downloaded emulator system image is required to use the `run` command. See the [documentation here for creating emulator devices and downloading system images in Android Studio](https://developer.android.com/studio/run/managing-avds).
 
 ### Running with Android Studio
 
