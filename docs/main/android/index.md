@@ -58,6 +58,8 @@ npx cap run android
 
 The command will prompt you to select a target. [Learn more about `run`](/docs/cli/commands/run).
 
+> Either a physical Android device or a downloaded emulator system image is required to use the `run` command. See the [documentation here for creating emulator devices and downloading system images in Android Studio](https://developer.android.com/studio/run/managing-avds).
+
 ### Running with Android Studio
 
 In Android Studio, first select the device or emulator and then click the run or debug button to run your app. Unless you're debugging Java or Kotlin code, the run button is preferred.

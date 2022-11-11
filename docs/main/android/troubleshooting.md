@@ -78,6 +78,22 @@ The solution is to remove any old apps and make sure your package name is up to 
 
 Finally, do a clean and rebuild just in case.
 
+## Error: "Unable to locate a Java Runtime"
+
+This error may occur when using the `run` command if the `JAVA_HOME` environment variable is not set. 
+
+To resolve, set `JAVA_HOME` as an environment or system variable using the path found in Android Studio under Preferences > Build, Execution, Deployment, Build Tools > Gradle > Gradle JDK.
+
+![JDK Path in Android Studio](../../../static/img/v4/docs/android/jdk-path.png)
+
+On Mac, this can be updated in your `.zshrc` or `.bashrc` file or exported in your environment.
+
+```bash
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
+```
+
+On Windows, you can set `JAVA_HOME` as a System Variable under your Environment Variables settings.
+
 ## Recreating your project
 
 Capacitor lets you manage your own Android project. Like any IDE-backed project, sometimes things get so out of sync that the only solution is to rebuild the project.
