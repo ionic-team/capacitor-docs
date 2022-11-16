@@ -209,6 +209,7 @@ An example of the `apple-app-site-association` file is below. Be sure to replace
 ```json
 {
   "applinks": {
+    "apps": [],
     "details": [
       {
         "appID": "TEAMID.BUNDLEID",
