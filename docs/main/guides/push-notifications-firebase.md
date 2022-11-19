@@ -303,9 +303,9 @@ We need to add Firebase to the CocoaPods provided for our App target. To do that
 
 ```ruby
 target 'App' do
-capacitor_pods
-# Add your Pods here
-pod 'Firebase/Messaging' # Add this line
+  capacitor_pods
+  # Add your Pods here
+  pod 'Firebase/Messaging' # Add this line
 end
 ```
 
