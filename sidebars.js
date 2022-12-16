@@ -35,6 +35,7 @@ module.exports = {
         'main/updating/2-0',
         'main/updating/1-1',
         'main/updating/plugins/4-0',
+        'main/updating/plugins/3-0'
       ],
     },
     {
