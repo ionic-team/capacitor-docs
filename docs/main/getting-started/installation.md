@@ -53,7 +53,7 @@ npx cap init
 The CLI will ask you a few questions, starting with your app name, and the package ID you would like to use for your app. It will create the capacitor-config file with these configuration details, including the expected output directory for the build process of your bundler (e.g. `www` for Angular, `build` for React, `public` for Vue, etc.).
 
 :::info
-You can customize what folder is used by capacitor over by modifying the `webDir` variable in your [Capacitor Config](/docs/config) file that is created during `npx cap init`. Please note that Capacitor will try to detect the default for your web-project by checking the framework you are using. Nevertheless, it will be good to cross-check this configuration when having issues trying to sync your first build into capacitor.
+You can customize the folder used by Capacitor by modifying the `webDir` variable in your [Capacitor Config](/docs/config) file that is created during `npx cap init`. Please note that Capacitor will try to detect the default for your web-project by checking the framework you are using. Nevertheless, it is a good idea to cross-check this configuration variable when having issues syncing your first build.
 :::
 
 ### Create your Android and iOS projects
@@ -79,7 +79,7 @@ Once you've created your native projects, you can sync your web application to y
 npx cap sync
 ```
 
-`npx cap sync` will copy your built web bundle as is expected to be found in `webDir` of the [Capacitor Config](/docs/config) file to your native project and install the native projects dependencies.
+`npx cap sync` will copy your built web bundle expected to be found in `webDir` of the [Capacitor Config](/docs/config) file to your native project and install the native project's dependencies.
 
 ## Where to go next
 
