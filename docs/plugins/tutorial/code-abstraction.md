@@ -67,7 +67,7 @@ public void load() {
     notificationStorage = new NotificationStorage(getContext());
     manager = new LocalNotificationManager( … );
     manager.createNotificationChannel();
-    notificationChannelManager = new NotificationChannelManager(getActivity();
+    notificationChannelManager = new NotificationChannelManager(getActivity());
     staticBridge = this.bridge;
 }
 ```
