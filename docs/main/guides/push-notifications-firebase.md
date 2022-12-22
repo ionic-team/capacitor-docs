@@ -303,16 +303,18 @@ We need to add Firebase to the CocoaPods provided for our App target. To do that
 
 ```ruby
 target 'App' do
-capacitor_pods
-# Add your Pods here
-pod 'Firebase/Messaging' # Add this line
+  capacitor_pods
+  # Add your Pods here
+  pod 'Firebase/Messaging' # Add this line
 end
 ```
 
 Your `Podfile` should look something like this:
 
 ```ruby
-platform :ios, '12.0'
+require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
+
+platform :ios, '13.0'
 use_frameworks!
 
 # workaround to avoid Xcode caching of Pods that requires
@@ -332,6 +334,10 @@ target 'App' do
   capacitor_pods
   # Add your Pods here
   pod 'Firebase/Messaging'
+end
+
+post_install do |installer|
+  assertDeploymentTarget(installer)
 end
 ```
 
