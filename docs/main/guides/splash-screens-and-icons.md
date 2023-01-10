@@ -8,9 +8,15 @@ slug: /guides/splash-screens-and-icons
 
 # Creating Splash Screens and Icons
 
-Initial support for splash screen and icon generation is now available. For complete details, see the [cordova-res docs](https://github.com/ionic-team/cordova-res).
+Initial support for splash screen and icon generation is now available. For complete details, see the [capacitor-assets docs](https://github.com/ionic-team/capacitor-assets).
 
-First, install `cordova-res`:
+Using capacitor you can follow this
+
+```bash
+npm install @capacitor/assets
+```
+
+Using cordova you can follow this
 
 ```bash
 npm install -g cordova-res
