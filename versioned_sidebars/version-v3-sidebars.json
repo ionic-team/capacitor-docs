@@ -106,17 +106,6 @@
     },
     {
       "type": "category",
-      "label": "Deployment",
-      "collapsed": false,
-      "items": [
-        "version-v3/main/deployment/app-store",
-        "version-v3/main/deployment/play-store",
-        "version-v3/main/deployment/progressive-web-app",
-        "version-v3/main/deployment/desktop-app"
-      ]
-    },
-    {
-      "type": "category",
       "label": "Reference",
       "collapsed": false,
       "items": [
