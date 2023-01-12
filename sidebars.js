@@ -105,17 +105,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Deployment',
-      collapsed: false,
-      items: [
-        'main/deployment/app-store',
-        'main/deployment/play-store',
-        'main/deployment/progressive-web-app',
-        'main/deployment/desktop-app',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Reference',
       collapsed: false,
       items: [
