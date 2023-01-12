@@ -12,7 +12,9 @@
   ],
   "redirects": [
     { "source": "/", "destination": "/docs" },
-    { "source": "/docs/apis/storage", "destination": "/docs/apis/preferences" }
+    { "source": "/docs/apis/storage", "destination": "/docs/apis/preferences" },
+    { "source": "/blog", "destination": "https://ionic.io/blog/tag/capacitor" },
+    { "source": "/blog/:match*", "destination": "https://ionic.io/blog/tag/capacitor" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },
