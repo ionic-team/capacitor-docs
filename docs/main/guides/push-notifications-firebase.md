@@ -246,7 +246,13 @@ Download the `google-services.json` file to your local machine. Then move the fi
 
 ![Google Services JSON Location for Android](../../../static/img/v4/docs/guides/firebase-push-notifications/google-services-location-android.png)
 
-We don't need to _add_ any dependencies to our project because Capacitor projects automatically include a version of `firebase-messaging` in it's `build.gradle` file.
+### Add the Firebase SDK
+
+You _don't_ need to _add_ any dependencies to your project - in contrary to iOS - because the `@capacitor/push-notifications` plugin automatically includes a version of `firebase-messaging` in it's `build.gradle` file.
+
+#### Firebase Analytics SDK
+
+You might want to add the Firebase Analytics SDK to your project. This is not needed for push notifications to work. However, it adds additional functionality that you might want to make use of. For example: it automatically collects messaging tokens and sends it to your Firebase dashboard. This will enable the possibilty to send push notifications from the Firebase dashboard.
 
 ## iOS
 
@@ -337,6 +343,10 @@ post_install do |installer|
   assertDeploymentTarget(installer)
 end
 ```
+
+#### Firebase Analytics SDK
+
+You might want to add the Firebase Analytics SDK to your project. This is not needed for push notifications to work. However, it adds additional functionality that you might want to make use of. For example: it automatically collects messaging tokens and sends it to your Firebase dashboard. This will enable the possibilty to send push notifications from the Firebase dashboard.
 
 ### Update the Project
 
