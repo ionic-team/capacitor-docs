@@ -355,7 +355,7 @@ To connect to Firebase when your iOS app starts up, you need to add the followin
 First, add an `import` at the top of the file:
 
 ```swift
-import Firebase
+import FirebaseCore
 ```
 
 ... and then add the configuration method for Firebase to initialization code to your `AppDelegate.swift` file, in the `application(didFinishLaunchingWithOptions)` method.
@@ -388,7 +388,7 @@ Your completed `AppDelegate.swift` file should look something like this:
 ```swift
 import UIKit
 import Capacitor
-import Firebase
+import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
