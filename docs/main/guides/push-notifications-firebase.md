@@ -299,13 +299,13 @@ To do this, we need to modify the `Podfile`, which can be found in Xcode under `
 
 ![Podfile Location iOS](../../../static/img/v4/docs/guides/firebase-push-notifications/podfile-location-ios.png)
 
-We need to add Firebase to the CocoaPods provided for our App target. To do that, add `pod Firebase/Messaging` to your `target 'App'` section, like so:
+We need to add Firebase to the CocoaPods provided for our App target. To do that, add `pod FirebaseMessaging` to your `target 'App'` section, like so:
 
 ```ruby
 target 'App' do
   capacitor_pods
   # Add your Pods here
-  pod 'Firebase/Messaging' # Add this line
+  pod 'FirebaseMessaging' # Add this line
 end
 ```
 
@@ -330,7 +330,7 @@ end
 target 'App' do
   capacitor_pods
   # Add your Pods here
-  pod 'Firebase/Messaging'
+  pod 'FirebaseMessaging'
 end
 
 post_install do |installer|
