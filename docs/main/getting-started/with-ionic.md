@@ -5,6 +5,9 @@ slug: /getting-started/with-ionic
 ---
 
 # Using Capacitor with Ionic Framework
+
+Capacitor does not require Ionic Framework in order to build apps. However, developers may find the [large collection](https://ionicframework.com/docs/components) of Ionic UI components helpful in order to build a high-quality app.
+
 Capacitor can quickly be installed directly into any new or existing Ionic app by using the [Ionic CLI](https://ionicframework.com/docs/cli).
 
 ## Installing Capacitor in a new Ionic Project
