@@ -1,6 +1,6 @@
 ---
 title: Building Your UI
-description: UI options for Capacitor apps
+description: Popular UI options for building great Capacitor mobile apps
 slug: /getting-started/ui
 ---
 
