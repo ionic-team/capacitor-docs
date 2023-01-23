@@ -8,6 +8,7 @@ module.exports = {
         'index',
         'main/getting-started/environment-setup',
         'main/getting-started/installation',
+        'main/getting-started/ui',
         'main/getting-started/with-ionic',
         'main/getting-started/vscode-extension',
         'main/getting-started/templates',
