@@ -1,12 +1,12 @@
 ---
 title: Ionic VS Code Extension
-description: Using the Ionic VS Code Extension with Capacitor
+description: Using the Ionic/Capacitor VS Code Extension
 slug: /getting-started/vscode-extension
 ---
 
-## Using the Ionic VS Code Extension
+## Using the Ionic/Capacitor VS Code Extension
 
-The Ionic Visual Studio Code extension helps you perform various functions that are common to developing a Capacitor app, all without leaving your VS Code window. You can install the [extension on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic). Once you have the extension installed, you'll see the Ionic logo in the activity bar.
+The Ionic Visual Studio Code extension doubles as an official Capacitor extension, and helps you perform various functions that are common to developing a Capacitor app, all without leaving your VS Code window. You can install the [extension on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic). Once you have the extension installed, you'll see the Ionic logo in the activity bar.
 
 ## Integrating Capacitor
 
