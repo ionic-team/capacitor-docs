@@ -1,5 +1,5 @@
 ---
-title: Ionic VS Code Extension
+title: VS Code Extension
 description: Using the Ionic/Capacitor VS Code Extension
 slug: /getting-started/vscode-extension
 ---
