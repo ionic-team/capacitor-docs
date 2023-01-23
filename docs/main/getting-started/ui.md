@@ -26,6 +26,8 @@ To get started, view the [using Capacitor with Ionic](./with-ionic) docs to lear
 
 [Tailwind CSS](https://tailwindcss.com/) is a popular CSS framework with companion UI template library that many Capacitor developers use to build great app experiences. Some of our favorite examples include [Reflect](https://reflect.app/) and [LogSnag](https://twitter.com/ImSh4yy/status/1615080429417103366?s=20&t=bmVrAb9PNFY6AQPNXwMFYA).
 
+There are also some interesting Tailwind-focused Mobile UI frameworks, such as [Konsta UI](https://konstaui.com/).
+
 When using Tailwind, it's important to keep in mind that Tailwind does not provide mobile-style navigation and routing primitives, so teams will need to take care to build a UX that fits platform conventions. One way to do this is to mix Tailwind with Ionic Framework, as shown in this [Next.js + Tailwind + Ionic Framework + Capacitor template](https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter). Another would be to design a UX that avoids traditional forward/back navigation and instead uses tabs or modals. Finally, teams are free to build a custom navigation and routing experience if desired.
 
 ## Framework7
