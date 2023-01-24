@@ -61,6 +61,7 @@ module.exports = {
         'main/guides/deep-links',
         'main/guides/deploying-updates',
         'main/guides/environment-specific-configurations',
+        'main/guides/games',
         'main/guides/in-app-purchases',
         'main/guides/live-reload',
         'main/guides/mocking-plugins',
