@@ -8,7 +8,7 @@ slug: /vscode/release
 
 Preparing your application to release to the App Store or Play Store involves first producing a binary file that can be submitted.
 
-[App Flow](https://ionic.io/appflow) is the easiest way to automate building and deploying apps to the store. If your process is manual then follow this guide.
+[Appflow](https://ionic.io/appflow) is the easiest way to automate building and deploying apps to the store. If your process is manual then follow this guide.
 
 ## App Store
 

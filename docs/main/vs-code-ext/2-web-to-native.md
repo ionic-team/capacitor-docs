@@ -12,7 +12,7 @@ You can convert **any** web application or web site to a native one with Capacit
       <source src={require('@site/static/video/existing-project.mp4').default} type="video/mp4" />
 </video>
 
-1. Click the `Ionic` extension on the side menu
+1. Click the `Ionic` icon on the side menu
 2. Choose `Add Capacitor Integration`
 3. Choose `Add iOS Project` to add a native **XCode** project
 4. Choose `Add Android Project` to add a native **Android Studio** project

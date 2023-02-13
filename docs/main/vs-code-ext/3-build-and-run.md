@@ -9,7 +9,7 @@ slug: /vscode/build-and-run
 There are a few different ways to build or run your app depending on your preference and whether you want to test in a web browser or a real or emulated mobile device.
 
 ## Testing for Web
-Click `Run` > `Web` to build and launch the options windows:
+Click `Run` > `Web` to build and launch the options window:
 - Click `Open in Browser` to open the default web browser and start your app
 - Click `Open in Editor` to open your app in a VS Code window
 - Click `Debug in Browser` to begin a debugging session using Chrome or Edge
@@ -42,7 +42,7 @@ To turn on this feature click `Settings` > `Live Reload`
 
 The feature (`Settings` > `Use HTTPS`) will create a certificate and serve your application using HTTPS. Instructions to trust the certificate on web, iOS and Android are displayed.
 
-The option to serve your application via `HTTPS` is requires if you make Web API calls that require a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) like [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation).
+The option to serve your application via `HTTPS` is required if you make Web API calls that require a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) like [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation).
 
 :::note
 This feature is currently only available with Angular projects and will temporarily install [a plugin](https://github.com/jcesarmobile/ssl-skip) due to a quirk with the Android web view not trusting user installed CA Certificates.

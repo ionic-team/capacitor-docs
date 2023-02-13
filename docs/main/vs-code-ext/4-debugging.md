@@ -6,13 +6,13 @@ contributors:
 slug: /vscode/debugging
 ---
 
-Debugging your application using either [the extension](#debug-in-vs-code) or [attaching to the web view](#attach-to-web-view). You can alternatively use [Remote Logging](#remote-logging) or the [Capacitor Preview](#capacitor-preview) app to perform `console.log` style debugging.
+Debug your application using either [the extension](#debug-in-vs-code) or [attaching to the web view](#attach-to-web-view). You can alternatively use [Remote Logging](#remote-logging) or the [Capacitor Preview](#capacitor-preview) app to perform `console.log` style debugging.
 
 ## Debug in VS Code
 
 Click the `Debug` item to launch a web browser or attach to a running Android web view for debugging.
 
-Click `Debug` > `Web` to launch a _debuggable_ web browser such as Chrome or MS Edge. This will build your app then put VS Code into debugging mode allowing you set breakpoints, inspect variables etc. 
+Click `Debug` > `Web` to launch a _debuggable_ web browser such as Chrome or MS Edge. This will build your app then put VS Code into debugging mode allowing you to set breakpoints, inspect variables etc. 
 
 :::note
 You can choose which browser to debug from `Settings` > `Advanced` > `Browser`.

@@ -25,7 +25,7 @@ Cordova plugins that you **no longer need** will be flagged and you can click `U
 Cordova plugins that are on a known **[incompatible list](https://capacitorjs.com/docs/plugins/cordova#known-incompatible-plugins)** will be flagged. There may be Capacitor equivalents, your code will need to be refactored.
 
 ### Better Plugins
-Cordova plugins that have **better** equivalent Capacitor plugins will show as optional suggestions (light bulb icon). A **better** plugin is defined as one that has official support from the Capacitor team. Some Cordova plugins have been deprecated or are no longer maintained, we track these a provide suggestions for alternatives.
+Cordova plugins that have **better** equivalent Capacitor plugins will show as optional suggestions (light bulb icon). A **better** plugin is defined as one that has official support from the Capacitor team. Some Cordova plugins have been deprecated or are no longer maintained, we track these and provide suggestions for alternatives.
 
 ### Remove Cordova
 

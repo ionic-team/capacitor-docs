@@ -1,5 +1,5 @@
 ---
-title: Mono Repos
+title: Monorepos
 description: Visual Studio Code Extension for Capacitor
 contributors:
   - dtarnawsky

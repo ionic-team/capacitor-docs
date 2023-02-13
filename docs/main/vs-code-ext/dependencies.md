@@ -20,7 +20,7 @@ Click a Dependency and Choose:
 - `Info` to display the npm web page for this dependency
 - `Uninstall` to remove the dependency from the project
 
-Some dependencies that require additional migration steps may be done automatically for you. For example: updating `@ionic/angular-toolkit` will migration `angular.json` to remove unneeded sections or add `@ionic/cordova-builders` for Cordova projects.
+Some dependencies that require additional migration steps may be done automatically for you. For example: updating `@ionic/angular-toolkit` will migrate `angular.json` to remove unneeded sections or add `@ionic/cordova-builders` for Cordova projects.
 
 :::note
 Hover over any dependency and click the `...` to show all available versions you can install for that dependency.

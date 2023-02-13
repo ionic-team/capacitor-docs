@@ -21,7 +21,7 @@ If you have VS Code on this computer click Install below. You can also find the 
 
 Also learn the essentials of [building and running](build-and-run), [debugging](debugging) and [preparing](release) your app for release with a [Splash Screen & Icon](splash-icon), and setting [version information](native-settings).
 
-Finally, improve your project by [maintaining dependencies](dependencies), [minimizing javascript](bundle-cost) usage, and following [recommendations](recommendations).
+Finally, improve your project by [maintaining dependencies](dependencies), [minimizing javascript](bundle) usage, and following [recommendations](recommendations).
 
 
 
