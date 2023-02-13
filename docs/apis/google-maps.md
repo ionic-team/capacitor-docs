@@ -278,7 +278,7 @@ export default MyMap;
 <docgen-index>
 
 * [`create(...)`](#create)
-* [`enableClustering(...)`](#enableclustering)
+* [`enableClustering()`](#enableclustering)
 * [`disableClustering()`](#disableclustering)
 * [`addMarker(...)`](#addmarker)
 * [`addMarkers(...)`](#addmarkers)
@@ -330,15 +330,11 @@ create(options: CreateMapArgs, callback?: MapListenerCallback<MapReadyCallbackDa
 --------------------
 
 
-### enableClustering(...)
+### enableClustering()
 
 ```typescript
-enableClustering(minClusterSize?: number | undefined) => Promise<void>
+enableClustering() => Promise<void>
 ```
-
-| Param                | Type                | Description                                                                             |
-| -------------------- | ------------------- | --------------------------------------------------------------------------------------- |
-| **`minClusterSize`** | <code>number</code> | The minimum number of markers that can be clustered together. The default is 4 markers. |
 
 --------------------
 
@@ -775,7 +771,7 @@ Configuration properties for a Google Map Camera
 | **`bearing`**           | <code>number</code>                       | Bearing of the camera, in degrees clockwise from true north.                                                           | <code>0</code>     |
 | **`angle`**             | <code>number</code>                       | The angle, in degrees, of the camera from the nadir (directly facing the Earth). The only allowed values are 0 and 45. | <code>0</code>     |
 | **`animate`**           | <code>boolean</code>                      | Animate the transition to the new Camera properties.                                                                   | <code>false</code> |
-| **`animationDuration`** | <code>number</code>                       | This configuration option is not being used.                                                                           |                    |
+| **`animationDuration`** | <code>number</code>                       |                                                                                                                        |                    |
 
 
 #### MapPadding
