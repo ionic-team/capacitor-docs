@@ -1,32 +1,32 @@
 ---
 title: Splash Screens and Icons
-description: Use cordova-res to generate resource images for native projects
+description: Use capacitor-assets to generate resource images for native projects
 contributors:
   - dotNetkow
+  - dereklowlind
 slug: /guides/splash-screens-and-icons
 ---
 
 # Creating Splash Screens and Icons
 
-Initial support for splash screen and icon generation is now available. For complete details, see the [cordova-res docs](https://github.com/ionic-team/cordova-res).
+Initial support for splash screen and icon generation is now available. For complete details, see the [capacitor-assets docs]([https://github.com/ionic-team/cordova-res](https://github.com/ionic-team/capacitor-assets)).
 
-First, install `cordova-res`:
+First, install `capacitor-assets`:
 
 ```bash
-npm install -g cordova-res
+npm install @capacitor/assets
 ```
 
-`cordova-res` expects a Cordova-like structure: place one icon and one splash screen file in a top-level `resources` folder within your project, like so:
+To use `capacitor-assets` in the recommended easy mode, place one icon and optionally one dark mode icon file in a top-level folder named `assets` or `resouces` within your project, like so:
 
 ```
-resources/
-├── icon.png
-└── splash.png
+assets/
+├── logo.png
+└── logo-dark.png (optional)
 ```
 
 Next, run the following to generate all images then copy them into the native projects:
 
 ```bash
-cordova-res ios --skip-config --copy
-cordova-res android --skip-config --copy
+npx capacitor-assets generate
 ```
