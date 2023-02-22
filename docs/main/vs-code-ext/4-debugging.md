@@ -6,7 +6,7 @@ contributors:
 slug: /vscode/debugging
 ---
 
-Debug your application using either [the extension](#debug-in-vs-code) or [attaching to the web view](#attach-to-web-view). You can alternatively use [Remote Logging](#remote-logging) or the [Capacitor Preview](#capacitor-preview) app to perform `console.log` style debugging.
+Debug your application using either [the extension](#debug-in-vs-code) or [attaching to the web view](#attach-to-web-view). You can alternatively use [Remote Logging](#remote-logging) to perform `console.log` style debugging.
 
 ## Debug in VS Code
 
@@ -62,18 +62,4 @@ Click `Settings` > `Remote Logging` to turn on the feature.
 
 :::note
 Remote logging will install a dependency `@ionic/remote-log` and alter your `main.ts` or `index.tsx` file to start remote logging. Be sure to uncheck `Remote Logging` after testing to remove this code.
-:::
-## Capacitor Preview
-
-The Capacitor Preview app lets you try your web application on a mobile device. 
-- Install the **Capacitor Preview** app from the App Store or Play Store.
-- Click `Run` > `Web` to display the QR Code
-- Scan the QR Code in the Capacitor Preview app or type in the IP Address and Port
-
-:::warning
-The Capacitor Preview app has a limited set of plugins preinstalled which will be different from the plugins you may have installed in your project. 
-
-It is best used when you stick to web functionality or are only using official Capacitor plugins.
-
-When you are ready to _graduate_ from Capacitor Preview just click `Add iOS/Android Project` and have the VS Code extension build and run your web native app.
 :::

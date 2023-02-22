@@ -9,34 +9,30 @@ slug: /vscode/build-and-run
 There are a few different ways to build or run your app depending on your preference and whether you want to test in a web browser or a real or emulated mobile device.
 
 ## Testing for Web
-Click `Run` > `Web` to build and launch the options window:
-- Click `Open in Browser` to open the default web browser and start your app
-- Click `Open in Editor` to open your app in a VS Code window
-- Click `Debug in Browser` to begin a debugging session using Chrome or Edge
-- Click `Stop Web Server` to stop the development web server and close the window
-- Scan the QR Code `with Camera App` to preview in a mobile browser
-- Scan the QR Code `with Capacitor Preview App` to preview the app as if it were integrated with Capacitor
+Click `Run` > `Web` to build and launch in the default web browser.
 
 :::note
-If you would prefer to always run in browser or editor then click `...` next to `Web` and choose your preference.
+You can preview your app inside the VS Code editor by clicking the `...` next to `Web` and choose `Open App in Editor`.
 :::
 
 ## Testing on Device
 
 Testing using an emulator or real mobile device can be done in one of these ways:
 - **Native IDE** - Click `Build` in the VS Code extension then run the app in XCode or Android Studio.
-- **Using VS Code** - Click `Run` > `iOS` or `Android`, select the attached device.
-- **Using Capacitor Preview** - Run the `Capacitor Preview` app on your mobile device and scan the QR Code shown with `Run` > `Web`
-
-:::note
-The feedback loop between coding and running can be long if your build is slow. Use the [`Live Reload`](#live-reload) feature or `Capacitor Preview` for faster feedback.
-:::
+- **Using VS Code** - Click `Run` > `iOS` or `Android`, select the device to launch.
 
 ## Live Reload
 
 The **Live Reload** feature allows you to run your app on a mobile device and whenever a code change is made in VS Code and saved it will reload the application.
 
 To turn on this feature click `Settings` > `Live Reload`
+
+## Debugging
+You can debug (use breakpoints, inspect variables etc) by clicking the `Debug` item and choosing:
+- **`Web`** - To launch Chrome or Edge and begin a debugging session.
+- **`Android`** - To attach to a running Android web view and begin a debugging session.
+- **`iOS`** - iOS is not currently supported in VS Code. You can use [Safari](debugging#use-safari).
+
 
 ## Using HTTPS
 
