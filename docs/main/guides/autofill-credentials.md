@@ -174,7 +174,15 @@ If you only see a key icon and "Passwords" text then you may need to save your f
 
 
 ## Configuration for Android
-Follow the [Deep Links Guide](deep-links#android-configuration) if you are targeting Android.
+Follow the [Android Deep Links Guide](deep-links#android-configuration) to create a Site Association File and associated `AndroidManifest.xml` changes and additionally verify:
+- Your domain is using HTTPS
+- Your `capacitor.config.ts` has the `hostname` property set to your domain (matching `android:host` in `AndroidManifest.xml`) and is using the `androidScheme` of `https`:
+```typescript
+"server": {
+    "androidScheme": "https",
+    "hostname": "my-app.com"
+}
+```
 
 ## Configuration for Web
 Follow the [Deep Links Guide](deep-links#details-website-configuration) if you are targeting the web.
