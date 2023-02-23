@@ -89,10 +89,6 @@ const config: CapacitorConfig = {
 };
 ```
 
-:::note
-Changing the `hostname` from the default of `localhost` affects the use of Web APIs that would otherwise require a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) such as [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation) and [`MediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia). To allow these to function as per normal the `androidScheme` must be set to `https`.
-:::
-
 ## Configuration for iOS
 
 ### Configuration in XCode
