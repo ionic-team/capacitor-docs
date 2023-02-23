@@ -40,7 +40,7 @@ You can easily change the display name, version number, and build number of your
 
 ## Debugging
 
-Usng the Ionic extension, you can run the VS Code debugger on Web, Android, and iOS (coming soon).
+Using the Ionic extension, you can run the VS Code debugger on Web, Android, and iOS (coming soon).
 
 ![Capacitor Debugging Example Image](../../../../static/img/v3/docs/getting-started/ionic-vs-code-debugging.jpg)
 
