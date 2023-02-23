@@ -11,7 +11,7 @@ Capacitor does not require Ionic Framework in order to build apps. However, deve
 Capacitor can quickly be installed directly into any new or existing Ionic app by using the [Ionic CLI](https://ionicframework.com/docs/cli).
 
 ## Installing Capacitor in a new Ionic Project
-For new Ionic projects, Capacitor already installed in new Ionic apps by default! All you have to do is start a new project. To create a new Ionic project, run the following command:
+For new Ionic projects, Capacitor is already installed in new Ionic apps by default! All you have to do is start a new project. To create a new Ionic project, run the following command:
 
 ```bash
 ionic start
