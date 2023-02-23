@@ -333,7 +333,7 @@ Build then deploy the site.
 
 ### NuxtJS
 
-Place the association files under `static/.well-known`. No additional steps are necessary; simply build then deploy the site.
+Place the association files under `static/.well-known` (Nuxt 2) or `public/.well-known` (Nuxt 3). No additional steps are necessary; simply build then deploy the site.
 
 ### React
 
