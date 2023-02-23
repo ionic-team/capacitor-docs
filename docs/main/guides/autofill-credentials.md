@@ -83,13 +83,14 @@ You can do this in your  `capacitor.config.ts` or `capacitor.config.json` file:
 const config: CapacitorConfig = {
 ...
   server: {
-    hostname: 'my-app.com'
+    hostname: 'my-app.com',
+    androidScheme: 'https',
   }
 };
 ```
 
-:::warning
-Changing the `hostname` from the default of `localhost` affects the use of Web APIs that would otherwise require a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) such as [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation) and [`MediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia). Be sure to test this type of functionality after making the change.    
+:::note
+Changing the `hostname` from the default of `localhost` affects the use of Web APIs that would otherwise require a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) such as [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation) and [`MediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia). To allow these to function as per normal the `androidScheme` must be set to `https`.
 :::
 
 ## Configuration for iOS
@@ -175,9 +176,9 @@ If you only see a key icon and "Passwords" text then you may need to save your f
 
 ## Configuration for Android
 Follow the [Android Deep Links Guide](deep-links#android-configuration) to create a Site Association File and associated `AndroidManifest.xml` changes and additionally verify:
-- Your domain is using HTTPS
+- Your domain serves HTTPS with a valid trusted certificate
 - Your `capacitor.config.ts` has the `hostname` property set to your domain (matching `android:host` in `AndroidManifest.xml`) and is using the `androidScheme` of `https`:
-```typescript
+```json
 "server": {
     "androidScheme": "https",
     "hostname": "my-app.com"
