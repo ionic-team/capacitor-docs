@@ -33,7 +33,7 @@ Your `index.html` file must have a `<head>` tag in order to properly inject Capa
 
 ### Install Capacitor
 
-In the root of your app, install Capacitor's main npm depdencies: the core JavaScript runtime and the command line interface (CLI).
+In the root of your app, install Capacitor's main npm dependencies: the core JavaScript runtime and the command line interface (CLI).
 
 ```bash
 npm i @capacitor/core
