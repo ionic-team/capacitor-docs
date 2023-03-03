@@ -6,7 +6,7 @@ slug: /getting-started/ui
 
 # Building Your UI
 
-Capacitor apps are just web apps. But it takes a lot more than just wrapping a website to deliver a great native-quality mobile app. 
+Capacitor apps are web apps at the core. But it takes a lot more than just wrapping a website to deliver a great native-quality mobile app. 
 
 Today, teams have a variety of options for their app UI. Let's explore some of the most popular options.
 
