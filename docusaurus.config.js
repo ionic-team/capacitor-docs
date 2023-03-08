@@ -226,11 +226,11 @@ module.exports = {
           return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
-        lastVersion: 'current',
+        lastVersion: 'v4',
         versions: {
           current: {
-            label: 'v4',
-            banner: 'none',
+            label: 'v5',
+            banner: 'unreleased',
           },
         },
       },
@@ -256,7 +256,7 @@ module.exports = {
         },
       };
     },
-    function(_, {id, ...options}) {
+    function (_, { id, ...options }) {
       return {
         name: 'docusaurus-plugin-sass-builtin',
         configureWebpack(_, isServer, utils) {
@@ -264,39 +264,44 @@ module.exports = {
           const isProd = process.env.NODE_ENV === 'production';
           return {
             module: {
-              rules: [{
-                test: /\.s[ca]ss$/,
-                oneOf: [{
-                  test: /\.module\.s[ca]ss$/,
-                  use: [
-                    ...getStyleLoaders(isServer, {
-                      modules: {
-                        localIdentName: isProd
-                          ? `[local]_[hash:base64:4]`
-                          : `[local]_[path][name]`,
-                        exportOnlyLocals: isServer,
-                      },
-                      importLoaders: 2,
-                      sourceMap: !isProd,
-                    }), {
-                      loader: 'sass-loader',
-                      options: options || {}
-                    }
-                  ]
-                }, {
-                  use: [
-                    ...getStyleLoaders(isServer), {
-                      loader: 'sass-loader',
-                      options: options || {}
-                    }
-                  ]
-                }]
-              }]
-            }
+              rules: [
+                {
+                  test: /\.s[ca]ss$/,
+                  oneOf: [
+                    {
+                      test: /\.module\.s[ca]ss$/,
+                      use: [
+                        ...getStyleLoaders(isServer, {
+                          modules: {
+                            localIdentName: isProd ? `[local]_[hash:base64:4]` : `[local]_[path][name]`,
+                            exportOnlyLocals: isServer,
+                          },
+                          importLoaders: 2,
+                          sourceMap: !isProd,
+                        }),
+                        {
+                          loader: 'sass-loader',
+                          options: options || {},
+                        },
+                      ],
+                    },
+                    {
+                      use: [
+                        ...getStyleLoaders(isServer),
+                        {
+                          loader: 'sass-loader',
+                          options: options || {},
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
           };
-        }
+        },
       };
-    }
+    },
   ],
   themes: [
     [
