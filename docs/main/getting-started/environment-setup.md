@@ -40,7 +40,7 @@ Once you've installed the core requirements, as well as Xcode, Xcode Command Lin
 
 ### Xcode
 
-Xcode is Apple's IDE for creating native macOS, iOS, and iPadOS applications. You can install Xcode by [using the Apple App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) on your Mac. Capacitor 4 requires a minimum of Xcode 13.
+Xcode is Apple's IDE for creating native macOS, iOS, and iPadOS applications. You can install Xcode by [using the Apple App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) on your Mac. Capacitor 5 requires a minimum of Xcode 14.
 
 ### Xcode Command Line Tools
 
