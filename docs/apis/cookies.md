@@ -99,6 +99,8 @@ As of iOS 14, you cannot use 3rd party cookies by default. Add the following lin
 </array>
 ```
 
+Note that you may be required to update `ios.limitsNavigationsToAppBoundDomains` in your [configuration](https://capacitorjs.com/docs/config).
+
 ## API
 
 <docgen-index>
