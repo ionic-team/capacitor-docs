@@ -2,10 +2,10 @@ import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
-const API_DIR = new URL('../docs/apis/', import.meta.url);
+const API_DIR = new URL('../versioned_docs/version-v4/apis/', import.meta.url);
 
 // replace with latest once it's relased
-const tag = 'next';
+const tag = 'latest';
 
 const pluginApis = [
   'action-sheet',
