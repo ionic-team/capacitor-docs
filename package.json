@@ -12,6 +12,7 @@
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "generate-plugin-docs": "node scripts/api.mjs",
+    "generate-v4-plugin-docs": "node scripts/api-v4.mjs",
     "serve": "docusaurus serve",
     "prestart": "npm run generate-plugin-docs",
     "start": "docusaurus start",
