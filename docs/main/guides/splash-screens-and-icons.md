@@ -34,5 +34,9 @@ npx capacitor-assets generate
 
 Alternatively you can generate for a specific platform with `--ios`, `--android` or `--pwa`.
 
+:::note
+The [VS Code Extension](../vs-code-ext/0-getting-started.md) can also generate Splash Screen and Icon assets.
+:::
+
 ## Android 12+
 In Android 12 and above Google changed the way Splash Screens are displayed, using a smaller icon with colored background instead of a full screen image that was possible with Android 11 and below. Additional documentation about this change can be found at [developer.android.com](https://developer.android.com/develop/ui/views/launch/splash-screen).
