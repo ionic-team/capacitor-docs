@@ -17,6 +17,12 @@ The official [Capacitor Community](https://github.com/capacitor-community) GitHu
 
 [Explore the Capacitor Community &#8250;](https://github.com/capacitor-community)
 
+## Capawesome
+
+The [Capawesome](https://github.com/capawesome-team) GitHub org is another community project by one of our Ionic Developer Experts with the goal of providing awesome Capacitor plugins for the entire community.
+Among others, this includes [capacitor-firebase](https://github.com/capawesome-team/capacitor-firebase) and [capacitor-mlkit](https://github.com/capawesome-team/capacitor-mlkit).
+Check out the [Capawesome Blog](https://capawesome.io/blog/) or [Twitter](https://twitter.com/capawesomeio) to stay up to date.
+
 ## Cordova Ecosystem
 
 Capacitor has support for most Cordova plugins, so developers can use the [hundreds of existing Cordova plugins](https://cordova.apache.org/plugins/) in their Capacitor apps. While certain Cordova plugins are [not compatible](/docs/plugins/cordova#known-incompatible-plugins) with Capacitor, most are, so it's worth trying one if there's no existing Capacitor-specific plugin available.
