@@ -6,7 +6,7 @@ contributors:
 slug: /guides/splash-screens-and-icons
 ---
 
-You can generate splash Screens and Icons for your iOS, Android or Progressive Web Application using the [@capacitor/assets](https://github.com/ionic-team/capacitor-assets) tool.
+You can generate Splash Screens and Icons for your iOS, Android or Progressive Web Application using the [@capacitor/assets](https://github.com/ionic-team/capacitor-assets) tool.
 
 First, install `@capacitor/assets`:
 
