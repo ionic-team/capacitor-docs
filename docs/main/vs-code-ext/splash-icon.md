@@ -6,7 +6,7 @@ contributors:
 slug: /vscode/splash-icon
 ---
 
-The extension allows you to set a single splash screen and icon image and generate the necessary assets for your native iOS and Android projects.
+The extension allows you to set a splash screen and icon image and [generate](https://github.com/ionic-team/capacitor-assets) the necessary assets for your native iOS and Android projects.
 
 ### Setting a Splash Screen
 
@@ -29,7 +29,3 @@ Hover over the `Splash Screen & Icon` item and click the `Rebuild` button to reg
 ### Adaptive Icons
 
 [Adaptive Icons](https://github.com/ionic-team/capacitor-assets#adaptive-icons) are an Android concept used for some Android devices that have either circular or rounded icons. You can define these by clicking `Icon Foreground` or `Icon Background`. Although these are optional, it is recommended to set these.
-
-:::note
-The package [`cordova-res`](https://capacitorjs.com/docs/guides/splash-screens-and-icons) will be installed as a dev dependency when using this feature. In future versions of the extension this will be replaced with [@capacitor/assets](https://github.com/ionic-team/capacitor-assets).
-:::

@@ -1,32 +1,42 @@
 ---
 title: Splash Screens and Icons
-description: Use cordova-res to generate resource images for native projects
+description: Use @capacitor/assets to generate resource images for native projects
 contributors:
   - dotNetkow
 slug: /guides/splash-screens-and-icons
 ---
 
-# Creating Splash Screens and Icons
+You can generate Splash Screens and Icons for your iOS, Android or Progressive Web Application using the [@capacitor/assets](https://github.com/ionic-team/capacitor-assets) tool.
 
-Initial support for splash screen and icon generation is now available. For complete details, see the [cordova-res docs](https://github.com/ionic-team/cordova-res).
-
-First, install `cordova-res`:
+First, install `@capacitor/assets`:
 
 ```bash
-npm install -g cordova-res
+npm install @capacitor/assets --save-dev
 ```
 
-`cordova-res` expects a Cordova-like structure: place one icon and one splash screen file in a top-level `resources` folder within your project, like so:
-
+Provide icon and splash screen source images using this folder/filename structure:
 ```
 resources/
-├── icon.png
-└── splash.png
+├── icon-only.png
+├── icon-foreground.png
+├── icon-background.png
+├── splash.png
+└── splash-dark.png
+```
+- Icon files should be at least `1024px` x `1024px`. 
+- Splash screen files should be at least `2732px` x `2732px`. 
+- The format can be `jpg` or `png`.
+
+Then generate (which applies to your native projects or generates a PWA manifest file):
+```shell
+npx capacitor-assets generate
 ```
 
-Next, run the following to generate all images then copy them into the native projects:
+Alternatively you can generate for a specific platform with `--ios`, `--android` or `--pwa`.
 
-```bash
-cordova-res ios --skip-config --copy
-cordova-res android --skip-config --copy
-```
+:::note
+The [VS Code Extension](../vs-code-ext/0-getting-started.md) can also generate Splash Screen and Icon assets.
+:::
+
+## Android 12+
+In Android 12 and above Google changed the way Splash Screens are displayed, using a smaller icon with colored background instead of a full screen image that was possible with Android 11 and below. Additional documentation about this change can be found at [developer.android.com](https://developer.android.com/develop/ui/views/launch/splash-screen).
