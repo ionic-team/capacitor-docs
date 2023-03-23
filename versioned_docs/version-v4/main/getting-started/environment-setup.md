@@ -71,7 +71,7 @@ To install Homebrew, run the following bash command:
 Don't just trust us! This is how [brew.sh](https://brew.sh) recommends installing Homebrew.
 :::
 
-If you do not want to install Homebrew, instructions can be found below for an alternative, however it is not recommended. 
+If you do not want to install Homebrew, instructions can be found below for an alternative; however, this is not recommended. 
 
 ### CocoaPods
 
