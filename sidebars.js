@@ -44,6 +44,8 @@ module.exports = {
       label: 'Upgrade Guides',
       collapsed: false,
       items: [
+        'main/updating/5-0',
+        'main/updating/plugins/5-0',
         'main/updating/4-0',
         'main/updating/3-0',
         'main/updating/2-0',
