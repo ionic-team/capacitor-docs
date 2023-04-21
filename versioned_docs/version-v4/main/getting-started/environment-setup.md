@@ -14,7 +14,7 @@ Do you need to support Desktops? You can use Capacitor to build [Windows](https:
 
 ## Core Requirements
 
-In order to develop any application with Capacitor, you will need NodeJS 14 or higher installed. You can install Node by using the installer on [the Node website](https://nodejs.org), using [Volta](https://volta.sh/): a JavaScript tools manager, or installing it with a package manager like [homebrew](https://brew.sh/), or [Chocolatey](https://chocolatey.org/).
+In order to develop any application with Capacitor, you will need NodeJS 12 or higher installed. You can install Node by using the installer on [the Node website](https://nodejs.org), using [Volta](https://volta.sh/): a JavaScript tools manager, or installing it with a package manager like [homebrew](https://brew.sh/), or [Chocolatey](https://chocolatey.org/).
 
 Once you have installed Node, open your terminal of choice and type in the following command to make sure node is properly installed
 
