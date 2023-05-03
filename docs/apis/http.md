@@ -67,11 +67,15 @@ const doGet = () => {
 };
 
 // Example of a POST request. Note: data
-// can be passed as a raw JS Object (must be JSON serializable)
+// can be passed as a raw JS Object (must be JSON serializable).
+// Content-Type is required for body to be sent with POST/PUT/PATCH requests.
 const doPost = () => {
   const options = {
     url: 'https://example.com/my/api',
-    headers: { 'X-Fake-Header': 'Fake-Value' },
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Fake-Header': 'Fake-Value',
+    },
     data: { foo: 'bar' },
   };
 
