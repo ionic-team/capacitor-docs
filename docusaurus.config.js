@@ -226,11 +226,10 @@ module.exports = {
           return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
-        lastVersion: 'v4',
+        lastVersion: 'current',
         versions: {
           current: {
-            label: 'v5',
-            banner: 'unreleased',
+            label: 'v5',            
           },
         },
       },
