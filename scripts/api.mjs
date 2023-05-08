@@ -4,8 +4,7 @@ import fetch from 'node-fetch';
 
 const API_DIR = new URL('../docs/apis/', import.meta.url);
 
-// replace with latest once it's relased
-const tag = 'next';
+const tag = 'latest';
 
 const pluginApis = [
   'action-sheet',
