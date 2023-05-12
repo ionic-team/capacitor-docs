@@ -8,6 +8,10 @@ slug: /vscode/build-and-run
 
 There are a few different ways to build or run your app depending on your preference and whether you want to test in a web browser or a real or emulated mobile device.
 
+:::tip
+You can press `⌥` + R to run your app (`ALT` + `R` on Windows).
+:::
+
 ## Testing for Web
 Click `Run` > `Web` to build and launch in the default web browser.
 

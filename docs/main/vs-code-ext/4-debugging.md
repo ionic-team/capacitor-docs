@@ -8,6 +8,10 @@ slug: /vscode/debugging
 
 Debug your application using either [the extension](#debug-in-vs-code) or [attaching to the web view](#attach-to-web-view). You can alternatively use [Remote Logging](#remote-logging) to perform `console.log` style debugging.
 
+:::tip
+You can press `⌥` + D to debug your app (`ALT` + `D` on Windows).
+:::
+
 ## Debug in VS Code
 
 Click the `Debug` item to launch a web browser or attach to a running Android web view for debugging.
@@ -58,8 +62,8 @@ You'll also need to ensure your mobile device has been enabled for debugging.
 
 The remote logging feature will send all calls to `console.log` (and `console.error` etc) to the VS Code `output` window. This makes debugging your app when it is running on a device easier as you do not have to attach to its web view.
 
-Click `Settings` > `Remote Logging` to turn on the feature.
+To use this feature install Nexus Browser on the device ([App Store](https://apps.apple.com/us/app/nexus-web-browser/id6445866986) or [Play Store](https://play.google.com/store/apps/details?id=com.nexusconcepts.nexus)) and Run your app for web in VS Code. If the device is on the same Wifi network it will detect your app and allow you to launch it.
 
-:::note
-Remote logging will install a dependency `@ionic/remote-log` and alter your `main.ts` or `index.tsx` file to start remote logging. Be sure to uncheck `Remote Logging` after testing to remove this code.
+:::tip
+Select `Settings` > `Logging` to filter what is logged to the output window.
 :::
