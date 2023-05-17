@@ -18,7 +18,7 @@ npx cap build [options] <platform>
 
 <strong>Options:</strong>
 
-- `--scheme <scheme-to-build>`: iOS Scheme to build (default is App)
+- `--scheme <scheme-to-build>`: iOS Scheme to build (default is `App`)
 - `--flavor <flavor-to-build>`: Android Flavor to build
 - `--keystorepath <path>`: Path to the keystore file
 - `--keystorepass <keystore-password>`: Password to the keystore
