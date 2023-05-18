@@ -473,3 +473,80 @@ If you've setup your application correctly, you'll see an alert pop up on your h
 ![Push Test Android](../../../static/img/v5/docs/guides/firebase-push-notifications/push-test-android.png)
 
 ![Push Test iOS](../../../static/img/v5/docs/guides/firebase-push-notifications/push-test-ios.png)
+
+## Images in Push Notifications
+
+You can optionally include Images as part of push notification by following the guide below.
+
+:::tip
+The Firebase Messaging SDK can include an `ImageUrl` property as part of its payload and will display it. The url must be `https://` and be sized under 300kb.
+:::
+
+### Images with Android
+Android will automatically display images when using `@capacitor/push-notifications`. If you test this in [Firebase Console](https://console.firebase.google.com/) by setting `Notification image` the push notification will appear on the Android device similar to the screenshot below:
+
+![Push Notification with Image for Android](../../../static/img/v5/docs/guides/firebase-push-notifications/android-push-image.jpeg)
+
+### Images with iOS
+iOS requires a [Notification Service Extension](https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension) to be added to your project in order to display images in push notifications.
+
+In XCode:
+- Click `File` > `New` > `Target`
+- Choose `Notification Service Extension` and click `Next`
+- Enter a `Product Name` (for example `pushextension`)
+- Select your Team
+- Click `Finish`
+- When asked click `Activate`
+
+Choose `pushextension` from the list of Targets then:
+- Click `Signing & Capabilities`
+- Click `+ Capability`
+- Choose `Push Notifications`
+- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 13.0`
+
+:::note
+ If you do not change the deployment target for your extension then images will not appear on devices on an older version of iOS.
+:::
+
+To add Firebase Messaging to the extension open your `Podfile` and add:
+```ruby
+target 'pushextension' do
+  pod 'Firebase/Messaging'
+end
+```
+
+Then update Cocoapods by running:
+```bash
+npx cap update ios
+```
+
+Now open `NotificationService.swift` (it will be in the folder named `pushextension`) and replace the contents with the following:
+
+```swift
+import UserNotifications
+import FirebaseMessaging
+
+class NotificationService: UNNotificationServiceExtension {
+    var contentHandler: ((UNNotificationContent) -> Void)?
+    var bestAttemptContent: UNMutableNotificationContent?
+
+    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+        guard let content = request.content.mutableCopy() as? UNMutableNotificationContent else { return }
+        self.contentHandler = contentHandler
+        self.bestAttemptContent = content
+        
+        FIRMessagingExtensionHelper().populateNotificationContent(content, withContentHandler: contentHandler)
+    }
+    
+    override func serviceExtensionTimeWillExpire() {
+        guard let contentHandler = contentHandler,
+              let bestAttemptContent =  bestAttemptContent else { return }
+        
+        contentHandler(bestAttemptContent)
+    }
+}
+```
+
+You should now test a push notification from the [Firebase Console](https://console.firebase.google.com/) remembering to set the `Notification image` and choose your iOS app. When it arrives on the iOS device it will appear on the right hand side as shown below:
+
+![Push Notification with Image for iOS](../../../static/img/v5/docs/guides/firebase-push-notifications/ios-push-image.jpeg)
