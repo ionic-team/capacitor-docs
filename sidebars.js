@@ -136,6 +136,7 @@ module.exports = {
           label: 'Plugin APIs',
           href: '/docs/apis',
         },
+        'main/reference/support-policy',
         {
           type: 'link',
           label: 'CLI',
