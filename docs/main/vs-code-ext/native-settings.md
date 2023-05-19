@@ -18,5 +18,5 @@ Click `Configuration` > `Properties` to change:
 - **Build Number** - The build number usually associated with the version number (eg `3`).
 
 :::note
-When changing one of these it will change both the `ios` and `android` native project so that both projects are in sync.
+When changing one of these properties both `ios` and `android` native projects will be changed.
 :::
