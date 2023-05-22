@@ -14,7 +14,7 @@ title: Support Policy
 
 Capacitor has been 100% open source (MIT) since the very beginning, and always will be. Developers can ensure Capacitor is the right choice for their cross-platform apps through Capacitor's community maintenance strategy. The Capacitor team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
 
-## Framework Maintenance and Support Status
+## Capacitor Maintenance and Support Status
 
 Given the reality of time and resource constraints as well as the need to support the ever-evolving landscape of mobile platforms, over time it becomes necessary for the Capacitor team to release new major versions. However, Capacitor will do everything it can to make the transition to newer versions as smooth as possible. The Capacitor team recommends updating to the newest version of Capacitor for the latest features, improvements and stability updates.
 
