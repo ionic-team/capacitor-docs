@@ -6,7 +6,7 @@ contributors:
 slug: /vscode/plugins
 ---
 
-Plugins provide a Capacitor with great native features, so finding high quality plugins is an important part of implement features in your app.
+Plugins provide Capacitor with great native features, so finding high quality plugins is an important part of implementing features in your app.
 
 ## Finding Plugins
 
@@ -27,7 +27,7 @@ The star rating for a plugin is automatically calculated based on the [NPM](http
 1. Is the plugin's project open source?
 2. Are there at least 100 Github stars?
 3. Has the plugin been published to npm in the last year?
-4. Is the version a pre-release? (ie version 0.x)
+4. Is the version considered stable? (ie version 0.x)
 5. Are there at least 1000 downloads on npm per month?
 
 The goal of the rating system is to highlight projects that are regularly used, maintained and liked by the community. 
@@ -36,22 +36,22 @@ The goal of the rating system is to highlight projects that are regularly used, 
 
 - You can choose a particular version of a plugin to install by clicking the down arrow (↓).
 - Clicking `install` or `update` will install the latest version of the plugin that works with your project.
-- The `More Information` link will open a browser to the listing in NPM or to official documentation
-- The `Source Code` link will open a browser showing the Github project
-- The `Report Issue` link will link to where a plugin author wants you to file issues
-- Cordova plugins will show the Cordova logo, Capacitor plugins show the Capacitor logo
-- If a plugin targets only Android, or only iOS then an Android or Apple logo will show next to it
+- The `More Information` link will open a browser to the listing in NPM or to official documentation.
+- The `Source Code` link will open a browser showing the Github project.
+- The `Report Issue` link will link to where a plugin author wants you to file issues.
+- Cordova plugins will show the Cordova logo, Capacitor plugins show the Capacitor logo.
+- If a plugin targets only Android, or only iOS then an Android or Apple logo will show next to it.
 - If you are using the latest version of a plugin you may see `Up To Date`. Plugins are checked daily so its possible that a plugin released today may still show `Up To Date`.
 
 ## Plugin Authors
 
 To ensure your plugin looks great by ensuring your `package.json` meets these requirements before publishing to npm:
-1. Provide a list of appropriate keywords that a user may search for in the `keywords` property
-1. Provide a good description of what the plugin does in the `description` property
-1. Be sure to specify an appropriate license type in the `license` property (eg `MIT`,`Apache-2.0`, `BSD`) 
-1. Set to the Github repo url `repository` > `url` property
-1. Set the url to where to file issues in the `bugs` > `url` property
-1. Be sure to set the author's name in the `author` property (eg `author: { name: 'John Smith'}`)
+1. Provide a list of appropriate keywords that a user may search for in the `keywords` property.
+1. Provide a good description of what the plugin does in the `description` property.
+1. Be sure to specify an appropriate license type in the `license` property (eg `MIT`,`Apache-2.0`, `BSD`) .
+1. Set to the Github repo url `repository` > `url` property.
+1. Set the url to where to file issues in the `bugs` > `url` property.
+1. Be sure to set the author's name in the `author` property (eg `author: { name: 'John Smith'}`).
 
 ### Other Tips
 - Use an avatar in your Github project that matches your plugin function or company.
