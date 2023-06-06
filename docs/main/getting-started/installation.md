@@ -22,7 +22,7 @@ npm init @capacitor/app
 
 Capacitor was designed to drop into any modern JavaScript web app. However, your project needs to have the following three requirements in order to use Capacitor with your existing application:
 
-- A `package.json` file
+- A `package.json` file used by NPM. (Capacitor does not support other package managers such as PNPM or Yarn.) 
 - A separate directory for built web assets such as `dist` or `www`
 - An `index.html` file at the root of your web assets directory
 
