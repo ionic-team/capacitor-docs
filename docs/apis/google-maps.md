@@ -63,7 +63,7 @@ This plugin will use the following project variables (defined in your app's `var
 - `googleMapsUtilsKtxVersion`: version of `com.google.maps.android:maps-utils-ktx` (default: `3.4.0`)
 - `kotlinxCoroutinesVersion`: version of `org.jetbrains.kotlinx:kotlinx-coroutines-android` and `org.jetbrains.kotlinx:kotlinx-coroutines-core` (default: `1.6.4`)
 - `androidxCoreKTXVersion`: version of `androidx.core:core-ktx` (default: `1.10.0`)
-- `kotlin_version`: version of `org.jetbrains.kotlin:kotlin-stdlib-jdk7` (default: `1.8.20`)
+- `kotlin_version`: version of `org.jetbrains.kotlin:kotlin-stdlib` (default: `1.8.20`)
 
 
 ## Usage
@@ -836,13 +836,15 @@ setOnMyLocationClickListener(callback?: MapListenerCallback<MapClickCallbackData
 
 An interface containing the options used when creating a map.
 
-| Prop              | Type                                                        | Description                                                                                        | Default            |
-| ----------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
-| **`id`**          | <code>string</code>                                         | A unique identifier for the map instance.                                                          |                    |
-| **`apiKey`**      | <code>string</code>                                         | The Google Maps SDK API Key.                                                                       |                    |
-| **`config`**      | <code><a href="#googlemapconfig">GoogleMapConfig</a></code> | The initial configuration settings for the map.                                                    |                    |
-| **`element`**     | <code>HTMLElement</code>                                    | The DOM element that the Google Map View will be mounted on which determines size and positioning. |                    |
-| **`forceCreate`** | <code>boolean</code>                                        | Destroy and re-create the map instance if a map with the supplied id already exists                | <code>false</code> |
+| Prop              | Type                                                        | Description                                                                                                                                                                            | Default            |
+| ----------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| **`id`**          | <code>string</code>                                         | A unique identifier for the map instance.                                                                                                                                              |                    |
+| **`apiKey`**      | <code>string</code>                                         | The Google Maps SDK API Key.                                                                                                                                                           |                    |
+| **`config`**      | <code><a href="#googlemapconfig">GoogleMapConfig</a></code> | The initial configuration settings for the map.                                                                                                                                        |                    |
+| **`element`**     | <code>HTMLElement</code>                                    | The DOM element that the Google Map View will be mounted on which determines size and positioning.                                                                                     |                    |
+| **`forceCreate`** | <code>boolean</code>                                        | Destroy and re-create the map instance if a map with the supplied id already exists                                                                                                    | <code>false</code> |
+| **`region`**      | <code>string</code>                                         | The region parameter alters your application to serve different map tiles or bias the application (such as biasing geocoding results towards the region). Only available for web.      |                    |
+| **`language`**    | <code>string</code>                                         | The language parameter affects the names of controls, copyright notices, driving directions, and control labels, as well as the responses to service requests. Only available for web. |                    |
 
 
 #### GoogleMapConfig
