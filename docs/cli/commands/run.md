@@ -18,7 +18,7 @@ npx cap run [options] <platform>
 
 <strong>Options:</strong>
 
-- `--flavor <flavorName>`: set the flavor of the Android project
+- `--flavor <flavorName>`: set the flavor of the Android project (flavor dimensions not yet supported)
 - `--list`: Print a list of target devices available to the given platform
 - `--no-sync`: do not run the sync command
 - `--scheme <schemeName>`: set the scheme of the iOS project
