@@ -18,9 +18,10 @@ npx cap build [options] <platform>
 
 <strong>Options:</strong>
 
+- `--scheme <scheme-to-build>`: iOS Scheme to build (default is `App`)
+- `--flavor <flavor-to-build>`: Android Flavor to build
 - `--keystorepath <path>`: Path to the keystore file
 - `--keystorepass <keystore-password>`: Password to the keystore
-- `--keystorealias <alias>` - Key alias in the keystore
-- `--keystorealiaspass <alias-password>` - Password for the keystore alias
-- `--androidreleasetype <release-type>` - Can be either `AAB` or `APK`
-- `--scheme <scheme-to-build>` - iOS Scheme to build (default is App)
+- `--keystorealias <alias>`: Key alias in the keystore
+- `--keystorealiaspass <alias-password>`: Password for the keystore alias
+- `--androidreleasetype <release-type>`: Can be either `AAB` or `APK`
