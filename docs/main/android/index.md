@@ -16,7 +16,7 @@ Capacitor Android apps are configured and managed through Android Studio.
 
 ## Android Support
 
-API 22+ (Android 5.1 or later) is supported, which represents [over 95% of the Android market](https://gs.statcounter.com/android-version-market-share/mobile-tablet/worldwide). Capacitor requires an Android WebView with Chrome version 60 or later. On Android 5 and 6, Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7+, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) is used.
+API 22+ (Android 5.1 or later) is supported, which represents [over 99% of the Android market](https://gs.statcounter.com/android-version-market-share/mobile-tablet/worldwide). Capacitor requires an Android WebView with Chrome version 60 or later. On Android 5-6, and 10+ Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7-9, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) provides the WebView.
 
 ## Adding the Android Platform
 
