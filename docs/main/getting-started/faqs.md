@@ -11,7 +11,7 @@ Below are a list of commonly asked Capacitor questions. If you don't find an ans
 
 ## What platforms does Capacitor support?
 
-Capacitor can target virtually any advice with our official and community platforms.
+Capacitor can target virtually any device with our official and community platforms.
 
 ### Official Platforms
 
