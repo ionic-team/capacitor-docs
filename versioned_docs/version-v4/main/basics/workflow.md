@@ -76,7 +76,7 @@ To compile your app in a terminal or in CI environments, you can use `gradle` or
 
 ## Updating Capacitor
 
-Updating your Capacitor runtime is as straightforward as runnin an `npm install`.
+Updating your Capacitor runtime is as straightforward as running `npm install`.
 
 ```bash
 npm i @capacitor/core @capacitor/ios @capacitor/android
