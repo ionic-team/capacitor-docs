@@ -83,7 +83,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://blog.ionicframework.com/',
+              href: 'https://ionic.io/blog/tag/capacitor',
               label: 'Blog',
               target: '_blank',
               rel: null,
