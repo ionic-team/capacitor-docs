@@ -39,7 +39,7 @@ const pluginApis = [
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/app-launcher/src/definitions.ts',
   },
   {
-    id: 'background-tasks',
+    id: 'background-runner',
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
