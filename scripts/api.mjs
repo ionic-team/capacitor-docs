@@ -39,6 +39,14 @@ const pluginApis = [
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/app-launcher/src/definitions.ts',
   },
   {
+    id: 'background-tasks',
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
+    editApiUrl:
+      'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
+  {
     id: 'browser',
     isExperimental: false,
     npmScope: '@capacitor',
@@ -191,6 +199,13 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/toast/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/toast/src/definitions.ts',
+  },
+  {
+    id: 'watch',
+    isExperimental: true,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
 ];
 
