@@ -30,4 +30,4 @@ The following hooks are available for sync command:
 - `capacitor:sync:before`
 - `capacitor:sync:after`
 
-[More information](hooks)
+[More information](../hooks)
