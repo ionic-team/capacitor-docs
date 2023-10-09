@@ -1,5 +1,5 @@
 ---
-title: Advanced Topics
+ title: Advanced Topics
 description: Visual Studio Code Extension for Capacitor
 contributors:
   - dtarnawsky
