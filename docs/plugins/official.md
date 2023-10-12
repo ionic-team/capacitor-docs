@@ -20,6 +20,7 @@ The API documentation for these plugins can be found below.
 - [Action Sheet](/docs/apis/action-sheet)
 - [App](/docs/apis/app)
 - [App Launcher](/docs/apis/app-launcher)
+- [Background Runner](/docs/apis/background-runner)
 - [Browser](/docs/apis/browser)
 - [Camera](/docs/apis/camera)
 - [Clipboard](/docs/apis/clipboard)
@@ -43,6 +44,7 @@ The API documentation for these plugins can be found below.
 - [Status Bar](/docs/apis/status-bar)
 - [Text Zoom](/docs/apis/text-zoom)
 - [Toast](/docs/apis/toast)
+- [Watch 🧪](/docs/apis/watch)
 
 ## GitHub
 
