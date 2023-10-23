@@ -20,7 +20,7 @@ slug: /guides/community
 
 [Using the Capacitor in Vue.js app &#8250;](https://akhromieiev.com/tutorials/using-capacitor-in-vue-js-app/)
 
-[How to Build a Native Mobile App with Next.js and Capacitor](https://enesien.com/blog/nextjs-capacitor-native-mobile-app)
+[How to Build a Native Mobile App with Next.js and Capacitor &#8250;](https://enesien.com/blog/nextjs-capacitor-native-mobile-app)
 
 ## APIs
 
