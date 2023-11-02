@@ -163,6 +163,47 @@ module.exports = {
         },
       ],
     },
+    sidebar: {
+      productDropdown: {
+        title: 'Capacitor Docs',
+        logo: {
+          width: 20,
+          height: 20,
+          alt: 'Capacitor Logo',
+          src: 'img/components/product-dropdown/logo-dark.png',
+          href: `https://capacitorjs.com/docs`,
+          target: '_self',
+        },
+        textLinks: [
+          {
+            url: {
+              href: 'https://forum.ionicframework.com/c/capacitor/26',
+              target: '_blank',
+              rel: 'noopener nofollow',
+            },
+            label: 'Forum',
+          },
+        ],
+        iconLinks: [
+          {
+            key: 'github',
+            url: {
+              href: 'https://github.com/ionic-team/capacitor',
+              target: '_blank',
+              rel: 'noopener nofollow',
+            },
+          },
+          {
+            key: 'twitter',
+            url: {
+              href: 'https://twitter.com/capacitorjs',
+              target: '_blank',
+              rel: 'noopener nofollow',
+            },
+          },
+        ],
+      },
+    },
     tagManager: {
       trackingID: 'GTM-TKMGCBC',
     },
