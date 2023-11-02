@@ -26,17 +26,17 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
     },
+    logo: {
+      alt: 'Site Logo',
+      src: `/logos/capacitor-text-docs-light.svg`,
+      srcDark: `/logos/capacitor-text-docs-dark.svg`,
+      href: 'https://capacitorjs.com',
+      target: '_self',
+      width: 200,
+      height: 24,
+    },
     navbar: {
       hideOnScroll: true,
-      logo: {
-        alt: 'Site Logo',
-        src: `/logos/capacitor-text-docs-light.svg`,
-        srcDark: `/logos/capacitor-text-docs-dark.svg`,
-        href: 'https://capacitorjs.com',
-        target: '_self',
-        width: 200,
-        height: 24,
-      },
       items: [
         {
           type: 'doc',
