@@ -123,38 +123,9 @@ module.exports = {
           className: 'navbar__link--support',
         },
         {
-          type: 'separator',
+          type: 'html',
           position: 'right',
-        },
-        {
-          type: 'iconLink',
-          position: 'right',
-          icon: {
-            alt: 'twitter logo',
-            src: `/logos/twitter.svg`,
-            href: 'https://twitter.com/capacitorjs',
-            target: '_blank',
-          },
-        },
-        {
-          type: 'iconLink',
-          position: 'right',
-          icon: {
-            alt: 'github logo',
-            src: `/logos/github.svg`,
-            href: 'https://github.com/ionic-team/capacitor',
-            target: '_blank',
-          },
-        },
-        {
-          type: 'iconLink',
-          position: 'right',
-          icon: {
-            alt: 'discord logo',
-            src: `/logos/discord.svg`,
-            href: 'https://ionic.link/discord',
-            target: '_blank',
-          },
+          value: '<div class="separator" aria-hidden></div>',
         },
         {
           type: 'localeDropdown',
@@ -162,12 +133,33 @@ module.exports = {
           dropdownItemsAfter: [
             {
               to: 'https://capacitorjs.jp/',
-              label: '日本語',
+              label: 'Translate',
               target: '_blank',
               rel: null,
             },
           ],
           className: 'icon-link language navbar__item',
+        },
+        {
+          href: 'https://twitter.com/capacitorjs',
+          position: 'right',
+          className: 'icon-link icon-link-mask icon-link-twitter',
+          'aria-label': 'Twitter',
+          target: '_blank',
+        },
+        {
+          href: 'https://ionic.link/discord',
+          position: 'right',
+          className: 'icon-link icon-link-mask icon-link-discord',
+          'aria-label': 'Discord',
+          target: '_blank',
+        },
+        {
+          href: 'https://github.com/ionic-team/capacitor',
+          position: 'right',
+          className: 'icon-link icon-link-mask icon-link-github',
+          'aria-label': 'GitHub repository',
+          target: '_blank',
         },
       ],
     },
@@ -217,7 +209,7 @@ module.exports = {
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${match[1].replace(
               '-',
-              '/'
+              '/',
             )}.md`;
           }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
@@ -229,7 +221,7 @@ module.exports = {
         lastVersion: 'v5',
         versions: {
           current: {
-            label: 'v6',      
+            label: 'v6',
             banner: 'unreleased',
           },
         },
