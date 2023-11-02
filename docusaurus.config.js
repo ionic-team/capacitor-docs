@@ -179,7 +179,6 @@ module.exports = {
     },
   },
   plugins: [
-    // 'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-module-alias',
       {
@@ -191,45 +190,6 @@ module.exports = {
         },
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        routeBasePath: '/',
-        sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-          if (locale != 'en') {
-            return 'https://crowdin.com/project/capacitor-docs';
-          }
-          if ((match = docPath.match(/apis\/(.*)\.md/)) != null) {
-            if (match[1] === 'cookies' || match[1] === 'http') {
-              return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${match[1]}.md`;
-            }
-            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
-          }
-          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${match[1].replace(
-              '-',
-              '/'
-            )}.md`;
-          }
-          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
-          }
-          return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
-        },
-        exclude: ['README.md'],
-        lastVersion: 'current',
-        versions: {
-          current: {
-            label: 'v5',
-          },
-        },
-      },
-    ],
-    '@docusaurus/plugin-content-pages',
-    '@docusaurus/plugin-debug',
-    '@docusaurus/plugin-sitemap',
-    '@ionic-internal/docusaurus-plugin-tag-manager',
     function (context, options) {
       return {
         name: 'ionic-docs-ads',
@@ -294,19 +254,48 @@ module.exports = {
       };
     },
   ],
-  themes: [
+  presets: [
     [
-      //overriding the standard docusaurus-theme-classic to provide custom schema
-      path.resolve(__dirname, 'docusaurus-theme-classic'),
-      {
-        customCss: [
-          require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
-          require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
-          require.resolve('./src/styles/custom.scss'),
-        ],
-      },
+      '@ionic-docs/preset-classic',
+      /** @type {import('@ionic-docs/preset-classic').Options} */
+      ({
+        docs: {
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+            if (locale != 'en') {
+              return 'https://crowdin.com/project/capacitor-docs';
+            }
+            if ((match = docPath.match(/apis\/(.*)\.md/)) != null) {
+              if (match[1] === 'cookies' || match[1] === 'http') {
+                return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${match[1]}.md`;
+              }
+              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
+            }
+            if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${match[1].replace(
+                '-',
+                '/'
+              )}.md`;
+            }
+            if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+            }
+            return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          },
+          exclude: ['README.md'],
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'v5',
+            },
+          },
+        },
+        theme: {
+          customCss: [require.resolve('./src/styles/custom.scss')],
+        },
+      }),
     ],
-    path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
   ],
   customFields: {},
 };
