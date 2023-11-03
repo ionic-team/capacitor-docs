@@ -2,13 +2,14 @@ const path = require('path');
 const prismic = require('@prismicio/client');
 const fetch = require('node-fetch');
 
+const HOSTNAME = 'capacitorjs.com';
 const BASE_URL = '/docs';
 
 module.exports = {
   title: 'Capacitor Documentation',
   tagline:
     'Capacitor is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web.',
-  url: 'https://capacitorjs.com',
+  url: `https://${HOSTNAME}`,
   baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: 'en',
@@ -30,7 +31,7 @@ module.exports = {
       alt: 'Site Logo',
       src: `/logos/capacitor-text-docs-light.svg`,
       srcDark: `/logos/capacitor-text-docs-dark.svg`,
-      href: 'https://capacitorjs.com',
+      href: `https://${HOSTNAME}`,
       target: '_self',
       width: 200,
       height: 24,
@@ -171,7 +172,7 @@ module.exports = {
           height: 20,
           alt: 'Capacitor Logo',
           src: 'img/components/product-dropdown/logo-dark.png',
-          href: `https://capacitorjs.com/docs`,
+          href: `https://${HOSTNAME}${BASE_URL}`,
           target: '_self',
         },
         textLinks: [
