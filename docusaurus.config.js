@@ -162,6 +162,7 @@ module.exports = {
       ],
     },
     sidebar: {
+      versionDropdown: {},
       productDropdown: {
         title: 'Capacitor Docs',
         logo: {
