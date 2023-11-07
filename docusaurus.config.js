@@ -256,7 +256,7 @@ module.exports = {
             if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${match[1].replace(
                 '-',
-                '/'
+                '/',
               )}.md`;
             }
             if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
