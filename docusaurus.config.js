@@ -61,12 +61,6 @@ module.exports = {
           position: 'left',
         },
         {
-          type: 'docsVersionDropdown',
-          position: 'right',
-          // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-          dropdownActiveClassDisabled: true,
-        },
-        {
           type: 'search',
           position: 'right',
         },
@@ -175,8 +169,6 @@ module.exports = {
           height: 20,
           alt: 'Capacitor Logo',
           src: 'img/components/product-dropdown/logo-dark.png',
-          href: `https://${HOSTNAME}${BASE_URL}`,
-          target: '_self',
         },
         textLinks: [
           {
@@ -224,17 +216,6 @@ module.exports = {
     },
   },
   plugins: [
-    [
-      'docusaurus-plugin-module-alias',
-      {
-        alias: {
-          'styled-components': path.resolve(__dirname, './node_modules/styled-components'),
-          react: path.resolve(__dirname, './node_modules/react'),
-          'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-          '@components': path.resolve(__dirname, './src/components'),
-        },
-      },
-    ],
     function (context, options) {
       return {
         name: 'ionic-docs-ads',
