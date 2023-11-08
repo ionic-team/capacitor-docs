@@ -12,7 +12,7 @@ The Ionic Visual Studio Code extension doubles as an official Capacitor extensio
 
 You can add [Capacitor](https://capacitorjs.com/) to your existing application by choosing "Integrate Capacitor".
 
-![Video of adding Capacitor](../../../static/img/v5/docs/getting-started/integrate-capacitor.gif)
+![Video of adding Capacitor](../../../static/img/v6/docs/getting-started/integrate-capacitor.gif)
 
 With Capacitor integrated, you can now run your app on web, Android, and iOS with the "Run On Web", "Run On Android", and "Run On iOS" options.
 
@@ -34,7 +34,7 @@ This extension will help you follow our guide to migrate off of Cordova and onto
 
 The Ionic VS Code extension can also help you easily configure Android and iOS variables related to your project.
 
-![Capacitor Native Configuration Example Image](../../../static/img/v5/docs/getting-started/capacitor-vscode-config.gif)
+![Capacitor Native Configuration Example Image](../../../static/img/v6/docs/getting-started/capacitor-vscode-config.gif)
 
 You can easily change the display name, version number, and build number of your application; as well as other configurable values in your project.
 
@@ -42,7 +42,7 @@ You can easily change the display name, version number, and build number of your
 
 Using the Ionic extension, you can run the VS Code debugger on Web, Android, and iOS (coming soon).
 
-![Capacitor Debugging Example Image](../../../static/img/v5/docs/getting-started/ionic-vs-code-debugging.jpg)
+![Capacitor Debugging Example Image](../../../static/img/v6/docs/getting-started/ionic-vs-code-debugging.jpg)
 
 Using the options under the Debug folder, you can set breakpoints for both web and native code. Debugging for web will launch a seperate web browser instance that is debuggable (Google Chrome by Default). You can also choose Microsoft Edge from the settings option. On Android, the webview instances will be listed in the "Debug" folder and debuggable in a similar way to Web.
 

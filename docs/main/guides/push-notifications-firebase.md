@@ -228,7 +228,7 @@ This section more-or-less mirrors the [setting up Firebase using the Firebase co
 
 Go to the Project Overview page for your Firebase project and at the top, click on the **Android** icon to add a new android application.
 
-![Add new Android Application in Firebase Console](../../../static/img/v5/docs/guides/firebase-push-notifications/add-android-app.png)
+![Add new Android Application in Firebase Console](../../../static/img/v6/docs/guides/firebase-push-notifications/add-android-app.png)
 
 The next screen will ask you for some information about your application.
 
@@ -244,7 +244,7 @@ The next prompt will ask you to download a `google-services.json` file. This fil
 
 Download the `google-services.json` file to your local machine. Then move the file into your Capacitor Android project directory, specifically under `android/app/`.
 
-![Google Services JSON Location for Android](../../../static/img/v5/docs/guides/firebase-push-notifications/google-services-location-android.png)
+![Google Services JSON Location for Android](../../../static/img/v6/docs/guides/firebase-push-notifications/google-services-location-android.png)
 
 We don't need to _add_ any dependencies to our project because Capacitor projects automatically include a version of `firebase-messaging` in it's `build.gradle` file.
 
@@ -289,7 +289,7 @@ npx cap open ios
 
 ... and move the `.plist` file into your Xcode project as instructed by Firebase, ensuring to add it to all targets.
 
-![Google Service Info Plist Location for iOS](../../../static/img/v5/docs/guides/firebase-push-notifications/google-plist-location-ios.png)
+![Google Service Info Plist Location for iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/google-plist-location-ios.png)
 
 ### Add the Firebase SDK via CocoaPods
 
@@ -297,7 +297,7 @@ The Push Notification API on iOS makes use of CocoaPods - an iOS dependency mana
 
 To do this, we need to modify the `Podfile`, which can be found in Xcode under `Pods`:
 
-![Podfile Location iOS](../../../static/img/v5/docs/guides/firebase-push-notifications/podfile-location-ios.png)
+![Podfile Location iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/podfile-location-ios.png)
 
 We need to add Firebase to the CocoaPods provided for our App target. To do that, add `pod Firebase/Messaging` to your `target 'App'` section, like so:
 
@@ -462,7 +462,7 @@ When creating the notification, you only need to specify the following informati
 2. The title (Android only, optional for iOS)
 3. The Target (either a user segment or topic; I recommend just targeting the iOS or Android app itself, see below)
 
-![Change Push Target Firebase](../../../static/img/v5/docs/guides/firebase-push-notifications/change-push-target-firebase.png)
+![Change Push Target Firebase](../../../static/img/v6/docs/guides/firebase-push-notifications/change-push-target-firebase.png)
 
 4. The Scheduling (leave this to "Now")
 
@@ -470,9 +470,9 @@ At that point, you can **Review** the notification you've put together and selec
 
 If you've setup your application correctly, you'll see an alert pop up on your home screen with the push notification you composed in Firebase. You can then tap on the notification and you should get an `alert` for the `pushActionPerformed` event, per our code above.
 
-![Push Test Android](../../../static/img/v5/docs/guides/firebase-push-notifications/push-test-android.png)
+![Push Test Android](../../../static/img/v6/docs/guides/firebase-push-notifications/push-test-android.png)
 
-![Push Test iOS](../../../static/img/v5/docs/guides/firebase-push-notifications/push-test-ios.png)
+![Push Test iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/push-test-ios.png)
 
 ## Images in Push Notifications
 
@@ -485,7 +485,7 @@ The Firebase Messaging SDK can include an `ImageUrl` property as part of its pay
 ### Images with Android
 Android will automatically display images when using `@capacitor/push-notifications`. If you test this in [Firebase Console](https://console.firebase.google.com/) by setting `Notification image` the push notification will appear on the Android device similar to the screenshot below:
 
-![Push Notification with Image for Android](../../../static/img/v5/docs/guides/firebase-push-notifications/android-push-image.jpeg)
+![Push Notification with Image for Android](../../../static/img/v6/docs/guides/firebase-push-notifications/android-push-image.jpeg)
 
 ### Images with iOS
 iOS requires a [Notification Service Extension](https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension) to be added to your project in order to display images in push notifications.
@@ -549,4 +549,4 @@ class NotificationService: UNNotificationServiceExtension {
 
 You should now test a push notification from the [Firebase Console](https://console.firebase.google.com/) remembering to set the `Notification image` and choose your iOS app. When it arrives on the iOS device it will appear on the right hand side as shown below:
 
-![Push Notification with Image for iOS](../../../static/img/v5/docs/guides/firebase-push-notifications/ios-push-image.jpeg)
+![Push Notification with Image for iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/ios-push-image.jpeg)

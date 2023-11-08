@@ -1,0 +1,80 @@
+---
+title: PWA Elements
+description: Using PWA Elements
+contributors:
+  - dotNetkow
+  - mlynch
+slug: /web/pwa-elements
+---
+
+# PWA Elements
+
+Some Capacitor plugins, such as `Camera` or `Toast`, have web-based UI available when not running natively. For example, calling `Camera.getPhoto()` will load a responsive photo-taking experience when running on the web:
+
+<img src={require('/img/v5/docs/pwa-elements.png').default} style={{height: "200px"}} />
+
+This UI is implemented using web components. Due the elements being encapsulated by the [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), these components should not conflict
+with your own UI.
+
+## Installation
+
+To enable these controls, you must add `@ionic/pwa-elements` to your app.
+
+A typical installation involves importing the package and registering the elements, or adding a script tag to the `<head>` of the `index.html` for your app:
+
+#### Importing PWA Elements
+
+```bash
+npm install @ionic/pwa-elements
+```
+
+Then, depending on your framework of choice, import the element loader and call it at the correct time:
+
+##### React
+
+`main.tsx` or `index.tsx` or `index.js`:
+
+```tsx
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+// Call the element loader before the render call
+defineCustomElements(window);
+```
+
+##### Vue
+
+`main.ts`:
+
+```typescript
+// Above the createApp() line
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+defineCustomElements(window);
+```
+
+##### Angular
+
+`main.ts`:
+
+```typescript
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+// Call the element loader before the bootstrapModule/bootstrapApplication call
+defineCustomElements(window);
+if (environment.production) {
+  enableProdMode();
+}
+```
+
+#### Including through script tag
+
+PWA Elements can be included through a script tag in your `index.html`. However, keep in mind this will not work for offline scenarios:
+
+```html
+<script
+  type="module"
+  src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+></script>
+```

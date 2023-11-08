@@ -134,6 +134,6 @@ Developing Android apps requires some Android SDK packages to be installed. Make
 
 In Android Studio, open **Tools -> SDK Manager** from the menu and install the platform versions you'd like to test with in the **SDK Platforms** tab:
 
-![SDK Platforms](/img/v5/docs/android/sdk-platforms.png)
+![SDK Platforms](/img/v6/docs/android/sdk-platforms.png)
 
 To get started, you only need to install one API version. In the above image, the SDKs for Android 10 (API 30) and Android 11 (API 31) are installed. The latest stable version is Android 13 (API 33).
