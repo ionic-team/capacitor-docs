@@ -2,14 +2,20 @@ import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
-const API_DIR = new URL('../versioned_docs/version-v4/apis/', import.meta.url);
+const API_DIR = new URL('../versioned_docs/version-v5/apis/', import.meta.url);
 
-const tag = 'latest-4';
+const tag = 'latest';
 
 const pluginApis = [
   'action-sheet',
   'app',
   'app-launcher',
+  {
+    id: 'background-runner',
+    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
+    editApiUrl:
+      'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
   'browser',
   'camera',
   'clipboard',
@@ -32,22 +38,36 @@ const pluginApis = [
   'status-bar',
   'text-zoom',
   'toast',
+  {
+    id: 'watch',
+    isExperimental: true,
+    editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
 ];
 
-async function buildPluginApiDocs(pluginId) {
+const isString = value => typeof value === 'string' || value instanceof String;
+
+async function buildPluginApiDocs(plugin) {
+  const pluginId = isString(plugin) ? plugin : plugin.id;
   const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
-  const apiContent = createApiPage(pluginId, readme, pkgJson);
+  const apiContent = createApiPage(plugin, readme, pkgJson);
   const fileName = `${pluginId}.md`;
   const filePath = new URL(fileName, API_DIR);
   fs.writeFileSync(filePath, apiContent);
 }
 
-function createApiPage(pluginId, readme, pkgJson) {
+function createApiPage(plugin, readme, pkgJson) {
+  const pluginId = isString(plugin) ? plugin : plugin.id;
   const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
   const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
-  const editUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/README.md`;
-  const editApiUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
+  const editUrl = isString(plugin) ?
+    `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/README.md` :
+    plugin.editUrl;
+  const editApiUrl = isString(plugin) ?
+    `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/src/definitions.ts` :
+    plugin.editApiUrl;
   const sidebarLabel = toTitleCase(pluginId);
 
   // removes JSDoc HTML comments as they break docusauurs
@@ -59,7 +79,7 @@ title: ${title}
 description: ${desc}
 editUrl: ${editUrl}
 editApiUrl: ${editApiUrl}
-sidebar_label: ${sidebarLabel}
+sidebar_label: ${sidebarLabel}${plugin.isExperimental ? ' 🧪' : ''}
 ---
 
 ${readme}`.trim();

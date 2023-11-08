@@ -1,8 +1,8 @@
 ---
 title: Dialog Capacitor Plugin API
 description: The Dialog API provides methods for triggering native dialog windows for alerts, confirmations, and input prompts
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/dialog/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/dialog/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/dialog/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/dialog/src/definitions.ts
 sidebar_label: Dialog
 ---
 
