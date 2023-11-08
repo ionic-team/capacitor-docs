@@ -26,6 +26,8 @@ slug: /guides/community
 
 [Push Notifications: Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
 
+[The Push Notifications Guide for Capacitor](https://capawesome.io/blog/the-push-notifications-guide-for-capacitor/)
+
 [Splash Screen: Creating a Dynamic/Adaptable Splash Screen for Capacitor (Android) &#8250;](https://www.joshmorony.com/creating-a-dynamic-universal-splash-screen-for-capacitor-android/)
 
 [Using the Capacitor Share API in IOS app &#8250;](https://akhromieiev.com/tutorials/using-the-capacitor-share-api-in-ios-app/)
