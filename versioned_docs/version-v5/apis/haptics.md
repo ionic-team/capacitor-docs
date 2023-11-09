@@ -1,8 +1,8 @@
 ---
 title: Haptics Capacitor Plugin API
 description: The Haptics API provides physical feedback to the user through touch or vibration.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/haptics/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/haptics/src/definitions.ts
 sidebar_label: Haptics
 ---
 

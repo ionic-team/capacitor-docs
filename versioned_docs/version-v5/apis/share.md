@@ -1,8 +1,8 @@
 ---
 title: Share Capacitor Plugin API
 description: The Share API provides methods for sharing content in any sharing-enabled apps the user may have installed.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/share/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/share/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/share/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/share/src/definitions.ts
 sidebar_label: Share
 ---
 

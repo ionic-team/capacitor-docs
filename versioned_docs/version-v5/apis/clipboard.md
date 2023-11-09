@@ -1,8 +1,8 @@
 ---
 title: Clipboard Capacitor Plugin API
 description: The Clipboard API enables copy and pasting to/from the system clipboard.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/clipboard/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/clipboard/src/definitions.ts
 sidebar_label: Clipboard
 ---
 
