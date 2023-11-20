@@ -27,7 +27,7 @@ module.exports = {
         'main/getting-started/faqs',
       ],
     },
-    
+
     {
       type: 'category',
       label: 'Basics',
@@ -187,8 +187,8 @@ module.exports = {
         'plugins/tutorial/getting-started',
         'plugins/tutorial/designing-api',
         'plugins/tutorial/using-api',
-        'plugins/tutorial/code-abstraction',
         'plugins/tutorial/implementing-for-web',
+        'plugins/tutorial/code-abstraction',
         'plugins/tutorial/implementing-for-ios',
         'plugins/tutorial/implementing-for-android',
         'plugins/tutorial/packaging',

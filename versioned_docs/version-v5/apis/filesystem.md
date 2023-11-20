@@ -1,8 +1,8 @@
 ---
 title: Filesystem Capacitor Plugin API
 description: The Filesystem API provides a NodeJS-like API for working with files on the device.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/filesystem/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/filesystem/src/definitions.ts
 sidebar_label: Filesystem
 ---
 
@@ -37,7 +37,7 @@ If using <a href="#directory">`Directory.Documents`</a> or <a href="#directory">
 
 Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
 
-Note that <a href="#directory">`Directory.ExternalStorage`</a> is only available on Android 9 or older and <a href="#directory">`Directory.Documents`</a> only allows to access the files/foders created by your app on Android on Android 11 and newer.
+Note that <a href="#directory">`Directory.ExternalStorage`</a> is only available on Android 9 or older and <a href="#directory">`Directory.Documents`</a> only allows to access the files/folders created by your app on Android on Android 11 and newer.
 
 Working with large files may require you to add `android:largeHeap="true"` to the `<application>` tag in `AndroidManifest.xml`.
 

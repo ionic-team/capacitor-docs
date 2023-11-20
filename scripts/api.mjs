@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 // @ts-ignore
 const API_DIR = new URL('../docs/apis/', import.meta.url);
 
-const tag = 'latest';
+const tag = 'next';
 
 /**
  * @typedef {Object} PluginApi
@@ -15,6 +15,7 @@ const tag = 'latest';
  * @property {string} npmScope
  * @property {string} editUrl
  * @property {string} editApiUrl
+ * @property {string} [tag]
  */
 const pluginApis = [
   {
@@ -45,6 +46,7 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
     editApiUrl:
       'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    tag: 'latest',
   },
   {
     id: 'browser',
@@ -206,6 +208,7 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    tag: 'latest',
   },
 ];
 
@@ -255,7 +258,7 @@ ${readme}`.trim();
  * @returns {Promise<string>}
  */
 async function getReadme(plugin) {
-  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${plugin.id}@${tag}/README.md`;
+  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${plugin.id}@${plugin.tag ?? tag}/README.md`;
   const rsp = await fetch(url);
   return rsp.text();
 }
@@ -265,7 +268,7 @@ async function getReadme(plugin) {
  * @returns {Promise<any>}
  */
 async function getPkgJsonData(plugin) {
-  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${plugin.id}@${tag}/package.json`;
+  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${plugin.id}@${plugin.tag ?? tag}/package.json`;
   const rsp = await fetch(url);
   return rsp.json();
 }

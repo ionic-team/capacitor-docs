@@ -1,8 +1,8 @@
 ---
 title: Keyboard Capacitor Plugin API
 description: The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/keyboard/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/5.x/keyboard/src/definitions.ts
 sidebar_label: Keyboard
 ---
 

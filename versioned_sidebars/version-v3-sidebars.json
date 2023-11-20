@@ -195,8 +195,8 @@
         "version-v3/plugins/tutorial/getting-started",
         "version-v3/plugins/tutorial/designing-api",
         "version-v3/plugins/tutorial/using-api",
-        "version-v3/plugins/tutorial/code-abstraction",
         "version-v3/plugins/tutorial/implementing-for-web",
+        "version-v3/plugins/tutorial/code-abstraction",
         "version-v3/plugins/tutorial/implementing-for-ios",
         "version-v3/plugins/tutorial/implementing-for-android",
         "version-v3/plugins/tutorial/packaging"
