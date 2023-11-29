@@ -1,6 +1,7 @@
 const path = require('path');
 const prismic = require('@prismicio/client');
 const fetch = require('node-fetch');
+const { themes } = require('prism-react-renderer');
 
 const HOSTNAME = 'capacitorjs.com';
 const BASE_URL = '/docs';
@@ -130,8 +131,8 @@ module.exports = {
           position: 'right',
           dropdownItemsAfter: [
             {
-              to: 'https://capacitorjs.jp/',
-              label: 'Translate',
+              to: 'https://capacitorjs.jp/docs',
+              label: '日本語',
               target: '_blank',
               rel: null,
             },
@@ -202,7 +203,8 @@ module.exports = {
       },
     },
     prism: {
-      theme: { plain: {}, styles: [] },
+      theme: themes.github,
+      darkTheme: themes.dracula,
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
       additionalLanguages: ['shell-session', 'http', 'swift', 'java', 'kotlin'],
     },
