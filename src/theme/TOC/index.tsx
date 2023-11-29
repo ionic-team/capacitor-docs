@@ -31,6 +31,7 @@ export default function TOC({ ...props }) {
     <div className="toc-wrapper">
       <h2>Contents</h2>
       <OriginalTOC toc={toc} {...props} />
+      {editUrl || activeAd ? <hr /> : null}
       {editUrl && <EditThisPage editUrl={editUrl} />}
       {activeAd && (
         <a
