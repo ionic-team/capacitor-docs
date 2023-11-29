@@ -201,9 +201,6 @@ module.exports = {
         ],
       },
     },
-    tagManager: {
-      trackingID: 'GTM-TKMGCBC',
-    },
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
@@ -264,6 +261,7 @@ module.exports = {
             }
             return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
+          breadcrumbs: false,
           exclude: ['README.md'],
           lastVersion: 'v5',
           versions: {
@@ -272,6 +270,9 @@ module.exports = {
               banner: 'unreleased',
             },
           },
+        },
+        googleTagManager: {
+          containerId: 'GTM-TKMGCBC',
         },
         theme: {
           customCss: [require.resolve('./src/styles/custom.scss')],
