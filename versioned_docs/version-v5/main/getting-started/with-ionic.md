@@ -43,7 +43,7 @@ npm i @capacitor/app @capacitor/haptics @capacitor/keyboard @capacitor/status-ba
 
 ### Add Platforms
 
-After Capacitor installed and its plugins are installed, you can add mobile platforms to your app:
+After Capacitor is installed and its plugins are installed, you can add mobile platforms to your app:
 
 ```bash
 ionic capacitor add android
