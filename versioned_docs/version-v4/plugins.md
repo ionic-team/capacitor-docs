@@ -3,35 +3,23 @@ title: Capacitor Plugins
 description: Capacitor Plugins
 ---
 
-import DocsCard from '@components/global/DocsCard';
-import DocsCards from '@components/global/DocsCards';
+import DocCard from '@theme/DocCard';
+import DocCardList from '@theme/DocCardList';
 
 # Capacitor Plugins
 
 Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
 
-<DocsCards>
-  <DocsCard 
-    header="Official plugins" 
-    img="/img/v4/docs/capacitor-card.png" 
-    href="/apis"
-  >
-    <p>
-      Official Plugins are maintained by the Capacitor Team
-    </p>
-  </DocsCard>
-  <DocsCard 
-    header="Community plugins"
-    img="/img/v4/docs/community-card.png"
-    href="/plugins/community"
-  >
-    <p>
-      Community Plugins are maintained by the Capacitor Community
-    </p>
-  </DocsCard>
-</DocsCards>
+<DocCardList>
+  <DocCard header="Official plugins" img="/img/v4/docs/capacitor-card.png" href="/apis">
+    <p>Official Plugins are maintained by the Capacitor Team</p>
+  </DocCard>
+  <DocCard header="Community plugins" img="/img/v4/docs/community-card.png" href="/plugins/community">
+    <p>Community Plugins are maintained by the Capacitor Community</p>
+  </DocCard>
+</DocCardList>
 
-<br/>
+<br />
 
 Web apps can access the full power of Native APIs with plugins. Plugins wrap common native operations that might use very different APIs across platforms while exposing a consistent, cross-platform API to JavaScript.
 
