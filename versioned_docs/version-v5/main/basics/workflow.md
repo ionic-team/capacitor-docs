@@ -72,7 +72,7 @@ Opening the native project can give you full control over the native runtime of 
 
 Capacitor does not have a `build` or `compile` command, nor will there ever be one. After `sync`, you are encouraged to open your target platform's IDE: Xcode for iOS or Android Studio for Android, for compiling your native app.
 
-To compile your app in a terminal or in CI environments, you can use `gradle` or `xcodebuild` directly. We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/docs/ios/deploying-to-app-store) and [Android](/docs/android/deploying-to-google-play) for more info on how to deploy to the Apple App Store or the Google Play Store.
+To compile your app in a terminal or in CI environments, you can use `gradle` or `xcodebuild` directly. We also suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool like [Appflow](https://ionic.io/appflow) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/docs/ios/deploying-to-app-store) and [Android](/docs/android/deploying-to-google-play) for more info on how to deploy to the Apple App Store or the Google Play Store.
 
 ## Updating Capacitor
 
