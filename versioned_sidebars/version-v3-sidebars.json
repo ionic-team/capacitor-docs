@@ -5,12 +5,12 @@
       "label": "Getting Started",
       "collapsed": false,
       "items": [
-        "version-v3/index",
-        "version-v3/main/getting-started/environment-setup",
-        "version-v3/main/getting-started/installation",
-        "version-v3/main/getting-started/with-ionic",
-        "version-v3/main/getting-started/vscode-extension",
-        "version-v3/main/getting-started/templates"
+        "index",
+        "main/getting-started/environment-setup",
+        "main/getting-started/installation",
+        "main/getting-started/with-ionic",
+        "main/getting-started/vscode-extension",
+        "main/getting-started/templates"
       ]
     },
     {
@@ -18,10 +18,10 @@
       "label": "Basics",
       "collapsed": false,
       "items": [
-        "version-v3/main/basics/workflow",
-        "version-v3/main/basics/using-plugins",
-        "version-v3/main/basics/configuring-your-app",
-        "version-v3/main/basics/utilities"
+        "main/basics/workflow",
+        "main/basics/using-plugins",
+        "main/basics/configuring-your-app",
+        "main/basics/utilities"
       ]
     },
     {
@@ -29,10 +29,10 @@
       "label": "Upgrade Guides",
       "collapsed": false,
       "items": [
-        "version-v3/main/updating/3-0",
-        "version-v3/main/updating/2-0",
-        "version-v3/main/updating/1-1",
-        "version-v3/main/updating/plugins/3-0"
+        "main/updating/3-0",
+        "main/updating/2-0",
+        "main/updating/1-1",
+        "main/updating/plugins/3-0"
       ]
     },
     {
@@ -40,9 +40,9 @@
       "label": "Cordova/PhoneGap",
       "collapsed": false,
       "items": [
-        "version-v3/main/cordova/index",
-        "version-v3/main/cordova/migration-strategy",
-        "version-v3/main/cordova/migrating-from-cordova-to-capacitor"
+        "main/cordova/index",
+        "main/cordova/migration-strategy",
+        "main/cordova/migrating-from-cordova-to-capacitor"
       ]
     },
     {
@@ -50,23 +50,23 @@
       "label": "Concepts",
       "collapsed": false,
       "items": [
-        "version-v3/main/guides/ads",
-        "version-v3/main/guides/angular",
-        "version-v3/main/guides/automated-configuration",
-        "version-v3/main/guides/ci-cd",
-        "version-v3/main/guides/deep-links",
-        "version-v3/main/guides/deploying-updates",
-        "version-v3/main/guides/environment-specific-configurations",
-        "version-v3/main/guides/in-app-purchases",
-        "version-v3/main/guides/live-reload",
-        "version-v3/main/guides/mocking-plugins",
-        "version-v3/main/guides/push-notifications-firebase",
-        "version-v3/main/guides/react-hooks",
-        "version-v3/main/guides/screen-orientation",
-        "version-v3/main/guides/security",
-        "version-v3/main/guides/splash-screens-and-icons",
-        "version-v3/main/guides/storage",
-        "version-v3/main/guides/community"
+        "main/guides/ads",
+        "main/guides/angular",
+        "main/guides/automated-configuration",
+        "main/guides/ci-cd",
+        "main/guides/deep-links",
+        "main/guides/deploying-updates",
+        "main/guides/environment-specific-configurations",
+        "main/guides/in-app-purchases",
+        "main/guides/live-reload",
+        "main/guides/mocking-plugins",
+        "main/guides/push-notifications-firebase",
+        "main/guides/react-hooks",
+        "main/guides/screen-orientation",
+        "main/guides/security",
+        "main/guides/splash-screens-and-icons",
+        "main/guides/storage",
+        "main/guides/community"
       ]
     },
     {
@@ -74,12 +74,12 @@
       "label": "iOS",
       "collapsed": false,
       "items": [
-        "version-v3/main/ios/index",
-        "version-v3/main/ios/configuration",
-        "version-v3/main/ios/custom-code",
-        "version-v3/main/ios/deploying-to-app-store",
-        "version-v3/main/ios/viewcontroller",
-        "version-v3/main/ios/troubleshooting"
+        "main/ios/index",
+        "main/ios/configuration",
+        "main/ios/custom-code",
+        "main/ios/deploying-to-app-store",
+        "main/ios/viewcontroller",
+        "main/ios/troubleshooting"
       ]
     },
     {
@@ -87,11 +87,11 @@
       "label": "Android",
       "collapsed": false,
       "items": [
-        "version-v3/main/android/index",
-        "version-v3/main/android/configuration",
-        "version-v3/main/android/custom-code",
-        "version-v3/main/android/deploying-to-google-play",
-        "version-v3/main/android/troubleshooting"
+        "main/android/index",
+        "main/android/configuration",
+        "main/android/custom-code",
+        "main/android/deploying-to-google-play",
+        "main/android/troubleshooting"
       ]
     },
     {
@@ -99,9 +99,9 @@
       "label": "Web/PWA",
       "collapsed": false,
       "items": [
-        "version-v3/main/web/index",
-        "version-v3/main/web/progressive-web-apps",
-        "version-v3/main/web/pwa-elements"
+        "main/web/index",
+        "main/web/progressive-web-apps",
+        "main/web/pwa-elements"
       ]
     },
     {
@@ -109,12 +109,12 @@
       "label": "Reference",
       "collapsed": false,
       "items": [
-        "version-v3/main/reference/config",
-        "version-v3/main/reference/core-apis/ios",
-        "version-v3/main/reference/core-apis/android",
-        "version-v3/main/reference/core-apis/web",
-        "version-v3/main/reference/core-apis/data-types",
-        "version-v3/main/reference/core-apis/saving-calls",
+        "main/reference/config",
+        "main/reference/core-apis/ios",
+        "main/reference/core-apis/android",
+        "main/reference/core-apis/web",
+        "main/reference/core-apis/data-types",
+        "main/reference/core-apis/saving-calls",
         {
           "type": "link",
           "label": "Plugin APIs",
@@ -135,11 +135,11 @@
       "label": "Overview",
       "collapsed": false,
       "items": [
-        "version-v3/plugins",
-        "version-v3/plugins/official",
-        "version-v3/plugins/community",
-        "version-v3/plugins/cordova",
-        "version-v3/plugins/enterprise"
+        "plugins",
+        "plugins/official",
+        "plugins/community",
+        "plugins/cordova",
+        "plugins/enterprise"
       ]
     },
     {
@@ -147,30 +147,30 @@
       "label": "APIs",
       "collapsed": false,
       "items": [
-        "version-v3/apis/action-sheet",
-        "version-v3/apis/app-launcher",
-        "version-v3/apis/app",
-        "version-v3/apis/browser",
-        "version-v3/apis/camera",
-        "version-v3/apis/clipboard",
-        "version-v3/apis/device",
-        "version-v3/apis/dialog",
-        "version-v3/apis/filesystem",
-        "version-v3/apis/geolocation",
-        "version-v3/apis/google-maps",
-        "version-v3/apis/haptics",
-        "version-v3/apis/keyboard",
-        "version-v3/apis/local-notifications",
-        "version-v3/apis/motion",
-        "version-v3/apis/network",
-        "version-v3/apis/push-notifications",
-        "version-v3/apis/screen-reader",
-        "version-v3/apis/share",
-        "version-v3/apis/splash-screen",
-        "version-v3/apis/status-bar",
-        "version-v3/apis/storage",
-        "version-v3/apis/text-zoom",
-        "version-v3/apis/toast"
+        "apis/action-sheet",
+        "apis/app-launcher",
+        "apis/app",
+        "apis/browser",
+        "apis/camera",
+        "apis/clipboard",
+        "apis/device",
+        "apis/dialog",
+        "apis/filesystem",
+        "apis/geolocation",
+        "apis/google-maps",
+        "apis/haptics",
+        "apis/keyboard",
+        "apis/local-notifications",
+        "apis/motion",
+        "apis/network",
+        "apis/push-notifications",
+        "apis/screen-reader",
+        "apis/share",
+        "apis/splash-screen",
+        "apis/status-bar",
+        "apis/storage",
+        "apis/text-zoom",
+        "apis/toast"
       ]
     },
     {
@@ -178,13 +178,13 @@
       "label": "Creating Plugins",
       "collapsed": false,
       "items": [
-        "version-v3/plugins/creating-plugins/overview",
-        "version-v3/plugins/creating-plugins/development-workflow",
-        "version-v3/plugins/creating-plugins/ios-guide",
-        "version-v3/plugins/creating-plugins/android-guide",
-        "version-v3/plugins/creating-plugins/web-guide",
-        "version-v3/plugins/creating-plugins/method-types",
-        "version-v3/plugins/creating-plugins/configuration-values"
+        "plugins/creating-plugins/overview",
+        "plugins/creating-plugins/development-workflow",
+        "plugins/creating-plugins/ios-guide",
+        "plugins/creating-plugins/android-guide",
+        "plugins/creating-plugins/web-guide",
+        "plugins/creating-plugins/method-types",
+        "plugins/creating-plugins/configuration-values"
       ]
     },
     {
@@ -192,14 +192,14 @@
       "label": "Plugin Tutorial",
       "collapsed": false,
       "items": [
-        "version-v3/plugins/tutorial/getting-started",
-        "version-v3/plugins/tutorial/designing-api",
-        "version-v3/plugins/tutorial/using-api",
-        "version-v3/plugins/tutorial/implementing-for-web",
-        "version-v3/plugins/tutorial/code-abstraction",
-        "version-v3/plugins/tutorial/implementing-for-ios",
-        "version-v3/plugins/tutorial/implementing-for-android",
-        "version-v3/plugins/tutorial/packaging"
+        "plugins/tutorial/getting-started",
+        "plugins/tutorial/designing-api",
+        "plugins/tutorial/using-api",
+        "plugins/tutorial/implementing-for-web",
+        "plugins/tutorial/code-abstraction",
+        "plugins/tutorial/implementing-for-ios",
+        "plugins/tutorial/implementing-for-android",
+        "plugins/tutorial/packaging"
       ]
     }
   ],
@@ -209,21 +209,21 @@
       "type": "category",
       "label": "CLI Documentation",
       "collapsed": false,
-      "items": ["version-v3/cli/index", "version-v3/cli/hooks"]
+      "items": ["cli/index", "cli/hooks"]
     },
     {
       "type": "category",
       "label": "Command Reference",
       "collapsed": false,
       "items": [
-        "version-v3/cli/commands/add",
-        "version-v3/cli/commands/copy",
-        "version-v3/cli/commands/init",
-        "version-v3/cli/commands/list",
-        "version-v3/cli/commands/open",
-        "version-v3/cli/commands/run",
-        "version-v3/cli/commands/sync",
-        "version-v3/cli/commands/update"
+        "cli/commands/add",
+        "cli/commands/copy",
+        "cli/commands/init",
+        "cli/commands/list",
+        "cli/commands/open",
+        "cli/commands/run",
+        "cli/commands/sync",
+        "cli/commands/update"
       ]
     }
   ]

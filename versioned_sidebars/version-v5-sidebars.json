@@ -1,5 +1,5 @@
 {
-  "version-v5/docs": [
+  "docs": [
     {
       "type": "category",
       "label": "Getting Started",
@@ -7,23 +7,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/index"
+          "id": "index"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/getting-started/environment-setup"
+          "id": "main/getting-started/environment-setup"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/getting-started/installation"
+          "id": "main/getting-started/installation"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/getting-started/ui"
+          "id": "main/getting-started/ui"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/getting-started/with-ionic"
+          "id": "main/getting-started/with-ionic"
         },
         {
           "type": "category",
@@ -39,11 +39,11 @@
         },
         {
           "type": "doc",
-          "id": "version-v5/main/getting-started/templates"
+          "id": "main/getting-started/templates"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/getting-started/faqs"
+          "id": "main/getting-started/faqs"
         }
       ],
       "collapsible": true
@@ -55,19 +55,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/basics/workflow"
+          "id": "main/basics/workflow"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/basics/using-plugins"
+          "id": "main/basics/using-plugins"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/basics/configuring-your-app"
+          "id": "main/basics/configuring-your-app"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/basics/utilities"
+          "id": "main/basics/utilities"
         }
       ],
       "collapsible": true
@@ -79,31 +79,31 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/updating/5-0"
+          "id": "main/updating/5-0"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/updating/plugins/5-0"
+          "id": "main/updating/plugins/5-0"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/updating/4-0"
+          "id": "main/updating/4-0"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/updating/3-0"
+          "id": "main/updating/3-0"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/updating/2-0"
+          "id": "main/updating/2-0"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/updating/1-1"
+          "id": "main/updating/1-1"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/updating/plugins/3-0"
+          "id": "main/updating/plugins/3-0"
         }
       ],
       "collapsible": true
@@ -115,15 +115,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/cordova/index"
+          "id": "main/cordova/index"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/cordova/migration-strategy"
+          "id": "main/cordova/migration-strategy"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/cordova/migrating-from-cordova-to-capacitor"
+          "id": "main/cordova/migrating-from-cordova-to-capacitor"
         }
       ],
       "collapsible": true
@@ -135,79 +135,79 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/guides/ads"
+          "id": "main/guides/ads"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/angular"
+          "id": "main/guides/angular"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/autofill-credentials"
+          "id": "main/guides/autofill-credentials"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/automated-configuration"
+          "id": "main/guides/automated-configuration"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/ci-cd"
+          "id": "main/guides/ci-cd"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/deep-links"
+          "id": "main/guides/deep-links"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/deploying-updates"
+          "id": "main/guides/deploying-updates"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/environment-specific-configurations"
+          "id": "main/guides/environment-specific-configurations"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/games"
+          "id": "main/guides/games"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/in-app-purchases"
+          "id": "main/guides/in-app-purchases"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/live-reload"
+          "id": "main/guides/live-reload"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/mocking-plugins"
+          "id": "main/guides/mocking-plugins"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/push-notifications-firebase"
+          "id": "main/guides/push-notifications-firebase"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/react-hooks"
+          "id": "main/guides/react-hooks"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/screen-orientation"
+          "id": "main/guides/screen-orientation"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/security"
+          "id": "main/guides/security"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/splash-screens-and-icons"
+          "id": "main/guides/splash-screens-and-icons"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/storage"
+          "id": "main/guides/storage"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/guides/community"
+          "id": "main/guides/community"
         }
       ],
       "collapsible": true
@@ -219,27 +219,27 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/ios/index"
+          "id": "main/ios/index"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/ios/configuration"
+          "id": "main/ios/configuration"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/ios/custom-code"
+          "id": "main/ios/custom-code"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/ios/deploying-to-app-store"
+          "id": "main/ios/deploying-to-app-store"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/ios/viewcontroller"
+          "id": "main/ios/viewcontroller"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/ios/troubleshooting"
+          "id": "main/ios/troubleshooting"
         }
       ],
       "collapsible": true
@@ -251,23 +251,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/android/index"
+          "id": "main/android/index"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/android/configuration"
+          "id": "main/android/configuration"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/android/custom-code"
+          "id": "main/android/custom-code"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/android/deploying-to-google-play"
+          "id": "main/android/deploying-to-google-play"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/android/troubleshooting"
+          "id": "main/android/troubleshooting"
         }
       ],
       "collapsible": true
@@ -279,15 +279,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/web/index"
+          "id": "main/web/index"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/web/progressive-web-apps"
+          "id": "main/web/progressive-web-apps"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/web/pwa-elements"
+          "id": "main/web/pwa-elements"
         }
       ],
       "collapsible": true
@@ -299,27 +299,27 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/main/reference/config"
+          "id": "main/reference/config"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/reference/core-apis/ios"
+          "id": "main/reference/core-apis/ios"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/reference/core-apis/android"
+          "id": "main/reference/core-apis/android"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/reference/core-apis/web"
+          "id": "main/reference/core-apis/web"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/reference/core-apis/data-types"
+          "id": "main/reference/core-apis/data-types"
         },
         {
           "type": "doc",
-          "id": "version-v5/main/reference/core-apis/saving-calls"
+          "id": "main/reference/core-apis/saving-calls"
         },
         {
           "type": "link",
@@ -328,7 +328,7 @@
         },
         {
           "type": "doc",
-          "id": "version-v5/main/reference/support-policy"
+          "id": "main/reference/support-policy"
         },
         {
           "type": "link",
@@ -339,7 +339,7 @@
       "collapsible": true
     }
   ],
-  "version-v5/api": [
+  "api": [
     {
       "type": "category",
       "label": "Overview",
@@ -347,23 +347,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/plugins"
+          "id": "plugins"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/official"
+          "id": "plugins/official"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/community"
+          "id": "plugins/community"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/cordova"
+          "id": "plugins/cordova"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/enterprise"
+          "id": "plugins/enterprise"
         }
       ],
       "collapsible": true
@@ -387,31 +387,31 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/plugins/creating-plugins/overview"
+          "id": "plugins/creating-plugins/overview"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/creating-plugins/development-workflow"
+          "id": "plugins/creating-plugins/development-workflow"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/creating-plugins/ios-guide"
+          "id": "plugins/creating-plugins/ios-guide"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/creating-plugins/android-guide"
+          "id": "plugins/creating-plugins/android-guide"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/creating-plugins/web-guide"
+          "id": "plugins/creating-plugins/web-guide"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/creating-plugins/method-types"
+          "id": "plugins/creating-plugins/method-types"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/creating-plugins/configuration-values"
+          "id": "plugins/creating-plugins/configuration-values"
         }
       ],
       "collapsible": true
@@ -423,41 +423,41 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/getting-started"
+          "id": "plugins/tutorial/getting-started"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/designing-api"
+          "id": "plugins/tutorial/designing-api"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/using-api"
+          "id": "plugins/tutorial/using-api"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/code-abstraction"
+          "id": "plugins/tutorial/code-abstraction"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/implementing-for-web"
+          "id": "plugins/tutorial/implementing-for-web"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/implementing-for-ios"
+          "id": "plugins/tutorial/implementing-for-ios"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/implementing-for-android"
+          "id": "plugins/tutorial/implementing-for-android"
         },
         {
           "type": "doc",
-          "id": "version-v5/plugins/tutorial/packaging"
+          "id": "plugins/tutorial/packaging"
         }
       ],
       "collapsible": true
     }
   ],
-  "version-v5/cli": [
+  "cli": [
     {
       "type": "category",
       "label": "CLI Documentation",
@@ -465,11 +465,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v5/cli/index"
+          "id": "cli/index"
         },
         {
           "type": "doc",
-          "id": "version-v5/cli/hooks"
+          "id": "cli/hooks"
         }
       ],
       "collapsible": true
