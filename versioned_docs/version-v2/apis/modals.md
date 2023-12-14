@@ -81,7 +81,7 @@ Show an alert modal
 
 | Param         | Type                                                  |
 | ------------- | ----------------------------------------------------- |
-| **`options`** | <code><a href="#alertoptions">AlertOptions</a></code> |
+| **`options`** | `<a href="#alertoptions">AlertOptions</a>` |
 
 ---
 
@@ -95,9 +95,9 @@ Show a prompt modal
 
 | Param         | Type                                                    |
 | ------------- | ------------------------------------------------------- |
-| **`options`** | <code><a href="#promptoptions">PromptOptions</a></code> |
+| **`options`** | `<a href="#promptoptions">PromptOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#promptresult">PromptResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#promptresult">PromptResult</a>&gt;`
 
 ---
 
@@ -111,9 +111,9 @@ Show a confirmation modal
 
 | Param         | Type                                                      |
 | ------------- | --------------------------------------------------------- |
-| **`options`** | <code><a href="#confirmoptions">ConfirmOptions</a></code> |
+| **`options`** | `<a href="#confirmoptions">ConfirmOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#confirmresult">ConfirmResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#confirmresult">ConfirmResult</a>&gt;`
 
 ---
 
@@ -128,9 +128,9 @@ to select.
 
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
-| **`options`** | <code><a href="#actionsheetoptions">ActionSheetOptions</a></code> |
+| **`options`** | `<a href="#actionsheetoptions">ActionSheetOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#actionsheetresult">ActionSheetResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#actionsheetresult">ActionSheetResult</a>&gt;`
 
 ---
 
@@ -140,64 +140,64 @@ to select.
 
 | Prop              | Type                |
 | ----------------- | ------------------- |
-| **`title`**       | <code>string</code> |
-| **`message`**     | <code>string</code> |
-| **`buttonTitle`** | <code>string</code> |
+| **`title`**       | `string` |
+| **`message`**     | `string` |
+| **`buttonTitle`** | `string` |
 
 #### PromptResult
 
 | Prop            | Type                 |
 | --------------- | -------------------- |
-| **`value`**     | <code>string</code>  |
-| **`cancelled`** | <code>boolean</code> |
+| **`value`**     | `string`  |
+| **`cancelled`** | `boolean` |
 
 #### PromptOptions
 
 | Prop                    | Type                |
 | ----------------------- | ------------------- |
-| **`title`**             | <code>string</code> |
-| **`message`**           | <code>string</code> |
-| **`okButtonTitle`**     | <code>string</code> |
-| **`cancelButtonTitle`** | <code>string</code> |
-| **`inputPlaceholder`**  | <code>string</code> |
-| **`inputText`**         | <code>string</code> |
+| **`title`**             | `string` |
+| **`message`**           | `string` |
+| **`okButtonTitle`**     | `string` |
+| **`cancelButtonTitle`** | `string` |
+| **`inputPlaceholder`**  | `string` |
+| **`inputText`**         | `string` |
 
 #### ConfirmResult
 
 | Prop        | Type                 |
 | ----------- | -------------------- |
-| **`value`** | <code>boolean</code> |
+| **`value`** | `boolean` |
 
 #### ConfirmOptions
 
 | Prop                    | Type                |
 | ----------------------- | ------------------- |
-| **`title`**             | <code>string</code> |
-| **`message`**           | <code>string</code> |
-| **`okButtonTitle`**     | <code>string</code> |
-| **`cancelButtonTitle`** | <code>string</code> |
+| **`title`**             | `string` |
+| **`message`**           | `string` |
+| **`okButtonTitle`**     | `string` |
+| **`cancelButtonTitle`** | `string` |
 
 #### ActionSheetResult
 
 | Prop        | Type                |
 | ----------- | ------------------- |
-| **`index`** | <code>number</code> |
+| **`index`** | `number` |
 
 #### ActionSheetOptions
 
 | Prop          | Type                             | Description |
 | ------------- | -------------------------------- | ----------- |
-| **`title`**   | <code>string</code>              |             |
-| **`message`** | <code>string</code>              | iOS only    |
-| **`options`** | <code>ActionSheetOption[]</code> |             |
+| **`title`**   | `string`              |             |
+| **`message`** | `string`              | iOS only    |
+| **`options`** | `ActionSheetOption[]` |             |
 
 #### ActionSheetOption
 
 | Prop        | Type                                                                      | Description                              |
 | ----------- | ------------------------------------------------------------------------- | ---------------------------------------- |
-| **`title`** | <code>string</code>                                                       |                                          |
-| **`style`** | <code><a href="#actionsheetoptionstyle">ActionSheetOptionStyle</a></code> |                                          |
-| **`icon`**  | <code>string</code>                                                       | Icon for web (ionicon naming convention) |
+| **`title`** | `string`                                                       |                                          |
+| **`style`** | `<a href="#actionsheetoptionstyle">ActionSheetOptionStyle</a>` |                                          |
+| **`icon`**  | `string`                                                       | Icon for web (ionicon naming convention) |
 
 ### Enums
 
@@ -205,6 +205,6 @@ to select.
 
 | Members           | Value                      |
 | ----------------- | -------------------------- |
-| **`Default`**     | <code>"DEFAULT"</code>     |
-| **`Destructive`** | <code>"DESTRUCTIVE"</code> |
-| **`Cancel`**      | <code>"CANCEL"</code>      |
+| **`Default`**     | `"DEFAULT"`     |
+| **`Destructive`** | `"DESTRUCTIVE"` |
+| **`Cancel`**      | `"CANCEL"`      |

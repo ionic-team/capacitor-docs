@@ -56,10 +56,10 @@ Listen for accelerometer data
 
 | Param              | Type                                                                                |
 | ------------------ | ----------------------------------------------------------------------------------- |
-| **`eventName`**    | <code>"accel"</code>                                                                |
-| **`listenerFunc`** | <code>(event: <a href="#motioneventresult">MotionEventResult</a>) =&gt; void</code> |
+| **`eventName`**    | `"accel"`                                                                |
+| **`listenerFunc`** | `(event: <a href="#motioneventresult">MotionEventResult</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -73,10 +73,10 @@ Listen for device orientation change (compass heading, etc.)
 
 | Param              | Type                                                                                                      |
 | ------------------ | --------------------------------------------------------------------------------------------------------- |
-| **`eventName`**    | <code>"orientation"</code>                                                                                |
-| **`listenerFunc`** | <code>(event: <a href="#motionorientationeventresult">MotionOrientationEventResult</a>) =&gt; void</code> |
+| **`eventName`**    | `"orientation"`                                                                                |
+| **`listenerFunc`** | `(event: <a href="#motionorientationeventresult">MotionOrientationEventResult</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -96,21 +96,21 @@ Remove all native listeners for this plugin
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
-| **`remove`** | <code>() =&gt; void</code> |
+| **`remove`** | `() =&gt; void` |
 
 #### MotionEventResult
 
 | Prop                               | Type                                                         |
 | ---------------------------------- | ------------------------------------------------------------ |
-| **`acceleration`**                 | <code>{ x: number; y: number; z: number; }</code>            |
-| **`accelerationIncludingGravity`** | <code>{ x: number; y: number; z: number; }</code>            |
-| **`rotationRate`**                 | <code>{ alpha: number; beta: number; gamma: number; }</code> |
-| **`interval`**                     | <code>number</code>                                          |
+| **`acceleration`**                 | `{ x: number; y: number; z: number; }`            |
+| **`accelerationIncludingGravity`** | `{ x: number; y: number; z: number; }`            |
+| **`rotationRate`**                 | `{ alpha: number; beta: number; gamma: number; }` |
+| **`interval`**                     | `number`                                          |
 
 #### MotionOrientationEventResult
 
 | Prop        | Type                |
 | ----------- | ------------------- |
-| **`alpha`** | <code>number</code> |
-| **`beta`**  | <code>number</code> |
-| **`gamma`** | <code>number</code> |
+| **`alpha`** | `number` |
+| **`beta`**  | `number` |
+| **`gamma`** | `number` |

@@ -94,7 +94,7 @@ exit the app when navigation is complete.
 
 Ionic handles this itself so you shouldn't need to call this if using Ionic
 
-**Returns:** <code>never</code>
+**Returns:** `never`
 
 ---
 
@@ -108,9 +108,9 @@ Check if an app can be opened with the given URL
 
 | Param         | Type                          |
 | ------------- | ----------------------------- |
-| **`options`** | <code>{ url: string; }</code> |
+| **`options`** | `{ url: string; }` |
 
-**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+**Returns:** `Promise&lt;{ value: boolean; }&gt;`
 
 ---
 
@@ -124,9 +124,9 @@ Open an app with the given URL
 
 | Param         | Type                          |
 | ------------- | ----------------------------- |
-| **`options`** | <code>{ url: string; }</code> |
+| **`options`** | `{ url: string; }` |
 
-**Returns:** <code>Promise&lt;{ completed: boolean; }&gt;</code>
+**Returns:** `Promise&lt;{ completed: boolean; }&gt;`
 
 ---
 
@@ -138,7 +138,7 @@ getState() => Promise<AppState>
 
 Gets the current app state
 
-**Returns:** <code>Promise&lt;<a href="#appstate">AppState</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#appstate">AppState</a>&gt;`
 
 ---
 
@@ -150,7 +150,7 @@ getLaunchUrl() => Promise<AppLaunchUrl>
 
 Get the URL the app was launched with, if any
 
-**Returns:** <code>Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;`
 
 ---
 
@@ -164,10 +164,10 @@ Listen for changes in the App's active state (whether the app is in the foregrou
 
 | Param              | Type                                                              |
 | ------------------ | ----------------------------------------------------------------- |
-| **`eventName`**    | <code>"appStateChange"</code>                                     |
-| **`listenerFunc`** | <code>(state: <a href="#appstate">AppState</a>) =&gt; void</code> |
+| **`eventName`**    | `"appStateChange"`                                     |
+| **`listenerFunc`** | `(state: <a href="#appstate">AppState</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -182,10 +182,10 @@ as URLs your app handles (Universal Links on iOS and App Links on Android)
 
 | Param              | Type                                                                 |
 | ------------------ | -------------------------------------------------------------------- |
-| **`eventName`**    | <code>"appUrlOpen"</code>                                            |
-| **`listenerFunc`** | <code>(data: <a href="#appurlopen">AppUrlOpen</a>) =&gt; void</code> |
+| **`eventName`**    | `"appUrlOpen"`                                            |
+| **`listenerFunc`** | `(data: <a href="#appurlopen">AppUrlOpen</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -201,10 +201,10 @@ the app was launched with, converted into the form of a result from a plugin cal
 
 | Param              | Type                                                                               |
 | ------------------ | ---------------------------------------------------------------------------------- |
-| **`eventName`**    | <code>"appRestoredResult"</code>                                                   |
-| **`listenerFunc`** | <code>(data: <a href="#apprestoredresult">AppRestoredResult</a>) =&gt; void</code> |
+| **`eventName`**    | `"appRestoredResult"`                                                   |
+| **`listenerFunc`** | `(data: <a href="#apprestoredresult">AppRestoredResult</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -220,10 +220,10 @@ If you want to close the app, call `App.exitApp()`.
 
 | Param              | Type                                                                 |
 | ------------------ | -------------------------------------------------------------------- |
-| **`eventName`**    | <code>"backButton"</code>                                            |
-| **`listenerFunc`** | <code>(data: <a href="#appurlopen">AppUrlOpen</a>) =&gt; void</code> |
+| **`eventName`**    | `"backButton"`                                            |
+| **`listenerFunc`** | `(data: <a href="#appurlopen">AppUrlOpen</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -243,34 +243,34 @@ Remove all native listeners for this plugin
 
 | Prop           | Type                 |
 | -------------- | -------------------- |
-| **`isActive`** | <code>boolean</code> |
+| **`isActive`** | `boolean` |
 
 #### AppLaunchUrl
 
 | Prop      | Type                |
 | --------- | ------------------- |
-| **`url`** | <code>string</code> |
+| **`url`** | `string` |
 
 #### PluginListenerHandle
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
-| **`remove`** | <code>() =&gt; void</code> |
+| **`remove`** | `() =&gt; void` |
 
 #### AppUrlOpen
 
 | Prop                       | Type                 | Description                                                                                                                                                                        |
 | -------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`url`**                  | <code>string</code>  | The URL the app was opened with                                                                                                                                                    |
-| **`iosSourceApplication`** | <code>any</code>     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         |
-| **`iosOpenInPlace`**       | <code>boolean</code> | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace |
+| **`url`**                  | `string`  | The URL the app was opened with                                                                                                                                                    |
+| **`iosSourceApplication`** | `any`     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         |
+| **`iosOpenInPlace`**       | `boolean` | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace |
 
 #### AppRestoredResult
 
 | Prop             | Type                              | Description                                                                                                                                       |
 | ---------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`pluginId`**   | <code>string</code>               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   |
-| **`methodName`** | <code>string</code>               | The methodName this result corresponds to. For example, `getPhoto`                                                                                |
-| **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` |
-| **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded                                                                                                   |
-| **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message                                                                              |
+| **`pluginId`**   | `string`               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   |
+| **`methodName`** | `string`               | The methodName this result corresponds to. For example, `getPhoto`                                                                                |
+| **`data`**       | `any`                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` |
+| **`success`**    | `boolean`              | Boolean indicating if the plugin call succeeded                                                                                                   |
+| **`error`**      | `{ message: string; }` | If the plugin call didn't succeed, it will contain the error message                                                                              |

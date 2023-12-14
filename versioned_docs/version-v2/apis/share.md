@@ -44,9 +44,9 @@ Show a Share modal for sharing content in your app with other apps
 
 | Param         | Type                                                  |
 | ------------- | ----------------------------------------------------- |
-| **`options`** | <code><a href="#shareoptions">ShareOptions</a></code> |
+| **`options`** | `<a href="#shareoptions">ShareOptions</a>` |
 
-**Returns:** <code>Promise&lt;any&gt;</code>
+**Returns:** `Promise&lt;any&gt;`
 
 ---
 
@@ -56,7 +56,7 @@ Show a Share modal for sharing content in your app with other apps
 
 | Prop              | Type                | Description                                                               |
 | ----------------- | ------------------- | ------------------------------------------------------------------------- |
-| **`title`**       | <code>string</code> | Set a title for any message. This will be the subject if sharing to email |
-| **`text`**        | <code>string</code> | Set some text to share                                                    |
-| **`url`**         | <code>string</code> | Set a URL to share, can be http, https or file URL                        |
-| **`dialogTitle`** | <code>string</code> | Set a title for the share modal. Android only                             |
+| **`title`**       | `string` | Set a title for any message. This will be the subject if sharing to email |
+| **`text`**        | `string` | Set some text to share                                                    |
+| **`url`**         | `string` | Set a URL to share, can be http, https or file URL                        |
+| **`dialogTitle`** | `string` | Set a title for the share modal. Android only                             |

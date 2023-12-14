@@ -22,9 +22,9 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
-| **`options`** | <code><a href="#permissionsoptions">PermissionsOptions</a></code> |
+| **`options`** | `<a href="#permissionsoptions">PermissionsOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#permissionresult">PermissionResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#permissionresult">PermissionResult</a>&gt;`
 
 ---
 
@@ -34,13 +34,13 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 
 | Prop        | Type                                           |
 | ----------- | ---------------------------------------------- |
-| **`state`** | <code>"denied" \| "granted" \| "prompt"</code> |
+| **`state`** | `"denied" \| "granted" \| "prompt"` |
 
 #### PermissionsOptions
 
 | Prop       | Type                                                      |
 | ---------- | --------------------------------------------------------- |
-| **`name`** | <code><a href="#permissiontype">PermissionType</a></code> |
+| **`name`** | `<a href="#permissiontype">PermissionType</a>` |
 
 ### Enums
 
@@ -48,10 +48,10 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 
 | Members              | Value                          |
 | -------------------- | ------------------------------ |
-| **`Camera`**         | <code>"camera"</code>          |
-| **`Photos`**         | <code>"photos"</code>          |
-| **`Geolocation`**    | <code>"geolocation"</code>     |
-| **`Notifications`**  | <code>"notifications"</code>   |
-| **`ClipboardRead`**  | <code>"clipboard-read"</code>  |
-| **`ClipboardWrite`** | <code>"clipboard-write"</code> |
-| **`Microphone`**     | <code>"microphone"</code>      |
+| **`Camera`**         | `"camera"`          |
+| **`Photos`**         | `"photos"`          |
+| **`Geolocation`**    | `"geolocation"`     |
+| **`Notifications`**  | `"notifications"`   |
+| **`ClipboardRead`**  | `"clipboard-read"`  |
+| **`ClipboardWrite`** | `"clipboard-write"` |
+| **`Microphone`**     | `"microphone"`      |

@@ -61,7 +61,7 @@ orientation() => Promise<ScreenOrientationResult>
 
 Returns the current screen orientation.
 
-**Returns:** <code>Promise&lt;<a href="#screenorientationresult">ScreenOrientationResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#screenorientationresult">ScreenOrientationResult</a>&gt;`
 
 **Since:** 4.0.0
 
@@ -78,7 +78,7 @@ Locks the screen orientation.
 
 | Param         | Type                                                                      |
 | ------------- | ------------------------------------------------------------------------- |
-| **`options`** | <code><a href="#orientationlockoptions">OrientationLockOptions</a></code> |
+| **`options`** | `<a href="#orientationlockoptions">OrientationLockOptions</a>` |
 
 **Since:** 4.0.0
 
@@ -108,10 +108,10 @@ Listens for screen orientation changes.
 
 | Param              | Type                                                                                                  |
 | ------------------ | ----------------------------------------------------------------------------------------------------- |
-| **`eventName`**    | <code>'screenOrientationChange'</code>                                                                |
-| **`listenerFunc`** | <code>(orientation: <a href="#screenorientationresult">ScreenOrientationResult</a>) =&gt; void</code> |
+| **`eventName`**    | `'screenOrientationChange'`                                                                |
+| **`listenerFunc`** | `(orientation: <a href="#screenorientationresult">ScreenOrientationResult</a>) =&gt; void` |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 **Since:** 4.0.0
 
@@ -138,20 +138,20 @@ Removes all listeners.
 
 | Prop       | Type                         |
 | ---------- | ---------------------------- |
-| **`type`** | <code>OrientationType</code> |
+| **`type`** | `OrientationType` |
 
 
 #### OrientationLockOptions
 
 | Prop              | Type                             |
 | ----------------- | -------------------------------- |
-| **`orientation`** | <code>OrientationLockType</code> |
+| **`orientation`** | `OrientationLockType` |
 
 
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
-| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+| **`remove`** | `() =&gt; Promise&lt;void&gt;` |
 
 </docgen-api>

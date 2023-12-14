@@ -123,7 +123,7 @@ getInfo() => Promise<AppInfo>
 
 Return information about the app.
 
-**Returns:** <code>Promise&lt;<a href="#appinfo">AppInfo</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#appinfo">AppInfo</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -138,7 +138,7 @@ getState() => Promise<AppState>
 
 Gets the current app state.
 
-**Returns:** <code>Promise&lt;<a href="#appstate">AppState</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#appstate">AppState</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -153,7 +153,7 @@ getLaunchUrl() => Promise<AppLaunchUrl | undefined>
 
 Get the URL the app was launched with, if any.
 
-**Returns:** <code>Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -190,10 +190,10 @@ On Web it's fired when the document's visibilitychange gets fired.
 
 | Param              | Type                                                                |
 | ------------------ | ------------------------------------------------------------------- |
-| **`eventName`**    | <code>'appStateChange'</code>                                       |
-| **`listenerFunc`** | <code><a href="#statechangelistener">StateChangeListener</a></code> |
+| **`eventName`**    | `'appStateChange'`                                       |
+| **`listenerFunc`** | `<a href="#statechangelistener">StateChangeListener</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 **Since:** 1.0.0
 
@@ -214,10 +214,10 @@ On Web it's fired when the document's visibilitychange gets fired and document.h
 
 | Param              | Type                       |
 | ------------------ | -------------------------- |
-| **`eventName`**    | <code>'pause'</code>       |
-| **`listenerFunc`** | <code>() =&gt; void</code> |
+| **`eventName`**    | `'pause'`       |
+| **`listenerFunc`** | `() =&gt; void` |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 **Since:** 4.1.0
 
@@ -239,10 +239,10 @@ On Web it's fired when the document's visibilitychange gets fired and document.h
 
 | Param              | Type                       |
 | ------------------ | -------------------------- |
-| **`eventName`**    | <code>'resume'</code>      |
-| **`listenerFunc`** | <code>() =&gt; void</code> |
+| **`eventName`**    | `'resume'`      |
+| **`listenerFunc`** | `() =&gt; void` |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 **Since:** 4.1.0
 
@@ -260,10 +260,10 @@ as URLs your app handles (Universal Links on iOS and App Links on Android)
 
 | Param              | Type                                                        |
 | ------------------ | ----------------------------------------------------------- |
-| **`eventName`**    | <code>'appUrlOpen'</code>                                   |
-| **`listenerFunc`** | <code><a href="#urlopenlistener">URLOpenListener</a></code> |
+| **`eventName`**    | `'appUrlOpen'`                                   |
+| **`listenerFunc`** | `<a href="#urlopenlistener">URLOpenListener</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 **Since:** 1.0.0
 
@@ -300,10 +300,10 @@ Activities (for example, Camera) to have this event and process handled.
 
 | Param              | Type                                                          |
 | ------------------ | ------------------------------------------------------------- |
-| **`eventName`**    | <code>'appRestoredResult'</code>                              |
-| **`listenerFunc`** | <code><a href="#restoredlistener">RestoredListener</a></code> |
+| **`eventName`**    | `'appRestoredResult'`                              |
+| **`listenerFunc`** | `<a href="#restoredlistener">RestoredListener</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 **Since:** 1.0.0
 
@@ -322,10 +322,10 @@ If you want to close the app, call `App.exitApp()`.
 
 | Param              | Type                                                              |
 | ------------------ | ----------------------------------------------------------------- |
-| **`eventName`**    | <code>'backButton'</code>                                         |
-| **`listenerFunc`** | <code><a href="#backbuttonlistener">BackButtonListener</a></code> |
+| **`eventName`**    | `'backButton'`                                         |
+| **`listenerFunc`** | `<a href="#backbuttonlistener">BackButtonListener</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 **Since:** 1.0.0
 
@@ -352,58 +352,58 @@ Remove all native listeners for this plugin
 
 | Prop          | Type                | Description                                                                                         | Since |
 | ------------- | ------------------- | --------------------------------------------------------------------------------------------------- | ----- |
-| **`name`**    | <code>string</code> | The name of the app.                                                                                | 1.0.0 |
-| **`id`**      | <code>string</code> | The identifier of the app. On iOS it's the Bundle Identifier. On Android it's the Application ID    | 1.0.0 |
-| **`build`**   | <code>string</code> | The build version. On iOS it's the CFBundleVersion. On Android it's the versionCode.                | 1.0.0 |
-| **`version`** | <code>string</code> | The app version. On iOS it's the CFBundleShortVersionString. On Android it's package's versionName. | 1.0.0 |
+| **`name`**    | `string` | The name of the app.                                                                                | 1.0.0 |
+| **`id`**      | `string` | The identifier of the app. On iOS it's the Bundle Identifier. On Android it's the Application ID    | 1.0.0 |
+| **`build`**   | `string` | The build version. On iOS it's the CFBundleVersion. On Android it's the versionCode.                | 1.0.0 |
+| **`version`** | `string` | The app version. On iOS it's the CFBundleShortVersionString. On Android it's package's versionName. | 1.0.0 |
 
 
 #### AppState
 
 | Prop           | Type                 | Description                       | Since |
 | -------------- | -------------------- | --------------------------------- | ----- |
-| **`isActive`** | <code>boolean</code> | Whether the app is active or not. | 1.0.0 |
+| **`isActive`** | `boolean` | Whether the app is active or not. | 1.0.0 |
 
 
 #### AppLaunchUrl
 
 | Prop      | Type                | Description                   | Since |
 | --------- | ------------------- | ----------------------------- | ----- |
-| **`url`** | <code>string</code> | The url used to open the app. | 1.0.0 |
+| **`url`** | `string` | The url used to open the app. | 1.0.0 |
 
 
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
-| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+| **`remove`** | `() =&gt; Promise&lt;void&gt;` |
 
 
 #### URLOpenListenerEvent
 
 | Prop                       | Type                 | Description                                                                                                                                                                        | Since |
 | -------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`url`**                  | <code>string</code>  | The URL the app was opened with.                                                                                                                                                   | 1.0.0 |
-| **`iosSourceApplication`** | <code>any</code>     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         | 1.0.0 |
-| **`iosOpenInPlace`**       | <code>boolean</code> | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace | 1.0.0 |
+| **`url`**                  | `string`  | The URL the app was opened with.                                                                                                                                                   | 1.0.0 |
+| **`iosSourceApplication`** | `any`     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         | 1.0.0 |
+| **`iosOpenInPlace`**       | `boolean` | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace | 1.0.0 |
 
 
 #### RestoredListenerEvent
 
 | Prop             | Type                              | Description                                                                                                                                       | Since |
 | ---------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`pluginId`**   | <code>string</code>               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   | 1.0.0 |
-| **`methodName`** | <code>string</code>               | The methodName this result corresponds to. For example, `getPhoto`                                                                                | 1.0.0 |
-| **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` | 1.0.0 |
-| **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded.                                                                                                  | 1.0.0 |
-| **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
+| **`pluginId`**   | `string`               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   | 1.0.0 |
+| **`methodName`** | `string`               | The methodName this result corresponds to. For example, `getPhoto`                                                                                | 1.0.0 |
+| **`data`**       | `any`                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` | 1.0.0 |
+| **`success`**    | `boolean`              | Boolean indicating if the plugin call succeeded.                                                                                                  | 1.0.0 |
+| **`error`**      | `{ message: string; }` | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
 
 
 #### BackButtonListenerEvent
 
 | Prop            | Type                 | Description                                                                                               | Since |
 | --------------- | -------------------- | --------------------------------------------------------------------------------------------------------- | ----- |
-| **`canGoBack`** | <code>boolean</code> | Indicates whether the browser can go back in history. False when the history stack is on the first entry. | 1.0.0 |
+| **`canGoBack`** | `boolean` | Indicates whether the browser can go back in history. False when the history stack is on the first entry. | 1.0.0 |
 
 
 ### Type Aliases
@@ -411,21 +411,21 @@ Remove all native listeners for this plugin
 
 #### StateChangeListener
 
-<code>(state: <a href="#appstate">AppState</a>): void</code>
+`(state: <a href="#appstate">AppState</a>): void`
 
 
 #### URLOpenListener
 
-<code>(event: <a href="#urlopenlistenerevent">URLOpenListenerEvent</a>): void</code>
+`(event: <a href="#urlopenlistenerevent">URLOpenListenerEvent</a>): void`
 
 
 #### RestoredListener
 
-<code>(event: <a href="#restoredlistenerevent">RestoredListenerEvent</a>): void</code>
+`(event: <a href="#restoredlistenerevent">RestoredListenerEvent</a>): void`
 
 
 #### BackButtonListener
 
-<code>(event: <a href="#backbuttonlistenerevent">BackButtonListenerEvent</a>): void</code>
+`(event: <a href="#backbuttonlistenerevent">BackButtonListenerEvent</a>): void`
 
 </docgen-api>

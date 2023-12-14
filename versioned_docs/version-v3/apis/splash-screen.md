@@ -81,19 +81,19 @@ These config values are available:
 
 | Prop                            | Type                                                                                                                          | Description                                                                                                                                                                                                  | Default             | Since |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ----- |
-| **`launchShowDuration`**        | <code>number</code>                                                                                                           | How long to show the launch splash screen when autoHide is enabled (in ms)                                                                                                                                   | <code>500</code>    | 1.0.0 |
-| **`launchAutoHide`**            | <code>boolean</code>                                                                                                          | Whether to auto hide the splash after launchShowDuration.                                                                                                                                                    | <code>true</code>   | 1.0.0 |
-| **`backgroundColor`**           | <code>string</code>                                                                                                           | Color of the background of the Splash Screen in hex format, #RRGGBB or #RRGGBBAA. Doesn't work if `useDialog` is true.                                                                                       |                     | 1.0.0 |
-| **`androidSplashResourceName`** | <code>string</code>                                                                                                           | Name of the resource to be used as Splash Screen. Only available on Android.                                                                                                                                 | <code>splash</code> | 1.0.0 |
-| **`androidScaleType`**          | <code>'CENTER' \| 'CENTER_CROP' \| 'CENTER_INSIDE' \| 'FIT_CENTER' \| 'FIT_END' \| 'FIT_START' \| 'FIT_XY' \| 'MATRIX'</code> | The [ImageView.ScaleType](https://developer.android.com/reference/android/widget/ImageView.ScaleType) used to scale the Splash Screen image. Doesn't work if `useDialog` is true. Only available on Android. | <code>FIT_XY</code> | 1.0.0 |
-| **`showSpinner`**               | <code>boolean</code>                                                                                                          | Show a loading spinner on the Splash Screen. Doesn't work if `useDialog` is true.                                                                                                                            |                     | 1.0.0 |
-| **`androidSpinnerStyle`**       | <code>'horizontal' \| 'small' \| 'large' \| 'inverse' \| 'smallInverse' \| 'largeInverse'</code>                              | Style of the Android spinner. Doesn't work if `useDialog` is true.                                                                                                                                           | <code>large</code>  | 1.0.0 |
-| **`iosSpinnerStyle`**           | <code>'small' \| 'large'</code>                                                                                               | Style of the iOS spinner. Doesn't work if `useDialog` is true. Only available on iOS.                                                                                                                        | <code>large</code>  | 1.0.0 |
-| **`spinnerColor`**              | <code>string</code>                                                                                                           | Color of the spinner in hex format, #RRGGBB or #RRGGBBAA. Doesn't work if `useDialog` is true.                                                                                                               |                     | 1.0.0 |
-| **`splashFullScreen`**          | <code>boolean</code>                                                                                                          | Hide the status bar on the Splash Screen. Only available on Android.                                                                                                                                         |                     | 1.0.0 |
-| **`splashImmersive`**           | <code>boolean</code>                                                                                                          | Hide the status bar and the software navigation buttons on the Splash Screen. Only available on Android.                                                                                                     |                     | 1.0.0 |
-| **`layoutName`**                | <code>string</code>                                                                                                           | If `useDialog` is set to true, configure the Dialog layout. If `useDialog` is not set or false, use a layout instead of the ImageView. Only available on Android.                                            |                     | 1.1.0 |
-| **`useDialog`**                 | <code>boolean</code>                                                                                                          | Use a Dialog instead of an ImageView. If `layoutName` is not configured, it will use a layout that uses the splash image as background. Only available on Android.                                           |                     | 1.1.0 |
+| **`launchShowDuration`**        | `number`                                                                                                           | How long to show the launch splash screen when autoHide is enabled (in ms)                                                                                                                                   | `500`    | 1.0.0 |
+| **`launchAutoHide`**            | `boolean`                                                                                                          | Whether to auto hide the splash after launchShowDuration.                                                                                                                                                    | `true`   | 1.0.0 |
+| **`backgroundColor`**           | `string`                                                                                                           | Color of the background of the Splash Screen in hex format, #RRGGBB or #RRGGBBAA. Doesn't work if `useDialog` is true.                                                                                       |                     | 1.0.0 |
+| **`androidSplashResourceName`** | `string`                                                                                                           | Name of the resource to be used as Splash Screen. Only available on Android.                                                                                                                                 | `splash` | 1.0.0 |
+| **`androidScaleType`**          | `'CENTER' \| 'CENTER_CROP' \| 'CENTER_INSIDE' \| 'FIT_CENTER' \| 'FIT_END' \| 'FIT_START' \| 'FIT_XY' \| 'MATRIX'` | The [ImageView.ScaleType](https://developer.android.com/reference/android/widget/ImageView.ScaleType) used to scale the Splash Screen image. Doesn't work if `useDialog` is true. Only available on Android. | `FIT_XY` | 1.0.0 |
+| **`showSpinner`**               | `boolean`                                                                                                          | Show a loading spinner on the Splash Screen. Doesn't work if `useDialog` is true.                                                                                                                            |                     | 1.0.0 |
+| **`androidSpinnerStyle`**       | `'horizontal' \| 'small' \| 'large' \| 'inverse' \| 'smallInverse' \| 'largeInverse'`                              | Style of the Android spinner. Doesn't work if `useDialog` is true.                                                                                                                                           | `large`  | 1.0.0 |
+| **`iosSpinnerStyle`**           | `'small' \| 'large'`                                                                                               | Style of the iOS spinner. Doesn't work if `useDialog` is true. Only available on iOS.                                                                                                                        | `large`  | 1.0.0 |
+| **`spinnerColor`**              | `string`                                                                                                           | Color of the spinner in hex format, #RRGGBB or #RRGGBBAA. Doesn't work if `useDialog` is true.                                                                                                               |                     | 1.0.0 |
+| **`splashFullScreen`**          | `boolean`                                                                                                          | Hide the status bar on the Splash Screen. Only available on Android.                                                                                                                                         |                     | 1.0.0 |
+| **`splashImmersive`**           | `boolean`                                                                                                          | Hide the status bar and the software navigation buttons on the Splash Screen. Only available on Android.                                                                                                     |                     | 1.0.0 |
+| **`layoutName`**                | `string`                                                                                                           | If `useDialog` is set to true, configure the Dialog layout. If `useDialog` is not set or false, use a layout instead of the ImageView. Only available on Android.                                            |                     | 1.1.0 |
+| **`useDialog`**                 | `boolean`                                                                                                          | Use a Dialog instead of an ImageView. If `layoutName` is not configured, it will use a layout that uses the splash image as background. Only available on Android.                                           |                     | 1.1.0 |
 
 ### Examples
 
@@ -192,7 +192,7 @@ Show the splash screen
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | <code><a href="#showoptions">ShowOptions</a></code> |
+| **`options`** | `<a href="#showoptions">ShowOptions</a>` |
 
 **Since:** 1.0.0
 
@@ -209,7 +209,7 @@ Hide the splash screen
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | <code><a href="#hideoptions">HideOptions</a></code> |
+| **`options`** | `<a href="#hideoptions">HideOptions</a>` |
 
 **Since:** 1.0.0
 
@@ -223,16 +223,16 @@ Hide the splash screen
 
 | Prop                  | Type                 | Description                                                         | Default           | Since |
 | --------------------- | -------------------- | ------------------------------------------------------------------- | ----------------- | ----- |
-| **`autoHide`**        | <code>boolean</code> | Whether to auto hide the splash after showDuration                  |                   | 1.0.0 |
-| **`fadeInDuration`**  | <code>number</code>  | How long (in ms) to fade in.                                        | <code>200</code>  | 1.0.0 |
-| **`fadeOutDuration`** | <code>number</code>  | How long (in ms) to fade out.                                       | <code>200</code>  | 1.0.0 |
-| **`showDuration`**    | <code>number</code>  | How long to show the splash screen when autoHide is enabled (in ms) | <code>3000</code> | 1.0.0 |
+| **`autoHide`**        | `boolean` | Whether to auto hide the splash after showDuration                  |                   | 1.0.0 |
+| **`fadeInDuration`**  | `number`  | How long (in ms) to fade in.                                        | `200`  | 1.0.0 |
+| **`fadeOutDuration`** | `number`  | How long (in ms) to fade out.                                       | `200`  | 1.0.0 |
+| **`showDuration`**    | `number`  | How long to show the splash screen when autoHide is enabled (in ms) | `3000` | 1.0.0 |
 
 
 #### HideOptions
 
 | Prop                  | Type                | Description                   | Default          | Since |
 | --------------------- | ------------------- | ----------------------------- | ---------------- | ----- |
-| **`fadeOutDuration`** | <code>number</code> | How long (in ms) to fade out. | <code>200</code> | 1.0.0 |
+| **`fadeOutDuration`** | `number` | How long (in ms) to fade out. | `200` | 1.0.0 |
 
 </docgen-api>

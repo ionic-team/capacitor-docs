@@ -59,7 +59,7 @@ canShare() => Promise<CanShareResult>
 
 Check if sharing is supported.
 
-**Returns:** <code>Promise&lt;<a href="#canshareresult">CanShareResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#canshareresult">CanShareResult</a>&gt;`
 
 **Since:** 1.1.0
 
@@ -76,9 +76,9 @@ Show a Share modal for sharing content with other apps
 
 | Param         | Type                                                  |
 | ------------- | ----------------------------------------------------- |
-| **`options`** | <code><a href="#shareoptions">ShareOptions</a></code> |
+| **`options`** | `<a href="#shareoptions">ShareOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#shareresult">ShareResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#shareresult">ShareResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -92,24 +92,24 @@ Show a Share modal for sharing content with other apps
 
 | Prop        | Type                 | Description                          | Since |
 | ----------- | -------------------- | ------------------------------------ | ----- |
-| **`value`** | <code>boolean</code> | Whether sharing is supported or not. | 1.1.0 |
+| **`value`** | `boolean` | Whether sharing is supported or not. | 1.1.0 |
 
 
 #### ShareResult
 
 | Prop               | Type                | Description                                                                                                              | Since |
 | ------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------ | ----- |
-| **`activityType`** | <code>string</code> | Identifier of the app that received the share action. Can be an empty string in some cases. On web it will be undefined. | 1.0.0 |
+| **`activityType`** | `string` | Identifier of the app that received the share action. Can be an empty string in some cases. On web it will be undefined. | 1.0.0 |
 
 
 #### ShareOptions
 
 | Prop              | Type                  | Description                                                                         | Since |
 | ----------------- | --------------------- | ----------------------------------------------------------------------------------- | ----- |
-| **`title`**       | <code>string</code>   | Set a title for any message. This will be the subject if sharing to email           | 1.0.0 |
-| **`text`**        | <code>string</code>   | Set some text to share                                                              | 1.0.0 |
-| **`url`**         | <code>string</code>   | Set a URL to share, can be http, https or file:// URL                               | 1.0.0 |
-| **`files`**       | <code>string[]</code> | Array of file:// URLs of the files to be shared. Only supported on iOS and Android. | 4.1.0 |
-| **`dialogTitle`** | <code>string</code>   | Set a title for the share modal. This option is only supported on Android.          | 1.0.0 |
+| **`title`**       | `string`   | Set a title for any message. This will be the subject if sharing to email           | 1.0.0 |
+| **`text`**        | `string`   | Set some text to share                                                              | 1.0.0 |
+| **`url`**         | `string`   | Set a URL to share, can be http, https or file:// URL                               | 1.0.0 |
+| **`files`**       | `string[]` | Array of file:// URLs of the files to be shared. Only supported on iOS and Android. | 4.1.0 |
+| **`dialogTitle`** | `string`   | Set a title for the share modal. This option is only supported on Android.          | 1.0.0 |
 
 </docgen-api>

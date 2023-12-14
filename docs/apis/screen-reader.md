@@ -64,7 +64,7 @@ Whether a Screen Reader is currently active.
 This method is not supported on web (it is not possible to detect Screen
 Readers).
 
-**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+**Returns:** `Promise&lt;{ value: boolean; }&gt;`
 
 **Since:** 1.0.0
 
@@ -101,7 +101,7 @@ plugin](https://github.com/capacitor-community/text-to-speech).
 ### addListener('stateChange', ...)
 
 ```typescript
-addListener(eventName: 'stateChange', listener: StateChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'stateChange', listener: StateChangeListener) => Promise<PluginListenerHandle>
 ```
 
 Add a listener for when the screen reader is turned on or off.
@@ -116,7 +116,7 @@ Readers).
 | **`eventName`** | <code>'stateChange'</code>                                          |
 | **`listener`**  | <code><a href="#statechangelistener">StateChangeListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 

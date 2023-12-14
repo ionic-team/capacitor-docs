@@ -142,7 +142,7 @@ the accessory bar for short forms (login, signup, etc.) to provide a cleaner UI
 
 | Param         | Type                                 |
 | ------------- | ------------------------------------ |
-| **`options`** | <code>{ isVisible: boolean; }</code> |
+| **`options`** | `{ isVisible: boolean; }` |
 
 ---
 
@@ -156,7 +156,7 @@ Programmatically enable or disable the WebView scroll
 
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
-| **`options`** | <code>{ isDisabled: boolean; }</code> |
+| **`options`** | `{ isDisabled: boolean; }` |
 
 ---
 
@@ -170,7 +170,7 @@ Programmatically set the keyboard style
 
 | Param         | Type                                                                  |
 | ------------- | --------------------------------------------------------------------- |
-| **`options`** | <code><a href="#keyboardstyleoptions">KeyboardStyleOptions</a></code> |
+| **`options`** | `<a href="#keyboardstyleoptions">KeyboardStyleOptions</a>` |
 
 ---
 
@@ -184,7 +184,7 @@ Programmatically set the resize mode
 
 | Param         | Type                                                                    |
 | ------------- | ----------------------------------------------------------------------- |
-| **`options`** | <code><a href="#keyboardresizeoptions">KeyboardResizeOptions</a></code> |
+| **`options`** | `<a href="#keyboardresizeoptions">KeyboardResizeOptions</a>` |
 
 ---
 
@@ -196,10 +196,10 @@ addListener(eventName: 'keyboardWillShow', listenerFunc: (info: KeyboardInfo) =>
 
 | Param              | Type                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
-| **`eventName`**    | <code>"keyboardWillShow"</code>                                          |
-| **`listenerFunc`** | <code>(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void</code> |
+| **`eventName`**    | `"keyboardWillShow"`                                          |
+| **`listenerFunc`** | `(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -211,10 +211,10 @@ addListener(eventName: 'keyboardDidShow', listenerFunc: (info: KeyboardInfo) => 
 
 | Param              | Type                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
-| **`eventName`**    | <code>"keyboardDidShow"</code>                                           |
-| **`listenerFunc`** | <code>(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void</code> |
+| **`eventName`**    | `"keyboardDidShow"`                                           |
+| **`listenerFunc`** | `(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void` |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -226,10 +226,10 @@ addListener(eventName: 'keyboardWillHide', listenerFunc: () => void) => PluginLi
 
 | Param              | Type                            |
 | ------------------ | ------------------------------- |
-| **`eventName`**    | <code>"keyboardWillHide"</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>      |
+| **`eventName`**    | `"keyboardWillHide"` |
+| **`listenerFunc`** | `() =&gt; void`      |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -241,10 +241,10 @@ addListener(eventName: 'keyboardDidHide', listenerFunc: () => void) => PluginLis
 
 | Param              | Type                           |
 | ------------------ | ------------------------------ |
-| **`eventName`**    | <code>"keyboardDidHide"</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>     |
+| **`eventName`**    | `"keyboardDidHide"` |
+| **`listenerFunc`** | `() =&gt; void`     |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -264,25 +264,25 @@ Remove all native listeners for this plugin
 
 | Prop        | Type                                                    |
 | ----------- | ------------------------------------------------------- |
-| **`style`** | <code><a href="#keyboardstyle">KeyboardStyle</a></code> |
+| **`style`** | `<a href="#keyboardstyle">KeyboardStyle</a>` |
 
 #### KeyboardResizeOptions
 
 | Prop       | Type                                                      |
 | ---------- | --------------------------------------------------------- |
-| **`mode`** | <code><a href="#keyboardresize">KeyboardResize</a></code> |
+| **`mode`** | `<a href="#keyboardresize">KeyboardResize</a>` |
 
 #### PluginListenerHandle
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
-| **`remove`** | <code>() =&gt; void</code> |
+| **`remove`** | `() =&gt; void` |
 
 #### KeyboardInfo
 
 | Prop                 | Type                |
 | -------------------- | ------------------- |
-| **`keyboardHeight`** | <code>number</code> |
+| **`keyboardHeight`** | `number` |
 
 ### Enums
 
@@ -290,14 +290,14 @@ Remove all native listeners for this plugin
 
 | Members     | Value                |
 | ----------- | -------------------- |
-| **`Dark`**  | <code>"DARK"</code>  |
-| **`Light`** | <code>"LIGHT"</code> |
+| **`Dark`**  | `"DARK"`  |
+| **`Light`** | `"LIGHT"` |
 
 #### KeyboardResize
 
 | Members      | Value                 |
 | ------------ | --------------------- |
-| **`Body`**   | <code>"body"</code>   |
-| **`Ionic`**  | <code>"ionic"</code>  |
-| **`Native`** | <code>"native"</code> |
-| **`None`**   | <code>"none"</code>   |
+| **`Body`**   | `"body"`   |
+| **`Ionic`**  | `"ionic"`  |
+| **`Native`** | `"native"` |
+| **`None`**   | `"none"`   |

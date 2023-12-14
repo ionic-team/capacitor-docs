@@ -73,7 +73,7 @@ Show an alert dialog
 
 | Param         | Type                                                  |
 | ------------- | ----------------------------------------------------- |
-| **`options`** | <code><a href="#alertoptions">AlertOptions</a></code> |
+| **`options`** | `<a href="#alertoptions">AlertOptions</a>` |
 
 **Since:** 1.0.0
 
@@ -90,9 +90,9 @@ Show a prompt dialog
 
 | Param         | Type                                                    |
 | ------------- | ------------------------------------------------------- |
-| **`options`** | <code><a href="#promptoptions">PromptOptions</a></code> |
+| **`options`** | `<a href="#promptoptions">PromptOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#promptresult">PromptResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#promptresult">PromptResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -109,9 +109,9 @@ Show a confirmation dialog
 
 | Param         | Type                                                      |
 | ------------- | --------------------------------------------------------- |
-| **`options`** | <code><a href="#confirmoptions">ConfirmOptions</a></code> |
+| **`options`** | `<a href="#confirmoptions">ConfirmOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#confirmresult">ConfirmResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#confirmresult">ConfirmResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -125,45 +125,45 @@ Show a confirmation dialog
 
 | Prop              | Type                | Description                       | Default           | Since |
 | ----------------- | ------------------- | --------------------------------- | ----------------- | ----- |
-| **`title`**       | <code>string</code> | Title of the dialog.              |                   | 1.0.0 |
-| **`message`**     | <code>string</code> | Message to show on the dialog.    |                   | 1.0.0 |
-| **`buttonTitle`** | <code>string</code> | Text to use on the action button. | <code>"OK"</code> | 1.0.0 |
+| **`title`**       | `string` | Title of the dialog.              |                   | 1.0.0 |
+| **`message`**     | `string` | Message to show on the dialog.    |                   | 1.0.0 |
+| **`buttonTitle`** | `string` | Text to use on the action button. | `"OK"` | 1.0.0 |
 
 
 #### PromptResult
 
 | Prop            | Type                 | Description                                     | Since |
 | --------------- | -------------------- | ----------------------------------------------- | ----- |
-| **`value`**     | <code>string</code>  | Text entered on the prompt.                     | 1.0.0 |
-| **`cancelled`** | <code>boolean</code> | Whether if the prompt was canceled or accepted. | 1.0.0 |
+| **`value`**     | `string`  | Text entered on the prompt.                     | 1.0.0 |
+| **`cancelled`** | `boolean` | Whether if the prompt was canceled or accepted. | 1.0.0 |
 
 
 #### PromptOptions
 
 | Prop                    | Type                | Description                                | Default               | Since |
 | ----------------------- | ------------------- | ------------------------------------------ | --------------------- | ----- |
-| **`title`**             | <code>string</code> | Title of the dialog.                       |                       | 1.0.0 |
-| **`message`**           | <code>string</code> | Message to show on the dialog.             |                       | 1.0.0 |
-| **`okButtonTitle`**     | <code>string</code> | Text to use on the positive action button. | <code>"OK"</code>     | 1.0.0 |
-| **`cancelButtonTitle`** | <code>string</code> | Text to use on the negative action button. | <code>"Cancel"</code> | 1.0.0 |
-| **`inputPlaceholder`**  | <code>string</code> | Placeholder text for hints.                |                       | 1.0.0 |
-| **`inputText`**         | <code>string</code> | Prepopulated text.                         |                       | 1.0.0 |
+| **`title`**             | `string` | Title of the dialog.                       |                       | 1.0.0 |
+| **`message`**           | `string` | Message to show on the dialog.             |                       | 1.0.0 |
+| **`okButtonTitle`**     | `string` | Text to use on the positive action button. | `"OK"`     | 1.0.0 |
+| **`cancelButtonTitle`** | `string` | Text to use on the negative action button. | `"Cancel"` | 1.0.0 |
+| **`inputPlaceholder`**  | `string` | Placeholder text for hints.                |                       | 1.0.0 |
+| **`inputText`**         | `string` | Prepopulated text.                         |                       | 1.0.0 |
 
 
 #### ConfirmResult
 
 | Prop        | Type                 | Description                                               | Since |
 | ----------- | -------------------- | --------------------------------------------------------- | ----- |
-| **`value`** | <code>boolean</code> | true if the positive button was clicked, false otherwise. | 1.0.0 |
+| **`value`** | `boolean` | true if the positive button was clicked, false otherwise. | 1.0.0 |
 
 
 #### ConfirmOptions
 
 | Prop                    | Type                | Description                                | Default               | Since |
 | ----------------------- | ------------------- | ------------------------------------------ | --------------------- | ----- |
-| **`title`**             | <code>string</code> | Title of the dialog.                       |                       | 1.0.0 |
-| **`message`**           | <code>string</code> | Message to show on the dialog.             |                       | 1.0.0 |
-| **`okButtonTitle`**     | <code>string</code> | Text to use on the positive action button. | <code>"OK"</code>     | 1.0.0 |
-| **`cancelButtonTitle`** | <code>string</code> | Text to use on the negative action button. | <code>"Cancel"</code> | 1.0.0 |
+| **`title`**             | `string` | Title of the dialog.                       |                       | 1.0.0 |
+| **`message`**           | `string` | Message to show on the dialog.             |                       | 1.0.0 |
+| **`okButtonTitle`**     | `string` | Text to use on the positive action button. | `"OK"`     | 1.0.0 |
+| **`cancelButtonTitle`** | `string` | Text to use on the negative action button. | `"Cancel"` | 1.0.0 |
 
 </docgen-api>

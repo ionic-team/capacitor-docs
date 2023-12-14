@@ -58,7 +58,7 @@ Write a value to the clipboard (the "copy" action)
 
 | Param         | Type                                                  |
 | ------------- | ----------------------------------------------------- |
-| **`options`** | <code><a href="#writeoptions">WriteOptions</a></code> |
+| **`options`** | `<a href="#writeoptions">WriteOptions</a>` |
 
 **Since:** 1.0.0
 
@@ -73,7 +73,7 @@ read() => Promise<ReadResult>
 
 Read a value from the clipboard (the "paste" action)
 
-**Returns:** <code>Promise&lt;<a href="#readresult">ReadResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#readresult">ReadResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -89,10 +89,10 @@ Represents the data to be written to the clipboard.
 
 | Prop         | Type                | Description                                                                                                     | Since |
 | ------------ | ------------------- | --------------------------------------------------------------------------------------------------------------- | ----- |
-| **`string`** | <code>string</code> | Text value to copy.                                                                                             | 1.0.0 |
-| **`image`**  | <code>string</code> | Image in [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) format to copy. | 1.0.0 |
-| **`url`**    | <code>string</code> | URL string to copy.                                                                                             | 1.0.0 |
-| **`label`**  | <code>string</code> | User visible label to accompany the copied data (Android Only).                                                 | 1.0.0 |
+| **`string`** | `string` | Text value to copy.                                                                                             | 1.0.0 |
+| **`image`**  | `string` | Image in [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) format to copy. | 1.0.0 |
+| **`url`**    | `string` | URL string to copy.                                                                                             | 1.0.0 |
+| **`label`**  | `string` | User visible label to accompany the copied data (Android Only).                                                 | 1.0.0 |
 
 
 #### ReadResult
@@ -101,7 +101,7 @@ Represents the data read from the clipboard.
 
 | Prop        | Type                | Description                    | Since |
 | ----------- | ------------------- | ------------------------------ | ----- |
-| **`value`** | <code>string</code> | Data read from the clipboard.  | 1.0.0 |
-| **`type`**  | <code>string</code> | Type of data in the clipboard. | 1.0.0 |
+| **`value`** | `string` | Data read from the clipboard.  | 1.0.0 |
+| **`type`**  | `string` | Type of data in the clipboard. | 1.0.0 |
 
 </docgen-api>

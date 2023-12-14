@@ -175,8 +175,8 @@ Show the splash screen
 
 | Param          | Type                                                                        |
 | -------------- | --------------------------------------------------------------------------- |
-| **`options`**  | <code><a href="#splashscreenshowoptions">SplashScreenShowOptions</a></code> |
-| **`callback`** | <code><a href="#function">Function</a></code>                               |
+| **`options`**  | `<a href="#splashscreenshowoptions">SplashScreenShowOptions</a>` |
+| **`callback`** | `<a href="#function">Function</a>`                               |
 
 ---
 
@@ -190,8 +190,8 @@ Hide the splash screen
 
 | Param          | Type                                                                        |
 | -------------- | --------------------------------------------------------------------------- |
-| **`options`**  | <code><a href="#splashscreenhideoptions">SplashScreenHideOptions</a></code> |
-| **`callback`** | <code><a href="#function">Function</a></code>                               |
+| **`options`**  | `<a href="#splashscreenhideoptions">SplashScreenHideOptions</a>` |
+| **`callback`** | `<a href="#function">Function</a>`                               |
 
 ---
 
@@ -201,10 +201,10 @@ Hide the splash screen
 
 | Prop                  | Type                 | Description                                                                           |
 | --------------------- | -------------------- | ------------------------------------------------------------------------------------- |
-| **`autoHide`**        | <code>boolean</code> | Whether to auto hide the splash after showDuration                                    |
-| **`fadeInDuration`**  | <code>number</code>  | How long (in ms) to fade in. Default is 200ms                                         |
-| **`fadeOutDuration`** | <code>number</code>  | How long (in ms) to fade out. Default is 200ms                                        |
-| **`showDuration`**    | <code>number</code>  | How long to show the splash screen when autoHide is enabled (in ms) Default is 3000ms |
+| **`autoHide`**        | `boolean` | Whether to auto hide the splash after showDuration                                    |
+| **`fadeInDuration`**  | `number`  | How long (in ms) to fade in. Default is 200ms                                         |
+| **`fadeOutDuration`** | `number`  | How long (in ms) to fade out. Default is 200ms                                        |
+| **`showDuration`**    | `number`  | How long to show the splash screen when autoHide is enabled (in ms) Default is 3000ms |
 
 #### Function
 
@@ -212,10 +212,10 @@ Creates a new function.
 
 | Prop            | Type                                          |
 | --------------- | --------------------------------------------- |
-| **`prototype`** | <code>any</code>                              |
-| **`length`**    | <code>number</code>                           |
-| **`arguments`** | <code>any</code>                              |
-| **`caller`**    | <code><a href="#function">Function</a></code> |
+| **`prototype`** | `any`                              |
+| **`length`**    | `number`                           |
+| **`arguments`** | `any`                              |
+| **`caller`**    | `<a href="#function">Function</a>` |
 
 | Method       | Signature                                                                            | Description                                                                                                                                                                                                              |
 | ------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -228,6 +228,6 @@ Creates a new function.
 
 | Prop                  | Type                | Description                                    |
 | --------------------- | ------------------- | ---------------------------------------------- |
-| **`fadeOutDuration`** | <code>number</code> | How long (in ms) to fade out. Default is 200ms |
+| **`fadeOutDuration`** | `number` | How long (in ms) to fade out. Default is 200ms |
 
 

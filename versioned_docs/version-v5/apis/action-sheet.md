@@ -78,9 +78,9 @@ to select.
 
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
-| **`options`** | <code><a href="#showactionsoptions">ShowActionsOptions</a></code> |
+| **`options`** | `<a href="#showactionsoptions">ShowActionsOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#showactionsresult">ShowActionsResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#showactionsresult">ShowActionsResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -94,25 +94,25 @@ to select.
 
 | Prop        | Type                | Description                                  | Since |
 | ----------- | ------------------- | -------------------------------------------- | ----- |
-| **`index`** | <code>number</code> | The index of the clicked option (Zero-based) | 1.0.0 |
+| **`index`** | `number` | The index of the clicked option (Zero-based) | 1.0.0 |
 
 
 #### ShowActionsOptions
 
 | Prop          | Type                             | Description                                                              | Since |
 | ------------- | -------------------------------- | ------------------------------------------------------------------------ | ----- |
-| **`title`**   | <code>string</code>              | The title of the Action Sheet.                                           | 1.0.0 |
-| **`message`** | <code>string</code>              | A message to show under the title. This option is only supported on iOS. | 1.0.0 |
-| **`options`** | <code>ActionSheetButton[]</code> | Options the user can choose from.                                        | 1.0.0 |
+| **`title`**   | `string`              | The title of the Action Sheet.                                           | 1.0.0 |
+| **`message`** | `string`              | A message to show under the title. This option is only supported on iOS. | 1.0.0 |
+| **`options`** | `ActionSheetButton[]` | Options the user can choose from.                                        | 1.0.0 |
 
 
 #### ActionSheetButton
 
 | Prop        | Type                                                                      | Description                                                                           | Since |
 | ----------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----- |
-| **`title`** | <code>string</code>                                                       | The title of the option                                                               | 1.0.0 |
-| **`style`** | <code><a href="#actionsheetbuttonstyle">ActionSheetButtonStyle</a></code> | The style of the option This option is only supported on iOS.                         | 1.0.0 |
-| **`icon`**  | <code>string</code>                                                       | Icon for the option (ionicon naming convention) This option is only supported on Web. | 1.0.0 |
+| **`title`** | `string`                                                       | The title of the option                                                               | 1.0.0 |
+| **`style`** | `<a href="#actionsheetbuttonstyle">ActionSheetButtonStyle</a>` | The style of the option This option is only supported on iOS.                         | 1.0.0 |
+| **`icon`**  | `string`                                                       | Icon for the option (ionicon naming convention) This option is only supported on Web. | 1.0.0 |
 
 
 ### Enums
@@ -122,8 +122,8 @@ to select.
 
 | Members           | Value                      | Description                                                                                                 | Since |
 | ----------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- | ----- |
-| **`Default`**     | <code>'DEFAULT'</code>     | Default style of the option.                                                                                | 1.0.0 |
-| **`Destructive`** | <code>'DESTRUCTIVE'</code> | Style to use on destructive options.                                                                        | 1.0.0 |
-| **`Cancel`**      | <code>'CANCEL'</code>      | Style to use on the option that cancels the Action Sheet. If used, should be on the latest availabe option. | 1.0.0 |
+| **`Default`**     | `'DEFAULT'`     | Default style of the option.                                                                                | 1.0.0 |
+| **`Destructive`** | `'DESTRUCTIVE'` | Style to use on destructive options.                                                                        | 1.0.0 |
+| **`Cancel`**      | `'CANCEL'`      | Style to use on the option that cancels the Action Sheet. If used, should be on the latest availabe option. | 1.0.0 |
 
 </docgen-api>

@@ -55,7 +55,7 @@ Shows a Toast on the screen
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | <code><a href="#showoptions">ShowOptions</a></code> |
+| **`options`** | `<a href="#showoptions">ShowOptions</a>` |
 
 **Since:** 1.0.0
 
@@ -69,8 +69,8 @@ Shows a Toast on the screen
 
 | Prop           | Type                                       | Description                                                       | Default               | Since |
 | -------------- | ------------------------------------------ | ----------------------------------------------------------------- | --------------------- | ----- |
-| **`text`**     | <code>string</code>                        | Text to display on the Toast                                      |                       | 1.0.0 |
-| **`duration`** | <code>'short' \| 'long'</code>             | Duration of the Toast, either 'short' (2000ms) or 'long' (3500ms) | <code>'short'</code>  | 1.0.0 |
-| **`position`** | <code>'top' \| 'center' \| 'bottom'</code> | Position of the Toast                                             | <code>'bottom'</code> | 1.0.0 |
+| **`text`**     | `string`                        | Text to display on the Toast                                      |                       | 1.0.0 |
+| **`duration`** | `'short' \| 'long'`             | Duration of the Toast, either 'short' (2000ms) or 'long' (3500ms) | `'short'`  | 1.0.0 |
+| **`position`** | `'top' \| 'center' \| 'bottom'` | Position of the Toast                                             | `'bottom'` | 1.0.0 |
 
 </docgen-api>

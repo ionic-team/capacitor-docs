@@ -116,7 +116,7 @@ On iOS it prompts the user to allow displaying notifications
 and return if the permission was granted or not.
 On Android there is no such prompt, so just return as granted.
 
-**Returns:** <code>Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;`
 
 ---
 
@@ -128,7 +128,7 @@ getDeliveredNotifications() => Promise<PushNotificationDeliveredList>
 
 Returns the notifications that are visible on the notifications screen.
 
-**Returns:** <code>Promise&lt;<a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a>&gt;`
 
 ---
 
@@ -142,7 +142,7 @@ Removes the specified notifications from the notifications screen.
 
 | Param           | Type                                                                                    | Description                      |
 | --------------- | --------------------------------------------------------------------------------------- | -------------------------------- |
-| **`delivered`** | <code><a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a></code> | list of delivered notifications. |
+| **`delivered`** | `<a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a>` | list of delivered notifications. |
 
 ---
 
@@ -166,7 +166,7 @@ On Android O or newer (SDK 26+) creates a notification channel.
 
 | Param         | Type                                                                | Description |
 | ------------- | ------------------------------------------------------------------- | ----------- |
-| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to create.  |
+| **`channel`** | `<a href="#notificationchannel">NotificationChannel</a>` | to create.  |
 
 ---
 
@@ -180,7 +180,7 @@ On Android O or newer (SDK 26+) deletes a notification channel.
 
 | Param         | Type                                                                | Description |
 | ------------- | ------------------------------------------------------------------- | ----------- |
-| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to delete.  |
+| **`channel`** | `<a href="#notificationchannel">NotificationChannel</a>` | to delete.  |
 
 ---
 
@@ -192,7 +192,7 @@ listChannels() => Promise<NotificationChannelList>
 
 On Android O or newer (SDK 26+) list the available notification channels.
 
-**Returns:** <code>Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;`
 
 ---
 
@@ -207,10 +207,10 @@ Provides the push notification token.
 
 | Param              | Type                                                                                        | Description                   |
 | ------------------ | ------------------------------------------------------------------------------------------- | ----------------------------- |
-| **`eventName`**    | <code>"registration"</code>                                                                 | registration.                 |
-| **`listenerFunc`** | <code>(token: <a href="#pushnotificationtoken">PushNotificationToken</a>) =&gt; void</code> | callback with the push token. |
+| **`eventName`**    | `"registration"`                                                                 | registration.                 |
+| **`listenerFunc`** | `(token: <a href="#pushnotificationtoken">PushNotificationToken</a>) =&gt; void` | callback with the push token. |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -225,10 +225,10 @@ Provides an error with the registration problem.
 
 | Param              | Type                                 | Description                           |
 | ------------------ | ------------------------------------ | ------------------------------------- |
-| **`eventName`**    | <code>"registrationError"</code>     | registrationError.                    |
-| **`listenerFunc`** | <code>(error: any) =&gt; void</code> | callback with the registration error. |
+| **`eventName`**    | `"registrationError"`     | registrationError.                    |
+| **`listenerFunc`** | `(error: any) =&gt; void` | callback with the registration error. |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -242,10 +242,10 @@ Event called when the device receives a push notification.
 
 | Param              | Type                                                                                     | Description                              |
 | ------------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------- |
-| **`eventName`**    | <code>"pushNotificationReceived"</code>                                                  | pushNotificationReceived.                |
-| **`listenerFunc`** | <code>(notification: <a href="#pushnotification">PushNotification</a>) =&gt; void</code> | callback with the received notification. |
+| **`eventName`**    | `"pushNotificationReceived"`                                                  | pushNotificationReceived.                |
+| **`listenerFunc`** | `(notification: <a href="#pushnotification">PushNotification</a>) =&gt; void` | callback with the received notification. |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -259,10 +259,10 @@ Event called when an action is performed on a push notification.
 
 | Param              | Type                                                                                                                   | Description                            |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| **`eventName`**    | <code>"pushNotificationActionPerformed"</code>                                                                         | pushNotificationActionPerformed.       |
-| **`listenerFunc`** | <code>(notification: <a href="#pushnotificationactionperformed">PushNotificationActionPerformed</a>) =&gt; void</code> | callback with the notification action. |
+| **`eventName`**    | `"pushNotificationActionPerformed"`                                                                         | pushNotificationActionPerformed.       |
+| **`listenerFunc`** | `(notification: <a href="#pushnotificationactionperformed">PushNotificationActionPerformed</a>) =&gt; void` | callback with the notification action. |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
 
 ---
 
@@ -282,68 +282,68 @@ Remove all native listeners for this plugin.
 
 | Prop          | Type                 |
 | ------------- | -------------------- |
-| **`granted`** | <code>boolean</code> |
+| **`granted`** | `boolean` |
 
 #### PushNotificationDeliveredList
 
 | Prop                | Type                            |
 | ------------------- | ------------------------------- |
-| **`notifications`** | <code>PushNotification[]</code> |
+| **`notifications`** | `PushNotification[]` |
 
 #### PushNotification
 
 | Prop               | Type                 | Description                                                                                                      |
 | ------------------ | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **`title`**        | <code>string</code>  |                                                                                                                  |
-| **`subtitle`**     | <code>string</code>  |                                                                                                                  |
-| **`body`**         | <code>string</code>  |                                                                                                                  |
-| **`id`**           | <code>string</code>  |                                                                                                                  |
-| **`badge`**        | <code>number</code>  |                                                                                                                  |
-| **`notification`** | <code>any</code>     |                                                                                                                  |
-| **`data`**         | <code>any</code>     |                                                                                                                  |
-| **`click_action`** | <code>string</code>  |                                                                                                                  |
-| **`link`**         | <code>string</code>  |                                                                                                                  |
-| **`group`**        | <code>string</code>  | Android only: set the group identifier for notification grouping, like threadIdentifier on iOS.                  |
-| **`groupSummary`** | <code>boolean</code> | Android only: designate this notification as the summary for a group (should be used with the `group` property). |
+| **`title`**        | `string`  |                                                                                                                  |
+| **`subtitle`**     | `string`  |                                                                                                                  |
+| **`body`**         | `string`  |                                                                                                                  |
+| **`id`**           | `string`  |                                                                                                                  |
+| **`badge`**        | `number`  |                                                                                                                  |
+| **`notification`** | `any`     |                                                                                                                  |
+| **`data`**         | `any`     |                                                                                                                  |
+| **`click_action`** | `string`  |                                                                                                                  |
+| **`link`**         | `string`  |                                                                                                                  |
+| **`group`**        | `string`  | Android only: set the group identifier for notification grouping, like threadIdentifier on iOS.                  |
+| **`groupSummary`** | `boolean` | Android only: designate this notification as the summary for a group (should be used with the `group` property). |
 
 #### NotificationChannel
 
 | Prop              | Type                               |
 | ----------------- | ---------------------------------- |
-| **`id`**          | <code>string</code>                |
-| **`name`**        | <code>string</code>                |
-| **`description`** | <code>string</code>                |
-| **`sound`**       | <code>string</code>                |
-| **`importance`**  | <code>1 \| 2 \| 5 \| 4 \| 3</code> |
-| **`visibility`**  | <code>0 \| 1 \| -1</code>          |
-| **`lights`**      | <code>boolean</code>               |
-| **`lightColor`**  | <code>string</code>                |
-| **`vibration`**   | <code>boolean</code>               |
+| **`id`**          | `string`                |
+| **`name`**        | `string`                |
+| **`description`** | `string`                |
+| **`sound`**       | `string`                |
+| **`importance`**  | `1 \| 2 \| 5 \| 4 \| 3` |
+| **`visibility`**  | `0 \| 1 \| -1`          |
+| **`lights`**      | `boolean`               |
+| **`lightColor`**  | `string`                |
+| **`vibration`**   | `boolean`               |
 
 #### NotificationChannelList
 
 | Prop           | Type                               |
 | -------------- | ---------------------------------- |
-| **`channels`** | <code>NotificationChannel[]</code> |
+| **`channels`** | `NotificationChannel[]` |
 
 #### PluginListenerHandle
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
-| **`remove`** | <code>() =&gt; void</code> |
+| **`remove`** | `() =&gt; void` |
 
 #### PushNotificationToken
 
 | Prop        | Type                |
 | ----------- | ------------------- |
-| **`value`** | <code>string</code> |
+| **`value`** | `string` |
 
 #### PushNotificationActionPerformed
 
 | Prop               | Type                                                          |
 | ------------------ | ------------------------------------------------------------- |
-| **`actionId`**     | <code>string</code>                                           |
-| **`inputValue`**   | <code>string</code>                                           |
-| **`notification`** | <code><a href="#pushnotification">PushNotification</a></code> |
+| **`actionId`**     | `string`                                           |
+| **`inputValue`**   | `string`                                           |
+| **`notification`** | `<a href="#pushnotification">PushNotification</a>` |
 
 

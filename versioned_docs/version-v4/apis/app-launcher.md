@@ -78,9 +78,9 @@ appropriate app is installed. To learn more about the key, see
 
 | Param         | Type                                                            |
 | ------------- | --------------------------------------------------------------- |
-| **`options`** | <code><a href="#canopenurloptions">CanOpenURLOptions</a></code> |
+| **`options`** | `<a href="#canopenurloptions">CanOpenURLOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#canopenurlresult">CanOpenURLResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#canopenurlresult">CanOpenURLResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -99,9 +99,9 @@ On Android the URL can be a known URLScheme or an app package name.
 
 | Param         | Type                                                      |
 | ------------- | --------------------------------------------------------- |
-| **`options`** | <code><a href="#openurloptions">OpenURLOptions</a></code> |
+| **`options`** | `<a href="#openurloptions">OpenURLOptions</a>` |
 
-**Returns:** <code>Promise&lt;<a href="#openurlresult">OpenURLResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#openurlresult">OpenURLResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -115,27 +115,27 @@ On Android the URL can be a known URLScheme or an app package name.
 
 | Prop        | Type                 |
 | ----------- | -------------------- |
-| **`value`** | <code>boolean</code> |
+| **`value`** | `boolean` |
 
 
 #### CanOpenURLOptions
 
 | Prop      | Type                |
 | --------- | ------------------- |
-| **`url`** | <code>string</code> |
+| **`url`** | `string` |
 
 
 #### OpenURLResult
 
 | Prop            | Type                 |
 | --------------- | -------------------- |
-| **`completed`** | <code>boolean</code> |
+| **`completed`** | `boolean` |
 
 
 #### OpenURLOptions
 
 | Prop      | Type                |
 | --------- | ------------------- |
-| **`url`** | <code>string</code> |
+| **`url`** | `string` |
 
 </docgen-api>

@@ -51,7 +51,7 @@ Get the current zoom level.
 
 Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 
-**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#getresult">GetResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -68,7 +68,7 @@ Get the preferred zoom level.
 
 Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 
-**Returns:** <code>Promise&lt;<a href="#getpreferredresult">GetPreferredResult</a>&gt;</code>
+**Returns:** `Promise&lt;<a href="#getpreferredresult">GetPreferredResult</a>&gt;`
 
 **Since:** 1.0.0
 
@@ -87,7 +87,7 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
-| **`options`** | <code><a href="#setoptions">SetOptions</a></code> |
+| **`options`** | `<a href="#setoptions">SetOptions</a>` |
 
 **Since:** 1.0.0
 
@@ -101,20 +101,20 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 
 | Prop        | Type                | Description                                        | Since |
 | ----------- | ------------------- | -------------------------------------------------- | ----- |
-| **`value`** | <code>number</code> | The current zoom level (represented as a decimal). | 1.0.0 |
+| **`value`** | `number` | The current zoom level (represented as a decimal). | 1.0.0 |
 
 
 #### GetPreferredResult
 
 | Prop        | Type                | Description                                          | Since |
 | ----------- | ------------------- | ---------------------------------------------------- | ----- |
-| **`value`** | <code>number</code> | The preferred zoom level (represented as a decimal). | 1.0.0 |
+| **`value`** | `number` | The preferred zoom level (represented as a decimal). | 1.0.0 |
 
 
 #### SetOptions
 
 | Prop        | Type                | Description                                    | Since |
 | ----------- | ------------------- | ---------------------------------------------- | ----- |
-| **`value`** | <code>number</code> | The new zoom level (represented as a decimal). | 1.0.0 |
+| **`value`** | `number` | The new zoom level (represented as a decimal). | 1.0.0 |
 
 </docgen-api>
