@@ -42,9 +42,13 @@ No! You don't! Capacitor works with **any** web application, not just ones built
 
 To find plugins for your project, you should check the following places in this order.
 
+### Capacitor Official Plugins ⚡
+
+The [Capacitor Official Plugins](https://github.com/ionic-team/capacitor-plugins) are a set of Capacitor plugins maintained by the Capacitor team that provide access to commonly used native APIs. If you need a plugin, this should be one of the first places you look.
+
 ### Capacitor Community GitHub ⚡
 
-The [Capacitor Community GitHub organization](https://github.com/capacitor-community) lists plugins that our excellent community of developers creates. They are Capacitor first plugins that are actively developed and should work in any Capacitor 3+ project. If you need a plugin, this should be one of the first places you look.
+The [Capacitor Community GitHub organization](https://github.com/capacitor-community) lists plugins that our excellent community of developers creates. They are Capacitor first plugins that are actively developed and should work in any Capacitor 3+ project. If you can't find an official plugin, this should be places you look.
 
 ### Awesome Capacitor 😎
 
