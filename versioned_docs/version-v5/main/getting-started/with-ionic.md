@@ -30,10 +30,10 @@ ionic integrations enable capacitor
 
 Ionic Framework makes use of the APIs in the following Capacitor plugins:
 
-- [`@capacitor/app`](/docs/plugins/apis/app)
-- [`@capacitor/haptics`](/docs/plugins/apis/haptics)
-- [`@capacitor/keyboard`](/docs/plugins/apis/keyboard)
-- [`@capacitor/status-bar`](/docs/plugins/apis/status-bar)
+- [`@capacitor/app`](/docs/apis/app)
+- [`@capacitor/haptics`](/docs/apis/haptics)
+- [`@capacitor/keyboard`](/docs/apis/keyboard)
+- [`@capacitor/status-bar`](/docs/apis/status-bar)
 
 For the best user experience, you should make sure these plugins are installed even if you don't import them in your app. To install these plugins, run the following command in the root of your project:
 
