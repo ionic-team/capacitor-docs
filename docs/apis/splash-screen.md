@@ -73,6 +73,14 @@ In certain conditions, especially if the splash screen does not fully cover the 
 
 Possible values for `backgroundColor` are either `#RRGGBB` or `#RRGGBBAA`.
 
+The setting for `backgroundColor` is applicable for Android 11 and below. To set the background color of Splash Screen on Android 12+ edit `android/app/src/main/res/values/styles.xml` and add `windowSplashScreenBackground` as shown in the below example:
+```xml
+<style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+    <item name="android:background">@drawable/splash</item>
+    <item name="windowSplashScreenBackground">#FF0055</item>
+</style>
+```
+
 ## Spinner
 
 If you want to show a spinner on top of the splash screen, set `showSpinner` to `true` in your [Capacitor configuration file](https://capacitorjs.com/docs/config).
