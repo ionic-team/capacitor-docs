@@ -12,6 +12,7 @@ module.exports = {
     'Capacitor is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web.',
   url: `https://${HOSTNAME}`,
   baseUrl: `${BASE_URL}/`,
+  trailingSlash: false,
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
