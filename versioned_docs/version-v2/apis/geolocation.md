@@ -75,9 +75,9 @@ Get the current GPS location of the device
 
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
-| **`options`** | `<a href="#geolocationoptions">GeolocationOptions</a>` |
+| **`options`** | <code><a href="#geolocationoptions">GeolocationOptions</a></code> |
 
-**Returns:** `Promise&lt;<a href="#geolocationposition">GeolocationPosition</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#geolocationposition">GeolocationPosition</a>&gt;</code>
 
 ---
 
@@ -92,10 +92,10 @@ can consume a large amount of energy. Be smart about listening only when you nee
 
 | Param          | Type                                                                                                  |
 | -------------- | ----------------------------------------------------------------------------------------------------- |
-| **`options`**  | `<a href="#geolocationoptions">GeolocationOptions</a>`                                     |
-| **`callback`** | `(position: <a href="#geolocationposition">GeolocationPosition</a>, err?: any) =&gt; void` |
+| **`options`**  | <code><a href="#geolocationoptions">GeolocationOptions</a></code>                                     |
+| **`callback`** | <code>(position: <a href="#geolocationposition">GeolocationPosition</a>, err?: any) =&gt; void</code> |
 
-**Returns:** `string`
+**Returns:** <code>string</code>
 
 ---
 
@@ -109,7 +109,7 @@ Clear a given watch
 
 | Param         | Type                         |
 | ------------- | ---------------------------- |
-| **`options`** | `{ id: string; }` |
+| **`options`** | <code>{ id: string; }</code> |
 
 ---
 
@@ -119,13 +119,13 @@ Clear a given watch
 
 | Prop            | Type                                                                                                                                                    | Description                                             |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| **`timestamp`** | `number`                                                                                                                                     | Creation timestamp for coords                           |
-| **`coords`**    | `{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }` | The GPS coordinates along with the accuracy of the data |
+| **`timestamp`** | <code>number</code>                                                                                                                                     | Creation timestamp for coords                           |
+| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }</code> | The GPS coordinates along with the accuracy of the data |
 
 #### GeolocationOptions
 
 | Prop                     | Type                 |
 | ------------------------ | -------------------- |
-| **`enableHighAccuracy`** | `boolean` |
-| **`timeout`**            | `number`  |
-| **`maximumAge`**         | `number`  |
+| **`enableHighAccuracy`** | <code>boolean</code> |
+| **`timeout`**            | <code>number</code>  |
+| **`maximumAge`**         | <code>number</code>  |

@@ -42,7 +42,7 @@ Open a page with the given URL
 
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
-| **`options`** | `<a href="#browseropenoptions">BrowserOpenOptions</a>` |
+| **`options`** | <code><a href="#browseropenoptions">BrowserOpenOptions</a></code> |
 
 ---
 
@@ -59,7 +59,7 @@ Only functional on Android, is a no-op on iOS
 
 | Param         | Type                                                                      |
 | ------------- | ------------------------------------------------------------------------- |
-| **`options`** | `<a href="#browserprefetchoptions">BrowserPrefetchOptions</a>` |
+| **`options`** | <code><a href="#browserprefetchoptions">BrowserPrefetchOptions</a></code> |
 
 ---
 
@@ -81,10 +81,10 @@ addListener(eventName: 'browserFinished', listenerFunc: (info: any) => void) => 
 
 | Param              | Type                                |
 | ------------------ | ----------------------------------- |
-| **`eventName`**    | `"browserFinished"`      |
-| **`listenerFunc`** | `(info: any) =&gt; void` |
+| **`eventName`**    | <code>"browserFinished"</code>      |
+| **`listenerFunc`** | <code>(info: any) =&gt; void</code> |
 
-**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 ---
 
@@ -96,10 +96,10 @@ addListener(eventName: 'browserPageLoaded', listenerFunc: (info: any) => void) =
 
 | Param              | Type                                |
 | ------------------ | ----------------------------------- |
-| **`eventName`**    | `"browserPageLoaded"`    |
-| **`listenerFunc`** | `(info: any) =&gt; void` |
+| **`eventName`**    | <code>"browserPageLoaded"</code>    |
+| **`listenerFunc`** | <code>(info: any) =&gt; void</code> |
 
-**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 ---
 
@@ -119,19 +119,19 @@ Remove all native listeners for this plugin
 
 | Prop                    | Type                                   | Description                                                                                                    |
 | ----------------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **`url`**               | `string`                    | The URL to open the browser to                                                                                 |
-| **`windowName`**        | `string`                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to \_blank |
-| **`toolbarColor`**      | `string`                    | A hex color to set the toolbar color to.                                                                       |
-| **`presentationStyle`** | `"fullscreen" \| "popover"` | iOS only: The presentation style of the browser. Defaults to fullscreen.                                       |
+| **`url`**               | <code>string</code>                    | The URL to open the browser to                                                                                 |
+| **`windowName`**        | <code>string</code>                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to \_blank |
+| **`toolbarColor`**      | <code>string</code>                    | A hex color to set the toolbar color to.                                                                       |
+| **`presentationStyle`** | <code>"fullscreen" \| "popover"</code> | iOS only: The presentation style of the browser. Defaults to fullscreen.                                       |
 
 #### BrowserPrefetchOptions
 
 | Prop       | Type                  |
 | ---------- | --------------------- |
-| **`urls`** | `string[]` |
+| **`urls`** | <code>string[]</code> |
 
 #### PluginListenerHandle
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
-| **`remove`** | `() =&gt; void` |
+| **`remove`** | <code>() =&gt; void</code> |

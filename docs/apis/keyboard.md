@@ -162,7 +162,7 @@ This method is only supported on iPhone devices.
 
 | Param         | Type                                 |
 | ------------- | ------------------------------------ |
-| **`options`** | `{ isVisible: boolean; }` |
+| **`options`** | <code>{ isVisible: boolean; }</code> |
 
 **Since:** 1.0.0
 
@@ -181,7 +181,7 @@ This method is only supported on iOS.
 
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
-| **`options`** | `{ isDisabled: boolean; }` |
+| **`options`** | <code>{ isDisabled: boolean; }</code> |
 
 **Since:** 1.0.0
 
@@ -246,19 +246,17 @@ This method is only supported on iOS.
 ### addListener('keyboardWillShow', ...)
 
 ```typescript
-addListener(eventName: 'keyboardWillShow', listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'keyboardWillShow', listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is about to be shown.
-
-On Android keyboardWillShow and keyboardDidShow fire almost at the same time.
 
 | Param              | Type                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
 | **`eventName`**    | <code>'keyboardWillShow'</code>                                          |
 | **`listenerFunc`** | <code>(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -268,19 +266,17 @@ On Android keyboardWillShow and keyboardDidShow fire almost at the same time.
 ### addListener('keyboardDidShow', ...)
 
 ```typescript
-addListener(eventName: 'keyboardDidShow', listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'keyboardDidShow', listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is shown.
-
-On Android keyboardWillShow and keyboardDidShow fire almost at the same time.
 
 | Param              | Type                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
 | **`eventName`**    | <code>'keyboardDidShow'</code>                                           |
 | **`listenerFunc`** | <code>(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -290,19 +286,17 @@ On Android keyboardWillShow and keyboardDidShow fire almost at the same time.
 ### addListener('keyboardWillHide', ...)
 
 ```typescript
-addListener(eventName: 'keyboardWillHide', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'keyboardWillHide', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is about to be hidden.
-
-On Android keyboardWillHide and keyboardDidHide fire almost at the same time.
 
 | Param              | Type                            |
 | ------------------ | ------------------------------- |
 | **`eventName`**    | <code>'keyboardWillHide'</code> |
 | **`listenerFunc`** | <code>() =&gt; void</code>      |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -312,19 +306,17 @@ On Android keyboardWillHide and keyboardDidHide fire almost at the same time.
 ### addListener('keyboardDidHide', ...)
 
 ```typescript
-addListener(eventName: 'keyboardDidHide', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'keyboardDidHide', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is hidden.
-
-On Android keyboardWillHide and keyboardDidHide fire almost at the same time.
 
 | Param              | Type                           |
 | ------------------ | ------------------------------ |
 | **`eventName`**    | <code>'keyboardDidHide'</code> |
 | **`listenerFunc`** | <code>() =&gt; void</code>     |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 

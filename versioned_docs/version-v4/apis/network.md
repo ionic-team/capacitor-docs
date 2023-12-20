@@ -56,7 +56,7 @@ getStatus() => Promise<ConnectionStatus>
 
 Query the current status of the network connection.
 
-**Returns:** `Promise&lt;<a href="#connectionstatus">ConnectionStatus</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#connectionstatus">ConnectionStatus</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -73,10 +73,10 @@ Listen for changes in the network connection.
 
 | Param              | Type                                                                                      |
 | ------------------ | ----------------------------------------------------------------------------------------- |
-| **`eventName`**    | `'networkStatusChange'`                                                        |
-| **`listenerFunc`** | `<a href="#connectionstatuschangelistener">ConnectionStatusChangeListener</a>` |
+| **`eventName`**    | <code>'networkStatusChange'</code>                                                        |
+| **`listenerFunc`** | <code><a href="#connectionstatuschangelistener">ConnectionStatusChangeListener</a></code> |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -105,15 +105,15 @@ Represents the state and type of the network connection.
 
 | Prop                 | Type                                                      | Description                                                                                                                   | Since |
 | -------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`connected`**      | `boolean`                                      | Whether there is an active connection or not.                                                                                 | 1.0.0 |
-| **`connectionType`** | `<a href="#connectiontype">ConnectionType</a>` | The type of network connection currently in use. If there is no active network connection, `connectionType` will be `'none'`. | 1.0.0 |
+| **`connected`**      | <code>boolean</code>                                      | Whether there is an active connection or not.                                                                                 | 1.0.0 |
+| **`connectionType`** | <code><a href="#connectiontype">ConnectionType</a></code> | The type of network connection currently in use. If there is no active network connection, `connectionType` will be `'none'`. | 1.0.0 |
 
 
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
-| **`remove`** | `() =&gt; Promise&lt;void&gt;` |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 ### Type Aliases
@@ -123,13 +123,13 @@ Represents the state and type of the network connection.
 
 The type of network connection that a device might have.
 
-`'wifi' | 'cellular' | 'none' | 'unknown'`
+<code>'wifi' | 'cellular' | 'none' | 'unknown'</code>
 
 
 #### ConnectionStatusChangeListener
 
 Callback to receive the status change notifications.
 
-`(status: <a href="#connectionstatus">ConnectionStatus</a>): void`
+<code>(status: <a href="#connectionstatus">ConnectionStatus</a>): void</code>
 
 </docgen-api>

@@ -80,7 +80,7 @@ Trigger a haptics "impact" feedback
 
 | Param         | Type                                                                  |
 | ------------- | --------------------------------------------------------------------- |
-| **`options`** | `<a href="#hapticsimpactoptions">HapticsImpactOptions</a>` |
+| **`options`** | <code><a href="#hapticsimpactoptions">HapticsImpactOptions</a></code> |
 
 ---
 
@@ -94,7 +94,7 @@ Trigger a haptics "notification" feedback
 
 | Param         | Type                                                                              |
 | ------------- | --------------------------------------------------------------------------------- |
-| **`options`** | `<a href="#hapticsnotificationoptions">HapticsNotificationOptions</a>` |
+| **`options`** | <code><a href="#hapticsnotificationoptions">HapticsNotificationOptions</a></code> |
 
 ---
 
@@ -147,13 +147,13 @@ For example, call this when a user has lifted their finger from a control
 
 | Prop        | Type                                                              |
 | ----------- | ----------------------------------------------------------------- |
-| **`style`** | `<a href="#hapticsimpactstyle">HapticsImpactStyle</a>` |
+| **`style`** | <code><a href="#hapticsimpactstyle">HapticsImpactStyle</a></code> |
 
 #### HapticsNotificationOptions
 
 | Prop       | Type                                                                        |
 | ---------- | --------------------------------------------------------------------------- |
-| **`type`** | `<a href="#hapticsnotificationtype">HapticsNotificationType</a>` |
+| **`type`** | <code><a href="#hapticsnotificationtype">HapticsNotificationType</a></code> |
 
 ### Enums
 
@@ -161,14 +161,14 @@ For example, call this when a user has lifted their finger from a control
 
 | Members      | Value                 |
 | ------------ | --------------------- |
-| **`Heavy`**  | `"HEAVY"`  |
-| **`Medium`** | `"MEDIUM"` |
-| **`Light`**  | `"LIGHT"`  |
+| **`Heavy`**  | <code>"HEAVY"</code>  |
+| **`Medium`** | <code>"MEDIUM"</code> |
+| **`Light`**  | <code>"LIGHT"</code>  |
 
 #### HapticsNotificationType
 
 | Members       | Value                  |
 | ------------- | ---------------------- |
-| **`SUCCESS`** | `"SUCCESS"` |
-| **`WARNING`** | `"WARNING"` |
-| **`ERROR`**   | `"ERROR"`   |
+| **`SUCCESS`** | <code>"SUCCESS"</code> |
+| **`WARNING`** | <code>"WARNING"</code> |
+| **`ERROR`**   | <code>"ERROR"</code>   |

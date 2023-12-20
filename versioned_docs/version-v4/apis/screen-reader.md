@@ -64,7 +64,7 @@ Whether a Screen Reader is currently active.
 This method is not supported on web (it is not possible to detect Screen
 Readers).
 
-**Returns:** `Promise&lt;{ value: boolean; }&gt;`
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 1.0.0
 
@@ -91,7 +91,7 @@ plugin](https://github.com/capacitor-community/text-to-speech).
 
 | Param         | Type                                                  |
 | ------------- | ----------------------------------------------------- |
-| **`options`** | `<a href="#speakoptions">SpeakOptions</a>` |
+| **`options`** | <code><a href="#speakoptions">SpeakOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -113,10 +113,10 @@ Readers).
 
 | Param           | Type                                                                |
 | --------------- | ------------------------------------------------------------------- |
-| **`eventName`** | `'stateChange'`                                          |
-| **`listener`**  | `<a href="#statechangelistener">StateChangeListener</a>` |
+| **`eventName`** | <code>'stateChange'</code>                                          |
+| **`listener`**  | <code><a href="#statechangelistener">StateChangeListener</a></code> |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -143,22 +143,22 @@ Remove all the listeners that are attached to this plugin.
 
 | Prop           | Type                | Description                                                                                                                                                               | Since |
 | -------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`value`**    | `string` | The text to speak.                                                                                                                                                        | 1.0.0 |
-| **`language`** | `string` | The language to speak the text in, as its [ISO 639-1 Code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g.: "en"). This option is only supported on Android. | 1.0.0 |
+| **`value`**    | <code>string</code> | The text to speak.                                                                                                                                                        | 1.0.0 |
+| **`language`** | <code>string</code> | The language to speak the text in, as its [ISO 639-1 Code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g.: "en"). This option is only supported on Android. | 1.0.0 |
 
 
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
-| **`remove`** | `() =&gt; Promise&lt;void&gt;` |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 #### ScreenReaderState
 
 | Prop        | Type                 | Description                                  | Since |
 | ----------- | -------------------- | -------------------------------------------- | ----- |
-| **`value`** | `boolean` | Whether a Screen Reader is currently active. | 1.0.0 |
+| **`value`** | <code>boolean</code> | Whether a Screen Reader is currently active. | 1.0.0 |
 
 
 ### Type Aliases
@@ -166,6 +166,6 @@ Remove all the listeners that are attached to this plugin.
 
 #### StateChangeListener
 
-`(state: <a href="#screenreaderstate">ScreenReaderState</a>): void`
+<code>(state: <a href="#screenreaderstate">ScreenReaderState</a>): void</code>
 
 </docgen-api>

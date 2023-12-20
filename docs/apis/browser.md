@@ -25,7 +25,7 @@ npx cap sync
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `androidxBrowserVersion`: version of `androidx.browser:browser` (default: `1.5.0`)
+- `$androidxBrowserVersion`: version of `androidx.browser:browser` (default: `1.5.0`)
 
 ## Example
 
@@ -88,7 +88,7 @@ No-op on other platforms.
 ### addListener('browserFinished', ...)
 
 ```typescript
-addListener(eventName: 'browserFinished', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'browserFinished', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Android & iOS only: Listen for the browser finished event.
@@ -99,7 +99,7 @@ It fires when the Browser is closed by the user.
 | **`eventName`**    | <code>'browserFinished'</code> |
 | **`listenerFunc`** | <code>() =&gt; void</code>     |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -109,7 +109,7 @@ It fires when the Browser is closed by the user.
 ### addListener('browserPageLoaded', ...)
 
 ```typescript
-addListener(eventName: 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Android & iOS only: Listen for the page loaded event.
@@ -121,7 +121,7 @@ It is not invoked for any subsequent page loads.
 | **`eventName`**    | <code>'browserPageLoaded'</code> |
 | **`listenerFunc`** | <code>() =&gt; void</code>       |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 

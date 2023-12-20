@@ -93,9 +93,9 @@ Get the value with the given key.
 
 | Param         | Type                          |
 | ------------- | ----------------------------- |
-| **`options`** | `{ key: string; }` |
+| **`options`** | <code>{ key: string; }</code> |
 
-**Returns:** `Promise&lt;{ value: string; }&gt;`
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 ---
 
@@ -109,7 +109,7 @@ Set the value for the given key
 
 | Param         | Type                                         |
 | ------------- | -------------------------------------------- |
-| **`options`** | `{ key: string; value: string; }` |
+| **`options`** | <code>{ key: string; value: string; }</code> |
 
 ---
 
@@ -123,7 +123,7 @@ Remove the value for this key (if any)
 
 | Param         | Type                          |
 | ------------- | ----------------------------- |
-| **`options`** | `{ key: string; }` |
+| **`options`** | <code>{ key: string; }</code> |
 
 ---
 
@@ -145,6 +145,6 @@ keys() => Promise<{ keys: string[]; }>
 
 Return the list of known keys
 
-**Returns:** `Promise&lt;{ keys: string[]; }&gt;`
+**Returns:** <code>Promise&lt;{ keys: string[]; }&gt;</code>
 
 ---

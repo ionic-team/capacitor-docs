@@ -59,7 +59,7 @@ getStatus() => Promise<NetworkStatus>
 
 Query the current network status
 
-**Returns:** `Promise&lt;<a href="#networkstatus">NetworkStatus</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#networkstatus">NetworkStatus</a>&gt;</code>
 
 ---
 
@@ -73,10 +73,10 @@ Listen for network status change events
 
 | Param              | Type                                                                         |
 | ------------------ | ---------------------------------------------------------------------------- |
-| **`eventName`**    | `"networkStatusChange"`                                           |
-| **`listenerFunc`** | `(status: <a href="#networkstatus">NetworkStatus</a>) =&gt; void` |
+| **`eventName`**    | <code>"networkStatusChange"</code>                                           |
+| **`listenerFunc`** | <code>(status: <a href="#networkstatus">NetworkStatus</a>) =&gt; void</code> |
 
-**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 ---
 
@@ -96,11 +96,11 @@ Remove all native listeners for this plugin
 
 | Prop                 | Type                                                     |
 | -------------------- | -------------------------------------------------------- |
-| **`connected`**      | `boolean`                                     |
-| **`connectionType`** | `"none" \| "unknown" \| "wifi" \| "cellular"` |
+| **`connected`**      | <code>boolean</code>                                     |
+| **`connectionType`** | <code>"none" \| "unknown" \| "wifi" \| "cellular"</code> |
 
 #### PluginListenerHandle
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
-| **`remove`** | `() =&gt; void` |
+| **`remove`** | <code>() =&gt; void</code> |

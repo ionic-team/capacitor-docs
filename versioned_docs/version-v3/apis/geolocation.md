@@ -86,9 +86,9 @@ Get the current GPS location of the device
 
 | Param         | Type                                                        |
 | ------------- | ----------------------------------------------------------- |
-| **`options`** | `<a href="#positionoptions">PositionOptions</a>` |
+| **`options`** | <code><a href="#positionoptions">PositionOptions</a></code> |
 
-**Returns:** `Promise&lt;<a href="#position">Position</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#position">Position</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -106,10 +106,10 @@ can consume a large amount of energy. Be smart about listening only when you nee
 
 | Param          | Type                                                                    |
 | -------------- | ----------------------------------------------------------------------- |
-| **`options`**  | `<a href="#positionoptions">PositionOptions</a>`             |
-| **`callback`** | `<a href="#watchpositioncallback">WatchPositionCallback</a>` |
+| **`options`**  | <code><a href="#positionoptions">PositionOptions</a></code>             |
+| **`callback`** | <code><a href="#watchpositioncallback">WatchPositionCallback</a></code> |
 
-**Returns:** `Promise&lt;string&gt;`
+**Returns:** <code>Promise&lt;string&gt;</code>
 
 **Since:** 1.0.0
 
@@ -126,7 +126,7 @@ Clear a given watch
 
 | Param         | Type                                                            |
 | ------------- | --------------------------------------------------------------- |
-| **`options`** | `<a href="#clearwatchoptions">ClearWatchOptions</a>` |
+| **`options`** | <code><a href="#clearwatchoptions">ClearWatchOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -141,7 +141,7 @@ checkPermissions() => Promise<PermissionStatus>
 
 Check location permissions
 
-**Returns:** `Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -158,9 +158,9 @@ Request location permissions
 
 | Param             | Type                                                                                  |
 | ----------------- | ------------------------------------------------------------------------------------- |
-| **`permissions`** | `<a href="#geolocationpluginpermissions">GeolocationPluginPermissions</a>` |
+| **`permissions`** | <code><a href="#geolocationpluginpermissions">GeolocationPluginPermissions</a></code> |
 
-**Returns:** `Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -174,39 +174,39 @@ Request location permissions
 
 | Prop            | Type                                                                                                                                                                                | Description                                             | Since |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----- |
-| **`timestamp`** | `number`                                                                                                                                                                 | Creation timestamp for coords                           | 1.0.0 |
-| **`coords`**    | `{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy: number \| null; altitude: number \| null; speed: number \| null; heading: number \| null; }` | The GPS coordinates along with the accuracy of the data | 1.0.0 |
+| **`timestamp`** | <code>number</code>                                                                                                                                                                 | Creation timestamp for coords                           | 1.0.0 |
+| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy: number \| null; altitude: number \| null; speed: number \| null; heading: number \| null; }</code> | The GPS coordinates along with the accuracy of the data | 1.0.0 |
 
 
 #### PositionOptions
 
 | Prop                     | Type                 | Description                                                                                                                                                                           | Default            | Since |
 | ------------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
-| **`enableHighAccuracy`** | `boolean` | High accuracy mode (such as GPS, if available) On Android 12+ devices it will be ignored if users didn't grant ACCESS_FINE_LOCATION permissions (can be checked with location alias). | `false` | 1.0.0 |
-| **`timeout`**            | `number`  | The maximum wait time in milliseconds for location updates                                                                                                                            | `10000` | 1.0.0 |
-| **`maximumAge`**         | `number`  | The maximum age in milliseconds of a possible cached position that is acceptable to return                                                                                            | `0`     | 1.0.0 |
+| **`enableHighAccuracy`** | <code>boolean</code> | High accuracy mode (such as GPS, if available) On Android 12+ devices it will be ignored if users didn't grant ACCESS_FINE_LOCATION permissions (can be checked with location alias). | <code>false</code> | 1.0.0 |
+| **`timeout`**            | <code>number</code>  | The maximum wait time in milliseconds for location updates                                                                                                                            | <code>10000</code> | 1.0.0 |
+| **`maximumAge`**         | <code>number</code>  | The maximum age in milliseconds of a possible cached position that is acceptable to return                                                                                            | <code>0</code>     | 1.0.0 |
 
 
 #### ClearWatchOptions
 
 | Prop     | Type                                              |
 | -------- | ------------------------------------------------- |
-| **`id`** | `<a href="#callbackid">CallbackID</a>` |
+| **`id`** | <code><a href="#callbackid">CallbackID</a></code> |
 
 
 #### PermissionStatus
 
 | Prop                 | Type                                                        | Description                                                                                                                                                                                                                                                                                                                                                        | Since |
 | -------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| **`location`**       | `<a href="#permissionstate">PermissionState</a>` | Permission state for location alias. On Android it requests/checks both ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION permissions. On iOS and web it requests/checks location permission.                                                                                                                                                                        | 1.0.0 |
-| **`coarseLocation`** | `<a href="#permissionstate">PermissionState</a>` | Permission state for coarseLocation alias. On Android it requests/checks ACCESS_COARSE_LOCATION. On Android 12+, users can choose between Approximate location (ACCESS_COARSE_LOCATION) or Precise location (ACCESS_FINE_LOCATION), so this alias can be used if the app doesn't need high accuracy. On iOS and web it will have the same value as location alias. | 1.2.0 |
+| **`location`**       | <code><a href="#permissionstate">PermissionState</a></code> | Permission state for location alias. On Android it requests/checks both ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION permissions. On iOS and web it requests/checks location permission.                                                                                                                                                                        | 1.0.0 |
+| **`coarseLocation`** | <code><a href="#permissionstate">PermissionState</a></code> | Permission state for coarseLocation alias. On Android it requests/checks ACCESS_COARSE_LOCATION. On Android 12+, users can choose between Approximate location (ACCESS_COARSE_LOCATION) or Precise location (ACCESS_FINE_LOCATION), so this alias can be used if the app doesn't need high accuracy. On iOS and web it will have the same value as location alias. | 1.2.0 |
 
 
 #### GeolocationPluginPermissions
 
 | Prop              | Type                                     |
 | ----------------- | ---------------------------------------- |
-| **`permissions`** | `GeolocationPermissionType[]` |
+| **`permissions`** | <code>GeolocationPermissionType[]</code> |
 
 
 ### Type Aliases
@@ -214,21 +214,21 @@ Request location permissions
 
 #### WatchPositionCallback
 
-`(position: <a href="#position">Position</a> | null, err?: any): void`
+<code>(position: <a href="#position">Position</a> | null, err?: any): void</code>
 
 
 #### CallbackID
 
-`string`
+<code>string</code>
 
 
 #### PermissionState
 
-`'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'`
+<code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
 
 
 #### GeolocationPermissionType
 
-`'location' | 'coarseLocation'`
+<code>'location' | 'coarseLocation'</code>
 
 </docgen-api>

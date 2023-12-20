@@ -348,10 +348,10 @@ create(options: CreateMapArgs, callback?: MapListenerCallback<MapReadyCallbackDa
 
 | Param          | Type                                                                                                                                |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **`options`**  | `<a href="#createmapargs">CreateMapArgs</a>`                                                                             |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapreadycallbackdata">MapReadyCallbackData</a>&gt;` |
+| **`options`**  | <code><a href="#createmapargs">CreateMapArgs</a></code>                                                                             |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapreadycallbackdata">MapReadyCallbackData</a>&gt;</code> |
 
-**Returns:** `Promise&lt;GoogleMap&gt;`
+**Returns:** <code>Promise&lt;GoogleMap&gt;</code>
 
 --------------------
 
@@ -382,7 +382,7 @@ enableClustering(minClusterSize?: number | undefined) => Promise<void>
 
 | Param                | Type                | Description                                                                             |
 | -------------------- | ------------------- | --------------------------------------------------------------------------------------- |
-| **`minClusterSize`** | `number` | The minimum number of markers that can be clustered together. The default is 4 markers. |
+| **`minClusterSize`** | <code>number</code> | The minimum number of markers that can be clustered together. The default is 4 markers. |
 
 --------------------
 
@@ -404,9 +404,9 @@ addMarker(marker: Marker) => Promise<string>
 
 | Param        | Type                                      |
 | ------------ | ----------------------------------------- |
-| **`marker`** | `<a href="#marker">Marker</a>` |
+| **`marker`** | <code><a href="#marker">Marker</a></code> |
 
-**Returns:** `Promise&lt;string&gt;`
+**Returns:** <code>Promise&lt;string&gt;</code>
 
 --------------------
 
@@ -419,9 +419,9 @@ addMarkers(markers: Marker[]) => Promise<string[]>
 
 | Param         | Type                  |
 | ------------- | --------------------- |
-| **`markers`** | `Marker[]` |
+| **`markers`** | <code>Marker[]</code> |
 
-**Returns:** `Promise&lt;string[]&gt;`
+**Returns:** <code>Promise&lt;string[]&gt;</code>
 
 --------------------
 
@@ -434,7 +434,7 @@ removeMarker(id: string) => Promise<void>
 
 | Param    | Type                |
 | -------- | ------------------- |
-| **`id`** | `string` |
+| **`id`** | <code>string</code> |
 
 --------------------
 
@@ -447,7 +447,7 @@ removeMarkers(ids: string[]) => Promise<void>
 
 | Param     | Type                  |
 | --------- | --------------------- |
-| **`ids`** | `string[]` |
+| **`ids`** | <code>string[]</code> |
 
 --------------------
 
@@ -460,9 +460,9 @@ addPolygons(polygons: Polygon[]) => Promise<string[]>
 
 | Param          | Type                   |
 | -------------- | ---------------------- |
-| **`polygons`** | `Polygon[]` |
+| **`polygons`** | <code>Polygon[]</code> |
 
-**Returns:** `Promise&lt;string[]&gt;`
+**Returns:** <code>Promise&lt;string[]&gt;</code>
 
 --------------------
 
@@ -475,7 +475,7 @@ removePolygons(ids: string[]) => Promise<void>
 
 | Param     | Type                  |
 | --------- | --------------------- |
-| **`ids`** | `string[]` |
+| **`ids`** | <code>string[]</code> |
 
 --------------------
 
@@ -488,9 +488,9 @@ addCircles(circles: Circle[]) => Promise<string[]>
 
 | Param         | Type                  |
 | ------------- | --------------------- |
-| **`circles`** | `Circle[]` |
+| **`circles`** | <code>Circle[]</code> |
 
-**Returns:** `Promise&lt;string[]&gt;`
+**Returns:** <code>Promise&lt;string[]&gt;</code>
 
 --------------------
 
@@ -503,7 +503,7 @@ removeCircles(ids: string[]) => Promise<void>
 
 | Param     | Type                  |
 | --------- | --------------------- |
-| **`ids`** | `string[]` |
+| **`ids`** | <code>string[]</code> |
 
 --------------------
 
@@ -516,9 +516,9 @@ addPolylines(polylines: Polyline[]) => Promise<string[]>
 
 | Param           | Type                    |
 | --------------- | ----------------------- |
-| **`polylines`** | `Polyline[]` |
+| **`polylines`** | <code>Polyline[]</code> |
 
-**Returns:** `Promise&lt;string[]&gt;`
+**Returns:** <code>Promise&lt;string[]&gt;</code>
 
 --------------------
 
@@ -531,7 +531,7 @@ removePolylines(ids: string[]) => Promise<void>
 
 | Param     | Type                  |
 | --------- | --------------------- |
-| **`ids`** | `string[]` |
+| **`ids`** | <code>string[]</code> |
 
 --------------------
 
@@ -553,7 +553,7 @@ setCamera(config: CameraConfig) => Promise<void>
 
 | Param        | Type                                                  |
 | ------------ | ----------------------------------------------------- |
-| **`config`** | `<a href="#cameraconfig">CameraConfig</a>` |
+| **`config`** | <code><a href="#cameraconfig">CameraConfig</a></code> |
 
 --------------------
 
@@ -566,7 +566,7 @@ getMapType() => Promise<MapType>
 
 Get current map type
 
-**Returns:** `Promise&lt;<a href="#maptype">MapType</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#maptype">MapType</a>&gt;</code>
 
 --------------------
 
@@ -579,7 +579,7 @@ setMapType(mapType: MapType) => Promise<void>
 
 | Param         | Type                                        |
 | ------------- | ------------------------------------------- |
-| **`mapType`** | `<a href="#maptype">MapType</a>` |
+| **`mapType`** | <code><a href="#maptype">MapType</a></code> |
 
 --------------------
 
@@ -592,7 +592,7 @@ enableIndoorMaps(enabled: boolean) => Promise<void>
 
 | Param         | Type                 |
 | ------------- | -------------------- |
-| **`enabled`** | `boolean` |
+| **`enabled`** | <code>boolean</code> |
 
 --------------------
 
@@ -605,7 +605,7 @@ enableTrafficLayer(enabled: boolean) => Promise<void>
 
 | Param         | Type                 |
 | ------------- | -------------------- |
-| **`enabled`** | `boolean` |
+| **`enabled`** | <code>boolean</code> |
 
 --------------------
 
@@ -618,7 +618,7 @@ enableAccessibilityElements(enabled: boolean) => Promise<void>
 
 | Param         | Type                 |
 | ------------- | -------------------- |
-| **`enabled`** | `boolean` |
+| **`enabled`** | <code>boolean</code> |
 
 --------------------
 
@@ -631,7 +631,7 @@ enableCurrentLocation(enabled: boolean) => Promise<void>
 
 | Param         | Type                 |
 | ------------- | -------------------- |
-| **`enabled`** | `boolean` |
+| **`enabled`** | <code>boolean</code> |
 
 --------------------
 
@@ -644,7 +644,7 @@ setPadding(padding: MapPadding) => Promise<void>
 
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
-| **`padding`** | `<a href="#mappadding">MapPadding</a>` |
+| **`padding`** | <code><a href="#mappadding">MapPadding</a></code> |
 
 --------------------
 
@@ -659,8 +659,8 @@ Sets the map viewport to contain the given bounds.
 
 | Param         | Type                      | Description                                                                                                               |
 | ------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **`bounds`**  | `LatLngBounds` | The bounds to fit in the viewport.                                                                                        |
-| **`padding`** | `number`       | Optional padding to apply in pixels. The bounds will be fit in the part of the map that remains after padding is removed. |
+| **`bounds`**  | <code>LatLngBounds</code> | The bounds to fit in the viewport.                                                                                        |
+| **`padding`** | <code>number</code>       | Optional padding to apply in pixels. The bounds will be fit in the part of the map that remains after padding is removed. |
 
 --------------------
 
@@ -673,7 +673,7 @@ setOnBoundsChangedListener(callback?: MapListenerCallback<CameraIdleCallbackData
 
 | Param          | Type                                                                                                                                    |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameraidlecallbackdata">CameraIdleCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameraidlecallbackdata">CameraIdleCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -686,7 +686,7 @@ setOnCameraIdleListener(callback?: MapListenerCallback<CameraIdleCallbackData> |
 
 | Param          | Type                                                                                                                                    |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameraidlecallbackdata">CameraIdleCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameraidlecallbackdata">CameraIdleCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -699,7 +699,7 @@ setOnCameraMoveStartedListener(callback?: MapListenerCallback<CameraMoveStartedC
 
 | Param          | Type                                                                                                                                                  |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameramovestartedcallbackdata">CameraMoveStartedCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameramovestartedcallbackdata">CameraMoveStartedCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -712,7 +712,7 @@ setOnClusterClickListener(callback?: MapListenerCallback<ClusterClickCallbackDat
 
 | Param          | Type                                                                                                                                        |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#clusterclickcallbackdata">ClusterClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#clusterclickcallbackdata">ClusterClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -725,7 +725,7 @@ setOnClusterInfoWindowClickListener(callback?: MapListenerCallback<ClusterClickC
 
 | Param          | Type                                                                                                                                        |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#clusterclickcallbackdata">ClusterClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#clusterclickcallbackdata">ClusterClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -738,7 +738,7 @@ setOnInfoWindowClickListener(callback?: MapListenerCallback<MarkerClickCallbackD
 
 | Param          | Type                                                                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -751,7 +751,7 @@ setOnMapClickListener(callback?: MapListenerCallback<MapClickCallbackData> | und
 
 | Param          | Type                                                                                                                                |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapclickcallbackdata">MapClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapclickcallbackdata">MapClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -764,7 +764,7 @@ setOnMarkerClickListener(callback?: MapListenerCallback<MarkerClickCallbackData>
 
 | Param          | Type                                                                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -777,7 +777,7 @@ setOnPolygonClickListener(callback?: MapListenerCallback<PolygonClickCallbackDat
 
 | Param          | Type                                                                                                                                        |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#polygonclickcallbackdata">PolygonClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#polygonclickcallbackdata">PolygonClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -790,7 +790,7 @@ setOnCircleClickListener(callback?: MapListenerCallback<CircleClickCallbackData>
 
 | Param          | Type                                                                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#circleclickcallbackdata">CircleClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#circleclickcallbackdata">CircleClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -803,7 +803,7 @@ setOnPolylineClickListener(callback?: MapListenerCallback<PolylineCallbackData> 
 
 | Param          | Type                                                                                                                                |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#polylinecallbackdata">PolylineCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#polylinecallbackdata">PolylineCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -816,7 +816,7 @@ setOnMarkerDragStartListener(callback?: MapListenerCallback<MarkerClickCallbackD
 
 | Param          | Type                                                                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -829,7 +829,7 @@ setOnMarkerDragListener(callback?: MapListenerCallback<MarkerClickCallbackData> 
 
 | Param          | Type                                                                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -842,7 +842,7 @@ setOnMarkerDragEndListener(callback?: MapListenerCallback<MarkerClickCallbackDat
 
 | Param          | Type                                                                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -855,7 +855,7 @@ setOnMyLocationButtonClickListener(callback?: MapListenerCallback<MyLocationButt
 
 | Param          | Type                                                                                                                                                          |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mylocationbuttonclickcallbackdata">MyLocationButtonClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mylocationbuttonclickcallbackdata">MyLocationButtonClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -868,7 +868,7 @@ setOnMyLocationClickListener(callback?: MapListenerCallback<MapClickCallbackData
 
 | Param          | Type                                                                                                                                |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **`callback`** | `<a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapclickcallbackdata">MapClickCallbackData</a>&gt;` |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapclickcallbackdata">MapClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -882,13 +882,13 @@ An interface containing the options used when creating a map.
 
 | Prop              | Type                                                        | Description                                                                                                                                                                            | Default            |
 | ----------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| **`id`**          | `string`                                         | A unique identifier for the map instance.                                                                                                                                              |                    |
-| **`apiKey`**      | `string`                                         | The Google Maps SDK API Key.                                                                                                                                                           |                    |
-| **`config`**      | `<a href="#googlemapconfig">GoogleMapConfig</a>` | The initial configuration settings for the map.                                                                                                                                        |                    |
-| **`element`**     | `HTMLElement`                                    | The DOM element that the Google Map View will be mounted on which determines size and positioning.                                                                                     |                    |
-| **`forceCreate`** | `boolean`                                        | Destroy and re-create the map instance if a map with the supplied id already exists                                                                                                    | `false` |
-| **`region`**      | `string`                                         | The region parameter alters your application to serve different map tiles or bias the application (such as biasing geocoding results towards the region). Only available for web.      |                    |
-| **`language`**    | `string`                                         | The language parameter affects the names of controls, copyright notices, driving directions, and control labels, as well as the responses to service requests. Only available for web. |                    |
+| **`id`**          | <code>string</code>                                         | A unique identifier for the map instance.                                                                                                                                              |                    |
+| **`apiKey`**      | <code>string</code>                                         | The Google Maps SDK API Key.                                                                                                                                                           |                    |
+| **`config`**      | <code><a href="#googlemapconfig">GoogleMapConfig</a></code> | The initial configuration settings for the map.                                                                                                                                        |                    |
+| **`element`**     | <code>HTMLElement</code>                                    | The DOM element that the Google Map View will be mounted on which determines size and positioning.                                                                                     |                    |
+| **`forceCreate`** | <code>boolean</code>                                        | Destroy and re-create the map instance if a map with the supplied id already exists                                                                                                    | <code>false</code> |
+| **`region`**      | <code>string</code>                                         | The region parameter alters your application to serve different map tiles or bias the application (such as biasing geocoding results towards the region). Only available for web.      |                    |
+| **`language`**    | <code>string</code>                                         | The language parameter affects the names of controls, copyright notices, driving directions, and control labels, as well as the responses to service requests. Only available for web. |                    |
 
 
 #### GoogleMapConfig
@@ -899,15 +899,15 @@ For iOS and Android only the config options declared on <a href="#googlemapconfi
 
 | Prop                   | Type                                      | Description                                                                                                                                               | Default            | Since |
 | ---------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
-| **`width`**            | `number`                       | Override width for native map.                                                                                                                            |                    |       |
-| **`height`**           | `number`                       | Override height for native map.                                                                                                                           |                    |       |
-| **`x`**                | `number`                       | Override absolute x coordinate position for native map.                                                                                                   |                    |       |
-| **`y`**                | `number`                       | Override absolute y coordinate position for native map.                                                                                                   |                    |       |
-| **`center`**           | `<a href="#latlng">LatLng</a>` | Default location on the Earth towards which the camera points.                                                                                            |                    |       |
-| **`zoom`**             | `number`                       | Sets the zoom of the map.                                                                                                                                 |                    |       |
-| **`androidLiteMode`**  | `boolean`                      | Enables image-based lite mode on Android.                                                                                                                 | `false` |       |
-| **`devicePixelRatio`** | `number`                       | Override pixel ratio for native map.                                                                                                                      |                    |       |
-| **`styles`**           | `MapTypeStyle[] \| null`       | Styles to apply to each of the default map types. Note that for satellite, hybrid and terrain modes, these styles will only apply to labels and geometry. |                    | 4.3.0 |
+| **`width`**            | <code>number</code>                       | Override width for native map.                                                                                                                            |                    |       |
+| **`height`**           | <code>number</code>                       | Override height for native map.                                                                                                                           |                    |       |
+| **`x`**                | <code>number</code>                       | Override absolute x coordinate position for native map.                                                                                                   |                    |       |
+| **`y`**                | <code>number</code>                       | Override absolute y coordinate position for native map.                                                                                                   |                    |       |
+| **`center`**           | <code><a href="#latlng">LatLng</a></code> | Default location on the Earth towards which the camera points.                                                                                            |                    |       |
+| **`zoom`**             | <code>number</code>                       | Sets the zoom of the map.                                                                                                                                 |                    |       |
+| **`androidLiteMode`**  | <code>boolean</code>                      | Enables image-based lite mode on Android.                                                                                                                 | <code>false</code> |       |
+| **`devicePixelRatio`** | <code>number</code>                       | Override pixel ratio for native map.                                                                                                                      |                    |       |
+| **`styles`**           | <code>MapTypeStyle[] \| null</code>       | Styles to apply to each of the default map types. Note that for satellite, hybrid and terrain modes, these styles will only apply to labels and geometry. |                    | 4.3.0 |
 
 
 #### LatLng
@@ -916,15 +916,15 @@ An interface representing a pair of latitude and longitude coordinates.
 
 | Prop      | Type                | Description                                                               |
 | --------- | ------------------- | ------------------------------------------------------------------------- |
-| **`lat`** | `number` | Coordinate latitude, in degrees. This value is in the range [-90, 90].    |
-| **`lng`** | `number` | Coordinate longitude, in degrees. This value is in the range [-180, 180]. |
+| **`lat`** | <code>number</code> | Coordinate latitude, in degrees. This value is in the range [-90, 90].    |
+| **`lng`** | <code>number</code> | Coordinate longitude, in degrees. This value is in the range [-180, 180]. |
 
 
 #### MapReadyCallbackData
 
 | Prop        | Type                |
 | ----------- | ------------------- |
-| **`mapId`** | `string` |
+| **`mapId`** | <code>string</code> |
 
 
 #### Marker
@@ -933,26 +933,26 @@ A marker is an icon placed at a particular point on the map's surface.
 
 | Prop             | Type                                                         | Description                                                                                                                                                                               | Default            | Since |
 | ---------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
-| **`coordinate`** | `<a href="#latlng">LatLng</a>`                    | <a href="#marker">Marker</a> position                                                                                                                                                     |                    |       |
-| **`opacity`**    | `number`                                          | Sets the opacity of the marker, between 0 (completely transparent) and 1 inclusive.                                                                                                       | `1`     |       |
-| **`title`**      | `string`                                          | Title, a short description of the overlay.                                                                                                                                                |                    |       |
-| **`snippet`**    | `string`                                          | Snippet text, shown beneath the title in the info window when selected.                                                                                                                   |                    |       |
-| **`isFlat`**     | `boolean`                                         | Controls whether this marker should be flat against the Earth's surface or a billboard facing the camera.                                                                                 | `false` |       |
-| **`iconUrl`**    | `string`                                          | Path to a marker icon to render. It can be relative to the web app public directory, or a https url of a remote marker icon. **SVGs are not supported on native platforms.**              |                    | 4.2.0 |
-| **`iconSize`**   | `<a href="#size">Size</a>`                        | Controls the scaled size of the marker image set in `iconUrl`.                                                                                                                            |                    | 4.2.0 |
-| **`iconOrigin`** | `<a href="#point">Point</a>`                      | The position of the image within a sprite, if any. By default, the origin is located at the top left corner of the image .                                                                |                    | 4.2.0 |
-| **`iconAnchor`** | `<a href="#point">Point</a>`                      | The position at which to anchor an image in correspondence to the location of the marker on the map. By default, the anchor is located along the center point of the bottom of the image. |                    | 4.2.0 |
-| **`tintColor`**  | `{ r: number; g: number; b: number; a: number; }` | Customizes the color of the default marker image. Each value must be between 0 and 255. Only for iOS and Android.                                                                         |                    | 4.2.0 |
-| **`draggable`**  | `boolean`                                         | Controls whether this marker can be dragged interactively                                                                                                                                 | `false` |       |
-| **`zIndex`**     | `number`                                          | Specifies the stack order of this marker, relative to other markers on the map. A marker with a high z-index is drawn on top of markers with lower z-indexes                              | `0`     |       |
+| **`coordinate`** | <code><a href="#latlng">LatLng</a></code>                    | <a href="#marker">Marker</a> position                                                                                                                                                     |                    |       |
+| **`opacity`**    | <code>number</code>                                          | Sets the opacity of the marker, between 0 (completely transparent) and 1 inclusive.                                                                                                       | <code>1</code>     |       |
+| **`title`**      | <code>string</code>                                          | Title, a short description of the overlay.                                                                                                                                                |                    |       |
+| **`snippet`**    | <code>string</code>                                          | Snippet text, shown beneath the title in the info window when selected.                                                                                                                   |                    |       |
+| **`isFlat`**     | <code>boolean</code>                                         | Controls whether this marker should be flat against the Earth's surface or a billboard facing the camera.                                                                                 | <code>false</code> |       |
+| **`iconUrl`**    | <code>string</code>                                          | Path to a marker icon to render. It can be relative to the web app public directory, or a https url of a remote marker icon. **SVGs are not supported on native platforms.**              |                    | 4.2.0 |
+| **`iconSize`**   | <code><a href="#size">Size</a></code>                        | Controls the scaled size of the marker image set in `iconUrl`.                                                                                                                            |                    | 4.2.0 |
+| **`iconOrigin`** | <code><a href="#point">Point</a></code>                      | The position of the image within a sprite, if any. By default, the origin is located at the top left corner of the image .                                                                |                    | 4.2.0 |
+| **`iconAnchor`** | <code><a href="#point">Point</a></code>                      | The position at which to anchor an image in correspondence to the location of the marker on the map. By default, the anchor is located along the center point of the bottom of the image. |                    | 4.2.0 |
+| **`tintColor`**  | <code>{ r: number; g: number; b: number; a: number; }</code> | Customizes the color of the default marker image. Each value must be between 0 and 255. Only for iOS and Android.                                                                         |                    | 4.2.0 |
+| **`draggable`**  | <code>boolean</code>                                         | Controls whether this marker can be dragged interactively                                                                                                                                 | <code>false</code> |       |
+| **`zIndex`**     | <code>number</code>                                          | Specifies the stack order of this marker, relative to other markers on the map. A marker with a high z-index is drawn on top of markers with lower z-indexes                              | <code>0</code>     |       |
 
 
 #### Size
 
 | Prop         | Type                |
 | ------------ | ------------------- |
-| **`width`**  | `number` |
-| **`height`** | `number` |
+| **`width`**  | <code>number</code> |
+| **`height`** | <code>number</code> |
 
 
 #### Point
@@ -962,8 +962,8 @@ https://tools.ietf.org/html/rfc7946#section-3.1.2
 
 | Prop              | Type                                          | Description                           |
 | ----------------- | --------------------------------------------- | ------------------------------------- |
-| **`type`**        | `'<a href="#point">Point</a>'`     | Specifies the type of GeoJSON object. |
-| **`coordinates`** | `<a href="#position">Position</a>` |                                       |
+| **`type`**        | <code>'<a href="#point">Point</a>'</code>     | Specifies the type of GeoJSON object. |
+| **`coordinates`** | <code><a href="#position">Position</a></code> |                                       |
 
 
 #### Polygon
@@ -973,8 +973,8 @@ https://tools.ietf.org/html/rfc7946#section-3.1.6
 
 | Prop              | Type                                          | Description                           |
 | ----------------- | --------------------------------------------- | ------------------------------------- |
-| **`type`**        | `'<a href="#polygon">Polygon</a>'` | Specifies the type of GeoJSON object. |
-| **`coordinates`** | `Position[][]`                     |                                       |
+| **`type`**        | <code>'<a href="#polygon">Polygon</a>'</code> | Specifies the type of GeoJSON object. |
+| **`coordinates`** | <code>Position[][]</code>                     |                                       |
 
 
 #### Circle
@@ -985,14 +985,14 @@ For iOS and Android only the config options declared on <a href="#circle">Circle
 
 | Prop               | Type                 | Description                                                                                                                                                                            |
 | ------------------ | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`fillColor`**    | `string`  | The fill color. All CSS3 colors are supported except for extended named colors.                                                                                                        |
-| **`fillOpacity`**  | `number`  | The fill opacity between 0.0 and 1.0.                                                                                                                                                  |
-| **`strokeColor`**  | `string`  | The stroke color. All CSS3 colors are supported except for extended named colors.                                                                                                      |
-| **`strokeWeight`** | `number`  | The stroke width in pixels.                                                                                                                                                            |
-| **`geodesic`**     | `boolean` |                                                                                                                                                                                        |
-| **`clickable`**    | `boolean` | Indicates whether this &lt;code&gt;<a href="#circle">Circle</a>&lt;/code&gt; handles mouse events.                                                                                     |
-| **`title`**        | `string`  | Title, a short description of the overlay. Some overlays, such as markers, will display the title on the map. The title is also the default accessibility text. Only available on iOS. |
-| **`tag`**          | `string`  |                                                                                                                                                                                        |
+| **`fillColor`**    | <code>string</code>  | The fill color. All CSS3 colors are supported except for extended named colors.                                                                                                        |
+| **`fillOpacity`**  | <code>number</code>  | The fill opacity between 0.0 and 1.0.                                                                                                                                                  |
+| **`strokeColor`**  | <code>string</code>  | The stroke color. All CSS3 colors are supported except for extended named colors.                                                                                                      |
+| **`strokeWeight`** | <code>number</code>  | The stroke width in pixels.                                                                                                                                                            |
+| **`geodesic`**     | <code>boolean</code> |                                                                                                                                                                                        |
+| **`clickable`**    | <code>boolean</code> | Indicates whether this &lt;code&gt;<a href="#circle">Circle</a>&lt;/code&gt; handles mouse events.                                                                                     |
+| **`title`**        | <code>string</code>  | Title, a short description of the overlay. Some overlays, such as markers, will display the title on the map. The title is also the default accessibility text. Only available on iOS. |
+| **`tag`**          | <code>string</code>  |                                                                                                                                                                                        |
 
 
 #### Polyline
@@ -1003,13 +1003,13 @@ For iOS and Android only the config options declared on <a href="#polyline">Poly
 
 | Prop                | Type                     | Description                                                                                                                                                                                                                                                                                                                                                                                    |
 | ------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`strokeColor`**   | `string`      | The stroke color. All CSS3 colors are supported except for extended named colors.                                                                                                                                                                                                                                                                                                              |
-| **`strokeOpacity`** | `number`      | The stroke opacity between 0.0 and 1.0.                                                                                                                                                                                                                                                                                                                                                        |
-| **`strokeWeight`**  | `number`      | The stroke width in pixels.                                                                                                                                                                                                                                                                                                                                                                    |
-| **`geodesic`**      | `boolean`     | When &lt;code&gt;true&lt;/code&gt;, edges of the polygon are interpreted as geodesic and will follow the curvature of the Earth. When &lt;code&gt;false&lt;/code&gt;, edges of the polygon are rendered as straight lines in screen space. Note that the shape of a geodesic polygon may appear to change when dragged, as the dimensions are maintained relative to the surface of the earth. |
-| **`clickable`**     | `boolean`     | Indicates whether this &lt;code&gt;<a href="#polyline">Polyline</a>&lt;/code&gt; handles mouse events.                                                                                                                                                                                                                                                                                         |
-| **`tag`**           | `string`      |                                                                                                                                                                                                                                                                                                                                                                                                |
-| **`styleSpans`**    | `StyleSpan[]` | Used to specify the color of one or more segments of a polyline. The styleSpans property is an array of <a href="#stylespan">StyleSpan</a> objects. Setting the spans property is the preferred way to change the color of a polyline. Only on iOS and Android.                                                                                                                                |
+| **`strokeColor`**   | <code>string</code>      | The stroke color. All CSS3 colors are supported except for extended named colors.                                                                                                                                                                                                                                                                                                              |
+| **`strokeOpacity`** | <code>number</code>      | The stroke opacity between 0.0 and 1.0.                                                                                                                                                                                                                                                                                                                                                        |
+| **`strokeWeight`**  | <code>number</code>      | The stroke width in pixels.                                                                                                                                                                                                                                                                                                                                                                    |
+| **`geodesic`**      | <code>boolean</code>     | When &lt;code&gt;true&lt;/code&gt;, edges of the polygon are interpreted as geodesic and will follow the curvature of the Earth. When &lt;code&gt;false&lt;/code&gt;, edges of the polygon are rendered as straight lines in screen space. Note that the shape of a geodesic polygon may appear to change when dragged, as the dimensions are maintained relative to the surface of the earth. |
+| **`clickable`**     | <code>boolean</code>     | Indicates whether this &lt;code&gt;<a href="#polyline">Polyline</a>&lt;/code&gt; handles mouse events.                                                                                                                                                                                                                                                                                         |
+| **`tag`**           | <code>string</code>      |                                                                                                                                                                                                                                                                                                                                                                                                |
+| **`styleSpans`**    | <code>StyleSpan[]</code> | Used to specify the color of one or more segments of a polyline. The styleSpans property is an array of <a href="#stylespan">StyleSpan</a> objects. Setting the spans property is the preferred way to change the color of a polyline. Only on iOS and Android.                                                                                                                                |
 
 
 #### StyleSpan
@@ -1018,8 +1018,8 @@ Describes the style for some region of a polyline.
 
 | Prop           | Type                | Description                                                                       |
 | -------------- | ------------------- | --------------------------------------------------------------------------------- |
-| **`color`**    | `string` | The stroke color. All CSS3 colors are supported except for extended named colors. |
-| **`segments`** | `number` | The length of this span in number of segments.                                    |
+| **`color`**    | <code>string</code> | The stroke color. All CSS3 colors are supported except for extended named colors. |
+| **`segments`** | <code>number</code> | The length of this span in number of segments.                                    |
 
 
 #### CameraConfig
@@ -1028,12 +1028,12 @@ Configuration properties for a Google Map Camera
 
 | Prop                    | Type                                      | Description                                                                                                            | Default            |
 | ----------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| **`coordinate`**        | `<a href="#latlng">LatLng</a>` | Location on the Earth towards which the camera points.                                                                 |                    |
-| **`zoom`**              | `number`                       | Sets the zoom of the map.                                                                                              |                    |
-| **`bearing`**           | `number`                       | Bearing of the camera, in degrees clockwise from true north.                                                           | `0`     |
-| **`angle`**             | `number`                       | The angle, in degrees, of the camera from the nadir (directly facing the Earth). The only allowed values are 0 and 45. | `0`     |
-| **`animate`**           | `boolean`                      | Animate the transition to the new Camera properties.                                                                   | `false` |
-| **`animationDuration`** | `number`                       | This configuration option is not being used.                                                                           |                    |
+| **`coordinate`**        | <code><a href="#latlng">LatLng</a></code> | Location on the Earth towards which the camera points.                                                                 |                    |
+| **`zoom`**              | <code>number</code>                       | Sets the zoom of the map.                                                                                              |                    |
+| **`bearing`**           | <code>number</code>                       | Bearing of the camera, in degrees clockwise from true north.                                                           | <code>0</code>     |
+| **`angle`**             | <code>number</code>                       | The angle, in degrees, of the camera from the nadir (directly facing the Earth). The only allowed values are 0 and 45. | <code>0</code>     |
+| **`animate`**           | <code>boolean</code>                      | Animate the transition to the new Camera properties.                                                                   | <code>false</code> |
+| **`animationDuration`** | <code>number</code>                       | This configuration option is not being used.                                                                           |                    |
 
 
 #### MapPadding
@@ -1042,102 +1042,102 @@ Controls for setting padding on the 'visible' region of the view.
 
 | Prop         | Type                |
 | ------------ | ------------------- |
-| **`top`**    | `number` |
-| **`left`**   | `number` |
-| **`right`**  | `number` |
-| **`bottom`** | `number` |
+| **`top`**    | <code>number</code> |
+| **`left`**   | <code>number</code> |
+| **`right`**  | <code>number</code> |
+| **`bottom`** | <code>number</code> |
 
 
 #### CameraIdleCallbackData
 
 | Prop            | Type                      |
 | --------------- | ------------------------- |
-| **`mapId`**     | `string`       |
-| **`bounds`**    | `LatLngBounds` |
-| **`bearing`**   | `number`       |
-| **`latitude`**  | `number`       |
-| **`longitude`** | `number`       |
-| **`tilt`**      | `number`       |
-| **`zoom`**      | `number`       |
+| **`mapId`**     | <code>string</code>       |
+| **`bounds`**    | <code>LatLngBounds</code> |
+| **`bearing`**   | <code>number</code>       |
+| **`latitude`**  | <code>number</code>       |
+| **`longitude`** | <code>number</code>       |
+| **`tilt`**      | <code>number</code>       |
+| **`zoom`**      | <code>number</code>       |
 
 
 #### CameraMoveStartedCallbackData
 
 | Prop            | Type                 |
 | --------------- | -------------------- |
-| **`mapId`**     | `string`  |
-| **`isGesture`** | `boolean` |
+| **`mapId`**     | <code>string</code>  |
+| **`isGesture`** | <code>boolean</code> |
 
 
 #### ClusterClickCallbackData
 
 | Prop            | Type                              |
 | --------------- | --------------------------------- |
-| **`mapId`**     | `string`               |
-| **`latitude`**  | `number`               |
-| **`longitude`** | `number`               |
-| **`size`**      | `number`               |
-| **`items`**     | `MarkerCallbackData[]` |
+| **`mapId`**     | <code>string</code>               |
+| **`latitude`**  | <code>number</code>               |
+| **`longitude`** | <code>number</code>               |
+| **`size`**      | <code>number</code>               |
+| **`items`**     | <code>MarkerCallbackData[]</code> |
 
 
 #### MarkerCallbackData
 
 | Prop            | Type                |
 | --------------- | ------------------- |
-| **`markerId`**  | `string` |
-| **`latitude`**  | `number` |
-| **`longitude`** | `number` |
-| **`title`**     | `string` |
-| **`snippet`**   | `string` |
+| **`markerId`**  | <code>string</code> |
+| **`latitude`**  | <code>number</code> |
+| **`longitude`** | <code>number</code> |
+| **`title`**     | <code>string</code> |
+| **`snippet`**   | <code>string</code> |
 
 
 #### MarkerClickCallbackData
 
 | Prop        | Type                |
 | ----------- | ------------------- |
-| **`mapId`** | `string` |
+| **`mapId`** | <code>string</code> |
 
 
 #### MapClickCallbackData
 
 | Prop            | Type                |
 | --------------- | ------------------- |
-| **`mapId`**     | `string` |
-| **`latitude`**  | `number` |
-| **`longitude`** | `number` |
+| **`mapId`**     | <code>string</code> |
+| **`latitude`**  | <code>number</code> |
+| **`longitude`** | <code>number</code> |
 
 
 #### PolygonClickCallbackData
 
 | Prop            | Type                |
 | --------------- | ------------------- |
-| **`mapId`**     | `string` |
-| **`polygonId`** | `string` |
-| **`tag`**       | `string` |
+| **`mapId`**     | <code>string</code> |
+| **`polygonId`** | <code>string</code> |
+| **`tag`**       | <code>string</code> |
 
 
 #### CircleClickCallbackData
 
 | Prop           | Type                |
 | -------------- | ------------------- |
-| **`mapId`**    | `string` |
-| **`circleId`** | `string` |
-| **`tag`**      | `string` |
+| **`mapId`**    | <code>string</code> |
+| **`circleId`** | <code>string</code> |
+| **`tag`**      | <code>string</code> |
 
 
 #### PolylineCallbackData
 
 | Prop             | Type                |
 | ---------------- | ------------------- |
-| **`polylineId`** | `string` |
-| **`tag`**        | `string` |
+| **`polylineId`** | <code>string</code> |
+| **`tag`**        | <code>string</code> |
 
 
 #### MyLocationButtonClickCallbackData
 
 | Prop        | Type                |
 | ----------- | ------------------- |
-| **`mapId`** | `string` |
+| **`mapId`** | <code>string</code> |
 
 
 ### Type Aliases
@@ -1147,7 +1147,7 @@ Controls for setting padding on the 'visible' region of the view.
 
 The callback function to be called when map events are emitted.
 
-`(data: T): void`
+<code>(data: T): void</code>
 
 
 #### Position
@@ -1158,7 +1158,7 @@ Array should contain between two and three elements.
 The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values),
 but the current specification only allows X, Y, and (optionally) Z to be defined.
 
-`number[]`
+<code>number[]</code>
 
 
 ### Enums
@@ -1168,10 +1168,10 @@ but the current specification only allows X, Y, and (optionally) Z to be defined
 
 | Members         | Value                    | Description                              |
 | --------------- | ------------------------ | ---------------------------------------- |
-| **`Normal`**    | `'Normal'`    | Basic map.                               |
-| **`Hybrid`**    | `'Hybrid'`    | Satellite imagery with roads and labels. |
-| **`Satellite`** | `'Satellite'` | Satellite imagery with no labels.        |
-| **`Terrain`**   | `'Terrain'`   | Topographic data.                        |
-| **`None`**      | `'None'`      | No base map tiles.                       |
+| **`Normal`**    | <code>'Normal'</code>    | Basic map.                               |
+| **`Hybrid`**    | <code>'Hybrid'</code>    | Satellite imagery with roads and labels. |
+| **`Satellite`** | <code>'Satellite'</code> | Satellite imagery with no labels.        |
+| **`Terrain`**   | <code>'Terrain'</code>   | Topographic data.                        |
+| **`None`**      | <code>'None'</code>      | No base map tiles.                       |
 
 </docgen-api>

@@ -41,7 +41,7 @@ show(options: ToastShowOptions) => Promise<void>
 
 | Param         | Type                                                          |
 | ------------- | ------------------------------------------------------------- |
-| **`options`** | `<a href="#toastshowoptions">ToastShowOptions</a>` |
+| **`options`** | <code><a href="#toastshowoptions">ToastShowOptions</a></code> |
 
 ---
 
@@ -51,6 +51,6 @@ show(options: ToastShowOptions) => Promise<void>
 
 | Prop           | Type                                       | Description                                                                |
 | -------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
-| **`text`**     | `string`                        |                                                                            |
-| **`duration`** | `"short" \| "long"`             | Duration of the toast, either 'short' (2000ms, default) or 'long' (3500ms) |
-| **`position`** | `"center" \| "bottom" \| "top"` |                                                                            |
+| **`text`**     | <code>string</code>                        |                                                                            |
+| **`duration`** | <code>"short" \| "long"</code>             | Duration of the toast, either 'short' (2000ms, default) or 'long' (3500ms) |
+| **`position`** | <code>"center" \| "bottom" \| "top"</code> |                                                                            |

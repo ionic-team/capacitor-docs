@@ -108,7 +108,7 @@ exit the app when navigation is complete.
 
 Ionic handles this itself so you shouldn't need to call this if using Ionic.
 
-**Returns:** `never`
+**Returns:** <code>never</code>
 
 **Since:** 1.0.0
 
@@ -123,7 +123,7 @@ getInfo() => Promise<AppInfo>
 
 Return information about the app.
 
-**Returns:** `Promise&lt;<a href="#appinfo">AppInfo</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#appinfo">AppInfo</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -138,7 +138,7 @@ getState() => Promise<AppState>
 
 Gets the current app state.
 
-**Returns:** `Promise&lt;<a href="#appstate">AppState</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#appstate">AppState</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -153,7 +153,7 @@ getLaunchUrl() => Promise<AppLaunchUrl | undefined>
 
 Get the URL the app was launched with, if any.
 
-**Returns:** `Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -185,10 +185,10 @@ Listen for changes in the App's active state (whether the app is in the foregrou
 
 | Param              | Type                                                                |
 | ------------------ | ------------------------------------------------------------------- |
-| **`eventName`**    | `'appStateChange'`                                       |
-| **`listenerFunc`** | `<a href="#statechangelistener">StateChangeListener</a>` |
+| **`eventName`**    | <code>'appStateChange'</code>                                       |
+| **`listenerFunc`** | <code><a href="#statechangelistener">StateChangeListener</a></code> |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -206,10 +206,10 @@ as URLs your app handles (Universal Links on iOS and App Links on Android)
 
 | Param              | Type                                                        |
 | ------------------ | ----------------------------------------------------------- |
-| **`eventName`**    | `'appUrlOpen'`                                   |
-| **`listenerFunc`** | `<a href="#urlopenlistener">URLOpenListener</a>` |
+| **`eventName`**    | <code>'appUrlOpen'</code>                                   |
+| **`listenerFunc`** | <code><a href="#urlopenlistener">URLOpenListener</a></code> |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -246,10 +246,10 @@ Activities (for example, Camera) to have this event and process handled.
 
 | Param              | Type                                                          |
 | ------------------ | ------------------------------------------------------------- |
-| **`eventName`**    | `'appRestoredResult'`                              |
-| **`listenerFunc`** | `<a href="#restoredlistener">RestoredListener</a>` |
+| **`eventName`**    | <code>'appRestoredResult'</code>                              |
+| **`listenerFunc`** | <code><a href="#restoredlistener">RestoredListener</a></code> |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -268,10 +268,10 @@ If you want to close the app, call `App.exitApp()`.
 
 | Param              | Type                                                              |
 | ------------------ | ----------------------------------------------------------------- |
-| **`eventName`**    | `'backButton'`                                         |
-| **`listenerFunc`** | `<a href="#backbuttonlistener">BackButtonListener</a>` |
+| **`eventName`**    | <code>'backButton'</code>                                         |
+| **`listenerFunc`** | <code><a href="#backbuttonlistener">BackButtonListener</a></code> |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -298,58 +298,58 @@ Remove all native listeners for this plugin
 
 | Prop          | Type                | Description                                                                                         | Since |
 | ------------- | ------------------- | --------------------------------------------------------------------------------------------------- | ----- |
-| **`name`**    | `string` | The name of the app.                                                                                | 1.0.0 |
-| **`id`**      | `string` | The identifier of the app. On iOS it's the Bundle Identifier. On Android it's the Application ID    | 1.0.0 |
-| **`build`**   | `string` | The build version. On iOS it's the CFBundleVersion. On Android it's the versionCode.                | 1.0.0 |
-| **`version`** | `string` | The app version. On iOS it's the CFBundleShortVersionString. On Android it's package's versionName. | 1.0.0 |
+| **`name`**    | <code>string</code> | The name of the app.                                                                                | 1.0.0 |
+| **`id`**      | <code>string</code> | The identifier of the app. On iOS it's the Bundle Identifier. On Android it's the Application ID    | 1.0.0 |
+| **`build`**   | <code>string</code> | The build version. On iOS it's the CFBundleVersion. On Android it's the versionCode.                | 1.0.0 |
+| **`version`** | <code>string</code> | The app version. On iOS it's the CFBundleShortVersionString. On Android it's package's versionName. | 1.0.0 |
 
 
 #### AppState
 
 | Prop           | Type                 | Description                       | Since |
 | -------------- | -------------------- | --------------------------------- | ----- |
-| **`isActive`** | `boolean` | Whether the app is active or not. | 1.0.0 |
+| **`isActive`** | <code>boolean</code> | Whether the app is active or not. | 1.0.0 |
 
 
 #### AppLaunchUrl
 
 | Prop      | Type                | Description                   | Since |
 | --------- | ------------------- | ----------------------------- | ----- |
-| **`url`** | `string` | The url used to open the app. | 1.0.0 |
+| **`url`** | <code>string</code> | The url used to open the app. | 1.0.0 |
 
 
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
-| **`remove`** | `() =&gt; Promise&lt;void&gt;` |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 #### URLOpenListenerEvent
 
 | Prop                       | Type                 | Description                                                                                                                                                                        | Since |
 | -------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`url`**                  | `string`  | The URL the app was opened with.                                                                                                                                                   | 1.0.0 |
-| **`iosSourceApplication`** | `any`     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         | 1.0.0 |
-| **`iosOpenInPlace`**       | `boolean` | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace | 1.0.0 |
+| **`url`**                  | <code>string</code>  | The URL the app was opened with.                                                                                                                                                   | 1.0.0 |
+| **`iosSourceApplication`** | <code>any</code>     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         | 1.0.0 |
+| **`iosOpenInPlace`**       | <code>boolean</code> | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace | 1.0.0 |
 
 
 #### RestoredListenerEvent
 
 | Prop             | Type                              | Description                                                                                                                                       | Since |
 | ---------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`pluginId`**   | `string`               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   | 1.0.0 |
-| **`methodName`** | `string`               | The methodName this result corresponds to. For example, `getPhoto`                                                                                | 1.0.0 |
-| **`data`**       | `any`                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` | 1.0.0 |
-| **`success`**    | `boolean`              | Boolean indicating if the plugin call succeeded.                                                                                                  | 1.0.0 |
-| **`error`**      | `{ message: string; }` | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
+| **`pluginId`**   | <code>string</code>               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   | 1.0.0 |
+| **`methodName`** | <code>string</code>               | The methodName this result corresponds to. For example, `getPhoto`                                                                                | 1.0.0 |
+| **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` | 1.0.0 |
+| **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded.                                                                                                  | 1.0.0 |
+| **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
 
 
 #### BackButtonListenerEvent
 
 | Prop            | Type                 | Description                                                                                               | Since |
 | --------------- | -------------------- | --------------------------------------------------------------------------------------------------------- | ----- |
-| **`canGoBack`** | `boolean` | Indicates whether the browser can go back in history. False when the history stack is on the first entry. | 1.0.0 |
+| **`canGoBack`** | <code>boolean</code> | Indicates whether the browser can go back in history. False when the history stack is on the first entry. | 1.0.0 |
 
 
 ### Type Aliases
@@ -357,21 +357,21 @@ Remove all native listeners for this plugin
 
 #### StateChangeListener
 
-`(state: <a href="#appstate">AppState</a>): void`
+<code>(state: <a href="#appstate">AppState</a>): void</code>
 
 
 #### URLOpenListener
 
-`(event: <a href="#urlopenlistenerevent">URLOpenListenerEvent</a>): void`
+<code>(event: <a href="#urlopenlistenerevent">URLOpenListenerEvent</a>): void</code>
 
 
 #### RestoredListener
 
-`(event: <a href="#restoredlistenerevent">RestoredListenerEvent</a>): void`
+<code>(event: <a href="#restoredlistenerevent">RestoredListenerEvent</a>): void</code>
 
 
 #### BackButtonListener
 
-`(event: <a href="#backbuttonlistenerevent">BackButtonListenerEvent</a>): void`
+<code>(event: <a href="#backbuttonlistenerevent">BackButtonListenerEvent</a>): void</code>
 
 </docgen-api>

@@ -43,7 +43,7 @@ Write a value to the clipboard (the "copy" action)
 
 | Param         | Type                                                      |
 | ------------- | --------------------------------------------------------- |
-| **`options`** | `<a href="#clipboardwrite">ClipboardWrite</a>` |
+| **`options`** | <code><a href="#clipboardwrite">ClipboardWrite</a></code> |
 
 ---
 
@@ -55,7 +55,7 @@ read() => Promise<ClipboardReadResult>
 
 Read a value from the clipboard (the "paste" action)
 
-**Returns:** `Promise&lt;<a href="#clipboardreadresult">ClipboardReadResult</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#clipboardreadresult">ClipboardReadResult</a>&gt;</code>
 
 ---
 
@@ -65,14 +65,14 @@ Read a value from the clipboard (the "paste" action)
 
 | Prop         | Type                |
 | ------------ | ------------------- |
-| **`string`** | `string` |
-| **`image`**  | `string` |
-| **`url`**    | `string` |
-| **`label`**  | `string` |
+| **`string`** | <code>string</code> |
+| **`image`**  | <code>string</code> |
+| **`url`**    | <code>string</code> |
+| **`label`**  | <code>string</code> |
 
 #### ClipboardReadResult
 
 | Prop        | Type                |
 | ----------- | ------------------- |
-| **`value`** | `string` |
-| **`type`**  | `string` |
+| **`value`** | <code>string</code> |
+| **`type`**  | <code>string</code> |

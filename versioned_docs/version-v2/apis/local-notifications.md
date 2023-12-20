@@ -87,9 +87,9 @@ schedule(options: { notifications: LocalNotification[]; }) => Promise<LocalNotif
 
 | Param         | Type                                                 |
 | ------------- | ---------------------------------------------------- |
-| **`options`** | `{ notifications: LocalNotification[]; }` |
+| **`options`** | <code>{ notifications: LocalNotification[]; }</code> |
 
-**Returns:** `Promise&lt;<a href="#localnotificationscheduleresult">LocalNotificationScheduleResult</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#localnotificationscheduleresult">LocalNotificationScheduleResult</a>&gt;</code>
 
 ---
 
@@ -99,7 +99,7 @@ schedule(options: { notifications: LocalNotification[]; }) => Promise<LocalNotif
 getPending() => Promise<LocalNotificationPendingList>
 ```
 
-**Returns:** `Promise&lt;<a href="#localnotificationpendinglist">LocalNotificationPendingList</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#localnotificationpendinglist">LocalNotificationPendingList</a>&gt;</code>
 
 ---
 
@@ -111,7 +111,7 @@ registerActionTypes(options: { types: LocalNotificationActionType[]; }) => Promi
 
 | Param         | Type                                                   |
 | ------------- | ------------------------------------------------------ |
-| **`options`** | `{ types: LocalNotificationActionType[]; }` |
+| **`options`** | <code>{ types: LocalNotificationActionType[]; }</code> |
 
 ---
 
@@ -123,7 +123,7 @@ cancel(pending: LocalNotificationPendingList) => Promise<void>
 
 | Param         | Type                                                                                  |
 | ------------- | ------------------------------------------------------------------------------------- |
-| **`pending`** | `<a href="#localnotificationpendinglist">LocalNotificationPendingList</a>` |
+| **`pending`** | <code><a href="#localnotificationpendinglist">LocalNotificationPendingList</a></code> |
 
 ---
 
@@ -133,7 +133,7 @@ cancel(pending: LocalNotificationPendingList) => Promise<void>
 areEnabled() => Promise<LocalNotificationEnabledResult>
 ```
 
-**Returns:** `Promise&lt;<a href="#localnotificationenabledresult">LocalNotificationEnabledResult</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#localnotificationenabledresult">LocalNotificationEnabledResult</a>&gt;</code>
 
 ---
 
@@ -145,7 +145,7 @@ createChannel(channel: NotificationChannel) => Promise<void>
 
 | Param         | Type                                                                |
 | ------------- | ------------------------------------------------------------------- |
-| **`channel`** | `<a href="#notificationchannel">NotificationChannel</a>` |
+| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
 
 ---
 
@@ -157,7 +157,7 @@ deleteChannel(channel: NotificationChannel) => Promise<void>
 
 | Param         | Type                                                                |
 | ------------- | ------------------------------------------------------------------- |
-| **`channel`** | `<a href="#notificationchannel">NotificationChannel</a>` |
+| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
 
 ---
 
@@ -167,7 +167,7 @@ deleteChannel(channel: NotificationChannel) => Promise<void>
 listChannels() => Promise<NotificationChannelList>
 ```
 
-**Returns:** `Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;</code>
 
 ---
 
@@ -177,7 +177,7 @@ listChannels() => Promise<NotificationChannelList>
 requestPermission() => Promise<NotificationPermissionResponse>
 ```
 
-**Returns:** `Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;</code>
 
 ---
 
@@ -189,10 +189,10 @@ addListener(eventName: 'localNotificationReceived', listenerFunc: (notification:
 
 | Param              | Type                                                                                       |
 | ------------------ | ------------------------------------------------------------------------------------------ |
-| **`eventName`**    | `"localNotificationReceived"`                                                   |
-| **`listenerFunc`** | `(notification: <a href="#localnotification">LocalNotification</a>) =&gt; void` |
+| **`eventName`**    | <code>"localNotificationReceived"</code>                                                   |
+| **`listenerFunc`** | <code>(notification: <a href="#localnotification">LocalNotification</a>) =&gt; void</code> |
 
-**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 ---
 
@@ -204,10 +204,10 @@ addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notifi
 
 | Param              | Type                                                                                                                           |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| **`eventName`**    | `"localNotificationActionPerformed"`                                                                                |
-| **`listenerFunc`** | `(notificationAction: <a href="#localnotificationactionperformed">LocalNotificationActionPerformed</a>) =&gt; void` |
+| **`eventName`**    | <code>"localNotificationActionPerformed"</code>                                                                                |
+| **`listenerFunc`** | <code>(notificationAction: <a href="#localnotificationactionperformed">LocalNotificationActionPerformed</a>) =&gt; void</code> |
 
-**Returns:** `<a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 ---
 
@@ -229,33 +229,33 @@ Remove all native listeners for this plugin
 
 | Prop                   | Type                                                                            | Description                                                                                                                                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`title`**            | `string`                                                             |                                                                                                                                                                                                                                                                        |
-| **`body`**             | `string`                                                             |                                                                                                                                                                                                                                                                        |
-| **`id`**               | `number`                                                             |                                                                                                                                                                                                                                                                        |
-| **`schedule`**         | `<a href="#localnotificationschedule">LocalNotificationSchedule</a>` |                                                                                                                                                                                                                                                                        |
-| **`sound`**            | `string`                                                             | Name of the audio file with extension. On iOS the file should be in the app bundle. On Android the file should be on res/raw folder. Doesn't work on Android version 26+ (Android O and newer), for Recommended format is .wav because is supported by both platforms. |
-| **`smallIcon`**        | `string`                                                             | Android-only: set a custom statusbar icon. If set, it overrides default icon from capacitor.config.json                                                                                                                                                                |
-| **`iconColor`**        | `string`                                                             | Android only: set the color of the notification icon                                                                                                                                                                                                                   |
-| **`attachments`**      | `LocalNotificationAttachment[]`                                      |                                                                                                                                                                                                                                                                        |
-| **`actionTypeId`**     | `string`                                                             |                                                                                                                                                                                                                                                                        |
-| **`extra`**            | `any`                                                                |                                                                                                                                                                                                                                                                        |
-| **`threadIdentifier`** | `string`                                                             | iOS only: set the thread identifier for notification grouping                                                                                                                                                                                                          |
-| **`summaryArgument`**  | `string`                                                             | iOS 12+ only: set the summary argument for notification grouping                                                                                                                                                                                                       |
-| **`group`**            | `string`                                                             | Android only: set the group identifier for notification grouping, like threadIdentifier on iOS.                                                                                                                                                                        |
-| **`groupSummary`**     | `boolean`                                                            | Android only: designate this notification as the summary for a group (should be used with the `group` property).                                                                                                                                                       |
-| **`channelId`**        | `string`                                                             | Android only: set the notification channel on which local notification will generate. If channel with the given name does not exist then the notification will not fire. If not provided, it will use the default channel.                                             |
-| **`ongoing`**          | `boolean`                                                            | Android only: set the notification ongoing. If set to true the notification can't be swiped away.                                                                                                                                                                      |
-| **`autoCancel`**       | `boolean`                                                            | Android only: set the notification to be removed automatically when the user clicks on it                                                                                                                                                                              |
+| **`title`**            | <code>string</code>                                                             |                                                                                                                                                                                                                                                                        |
+| **`body`**             | <code>string</code>                                                             |                                                                                                                                                                                                                                                                        |
+| **`id`**               | <code>number</code>                                                             |                                                                                                                                                                                                                                                                        |
+| **`schedule`**         | <code><a href="#localnotificationschedule">LocalNotificationSchedule</a></code> |                                                                                                                                                                                                                                                                        |
+| **`sound`**            | <code>string</code>                                                             | Name of the audio file with extension. On iOS the file should be in the app bundle. On Android the file should be on res/raw folder. Doesn't work on Android version 26+ (Android O and newer), for Recommended format is .wav because is supported by both platforms. |
+| **`smallIcon`**        | <code>string</code>                                                             | Android-only: set a custom statusbar icon. If set, it overrides default icon from capacitor.config.json                                                                                                                                                                |
+| **`iconColor`**        | <code>string</code>                                                             | Android only: set the color of the notification icon                                                                                                                                                                                                                   |
+| **`attachments`**      | <code>LocalNotificationAttachment[]</code>                                      |                                                                                                                                                                                                                                                                        |
+| **`actionTypeId`**     | <code>string</code>                                                             |                                                                                                                                                                                                                                                                        |
+| **`extra`**            | <code>any</code>                                                                |                                                                                                                                                                                                                                                                        |
+| **`threadIdentifier`** | <code>string</code>                                                             | iOS only: set the thread identifier for notification grouping                                                                                                                                                                                                          |
+| **`summaryArgument`**  | <code>string</code>                                                             | iOS 12+ only: set the summary argument for notification grouping                                                                                                                                                                                                       |
+| **`group`**            | <code>string</code>                                                             | Android only: set the group identifier for notification grouping, like threadIdentifier on iOS.                                                                                                                                                                        |
+| **`groupSummary`**     | <code>boolean</code>                                                            | Android only: designate this notification as the summary for a group (should be used with the `group` property).                                                                                                                                                       |
+| **`channelId`**        | <code>string</code>                                                             | Android only: set the notification channel on which local notification will generate. If channel with the given name does not exist then the notification will not fire. If not provided, it will use the default channel.                                             |
+| **`ongoing`**          | <code>boolean</code>                                                            | Android only: set the notification ongoing. If set to true the notification can't be swiped away.                                                                                                                                                                      |
+| **`autoCancel`**       | <code>boolean</code>                                                            | Android only: set the notification to be removed automatically when the user clicks on it                                                                                                                                                                              |
 
 #### LocalNotificationSchedule
 
 | Prop          | Type                                                                                               |
 | ------------- | -------------------------------------------------------------------------------------------------- |
-| **`at`**      | `<a href="#date">Date</a>`                                                              |
-| **`repeats`** | `boolean`                                                                               |
-| **`every`**   | `"year" \| "month" \| "two-weeks" \| "week" \| "day" \| "hour" \| "minute" \| "second"` |
-| **`count`**   | `number`                                                                                |
-| **`on`**      | `{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }`      |
+| **`at`**      | <code><a href="#date">Date</a></code>                                                              |
+| **`repeats`** | <code>boolean</code>                                                                               |
+| **`every`**   | <code>"year" \| "month" \| "two-weeks" \| "week" \| "day" \| "hour" \| "minute" \| "second"</code> |
+| **`count`**   | <code>number</code>                                                                                |
+| **`on`**      | <code>{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }</code>      |
 
 #### Date
 
@@ -311,100 +311,100 @@ Enables basic storage and retrieval of dates and times.
 
 | Prop          | Type                                                                                              |
 | ------------- | ------------------------------------------------------------------------------------------------- |
-| **`id`**      | `string`                                                                               |
-| **`url`**     | `string`                                                                               |
-| **`options`** | `<a href="#localnotificationattachmentoptions">LocalNotificationAttachmentOptions</a>` |
+| **`id`**      | <code>string</code>                                                                               |
+| **`url`**     | <code>string</code>                                                                               |
+| **`options`** | <code><a href="#localnotificationattachmentoptions">LocalNotificationAttachmentOptions</a></code> |
 
 #### LocalNotificationAttachmentOptions
 
 | Prop                                                             | Type                |
 | ---------------------------------------------------------------- | ------------------- |
-| **`iosUNNotificationAttachmentOptionsTypeHintKey`**              | `string` |
-| **`iosUNNotificationAttachmentOptionsThumbnailHiddenKey`**       | `string` |
-| **`iosUNNotificationAttachmentOptionsThumbnailClippingRectKey`** | `string` |
-| **`iosUNNotificationAttachmentOptionsThumbnailTimeKey`**         | `string` |
+| **`iosUNNotificationAttachmentOptionsTypeHintKey`**              | <code>string</code> |
+| **`iosUNNotificationAttachmentOptionsThumbnailHiddenKey`**       | <code>string</code> |
+| **`iosUNNotificationAttachmentOptionsThumbnailClippingRectKey`** | <code>string</code> |
+| **`iosUNNotificationAttachmentOptionsThumbnailTimeKey`**         | <code>string</code> |
 
 #### LocalNotificationPendingList
 
 | Prop                | Type                                    |
 | ------------------- | --------------------------------------- |
-| **`notifications`** | `LocalNotificationRequest[]` |
+| **`notifications`** | <code>LocalNotificationRequest[]</code> |
 
 #### LocalNotificationRequest
 
 | Prop     | Type                |
 | -------- | ------------------- |
-| **`id`** | `string` |
+| **`id`** | <code>string</code> |
 
 #### LocalNotificationActionType
 
 | Prop                                   | Type                                   |
 | -------------------------------------- | -------------------------------------- |
-| **`id`**                               | `string`                    |
-| **`actions`**                          | `LocalNotificationAction[]` |
-| **`iosHiddenPreviewsBodyPlaceholder`** | `string`                    |
-| **`iosCustomDismissAction`**           | `boolean`                   |
-| **`iosAllowInCarPlay`**                | `boolean`                   |
-| **`iosHiddenPreviewsShowTitle`**       | `boolean`                   |
-| **`iosHiddenPreviewsShowSubtitle`**    | `boolean`                   |
+| **`id`**                               | <code>string</code>                    |
+| **`actions`**                          | <code>LocalNotificationAction[]</code> |
+| **`iosHiddenPreviewsBodyPlaceholder`** | <code>string</code>                    |
+| **`iosCustomDismissAction`**           | <code>boolean</code>                   |
+| **`iosAllowInCarPlay`**                | <code>boolean</code>                   |
+| **`iosHiddenPreviewsShowTitle`**       | <code>boolean</code>                   |
+| **`iosHiddenPreviewsShowSubtitle`**    | <code>boolean</code>                   |
 
 #### LocalNotificationAction
 
 | Prop                         | Type                 |
 | ---------------------------- | -------------------- |
-| **`id`**                     | `string`  |
-| **`title`**                  | `string`  |
-| **`requiresAuthentication`** | `boolean` |
-| **`foreground`**             | `boolean` |
-| **`destructive`**            | `boolean` |
-| **`input`**                  | `boolean` |
-| **`inputButtonTitle`**       | `string`  |
-| **`inputPlaceholder`**       | `string`  |
+| **`id`**                     | <code>string</code>  |
+| **`title`**                  | <code>string</code>  |
+| **`requiresAuthentication`** | <code>boolean</code> |
+| **`foreground`**             | <code>boolean</code> |
+| **`destructive`**            | <code>boolean</code> |
+| **`input`**                  | <code>boolean</code> |
+| **`inputButtonTitle`**       | <code>string</code>  |
+| **`inputPlaceholder`**       | <code>string</code>  |
 
 #### LocalNotificationEnabledResult
 
 | Prop        | Type                 | Description                                               |
 | ----------- | -------------------- | --------------------------------------------------------- |
-| **`value`** | `boolean` | Whether the device has Local Notifications enabled or not |
+| **`value`** | <code>boolean</code> | Whether the device has Local Notifications enabled or not |
 
 #### NotificationChannel
 
 | Prop              | Type                               |
 | ----------------- | ---------------------------------- |
-| **`id`**          | `string`                |
-| **`name`**        | `string`                |
-| **`description`** | `string`                |
-| **`sound`**       | `string`                |
-| **`importance`**  | `1 \| 2 \| 5 \| 4 \| 3` |
-| **`visibility`**  | `0 \| 1 \| -1`          |
-| **`lights`**      | `boolean`               |
-| **`lightColor`**  | `string`                |
-| **`vibration`**   | `boolean`               |
+| **`id`**          | <code>string</code>                |
+| **`name`**        | <code>string</code>                |
+| **`description`** | <code>string</code>                |
+| **`sound`**       | <code>string</code>                |
+| **`importance`**  | <code>1 \| 2 \| 5 \| 4 \| 3</code> |
+| **`visibility`**  | <code>0 \| 1 \| -1</code>          |
+| **`lights`**      | <code>boolean</code>               |
+| **`lightColor`**  | <code>string</code>                |
+| **`vibration`**   | <code>boolean</code>               |
 
 #### NotificationChannelList
 
 | Prop           | Type                               |
 | -------------- | ---------------------------------- |
-| **`channels`** | `NotificationChannel[]` |
+| **`channels`** | <code>NotificationChannel[]</code> |
 
 #### NotificationPermissionResponse
 
 | Prop          | Type                 |
 | ------------- | -------------------- |
-| **`granted`** | `boolean` |
+| **`granted`** | <code>boolean</code> |
 
 #### PluginListenerHandle
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
-| **`remove`** | `() =&gt; void` |
+| **`remove`** | <code>() =&gt; void</code> |
 
 #### LocalNotificationActionPerformed
 
 | Prop               | Type                                                            |
 | ------------------ | --------------------------------------------------------------- |
-| **`actionId`**     | `string`                                             |
-| **`inputValue`**   | `string`                                             |
-| **`notification`** | `<a href="#localnotification">LocalNotification</a>` |
+| **`actionId`**     | <code>string</code>                                             |
+| **`inputValue`**   | <code>string</code>                                             |
+| **`notification`** | <code><a href="#localnotification">LocalNotification</a></code> |
 
 

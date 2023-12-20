@@ -15,7 +15,7 @@ If you would like to enable this feature, modify the configuration below in the 
 
 | Prop          | Type                 | Description                                                               | Default            |
 | ------------- | -------------------- | ------------------------------------------------------------------------- | ------------------ |
-| **`enabled`** | `boolean` | Enable the patching of `document.cookie` to use native libraries instead. | `false` |
+| **`enabled`** | <code>boolean</code> | Enable the patching of `document.cookie` to use native libraries instead. | <code>false</code> |
 
 ### Example Configuration
 
@@ -122,7 +122,7 @@ Write a cookie to the device.
 
 | Param         | Type                                                          |
 | ------------- | ------------------------------------------------------------- |
-| **`options`** | `<a href="#setcookieoptions">SetCookieOptions</a>` |
+| **`options`** | <code><a href="#setcookieoptions">SetCookieOptions</a></code> |
 
 ---
 
@@ -136,7 +136,7 @@ Delete a cookie from the device.
 
 | Param         | Type                                                                |
 | ------------- | ------------------------------------------------------------------- |
-| **`options`** | `<a href="#deletecookieoptions">DeleteCookieOptions</a>` |
+| **`options`** | <code><a href="#deletecookieoptions">DeleteCookieOptions</a></code> |
 
 ---
 
@@ -150,7 +150,7 @@ Clear cookies from the device at a given URL.
 
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
-| **`options`** | `<a href="#clearcookieoptions">ClearCookieOptions</a>` |
+| **`options`** | <code><a href="#clearcookieoptions">ClearCookieOptions</a></code> |
 
 ---
 
@@ -170,23 +170,23 @@ Clear all cookies on the device.
 
 | Prop           | Type                | Description                      |
 | -------------- | ------------------- | -------------------------------- |
-| **`url?`**     | `string` | The URL to write the cookie to.  |
-| **`key`**      | `string` | The key to give the cookie.      |
-| **`value`**    | `string` | The value to give the cookie.    |
-| **`path?`**    | `string` | The path to write the cookie to. |
-| **`expires?`** | `string` | The date to expire the cookie.   |
+| **`url?`**     | <code>string</code> | The URL to write the cookie to.  |
+| **`key`**      | <code>string</code> | The key to give the cookie.      |
+| **`value`**    | <code>string</code> | The value to give the cookie.    |
+| **`path?`**    | <code>string</code> | The path to write the cookie to. |
+| **`expires?`** | <code>string</code> | The date to expire the cookie.   |
 
 #### DeleteCookieOptions
 
 | Prop       | Type                | Description                        |
 | ---------- | ------------------- | ---------------------------------- |
-| **`url?`** | `string` | The URL to delete the cookie from. |
-| **`key`**  | `string` | The key of the cookie to delete.   |
+| **`url?`** | <code>string</code> | The URL to delete the cookie from. |
+| **`key`**  | <code>string</code> | The key of the cookie to delete.   |
 
 #### ClearCookieOptions
 
 | Prop       | Type                | Description                    |
 | ---------- | ------------------- | ------------------------------ |
-| **`url?`** | `string` | The URL to clear cookies from. |
+| **`url?`** | <code>string</code> | The URL to clear cookies from. |
 
 </docgen-api>

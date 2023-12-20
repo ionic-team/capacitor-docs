@@ -15,7 +15,7 @@ If you would like to enable this feature, modify the configuration below in the 
 
 | Prop          | Type                 | Description                                                                          | Default            |
 | ------------- | -------------------- | ------------------------------------------------------------------------------------ | ------------------ |
-| **`enabled`** | `boolean` | Enable the patching of `fetch` and `XMLHttpRequest` to use native libraries instead. | `false` |
+| **`enabled`** | <code>boolean</code> | Enable the patching of `fetch` and `XMLHttpRequest` to use native libraries instead. | <code>false</code> |
 
 ### Example Configuration
 
@@ -111,7 +111,7 @@ Make a Http Request to a server using native libraries.
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | `<a href="#httpoptions">HttpOptions</a>` |
+| **`options`** | <code><a href="#httpoptions">HttpOptions</a></code> |
 
 ---
 
@@ -125,7 +125,7 @@ Make a Http GET Request to a server using native libraries.
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | `<a href="#httpoptions">HttpOptions</a>` |
+| **`options`** | <code><a href="#httpoptions">HttpOptions</a></code> |
 
 ---
 
@@ -139,7 +139,7 @@ Make a Http POST Request to a server using native libraries.
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | `<a href="#httpoptions">HttpOptions</a>` |
+| **`options`** | <code><a href="#httpoptions">HttpOptions</a></code> |
 
 ---
 
@@ -153,7 +153,7 @@ Make a Http PUT Request to a server using native libraries.
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | `<a href="#httpoptions">HttpOptions</a>` |
+| **`options`** | <code><a href="#httpoptions">HttpOptions</a></code> |
 
 ---
 
@@ -167,7 +167,7 @@ Make a Http PATCH Request to a server using native libraries.
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | `<a href="#httpoptions">HttpOptions</a>` |
+| **`options`** | <code><a href="#httpoptions">HttpOptions</a></code> |
 
 ---
 
@@ -181,7 +181,7 @@ Make a Http DELETE Request to a server using native libraries.
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | `<a href="#httpoptions">HttpOptions</a>` |
+| **`options`** | <code><a href="#httpoptions">HttpOptions</a></code> |
 
 ---
 
@@ -191,17 +191,17 @@ Make a Http DELETE Request to a server using native libraries.
 
 | Prop                         | Type                                                          | Description                                                                                                                        |
 | ---------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **`url`**                    | `string`                                           | The URL to send the request to.                                                                                                    |
-| **`method?`**                | `string`                                           | The Http Request method to run. (Default is `GET`)                                                                                 |
-| **`params?`**                | `<a href="#httpparams">HttpParams</a>`             | URL parameters to append to the request.                                                                                           |
-| **`data?`**                  | `any`                                              | JSON data to send with the request.                                                                                                |
-| **`headers?`**               | `<a href="#httpheaders">HttpHeaders</a>`           | Http Request headers to send with the request.                                                                                     |
-| **`readTimeout?`**           | `number`                                           | How long to wait to read additional data. Resets each time new data is received.                                                   |
-| **`connectTimeout?`**        | `number`                                           | How long to wait for the initial connection.                                                                                       |
-| **`disableRedirects?`**      | `boolean`                                          | Sets whether automatic Http redirects should be disabled.                                                                          |
-| **`webFetchExtra?`**         | `RequestInit`                                      | Extra arguments for fetch when running on the web.                                                                                 |
-| **`responseType?`**          | `<a href="#httpresponsetype">HttpResponseType</a>` | Parse the response appropriately before returning it to the client. If the response content-type is `json`, this value is ignored. |
-| **`shouldEncodeUrlParams?`** | `boolean`                                          | A option to keep the URL unencoded if necessary (already encoded, azure/firebase testing, etc.). (Default is `true`)               |
+| **`url`**                    | <code>string</code>                                           | The URL to send the request to.                                                                                                    |
+| **`method?`**                | <code>string</code>                                           | The Http Request method to run. (Default is `GET`)                                                                                 |
+| **`params?`**                | <code><a href="#httpparams">HttpParams</a></code>             | URL parameters to append to the request.                                                                                           |
+| **`data?`**                  | <code>any</code>                                              | JSON data to send with the request.                                                                                                |
+| **`headers?`**               | <code><a href="#httpheaders">HttpHeaders</a></code>           | Http Request headers to send with the request.                                                                                     |
+| **`readTimeout?`**           | <code>number</code>                                           | How long to wait to read additional data. Resets each time new data is received.                                                   |
+| **`connectTimeout?`**        | <code>number</code>                                           | How long to wait for the initial connection.                                                                                       |
+| **`disableRedirects?`**      | <code>boolean</code>                                          | Sets whether automatic Http redirects should be disabled.                                                                          |
+| **`webFetchExtra?`**         | <code>RequestInit</code>                                      | Extra arguments for fetch when running on the web.                                                                                 |
+| **`responseType?`**          | <code><a href="#httpresponsetype">HttpResponseType</a></code> | Parse the response appropriately before returning it to the client. If the response content-type is `json`, this value is ignored. |
+| **`shouldEncodeUrlParams?`** | <code>boolean</code>                                          | A option to keep the URL unencoded if necessary (already encoded, azure/firebase testing, etc.). (Default is `true`)               |
 
 #### HttpParams
 
@@ -225,9 +225,9 @@ Make a Http DELETE Request to a server using native libraries.
 
 | Prop          | Type                                                | Description                                       |
 | ------------- | --------------------------------------------------- | ------------------------------------------------- |
-| **`url`**     | `string`                                 | The response URL recieved from the Http response. |
-| **`status`**  | `number`                                 | The status code received from the Http response.  |
-| **`data`**    | `any`                                    | Additional data received with the Http response.  |
-| **`headers`** | `<a href="#httpheaders">HttpHeaders</a>` | The headers received from the Http response.      |
+| **`url`**     | <code>string</code>                                 | The response URL recieved from the Http response. |
+| **`status`**  | <code>number</code>                                 | The status code received from the Http response.  |
+| **`data`**    | <code>any</code>                                    | Additional data received with the Http response.  |
+| **`headers`** | <code><a href="#httpheaders">HttpHeaders</a></code> | The headers received from the Http response.      |
 
 </docgen-api>

@@ -91,7 +91,7 @@ Options that are `undefined` will not be used.
 
 | Param         | Type                                                          |
 | ------------- | ------------------------------------------------------------- |
-| **`options`** | `<a href="#configureoptions">ConfigureOptions</a>` |
+| **`options`** | <code><a href="#configureoptions">ConfigureOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -108,9 +108,9 @@ Get the value from preferences of a given key.
 
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
-| **`options`** | `<a href="#getoptions">GetOptions</a>` |
+| **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
 
-**Returns:** `Promise&lt;<a href="#getresult">GetResult</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -127,7 +127,7 @@ Set the value in preferences for a given key.
 
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
-| **`options`** | `<a href="#setoptions">SetOptions</a>` |
+| **`options`** | <code><a href="#setoptions">SetOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -144,7 +144,7 @@ Remove the value from preferences for a given key, if any.
 
 | Param         | Type                                                    |
 | ------------- | ------------------------------------------------------- |
-| **`options`** | `<a href="#removeoptions">RemoveOptions</a>` |
+| **`options`** | <code><a href="#removeoptions">RemoveOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -172,7 +172,7 @@ keys() => Promise<KeysResult>
 
 Return the list of known keys in preferences.
 
-**Returns:** `Promise&lt;<a href="#keysresult">KeysResult</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#keysresult">KeysResult</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -191,7 +191,7 @@ This action is non-destructive. It will not remove old data and will only
 write new data if they key was not already set.
 To remove the old data after being migrated, call removeOld().
 
-**Returns:** `Promise&lt;<a href="#migrateresult">MigrateResult</a>&gt;`
+**Returns:** <code>Promise&lt;<a href="#migrateresult">MigrateResult</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -218,50 +218,50 @@ Removes old data with `_cap_` prefix from the Capacitor 2 Storage plugin.
 
 | Prop        | Type                | Description                                                                                                                                                                                                                                                                                                                                              | Default                       | Since |
 | ----------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ----- |
-| **`group`** | `string` | Set the preferences group. Preferences groups are used to organize key/value pairs. Using the value 'NativeStorage' provides backwards-compatibility with [`cordova-plugin-nativestorage`](https://www.npmjs.com/package/cordova-plugin-nativestorage). WARNING: The `clear()` method can delete unintended values when using the 'NativeStorage' group. | `CapacitorStorage` | 1.0.0 |
+| **`group`** | <code>string</code> | Set the preferences group. Preferences groups are used to organize key/value pairs. Using the value 'NativeStorage' provides backwards-compatibility with [`cordova-plugin-nativestorage`](https://www.npmjs.com/package/cordova-plugin-nativestorage). WARNING: The `clear()` method can delete unintended values when using the 'NativeStorage' group. | <code>CapacitorStorage</code> | 1.0.0 |
 
 
 #### GetResult
 
 | Prop        | Type                        | Description                                                                                                                       | Since |
 | ----------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`value`** | `string \| null` | The value from preferences associated with the given key. If a value was not previously set or was removed, value will be `null`. | 1.0.0 |
+| **`value`** | <code>string \| null</code> | The value from preferences associated with the given key. If a value was not previously set or was removed, value will be `null`. | 1.0.0 |
 
 
 #### GetOptions
 
 | Prop      | Type                | Description                                       | Since |
 | --------- | ------------------- | ------------------------------------------------- | ----- |
-| **`key`** | `string` | The key whose value to retrieve from preferences. | 1.0.0 |
+| **`key`** | <code>string</code> | The key whose value to retrieve from preferences. | 1.0.0 |
 
 
 #### SetOptions
 
 | Prop        | Type                | Description                                                   | Since |
 | ----------- | ------------------- | ------------------------------------------------------------- | ----- |
-| **`key`**   | `string` | The key to associate with the value being set in preferences. | 1.0.0 |
-| **`value`** | `string` | The value to set in preferences with the associated key.      | 1.0.0 |
+| **`key`**   | <code>string</code> | The key to associate with the value being set in preferences. | 1.0.0 |
+| **`value`** | <code>string</code> | The value to set in preferences with the associated key.      | 1.0.0 |
 
 
 #### RemoveOptions
 
 | Prop      | Type                | Description                                     | Since |
 | --------- | ------------------- | ----------------------------------------------- | ----- |
-| **`key`** | `string` | The key whose value to remove from preferences. | 1.0.0 |
+| **`key`** | <code>string</code> | The key whose value to remove from preferences. | 1.0.0 |
 
 
 #### KeysResult
 
 | Prop       | Type                  | Description                    | Since |
 | ---------- | --------------------- | ------------------------------ | ----- |
-| **`keys`** | `string[]` | The known keys in preferences. | 1.0.0 |
+| **`keys`** | <code>string[]</code> | The known keys in preferences. | 1.0.0 |
 
 
 #### MigrateResult
 
 | Prop           | Type                  | Description                                                                                                                           | Since |
 | -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`migrated`** | `string[]` | An array of keys that were migrated.                                                                                                  | 1.0.0 |
-| **`existing`** | `string[]` | An array of keys that were already migrated or otherwise exist in preferences that had a value in the Capacitor 2 Preferences plugin. | 1.0.0 |
+| **`migrated`** | <code>string[]</code> | An array of keys that were migrated.                                                                                                  | 1.0.0 |
+| **`existing`** | <code>string[]</code> | An array of keys that were already migrated or otherwise exist in preferences that had a value in the Capacitor 2 Preferences plugin. | 1.0.0 |
 
 </docgen-api>

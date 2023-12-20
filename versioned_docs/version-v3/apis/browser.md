@@ -63,7 +63,7 @@ Open a page with the specified options.
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
-| **`options`** | `<a href="#openoptions">OpenOptions</a>` |
+| **`options`** | <code><a href="#openoptions">OpenOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -96,10 +96,10 @@ It fires when the Browser is closed by the user.
 
 | Param              | Type                           |
 | ------------------ | ------------------------------ |
-| **`eventName`**    | `'browserFinished'` |
-| **`listenerFunc`** | `() =&gt; void`     |
+| **`eventName`**    | <code>'browserFinished'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>     |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -118,10 +118,10 @@ It is not invoked for any subsequent page loads.
 
 | Param              | Type                             |
 | ------------------ | -------------------------------- |
-| **`eventName`**    | `'browserPageLoaded'` |
-| **`listenerFunc`** | `() =&gt; void`       |
+| **`eventName`**    | <code>'browserPageLoaded'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>       |
 
-**Returns:** `Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>`
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -150,16 +150,16 @@ Represents the options passed to `open`.
 
 | Prop                    | Type                                   | Description                                                                                                                                | Since |
 | ----------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| **`url`**               | `string`                    | The URL to which the browser is opened.                                                                                                    | 1.0.0 |
-| **`windowName`**        | `string`                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to _blank. Ignored on other platforms. | 1.0.0 |
-| **`toolbarColor`**      | `string`                    | A hex color to which the toolbar color is set.                                                                                             | 1.0.0 |
-| **`presentationStyle`** | `'fullscreen' \| 'popover'` | iOS only: The presentation style of the browser. Defaults to fullscreen. Ignored on other platforms.                                       | 1.0.0 |
+| **`url`**               | <code>string</code>                    | The URL to which the browser is opened.                                                                                                    | 1.0.0 |
+| **`windowName`**        | <code>string</code>                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to _blank. Ignored on other platforms. | 1.0.0 |
+| **`toolbarColor`**      | <code>string</code>                    | A hex color to which the toolbar color is set.                                                                                             | 1.0.0 |
+| **`presentationStyle`** | <code>'fullscreen' \| 'popover'</code> | iOS only: The presentation style of the browser. Defaults to fullscreen. Ignored on other platforms.                                       | 1.0.0 |
 
 
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
-| **`remove`** | `() =&gt; Promise&lt;void&gt;` |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 </docgen-api>

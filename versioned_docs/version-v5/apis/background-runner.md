@@ -239,7 +239,7 @@ checkPermissions() => any
 
 Check permissions for the various Capacitor device APIs.
 
-**Returns:** `any`
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -256,9 +256,9 @@ Request permission to display local notifications.
 
 | Param         | Type                                                                          |
 | ------------- | ----------------------------------------------------------------------------- |
-| **`options`** | `<a href="#requestpermissionoptions">RequestPermissionOptions</a>` |
+| **`options`** | <code><a href="#requestpermissionoptions">RequestPermissionOptions</a></code> |
 
-**Returns:** `any`
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -275,9 +275,9 @@ Dispatches an event to the configured runner.
 
 | Param         | Type                                                                  |
 | ------------- | --------------------------------------------------------------------- |
-| **`options`** | `<a href="#dispatcheventoptions">DispatchEventOptions</a>` |
+| **`options`** | <code><a href="#dispatcheventoptions">DispatchEventOptions</a></code> |
 
-**Returns:** `any`
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -291,24 +291,24 @@ Dispatches an event to the configured runner.
 
 | Prop                | Type                                                        |
 | ------------------- | ----------------------------------------------------------- |
-| **`geolocation`**   | `<a href="#permissionstate">PermissionState</a>` |
-| **`notifications`** | `<a href="#permissionstate">PermissionState</a>` |
+| **`geolocation`**   | <code><a href="#permissionstate">PermissionState</a></code> |
+| **`notifications`** | <code><a href="#permissionstate">PermissionState</a></code> |
 
 
 #### RequestPermissionOptions
 
 | Prop       | Type            |
 | ---------- | --------------- |
-| **`apis`** | `{}` |
+| **`apis`** | <code>{}</code> |
 
 
 #### DispatchEventOptions
 
 | Prop          | Type                                 | Description                                | Since |
 | ------------- | ------------------------------------ | ------------------------------------------ | ----- |
-| **`label`**   | `string`                  | The runner label to dispatch the event to  | 1.0.0 |
-| **`event`**   | `string`                  | The name of the registered event listener. | 1.0.0 |
-| **`details`** | `{ [key: string]: any; }` |                                            |       |
+| **`label`**   | <code>string</code>                  | The runner label to dispatch the event to  | 1.0.0 |
+| **`event`**   | <code>string</code>                  | The name of the registered event listener. | 1.0.0 |
+| **`details`** | <code>{ [key: string]: any; }</code> |                                            |       |
 
 
 ### Type Aliases
@@ -316,12 +316,12 @@ Dispatches an event to the configured runner.
 
 #### PermissionState
 
-`'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'`
+<code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
 
 
 #### API
 
-`'geolocation' | 'notifications'`
+<code>'geolocation' | 'notifications'</code>
 
 </docgen-api>
 
@@ -340,24 +340,24 @@ Get information on the device, such as network connectivity and battery status.
 
 | Prop                   | Type                                                             | Description                                    | Since |
 | ---------------------- | ---------------------------------------------------------------- | ---------------------------------------------- | ----- |
-| **`getBatteryStatus`** | `() =&gt; <a href="#batterystatus">BatteryStatus</a>` | Get the current battery status for the device. | 1.0.0 |
-| **`getNetworkStatus`** | `() =&gt; <a href="#networkstatus">NetworkStatus</a>` | Get the current network status for the device. | 1.0.0 |
+| **`getBatteryStatus`** | <code>() =&gt; <a href="#batterystatus">BatteryStatus</a></code> | Get the current battery status for the device. | 1.0.0 |
+| **`getNetworkStatus`** | <code>() =&gt; <a href="#networkstatus">NetworkStatus</a></code> | Get the current network status for the device. | 1.0.0 |
 
 
 #### BatteryStatus
 
 | Prop               | Type                 |
 | ------------------ | -------------------- |
-| **`batteryLevel`** | `number`  |
-| **`isCharging`**   | `boolean` |
+| **`batteryLevel`** | <code>number</code>  |
+| **`isCharging`**   | <code>boolean</code> |
 
 
 #### NetworkStatus
 
 | Prop                 | Type                 |
 | -------------------- | -------------------- |
-| **`connected`**      | `boolean` |
-| **`connectionType`** | `string`  |
+| **`connected`**      | <code>boolean</code> |
+| **`connectionType`** | <code>string</code>  |
 
 
 #### CapacitorKV
@@ -366,9 +366,9 @@ A simple string key / value store backed by UserDefaults on iOS and Shared Prefe
 
 | Prop         | Type                                                 | Description                            | Since |
 | ------------ | ---------------------------------------------------- | -------------------------------------- | ----- |
-| **`set`**    | `(key: string, value: string) =&gt; void` | Set a string value with the given key. | 1.0.0 |
-| **`get`**    | `(key: string) =&gt; string`              | Get a string value for the given key.  | 1.0.0 |
-| **`remove`** | `(key: string) =&gt; void`                | Remove a value with the given key.     | 1.0.0 |
+| **`set`**    | <code>(key: string, value: string) =&gt; void</code> | Set a string value with the given key. | 1.0.0 |
+| **`get`**    | <code>(key: string) =&gt; string</code>              | Get a string value for the given key.  | 1.0.0 |
+| **`remove`** | <code>(key: string) =&gt; void</code>                | Remove a value with the given key.     | 1.0.0 |
 
 
 #### CapacitorNotifications
@@ -377,31 +377,31 @@ Send basic local notifications.
 
 | Prop           | Type                                  | Description                   | Since |
 | -------------- | ------------------------------------- | ----------------------------- | ----- |
-| **`schedule`** | `(options: {}) =&gt; void` | Schedule a local notification | 1.0.0 |
+| **`schedule`** | <code>(options: {}) =&gt; void</code> | Schedule a local notification | 1.0.0 |
 
 
 #### NotificationScheduleOptions
 
 | Prop                   | Type                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Since |
 | ---------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`id`**               | `number`  | The notification identifier. On Android it's a 32-bit int. So the value should be between -2147483648 and 2147483647 inclusive.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | 1.0.0 |
-| **`title`**            | `string`  | The title of the notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 1.0.0 |
-| **`body`**             | `string`  | The body of the notification, shown below the title.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | 1.0.0 |
-| **`scheduleAt`**       | `Date`    | Date to send this notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | 1.0.0 |
-| **`sound`**            | `string`  | Name of the audio file to play when this notification is displayed. Include the file extension with the filename. On iOS, the file should be in the app bundle. On Android, the file should be in res/raw folder. Recommended format is `.wav` because is supported by both iOS and Android. Only available for iOS and Android &lt; 26. For Android 26+ use channelId of a channel configured with the desired sound. If the sound file is not found, (i.e. empty string or wrong name) the default system notification sound will be used. If not provided, it will produce the default sound on Android and no sound on iOS. | 1.0.0 |
-| **`actionTypeId`**     | `string`  | Associate an action type with this notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | 1.0.0 |
-| **`threadIdentifier`** | `string`  | Used to group multiple notifications. Sets `threadIdentifier` on the [`UNMutableNotificationContent`](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent). Only available for iOS.                                                                                                                                                                                                                                                                                                                                                                                                        | 1.0.0 |
-| **`summaryArgument`**  | `string`  | The string this notification adds to the category's summary format string. Sets `summaryArgument` on the [`UNMutableNotificationContent`](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent). Only available for iOS.                                                                                                                                                                                                                                                                                                                                                                    | 1.0.0 |
-| **`group`**            | `string`  | Used to group multiple notifications. Calls `setGroup()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                                           | 1.0.0 |
-| **`groupSummary`**     | `string`  | If true, this notification becomes the summary for a group of notifications. Calls `setGroupSummary()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android when using `group`.                                                                                                                                                                                                                                                                                                                          | 1.0.0 |
-| **`extra`**            | `any`     | Set extra data to store within this notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | 1.0.0 |
-| **`ongoing`**          | `boolean` | If true, the notification can't be swiped away. Calls `setOngoing()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                               | 1.0.0 |
-| **`autoCancel`**       | `boolean` | If true, the notification is canceled when the user clicks on it. Calls `setAutoCancel()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                                                                                                                                                                                                                          | 1.0.0 |
-| **`largeBody`**        | `string`  | Sets a multiline text block for display in a big text notification style.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 1.0.0 |
-| **`summaryText`**      | `string`  | Used to set the summary text detail in inbox and big text notification styles. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | 1.0.0 |
-| **`smallIcon`**        | `string`  | Set a custom status bar icon. If set, this overrides the `smallIcon` option from Capacitor configuration. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android.                                                                                                                                                                                                                                                                                                                     | 1.0.0 |
-| **`largeIcon`**        | `string`  | Set a large icon for notifications. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                                           | 1.0.0 |
-| **`channelId`**        | `string`  | Specifies the channel the notification should be delivered on. If channel with the given name does not exist then the notification will not fire. If not provided, it will use the default channel. Calls `setChannelId()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android 26+.                                                                                                                                                                                                                     | 1.0.0 |
+| **`id`**               | <code>number</code>  | The notification identifier. On Android it's a 32-bit int. So the value should be between -2147483648 and 2147483647 inclusive.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | 1.0.0 |
+| **`title`**            | <code>string</code>  | The title of the notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 1.0.0 |
+| **`body`**             | <code>string</code>  | The body of the notification, shown below the title.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | 1.0.0 |
+| **`scheduleAt`**       | <code>Date</code>    | Date to send this notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | 1.0.0 |
+| **`sound`**            | <code>string</code>  | Name of the audio file to play when this notification is displayed. Include the file extension with the filename. On iOS, the file should be in the app bundle. On Android, the file should be in res/raw folder. Recommended format is `.wav` because is supported by both iOS and Android. Only available for iOS and Android &lt; 26. For Android 26+ use channelId of a channel configured with the desired sound. If the sound file is not found, (i.e. empty string or wrong name) the default system notification sound will be used. If not provided, it will produce the default sound on Android and no sound on iOS. | 1.0.0 |
+| **`actionTypeId`**     | <code>string</code>  | Associate an action type with this notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | 1.0.0 |
+| **`threadIdentifier`** | <code>string</code>  | Used to group multiple notifications. Sets `threadIdentifier` on the [`UNMutableNotificationContent`](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent). Only available for iOS.                                                                                                                                                                                                                                                                                                                                                                                                        | 1.0.0 |
+| **`summaryArgument`**  | <code>string</code>  | The string this notification adds to the category's summary format string. Sets `summaryArgument` on the [`UNMutableNotificationContent`](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent). Only available for iOS.                                                                                                                                                                                                                                                                                                                                                                    | 1.0.0 |
+| **`group`**            | <code>string</code>  | Used to group multiple notifications. Calls `setGroup()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                                           | 1.0.0 |
+| **`groupSummary`**     | <code>string</code>  | If true, this notification becomes the summary for a group of notifications. Calls `setGroupSummary()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android when using `group`.                                                                                                                                                                                                                                                                                                                          | 1.0.0 |
+| **`extra`**            | <code>any</code>     | Set extra data to store within this notification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | 1.0.0 |
+| **`ongoing`**          | <code>boolean</code> | If true, the notification can't be swiped away. Calls `setOngoing()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                               | 1.0.0 |
+| **`autoCancel`**       | <code>boolean</code> | If true, the notification is canceled when the user clicks on it. Calls `setAutoCancel()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                                                                                                                                                                                                                          | 1.0.0 |
+| **`largeBody`**        | <code>string</code>  | Sets a multiline text block for display in a big text notification style.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 1.0.0 |
+| **`summaryText`**      | <code>string</code>  | Used to set the summary text detail in inbox and big text notification styles. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | 1.0.0 |
+| **`smallIcon`**        | <code>string</code>  | Set a custom status bar icon. If set, this overrides the `smallIcon` option from Capacitor configuration. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android.                                                                                                                                                                                                                                                                                                                     | 1.0.0 |
+| **`largeIcon`**        | <code>string</code>  | Set a large icon for notifications. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android.                                                                                                                                                                                                                                                                                                                                                                                           | 1.0.0 |
+| **`channelId`**        | <code>string</code>  | Specifies the channel the notification should be delivered on. If channel with the given name does not exist then the notification will not fire. If not provided, it will use the default channel. Calls `setChannelId()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android 26+.                                                                                                                                                                                                                     | 1.0.0 |
 
 
 #### CapacitorGeolocation
@@ -410,20 +410,20 @@ Get access to device location information.
 
 | Prop                     | Type                                                                                   | Description                          | Since |
 | ------------------------ | -------------------------------------------------------------------------------------- | ------------------------------------ | ----- |
-| **`getCurrentLocation`** | `() =&gt; <a href="#getcurrentpositionresult">GetCurrentPositionResult</a>` | Get the device's last known location | 1.0.0 |
+| **`getCurrentLocation`** | <code>() =&gt; <a href="#getcurrentpositionresult">GetCurrentPositionResult</a></code> | Get the device's last known location | 1.0.0 |
 
 
 #### GetCurrentPositionResult
 
 | Prop                   | Type                        | Description                                                                                                           | Since |
 | ---------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`latitude`**         | `number`         | Latitude in decimal degrees                                                                                           | 1.0.0 |
-| **`longitude`**        | `number`         | longitude in decimal degrees                                                                                          | 1.0.0 |
-| **`accuracy`**         | `number`         | Accuracy level of the latitude and longitude coordinates in meters                                                    | 1.0.0 |
-| **`altitude`**         | `number \| null` | The altitude the user is at (if available)                                                                            | 1.0.0 |
-| **`altitudeAccuracy`** | `number \| null` | Accuracy level of the altitude coordinate in meters, if available. Available on all iOS versions and on Android 8.0+. | 1.0.0 |
-| **`speed`**            | `number \| null` | The speed the user is traveling (if available)                                                                        | 1.0.0 |
-| **`heading`**          | `number \| null` | The heading the user is facing (if available)                                                                         | 1.0.0 |
+| **`latitude`**         | <code>number</code>         | Latitude in decimal degrees                                                                                           | 1.0.0 |
+| **`longitude`**        | <code>number</code>         | longitude in decimal degrees                                                                                          | 1.0.0 |
+| **`accuracy`**         | <code>number</code>         | Accuracy level of the latitude and longitude coordinates in meters                                                    | 1.0.0 |
+| **`altitude`**         | <code>number \| null</code> | The altitude the user is at (if available)                                                                            | 1.0.0 |
+| **`altitudeAccuracy`** | <code>number \| null</code> | Accuracy level of the altitude coordinate in meters, if available. Available on all iOS versions and on Android 8.0+. | 1.0.0 |
+| **`speed`**            | <code>number \| null</code> | The speed the user is traveling (if available)                                                                        | 1.0.0 |
+| **`heading`**          | <code>number \| null</code> | The heading the user is facing (if available)                                                                         | 1.0.0 |
 
 
 #### CapcacitorWatch
@@ -435,11 +435,11 @@ They could be used if a native watch app is developed as a companion app to a Ca
 
 | Prop                           | Type                                                                     | Description                                                                                                                                                 |
 | ------------------------------ | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`sendMessage`**              | `(options: []) =&gt; void`                                    | Sends a message to the watch with the sendMessage() WCSession delegate method This has no effect on a CapacitorWatch watch app                              |
-| **`transferUserInfo`**         | `(options: []) =&gt; void`                                    | Sends information to the watch with the transferUserInfo() WCSession delegate method This has no effect on a CapacitorWatch watch app                       |
-| **`updateApplicationContext`** | `(options: []) =&gt; void`                                    | Updates the application context on the watch with the updateApplicationContext() WCSession delegate method This has no effect on a CapacitorWatch watch app |
-| **`isReachable`**              | `boolean`                                                     | Checks to see if the compaion watch is reachable                                                                                                            |
-| **`updateWatchUI`**            | `(options: { watchUI: string; }) =&gt; void`                  | Replaces the current UI on the watch with what is specified here.                                                                                           |
-| **`updateWatchData`**          | `(options: { data: { [key: string]: string; }; }) =&gt; void` | Updates the data the watch is using to display variables in text and button fields                                                                          |
+| **`sendMessage`**              | <code>(options: []) =&gt; void</code>                                    | Sends a message to the watch with the sendMessage() WCSession delegate method This has no effect on a CapacitorWatch watch app                              |
+| **`transferUserInfo`**         | <code>(options: []) =&gt; void</code>                                    | Sends information to the watch with the transferUserInfo() WCSession delegate method This has no effect on a CapacitorWatch watch app                       |
+| **`updateApplicationContext`** | <code>(options: []) =&gt; void</code>                                    | Updates the application context on the watch with the updateApplicationContext() WCSession delegate method This has no effect on a CapacitorWatch watch app |
+| **`isReachable`**              | <code>boolean</code>                                                     | Checks to see if the compaion watch is reachable                                                                                                            |
+| **`updateWatchUI`**            | <code>(options: { watchUI: string; }) =&gt; void</code>                  | Replaces the current UI on the watch with what is specified here.                                                                                           |
+| **`updateWatchData`**          | <code>(options: { data: { [key: string]: string; }; }) =&gt; void</code> | Updates the data the watch is using to display variables in text and button fields                                                                          |
 
 </capacitor-api-docs>

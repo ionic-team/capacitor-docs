@@ -275,7 +275,7 @@ Only available for Android.
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | `{ id: string; }` |
+| **`args`** | <code>{ id: string; }</code> |
 
 **Since:** 1.0.0
 
@@ -332,7 +332,7 @@ Request permission to display local notifications.
 ### addListener('localNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when notifications are displayed.
@@ -342,7 +342,7 @@ Listen for when notifications are displayed.
 | **`eventName`**    | <code>'localNotificationReceived'</code>                                                               |
 | **`listenerFunc`** | <code>(notification: <a href="#localnotificationschema">LocalNotificationSchema</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -352,7 +352,7 @@ Listen for when notifications are displayed.
 ### addListener('localNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when an action is performed on a notification.
@@ -362,7 +362,7 @@ Listen for when an action is performed on a notification.
 | **`eventName`**    | <code>'localNotificationActionPerformed'</code>                                              |
 | **`listenerFunc`** | <code>(notificationAction: <a href="#actionperformed">ActionPerformed</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 

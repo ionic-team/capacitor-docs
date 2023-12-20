@@ -97,9 +97,9 @@ where `taskId` is the value returned from `BackgroundTask.beforeExit()`
 
 | Param    | Type                                          | Description                                                              |
 | -------- | --------------------------------------------- | ------------------------------------------------------------------------ |
-| **`cb`** | `<a href="#function">Function</a>` | the task to run when the app is backgrounded but before it is terminated |
+| **`cb`** | <code><a href="#function">Function</a></code> | the task to run when the app is backgrounded but before it is terminated |
 
-**Returns:** `string`
+**Returns:** <code>string</code>
 
 ---
 
@@ -114,7 +114,7 @@ backgrounding the app.
 
 | Param         | Type                             |
 | ------------- | -------------------------------- |
-| **`options`** | `{ taskId: string; }` |
+| **`options`** | <code>{ taskId: string; }</code> |
 
 ---
 
@@ -126,10 +126,10 @@ Creates a new function.
 
 | Prop            | Type                                          |
 | --------------- | --------------------------------------------- |
-| **`prototype`** | `any`                              |
-| **`length`**    | `number`                           |
-| **`arguments`** | `any`                              |
-| **`caller`**    | `<a href="#function">Function</a>` |
+| **`prototype`** | <code>any</code>                              |
+| **`length`**    | <code>number</code>                           |
+| **`arguments`** | <code>any</code>                              |
+| **`caller`**    | <code><a href="#function">Function</a></code> |
 
 | Method       | Signature                                                                            | Description                                                                                                                                                                                                              |
 | ------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
