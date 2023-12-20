@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "^3.0.1",
-    "@ionic-docs/preset-classic": "^1.0.1",
+    "@ionic-docs/preset-classic": "^1.0.2",
     "@prismicio/client": "^6.4.2",
     "@prismicio/react": "~2.2.0",
     "clsx": "^2.0.0",
