@@ -29,12 +29,41 @@ Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configura
 
 ## Android
 
-This API requires the following permissions be added to your `AndroidManifest.xml`:
+When picking existing images from the device gallery, the Android Photo Picker component is now used. The Photo Picker is available on devices that meet the following criteria:
+
+- Run Android 11 (API level 30) or higher
+- Receive changes to Modular System Components through Google System Updates
+
+Older devices and Android Go devices running Android 11 or 12 that support Google Play services can install a backported version of the photo picker. To enable the automatic installation of the backported photo picker module through Google Play services, add the following entry to the `<application>` tag in your `AndroidManifest.xml` file:
 
 ```xml
-<uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+
+<service android:name="com.google.android.gms.metadata.ModuleDependencies"
+    android:enabled="false"
+    android:exported="false"
+    tools:ignore="MissingClass">
+    <intent-filter>
+        <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+    </intent-filter>
+    <meta-data android:name="photopicker_activity:0:required" android:value="" />
+</service>
+```
+
+If that entry is not added, the devices that don't support the Photo Picker, the Photo Picker component fallbacks to `Intent.ACTION_OPEN_DOCUMENT`.
+
+The Camera plugin requires no permissions, unless using `saveToGallery: true`, in that case the following permissions should be added to your `AndroidManifest.xml`:
+
+```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
+You can also specify those permissions only for the Android versions where they will be requested:
+
+```xml
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
 ```
 
 The storage permissions are for reading/saving photo files.
@@ -47,8 +76,8 @@ Additionally, because the Camera API launches a separate Activity to handle taki
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `$androidxExifInterfaceVersion`: version of `androidx.exifinterface:exifinterface` (default: `1.3.6`)
-- `$androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.8.0`)
+- `androidxExifInterfaceVersion`: version of `androidx.exifinterface:exifinterface` (default: `1.3.6`)
+- `androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.10.0`)
 
 ## PWA Notes
 
@@ -207,22 +236,22 @@ Request camera and photo album permissions
 
 #### Photo
 
-| Prop               | Type                 | Description                                                                                                                                                                                                      | Since |
-| ------------------ | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`base64String`** | <code>string</code>  | The base64 encoded string representation of the image, if using <a href="#cameraresulttype">CameraResultType.Base64</a>.                                                                                         | 1.0.0 |
-| **`dataUrl`**      | <code>string</code>  | The url starting with 'data:image/jpeg;base64,' and the base64 encoded string representation of the image, if using <a href="#cameraresulttype">CameraResultType.DataUrl</a>.                                    | 1.0.0 |
-| **`path`**         | <code>string</code>  | If using <a href="#cameraresulttype">CameraResultType.Uri</a>, the path will contain a full, platform-specific file URL that can be read later using the Filesystem API.                                         | 1.0.0 |
-| **`webPath`**      | <code>string</code>  | webPath returns a path that can be used to set the src attribute of an image for efficient loading and rendering.                                                                                                | 1.0.0 |
-| **`exif`**         | <code>any</code>     | Exif data, if any, retrieved from the image                                                                                                                                                                      | 1.0.0 |
-| **`format`**       | <code>string</code>  | The format of the image, ex: jpeg, png, gif. iOS and Android only support jpeg. Web supports jpeg and png. gif is only supported if using file input.                                                            | 1.0.0 |
-| **`saved`**        | <code>boolean</code> | Whether if the image was saved to the gallery or not. On Android and iOS, saving to the gallery can fail if the user didn't grant the required permissions. On Web there is no gallery, so always returns false. | 1.1.0 |
+| Prop               | Type                 | Description                                                                                                                                                                                                                                                              | Since |
+| ------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **`base64String`** | <code>string</code>  | The base64 encoded string representation of the image, if using <a href="#cameraresulttype">CameraResultType.Base64</a>.                                                                                                                                                 | 1.0.0 |
+| **`dataUrl`**      | <code>string</code>  | The url starting with 'data:image/jpeg;base64,' and the base64 encoded string representation of the image, if using <a href="#cameraresulttype">CameraResultType.DataUrl</a>. Note: On web, the file format could change depending on the browser.                       | 1.0.0 |
+| **`path`**         | <code>string</code>  | If using <a href="#cameraresulttype">CameraResultType.Uri</a>, the path will contain a full, platform-specific file URL that can be read later using the Filesystem API.                                                                                                 | 1.0.0 |
+| **`webPath`**      | <code>string</code>  | webPath returns a path that can be used to set the src attribute of an image for efficient loading and rendering.                                                                                                                                                        | 1.0.0 |
+| **`exif`**         | <code>any</code>     | Exif data, if any, retrieved from the image                                                                                                                                                                                                                              | 1.0.0 |
+| **`format`**       | <code>string</code>  | The format of the image, ex: jpeg, png, gif. iOS and Android only support jpeg. Web supports jpeg, png and gif, but the exact availability may vary depending on the browser. gif is only supported if `webUseInput` is set to `true` or if `source` is set to `Photos`. | 1.0.0 |
+| **`saved`**        | <code>boolean</code> | Whether if the image was saved to the gallery or not. On Android and iOS, saving to the gallery can fail if the user didn't grant the required permissions. On Web there is no gallery, so always returns false.                                                         | 1.1.0 |
 
 
 #### ImageOptions
 
 | Prop                     | Type                                                          | Description                                                                                                                                                                                                                                                                | Default                             | Since |
 | ------------------------ | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----- |
-| **`quality`**            | <code>number</code>                                           | The quality of image to return as JPEG, from 0-100                                                                                                                                                                                                                         |                                     | 1.0.0 |
+| **`quality`**            | <code>number</code>                                           | The quality of image to return as JPEG, from 0-100 Note: This option is only supported on Android and iOS                                                                                                                                                                  |                                     | 1.0.0 |
 | **`allowEditing`**       | <code>boolean</code>                                          | Whether to allow the user to crop or make small edits (platform specific). On iOS 14+ it's only supported for <a href="#camerasource">CameraSource.Camera</a>, but not for <a href="#camerasource">CameraSource.Photos</a>.                                                |                                     | 1.0.0 |
 | **`resultType`**         | <code><a href="#cameraresulttype">CameraResultType</a></code> | How the data should be returned. Currently, only 'Base64', 'DataUrl' or 'Uri' is supported                                                                                                                                                                                 |                                     | 1.0.0 |
 | **`saveToGallery`**      | <code>boolean</code>                                          | Whether to save the photo to the gallery. If the photo was picked from the gallery, it will only be saved if edited.                                                                                                                                                       | <code>: false</code>                | 1.0.0 |
@@ -258,14 +287,14 @@ Request camera and photo album permissions
 
 #### GalleryImageOptions
 
-| Prop                     | Type                                   | Description                                                                                | Default                     | Since |
-| ------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------- | ----- |
-| **`quality`**            | <code>number</code>                    | The quality of image to return as JPEG, from 0-100                                         |                             | 1.2.0 |
-| **`width`**              | <code>number</code>                    | The desired maximum width of the saved image. The aspect ratio is respected.               |                             | 1.2.0 |
-| **`height`**             | <code>number</code>                    | The desired maximum height of the saved image. The aspect ratio is respected.              |                             | 1.2.0 |
-| **`correctOrientation`** | <code>boolean</code>                   | Whether to automatically rotate the image "up" to correct for orientation in portrait mode | <code>: true</code>         | 1.2.0 |
-| **`presentationStyle`**  | <code>'fullscreen' \| 'popover'</code> | iOS only: The presentation style of the Camera.                                            | <code>: 'fullscreen'</code> | 1.2.0 |
-| **`limit`**              | <code>number</code>                    | iOS only: Maximum number of pictures the user will be able to choose.                      | <code>0 (unlimited)</code>  | 1.2.0 |
+| Prop                     | Type                                   | Description                                                                                                             | Default                     | Since |
+| ------------------------ | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------- | ----- |
+| **`quality`**            | <code>number</code>                    | The quality of image to return as JPEG, from 0-100 Note: This option is only supported on Android and iOS.              |                             | 1.2.0 |
+| **`width`**              | <code>number</code>                    | The desired maximum width of the saved image. The aspect ratio is respected.                                            |                             | 1.2.0 |
+| **`height`**             | <code>number</code>                    | The desired maximum height of the saved image. The aspect ratio is respected.                                           |                             | 1.2.0 |
+| **`correctOrientation`** | <code>boolean</code>                   | Whether to automatically rotate the image "up" to correct for orientation in portrait mode                              | <code>: true</code>         | 1.2.0 |
+| **`presentationStyle`**  | <code>'fullscreen' \| 'popover'</code> | iOS only: The presentation style of the Camera.                                                                         | <code>: 'fullscreen'</code> | 1.2.0 |
+| **`limit`**              | <code>number</code>                    | Maximum number of pictures the user will be able to choose. Note: This option is only supported on Android 13+ and iOS. | <code>0 (unlimited)</code>  | 1.2.0 |
 
 
 #### PermissionStatus

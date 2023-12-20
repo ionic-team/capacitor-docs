@@ -318,7 +318,7 @@ Only available on Android O or newer (SDK 26+).
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | `{ id: string; }` |
+| **`args`** | <code>&#123; id: string; }</code> |
 
 **Since:** 1.0.0
 

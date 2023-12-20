@@ -9,26 +9,14 @@ sidebar_label: Watch 🧪
 # @capacitor/watch
 
 <p align="center">
-  <a href="https://github.com/ionic-team/capacitorwatch/actions?query=workflow%3ACI">
-    <img src="https://img.shields.io/github/actions/workflow/status/ionic-team/capacitor/ci.yml?style=flat-square" />
-  </a>
-  <a href="https://www.npmjs.com/package/@capacitor/watch">
-    <img src="https://img.shields.io/npm/dw/@capacitor/watch?style=flat-square" />
-  </a>
-  <a href="https://www.npmjs.com/package/@capacitor/watch">
-    <img src="https://img.shields.io/npm/v/@capacitor/watch?style=flat-square" />
-  </a>
-  <a href="https://www.npmjs.com/package/@capacitor/watch">
-    <img src="https://img.shields.io/npm/l/@capacitor/watch?style=flat-square" />
-  </a>
+  <a href="https://github.com/ionic-team/capacitorwatch/actions?query=workflow%3ACI"><img src="https://img.shields.io/github/actions/workflow/status/ionic-team/capacitor/ci.yml?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor/watch"><img src="https://img.shields.io/npm/dw/@capacitor/watch?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor/watch"><img src="https://img.shields.io/npm/v/@capacitor/watch?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor/watch"><img src="https://img.shields.io/npm/l/@capacitor/watch?style=flat-square" /></a>
 </p>
 <p align="center">
-  <a href="https://capacitorjs.com/docs">
-    <img src="https://img.shields.io/static/v1?label=docs&message=capacitorjs.com&color=blue&style=flat-square" />
-  </a>
-  <a href="https://twitter.com/capacitorjs">
-    <img src="https://img.shields.io/twitter/follow/capacitorjs" />
-  </a>
+  <a href="https://capacitorjs.com/docs"><img src="https://img.shields.io/static/v1?label=docs&message=capacitorjs.com&color=blue&style=flat-square" /></a>
+  <a href="https://twitter.com/capacitorjs"><img src="https://img.shields.io/twitter/follow/capacitorjs" /></a>
 </p>
 
 ---
@@ -67,7 +55,7 @@ Add the 'Background Modes' and 'Push Notification' capabilities. Then in the Bac
 
 Step 3
 
-Open `AppDelegate.swift` and add `import WatchConnectivity` and `import CapactiorWatch` to the top of the file, and the following code inside the `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)` method:
+Open `AppDelegate.swift` and add `import WatchConnectivity`  and `import CapactiorWatch` to the top of the file, and the following code inside the `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)` method:
 
 ```swift
 assert(WCSession.isSupported(), "This sample requires Watch Connectivity support!")
@@ -164,7 +152,7 @@ Once you've defined your UI you can send it to the watch using the `updateWatchU
 
 ```typescript
 async uploadMyWatchUI() {
-    const watchUI =
+    const watchUI = 
         `Text("Capacitor WATCH")
          Button("Add One", "inc")`;
 
@@ -183,17 +171,17 @@ This article provides a great summary on the native methods and their implicatio
 On the phone side, you can implement these methods using the Capacitor Background Runner Plugin (https://github.com/ionic-team/capacitor-background-runner). Currently the watch plugin will mainly handle the `didReceiveUserInfo` method, and you can recieve envents from the watch while your app is in the background using the following code in your runner.js:
 
 ```javascript
-addEventListener('WatchConnectivity_didReceiveUserInfo', (args) => {
+addEventListener("WatchConnectivity_didReceiveUserInfo", (args) => {
   console.log(args.message.jsCommand);
-});
+})
 ```
 
 You can also implment the `runCommand` event listener for foreground procesing:
 
 ```typescript
-Watch.addListener('runCommand', (data: { command: string }) => {
-  console.log('PHONE got command - ' + data.command);
-});
+Watch.addListener("runCommand", (data: {command: string}) => {
+  console.log("PHONE got command - " + data.command);
+})
 ```
 
 The commands are the 2nd paramter in the `Button()` definition of the watch UI. This can be any string.
@@ -206,22 +194,24 @@ You can add variables to `Text()` elements by using a `$` variable and updating 
 Text("Show my $number")
 ```
 
-This example will update `$number` when executed:
+This example will update `$number` when executed: 
 
 ```typescript
 var stateData = {
-  number: 0,
-};
+  number: 0
+}
 
 async function counterIncrement() {
-  stateData.counter++;
-  await Watch.updateWatchData({ data: convertValuesOfObjectToStringValues(stateData) });
+  stateData.counter++  
+  await Watch.updateWatchData({"data": convertValuesOfObjectToStringValues(stateData)})
 }
 ```
 
 # Persistance on the Watch
 
 Capacitor Watch will persist the last UI you sent with `updateWatchUI()`. State from `updateWatchData()` is NOT preserved.
+
+
 
 ## Install
 
@@ -234,14 +224,15 @@ npx cap sync
 
 <docgen-index>
 
-- [`addListener('runCommand', ...)`](#addlistenerruncommand)
-- [`updateWatchUI(...)`](#updatewatchui)
-- [`updateWatchData(...)`](#updatewatchdata)
-- [Interfaces](#interfaces)
+* [`addListener('runCommand', ...)`](#addlistenerruncommand)
+* [`updateWatchUI(...)`](#updatewatchui)
+* [`updateWatchData(...)`](#updatewatchdata)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
+
 
 ### addListener('runCommand', ...)
 
@@ -254,11 +245,12 @@ Listen for a command from the watch
 | Param              | Type                                                 |
 | ------------------ | ---------------------------------------------------- |
 | **`eventName`**    | <code>'runCommand'</code>                            |
-| **`listenerFunc`** | `(data: { command: string; }) =&gt; void` |
+| **`listenerFunc`** | <code>(data: &#123; command: string; }) =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### updateWatchUI(...)
 
@@ -270,9 +262,10 @@ Replaces the current watch UI with watchUI
 
 | Param         | Type                              |
 | ------------- | --------------------------------- |
-| **`options`** | `{ watchUI: string; }` |
+| **`options`** | <code>&#123; watchUI: string; }</code> |
 
----
+--------------------
+
 
 ### updateWatchData(...)
 
@@ -284,11 +277,13 @@ Updates the watch's state data
 
 | Param         | Type                                               |
 | ------------- | -------------------------------------------------- |
-| **`options`** | `{ data: { [key: string]: string; }; }` |
+| **`options`** | <code>&#123; data: &#123; [key: string]: string; }; }</code> |
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### PluginListenerHandle
 
