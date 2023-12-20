@@ -109,7 +109,7 @@ Clear a given watch
 
 | Param         | Type                         |
 | ------------- | ---------------------------- |
-| **`options`** | <code>{ id: string; }</code> |
+| **`options`** | `{ id: string; }` |
 
 ---
 
@@ -120,7 +120,7 @@ Clear a given watch
 | Prop            | Type                                                                                                                                                    | Description                                             |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | **`timestamp`** | <code>number</code>                                                                                                                                     | Creation timestamp for coords                           |
-| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }</code> | The GPS coordinates along with the accuracy of the data |
+| **`coords`**    | `{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }` | The GPS coordinates along with the accuracy of the data |
 
 #### GeolocationOptions
 

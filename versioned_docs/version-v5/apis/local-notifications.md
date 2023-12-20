@@ -275,7 +275,7 @@ Only available for Android.
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | <code>{ id: string; }</code> |
+| **`args`** | `{ id: string; }` |
 
 **Since:** 1.0.0
 

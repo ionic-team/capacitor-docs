@@ -102,9 +102,9 @@ Remove all native listeners for this plugin
 
 | Prop                               | Type                                                         |
 | ---------------------------------- | ------------------------------------------------------------ |
-| **`acceleration`**                 | <code>{ x: number; y: number; z: number; }</code>            |
-| **`accelerationIncludingGravity`** | <code>{ x: number; y: number; z: number; }</code>            |
-| **`rotationRate`**                 | <code>{ alpha: number; beta: number; gamma: number; }</code> |
+| **`acceleration`**                 | `{ x: number; y: number; z: number; }`            |
+| **`accelerationIncludingGravity`** | `{ x: number; y: number; z: number; }`            |
+| **`rotationRate`**                 | `{ alpha: number; beta: number; gamma: number; }` |
 | **`interval`**                     | <code>number</code>                                          |
 
 #### MotionOrientationEventResult

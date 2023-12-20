@@ -142,7 +142,7 @@ the accessory bar for short forms (login, signup, etc.) to provide a cleaner UI
 
 | Param         | Type                                 |
 | ------------- | ------------------------------------ |
-| **`options`** | <code>{ isVisible: boolean; }</code> |
+| **`options`** | `{ isVisible: boolean; }` |
 
 ---
 
@@ -156,7 +156,7 @@ Programmatically enable or disable the WebView scroll
 
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
-| **`options`** | <code>{ isDisabled: boolean; }</code> |
+| **`options`** | `{ isDisabled: boolean; }` |
 
 ---
 

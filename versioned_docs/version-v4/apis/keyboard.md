@@ -162,7 +162,7 @@ This method is only supported on iPhone devices.
 
 | Param         | Type                                 |
 | ------------- | ------------------------------------ |
-| **`options`** | <code>{ isVisible: boolean; }</code> |
+| **`options`** | `{ isVisible: boolean; }` |
 
 **Since:** 1.0.0
 
@@ -181,7 +181,7 @@ This method is only supported on iOS.
 
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
-| **`options`** | <code>{ isDisabled: boolean; }</code> |
+| **`options`** | `{ isDisabled: boolean; }` |
 
 **Since:** 1.0.0
 
