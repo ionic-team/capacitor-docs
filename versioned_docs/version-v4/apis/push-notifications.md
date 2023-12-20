@@ -279,7 +279,7 @@ Only available on Android O or newer (SDK 26+).
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | <code>{ id: string; }</code> |
+| **`args`** | `{ id: string; }` |
 
 **Since:** 1.0.0
 

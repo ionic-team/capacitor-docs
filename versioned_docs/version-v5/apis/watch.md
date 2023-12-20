@@ -29,7 +29,7 @@ The Capacitor Watch plugin allows you to define a UI for a watch in your web cod
 
 This currently only supports iOS. This guide assumes you've already added iOS to your capcacitor project.
 
-Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app<->watch communcation like real devices do.
+Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app&lt;->watch communcation like real devices do.
 
 ## Install
 
@@ -73,7 +73,7 @@ Click 'Next' then fill out the options like so:
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/watch-target-options.png" />
 
-This dialog can be a little confusing, the key thing is your 'Bundle Identifier' must be `[your apps bundle ID].watchapp` for the watch<->app pairing to work. You must also pick SwiftUI for the Interface and Swift for the language. The project should be `App`.
+This dialog can be a little confusing, the key thing is your 'Bundle Identifier' must be `[your apps bundle ID].watchapp` for the watch&lt;->app pairing to work. You must also pick SwiftUI for the Interface and Swift for the language. The project should be `App`.
 
 Step 5
 
@@ -245,7 +245,7 @@ Listen for a command from the watch
 | Param              | Type                                                 |
 | ------------------ | ---------------------------------------------------- |
 | **`eventName`**    | <code>'runCommand'</code>                            |
-| **`listenerFunc`** | <code>(data: { command: string; }) =&gt; void</code> |
+| **`listenerFunc`** | <code>(data: &#123; command: string; }) =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -262,7 +262,7 @@ Replaces the current watch UI with watchUI
 
 | Param         | Type                              |
 | ------------- | --------------------------------- |
-| **`options`** | <code>{ watchUI: string; }</code> |
+| **`options`** | <code>&#123; watchUI: string; }</code> |
 
 --------------------
 
@@ -277,7 +277,7 @@ Updates the watch's state data
 
 | Param         | Type                                               |
 | ------------- | -------------------------------------------------- |
-| **`options`** | <code>{ data: { [key: string]: string; }; }</code> |
+| **`options`** | <code>&#123; data: &#123; [key: string]: string; }; }</code> |
 
 --------------------
 

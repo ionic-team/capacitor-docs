@@ -279,7 +279,7 @@ Only available for Android.
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | <code>{ id: string; }</code> |
+| **`args`** | <code>&#123; id: string; }</code> |
 
 **Since:** 1.0.0
 

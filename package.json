@@ -31,32 +31,29 @@
     ]
   },
   "dependencies": {
-    "@docusaurus/core": "^2.4.3",
-    "@ionic-docs/preset-classic": "^0.0.24",
-    "@mdx-js/react": "^1.6.22",
+    "@docusaurus/core": "^3.0.1",
+    "@ionic-docs/preset-classic": "^1.0.2",
     "@prismicio/client": "^6.4.2",
     "@prismicio/react": "~2.2.0",
-    "clsx": "^1.1.1",
+    "clsx": "^2.0.0",
     "crowdin": "^3.5.0",
-    "docusaurus-plugin-module-alias": "^0.0.2",
-    "fs-extra": "^9.1.0",
     "modern-normalize": "^1.1.0",
-    "prism-react-renderer": "^2.0.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "node-fetch": "^3.3.2",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "remark-html": "^13.0.1",
     "remark-parse": "^8.0.3",
     "semver": "^7.3.5"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.4.3",
-    "@ionic/prettier-config": "^2.0.0",
-    "@tsconfig/docusaurus": "^1.0.4",
-    "prettier": "^2.5.0",
-    "typescript": "^4.7.4"
+    "@docusaurus/module-type-aliases": "^3.0.1",
+    "@docusaurus/tsconfig": "^3.0.1",
+    "@ionic/prettier-config": "^4.0.0",
+    "prettier": "^3.1.1"
   },
   "volta": {
-    "node": "16.17.0",
+    "node": ">=18.0",
     "npm": "8.15.0"
   }
 }

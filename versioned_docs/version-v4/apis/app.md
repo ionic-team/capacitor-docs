@@ -396,7 +396,7 @@ Remove all native listeners for this plugin
 | **`methodName`** | <code>string</code>               | The methodName this result corresponds to. For example, `getPhoto`                                                                                | 1.0.0 |
 | **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` | 1.0.0 |
 | **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded.                                                                                                  | 1.0.0 |
-| **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
+| **`error`**      | `{ message: string; }` | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
 
 
 #### BackButtonListenerEvent

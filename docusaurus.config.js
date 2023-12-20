@@ -206,7 +206,7 @@ module.exports = {
       theme: themes.github,
       darkTheme: themes.dracula,
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: ['shell-session', 'http', 'swift', 'java', 'kotlin'],
+      additionalLanguages: ['json', 'groovy', 'ruby', 'diff', 'bash', 'shell-session', 'http', 'swift', 'java', 'kotlin'],
     },
     algolia: {
       appId: '3IVALO5OU4',
@@ -246,20 +246,30 @@ module.exports = {
             if (locale != 'en') {
               return 'https://crowdin.com/project/capacitor-docs';
             }
-            if ((match = docPath.match(/apis\/(.*)\.md/)) != null) {
-              if (match[1] === 'cookies' || match[1] === 'http') {
-                return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${match[1]}.md`;
+
+            const apiRegex = /apis\/(.*)\.md/;
+            const apiRegexPath = apiRegex.exec(docPath)?.[1];
+
+            const cliRegex = /cli\/commands\/(.*)\.md/;
+            const cliRegexPath = cliRegex.exec(docPath)?.[1];
+
+            const nativeRegex = /native\/(.*)\.md/;
+            const nativeRegexPath = nativeRegex.exec(docPath)?.[1];
+
+            if (apiRegexPath) {
+              if (apiRegexPath === 'cookies' || apiRegexPath === 'http') {
+                return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${apiRegexPath}.md`;
               }
-              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
+              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${apiRegexPath}/README.md`;
             }
-            if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${match[1].replace(
+            if (cliRegexPath) {
+              return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${cliRegexPath.replace(
                 '-',
                 '/',
               )}.md`;
             }
-            if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+            if (nativeRegexPath) {
+              return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${nativeRegexPath}/index.ts`;
             }
             return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },

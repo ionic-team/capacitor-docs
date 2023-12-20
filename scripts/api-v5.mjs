@@ -46,7 +46,7 @@ const pluginApis = [
   },
 ];
 
-const isString = value => typeof value === 'string' || value instanceof String;
+const isString = (value) => typeof value === 'string' || value instanceof String;
 
 async function buildPluginApiDocs(plugin) {
   const pluginId = isString(plugin) ? plugin : plugin.id;
@@ -62,16 +62,23 @@ function createApiPage(plugin, readme, pkgJson) {
   const pluginId = isString(plugin) ? plugin : plugin.id;
   const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
   const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
-  const editUrl = isString(plugin) ?
-    `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/README.md` :
-    plugin.editUrl;
-  const editApiUrl = isString(plugin) ?
-    `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/src/definitions.ts` :
-    plugin.editApiUrl;
+  const editUrl = isString(plugin)
+    ? `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/README.md`
+    : plugin.editUrl;
+  const editApiUrl = isString(plugin)
+    ? `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/src/definitions.ts`
+    : plugin.editApiUrl;
   const sidebarLabel = toTitleCase(pluginId);
 
+  // escape right curly brace in inline code blocks for MDX v3 compatability
+  const regexp = /[<|(&lt;)]code>(.*)[<|(&lt;)]\/code>/g;
+
+  readme = readme.replace(regexp, (result) => {
+    return result.replace(/\{/g, '&#123;');
+  });
+
   // removes JSDoc HTML comments as they break docusauurs
-  readme = readme.replaceAll(/<!--.*-->/g, '');
+  readme = readme.replaceAll(/<!--.*-->/g, '').replaceAll('<->', '&lt;->');
 
   return `
 ---

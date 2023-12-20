@@ -64,7 +64,7 @@ Whether a Screen Reader is currently active.
 This method is not supported on web (it is not possible to detect Screen
 Readers).
 
-**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+**Returns:** <code>Promise&lt;&#123; value: boolean; }&gt;</code>
 
 **Since:** 1.0.0
 
