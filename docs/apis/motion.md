@@ -79,7 +79,7 @@ API to understand the data supplied in the 'accel' event.
 ### addListener('accel', ...)
 
 ```typescript
-addListener(eventName: 'accel', listenerFunc: AccelListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'accel', listenerFunc: AccelListener) => Promise<PluginListenerHandle>
 ```
 
 Add a listener for accelerometer data
@@ -89,7 +89,7 @@ Add a listener for accelerometer data
 | **`eventName`**    | <code>'accel'</code>                                    |
 | **`listenerFunc`** | <code><a href="#accellistener">AccelListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -99,7 +99,7 @@ Add a listener for accelerometer data
 ### addListener('orientation', ...)
 
 ```typescript
-addListener(eventName: 'orientation', listenerFunc: OrientationListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'orientation', listenerFunc: OrientationListener) => Promise<PluginListenerHandle>
 ```
 
 Add a listener for device orientation change (compass heading, etc.)
@@ -109,7 +109,7 @@ Add a listener for device orientation change (compass heading, etc.)
 | **`eventName`**    | <code>'orientation'</code>                                          |
 | **`listenerFunc`** | <code><a href="#orientationlistener">OrientationListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
