@@ -101,6 +101,7 @@ module.exports = {
         'main/ios/deploying-to-app-store',
         'main/ios/viewcontroller',
         'main/ios/troubleshooting',
+        'main/ios/spm'
       ],
     },
     {
