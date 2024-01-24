@@ -22,9 +22,9 @@ canonicalUrl: https://capacitorjs.com/docs/guides/community
 
 ## APIs
 
-[Camera: Building an Ionic Framework Camera App](/docs/guides/ionic-framework-app)
+[Camera: Building an Ionic Framework Camera App](/guides/ionic-framework-app.md)
 
-[Push Notifications: Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
+[Push Notifications: Using Push Notifications with Firebase in an Ionic Angular App](/guides/push-notifications-firebase.md)
 
 [Splash Screen: Creating a Dynamic/Adaptable Splash Screen for Capacitor (Android) &#8250;](https://www.joshmorony.com/creating-a-dynamic-universal-splash-screen-for-capacitor-android/)
 

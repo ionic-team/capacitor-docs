@@ -52,7 +52,7 @@ To compile the plugin, navigate into the plugin directory then run:
 npm run build
 ```
 
-Implement [Android functionality](./android) in `android/src/main/[nested folders]/EchoPlugin.java`:
+Implement [Android functionality](./android-guide.md) in `android/src/main/[nested folders]/EchoPlugin.java`:
 
 ```java
 @PluginMethod()
@@ -66,7 +66,7 @@ public void openMap(PluginCall call) {
 }
 ```
 
-Implement [iOS functionality](./ios) in `ios/Plugin/EchoPlugin.swift`:
+Implement [iOS functionality](./ios-guide.md) in `ios/Plugin/EchoPlugin.swift`:
 
 ```swift
 @objc func openMap(_ call: CAPPluginCall) {
@@ -79,9 +79,9 @@ Implement [iOS functionality](./ios) in `ios/Plugin/EchoPlugin.swift`:
 }
 ```
 
-> Remember to [register plugin methods](/docs/plugins/ios#export-to-capacitor) in your `.m` file.
+> Remember to [register plugin methods](./ios-guide.md#export-to-capacitor) in your `.m` file.
 
-This example contains the most common type of method in plugins but details about all the supported types [can be found here.](/docs/plugins/method-types)
+This example contains the most common type of method in plugins but details about all the supported types [can be found here.](./method-types.md)
 
 ## Local Testing
 

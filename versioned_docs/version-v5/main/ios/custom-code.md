@@ -11,7 +11,7 @@ slug: /ios/custom-code
 
 With Capacitor, you are encouraged to write Swift or Objective-C code to implement the native features your app needs.
 
-There may not be [a Capacitor plugin](/docs/plugins) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
+There may not be [a Capacitor plugin](/plugins.md) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
 
 ## WebView-Accessible Native Code
 
@@ -19,7 +19,7 @@ The easiest way to communicate between JavaScript and native code is to build a 
 
 ### `EchoPlugin.swift`
 
-First, create a `EchoPlugin.swift` file by [opening Xcode](/docs/ios#opening-the-ios-project), right-clicking on the **App** group (under the **App** target), selecting **New File...** from the context menu, choosing **Swift File** in the window, and creating the file.
+First, create a `EchoPlugin.swift` file by [opening Xcode](/main/ios/index.md#opening-the-ios-project), right-clicking on the **App** group (under the **App** target), selecting **New File...** from the context menu, choosing **Swift File** in the window, and creating the file.
 
 ![New Swift File in Xcode](../../../../static/img/v5/docs/ios/xcode-new-swift-file.png)
 
@@ -109,4 +109,4 @@ console.log('Response from native:', value);
 
 ### Next Steps
 
-[Read the iOS Plugin Guide &#8250;](/docs/plugins/ios)
+[Read the iOS Plugin Guide &#8250;](/plugins/creating-plugins/ios-guide.md)

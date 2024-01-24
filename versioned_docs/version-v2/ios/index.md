@@ -59,6 +59,6 @@ You are now ready to continue developing and building your app. Use the various 
 
 Follow these guides for more information on each topic:
 
-[Configuring and setting permissions for iOS &#8250;](/docs/ios/configuration)
+[Configuring and setting permissions for iOS &#8250;](/ios/configuration.md)
 
-[Building Native Plugins for iOS &#8250;](/docs/plugins)
+[Building Native Plugins for iOS &#8250;](/plugins.md)

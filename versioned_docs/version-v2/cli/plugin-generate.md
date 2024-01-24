@@ -8,7 +8,7 @@ canonicalUrl: https://capacitorjs.com/docs/cli/plugin-generate
 
 # Plugin Generate
 
-Create a new custom Capacitor plugin. This starts a wizard that prompts you for information about your new plugin. More information on developing plugins [here](/docs/plugins).
+Create a new custom Capacitor plugin. This starts a wizard that prompts you for information about your new plugin. More information on developing plugins [here](/plugins.md).
 
 ```bash
 # Capacitor CLI already installed in project

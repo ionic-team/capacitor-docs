@@ -14,7 +14,7 @@ Building Capacitor plugins for Android involves writing Java or [Kotlin](https:/
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](/plugins.md) section of the Plugin guide.
 
 Next, open `echo/android/` in Android Studio. You then want to navigate to the `.java` file for your plugin, which changes depending on the Plugin ID and Plugin Class Name you used when creating the plugin.
 
@@ -117,7 +117,7 @@ call.reject(exception.getLocalizedMessage(), null, exception);
 
 In most cases, a plugin method will get invoked to perform a task and can finish immediately. But there are situations where you will need to keep the plugin call available so it can be accessed later. You might want to do this to periodically return data such as streaming live geolocation data, or to perform an asynchronous task.
 
-See [this guide on saving plugin calls](/docs/v3/core-apis/saving-calls) for more details on how to persist plugin calls.
+See [this guide on saving plugin calls](/main/reference/core-apis/saving-calls.md) for more details on how to persist plugin calls.
 
 ### Running Code on Plugin Load
 
@@ -135,11 +135,11 @@ public void load() {
 
 If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern.
 
-Before following this section, make sure you've set up your permission aliases and status interfaces. If you haven't, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+Before following this section, make sure you've set up your permission aliases and status interfaces. If you haven't, see the [Permissions section in the Web guide](/plugins/creating-plugins/web-guide.md#permissions).
 
 ### Annotation Changes
 
-> Still using `@NativePlugin`? See the [upgrade guide](/docs/updating/plugins/3-0#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
+> Still using `@NativePlugin`? See the [upgrade guide](/main/updating/plugins/3-0.md#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
 
 ```diff
  @CapacitorPlugin(
@@ -343,7 +343,7 @@ const myPluginEventListener = await MyPlugin.addListener(
 myPluginEventListener.remove();
 ```
 
-> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/android#triggerjsevent).
+> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/main/reference/core-apis/android.md#triggerjsevent).
 
 ## Override navigation
 

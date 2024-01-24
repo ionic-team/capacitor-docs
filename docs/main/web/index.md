@@ -21,7 +21,7 @@ Plugins with web support will perform feature detection and throw exceptions if 
 
 If you're already building with Capacitor for iOS or Android, there are no additional installation steps!
 
-Otherwise, see the [Installation](/docs/getting-started/) guide before continuing.
+Otherwise, see the [Installation](/main/getting-started/installation.md) guide before continuing.
 
 ### Using Capacitor as a Module
 
@@ -31,7 +31,7 @@ Most commonly, apps will be using a framework with a build system that supports 
 
 To use the Capacitor runtime in a web app that is not using a build system or bundler/module loader, do the following:
 
-1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/docs/v3/config)
+1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/main/reference/config.md)
 
 ```json
 "bundledWebRuntime": true

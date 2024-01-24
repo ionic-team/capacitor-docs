@@ -16,7 +16,7 @@ Capacitor provides a native mobile runtime and API layer for web apps. It does n
 
 ## Before you start
 
-Make sure your [environment is set up](/docs/v3/getting-started/environment-setup) for the platforms you will be building for.
+Make sure your [environment is set up](/main/getting-started/environment-setup.md) for the platforms you will be building for.
 
 ## Project Requirements
 
@@ -43,12 +43,12 @@ npx cap init
 
 The CLI will ask you a few questions, starting with your app name, and the package id you would like to use for your app.
 
-> The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/docs/v3/cli).
+> The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/cli/index.md).
 
 ## Where to go next
 
-[Get started with iOS &#8250;](/docs/v3/ios)
+[Get started with iOS &#8250;](/main/ios/index.md)
 
-[Get started with Android &#8250;](/docs/v3/android)
+[Get started with Android &#8250;](/main/android/index.md)
 
-[Developer Workflow Guide &#8250;](/docs/v3/basics/workflow)
+[Developer Workflow Guide &#8250;](/main/basics/workflow.md)

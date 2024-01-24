@@ -79,9 +79,9 @@ Implement [iOS functionality](./ios) in `ios/Plugin/EchoPlugin.swift`:
 }
 ```
 
-> Remember to [register plugin methods](/docs/v3/plugins/ios#export-to-capacitor) in your `.m` file.
+> Remember to [register plugin methods](/plugins/creating-plugins/ios-guide.md#export-to-capacitor) in your `.m` file.
 
-This example contains the most common type of method in plugins but details about all the supported types [can be found here.](/docs/v3/plugins/method-types)
+This example contains the most common type of method in plugins but details about all the supported types [can be found here.](/plugins/creating-plugins/method-types.md)
 
 ## Local Testing
 

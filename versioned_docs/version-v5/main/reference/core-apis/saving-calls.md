@@ -15,7 +15,7 @@ Two reasons you might need a plugin call (`CAPPluginCall` on iOS or `PluginCall`
 1. To perform an asynchronous action, such as a network request.
 2. To provide repeated updates back to the JavaScript environment, such as streaming live geolocation data.
 
-These two reasons can overlap but there is an important distinction. Specifically, whether or not a call will need to return data more than once. The Capacitor bridge records each call that is made from JavaScript to native so that it can match the result to the correct code when the plugin returns it, and the default behavior is to erase this bookkeeping after `resolve()` or `reject()` is called once. But if your method is a callback that will `resolve()` multiple times, then there is an extra step involved. More information about how to declare callbacks [can be found here.](/docs/plugins/method-types)
+These two reasons can overlap but there is an important distinction. Specifically, whether or not a call will need to return data more than once. The Capacitor bridge records each call that is made from JavaScript to native so that it can match the result to the correct code when the plugin returns it, and the default behavior is to erase this bookkeeping after `resolve()` or `reject()` is called once. But if your method is a callback that will `resolve()` multiple times, then there is an extra step involved. More information about how to declare callbacks [can be found here.](/plugins/creating-plugins/method-types.md)
 
 ---
 

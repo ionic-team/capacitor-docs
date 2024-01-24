@@ -15,7 +15,7 @@ Working with Capacitor involves several key additions to your workflow.
 
 Capacitor turns your web app into a native binary for each platform. Thus, much of your work will consist of developing and then building a mobile-focused web app.
 
-You will interact with the native platform underneath using Capacitor's plugins (such as [Camera](/docs/v3/apis/camera)), or by using existing Cordova plugins with Capacitor's [Cordova Compatibility](/docs/v3/cordova).
+You will interact with the native platform underneath using Capacitor's plugins (such as [Camera](/apis/camera.md)), or by using existing Cordova plugins with Capacitor's [Cordova Compatibility](/main/cordova/index.md).
 
 To deploy your web app to native devices, you will first need to build the web assets into an output directory. Consult your JavaScript framework's documentation for the exact command. For most, it's `npm run build`.
 
@@ -36,17 +36,17 @@ To sync your project, run:
 npx cap sync
 ```
 
-> If you get an error about not being able to find the web assets directory, you may need to configure `webDir` in the [Capacitor configuration](/docs/v3/config).
+> If you get an error about not being able to find the web assets directory, you may need to configure `webDir` in the [Capacitor configuration](/main/reference/config.md).
 
-[Learn more about `sync` &#8250;](/docs/v3/cli/sync)
+[Learn more about `sync` &#8250;](/cli/commands/sync.md)
 
 ## Run your Project
 
 There are a few ways to deploy your project on native devices, depending on your use case. Most common is on the command-line with `npx cap run`.
 
-[Learn more about running your app on iOS &#8250;](/docs/v3/ios#running-your-app)
+[Learn more about running your app on iOS &#8250;](/main/ios/index.md#running-your-app)
 
-[Learn more about running your app on Android &#8250;](/docs/v3/android#running-your-app)
+[Learn more about running your app on Android &#8250;](/main/android/index.md#running-your-app)
 
 ## Build your Project
 
@@ -56,7 +56,7 @@ Capacitor does not have a "build" command. After `sync`, you are encouraged to o
 
 For building your app on the command-line or in CI environments, you are encouraged to use your target platform's tooling: Gradle for Android and `xcodebuild` for iOS. Third-party tools such as [Fastlane](https://fastlane.tools) may make this easier. Cloud builds and more are available when using [Appflow](https://useappflow.com).
 
-To see what the release process looks like for Capacitor, read the publishing guides for [iOS](/docs/v3/ios/deploying-to-app-store) and [Android](/docs/v3/android/deploying-to-google-play).
+To see what the release process looks like for Capacitor, read the publishing guides for [iOS](/main/ios/deploying-to-app-store.md) and [Android](/main/android/deploying-to-google-play.md).
 
 ## Open your Native IDE
 
@@ -67,9 +67,9 @@ You may wish to open your project in a Native IDE (e.g. Xcode and Android Studio
 - When you want to work on the native side of your app.
 - When you want to compile a release build for the app store.
 
-[Learn more about opening your app in Xcode &#8250;](/docs/v3/ios#opening-the-ios-project)
+[Learn more about opening your app in Xcode &#8250;](/main/ios/index.md#opening-the-ios-project)
 
-[Learn more about opening your app in Android Studio &#8250;](/docs/v3/android#opening-the-android-project)
+[Learn more about opening your app in Android Studio &#8250;](/main/android/index.md#opening-the-android-project)
 
 ## Updating Capacitor
 
@@ -91,4 +91,4 @@ npm install @capacitor/android
 
 ## Hooks
 
-Need to tie into the capacitor cli command events? Check out the [hooks here](/docs/v3/cli/hooks).
+Need to tie into the capacitor cli command events? Check out the [hooks here](/cli/hooks.md).

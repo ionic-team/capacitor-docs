@@ -20,7 +20,7 @@ Local Storage can be used for small amounts of temporary data, such as a user id
 
 ## Capacitor Preferences API
 
-Capacitor comes with a native [Preferences API](/docs/apis/preferences) that avoids the eviction issues above, but is meant for small amounts of data.
+Capacitor comes with a native [Preferences API](/apis/preferences.md) that avoids the eviction issues above, but is meant for small amounts of data.
 
 The Preferences API provides a simple key/value API with no advanced query support:
 

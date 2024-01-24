@@ -13,8 +13,8 @@ Whether developing apps or plugins, the Capacitor API is an important addition t
 
 These docs are organized by platform.
 
-- [iOS](/docs/v3/core-apis/ios)
-- [Android](/docs/v3/core-apis/android)
-- [Web](/docs/v3/core-apis/web)
-- [Data Types](/docs/v3/core-apis/data-types)
-- [Saving Calls](/docs/v3/core-apis/saving-calls)
+- [iOS](/main/reference/core-apis/ios.md)
+- [Android](/main/reference/core-apis/android.md)
+- [Web](/main/reference/core-apis/web.md)
+- [Data Types](/main/reference/core-apis/data-types.md)
+- [Saving Calls](/main/reference/core-apis/saving-calls.md)

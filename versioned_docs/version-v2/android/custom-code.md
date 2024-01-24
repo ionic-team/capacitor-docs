@@ -119,7 +119,7 @@ CustomNativePlugin.customFunction();
 // Other codes...
 ```
 
-For more usages of plugin APIs, have a look at [Capacitor Android Plugin Guide](/docs/plugins/android).
+For more usages of plugin APIs, have a look at [Capacitor Android Plugin Guide](/plugins/android.md).
 
 ## Private Native Code
 

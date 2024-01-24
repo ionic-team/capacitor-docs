@@ -79,7 +79,7 @@ If you installed CocoaPods with `sudo gem install cocoapods` and you're using an
 ```
 
 This is a CocoaPods bug related to `ffi` not installing on Apple Silicon computers.
-We recommend using [Homebrew to installl CocoaPods](/docs/getting-started/environment-setup#homebrew).
+We recommend using [Homebrew to installl CocoaPods](/main/getting-started/environment-setup.md#homebrew).
 Alternatively, if you have Rosetta installed, you can install `ffi` on a `x86_64` architecture and run `pod install` using the simulated Intel architecture for the first time.
 
 ```

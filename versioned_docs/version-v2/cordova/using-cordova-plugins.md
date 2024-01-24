@@ -61,8 +61,8 @@ npx cap ls
 
 Capacitor does not support Cordova install variables, auto configuration, or hooks, due to our philosophy of letting you control your native project source code (meaning things like hooks are unnecessary). If your plugin requires variables or settings to be set, you'll need to apply those configuration settings manually by mapping between the plugin's `plugin.xml` and required settings on iOS and Android.
 
-Consult the [iOS](/docs/ios/configuration) and [Android](/docs/android/configuration) configuration guides for info on how to configure each platform.
+Consult the [iOS](/ios/configuration.md) and [Android](/android/configuration.md) configuration guides for info on how to configure each platform.
 
 ## Compatibility Issues
 
-Some Cordova plugins don't work with Capacitor or Capacitor provides a conflicting alternative. [See here](/docs/v2/cordova/known-incompatible-plugins) for details and a known incompatibility list.
+Some Cordova plugins don't work with Capacitor or Capacitor provides a conflicting alternative. [See here](/cordova/known-incompatible-plugins.md) for details and a known incompatibility list.

@@ -16,7 +16,7 @@ The Toast API provides a notification pop up for displaying important informatio
 
 ## PWA Notes
 
-[PWA Elements](/docs/web/pwa-elements) are required for Toast plugin to work.
+[PWA Elements](/web/pwa-elements.md) are required for Toast plugin to work.
 
 ## Example
 

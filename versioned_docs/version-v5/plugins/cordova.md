@@ -13,7 +13,7 @@ When developing an app that uses Capacitor, it's possible to use Cordova plugins
 
 Capacitor plugins are installed using your regular package manager and then synced to the native project(s). The installation process is the same for Cordova plugins in Capacitor.
 
-Install the plugin, sync, and then finish any required native project configuration (see [Variables and Hooks](/docs/plugins/cordova#variables-and-hooks)):
+Install the plugin, sync, and then finish any required native project configuration (see [Variables and Hooks](/plugins/cordova.md#variables-and-hooks)):
 
 ```bash
 npm install cordova-plugin-name
@@ -45,7 +45,7 @@ npx cap ls
 
 ## Compatibility Issues
 
-There may be compatibility issues with Capacitor and some Cordova plugins. Many of the official Cordova plugins should not be used, as Capacitor offers [official alternatives](/docs/apis). Cordova plugins that use variables and hooks may be partially compatible. Some Cordova plugins are completely incompatible (see [this list](/docs/plugins/cordova#known-incompatible-plugins)).
+There may be compatibility issues with Capacitor and some Cordova plugins. Many of the official Cordova plugins should not be used, as Capacitor offers [official alternatives](/plugins/official.md). Cordova plugins that use variables and hooks may be partially compatible. Some Cordova plugins are completely incompatible (see [this list](/plugins/cordova.md#known-incompatible-plugins)).
 
 If you find an issue with an existing Cordova plugin, please [let us know](https://github.com/ionic-team/capacitor/issues/new) by providing the issue's details and plugin information.
 
@@ -53,7 +53,7 @@ If you find an issue with an existing Cordova plugin, please [let us know](https
 
 Capacitor does not support Cordova install variables, auto configuration, or hooks, due to our philosophy of letting you control your native project source code (meaning things like hooks are unnecessary). If your plugin requires variables or settings to be set, you'll need to apply those configuration settings manually by mapping between the plugin's `plugin.xml` and required settings on iOS and Android.
 
-Consult the [iOS](/docs/ios/configuration) and [Android](/docs/android/configuration) configuration guides for info on how to configure each platform.
+Consult the [iOS](/main/ios/configuration.md) and [Android](/main/android/configuration.md) configuration guides for info on how to configure each platform.
 
 ### Known Incompatible Plugins
 
