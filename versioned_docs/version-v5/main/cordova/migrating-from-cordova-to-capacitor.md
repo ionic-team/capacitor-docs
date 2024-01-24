@@ -14,7 +14,7 @@ There are several steps required to fully migrate a web app using Cordova over t
 
 ## Add Capacitor
 
-Begin by opening your project in the terminal, then either follow the guides for [adding Capacitor to a web app](/main/getting-started/installation.md#adding-capacitor-to-your-app) or [adding Capacitor to an Ionic app](/main/getting-started/with-ionic.md#existing-ionic-project).
+Begin by opening your project in the terminal, then either follow the guides for [adding Capacitor to a web app](/main/getting-started/installation.md#add-capacitor-to-your-web-app) or [adding Capacitor to an Ionic app](/main/getting-started/with-ionic.md#installing-capacitor-to-an-existing-ionic-project).
 
 Initialize your app with Capacitor. Some of the information you will be prompted for is available in the Cordova `config.xml` file:
 

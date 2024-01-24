@@ -43,7 +43,7 @@ You probably also want to set the Activity name to match the App, for apps that 
 
 To enable deeplinking through Android App Links, follow the official Android guide on [Adding Android App Links](https://developer.android.com/studio/write/app-link-indexing). Android Studio comes with a handy wizard for configuring App Links.
 
-Once configured, the [getLaunchUrl in the App API](/apis/app.md#method-getLaunchUrl-0) will provide any URL the app was launched with, and the [appUrlOpen event](/apis/app.md#method-addListener-1) will fire any time the app receives a new App Link deeplink.
+Once configured, the [getLaunchUrl in the App API](/apis/app.md#getlaunchurl) will provide any URL the app was launched with, and the [appUrlOpen event](/apis/app.md#addlistener-1) will fire any time the app receives a new App Link deeplink.
 
 ## Changing Custom URL
 

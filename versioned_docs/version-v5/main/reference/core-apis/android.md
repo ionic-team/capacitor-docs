@@ -52,7 +52,7 @@ Note: `data` must be a serialized JSON string value.
 
 ## Passing data
 
-Notes on how to work with data that is passed between environments can be [found here](/main/reference/core-apis/data-types.md#android).
+Notes on how to work with data that is passed between environments can be [found here](/main/reference/core-apis/data-types.md).
 
 ---
 

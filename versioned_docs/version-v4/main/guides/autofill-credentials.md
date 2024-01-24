@@ -182,7 +182,7 @@ Follow the [Android Deep Links Guide](deep-links#android-configuration) to creat
 ```
 
 ## Configuration for Web
-Follow the [Deep Links Guide](deep-links#details-website-configuration) if you are targeting the web.
+Follow the [Deep Links Guide](deep-links#website-configuration) if you are targeting the web.
 
 If you have your app installed on a device, when you visit your website in iOS Safari you will see a banner at the top giving the option to open the app. Consider having a separate subdomain for your application if you want to avoid this behavior.
 

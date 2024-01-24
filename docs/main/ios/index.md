@@ -15,7 +15,7 @@ Capacitor iOS apps are configured and managed with Xcode and [CocoaPods](https:/
 
 ## iOS Support
 
-iOS 13+ is supported. Xcode 15.0+ is required (see [Environment Setup](/main/getting-started/environment-setup.md#ios-development)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
+iOS 13+ is supported. Xcode 15.0+ is required (see [Environment Setup](/main/getting-started/environment-setup.md#ios-requirements)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
 
 ## Adding the iOS Platform
 
