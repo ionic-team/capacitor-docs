@@ -29,14 +29,14 @@ Here's what it looks like in practice. In this example, the user has the native 
 
 ## Prerequisites
 
-- A pre-configured [Capacitor app](/docs/v3/getting-started).
+- A pre-configured [Capacitor app](/main/getting-started/installation.md).
 - For iOS, enrollment in the Apple Developer Program.
 
 For illustrative purposes, https://beerswift.app will be used as the web app link.
 
 ## Deep Link Routing using the Capacitor App API
 
-When the native app is opened after a deep link is clicked, the mobile OS doesn't automatically know where to route the user. This must be implemented within the app itself using the Capacitor [App API](/docs/v3/apis/app) on app startup.
+When the native app is opened after a deep link is clicked, the mobile OS doesn't automatically know where to route the user. This must be implemented within the app itself using the Capacitor [App API](/apis/app.md) on app startup.
 
 If your website and app paths don't match, you will need to implement more advanced url pattern matching (see [this guide](https://devdactic.com/universal-links-ionic/) for examples). If your mobile app and web app use the same codebase though, this is very straightforward - just redirect to the same URL. The following examples assume this.
 

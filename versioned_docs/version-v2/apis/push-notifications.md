@@ -11,7 +11,7 @@ canonicalUrl: https://capacitorjs.com/docs/apis/push-notifications
 
 # Push Notifications
 
-The Push Notifications API provides methods for registering a device to receive notifications from a server, along with processing received notifications and responding to them. In contrast, the [Local Notifications](/docs/apis/local-notifications) API provides means for offline, local notification scheduling and processing.
+The Push Notifications API provides methods for registering a device to receive notifications from a server, along with processing received notifications and responding to them. In contrast, the [Local Notifications](/apis/local-notifications.md) API provides means for offline, local notification scheduling and processing.
 
 ## Enabling Push Notifications Capabilites
 
@@ -86,7 +86,7 @@ An empty Array can be provided if none of the previous options are desired. `pus
 
 ## Example Guides
 
-[Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
+[Using Push Notifications with Firebase in an Ionic Angular App](/guides/push-notifications-firebase.md)
 
 ## API
 

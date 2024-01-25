@@ -8,7 +8,7 @@ slug: /getting-started
 
 You can create a new Capacitor application or add Capacitor to your existing web project. This can be done via CLI or using the [VS Code extension](vscode/getting-started).
 
-Remember to make sure your [environment is set up](/docs/getting-started/environment-setup) for the platforms you will be building for.
+Remember to make sure your [environment is set up](/main/getting-started/environment-setup.md) for the platforms you will be building for.
 
 ## Create a new Capacitor app
 
@@ -76,15 +76,15 @@ npx cap sync
 `npx cap sync` will copy your built web application, by default `www`, to your native project and install the native projects dependencies.
 
 :::info
-You can customize what folder is copied over by modifying the `webDir` variable in your [Capacitor Config](/docs/config) file that is created during `npx cap init`.
+You can customize what folder is copied over by modifying the `webDir` variable in your [Capacitor Config](/main/reference/config.md) file that is created during `npx cap init`.
 :::
 
 ## Where to go next
 
 With your environment setup, and your project structure set up properly, you're ready to go! You can follow any of the links below if you need more specific documentation.
 
-[Get started with iOS &#8250;](/docs/ios)
+[Get started with iOS &#8250;](/main/ios/index.md)
 
-[Get started with Android &#8250;](/docs/android)
+[Get started with Android &#8250;](/main/android/index.md)
 
-[Developer Workflow Guide &#8250;](/docs/basics/workflow)
+[Developer Workflow Guide &#8250;](/main/basics/workflow.md)

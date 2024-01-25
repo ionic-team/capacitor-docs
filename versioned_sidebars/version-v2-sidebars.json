@@ -91,9 +91,9 @@
       "items": [
         "config",
         {
-          "type": "link",
+          "type": "doc",
           "label": "CLI",
-          "href": "/docs/v2/cli/index"
+          "id": "cli/index"
         }
       ]
     }

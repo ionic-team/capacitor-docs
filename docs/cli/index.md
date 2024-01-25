@@ -26,21 +26,21 @@ npx cap [-V] [-h] [<command>]
 
 View all available CLI commands and options.
 
-- [`add`](/docs/cli/commands/add)
-- [`build`](/docs/cli/commands/build)
-- [`copy`](/docs/cli/commands/copy)
+- [`add`](/cli/commands/add.md)
+- [`build`](/cli/commands/build.md)
+- [`copy`](/cli/commands/copy.md)
 - `doctor`
-- [`init`](/docs/cli/commands/init)
+- [`init`](/cli/commands/init.md)
 - `ls`
-- [`list`](/docs/cli/commands/list)
+- [`list`](/cli/commands/list.md)
 - `migrate`
-- [`open`](/docs/cli/commands/open)
-- [`run`](/docs/cli/commands/run)
-- [`sync`](/docs/cli/commands/sync)
-- [`update`](/docs/cli/commands/update)
+- [`open`](/cli/commands/open.md)
+- [`run`](/cli/commands/run.md)
+- [`sync`](/cli/commands/sync.md)
+- [`update`](/cli/commands/update.md)
 
 ## Additional Resources
 
-[Learn how to install the Capacitor CLI &#8250;](/docs/getting-started)
+[Learn how to install the Capacitor CLI &#8250;](/main/getting-started/installation.md)
 
-[Learn about the CLI workflow &#8250;](/docs/basics/workflow)
+[Learn about the CLI workflow &#8250;](/main/basics/workflow.md)

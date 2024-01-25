@@ -20,7 +20,7 @@ This guide will walk you through setting up a QA environment configuration along
 
 You will need a Capacitor app with both iOS and Android platforms added. If you have an existing Capacitor app with both platforms added, skip this section.
 
-Depending on your preference, you can either [add Capacitor to an existing web application](/docs/getting-started) or [create a new Capacitor application with the Ionic Framework](/docs/getting-started/with-ionic).
+Depending on your preference, you can either [add Capacitor to an existing web application](/main/getting-started/installation.md) or [create a new Capacitor application with the Ionic Framework](/main/getting-started/with-ionic.md).
 
 The Capacitor app must use TypeScript for configuration. This guide uses `capacitor.config.ts` to dynamically export different configurations.
 

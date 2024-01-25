@@ -30,10 +30,10 @@ ionic integrations enable capacitor
 
 Ionic Framework makes use of the APIs in the following Capacitor plugins:
 
-- [`@capacitor/app`](/docs/plugins/apis/app)
-- [`@capacitor/haptics`](/docs/plugins/apis/haptics)
-- [`@capacitor/keyboard`](/docs/plugins/apis/keyboard)
-- [`@capacitor/status-bar`](/docs/plugins/apis/status-bar)
+- [`@capacitor/app`](/apis/app.md)
+- [`@capacitor/haptics`](/apis/haptics.md)
+- [`@capacitor/keyboard`](/apis/keyboard.md)
+- [`@capacitor/status-bar`](/apis/status-bar.md)
 
 For the best user experience, you should make sure these plugins are installed even if you don't import them in your app. To install these plugins, run the following command in the root of your project:
 
@@ -50,10 +50,10 @@ ionic capacitor add android
 ionic capacitor add ios
 ```
 
-This will create a new directory in the root of your project for the native platform. This directory is a native project that should be considered a source artifact. Learn more about [native project management](/docs/cordova#native-project-management).
+This will create a new directory in the root of your project for the native platform. This directory is a native project that should be considered a source artifact. Learn more about [native project management](/main/cordova/index.md#native-project-management).
 
 :::info
-If your Ionic app uses Cordova, we have a guide on how to [migrate from Cordova to Capacitor](/docs/cordova/migrating-from-cordova-to-capacitor) as well.
+If your Ionic app uses Cordova, we have a guide on how to [migrate from Cordova to Capacitor](/main/cordova/migrating-from-cordova-to-capacitor.md) as well.
 :::
 
 ## Ionic CLI Capacitor Commands

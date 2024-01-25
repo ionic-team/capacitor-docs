@@ -34,12 +34,12 @@ The [Ionic VS Code Extension](https://marketplace.visualstudio.com/items?itemNam
 
 Begin by auditing your existing Cordova plugins. It's possible that you may be able to remove ones that are no longer needed.
 
-Next, review all of Capacitor's [official plugins](/docs/apis) as well as [community plugins](/docs/plugins/community). You may be able to switch to the Capacitor-equivalent Cordova plugin.
+Next, review all of Capacitor's [official plugins](/plugins/official.md) as well as [community plugins](/plugins/community.md). You may be able to switch to the Capacitor-equivalent Cordova plugin.
 
 Some plugins may not match functionality entirely, but based on the features you need that may not matter.
 
 ### Continue to Use Cordova if Needed
 
-To leverage Cordova plugins in your Capacitor app, [see here](/docs/plugins/cordova). If a replacement plugin doesn't exist, continue to use the Cordova plugin as-is. If there's a plugin you'd like to see supported, open a [plugin proposal](https://github.com/capacitor-community/proposals)!
+To leverage Cordova plugins in your Capacitor app, [see here](/plugins/cordova.md). If a replacement plugin doesn't exist, continue to use the Cordova plugin as-is. If there's a plugin you'd like to see supported, open a [plugin proposal](https://github.com/capacitor-community/proposals)!
 
-Ready to [migrate to Capacitor](/docs/cordova/migrating-from-cordova-to-capacitor)?
+Ready to [migrate to Capacitor](/main/cordova/migrating-from-cordova-to-capacitor.md)?

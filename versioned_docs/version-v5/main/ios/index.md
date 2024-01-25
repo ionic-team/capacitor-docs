@@ -15,7 +15,7 @@ Capacitor iOS apps are configured and managed with Xcode and [CocoaPods](https:/
 
 ## iOS Support
 
-iOS 13+ is supported. Xcode 14.1+ is required (see [Environment Setup](/docs/getting-started/environment-setup#ios-development)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
+iOS 13+ is supported. Xcode 14.1+ is required (see [Environment Setup](/main/getting-started/environment-setup.md#ios-requirements)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
 
 ## Adding the iOS Platform
 
@@ -57,7 +57,7 @@ To run the project on a device or simulator, run:
 npx cap run ios
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/docs/cli/commands/run).
+The command will prompt you to select a target. [Learn more about `run`](/cli/commands/run.md).
 
 ### Running in Xcode
 
@@ -67,7 +67,7 @@ In Xcode, first select the device or simulator and then click the play button to
 
 ## Troubleshooting
 
-If you encountered any issues while getting started, you can consult the [iOS Troubleshooting Guide](/docs/ios/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
+If you encountered any issues while getting started, you can consult the [iOS Troubleshooting Guide](/main/ios/troubleshooting.md). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 
 ## Next steps
 
@@ -77,6 +77,6 @@ You are now ready to continue developing and building your app. Use the various 
 
 Follow these guides for more information on each topic:
 
-[Configuring and setting permissions for iOS &#8250;](/docs/ios/configuration)
+[Configuring and setting permissions for iOS &#8250;](/main/ios/configuration.md)
 
-[Building Native Plugins for iOS &#8250;](/docs/plugins)
+[Building Native Plugins for iOS &#8250;](/plugins.md)

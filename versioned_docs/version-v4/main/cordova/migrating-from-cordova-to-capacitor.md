@@ -14,7 +14,7 @@ There are several steps required to fully migrate a web app using Cordova over t
 
 ## Add Capacitor
 
-Begin by opening your project in the terminal, then either follow the guides for [adding Capacitor to a web app](/docs/getting-started#adding-capacitor-to-your-app) or [adding Capacitor to an Ionic app](/docs/getting-started/with-ionic#existing-ionic-project).
+Begin by opening your project in the terminal, then either follow the guides for [adding Capacitor to a web app](/main/getting-started/installation.md#add-capacitor-to-your-web-app) or [adding Capacitor to an Ionic app](/main/getting-started/with-ionic.md#installing-capacitor-to-an-existing-ionic-project).
 
 Initialize your app with Capacitor. Some of the information you will be prompted for is available in the Cordova `config.xml` file:
 
@@ -33,7 +33,7 @@ You must build your web project at least once before adding any native platforms
 npm run build
 ```
 
-This ensures that the `www` folder that Capacitor has been [automatically configured](/docs/basics/configuring-your-app) to use as the `webDir` in the Capacitor configuration file.
+This ensures that the `www` folder that Capacitor has been [automatically configured](/main/basics/configuring-your-app.md) to use as the `webDir` in the Capacitor configuration file.
 
 ### Add Platforms
 
@@ -44,7 +44,7 @@ npx cap add ios
 npx cap add android
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your app (i.e., check them into source control, edit them in their own IDEs, etc.). Additionally, any Cordova plugins found under `dependencies` in `package.json` are automatically installed by Capacitor into each new native project (minus any [incompatible ones](/docs/plugins/cordova#known-incompatible-plugins)):
+Both android and ios folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your app (i.e., check them into source control, edit them in their own IDEs, etc.). Additionally, any Cordova plugins found under `dependencies` in `package.json` are automatically installed by Capacitor into each new native project (minus any [incompatible ones](/plugins/cordova.md#known-incompatible-plugins)):
 
 ```json
 "dependencies": {
@@ -81,11 +81,11 @@ cordova-res android --skip-config --copy
 
 Begin by auditing your existing Cordova plugins - it's possible that you may be able to remove ones that are no longer needed.
 
-Next, review all of Capacitor's [official plugins](/docs/apis) as well as [community plugins](/docs/plugins/community). You may be able to switch to the Capacitor-equivalent Cordova plugin.
+Next, review all of Capacitor's [official plugins](/plugins/official.md) as well as [community plugins](/plugins/community.md). You may be able to switch to the Capacitor-equivalent Cordova plugin.
 
 Some plugins may not match functionality entirely, but based on the features you need that may not matter.
 
-Note that any plugins that are [incompatible or cause build issues](/docs/plugins/cordova#known-incompatible-plugins) are automatically skipped.
+Note that any plugins that are [incompatible or cause build issues](/plugins/cordova.md#known-incompatible-plugins) are automatically skipped.
 
 ### Remove Cordova Plugin
 
@@ -98,11 +98,11 @@ npx cap sync
 
 ## Set Permissions
 
-By default, the entire initial permissions requested for the latest version of Capacitor are set for you in the default native projects for both iOS and Android. However, you may need to apply additional permissions manually by mapping between `plugin.xml` and required settings on iOS and Android. Consult the [iOS](/docs/ios/configuration) and [Android](/docs/android/configuration) configuration guides for info on how to configure each platform.
+By default, the entire initial permissions requested for the latest version of Capacitor are set for you in the default native projects for both iOS and Android. However, you may need to apply additional permissions manually by mapping between `plugin.xml` and required settings on iOS and Android. Consult the [iOS](/main/ios/configuration.md) and [Android](/main/android/configuration.md) configuration guides for info on how to configure each platform.
 
 ## Cordova Plugin preferences
 
-When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` and ports them to the [Capacitor configuration file](/docs/config). You can manually add more preferences to the `cordova.preferences` object.
+When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` and ports them to the [Capacitor configuration file](/main/reference/config.md). You can manually add more preferences to the `cordova.preferences` object.
 
 ```json
 {
@@ -125,7 +125,7 @@ The Author element can be configured in `package.json`, but is not used by Capac
 <author email="email@test.com" href="http://ionicframework.com/">Ionic Framework Team</author>
 ```
 
-Most of the `allow-intent` values are either not used or there are [configurable alternatives](/docs/basics/configuring-your-app/).
+Most of the `allow-intent` values are either not used or there are [configurable alternatives](/main/basics/configuring-your-app.md).
 
 ```xml
 <allow-intent href="http://*/*" />
@@ -136,7 +136,7 @@ Most of the `allow-intent` values are either not used or there are [configurable
 <allow-intent href="geo:*" />
 ```
 
-iOS `edit-config` elements need to be [configured in Info.plist](/docs/ios/configuration).
+iOS `edit-config` elements need to be [configured in Info.plist](/main/ios/configuration.md).
 
 ```xml
 <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
@@ -164,4 +164,4 @@ Once you've tested that all migration changes have been applied and the app is w
 
 ## Next Steps
 
-This is just the beginning of your Capacitor journey. Learn more about [using Cordova plugins](/docs/plugins/cordova) in a Capacitor project or more details on the Capacitor [development workflow](/docs/basics/workflow).
+This is just the beginning of your Capacitor journey. Learn more about [using Cordova plugins](/plugins/cordova.md) in a Capacitor project or more details on the Capacitor [development workflow](/main/basics/workflow.md).

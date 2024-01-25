@@ -18,7 +18,7 @@ For the purposes of registering and monitoring for push notifications from Fireb
 
 ## Required Dependencies
 
-Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/docs/getting-started/environment-setup) before continuing.
+Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/main/getting-started/environment-setup.md) before continuing.
 
 To test push notifications on iOS, Apple requires that you have [a paid Apple Developer account](https://developer.apple.com/) and a _physical_ iOS device.
 
@@ -257,7 +257,7 @@ iOS push notifications are significantly more complicated to set up than Android
 1. [Setup the proper Development or Production certificates & provisioning profiles](https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7) for your iOS application in the Apple Developer Portal
 2. [Create an APNS certificate or key](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns) for either Development or Production in the Apple Developer Portal
 3. [Ensure Push Notification capabilities have been enabled](https://help.apple.com/xcode/mac/current/#/dev88ff319e7) in your application in Xcode
-4. Have a physical iOS device as per the guidelines in the [Environment Setup](/docs/getting-started/environment-setup) documentation
+4. Have a physical iOS device as per the guidelines in the [Environment Setup](/main/getting-started/environment-setup.md) documentation
 
 ### Integrating Firebase with our native iOS app
 

@@ -26,4 +26,4 @@ You can migrate to the latest minor version, or next major version of Angular by
 
 #### Use HTTPS
 
-Angular projects can be run on a development web server that uses HTTPS by clicking `Settings` > `Use HTTPS`. More information can be found [here](build-and-run#using-ssl--https).
+Angular projects can be run on a development web server that uses HTTPS by clicking `Settings` > `Use HTTPS`. More information can be found [here](build-and-run#using-https).

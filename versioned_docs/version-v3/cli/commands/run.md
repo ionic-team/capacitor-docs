@@ -6,7 +6,7 @@ sidebar_label: run
 
 # Capacitor CLI - cap run
 
-This command first runs [`sync`](/docs/v3/cli/sync), then it builds and deploys the native app to a target device of your choice.
+This command first runs [`sync`](/cli/commands/sync.md), then it builds and deploys the native app to a target device of your choice.
 
 ```bash
 npx cap run [options] <platform>

@@ -12,10 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Capacitor is a cross-platform native runtime that makes it easy to build performant mobile applications that run natively on iOS, Android, and more using modern web tooling. Representing the next evolution of Hybrid apps, Capacitor creates **Web Native apps**, providing a modern native container approach for teams who want to build web-first without sacrificing full access to native SDKs when they need it.
 
-<img
-  src={require('/img/v5/docs/capacitor-index.png').default}
-  loading="eager"
-/>
+![Capacitor Logo and background](/img/v5/docs/capacitor-index.png)
 
 ## Introduction
 
@@ -25,4 +22,4 @@ Capacitor provides a consistent, web-focused set of APIs that enable an app to s
 
 Getting started with Capacitor is easy! Capacitor can be dropped into any existing modern JavaScript project, or a fresh Capacitor project can be created from scratch.
 
-Follow the [Installation guide](/docs/getting-started) to get started building your app.
+Follow the [Installation guide](/main/getting-started/installation.md) to get started building your app.

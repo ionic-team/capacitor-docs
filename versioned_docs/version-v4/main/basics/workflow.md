@@ -14,7 +14,7 @@ Once you are ready to test your web app on a mobile device, you'll need to build
 
 ## Syncing your web code to your Capacitor project
 
-Once your web code has been built for distribution, you will need to push your web code to the web native Capacitor application. To do this, you can use the [Capacitor CLI](/docs/cli) to "sync" your web code and install/update the required native dependencies.
+Once your web code has been built for distribution, you will need to push your web code to the web native Capacitor application. To do this, you can use the [Capacitor CLI](/cli/index.md) to "sync" your web code and install/update the required native dependencies.
 
 To sync your project, run:
 
@@ -24,10 +24,10 @@ npx cap sync
 
 Running `npx cap sync` will **copy** over your already built web bundle to both your Android and iOS projects as well as **update** the native dependencies that Capacitor uses.
 
-You can [read our docs](/docs/cli/commands/sync) on `sync` and more on the [Capacitor CLI reference](/docs/cli) documentation.
+You can [read our docs](/cli/commands/sync.md) on `sync` and more on the [Capacitor CLI reference](/cli/index.md) documentation.
 
 :::info
-Did you get an error about "not being able to find the web assets directory?" Update your [Capacitor configuration](/docs/config) file to use the proper `webDir`.
+Did you get an error about "not being able to find the web assets directory?" Update your [Capacitor configuration](/main/reference/config.md) file to use the proper `webDir`.
 :::
 
 
@@ -49,30 +49,30 @@ npx cap run android
 Once you've iterated and tested your application, it is time to compile the final binary to distribute to other mobile devices.
 
 :::info
-You can also [run your app on iOS via Xcode](/docs/ios#running-in-xcode) or [run your app on Android via Android Studio](/docs/android#running-with-android-studio) as well. Both options are valid for development. Go ahead and try both to see which option you prefer!
+You can also [run your app on iOS via Xcode](/main/ios/index.md#running-in-xcode) or [run your app on Android via Android Studio](/main/android/index.md#running-with-android-studio) as well. Both options are valid for development. Go ahead and try both to see which option you prefer!
 :::
 
 ### Open your Native IDE
 
 If you'd like more control over your native project you can quickly open the native IDEs using the Capacitor CLI.
 
-To [open the iOS Capacitor `.xcworkspace` project in Xcode](/docs/ios#opening-the-ios-project), you can run:
+To [open the iOS Capacitor `.xcworkspace` project in Xcode](/main/ios/index.md#opening-the-ios-project), you can run:
 ```bash
 npx cap open ios
 ```
 
-Similarly, to [open the Android Capacitor project in Android Studio](/docs/android#opening-the-android-project), you can run:
+Similarly, to [open the Android Capacitor project in Android Studio](/main/android/index.md#opening-the-android-project), you can run:
 ```bash
 npx cap open android
 ```
 
-Opening the native project can give you full control over the native runtime of your application. You can [create plugins](/docs/plugins), [add custom native code](/docs/ios/custom-code#custom-native-ios-code), or [compile your application](#compiling-your-native-binary) for releasing.
+Opening the native project can give you full control over the native runtime of your application. You can [create plugins](/plugins.md), [add custom native code](/main/ios/custom-code.md), or [compile your application](#compiling-your-native-binary) for releasing.
 
 ## Compiling your native binary
 
 Capacitor does not have a `build` or `compile` command, nor will there ever be one. After `sync`, you are encouraged to open your target platform's IDE: Xcode for iOS or Android Studio for Android, for compiling your native app.
 
-To compile your app in a terminal or in CI environments, you can use `gradle` or `xcodebuild` directly. We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/docs/ios/deploying-to-app-store) and [Android](/docs/android/deploying-to-google-play) for more info on how to deploy to the Apple App Store or the Google Play Store.
+To compile your app in a terminal or in CI environments, you can use `gradle` or `xcodebuild` directly. We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/main/ios/deploying-to-app-store.md) and [Android](/main/android/deploying-to-google-play.md) for more info on how to deploy to the Apple App Store or the Google Play Store.
 
 ## Updating Capacitor
 
