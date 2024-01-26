@@ -138,16 +138,20 @@ You can find additional information on Android product flavors [at this link](ht
 
 ### Update the Android manifest
 
-In the last section, you created a placeholder, `displayName`. Open `AndroidManifest.xml` and change the value of `android:label` to `${displayName}` within the `application` and `activity` nodes.
+In the last section, you created a placeholder, `displayName`. Open `AndroidManifest.xml` and change the value of `android:label` to `${displayName}` within the `application` and `activity` nodes. Also add `tools:replace="android:label"` to the application block. 
 
 ```xml
-<application
-  ...snip...
-  android:label="${displayName}">
+<manifest ...snip...
+  xmlns:tools="http://schemas.android.com/tools">
 
-  <activity
+  <application
     ...snip...
+    tools:replace="android:label"
     android:label="${displayName}">
+
+    <activity
+      ...snip...
+      android:label="${displayName}">
 ```
 
 ### Add Android-specific Capacitor configuration
