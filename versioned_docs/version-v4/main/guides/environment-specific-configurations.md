@@ -112,7 +112,7 @@ Android projects contain multiple `build.gradle` files; the one to modify to set
 Open `/android/app/build.gradle` and add the following code within the `android` block:
 
 ```groovy
-flavorDimensions = ["environment"]
+flavorDimensions "environment"
 productFlavors {
   dev {
       dimension "environment"
