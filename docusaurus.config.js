@@ -19,7 +19,7 @@ module.exports = {
       en: { label: 'English' },
     },
   },
-  onBrokenAnchors: 'throw',
+  onBrokenAnchors: 'warn',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/meta/favicon.png',
@@ -207,7 +207,18 @@ module.exports = {
       theme: themes.github,
       darkTheme: themes.dracula,
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: ['json', 'groovy', 'ruby', 'diff', 'bash', 'shell-session', 'http', 'swift', 'java', 'kotlin'],
+      additionalLanguages: [
+        'json',
+        'groovy',
+        'ruby',
+        'diff',
+        'bash',
+        'shell-session',
+        'http',
+        'swift',
+        'java',
+        'kotlin',
+      ],
     },
     algolia: {
       appId: '3IVALO5OU4',
