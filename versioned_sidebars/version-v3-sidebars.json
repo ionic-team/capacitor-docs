@@ -219,7 +219,7 @@
         "cli/commands/add",
         "cli/commands/copy",
         "cli/commands/init",
-        "cli/commands/list",
+        "cli/commands/ls",
         "cli/commands/open",
         "cli/commands/run",
         "cli/commands/sync",
