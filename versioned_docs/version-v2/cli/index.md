@@ -14,7 +14,7 @@ The Capacitor command-line interface (CLI) tool is used to develop Capacitor app
 - [Cap](/cli/cap.md)
 - [Copy](/cli/copy.md)
 - [Create](/cli/create.md)
-- [List](/cli/list.md)
+- [ls](/cli/ls.md)
 - [Open](/cli/open.md)
 - [Plugin Generate](/cli/plugin-generate.md)
 - [Serve](/cli/serve.md)

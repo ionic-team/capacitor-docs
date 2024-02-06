@@ -28,7 +28,7 @@ View all available CLI commands and options.
 
 - [`add`](/cli/commands/add.md)
 - [`copy`](/cli/commands/copy.md)
-- [`list`](/cli/commands/list.md)
+- [`ls`](/cli/commands/ls.md)
 - [`open`](/cli/commands/open.md)
 - [`run`](/cli/commands/run.md)
 - [`sync`](/cli/commands/sync.md)

@@ -6,7 +6,7 @@
   - [Cap](cap.md)
   - [Copy](copy.md)
   - [Create](create.md)
-  - [List](list.md)
+  - [ls](ls.md)
   - [Open](open.md)
   - [Plugin Generate](plugin-generate.md)
   - [Serve](serve.md)
