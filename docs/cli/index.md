@@ -31,8 +31,7 @@ View all available CLI commands and options.
 - [`copy`](/cli/commands/copy.md)
 - `doctor`
 - [`init`](/cli/commands/init.md)
-- `ls`
-- [`list`](/cli/commands/list.md)
+- [`ls`](/cli/commands/ls.md)
 - `migrate`
 - [`open`](/cli/commands/open.md)
 - [`run`](/cli/commands/run.md)

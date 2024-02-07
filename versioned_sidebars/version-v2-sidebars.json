@@ -163,7 +163,7 @@
         "cli/cap",
         "cli/copy",
         "cli/create",
-        "cli/list",
+        "cli/ls",
         "cli/open",
         "cli/plugin-generate",
         "cli/serve",
