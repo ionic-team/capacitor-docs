@@ -106,7 +106,7 @@ As of iOS 14, you cannot use 3rd party cookies by default. Add the following lin
 - [`setCookie(...)`](#setcookie)
 - [`deleteCookie(...)`](#deletecookie)
 - [`clearCookies(...)`](#clearcookies)
-- [`clearAllCookies()`](#clearAllcookies)
+- [`clearAllCookies()`](#clearallcookies)
 
 </docgen-index>
 
