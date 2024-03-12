@@ -19,7 +19,7 @@ module.exports = {
       en: { label: 'English' },
     },
   },
-  onBrokenAnchors: 'warn',
+  onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/meta/favicon.png',
