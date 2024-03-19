@@ -89,6 +89,10 @@ const config: CapacitorConfig = {
 };
 ```
 
+:::note
+  If you intend to make network requests to an API on the same domain, you must use a subdomain for the API, otherwise your network request will be routed locally to the native app. `api.my-app.com` will work, `my-app.com/api` will not
+:::
+
 ## Configuration for iOS
 
 ### Configuration in XCode
