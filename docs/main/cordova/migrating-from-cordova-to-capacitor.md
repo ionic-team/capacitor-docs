@@ -60,22 +60,16 @@ Both android and ios folders at the root of the project are created. These are e
 
 ## Splash Screens and Icons
 
-If you've previously created icon and splash screen images, they can be found in the top-level `resources` folder of your project. With those images in place, you can use the `cordova-res` tool to generate icons and splash screens for Capacitor-based iOS and Android projects.
+If you've previously created icon and splash screen images, they can be found in the top-level `resources` folder of your project. With those images in place, you can use the `@capacitor/assets` tool to generate icons and splash screens for Capacitor-based iOS and Android projects.
 
-First, install `cordova-res`:
-
-```bash
-npm install -g cordova-res
-```
-
-Next, run the following to regenerate the images and copy them into the native projects:
+Run the following to regenerate the images and copy them into the native projects:
 
 ```bash
-cordova-res ios --skip-config --copy
-cordova-res android --skip-config --copy
+npx @capacitor/assets generate --ios
+npx @capacitor/assets generate --android
 ```
 
-[Complete details here](https://github.com/ionic-team/cordova-res#capacitor).
+[Complete details here](https://github.com/ionic-team/capacitor-assets).
 
 ## Migrate Plugins
 
