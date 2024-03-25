@@ -139,6 +139,8 @@ getCookies(options?: GetCookieOptions) => Promise<HttpCookieMap>
 setCookie(options: SetCookieOptions) => Promise<void>
 ```
 
+Write a cookie to the device.
+
 | Param         | Type                                                          |
 | ------------- | ------------------------------------------------------------- |
 | **`options`** | <code><a href="#setcookieoptions">SetCookieOptions</a></code> |
@@ -151,6 +153,8 @@ setCookie(options: SetCookieOptions) => Promise<void>
 ```typescript
 deleteCookie(options: DeleteCookieOptions) => Promise<void>
 ```
+
+Delete a cookie from the device.
 
 | Param         | Type                                                                |
 | ------------- | ------------------------------------------------------------------- |
@@ -165,6 +169,8 @@ deleteCookie(options: DeleteCookieOptions) => Promise<void>
 clearCookies(options: ClearCookieOptions) => Promise<void>
 ```
 
+Clear cookies from the device at a given URL.
+
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
 | **`options`** | <code><a href="#clearcookieoptions">ClearCookieOptions</a></code> |
@@ -178,6 +184,8 @@ clearCookies(options: ClearCookieOptions) => Promise<void>
 clearAllCookies() => Promise<void>
 ```
 
+Clear all cookies on the device.
+
 --------------------
 
 
@@ -189,19 +197,19 @@ clearAllCookies() => Promise<void>
 
 #### HttpCookie
 
-| Prop        | Type                |
-| ----------- | ------------------- |
-| **`url`**   | <code>string</code> |
-| **`key`**   | <code>string</code> |
-| **`value`** | <code>string</code> |
+| Prop        | Type                | Description              |
+| ----------- | ------------------- | ------------------------ |
+| **`url`**   | <code>string</code> | The URL of the cookie.   |
+| **`key`**   | <code>string</code> | The key of the cookie.   |
+| **`value`** | <code>string</code> | The value of the cookie. |
 
 
 #### HttpCookieExtras
 
-| Prop          | Type                |
-| ------------- | ------------------- |
-| **`path`**    | <code>string</code> |
-| **`expires`** | <code>string</code> |
+| Prop          | Type                | Description                      |
+| ------------- | ------------------- | -------------------------------- |
+| **`path`**    | <code>string</code> | The path to write the cookie to. |
+| **`expires`** | <code>string</code> | The date to expire the cookie.   |
 
 
 ### Type Aliases
