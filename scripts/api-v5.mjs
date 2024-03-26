@@ -70,15 +70,15 @@ function createApiPage(plugin, readme, pkgJson) {
     : plugin.editApiUrl;
   const sidebarLabel = toTitleCase(pluginId);
 
-  // escape right curly brace in inline code blocks for MDX v3 compatability
-  const regexp = /[<|(&lt;)]code>(.*)[<|(&lt;)]\/code>/g;
+  // // escape right curly brace in inline code blocks for MDX v3 compatability
+  // const regexp = /[<|(&lt;)]code>(.*)[<|(&lt;)]\/code>/g;
 
-  readme = readme.replace(regexp, (result) => {
-    return result.replace(/\{/g, '&#123;');
-  });
+  // readme = readme.replace(regexp, (result) => {
+  //   return result.replace(/\{/g, '&#123;');
+  // });
 
-  // removes JSDoc HTML comments as they break docusauurs
-  readme = readme.replaceAll(/<!--.*-->/g, '').replaceAll('<->', '&lt;->');
+  // // removes JSDoc HTML comments as they break docusauurs
+  // readme = readme.replaceAll(/<!--.*-->/g, '').replaceAll('<->', '&lt;->');
 
   return `
 ---
