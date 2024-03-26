@@ -99,6 +99,8 @@ As of iOS 14, you cannot use 3rd party cookies by default. Add the following lin
 </array>
 ```
 
+When using ```WKAppBoundDomains``` you must also set ```ios.limitsNavigationsToAppBoundDomains``` to ```true``` in your ```capacitor.config.ts``` to avoid any issues with plugins and WKWebView APIs.
+
 ## API
 
 <docgen-index>
