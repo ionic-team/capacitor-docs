@@ -116,7 +116,7 @@ As of iOS 14, you cannot use 3rd party cookies by default. Add the following lin
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getCookies(...)
 
