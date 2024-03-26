@@ -119,7 +119,7 @@ the following events also work with `window.addEventListener`:
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show()
 
@@ -162,7 +162,7 @@ This method is only supported on iPhone devices.
 
 | Param         | Type                                 |
 | ------------- | ------------------------------------ |
-| **`options`** | <code>&#123; isVisible: boolean; }</code> |
+| **`options`** | <code>{ isVisible: boolean; }</code> |
 
 **Since:** 1.0.0
 
@@ -181,7 +181,7 @@ This method is only supported on iOS.
 
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
-| **`options`** | <code>&#123; isDisabled: boolean; }</code> |
+| **`options`** | <code>{ isDisabled: boolean; }</code> |
 
 **Since:** 1.0.0
 

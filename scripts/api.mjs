@@ -237,17 +237,17 @@ function createApiPage(plugin, readme, pkgJson) {
   const editApiUrl = plugin.editApiUrl;
   const sidebarLabel = toTitleCase(plugin.id);
 
-  // escape right curly brace in inline code blocks for MDX v3 compatability
-  const regexp = /[<|(&lt;)]code>(.*)[<|(&lt;)]\/code>/g;
+  // // escape right curly brace in inline code blocks for MDX v3 compatability
+  // const regexp = /[<|(&lt;)]code>(.*)[<|(&lt;)]\/code>/g;
 
-  readme = readme.replace(regexp, (result) => {
-    return result.replace(/\{/g, '&#123;');
-  });
+  // readme = readme.replace(regexp, (result) => {
+  //   return result.replace(/\{/g, '&#123;');
+  // });
 
-  // @ts-ignore
-  readme = readme
-    .replaceAll(/<!--.*-->/g, '') // removes JSDoc HTML comments as they break docusauurs
-    .replaceAll('<->', '&lt;->'); // escape arrow for MDX v3. note: can't escape all arrows due to component tags
+  // // @ts-ignore
+  // readme = readme
+  //   .replaceAll(/<!--.*-->/g, '') // removes JSDoc HTML comments as they break docusauurs
+  //   .replaceAll('<->', '&lt;->'); // escape arrow for MDX v3. note: can't escape all arrows due to component tags
 
   return `
 ---

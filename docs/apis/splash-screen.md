@@ -98,7 +98,7 @@ To set the color of the spinner use `spinnerColor`, values are either `#RRGGBB` 
 ## Configuration
 
 <docgen-config>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 These config values are available:
 
@@ -212,7 +212,7 @@ This plugin will use the following project variables (defined in your app's `var
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show(...)
 

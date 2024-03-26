@@ -77,7 +77,7 @@ Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configura
 This API requires the following permissions be added to your `AndroidManifest.xml`:
 
 ```xml
-
+<!-- Geolocation API -->
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-feature android:name="android.hardware.location.gps" />
@@ -229,7 +229,7 @@ It’s not possible to run persistent, always running background services on mob
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### checkPermissions()
 
@@ -299,7 +299,7 @@ Dispatches an event to the configured runner.
 
 | Prop       | Type            |
 | ---------- | --------------- |
-| **`apis`** | <code>&#123;}</code> |
+| **`apis`** | <code>{}</code> |
 
 
 #### DispatchEventOptions
@@ -308,7 +308,7 @@ Dispatches an event to the configured runner.
 | ------------- | ------------------------------------ | ------------------------------------------ | ----- |
 | **`label`**   | <code>string</code>                  | The runner label to dispatch the event to  | 1.0.0 |
 | **`event`**   | <code>string</code>                  | The name of the registered event listener. | 1.0.0 |
-| **`details`** | <code>&#123; [key: string]: any; }</code> |                                            |       |
+| **`details`** | <code>{ [key: string]: any; }</code> |                                            |       |
 
 
 ### Type Aliases
@@ -329,7 +329,7 @@ Dispatches an event to the configured runner.
 
 <capacitor-api-docs>
 
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### Interfaces
 
@@ -377,7 +377,7 @@ Send basic local notifications.
 
 | Prop           | Type                                  | Description                   | Since |
 | -------------- | ------------------------------------- | ----------------------------- | ----- |
-| **`schedule`** | <code>(options: &#123;}) =&gt; void</code> | Schedule a local notification | 1.0.0 |
+| **`schedule`** | <code>(options: {}) =&gt; void</code> | Schedule a local notification | 1.0.0 |
 
 
 #### NotificationScheduleOptions
@@ -439,7 +439,7 @@ They could be used if a native watch app is developed as a companion app to a Ca
 | **`transferUserInfo`**         | <code>(options: []) =&gt; void</code>                                    | Sends information to the watch with the transferUserInfo() WCSession delegate method This has no effect on a CapacitorWatch watch app                       |
 | **`updateApplicationContext`** | <code>(options: []) =&gt; void</code>                                    | Updates the application context on the watch with the updateApplicationContext() WCSession delegate method This has no effect on a CapacitorWatch watch app |
 | **`isReachable`**              | <code>boolean</code>                                                     | Checks to see if the compaion watch is reachable                                                                                                            |
-| **`updateWatchUI`**            | <code>(options: &#123; watchUI: string; }) =&gt; void</code>                  | Replaces the current UI on the watch with what is specified here.                                                                                           |
-| **`updateWatchData`**          | <code>(options: &#123; data: &#123; [key: string]: string; }; }) =&gt; void</code> | Updates the data the watch is using to display variables in text and button fields                                                                          |
+| **`updateWatchUI`**            | <code>(options: { watchUI: string; }) =&gt; void</code>                  | Replaces the current UI on the watch with what is specified here.                                                                                           |
+| **`updateWatchData`**          | <code>(options: { data: { [key: string]: string; }; }) =&gt; void</code> | Updates the data the watch is using to display variables in text and button fields                                                                          |
 
 </capacitor-api-docs>
