@@ -40,24 +40,26 @@ On Android, orientation can be set by modifying the `AndroidManifest.xml` and se
 
 Many apps need to support multiple orientations, with the ability to lock orientations occasionally depending on the content.
 
-Capacitor supports this through the `cordova-plugin-screen-orientation` plugin:
+Capacitor supports this through the `@capacitor/screen-orientation` plugin:
 
 ```shell
-npm install cordova-plugin-screen-orientation
-npx cap update
+npm install @capacitor/screen-orientation@latest-4
+npx cap sync
 ```
 
-Then, use the `lock` and `unlock` methods available on `window.screen.orientation`:
+Then, use the `lock` and `unlock` methods:
 
 ```typescript
-window.screen.orientation.lock('portrait');
-window.screen.orientation.lock('landscape');
+import { ScreenOrientation } from '@capacitor/screen-orientation';
+...
+await ScreenOrientation.lock({ orientation: 'portrait' });
+await ScreenOrientation.lock({ orientation: 'landscape' });
 
 // To unlock orientation which will default back to the global setting:
-window.screen.orientation.unlock();
+await ScreenOrientation.unlock();
 ```
 
-See the [Orientation Plugin Docs](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-screen-orientation/) for the full range of possible orientation values and configuration options.
+See the [Orientation Plugin Docs](https://capacitorjs.com/docs/apis/screen-orientation) for the full range of possible orientation values and configuration options.
 
 ### iPad Orientation Lock
 
