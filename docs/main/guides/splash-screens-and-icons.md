@@ -35,7 +35,7 @@ npx capacitor-assets generate
 Alternatively you can generate for a specific platform with `--ios`, `--android` or `--pwa`.
 
 :::note
-The [VS Code Extension](../vs-code-ext/0-getting-started.md) can also generate Splash Screen and Icon assets.
+The [VS Code Extension](../vs-code-ext/0-getting-started.mdx) can also generate Splash Screen and Icon assets.
 :::
 
 ## Android 12+
