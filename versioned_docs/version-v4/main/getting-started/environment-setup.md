@@ -59,7 +59,7 @@ xcode-select -p
 
 ### Homebrew
 
-Homebrew is a package manager for macOS package. You need to install it in order to install CocoaPods for both Intel and Apple Silicon Macs.
+Homebrew is a package manager for macOS packages. You need to install it in order to install CocoaPods for both Intel and Apple Silicon Macs.
 
 To install Homebrew, run the following bash command:
 

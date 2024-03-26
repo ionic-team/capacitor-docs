@@ -74,7 +74,7 @@ API to understand the data supplied in the 'accel' event.
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### addListener('accel', ...)
 

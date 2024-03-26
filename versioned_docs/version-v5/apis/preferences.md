@@ -77,7 +77,7 @@ This method can also be used to store non-string values, such as numbers and boo
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### configure(...)
 

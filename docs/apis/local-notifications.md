@@ -35,7 +35,7 @@ On Android 14, there is a new permission called `USE_EXACT_ALARM`.  Use this per
 ## Configuration
 
 <docgen-config>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 On Android, the Local Notifications can be configured with the following options:
 
@@ -116,7 +116,7 @@ If the device has entered [Doze](https://developer.android.com/training/monitori
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### schedule(...)
 
@@ -279,7 +279,7 @@ Only available for Android.
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | <code>&#123; id: string; }</code> |
+| **`args`** | <code>{ id: string; }</code> |
 
 **Since:** 1.0.0
 

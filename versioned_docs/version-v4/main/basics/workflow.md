@@ -66,7 +66,7 @@ Similarly, to [open the Android Capacitor project in Android Studio](/main/andro
 npx cap open android
 ```
 
-Opening the native project can give you full control over the native runtime of your application. You can [create plugins](/plugins.md), [add custom native code](/main/ios/custom-code.md), or [compile your application](#compiling-your-native-binary) for releasing.
+Opening the native project can give you full control over the native runtime of your application. You can [create plugins](/plugins.mdx), [add custom native code](/main/ios/custom-code.md), or [compile your application](#compiling-your-native-binary) for releasing.
 
 ## Compiling your native binary
 

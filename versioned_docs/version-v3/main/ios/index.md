@@ -79,4 +79,4 @@ Follow these guides for more information on each topic:
 
 [Configuring and setting permissions for iOS &#8250;](/main/ios/configuration.md)
 
-[Building Native Plugins for iOS &#8250;](/plugins.md)
+[Building Native Plugins for iOS &#8250;](/plugins.mdx)

@@ -19,6 +19,9 @@ module.exports = {
       en: { label: 'English' },
     },
   },
+  markdown: {
+    format: 'detect'
+  },
   onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',

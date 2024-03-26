@@ -49,7 +49,7 @@ to handle any camera data that was sent in the case your app was terminated by t
 
 ## PWA Notes
 
-[PWA Elements](/web/pwa-elements.md) are required for Camera plugin to work.
+[PWA Elements](/web/pwa-elements.mdx) are required for Camera plugin to work.
 
 ## Example
 

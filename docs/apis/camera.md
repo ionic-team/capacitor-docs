@@ -37,8 +37,8 @@ When picking existing images from the device gallery, the Android Photo Picker c
 Older devices and Android Go devices running Android 11 or 12 that support Google Play services can install a backported version of the photo picker. To enable the automatic installation of the backported photo picker module through Google Play services, add the following entry to the `<application>` tag in your `AndroidManifest.xml` file:
 
 ```xml
-
-
+<!-- Trigger Google Play services to install the backported photo picker module. -->
+<!--suppress AndroidDomInspection -->
 <service android:name="com.google.android.gms.metadata.ModuleDependencies"
     android:enabled="false"
     android:exported="false"
@@ -123,7 +123,7 @@ const takePicture = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getPhoto(...)
 

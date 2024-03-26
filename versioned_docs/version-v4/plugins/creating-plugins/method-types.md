@@ -25,7 +25,7 @@ export type MyPluginCallback = (message: MyData | null, err?: any) => void;
 export interface MyPlugin {
   method1(): Promise<void>;
   method2(): Promise<MyData>;
-  cmethod3(callback: MyPluginCallback): Promise<CallbackID>;
+  method3(callback: MyPluginCallback): Promise<CallbackID>;
 }
 ```
 
