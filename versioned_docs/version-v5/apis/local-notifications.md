@@ -33,7 +33,7 @@ Note that even if the permission is present, users can still disable exact notif
 ## Configuration
 
 <docgen-config>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 On Android, the Local Notifications can be configured with the following options:
 
@@ -112,7 +112,7 @@ If the device has entered [Doze](https://developer.android.com/training/monitori
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### schedule(...)
 
@@ -275,7 +275,7 @@ Only available for Android.
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | <code>&#123; id: string; }</code> |
+| **`args`** | <code>{ id: string; }</code> |
 
 **Since:** 1.0.0
 

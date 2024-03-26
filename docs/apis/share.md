@@ -71,7 +71,7 @@ Each platform uses a different set of fields, but you should supply them all.
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### canShare()
 

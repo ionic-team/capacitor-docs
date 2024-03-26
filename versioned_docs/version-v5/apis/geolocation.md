@@ -31,7 +31,7 @@ Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configura
 This API requires the following permissions be added to your `AndroidManifest.xml`:
 
 ```xml
-
+<!-- Geolocation API -->
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-feature android:name="android.hardware.location.gps" />
@@ -74,7 +74,7 @@ const printCurrentPosition = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getCurrentPosition(...)
 
@@ -175,7 +175,7 @@ Request location permissions.  Will throw if system location services are disabl
 | Prop            | Type                                                                                                                                                                                | Description                                             | Since |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----- |
 | **`timestamp`** | <code>number</code>                                                                                                                                                                 | Creation timestamp for coords                           | 1.0.0 |
-| **`coords`**    | <code>&#123; latitude: number; longitude: number; accuracy: number; altitudeAccuracy: number \| null; altitude: number \| null; speed: number \| null; heading: number \| null; }</code> | The GPS coordinates along with the accuracy of the data | 1.0.0 |
+| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy: number \| null; altitude: number \| null; speed: number \| null; heading: number \| null; }</code> | The GPS coordinates along with the accuracy of the data | 1.0.0 |
 
 
 #### PositionOptions

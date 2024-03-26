@@ -15,7 +15,7 @@ The Web View and the native app communicate through the use of Capacitor or Cord
 
 The Capacitor team maintains [a set of Capacitor plugins](/plugins/official.md) for commonly used APIs. There is also a large set of Capacitor plugins available from [the Capacitor Community](https://github.com/capacitor-community/).
 
-[Learn more about Capacitor plugins &#8250;](/plugins.md)
+[Learn more about Capacitor plugins &#8250;](/plugins.mdx)
 
 ## Cordova Plugins
 

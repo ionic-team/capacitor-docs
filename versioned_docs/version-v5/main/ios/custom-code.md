@@ -11,7 +11,7 @@ slug: /ios/custom-code
 
 With Capacitor, you are encouraged to write Swift or Objective-C code to implement the native features your app needs.
 
-There may not be [a Capacitor plugin](/plugins.md) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
+There may not be [a Capacitor plugin](/plugins.mdx) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
 
 ## WebView-Accessible Native Code
 
