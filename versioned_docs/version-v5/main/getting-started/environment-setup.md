@@ -57,6 +57,19 @@ xcode-select -p
 # /Applications/Xcode.app/Contents/Developer
 ```
 
+:::note
+If you encounter the following error while running `npx cap add ios`:
+```bash
+[MT] DVTPlugInLoading: Failed to load code for plug-in
+        com.apple.dt.IDESimulatorAvailability
+```
+
+Then you can open Xcode on your machine and allow any pending installations or updates to complete, or if you prefer doing it within the terminal:
+```bash
+xcodebuild -runFirstLaunch
+```
+:::
+
 ### Homebrew
 
 Homebrew is a package manager for macOS packages. You need to install it in order to install CocoaPods for both Intel and Apple Silicon Macs.
