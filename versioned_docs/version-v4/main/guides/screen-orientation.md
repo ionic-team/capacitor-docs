@@ -43,7 +43,7 @@ Many apps need to support multiple orientations, with the ability to lock orient
 Capacitor supports this through the `@capacitor/screen-orientation` plugin:
 
 ```shell
-npm install @capacitor/screen-orientation
+npm install @capacitor/screen-orientation@latest-4
 npx cap sync
 ```
 
