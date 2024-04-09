@@ -136,4 +136,4 @@ In Android Studio, open **Tools -> SDK Manager** from the menu and install the p
 
 ![SDK Platforms](/img/v6/docs/android/sdk-platforms.png)
 
-To get started, you only need to install one API version. In the above image, the SDKs for Android 10 (API 30) and Android 11 (API 31) are installed. The latest stable version is Android 14 (API 34).
+To get started, you only need to install one API version. In the above image, the SDKs for  Android 9 (API 28) and Android 10 (API 29) are installed. The latest stable version is Android 14 (API 34).
