@@ -27,13 +27,13 @@ Make sure you have the [Ionic VS Code extension](https://ionic.link/vscode) inst
 
 Under recommendations you will see *Add Privacy Manifest* if your application is using a plugin that uses certain APIs.
 
-![No Manifest](/img/v6/docs/ios/no-manifest.png)
+![No Manifest](/img/v4/docs/ios/no-manifest.png)
 
 Choose Yes to create the bare minimum privacy manifest file.
 
 The extension will then list all changes needed as recommendations titled *Missing Privacy Manifest Category*. For example:
 
-![Privacy Change](/img/v6/docs/ios/privacy-change.png)
+![Privacy Change](/img/v4/docs/ios/privacy-change.png)
 
 You must select one of the reason codes to explain how you use the plugin. If you are unsure, click *Docs* to go to the Apple’s documentation on the explanations of each reason code.
 
