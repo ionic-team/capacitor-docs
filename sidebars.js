@@ -98,6 +98,7 @@ module.exports = {
         'main/ios/index',
         'main/ios/configuration',
         'main/ios/custom-code',
+        'main/ios/privacy-manifest',
         'main/ios/deploying-to-app-store',
         'main/ios/viewcontroller',
         'main/ios/troubleshooting',
