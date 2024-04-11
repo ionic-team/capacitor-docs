@@ -150,7 +150,7 @@ Calling `resolve()` \ `reject()` is **required** within every event handler call
 
 ## Configuring Background Runner
 
-On load, Background Runner will automatically register a background task that will be scheduled and ran once your app is backgrounded. The settings for this behavior is defined in your `capacitor.config.ts` file:
+On load, Background Runner will automatically register a background task that will be scheduled and run once your app is backgrounded. The settings for this behavior is defined in your `capacitor.config.ts` file:
 
 ```ts
 const config: CapacitorConfig = {
