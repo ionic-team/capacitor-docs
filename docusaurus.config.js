@@ -290,7 +290,7 @@ module.exports = {
           },
           breadcrumbs: false,
           exclude: ['README.md'],
-          lastVersion: 'v6',
+          lastVersion: 'current',
           versions: {
             current: {
               label: 'v6'
