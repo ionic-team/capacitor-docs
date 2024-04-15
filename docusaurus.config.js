@@ -290,11 +290,10 @@ module.exports = {
           },
           breadcrumbs: false,
           exclude: ['README.md'],
-          lastVersion: 'v5',
+          lastVersion: 'current',
           versions: {
             current: {
               label: 'v6',
-              banner: 'unreleased',
             },
           },
         },
