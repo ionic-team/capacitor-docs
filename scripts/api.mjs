@@ -11,8 +11,10 @@ const tag = 'next';
 /**
  * @typedef {Object} PluginApi
  * @property {string} id
+ * @property {boolean} isCore
  * @property {boolean} isExperimental
  * @property {string} npmScope
+ * @property {string} [description]
  * @property {string} editUrl
  * @property {string} editApiUrl
  * @property {string} [tag]
@@ -20,6 +22,7 @@ const tag = 'next';
 const pluginApis = [
   {
     id: 'action-sheet',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/action-sheet/README.md',
@@ -27,6 +30,7 @@ const pluginApis = [
   },
   {
     id: 'app',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/app/README.md',
@@ -34,6 +38,7 @@ const pluginApis = [
   },
   {
     id: 'app-launcher',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/app-launcher/README.md',
@@ -41,6 +46,7 @@ const pluginApis = [
   },
   {
     id: 'background-runner',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
@@ -50,6 +56,7 @@ const pluginApis = [
   },
   {
     id: 'browser',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/browser/README.md',
@@ -57,6 +64,7 @@ const pluginApis = [
   },
   {
     id: 'camera',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/camera/README.md',
@@ -64,13 +72,24 @@ const pluginApis = [
   },
   {
     id: 'clipboard',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/src/definitions.ts',
   },
   {
+    id: 'cookies',
+    isCore: true,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    description: 'The Capacitor Cookies API provides native cookie support via patching `document.cookie` to use native libraries.',
+    editUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/cookies.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts',
+  },
+  {
     id: 'device',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/device/README.md',
@@ -78,6 +97,7 @@ const pluginApis = [
   },
   {
     id: 'dialog',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/dialog/README.md',
@@ -85,6 +105,7 @@ const pluginApis = [
   },
   {
     id: 'filesystem',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/README.md',
@@ -92,6 +113,7 @@ const pluginApis = [
   },
   {
     id: 'geolocation',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/README.md',
@@ -99,6 +121,7 @@ const pluginApis = [
   },
   {
     id: 'google-maps',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/README.md',
@@ -106,13 +129,24 @@ const pluginApis = [
   },
   {
     id: 'haptics',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/src/definitions.ts',
   },
   {
+    id: 'http',
+    isCore: true,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    description: 'The Capacitor Http API provides native http support via patching `fetch` and `XMLHttpRequest` to use native libraries.',
+    editUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/http.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts',
+  },
+  {
     id: 'keyboard',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md',
@@ -120,6 +154,7 @@ const pluginApis = [
   },
   {
     id: 'local-notifications',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/README.md',
@@ -127,6 +162,7 @@ const pluginApis = [
   },
   {
     id: 'motion',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/motion/README.md',
@@ -134,6 +170,7 @@ const pluginApis = [
   },
   {
     id: 'network',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/network/README.md',
@@ -141,6 +178,7 @@ const pluginApis = [
   },
   {
     id: 'preferences',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/preferences/README.md',
@@ -148,6 +186,7 @@ const pluginApis = [
   },
   {
     id: 'push-notifications',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/README.md',
@@ -155,6 +194,7 @@ const pluginApis = [
   },
   {
     id: 'screen-orientation',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/screen-orientation/README.md',
@@ -162,6 +202,7 @@ const pluginApis = [
   },
   {
     id: 'screen-reader',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/README.md',
@@ -169,6 +210,7 @@ const pluginApis = [
   },
   {
     id: 'share',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/share/README.md',
@@ -176,6 +218,7 @@ const pluginApis = [
   },
   {
     id: 'splash-screen',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/README.md',
@@ -183,6 +226,7 @@ const pluginApis = [
   },
   {
     id: 'status-bar',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/README.md',
@@ -190,6 +234,7 @@ const pluginApis = [
   },
   {
     id: 'text-zoom',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/README.md',
@@ -197,6 +242,7 @@ const pluginApis = [
   },
   {
     id: 'toast',
+    isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/toast/README.md',
@@ -204,6 +250,7 @@ const pluginApis = [
   },
   {
     id: 'watch',
+    isCore: false,
     isExperimental: true,
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
@@ -232,7 +279,7 @@ async function buildPluginApiDocs(plugin) {
  */
 function createApiPage(plugin, readme, pkgJson) {
   const title = `${toTitleCase(plugin.id)} Capacitor Plugin API`;
-  const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
+  const desc = plugin.description ? plugin.description : pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = plugin.editUrl;
   const editApiUrl = plugin.editApiUrl;
   const sidebarLabel = toTitleCase(plugin.id);
@@ -266,7 +313,7 @@ ${readme}`.trim();
  * @returns {Promise<string>}
  */
 async function getReadme(plugin) {
-  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${plugin.id}@${plugin.tag ?? tag}/README.md`;
+  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${!plugin.isCore ? plugin.id : 'core'}@${plugin.tag ?? tag}/${plugin.isCore ? `${plugin.id}.md` : 'README.md'}`;
   const rsp = await fetch(url);
   return rsp.text();
 }
@@ -276,7 +323,7 @@ async function getReadme(plugin) {
  * @returns {Promise<any>}
  */
 async function getPkgJsonData(plugin) {
-  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${plugin.id}@${plugin.tag ?? tag}/package.json`;
+  const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${!plugin.isCore ? plugin.id : 'core'}@${plugin.tag ?? tag}/package.json`;
   const rsp = await fetch(url);
   return rsp.json();
 }
