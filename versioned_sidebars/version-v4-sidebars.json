@@ -223,6 +223,10 @@
         },
         {
           "type": "doc",
+          "id": "main/ios/privacy-manifest"
+        },
+        {
+          "type": "doc",
           "id": "main/ios/deploying-to-app-store"
         },
         {
