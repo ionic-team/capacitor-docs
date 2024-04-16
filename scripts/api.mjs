@@ -1,12 +1,11 @@
 // @ts-check
-import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
 // @ts-ignore
 const API_DIR = new URL('../docs/apis/', import.meta.url);
 
-const tag = 'next';
+const tag = 'latest';
 
 /**
  * @typedef {Object} PluginApi
@@ -126,6 +125,7 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/src/definitions.ts',
+    tag: 'next',
   },
   {
     id: 'haptics',
@@ -283,19 +283,6 @@ function createApiPage(plugin, readme, pkgJson) {
   const editUrl = plugin.editUrl;
   const editApiUrl = plugin.editApiUrl;
   const sidebarLabel = toTitleCase(plugin.id);
-
-  // // escape right curly brace in inline code blocks for MDX v3 compatability
-  // const regexp = /[<|(&lt;)]code>(.*)[<|(&lt;)]\/code>/g;
-
-  // readme = readme.replace(regexp, (result) => {
-  //   return result.replace(/\{/g, '&#123;');
-  // });
-
-  // // @ts-ignore
-  // readme = readme
-  //   .replaceAll(/<!--.*-->/g, '') // removes JSDoc HTML comments as they break docusauurs
-  //   .replaceAll('<->', '&lt;->'); // escape arrow for MDX v3. note: can't escape all arrows due to component tags
-
   return `
 ---
 title: ${title}
