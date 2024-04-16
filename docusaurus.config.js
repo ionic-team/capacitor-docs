@@ -272,10 +272,7 @@ module.exports = {
             const nativeRegexPath = nativeRegex.exec(docPath)?.[1];
 
             if (apiRegexPath) {
-              if (apiRegexPath === 'cookies' || apiRegexPath === 'http') {
-                return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${apiRegexPath}.md`;
-              }
-              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${apiRegexPath}/README.md`;
+              return undefined;
             }
             if (cliRegexPath) {
               return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${cliRegexPath.replace(
