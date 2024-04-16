@@ -56,6 +56,8 @@ When you have run your app from `Run` > `iOS` or XCode:
 You will need to turn on the development mode for Safari by going to the `Safari` menu > `Settings`, `Advanced` and check the box `Show Develop menu in menu bar`.
 
 You'll also need to ensure your mobile device has been enabled for debugging.
+
+If you're using Capacitor with SPM as package manager, you'll need to enable `ios.webContentsDebuggingEnabled` to inspect webviews with Safari while debugging. Make sure to disable this setting again in production.
 :::
 
 ## Remote Logging
