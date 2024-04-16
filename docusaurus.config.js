@@ -257,27 +257,6 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-            if (locale != 'en') {
-              return 'https://crowdin.com/project/capacitor-docs';
-            }
-
-            const cliRegex = /cli\/commands\/(.*)\.md/;
-            const cliRegexPath = cliRegex.exec(docPath)?.[1];
-
-            const nativeRegex = /native\/(.*)\.md/;
-            const nativeRegexPath = nativeRegex.exec(docPath)?.[1];
-            if (cliRegexPath) {
-              return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${cliRegexPath.replace(
-                '-',
-                '/',
-              )}.md`;
-            }
-            if (nativeRegexPath) {
-              return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${nativeRegexPath}/index.ts`;
-            }
-            return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
-          },
           breadcrumbs: false,
           exclude: ['README.md'],
           lastVersion: 'current',
