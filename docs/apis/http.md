@@ -1,7 +1,7 @@
 ---
 title: Http Capacitor Plugin API
 description: The Capacitor Http API provides native http support via patching `fetch` and `XMLHttpRequest` to use native libraries.
-editUrl: https://github.com/ionic-team/capacitor/blob/main/core/http.md
+custom_edit_url: https://github.com/ionic-team/capacitor/blob/main/core/http.md
 editApiUrl: https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts
 sidebar_label: Http
 ---

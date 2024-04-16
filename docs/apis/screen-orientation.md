@@ -1,7 +1,7 @@
 ---
 title: Screen Orientation Capacitor Plugin API
 description: The Screen Orientation API provides methods to lock and unlock the screen orientation.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-orientation/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-orientation/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-orientation/src/definitions.ts
 sidebar_label: Screen Orientation
 ---

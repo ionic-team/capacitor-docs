@@ -287,7 +287,7 @@ function createApiPage(plugin, readme, pkgJson) {
 ---
 title: ${title}
 description: ${desc}
-editUrl: ${editUrl}
+custom_edit_url: ${editUrl}
 editApiUrl: ${editApiUrl}
 sidebar_label: ${sidebarLabel}${plugin.isExperimental ? ' 🧪' : ''}
 ---
