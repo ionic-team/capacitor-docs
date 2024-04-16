@@ -63,6 +63,18 @@ CAP_PLUGIN(EchoPlugin, "Echo",
 
 > These Objective-C macros register your plugin with Capacitor, making `EchoPlugin` and its `echo` method available to JavaScript. Whenever you add or remove methods in `EchoPlugin.swift`, this file must be updated.
 
+#### ViewController
+
+Starting with Capacitor 6, plugins are no longer automatically registered for iOS, so for non npm plugins, users will have to call registerPlugin as on Android.
+
+To register `EchoPlugin` with Capacitor on iOS, create a custom CAPBridgeViewController as explained [here](/ios/viewcontroller.md).
+
+Then override it's `capacitorDidLoad()` to register the plugin:
+
+override open func capacitorDidLoad() {
+    bridge?.registerPluginInstance(EchoPlugin())
+}
+
 #### JavaScript
 
 In JS, we use `registerPlugin()` from `@capacitor/core` to create an object which is linked to our Swift plugin.
