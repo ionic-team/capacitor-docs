@@ -71,9 +71,11 @@ To register `EchoPlugin` with Capacitor on iOS, create a custom CAPBridgeViewCon
 
 Then override it's `capacitorDidLoad()` to register the plugin:
 
-override open func capacitorDidLoad() {
-    bridge?.registerPluginInstance(EchoPlugin())
+```swift
+override func capacitorDidLoad() {
+    self.bridge?.registerPluginInstance(EchoPlugin())
 }
+```
 
 #### JavaScript
 
