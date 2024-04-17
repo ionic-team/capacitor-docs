@@ -6,8 +6,6 @@ contributors:
 slug: /ios/spm
 ---
 
-<em>6.0 Beta Documentation</em>
-
 # Swift Package Manager
 
 Swift Packages are Apple's new first-party tool for software dependacies. Traditionally Capacitor has used Cocoapods for managing depenacies internally and for plugins, however now is the time to move to a supported solution. 
@@ -30,44 +28,10 @@ First we'll start with our normal `npm init @capacitor/app`:
 
 ![Demo Step 1](../../../static/img/v6/docs/ios/spm/demo-step1.png)
 
-Then we're going to edit the project's package.json to use the latest 6.0 betas, by replacing every instance of 'latest' with 'next'. It should read like this when it's ready:
-
-```
-{
-  "name": "capacitor-app",
-  "version": "1.0.0",
-  "description": "An Amazing Capacitor App",
-  "main": "index.js",
-  "keywords": [
-    "capacitor",
-    "mobile"
-  ],
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@capacitor/core": "next",
-    "@capacitor/camera": "next",
-    "@capacitor/splash-screen": "next"
-  },
-  "devDependencies": {
-    "@capacitor/cli": "next",
-    "vite": "^2.9.13"
-  },
-  "author": "",
-  "license": "ISC"
-}
-```
-
-Once you're done editing the package.json file, use this to have NPM upgrade this Capacitor installation to the latest 6.0 beta:
-
-`npm install`
 
 Now we want to add the iOS platform to our project:
 
-`npm install @capacitor/ios@next`
+`npm install @capacitor/ios`
 
 Next let's build the web project:
 
@@ -87,7 +51,7 @@ So let's add a plugin to this project and do something with that plugin.
 
 Start with installing the Capacitor App plugin:
 
-`npm install @capacitor/app@next`
+`npm install @capacitor/app`
 
 Then let's sync the web app. This will add the App plugin SPM to the iOS project:
 
