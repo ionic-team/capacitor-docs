@@ -1,7 +1,7 @@
 ---
 title: Watch Capacitor Plugin API
 description: Provide Watch interfaces and communication
-editUrl: https://github.com/ionic-team/CapacitorWatch/blob/main/README.md
+custom_edit_url: https://github.com/ionic-team/CapacitorWatch/blob/main/README.md
 editApiUrl: https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: Watch 🧪
 ---

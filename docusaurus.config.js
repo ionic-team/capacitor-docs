@@ -262,21 +262,12 @@ module.exports = {
               return 'https://crowdin.com/project/capacitor-docs';
             }
 
-            const apiRegex = /apis\/(.*)\.md/;
-            const apiRegexPath = apiRegex.exec(docPath)?.[1];
-
             const cliRegex = /cli\/commands\/(.*)\.md/;
             const cliRegexPath = cliRegex.exec(docPath)?.[1];
 
             const nativeRegex = /native\/(.*)\.md/;
             const nativeRegexPath = nativeRegex.exec(docPath)?.[1];
 
-            if (apiRegexPath) {
-              if (apiRegexPath === 'cookies' || apiRegexPath === 'http') {
-                return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${apiRegexPath}.md`;
-              }
-              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${apiRegexPath}/README.md`;
-            }
             if (cliRegexPath) {
               return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${cliRegexPath.replace(
                 '-',
