@@ -23,7 +23,7 @@ The easiest way to communicate between JavaScript and native code is to build a 
 
 First, create a `EchoPlugin.java` file by [opening Android Studio](/main/android/index.md#opening-the-android-project), expanding the **app** module and the **java** folder, right-clicking on your app's Java package, selecting **New** -> **Java Class** from the context menu, and creating the file.
 
-![Android Studio app package](../../../../static/img/v5/docs/android/studio-app-package.png)
+![Android Studio app package](/img/v5/docs/android/studio-app-package.png)
 
 Copy the following Java code into `EchoPlugin.java`:
 

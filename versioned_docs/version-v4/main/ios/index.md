@@ -63,7 +63,7 @@ The command will prompt you to select a target. [Learn more about `run`](/cli/co
 
 In Xcode, first select the device or simulator and then click the play button to run your app.
 
-![Running your app](../../../../static/img/v4/docs/ios/running.png)
+![Running your app](/img/v4/docs/ios/running.png)
 
 ## Troubleshooting
 

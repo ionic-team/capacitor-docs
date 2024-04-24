@@ -36,7 +36,7 @@ It can also help with many other seemingly random issues, so running "Sync Proje
 
 Cleaning and rebuilding can fix a number of build issues:
 
-![Android Clean and Build](../../../../static/img/v4/docs/android/clean-rebuild.png)
+![Android Clean and Build](/img/v4/docs/android/clean-rebuild.png)
 
 ### Invalidate Caches/Restart
 
@@ -44,7 +44,7 @@ If you're confident you fixed an issue, but Android Studio or Gradle doesn't agr
 
 That can be done easily from the File menu:
 
-![Android Invalidate Caches](../../../../static/img/v4/docs/android/invalidate-caches.png)
+![Android Invalidate Caches](/img/v4/docs/android/invalidate-caches.png)
 
 ## Error: "package android.support.\* does not exist"
 
@@ -66,13 +66,13 @@ periodically after updating dependencies and changing project settings.
 
 To manually sync Gradle, open File -> Sync Project with Gradle Files from the main menu bar:
 
-![Sync Gradle](../../../../static/img/v4/docs/android/sync-gradle.png)
+![Sync Gradle](/img/v4/docs/android/sync-gradle.png)
 
 ## Error: "APK Can't be installed"
 
 An APK not installing to an Emulator or Device is often due to having an existing app with the same package name. You may see an error like this when trying to run your app:
 
-![Android APK Failed](../../../../static/img/v4/docs/android/apk-failed.png)
+![Android APK Failed](/img/v4/docs/android/apk-failed.png)
 
 The solution is to remove any old apps and make sure your package name is up to date in `AndroidManifest.xml` and not conflicting with other apps you are developing.
 
@@ -84,7 +84,7 @@ This error may occur when using the `run` command if the `JAVA_HOME` environment
 
 To resolve, set `JAVA_HOME` as an environment or system variable using the path found in Android Studio under Preferences > Build, Execution, Deployment, Build Tools > Gradle > Gradle JDK.
 
-![JDK Path in Android Studio](../../../../static/img/v4/docs/android/jdk-path.png)
+![JDK Path in Android Studio](/img/v4/docs/android/jdk-path.png)
 
 On Mac, this can be updated in your `.zshrc` or `.bashrc` file or exported in your environment.
 

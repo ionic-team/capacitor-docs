@@ -64,7 +64,7 @@ The command will prompt you to select a target. [Learn more about `run`](/cli/co
 
 In Android Studio, first select the device or emulator and then click the run or debug button to run your app. Unless you're debugging Java or Kotlin code, the run button is preferred.
 
-![Running App](../../../../static/img/v5/docs/android/running.png)
+![Running App](/img/v5/docs/android/running.png)
 
 ## Troubleshooting
 

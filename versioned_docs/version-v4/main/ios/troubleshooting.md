@@ -37,13 +37,13 @@ Sometimes, Xcode clings to old, outdated build artifacts. To start fresh, you'll
 
 To do this, open Xcode Preferences, choose the Locations tab, and click the small arrow next to your Derived Data path:
 
-![Locations](../../../../static/img/v4/docs/ios/location-prefs.png)
+![Locations](/img/v4/docs/ios/location-prefs.png)
 
 This opens a Finder window to the location of Xcode's temporary Derived Data.
 
 Next, select all items in that directory and delete:
 
-![Deleting Derived Data](../../../../static/img/v4/docs/ios/deleting-derived-data.png)
+![Deleting Derived Data](/img/v4/docs/ios/deleting-derived-data.png)
 
 Finally, do a rebuild in Xcode.
 
@@ -63,7 +63,7 @@ Perform a new build after running this command.
 
 Xcode sometimes gets stuck indexing forever. This unfortunate situation looks like this:
 
-![Xcode indexing](../../../../static/img/v4/docs/ios/indexing.png)
+![Xcode indexing](/img/v4/docs/ios/indexing.png)
 
 The only solution is to Force Close Xcode (using Activity Monitor) and start it up again.
 

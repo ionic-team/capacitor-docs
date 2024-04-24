@@ -198,7 +198,7 @@ iOS configuration involves creating a site association file and configuring the 
 
 First, log into the [Apple Developer site](https://developer.apple.com). Navigate to the "Certificates, Identifiers, & Profiles" section and select your app's identifier. Note the Team ID and Bundle ID, and under Capabilities, toggle "Associated Domains" then save:
 
-![iOS Identifier Config](../../../static/img/v6/docs/guides/deep-links/ios-config.png)
+![iOS Identifier Config](/img/v6/docs/guides/deep-links/ios-config.png)
 
 Next, create the site association file (`apple-app-site-association`).
 
@@ -226,7 +226,7 @@ Next, upload the file to your web site (hosted on HTTPS), then validate that it'
 
 The final step is to configure the iOS app to recognize incoming links. Open Xcode, then navigate to Signing & Capabilities. Click "+ Capability", then choose Associated Domains. In the Domains entry that appears, edit it using the format `applinks:yourdomain.com`:
 
-![Xcode Associated Domain](../../../static/img/v6/docs/guides/deep-links/xcode-associated-domain.png)
+![Xcode Associated Domain](/img/v6/docs/guides/deep-links/xcode-associated-domain.png)
 
 ## Android Configuration
 
@@ -250,11 +250,11 @@ keytool -list -v -keystore my-release-key.keystore
 
 The printed output will include the SHA256 fingerprint:
 
-![Keytool output](../../../static/img/v6/docs/guides/deep-links/keystore-sha256.png)
+![Keytool output](/img/v6/docs/guides/deep-links/keystore-sha256.png)
 
 Next, use Google's [Asset Links tool](https://developers.google.com/digital-asset-links/tools/generator) to create the Site Association file. Fill in the website domain, app package name, and SHA256 fingerprint, then click "Generate statement":
 
-![Android Identifier Config](../../../static/img/v6/docs/guides/deep-links/android-config.png)
+![Android Identifier Config](/img/v6/docs/guides/deep-links/android-config.png)
 
 Copy the JSON output into a new local file under `.well-known/assetlinks.json`.
 

@@ -18,7 +18,7 @@ We've tried our best to make sure you don't have to change much about how you wo
 
 When a Capcacitor project is using SPM we use a 'Base SPM' package that will serve as the place that references all of your projects dependancies:
 
-![Base SPM Picture](../../../static/img/v6/docs/ios/spm/base-spm.png)
+![Base SPM Picture](/img/v6/docs/ios/spm/base-spm.png)
 
 The Capcacitor CLI will modify the CapAPP-SPM package when you sync new plugins. It is important you do not touch the contents here because the CLI can and will change things.
 
@@ -26,7 +26,7 @@ The Capcacitor CLI will modify the CapAPP-SPM package when you sync new plugins.
 
 First we'll start with our normal `npm init @capacitor/app`:
 
-![Demo Step 1](../../../static/img/v6/docs/ios/spm/demo-step1.png)
+![Demo Step 1](/img/v6/docs/ios/spm/demo-step1.png)
 
 
 Now we want to add the iOS platform to our project:
@@ -70,4 +70,4 @@ More details soon, but check this repository out: https://github.com/ionic-team/
 
 After adding plugins try to 'reset package caches' in Xcode:
 
-![Demo Step 1](../../../static/img/v6/docs/ios/spm/reset-package.png)
+![Demo Step 1](/img/v6/docs/ios/spm/reset-package.png)

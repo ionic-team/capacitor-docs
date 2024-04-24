@@ -20,8 +20,8 @@ the Android SDK Platforms for API 21 or greater.
 
 You can install these easily by opening Android Studio, and going to Tools -> Android -> SDK Manager from the top menu bar:
 
-![SDK Platforms](../../../static/img/v3/docs/android/sdk-platforms.png)
-![SDK Tools](../../../static/img/v3/docs/android/sdk-tools.png)
+![SDK Platforms](/img/v3/docs/android/sdk-platforms.png)
+![SDK Tools](/img/v3/docs/android/sdk-tools.png)
 
 ### Creating Android Project
 
@@ -55,7 +55,7 @@ npx cap open android
 
 Once Android Studio is open, you should be able to run your app on a device or emulator. Click Run or Debug:
 
-![Running App](../../../static/img/v3/docs/android/running.png)
+![Running App](/img/v3/docs/android/running.png)
 
 ### Troubleshooting
 

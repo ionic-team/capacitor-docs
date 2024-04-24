@@ -15,7 +15,7 @@ The `Info.plist` file is the main configuration file for iOS apps. You may need 
 
 To modify it, [open your project in Xcode](/main/ios/index.md#opening-the-ios-project), select the **App** project and the **App** target, and click the **Info** tab.
 
-![Xcode info editor](../../../static/img/v6/docs/ios/xcode-info-editor.png)
+![Xcode info editor](/img/v6/docs/ios/xcode-info-editor.png)
 
 > You can show the true key names by right-clicking in the table and checking **Raw Keys & Values** in the context menu.
 >
@@ -37,7 +37,7 @@ Unlike other configuration options and usage descriptions, capabilities are _not
 
 To add a new capability, [open your app in Xcode](/main/ios/index.md#opening-the-ios-project), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
 
-![Xcode Capabilities](../../../static/img/v6/docs/ios/xcode-capabilities.png)
+![Xcode Capabilities](/img/v6/docs/ios/xcode-capabilities.png)
 
 ## Renaming your App
 
@@ -45,7 +45,7 @@ You can't rename the `App` directory, but you can set the name of your app by re
 
 To rename the **App** target, [open your project in Xcode](/main/ios/index.md#opening-the-ios-project), select the **App** project, and double-click the **App** target.
 
-![Xcode Target](../../../static/img/v6/docs/ios/xcode-target.png)
+![Xcode Target](/img/v6/docs/ios/xcode-target.png)
 
 Then, open `ios/App/Podfile` and rename the current target at the bottom of the file:
 
