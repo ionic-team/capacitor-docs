@@ -281,12 +281,6 @@ module.exports = {
           },
           breadcrumbs: false,
           exclude: ['README.md'],
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: 'v6',
-            },
-          },
         },
         googleTagManager: {
           containerId: 'GTM-TKMGCBC',
