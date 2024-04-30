@@ -58,7 +58,7 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/README.md',
+    editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
   },
   {
