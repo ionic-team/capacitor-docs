@@ -54,6 +54,14 @@ const pluginApis = [
     tag: 'latest',
   },
   {
+    id: 'barcode-scanner',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
+  },
+  {
     id: 'browser',
     isCore: false,
     isExperimental: false,
