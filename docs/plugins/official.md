@@ -21,6 +21,7 @@ The API documentation for these plugins can be found below.
 - [App Launcher](/apis/app-launcher.md)
 - [App](/apis/app.md)
 - [Background Runner](/apis/background-runner.md)
+- [Barcode Scanner](/apis/barcode-scanner.md)
 - [Browser](/apis/browser.md)
 - [Camera](/apis/camera.md)
 - [Clipboard](/apis/clipboard.md)
