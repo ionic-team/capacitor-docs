@@ -16,14 +16,13 @@ Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to in
 
 To get started, first generate a plugin as shown in the [Getting Started](/plugins/creating-plugins/overview.md) section of the Plugin guide.
 
-Next, open `echo/ios/Plugin.xcworkspace` in Xcode. You then want to navigate to the .swift file for your plugin.
+Next, open `Package.swift` in Xcode. You then want to navigate to the .swift files for your plugin.
 
-For example, for a plugin with the Plugin Class Name `Echo`, you should open `EchoPlugin.swift`.
+For example, for a plugin with the Plugin Class Name `EchoPlugin`, you should open `ios/Sources/EchoPlugin/EchoPlugin.swift` and `ios/Sources/EchoPlugin/Echo.swift`.
 
 ## Plugin Basics
 
-A Capacitor plugin for iOS is a simple Swift class that extends `CAPPlugin` and
-has some exported methods that will be callable from JavaScript.
+A Capacitor plugin for iOS has two simple Swift classes, one is implementation class that extends `NSObject`, where you should put the plugin logic and another that extends `CAPPlugin` and `CAPBridgedPlugin` and has some exported methods that will be callable from JavaScript and wraps the implementation methods.
 
 ### Simple Example
 
@@ -32,19 +31,40 @@ In the generated example, there is a simple echo plugin with an `echo` function 
 This example demonstrates a few core components of Capacitor plugins: receiving data from a Plugin Call, and returning
 data back to the caller:
 
+`Echo.swift`
+
+```swift
+import Foundation
+
+@objc public class Echo: NSObject {
+    @objc public func echo(_ value: String) -> String {
+        print(value)
+        return value
+    }
+}
+```
+
 `EchoPlugin.swift`
 
 ```swift
+import Foundation
 import Capacitor
 
 @objc(EchoPlugin)
-public class EchoPlugin: CAPPlugin {
-  @objc func echo(_ call: CAPPluginCall) {
-    let value = call.getString("value") ?? ""
-    call.resolve([
-        "value": value
-    ])
-  }
+public class EchoPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "EchoPlugin"
+    public let jsName = "Echo"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+    ]
+    private let implementation = Echo()
+
+    @objc func echo(_ call: CAPPluginCall) {
+        let value = call.getString("value") ?? ""
+        call.resolve([
+            "value": implementation.echo(value)
+        ])
+    }
 }
 ```
 
@@ -111,23 +131,21 @@ override public func load() {
 
 ### Export to Capacitor
 
-To make sure Capacitor can see your plugin, the plugin generator do two things: export your Swift class to Objective-C, and register it using the provided Capacitor Objective-C Macros.
+To make sure Capacitor can see your plugin, the plugin generator do two things: export your Swift class to Objective-C, and registers the plugin methods.
 
 To export your Swift class to Objective-C, the plugin generator adds `@objc(EchoPlugin)` above your Swift class, and add `@objc` before the `echo` method.
 
-To register the plugin, the plugin generator creates a file with a `.m` extension corresponding to your plugin (such as `EchoPlugin.m`) and use the `CAP_PLUGIN` to register the plugin and the `CAP_PLUGIN_METHOD` macro to register the `echo` method.
+To register the plugin methods, the plugin generator creates a `pluginMethods` array of `CAPPluginMethod` and registers the `echo` method.
 
-```objectivec
-#import <Capacitor/Capacitor.h>
-
-CAP_PLUGIN(EchoPlugin, "Echo",
-  CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
-)
+```swift
+public let pluginMethods: [CAPPluginMethod] = [
+    CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+]
 ```
 
-This makes `Echo` plugin, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
+This makes the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
 
-To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAP_PLUGIN_METHOD` entry in the `.m` file.
+To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAPPluginMethod` entry in the `pluginMethods` array.
 
 ## Permissions
 

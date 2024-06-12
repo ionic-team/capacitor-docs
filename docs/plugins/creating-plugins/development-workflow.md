@@ -66,7 +66,7 @@ public void openMap(PluginCall call) {
 }
 ```
 
-Implement [iOS functionality](./ios) in `ios/Plugin/EchoPlugin.swift`:
+Implement [iOS functionality](./ios) in `ios/Sources/EchoPlugin/EchoPlugin.swift`:
 
 ```swift
 @objc func openMap(_ call: CAPPluginCall) {
@@ -79,7 +79,7 @@ Implement [iOS functionality](./ios) in `ios/Plugin/EchoPlugin.swift`:
 }
 ```
 
-> Remember to [register plugin methods](/plugins/creating-plugins/ios-guide.md#export-to-capacitor) in your `.m` file.
+> Remember to [register plugin methods](/plugins/creating-plugins/ios-guide.md#export-to-capacitor) in your `.swift` file.
 
 This example contains the most common type of method in plugins but details about all the supported types [can be found here.](/plugins/creating-plugins/method-types.md)
 
