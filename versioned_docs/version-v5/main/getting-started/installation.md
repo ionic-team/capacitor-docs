@@ -65,6 +65,26 @@ npx cap add android
 npx cap add ios
 ```
 
+### Build your web code
+
+If you used [Create a new Capacitor app](#create-a-new-capacitor-app), build your web code with:
+
+```bash
+npm run build
+```
+
+Otherwise, build your web code with your existing build tools.
+
+:::info
+If you don't build your web code first, you'll get an error like:
+```
+[error] Could not find the web assets directory: ./dist.
+        Please create it and make sure it has an index.html file. You can change the path of this directory in
+        capacitor.config.json (webDir option). You may need to compile the web assets for your app (typically npm run
+        build). More info: https://capacitorjs.com/docs/basics/workflow#sync-your-project
+```
+:::
+
 ### Sync your web code to your native project
 
 Once you've created your native projects, you can sync your web application to your native project by running the following command.
