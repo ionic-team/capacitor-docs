@@ -30,3 +30,7 @@ Example that just echo the command and the platform where it ran:
   "capacitor:sync:after": "echo sync after $CAPACITOR_PLATFORM_NAME"
 }
 ```
+
+:::note
+Capacitor Plugin Hooks also work if added in Cordova plugins
+:::

@@ -180,6 +180,7 @@ module.exports = {
         'plugins/creating-plugins/web-guide',
         'plugins/creating-plugins/method-types',
         'plugins/creating-plugins/configuration-values',
+        'plugins/creating-plugins/plugin-hooks',
       ],
     },
     {
