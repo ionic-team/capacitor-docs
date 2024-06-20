@@ -30,7 +30,7 @@ defaultConfig {
 
 ## Changing the App Name
 
-To change the name of your app, change the value for `app_name` in `strings.xml`:
+To change the name of your app, change the value for `app_name` in `strings.xml` located at `android/app/src/main/res/values/`:
 
 ```xml
 <string name="app_name">MyApp</string>
@@ -66,7 +66,7 @@ To get any custom URL the app may have launched with, see the Deeplinks section 
 
 ## Setting Permissions
 
-In Android, permissions your app will need are defined in `AndroidManifest.xml` inside of the `<manifest>` tag, generally at the bottom of the file.
+In Android, permissions your app will need are defined in `AndroidManifest.xml` located at `android/app/src/main/` inside of the `<manifest>` tag, generally at the bottom of the file.
 
 For example, here's what adding Network permissions looks like:
 
