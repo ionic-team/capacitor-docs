@@ -426,7 +426,7 @@ Get access to device location information.
 | **`heading`**          | <code>number \| null</code> | The heading the user is facing (if available)                                                                         | 1.0.0 |
 
 
-#### CapcacitorWatch
+#### CapacitorWatch
 
 Interact with a watch paired with this app
 
