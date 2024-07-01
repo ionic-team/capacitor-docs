@@ -70,13 +70,15 @@ Opening the native project can give you full control over the native runtime of 
 
 ## Compiling your native binary
 
-After `sync`, you are encouraged to open your target platform's IDE: Xcode for iOS or Android Studio for Android, for compiling your native app. Alternatively, use the [cap build command](/cli/commands/build) to build the native project, outputting a signed AAB, APK or IPA file ready for distribution to a device or end users.
+After `sync`, you are encouraged to open your target platform's IDE: Xcode for iOS or Android Studio for Android, for compiling your native app.
+
+Alternatively, to compile your app in a terminal or in CI environments, you can use the [cap build command](/cli/commands/build) to build the native project, outputting a signed AAB, APK or IPA file ready for distribution to a device or end users.
 
 ```bash
 npx cap build android
 ```
 
-To compile your app in a terminal or in CI environments, you can use `gradle` or `xcodebuild` directly. We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/main/ios/deploying-to-app-store.md) and [Android](/main/android/deploying-to-google-play.md) for more info on how to deploy to the Apple App Store or the Google Play Store.
+We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool like [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/main/ios/deploying-to-app-store.md) and [Android](/main/android/deploying-to-google-play.md) for more info on how to deploy to the Apple App Store or the Google Play Store.
 
 ## Updating Capacitor
 
