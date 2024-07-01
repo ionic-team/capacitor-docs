@@ -10,10 +10,7 @@ hide_table_of_contents: true
 
 Capacitor is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web. Representing the next evolution of Hybrid apps, Capacitor creates **Web Native apps**, providing a modern native container approach for teams who want to build web-first without sacrificing full access to native SDKs when they need it.
 
-<img
-  src={require('/img/v3/docs/capacitor-index.png').default}
-  loading="eager"
-/>
+![Capacitor Logo and background](/img/v3/docs/capacitor-index.png)
 
 ## Introduction
 
@@ -25,4 +22,4 @@ Capacitor is a spiritual successor to [Apache Cordova](https://cordova.apache.or
 
 Getting started with Capacitor is easy! Capacitor can be dropped into any existing modern JavaScript project, or a fresh Capacitor project can be created from scratch.
 
-Follow the [Installation guide](/docs/v3/getting-started) to get started building your app.
+Follow the [Installation guide](/main/getting-started/installation.md) to get started building your app.

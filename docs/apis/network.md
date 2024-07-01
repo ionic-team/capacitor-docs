@@ -1,7 +1,7 @@
 ---
 title: Network Capacitor Plugin API
 description: The Network API provides network and connectivity information.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/network/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/network/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/network/src/definitions.ts
 sidebar_label: Network
 ---
@@ -38,7 +38,7 @@ const logCurrentNetworkStatus = async () => {
 <docgen-index>
 
 * [`getStatus()`](#getstatus)
-* [`addListener('networkStatusChange', ...)`](#addlistenernetworkstatuschange)
+* [`addListener('networkStatusChange', ...)`](#addlistenernetworkstatuschange-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -46,7 +46,7 @@ const logCurrentNetworkStatus = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getStatus()
 
@@ -66,7 +66,7 @@ Query the current status of the network connection.
 ### addListener('networkStatusChange', ...)
 
 ```typescript
-addListener(eventName: 'networkStatusChange', listenerFunc: ConnectionStatusChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'networkStatusChange', listenerFunc: ConnectionStatusChangeListener) => Promise<PluginListenerHandle>
 ```
 
 Listen for changes in the network connection.
@@ -76,7 +76,7 @@ Listen for changes in the network connection.
 | **`eventName`**    | <code>'networkStatusChange'</code>                                                        |
 | **`listenerFunc`** | <code><a href="#connectionstatuschangelistener">ConnectionStatusChangeListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 

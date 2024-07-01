@@ -8,15 +8,15 @@ canonicalUrl: https://capacitorjs.com/docs/cli
 
 # Capacitor CLI Reference
 
-The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps. View installation details [here](/docs/getting-started).
+The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps. View installation details [here](/getting-started/index.md).
 
-- [Add](/docs/cli/add)
-- [Cap](/docs/cli/cap)
-- [Copy](/docs/cli/copy)
-- [Create](/docs/cli/create)
-- [List](/docs/cli/list)
-- [Open](/docs/cli/open)
-- [Plugin Generate](/docs/cli/plugin-generate)
-- [Serve](/docs/cli/serve)
-- [Sync](/docs/cli/sync)
-- [Update](/docs/cli/update)
+- [Add](/cli/add.md)
+- [Cap](/cli/cap.md)
+- [Copy](/cli/copy.md)
+- [Create](/cli/create.md)
+- [ls](/cli/ls.md)
+- [Open](/cli/open.md)
+- [Plugin Generate](/cli/plugin-generate.md)
+- [Serve](/cli/serve.md)
+- [Sync](/cli/sync.md)
+- [Update](/cli/update.md)

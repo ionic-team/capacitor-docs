@@ -1,7 +1,7 @@
 ---
 title: Local Notifications Capacitor Plugin API
 description: The Local Notifications API provides a way to schedule device notifications locally (i.e. without a server sending push notifications).
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/src/definitions.ts
 sidebar_label: Local Notifications
 ---
@@ -18,6 +18,9 @@ npx cap sync
 ```
 
 ## Android
+Android 13 requires a permission check in order to send notifications.  You are required to call `checkPermissions()` and `requestPermissions()` accordingly.
+
+On Android 12 and older it won't show a prompt and will just return as granted.
 
 Starting on Android 12, scheduled notifications won't be exact unless this permission is added to your `AndroidManifest.xml`:
 
@@ -25,12 +28,14 @@ Starting on Android 12, scheduled notifications won't be exact unless this permi
 <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 ```
 
-Note that even if the permission is present, users can still disable exact notifications from the app settings.
+Note that even if the permission is present, users can still disable exact notifications from the app settings.  Use `checkExactNotificationSetting()` to check the the value of the setting.  If a user disables this setting, the app will restart and any notification scheduled with an exact alarm will be deleted.  If your application depends on exact alarms, be sure to check this setting on app launch (for example, in [`App.appStateChange`](https://capacitorjs.com/docs/apis/app#addlistenerappstatechange-)) in order to provide fallbacks or alternative behavior.
+
+On Android 14, there is a new permission called `USE_EXACT_ALARM`.  Use this permission to use exact alarms without needing to request permission from the user.  This should only be used if the use of exact alarms is central to your app's functionality.  Read more about the implications of using this permission [here](https://developer.android.com/reference/android/Manifest.permission#USE_EXACT_ALARM).
 
 ## Configuration
 
 <docgen-config>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 On Android, the Local Notifications can be configured with the following options:
 
@@ -99,8 +104,10 @@ If the device has entered [Doze](https://developer.android.com/training/monitori
 * [`listChannels()`](#listchannels)
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions()`](#requestpermissions)
-* [`addListener('localNotificationReceived', ...)`](#addlistenerlocalnotificationreceived)
-* [`addListener('localNotificationActionPerformed', ...)`](#addlistenerlocalnotificationactionperformed)
+* [`changeExactNotificationSetting()`](#changeexactnotificationsetting)
+* [`checkExactNotificationSetting()`](#checkexactnotificationsetting)
+* [`addListener('localNotificationReceived', ...)`](#addlistenerlocalnotificationreceived-)
+* [`addListener('localNotificationActionPerformed', ...)`](#addlistenerlocalnotificationactionperformed-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -109,7 +116,7 @@ If the device has entered [Doze](https://developer.android.com/training/monitori
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### schedule(...)
 
@@ -326,10 +333,50 @@ Request permission to display local notifications.
 --------------------
 
 
+### changeExactNotificationSetting()
+
+```typescript
+changeExactNotificationSetting() => Promise<SettingsPermissionStatus>
+```
+
+Direct user to the application settings screen to configure exact alarms.
+
+In the event that a user changes the settings from granted to denied, the application
+will restart and any notification scheduled with an exact alarm will be deleted.
+
+On Android &lt; 12, the user will NOT be directed to the application settings screen, instead this function will
+return `granted`.
+
+Only available on Android.
+
+**Returns:** <code>Promise&lt;<a href="#settingspermissionstatus">SettingsPermissionStatus</a>&gt;</code>
+
+**Since:** 6.0.0
+
+--------------------
+
+
+### checkExactNotificationSetting()
+
+```typescript
+checkExactNotificationSetting() => Promise<SettingsPermissionStatus>
+```
+
+Check application setting for using exact alarms.
+
+Only available on Android.
+
+**Returns:** <code>Promise&lt;<a href="#settingspermissionstatus">SettingsPermissionStatus</a>&gt;</code>
+
+**Since:** 6.0.0
+
+--------------------
+
+
 ### addListener('localNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => Promise<PluginListenerHandle>
 ```
 
 Listen for when notifications are displayed.
@@ -339,7 +386,7 @@ Listen for when notifications are displayed.
 | **`eventName`**    | <code>'localNotificationReceived'</code>                                                               |
 | **`listenerFunc`** | <code>(notification: <a href="#localnotificationschema">LocalNotificationSchema</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -349,7 +396,7 @@ Listen for when notifications are displayed.
 ### addListener('localNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => Promise<PluginListenerHandle>
 ```
 
 Listen for when an action is performed on a notification.
@@ -359,7 +406,7 @@ Listen for when an action is performed on a notification.
 | **`eventName`**    | <code>'localNotificationActionPerformed'</code>                                              |
 | **`listenerFunc`** | <code>(notificationAction: <a href="#actionperformed">ActionPerformed</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -655,6 +702,13 @@ An action that can be taken when a notification is displayed.
 | Prop          | Type                                                        | Description                                   | Since |
 | ------------- | ----------------------------------------------------------- | --------------------------------------------- | ----- |
 | **`display`** | <code><a href="#permissionstate">PermissionState</a></code> | Permission state of displaying notifications. | 1.0.0 |
+
+
+#### SettingsPermissionStatus
+
+| Prop              | Type                                                        | Description                             | Since |
+| ----------------- | ----------------------------------------------------------- | --------------------------------------- | ----- |
+| **`exact_alarm`** | <code><a href="#permissionstate">PermissionState</a></code> | Permission state of using exact alarms. | 6.0.0 |
 
 
 #### PluginListenerHandle

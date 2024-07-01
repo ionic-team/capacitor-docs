@@ -26,7 +26,7 @@ In spirit, Capacitor and Cordova are very similar. Both manage a Web View and pr
 
 Capacitor considers each platform project a _source asset_ instead of a _build time asset_. That means you'll check your Xcode and Android Studio projects into source control, as well as use those IDEs when necessary for platform-specific configuration and running/testing.
 
-This change in approach has a few implications. First, Capacitor does not use `config.xml` or a similar custom configuration for platform settings. Instead, configuration changes are made by editing the appropriate platform-specific configuration files directly, such as `AndroidManifest.xml` for Android and `Info.plist` for Xcode. Capacitor does have some [high level configuration options](/docs/basics/configuring-your-app) that are set in `capacitor.config.json`. These generally don't modify native functionality, but control Capacitor's tooling.
+This change in approach has a few implications. First, Capacitor does not use `config.xml` or a similar custom configuration for platform settings. Instead, configuration changes are made by editing the appropriate platform-specific configuration files directly, such as `AndroidManifest.xml` for Android and `Info.plist` for Xcode. Capacitor does have some [high level configuration options](/basics/configuring-your-app.md) that are set in `capacitor.config.json`. These generally don't modify native functionality, but control Capacitor's tooling.
 
 Additionally, Capacitor does not "run on device" or emulate through the command line. Instead, such operations occur through the platform-specific IDE, which provides a faster, more typical experience that follows the standards of app development for that platform. For example, running iOS apps from the command line is not officially supported by Apple anyway, so Xcode is preferred.
 
@@ -55,4 +55,4 @@ Thus, instead of running `capacitor` directly from the command line, Capacitor i
 
 ## Start the Migration
 
-Learn more about the [migration process](/docs/cordova/migration-strategy) or [get started migrating](/docs/cordova/migrating-from-cordova-to-capacitor) right away.
+Learn more about the [migration process](/cordova/migration-strategy.md) or [get started migrating](/cordova/migrating-from-cordova-to-capacitor.md) right away.

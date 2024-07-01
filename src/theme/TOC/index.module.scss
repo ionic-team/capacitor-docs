@@ -1,0 +1,24 @@
+.ad {
+  margin-block-start: 1.5rem;
+
+  max-width: 8.75rem;
+
+  transition: opacity 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  :global {
+    p {
+      margin-block-start: 0.75rem;
+
+      font-size: 0.875rem;
+      line-height: 1.5;
+      font-weight: 500;
+
+      color: var(--ifm-font-color-base);
+    }
+  }
+}

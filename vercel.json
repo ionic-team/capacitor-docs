@@ -12,7 +12,9 @@
   ],
   "redirects": [
     { "source": "/", "destination": "/docs" },
-    { "source": "/docs/apis/storage", "destination": "/docs/apis/preferences" }
+    { "source": "/docs/apis/storage", "destination": "/docs/apis/preferences" },
+    { "source": "/docs/cli/commands/list", "destination": "/docs/cli/commands/ls" },
+    { "source": "/docs/next/:match*", "destination": "/docs/:match*" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },

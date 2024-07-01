@@ -87,7 +87,7 @@ schedule(options: { notifications: LocalNotification[]; }) => Promise<LocalNotif
 
 | Param         | Type                                                 |
 | ------------- | ---------------------------------------------------- |
-| **`options`** | <code>{ notifications: LocalNotification[]; }</code> |
+| **`options`** | `{ notifications: LocalNotification[]; }` |
 
 **Returns:** <code>Promise&lt;<a href="#localnotificationscheduleresult">LocalNotificationScheduleResult</a>&gt;</code>
 
@@ -111,7 +111,7 @@ registerActionTypes(options: { types: LocalNotificationActionType[]; }) => Promi
 
 | Param         | Type                                                   |
 | ------------- | ------------------------------------------------------ |
-| **`options`** | <code>{ types: LocalNotificationActionType[]; }</code> |
+| **`options`** | `{ types: LocalNotificationActionType[]; }` |
 
 ---
 
@@ -255,7 +255,7 @@ Remove all native listeners for this plugin
 | **`repeats`** | <code>boolean</code>                                                                               |
 | **`every`**   | <code>"year" \| "month" \| "two-weeks" \| "week" \| "day" \| "hour" \| "minute" \| "second"</code> |
 | **`count`**   | <code>number</code>                                                                                |
-| **`on`**      | <code>{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }</code>      |
+| **`on`**      | `{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }`      |
 
 #### Date
 

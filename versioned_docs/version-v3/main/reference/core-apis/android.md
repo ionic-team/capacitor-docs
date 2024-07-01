@@ -37,7 +37,7 @@ public void triggerJSEvent(final String eventName, final String target)
 public void triggerJSEvent(final String eventName, final String target, final String data)
 ```
 
-Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/v3/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](/docs/v3/plugins/android#plugin-events) instead.
+Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/v3/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](/plugins/creating-plugins/android-guide.md#plugin-events) instead.
 
 Examples:
 
@@ -52,10 +52,10 @@ Note: `data` must be a serialized JSON string value.
 
 ## Passing data
 
-Notes on how to work with data that is passed between environments can be [found here](/docs/v3/core-apis/data-types#android).
+Notes on how to work with data that is passed between environments can be [found here](/main/reference/core-apis/data-types.md).
 
 ---
 
 ## Saving CAPPluginCall
 
-Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/docs/v3/core-apis/saving-calls).
+Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/main/reference/core-apis/saving-calls.md).

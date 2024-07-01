@@ -11,7 +11,7 @@ slug: /ios/custom-code
 
 With Capacitor, you are encouraged to write Swift or Objective-C code to implement the native features your app needs.
 
-There may not be [a Capacitor plugin](/docs/plugins) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
+There may not be [a Capacitor plugin](/plugins.mdx) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
 
 ## WebView-Accessible Native Code
 
@@ -19,9 +19,9 @@ The easiest way to communicate between JavaScript and native code is to build a 
 
 ### `EchoPlugin.swift`
 
-First, create a `EchoPlugin.swift` file by [opening Xcode](/docs/ios#opening-the-ios-project), right-clicking on the **App** group (under the **App** target), selecting **New File...** from the context menu, choosing **Swift File** in the window, and creating the file.
+First, create a `EchoPlugin.swift` file by [opening Xcode](/main/ios/index.md#opening-the-ios-project), right-clicking on the **App** group (under the **App** target), selecting **New File...** from the context menu, choosing **Swift File** in the window, and creating the file.
 
-![New Swift File in Xcode](../../../static/img/v4/docs/ios/xcode-new-swift-file.png)
+![New Swift File in Xcode](../../../static/img/v6/docs/ios/xcode-new-swift-file.png)
 
 Copy the following Swift code into `EchoPlugin.swift`:
 
@@ -29,7 +29,13 @@ Copy the following Swift code into `EchoPlugin.swift`:
 import Capacitor
 
 @objc(EchoPlugin)
-public class EchoPlugin: CAPPlugin {
+public class EchoPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "EchoPlugin"
+    public let jsName = "Echo"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+    ]
+
     @objc func echo(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
         call.resolve(["value": value])
@@ -43,25 +49,17 @@ public class EchoPlugin: CAPPlugin {
 
 We must register custom plugins on both iOS and web so that Capacitor can bridge between Swift and JavaScript.
 
-#### `EchoPlugin.m`
+#### `MyViewController.swift`
 
-Next, create a `EchoPlugin.m` file with Xcode in the same way, but choose **Objective-C** in the window. Leave the **File Type** as **Empty File**. If prompted by Xcode to create a Bridging Header, click **Create Bridging Header**.
+[Create a custom `MyViewController.swift`](../ios/viewcontroller.md).
 
-> Using Xcode to create native files is recommended because it ensures the references are added to the project appropriately.
->
-> These changes to project files should be committed to your project along with the new files themselves.
+Then add a `capacitorDidLoad()` method override and register the plugin:
 
-Copy the following Swift code into `EchoPlugin.m`:
-
-```objectivec
-#import <Capacitor/Capacitor.h>
-
-CAP_PLUGIN(EchoPlugin, "Echo",
-    CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
-)
+```swift
+override open func capacitorDidLoad() {
+    bridge?.registerPluginInstance(EchoPlugin())
+}
 ```
-
-> These Objective-C macros register your plugin with Capacitor, making `EchoPlugin` and its `echo` method available to JavaScript. Whenever you add or remove methods in `EchoPlugin.swift`, this file must be updated.
 
 #### JavaScript
 
@@ -109,4 +107,4 @@ console.log('Response from native:', value);
 
 ### Next Steps
 
-[Read the iOS Plugin Guide &#8250;](/docs/plugins/ios)
+[Read the iOS Plugin Guide &#8250;](/plugins/creating-plugins/ios-guide.md)

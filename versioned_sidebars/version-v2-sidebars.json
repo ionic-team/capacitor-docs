@@ -1,14 +1,14 @@
 {
-  "version-v2/docs": [
+  "docs": [
     {
       "type": "category",
       "label": "Getting Started",
       "collapsed": false,
       "items": [
-        "version-v2/index",
-        "version-v2/getting-started/dependencies",
-        "version-v2/getting-started/index",
-        "version-v2/getting-started/with-ionic"
+        "index",
+        "getting-started/dependencies",
+        "getting-started/index",
+        "getting-started/with-ionic"
       ]
     },
     {
@@ -16,10 +16,10 @@
       "label": "Basics",
       "collapsed": false,
       "items": [
-        "version-v2/basics/workflow",
-        "version-v2/basics/using-plugins",
-        "version-v2/basics/configuring-your-app",
-        "version-v2/basics/utilities"
+        "basics/workflow",
+        "basics/using-plugins",
+        "basics/configuring-your-app",
+        "basics/utilities"
       ]
     },
     {
@@ -27,9 +27,9 @@
       "label": "Cordova/PhoneGap",
       "collapsed": false,
       "items": [
-        "version-v2/cordova/index",
-        "version-v2/cordova/migration-strategy",
-        "version-v2/cordova/migrating-from-cordova-to-capacitor"
+        "cordova/index",
+        "cordova/migration-strategy",
+        "cordova/migrating-from-cordova-to-capacitor"
       ]
     },
     {
@@ -37,19 +37,19 @@
       "label": "Concepts",
       "collapsed": false,
       "items": [
-        "version-v2/guides/ads",
-        "version-v2/guides/ci-cd",
-        "version-v2/guides/deep-links",
-        "version-v2/guides/deploying-updates",
-        "version-v2/guides/in-app-purchases",
-        "version-v2/guides/live-reload",
-        "version-v2/guides/push-notifications-firebase",
-        "version-v2/guides/react-hooks",
-        "version-v2/guides/screen-orientation",
-        "version-v2/guides/security",
-        "version-v2/guides/splash-screens-and-icons",
-        "version-v2/guides/storage",
-        "version-v2/guides/community"
+        "guides/ads",
+        "guides/ci-cd",
+        "guides/deep-links",
+        "guides/deploying-updates",
+        "guides/in-app-purchases",
+        "guides/live-reload",
+        "guides/push-notifications-firebase",
+        "guides/react-hooks",
+        "guides/screen-orientation",
+        "guides/security",
+        "guides/splash-screens-and-icons",
+        "guides/storage",
+        "guides/community"
       ]
     },
     {
@@ -57,12 +57,12 @@
       "label": "iOS",
       "collapsed": false,
       "items": [
-        "version-v2/ios/index",
-        "version-v2/ios/configuration",
-        "version-v2/ios/custom-code",
-        "version-v2/ios/deploying-to-app-store",
-        "version-v2/ios/updating",
-        "version-v2/ios/troubleshooting"
+        "ios/index",
+        "ios/configuration",
+        "ios/custom-code",
+        "ios/deploying-to-app-store",
+        "ios/updating",
+        "ios/troubleshooting"
       ]
     },
     {
@@ -70,53 +70,53 @@
       "label": "Android",
       "collapsed": false,
       "items": [
-        "version-v2/android/index",
-        "version-v2/android/configuration",
-        "version-v2/android/custom-code",
-        "version-v2/android/deploying-to-google-play",
-        "version-v2/android/updating",
-        "version-v2/android/troubleshooting"
+        "android/index",
+        "android/configuration",
+        "android/custom-code",
+        "android/deploying-to-google-play",
+        "android/updating",
+        "android/troubleshooting"
       ]
     },
     {
       "type": "category",
       "label": "Web/PWA",
       "collapsed": false,
-      "items": ["version-v2/web/index", "version-v2/web/pwa-elements"]
+      "items": ["web/index", "web/pwa-elements"]
     },
     {
       "type": "category",
       "label": "Reference",
       "collapsed": false,
       "items": [
-        "version-v2/config",
+        "config",
         {
-          "type": "link",
+          "type": "doc",
           "label": "CLI",
-          "href": "/docs/v2/cli/index"
+          "id": "cli/index"
         }
       ]
     }
   ],
 
-  "version-v2/api": [
+  "api": [
     {
       "type": "category",
       "label": "Overview",
       "collapsed": false,
-      "items": ["version-v2/plugins", "version-v2/plugins/community", "version-v2/plugins/enterprise"]
+      "items": ["plugins", "plugins/community", "plugins/enterprise"]
     },
     {
       "type": "category",
       "label": "Creating Plugins",
       "collapsed": false,
       "items": [
-        "version-v2/plugins/creating-plugins",
-        "version-v2/plugins/workflow",
-        "version-v2/plugins/ios",
-        "version-v2/plugins/android",
-        "version-v2/plugins/web",
-        "version-v2/plugins/js"
+        "plugins/creating-plugins",
+        "plugins/workflow",
+        "plugins/ios",
+        "plugins/android",
+        "plugins/web",
+        "plugins/js"
       ]
     },
     {
@@ -124,51 +124,51 @@
       "label": "Official Plugins",
       "collapsed": false,
       "items": [
-        "version-v2/apis/index",
-        "version-v2/apis/accessibility",
-        "version-v2/apis/app",
-        "version-v2/apis/background-task",
-        "version-v2/apis/camera",
-        "version-v2/apis/clipboard",
-        "version-v2/apis/console",
-        "version-v2/apis/device",
-        "version-v2/apis/filesystem",
-        "version-v2/apis/geolocation",
-        "version-v2/apis/haptics",
-        "version-v2/apis/keyboard",
-        "version-v2/apis/local-notifications",
-        "version-v2/apis/modals",
-        "version-v2/apis/motion",
-        "version-v2/apis/network",
-        "version-v2/apis/permissions",
-        "version-v2/apis/photos",
-        "version-v2/apis/push-notifications",
-        "version-v2/apis/share",
-        "version-v2/apis/splash-screen",
-        "version-v2/apis/status-bar",
-        "version-v2/apis/storage",
-        "version-v2/apis/toast"
+        "apis/index",
+        "apis/accessibility",
+        "apis/app",
+        "apis/background-task",
+        "apis/camera",
+        "apis/clipboard",
+        "apis/console",
+        "apis/device",
+        "apis/filesystem",
+        "apis/geolocation",
+        "apis/haptics",
+        "apis/keyboard",
+        "apis/local-notifications",
+        "apis/modals",
+        "apis/motion",
+        "apis/network",
+        "apis/permissions",
+        "apis/photos",
+        "apis/push-notifications",
+        "apis/share",
+        "apis/splash-screen",
+        "apis/status-bar",
+        "apis/storage",
+        "apis/toast"
       ]
     }
   ],
 
-  "version-v2/cli": [
+  "cli": [
     {
       "type": "category",
       "label": "CLI Documentation",
       "collapsed": false,
       "items": [
-        "version-v2/cli/index",
-        "version-v2/cli/add",
-        "version-v2/cli/cap",
-        "version-v2/cli/copy",
-        "version-v2/cli/create",
-        "version-v2/cli/list",
-        "version-v2/cli/open",
-        "version-v2/cli/plugin-generate",
-        "version-v2/cli/serve",
-        "version-v2/cli/sync",
-        "version-v2/cli/update"
+        "cli/index",
+        "cli/add",
+        "cli/cap",
+        "cli/copy",
+        "cli/create",
+        "cli/ls",
+        "cli/open",
+        "cli/plugin-generate",
+        "cli/serve",
+        "cli/sync",
+        "cli/update"
       ]
     }
   ]

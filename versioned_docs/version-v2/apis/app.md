@@ -30,7 +30,7 @@ deeplinks, opens other apps, and manages persisted plugin state.
 
 To use `canOpenUrl`, you need to set the URL schemes your app will query for in `LSApplicationQueriesSchemes` in `Info.plist`.
 
-Read more about [LSApplicationQueriesSchemes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW14) and [configuring Info.plist](/docs/ios/configuration).
+Read more about [LSApplicationQueriesSchemes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW14) and [configuring Info.plist](/ios/configuration.md).
 
 ## Example
 
@@ -108,9 +108,9 @@ Check if an app can be opened with the given URL
 
 | Param         | Type                          |
 | ------------- | ----------------------------- |
-| **`options`** | <code>{ url: string; }</code> |
+| **`options`** | `{ url: string; }` |
 
-**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+**Returns:** `Promise<{ value: boolean; }>`
 
 ---
 
@@ -124,9 +124,9 @@ Open an app with the given URL
 
 | Param         | Type                          |
 | ------------- | ----------------------------- |
-| **`options`** | <code>{ url: string; }</code> |
+| **`options`** | `{ url: string; }` |
 
-**Returns:** <code>Promise&lt;{ completed: boolean; }&gt;</code>
+**Returns:** `Promise<{ completed: boolean; }>`
 
 ---
 
@@ -273,4 +273,4 @@ Remove all native listeners for this plugin
 | **`methodName`** | <code>string</code>               | The methodName this result corresponds to. For example, `getPhoto`                                                                                |
 | **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` |
 | **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded                                                                                                   |
-| **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message                                                                              |
+| **`error`**      | `{ message: string; }` | If the plugin call didn't succeed, it will contain the error message                                                                              |

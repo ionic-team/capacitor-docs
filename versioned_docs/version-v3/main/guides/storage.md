@@ -20,7 +20,7 @@ Local Storage can be used for small amounts of temporary data, such as a user id
 
 ## Capacitor Storage API
 
-Capacitor comes with a native [Storage API](/docs/v3/apis/storage) that avoids the eviction issues above, but is meant for small amounts of data.
+Capacitor comes with a native [Storage API](/apis/storage.md) that avoids the eviction issues above, but is meant for small amounts of data.
 
 The Storage API provides a simple key/value API with no advanced query support:
 

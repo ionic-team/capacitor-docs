@@ -22,9 +22,9 @@ slug: /guides/community
 
 ## APIs
 
-[Camera: Building an Ionic Framework Camera App](/docs/v3/guides/ionic-framework-app)
+[Camera: Building an Ionic Framework Camera App](/main/guides/ionic-framework-app.md)
 
-[Push Notifications: Using Push Notifications with Firebase in an Ionic Angular App](/docs/v3/guides/push-notifications-firebase)
+[Push Notifications: Using Push Notifications with Firebase in an Ionic Angular App](/main/guides/push-notifications-firebase.md)
 
 [Splash Screen: Creating a Dynamic/Adaptable Splash Screen for Capacitor (Android) &#8250;](https://www.joshmorony.com/creating-a-dynamic-universal-splash-screen-for-capacitor-android/)
 

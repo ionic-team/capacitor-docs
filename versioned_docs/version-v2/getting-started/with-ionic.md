@@ -46,7 +46,7 @@ You must build your Ionic project at least once before adding any native platfor
 ionic build
 ```
 
-This creates the `www` folder that Capacitor has been [automatically configured](/docs/basics/configuring-your-app) to use as the `webDir` in `capacitor.config.json`.
+This creates the `www` folder that Capacitor has been [automatically configured](/basics/configuring-your-app.md) to use as the `webDir` in `capacitor.config.json`.
 
 ### Add Platforms
 
@@ -76,6 +76,6 @@ npx cap copy
 
 ## Using Cordova and Ionic Native Plugins
 
-Cordova and [Ionic Native](https://ionicframework.com/docs/native/) plugins are supported in Capacitor. See the [Using Cordova Plugins](/docs/cordova/using-cordova-plugins) guide for more information.
+Cordova and [Ionic Native](https://ionicframework.com/docs/native/) plugins are supported in Capacitor. See the [Using Cordova Plugins](/cordova/using-cordova-plugins.md) guide for more information.
 
-Want to start using Capacitor in an Ionic app immediately? [Check out this guide](/docs/guides/ionic-framework-app).
+Want to start using Capacitor in an Ionic app immediately? [Check out this guide](/guides/ionic-framework-app.md).

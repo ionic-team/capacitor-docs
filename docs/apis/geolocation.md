@@ -1,7 +1,7 @@
 ---
 title: Geolocation Capacitor Plugin API
 description: The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/src/definitions.ts
 sidebar_label: Geolocation
 ---
@@ -21,7 +21,6 @@ npx cap sync
 
 Apple requires privacy descriptions to be specified in `Info.plist` for location information:
 
-- `NSLocationAlwaysUsageDescription` (`Privacy - Location Always Usage Description`)
 - `NSLocationWhenInUseUsageDescription` (`Privacy - Location When In Use Usage Description`)
 
 Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
@@ -31,7 +30,7 @@ Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configura
 This API requires the following permissions be added to your `AndroidManifest.xml`:
 
 ```xml
-
+<!-- Geolocation API -->
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-feature android:name="android.hardware.location.gps" />
@@ -45,7 +44,7 @@ Read about [Setting Permissions](https://capacitorjs.com/docs/android/configurat
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `$playServicesLocationVersion` version of `com.google.android.gms:play-services-location` (default: `20.0.0`)
+- `playServicesLocationVersion` version of `com.google.android.gms:play-services-location` (default: `21.1.0`)
 
 ## Example
 
@@ -74,7 +73,7 @@ const printCurrentPosition = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getCurrentPosition(...)
 

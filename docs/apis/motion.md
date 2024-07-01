@@ -1,7 +1,7 @@
 ---
 title: Motion Capacitor Plugin API
 description: The Motion API tracks accelerometer and device orientation (compass heading, etc.)
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/src/definitions.ts
 sidebar_label: Motion
 ---
@@ -65,8 +65,8 @@ API to understand the data supplied in the 'accel' event.
 
 <docgen-index>
 
-* [`addListener('accel', ...)`](#addlisteneraccel)
-* [`addListener('orientation', ...)`](#addlistenerorientation)
+* [`addListener('accel', ...)`](#addlisteneraccel-)
+* [`addListener('orientation', ...)`](#addlistenerorientation-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -74,12 +74,12 @@ API to understand the data supplied in the 'accel' event.
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### addListener('accel', ...)
 
 ```typescript
-addListener(eventName: 'accel', listenerFunc: AccelListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'accel', listenerFunc: AccelListener) => Promise<PluginListenerHandle>
 ```
 
 Add a listener for accelerometer data
@@ -89,7 +89,7 @@ Add a listener for accelerometer data
 | **`eventName`**    | <code>'accel'</code>                                    |
 | **`listenerFunc`** | <code><a href="#accellistener">AccelListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -99,7 +99,7 @@ Add a listener for accelerometer data
 ### addListener('orientation', ...)
 
 ```typescript
-addListener(eventName: 'orientation', listenerFunc: OrientationListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'orientation', listenerFunc: OrientationListener) => Promise<PluginListenerHandle>
 ```
 
 Add a listener for device orientation change (compass heading, etc.)
@@ -109,7 +109,7 @@ Add a listener for device orientation change (compass heading, etc.)
 | **`eventName`**    | <code>'orientation'</code>                                          |
 | **`listenerFunc`** | <code><a href="#orientationlistener">OrientationListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 

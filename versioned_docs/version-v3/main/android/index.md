@@ -16,7 +16,7 @@ Capacitor Android apps are configured and managed through Android Studio.
 
 ## Android Support
 
-API 21+ (Android 5 or later) is supported, which represents [over 95% of the Android market](https://gs.statcounter.com/android-version-market-share/mobile-tablet/worldwide). Capacitor requires an Android WebView with Chrome version 60 or later. On Android 5 and 6, Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7+, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) is used.
+API 21+ (Android 5 or later) is supported, which represents [over 99% of the Android market](https://gs.statcounter.com/android-version-market-share/mobile-tablet/worldwide). Capacitor requires an Android WebView with Chrome version 60 or later. On Android 5-6, and 10+ Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7-9, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) provides the WebView.
 
 ## Adding the Android Platform
 
@@ -56,7 +56,7 @@ To run the project on a device or emulator, run:
 npx cap run android
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/docs/v3/cli/run).
+The command will prompt you to select a target. [Learn more about `run`](/cli/commands/run.md).
 
 ### Running with Android Studio
 
@@ -66,7 +66,7 @@ In Android Studio, first select the device or emulator and then click the run or
 
 ## Troubleshooting
 
-If you encountered any issues while getting started, you can consult the [Android Troubleshooting Guide](/docs/v3/android/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
+If you encountered any issues while getting started, you can consult the [Android Troubleshooting Guide](/main/android/troubleshooting.md). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 
 ## Next Steps
 
@@ -76,6 +76,6 @@ If your app ran you are now ready to continue developing and building your app. 
 
 Follow these Android-specific guides for more information on setting permissions for your app, updating dependencies, building plugins, and more:
 
-[Configuring and setting permissions for Android &#8250;](/docs/v3/android/configuration)
+[Configuring and setting permissions for Android &#8250;](/main/android/configuration.md)
 
-[Building Native Plugins for Android &#8250;](/docs/v3/plugins)
+[Building Native Plugins for Android &#8250;](/plugins.mdx)

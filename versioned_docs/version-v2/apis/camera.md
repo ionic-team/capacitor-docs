@@ -29,7 +29,7 @@ Key: `NSPhotoLibraryAddUsageDescription`
 Name: `Privacy - Photo Library Usage Description`
 Key: `NSPhotoLibraryUsageDescription`
 
-Read about [Setting iOS Permissions](/docs/ios/configuration/) in the [iOS Guide](/docs/ios/) for more information on setting iOS permissions in Xcode
+Read about [Setting iOS Permissions](/ios/configuration.md) in the [iOS Guide](/ios/index.md) for more information on setting iOS permissions in Xcode
 
 ## Android Notes
 
@@ -42,14 +42,14 @@ This API requires the following permissions be added to your `AndroidManifest.xm
 
 The storage permissions are for reading/saving photo files.
 
-Read about [Setting Android Permissions](/docs/android/configuration/) in the [Android Guide](/docs/android/) for more information on setting Android permissions.
+Read about [Setting Android Permissions](/android/configuration.md) in the [Android Guide](/android/index.md) for more information on setting Android permissions.
 
 Additionally, because the Camera API launches a separate Activity to handle taking the photo, you should listen for `appRestoredResult` in the `App` plugin
 to handle any camera data that was sent in the case your app was terminated by the operating system while the Activity was running.
 
 ## PWA Notes
 
-[PWA Elements](/docs/web/pwa-elements) are required for Camera plugin to work.
+[PWA Elements](/web/pwa-elements.mdx) are required for Camera plugin to work.
 
 ## Example
 
@@ -76,7 +76,7 @@ async takePicture() {
 
 ## Example Guides
 
-[Building an Ionic Framework Camera App](/docs/guides/ionic-framework-app)
+[Building an Ionic Framework Camera App](/guides/ionic-framework-app.md)
 
 ## API
 
@@ -105,7 +105,7 @@ with the camera.
 | ------------------ | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`base64String`** | <code>string</code> | The base64 encoded string representation of the image, if using <a href="#cameraresulttype">CameraResultType.Base64</a>.                                                      |
 | **`dataUrl`**      | <code>string</code> | The url starting with 'data:image/jpeg;base64,' and the base64 encoded string representation of the image, if using <a href="#cameraresulttype">CameraResultType.DataUrl</a>. |
-| **`path`**         | <code>string</code> | If using <a href="#cameraresulttype">CameraResultType.Uri</a>, the path will contain a full, platform-specific file URL that can be read later using the Filsystem API.       |
+| **`path`**         | <code>string</code> | If using <a href="#cameraresulttype">CameraResultType.Uri</a>, the path will contain a full, platform-specific file URL that can be read later using the Filesystem API.      |
 | **`webPath`**      | <code>string</code> | webPath returns a path that can be used to set the src attribute of an image for efficient loading and rendering.                                                             |
 | **`exif`**         | <code>any</code>    | Exif data, if any, retrieved from the image                                                                                                                                   |
 | **`format`**       | <code>string</code> | The format of the image, ex: jpeg, png, gif. iOS and Android only support jpeg. Web supports jpeg and png. gif is only supported if using file input.                         |
