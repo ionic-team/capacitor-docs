@@ -17,5 +17,5 @@ npx cap migrate [options]
 <strong>Options:</strong>
 
 - `--noprompt>`: do not prompt for confirmation
-- `--packagemanager <packageManager>`: The package manager to use for dependency installs (`npm`, `pnpm`, `yan`)
+- `--packagemanager <packageManager>`: The package manager to use for dependency installs (`npm`, `pnpm`, `yarn`)
 - `-h, --help`: display help for command
