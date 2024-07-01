@@ -32,7 +32,7 @@ View all available CLI commands and options.
 - [`doctor`](/cli/commands/doctor.md)
 - [`init`](/cli/commands/init.md)
 - [`ls`](/cli/commands/ls.md)
-- `migrate`
+- [`migrate`](/cli/commands/migrate.md)
 - [`open`](/cli/commands/open.md)
 - [`run`](/cli/commands/run.md)
 - [`sync`](/cli/commands/sync.md)
