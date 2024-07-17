@@ -114,6 +114,7 @@ module.exports = {
         'main/android/index',
         'main/android/configuration',
         'main/android/custom-code',
+        'main/android/setting-target-sdk',
         'main/android/deploying-to-google-play',
         'main/android/troubleshooting',
       ],
