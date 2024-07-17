@@ -13,11 +13,7 @@ targetSdkVersion = 34
 
 ## Capacitor Android Requirements
 
-In Capacitor, the Android target SDK version is strongly tied to the major version of Capacitor. This means that while you could change the target SDK to a higher version and rebuild your application, there's a very strong likelihood that your application will experience issues not otherwise present. The Capacitor teams releases a new major version of Capacitor every year that includes a new target SDK version to ensure that applications remain compliant with Google's requirements. For this reason, it is important to keep your application up to date with the latest major version of Capacitor.
-
-## Support Custom Target SDK Versions
-
-Capacitor Android does not support custom target SDK versions. Each version of Capacitor Android requires a specific target SDK version and support is only provided for that matching version.
+In Capacitor, the Android target SDK version is strongly tied to the major version of Capacitor. This means that while you could change the target SDK to a higher version and rebuild your application, there's a very strong likelihood that your application will experience issues not otherwise present. The Capacitor team releases a new major version of Capacitor every year that includes support for the new target SDK version to ensure that applications remain compliant with Google's requirements. For this reason, it is important to keep your application up to date with the latest major version of Capacitor.
 
 ## Android Target SDK Matrix
 
@@ -31,3 +27,7 @@ The following table shows the target SDK versions that are supported by Capacito
 | 3.x               | 30                 |
 | 2.x               | 29                 |
 | 1.x               | 28                 |
+
+## Custom Target SDK Versions
+
+Capacitor Android does not support custom target SDK versions. Each version of Capacitor Android requires a specific target SDK version and support is only provided for that matching version.
