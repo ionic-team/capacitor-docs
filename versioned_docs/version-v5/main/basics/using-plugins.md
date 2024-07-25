@@ -12,7 +12,7 @@ The WebView and the Capacitor runtime communicate through the use of **Capacitor
 
 The Capacitor team maintains [a set of Capacitor plugins](/plugins/official.md) for commonly used APIs. There is also a large set of Capacitor plugins available from [the Capacitor Community](https://github.com/capacitor-community/). If you have a suggestion for a Capacitor plugin, you can use [the Capacitor Community proposals repo](https://github.com/capacitor-community/proposals/).
 
-[Learn more about Capacitor plugins &#8250;](/plugins.md)
+[Learn more about Capacitor plugins &#8250;](/plugins.mdx)
 
 :::info
 Do you want to **make** Capacitor plugins? Browse the same proposal repo and try to make one [following our plugin creation guides](/plugins/creating-plugins/overview.md)!

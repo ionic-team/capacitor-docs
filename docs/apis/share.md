@@ -1,7 +1,7 @@
 ---
 title: Share Capacitor Plugin API
 description: The Share API provides methods for sharing content in any sharing-enabled apps the user may have installed.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/share/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/share/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/share/src/definitions.ts
 sidebar_label: Share
 ---
@@ -71,7 +71,7 @@ Each platform uses a different set of fields, but you should supply them all.
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### canShare()
 

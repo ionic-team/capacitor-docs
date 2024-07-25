@@ -1,7 +1,7 @@
 ---
 title: Keyboard Capacitor Plugin API
 description: The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts
 sidebar_label: Keyboard
 ---
@@ -119,7 +119,7 @@ the following events also work with `window.addEventListener`:
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show()
 
@@ -162,7 +162,7 @@ This method is only supported on iPhone devices.
 
 | Param         | Type                                 |
 | ------------- | ------------------------------------ |
-| **`options`** | <code>&#123; isVisible: boolean; }</code> |
+| **`options`** | <code>{ isVisible: boolean; }</code> |
 
 **Since:** 1.0.0
 
@@ -181,7 +181,7 @@ This method is only supported on iOS.
 
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
-| **`options`** | <code>&#123; isDisabled: boolean; }</code> |
+| **`options`** | <code>{ isDisabled: boolean; }</code> |
 
 **Since:** 1.0.0
 

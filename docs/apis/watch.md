@@ -1,7 +1,7 @@
 ---
 title: Watch Capacitor Plugin API
 description: Provide Watch interfaces and communication
-editUrl: https://github.com/ionic-team/CapacitorWatch/blob/main/README.md
+custom_edit_url: https://github.com/ionic-team/CapacitorWatch/blob/main/README.md
 editApiUrl: https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: Watch 🧪
 ---
@@ -29,7 +29,7 @@ The Capacitor Watch plugin allows you to define a UI for a watch in your web cod
 
 This currently only supports iOS. This guide assumes you've already added iOS to your capcacitor project.
 
-Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app&lt;->watch communcation like real devices do.
+Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app<->watch communcation like real devices do.
 
 ## Install
 
@@ -73,7 +73,7 @@ Click 'Next' then fill out the options like so:
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/watch-target-options.png" />
 
-This dialog can be a little confusing, the key thing is your 'Bundle Identifier' must be `[your apps bundle ID].watchapp` for the watch&lt;->app pairing to work. You must also pick SwiftUI for the Interface and Swift for the language. The project should be `App`.
+This dialog can be a little confusing, the key thing is your 'Bundle Identifier' must be `[your apps bundle ID].watchapp` for the watch<->app pairing to work. You must also pick SwiftUI for the Interface and Swift for the language. The project should be `App`.
 
 Step 5
 
@@ -81,7 +81,7 @@ We're going to add the code that makes Capacitor Watch work in the watch applica
 
 ---
 
-If you are using <b>Xcode 15 Beta 4 or beyond</b> you then need to add the Capacitor Watch Swift Package from your node_modules:
+If you are using <b>Xcode 15 or beyond</b> you then need to add the Capacitor Watch Swift Package from your node_modules:
 
 First go to the project package dependancies
 
@@ -111,20 +111,29 @@ With <b>Xcode 14</b> you will need to go here https://github.com/ionic-team/Capa
 
 Step 6
 
-Then open the watch app's 'Main' file which should be `watchappApp.swift`. Add the line `import WatchConnectivity` above the `@main` statement. Then replace the line that says `ContentView()` with this:
-
-```swift
-CapWatchContentView()
-    .onAppear {
-        assert(WCSession.isSupported(), "This sample requires Watch Connectivity support!")
-        WCSession.default.delegate = WatchViewModel.shared
-        WCSession.default.activate()
-    }
-```
+Then open the watch app's 'Main' file which should be `watchappApp.swift`. Add the lines `import WatchConnectivity` and `import iOS_capWatch_watch`  above the `@main` statement. Then replace the line that says `ContentView()` with this:
 
 The finished file should look like this:
 
-<img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/watch-main-code.png" />
+```swift
+import SwiftUI
+import WatchConnectivity
+import iOS_capWatch_watch
+
+@main
+struct watchddgg_Watch_AppApp: App {
+    var body: some Scene {
+        WindowGroup {
+            CapWatchContentView()
+                .onAppear {
+                    assert(WCSession.isSupported(), "This sample requires Watch Connectivity support!")
+                    WCSession.default.delegate = WatchViewModel.shared
+                    WCSession.default.activate()
+                }
+        }
+    }
+}
+```
 
 Step 7
 
@@ -232,7 +241,7 @@ npx cap sync
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### addListener('runCommand', ...)
 
@@ -245,7 +254,7 @@ Listen for a command from the watch
 | Param              | Type                                                 |
 | ------------------ | ---------------------------------------------------- |
 | **`eventName`**    | <code>'runCommand'</code>                            |
-| **`listenerFunc`** | <code>(data: &#123; command: string; }) =&gt; void</code> |
+| **`listenerFunc`** | <code>(data: { command: string; }) =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -262,7 +271,7 @@ Replaces the current watch UI with watchUI
 
 | Param         | Type                              |
 | ------------- | --------------------------------- |
-| **`options`** | <code>&#123; watchUI: string; }</code> |
+| **`options`** | <code>{ watchUI: string; }</code> |
 
 --------------------
 
@@ -277,7 +286,7 @@ Updates the watch's state data
 
 | Param         | Type                                               |
 | ------------- | -------------------------------------------------- |
-| **`options`** | <code>&#123; data: &#123; [key: string]: string; }; }</code> |
+| **`options`** | <code>{ data: { [key: string]: string; }; }</code> |
 
 --------------------
 

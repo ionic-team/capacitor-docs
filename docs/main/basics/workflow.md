@@ -66,13 +66,19 @@ Similarly, to [open the Android Capacitor project in Android Studio](/main/andro
 npx cap open android
 ```
 
-Opening the native project can give you full control over the native runtime of your application. You can [create plugins](/plugins.md), [add custom native code](/main/ios/custom-code.md), or [compile your application](#compiling-your-native-binary) for releasing.
+Opening the native project can give you full control over the native runtime of your application. You can [create plugins](/plugins.mdx), [add custom native code](/main/ios/custom-code.md), or [compile your application](#compiling-your-native-binary) for releasing.
 
 ## Compiling your native binary
 
-Capacitor does not have a `build` or `compile` command, nor will there ever be one. After `sync`, you are encouraged to open your target platform's IDE: Xcode for iOS or Android Studio for Android, for compiling your native app.
+After `sync`, you are encouraged to open your target platform's IDE: Xcode for iOS or Android Studio for Android, for compiling your native app.
 
-To compile your app in a terminal or in CI environments, you can use `gradle` or `xcodebuild` directly. We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/main/ios/deploying-to-app-store.md) and [Android](/main/android/deploying-to-google-play.md) for more info on how to deploy to the Apple App Store or the Google Play Store.
+Alternatively, to compile your app in a terminal or in CI environments, you can use the [cap build command](/cli/commands/build) to build the native project, outputting a signed AAB, APK or IPA file ready for distribution to a device or end users.
+
+```bash
+npx cap build android
+```
+
+We also  suggest using tools such as [Fastlane](https://fastlane.tools) or a cloud build tool like [Appflow](https://useappflow.com) to automate these processes for you. While every application is different, we have an example of a general release process for Capacitor projects. Go and read our publishing guides for [iOS](/main/ios/deploying-to-app-store.md) and [Android](/main/android/deploying-to-google-play.md) for more info on how to deploy to the Apple App Store or the Google Play Store.
 
 ## Updating Capacitor
 

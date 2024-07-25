@@ -80,4 +80,4 @@ Follow these Android-specific guides for more information on setting permissions
 
 [Configuring and setting permissions for Android &#8250;](/main/android/configuration.md)
 
-[Building Native Plugins for Android &#8250;](/plugins.md)
+[Building Native Plugins for Android &#8250;](/plugins.mdx)

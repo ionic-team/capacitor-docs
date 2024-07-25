@@ -31,8 +31,8 @@
     ]
   },
   "dependencies": {
-    "@docusaurus/core": "^3.1.0",
-    "@ionic-docs/preset-classic": "^1.0.2",
+    "@docusaurus/core": "^3.4.0",
+    "@ionic-docs/preset-classic": "^1.2.7",
     "@prismicio/client": "^6.4.2",
     "@prismicio/react": "~2.2.0",
     "clsx": "^2.0.0",
@@ -46,7 +46,7 @@
     "semver": "^7.3.5"
   },
   "devDependencies": {
-    "@docusaurus/tsconfig": "^3.1.0",
+    "@docusaurus/tsconfig": "^3.4.0",
     "@ionic/prettier-config": "^4.0.0",
     "prettier": "^3.1.1"
   },

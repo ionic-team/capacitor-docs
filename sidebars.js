@@ -45,6 +45,7 @@ module.exports = {
       collapsed: false,
       items: [
         'main/updating/6-0',
+        'main/updating/plugins/6-0',
         'main/updating/5-0',
         'main/updating/plugins/5-0',
         'main/updating/4-0',
@@ -98,6 +99,7 @@ module.exports = {
         'main/ios/index',
         'main/ios/configuration',
         'main/ios/custom-code',
+        'main/ios/privacy-manifest',
         'main/ios/deploying-to-app-store',
         'main/ios/viewcontroller',
         'main/ios/troubleshooting',
@@ -112,6 +114,7 @@ module.exports = {
         'main/android/index',
         'main/android/configuration',
         'main/android/custom-code',
+        'main/android/setting-target-sdk',
         'main/android/deploying-to-google-play',
         'main/android/troubleshooting',
       ],
@@ -178,6 +181,7 @@ module.exports = {
         'plugins/creating-plugins/web-guide',
         'plugins/creating-plugins/method-types',
         'plugins/creating-plugins/configuration-values',
+        'plugins/creating-plugins/plugin-hooks',
       ],
     },
     {

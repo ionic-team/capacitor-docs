@@ -1,7 +1,7 @@
 ---
 title: App Capacitor Plugin API
 description: The App API handles high level App state and events.For example, this API emits events when the app enters and leaves the foreground, handles deeplinks, opens other apps, and manages persisted plugin state.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/app/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/app/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/app/src/definitions.ts
 sidebar_label: App
 ---
@@ -97,7 +97,7 @@ const checkAppLaunchUrl = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### exitApp()
 
@@ -396,7 +396,7 @@ Remove all native listeners for this plugin
 | **`methodName`** | <code>string</code>               | The methodName this result corresponds to. For example, `getPhoto`                                                                                | 1.0.0 |
 | **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` | 1.0.0 |
 | **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded.                                                                                                  | 1.0.0 |
-| **`error`**      | <code>&#123; message: string; }</code> | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
+| **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message.                                                                             | 1.0.0 |
 
 
 #### BackButtonListenerEvent

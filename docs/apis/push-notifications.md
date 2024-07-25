@@ -1,7 +1,7 @@
 ---
 title: Push Notifications Capacitor Plugin API
 description: The Push Notifications API provides access to native push notifications.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/src/definitions.ts
 sidebar_label: Push Notifications
 ---
@@ -83,7 +83,7 @@ From Android 8.0 (API level 26) and higher, notification channels are supported 
 ## Push notifications appearance in foreground
 
 <docgen-config>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 You can configure the way the push notifications are displayed when the app is in foreground.
 
@@ -208,7 +208,7 @@ const getDeliveredNotifications = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### register()
 
@@ -318,7 +318,7 @@ Only available on Android O or newer (SDK 26+).
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
-| **`args`** | <code>&#123; id: string; }</code> |
+| **`args`** | <code>{ id: string; }</code> |
 
 **Since:** 1.0.0
 

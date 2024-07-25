@@ -1,7 +1,7 @@
 ---
 title: Splash Screen Capacitor Plugin API
 description: The Splash Screen API provides methods for showing or hiding a Splash image.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/src/definitions.ts
 sidebar_label: Splash Screen
 ---
@@ -98,7 +98,7 @@ To set the color of the spinner use `spinnerColor`, values are either `#RRGGBB` 
 ## Configuration
 
 <docgen-config>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 These config values are available:
 
@@ -212,7 +212,7 @@ This plugin will use the following project variables (defined in your app's `var
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show(...)
 

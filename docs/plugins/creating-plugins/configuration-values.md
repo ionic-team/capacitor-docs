@@ -84,17 +84,17 @@ export default config;
 
 ## Accessing Configuration Values
 
-The Capacitor API contains utility methods to access plugin configuration values from the native implementation of your plugin.
+The Capacitor API contains the `getConfig()` utility method to access plugin configuration values from the native implementation of your plugin.
 
-For iOS, use the `getConfigValue()` method:
+For iOS:
 
 ```swift
-if let style = getConfigValue("style") as? String {
+if let style = getConfig().getString("style") {
   // Set the style
 }
 ```
 
-For Android, use the `getConfig()` method:
+For Android:
 
 ```Java
 String style = getConfig().getString("style");

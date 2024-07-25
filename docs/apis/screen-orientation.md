@@ -1,7 +1,7 @@
 ---
 title: Screen Orientation Capacitor Plugin API
 description: The Screen Orientation API provides methods to lock and unlock the screen orientation.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-orientation/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-orientation/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-orientation/src/definitions.ts
 sidebar_label: Screen Orientation
 ---
@@ -52,7 +52,7 @@ By default, an iPad allows Multitasking and its orientation cannot be locked. If
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### orientation()
 
