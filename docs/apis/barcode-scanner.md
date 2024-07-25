@@ -17,6 +17,20 @@ npm install @capacitor/barcode-scanner
 npx cap sync
 ```
 
+## Example
+
+```typescript
+import { CapacitorBarcodeScannerOptions, CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
+
+try {
+   const options: CapacitorBarcodeScannerOptions = { hint: CapacitorBarcodeScannerTypeHint.QR_CODE };
+   const result = await CapacitorBarcodeScanner.scanBarcode(options);
+   console.log(result.ScanResult);
+} catch (error) {
+   console.error(error);
+}
+```
+
 #### Android
 
 The barcode scanner plugin requires a minimum Android SDK target of 26. This is higher than the default that comes with your Capacitor application. You can update this value in your `android/variables.gradle` file.
