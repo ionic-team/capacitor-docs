@@ -17,19 +17,6 @@ npm install @capacitor/barcode-scanner
 npx cap sync
 ```
 
-## Example
-
-```typescript
-import { CapacitorBarcodeScannerOptions, CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
-
-try {
-   const options: CapacitorBarcodeScannerOptions = { hint: CapacitorBarcodeScannerTypeHint.QR_CODE };
-   const result = await CapacitorBarcodeScanner.scanBarcode(options);
-   console.log(result.ScanResult);
-} catch (error) {
-   console.error(error);
-}
-```
 
 #### Android
 
@@ -66,6 +53,21 @@ allprojects {
 #### iOS
 
 The barcode scanner uses the camera on the device. Ensure you configure the Privacy - Camera Usage Description in your Info.plist file so that your application can access the device's camera.
+
+## Example
+
+```typescript
+import { 
+    CapacitorBarcodeScannerOptions, CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
+
+try {
+   const options: CapacitorBarcodeScannerOptions = { hint: CapacitorBarcodeScannerTypeHint.QR_CODE };
+   const result = await CapacitorBarcodeScanner.scanBarcode(options);
+   console.log(result.ScanResult);
+} catch (error) {
+   console.error(error);
+}
+```
 
 ---
 
