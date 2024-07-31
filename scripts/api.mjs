@@ -153,6 +153,14 @@ const pluginApis = [
     editApiUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts',
   },
   {
+    id: 'inappbrowser',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
+  },
+  {
     id: 'keyboard',
     isCore: false,
     isExperimental: false,

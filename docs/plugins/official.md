@@ -33,6 +33,7 @@ The API documentation for these plugins can be found below.
 - [Google Maps](/apis/google-maps.md)
 - [Haptics](/apis/haptics.md)
 - [Http](/apis/http.md)
+- [InAppBrowser](/apis/inappbrowser.md)
 - [Keyboard](/apis/keyboard.md)
 - [Local Notifications](/apis/local-notifications.md)
 - [Motion](/apis/motion.md)
