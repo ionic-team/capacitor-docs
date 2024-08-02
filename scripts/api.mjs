@@ -10,6 +10,7 @@ const tag = 'latest';
 /**
  * @typedef {Object} PluginApi
  * @property {string} id
+ * @property {string} [title]
  * @property {boolean} isCore
  * @property {boolean} isExperimental
  * @property {string} npmScope
@@ -154,6 +155,7 @@ const pluginApis = [
   },
   {
     id: 'inappbrowser',
+    title: 'InAppBrowser',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
@@ -294,11 +296,11 @@ async function buildPluginApiDocs(plugin) {
  * @returns {string}
  */
 function createApiPage(plugin, readme, pkgJson) {
-  const title = `${toTitleCase(plugin.id)} Capacitor Plugin API`;
+  const title = `${plugin.title ?? toTitleCase(plugin.id)} Capacitor Plugin API`;
   const desc = plugin.description ? plugin.description : pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = plugin.editUrl;
   const editApiUrl = plugin.editApiUrl;
-  const sidebarLabel = toTitleCase(plugin.id);
+  const sidebarLabel = plugin.title ?? toTitleCase(plugin.id);
   return `
 ---
 title: ${title}

@@ -1,6 +1,6 @@
 ---
 title: InAppBrowser Capacitor Plugin API
-description: The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security.
+description: The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security. It offers three different ways to open URLs: in a WebView, in an in-app system browser (Custom Tabs for Android and SFSafariViewController for iOS), and in the device's default browser.
 custom_edit_url: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts
 sidebar_label: InAppBrowser
@@ -8,7 +8,7 @@ sidebar_label: InAppBrowser
 
 # @capacitor/inappbrowser
 
-The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security.
+The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security. It offers three different ways to open URLs: in a WebView, in an in-app system browser (Custom Tabs for Android and SFSafariViewController for iOS), and in the device's default browser.
 
 ## Install
 
@@ -54,6 +54,57 @@ allprojects {
 }
 ```
 
+## Usage Example
+#### Open In External Browser
+```typescript
+import { InAppBrowser } from '@capacitor/inappbrowser';
+await InAppBrowser.openInExternalBrowser({
+    url: "https://www.google.com"
+});
+```
+
+#### Open In System Browser (Custom Tabs for Android, SFSafariViewController for iOS)
+```typescript
+import { InAppBrowser, DefaultSystemBrowserOptions } from '@capacitor/inappbrowser';
+await InAppBrowser.openInSystemBrowser({
+    url: "https://www.google.com",
+    options: DefaultSystemBrowserOptions
+});
+```
+
+#### Open In Web View
+```typescript
+import { InAppBrowser, DefaultWebViewOptions } from '@capacitor/inappbrowser';
+await InAppBrowser.openInWebView({
+    url: "https://www.google.com",
+    options: DefaultWebViewOptions
+});
+```
+
+#### Close (Web View or System Browser)
+```typescript
+import { InAppBrowser } from '@capacitor/inappbrowser';
+await InAppBrowser.close();
+```
+
+#### Add Listeners
+```typescript
+import { InAppBrowser } from '@capacitor/inappbrowser';
+await InAppBrowser.addListener('browserClosed', () => {
+    console.log("browser was closed.");
+});
+
+await InAppBrowser.addListener('browserPageLoaded', () => {
+    console.log("browser was loaded.");
+});
+```
+
+#### Remove All Listeners
+```typescript
+import { InAppBrowser } from '@capacitor/inappbrowser';
+InAppBrowser.removeAllListeners();
+```
+
 ## API
 
 <docgen-index>
@@ -62,8 +113,8 @@ allprojects {
 * [`openInSystemBrowser(...)`](#openinsystembrowser)
 * [`openInExternalBrowser(...)`](#openinexternalbrowser)
 * [`close()`](#close)
-* [`removeAllListeners()`](#removealllisteners)
 * [`addListener('browserClosed' | 'browserPageLoaded', ...)`](#addlistenerbrowserclosed--browserpageloaded-)
+* [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
@@ -128,17 +179,6 @@ Closes the currently active browser. It can be used to close browsers launched t
 --------------------
 
 
-### removeAllListeners()
-
-```typescript
-removeAllListeners() => void
-```
-
-Removes all listeners for the browser events.
-
---------------------
-
-
 ### addListener('browserClosed' | 'browserPageLoaded', ...)
 
 ```typescript
@@ -153,6 +193,17 @@ Adds a listener for the specified browser event.
 | **`listenerFunc`** | <code>() =&gt; void</code>                          | The function to be called when the event occurs.                                     |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+
+--------------------
+
+
+### removeAllListeners()
+
+```typescript
+removeAllListeners() => void
+```
+
+Removes all listeners for the browser events.
 
 --------------------
 
@@ -239,10 +290,10 @@ Defines the options for opening a URL in the system browser.
 
 #### AndroidBottomSheet
 
-| Prop          | Type                 | Description                             |
-| ------------- | -------------------- | --------------------------------------- |
-| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet.    |
-| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed. |
+| Prop          | Type                 | Description                                                                                                                                             |
+| ------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet. This will be a minimum of 50% of the screen's height. If no value is passed, we will default to the minimum value. |
+| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed.                                                                                                                 |
 
 
 #### iOSSystemBrowserOptions
