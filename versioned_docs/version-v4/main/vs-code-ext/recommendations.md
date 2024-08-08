@@ -24,5 +24,5 @@ The follow scenarios will show a recommendation:
 - When a plugin is not required (eg `cordova-plugin-add-swift-support`)
 
 :::note
-Not all scenarios are covered, so if there a fix you've needed to apply to your project that you think would be of benefit to other developers please [submit a suggestion](https://github.com/ionic-team/vscode-extension/issues).
+Not all scenarios are covered, so if there a fix you've needed to apply to your project that you think would be of benefit to other developers please [submit a suggestion](https://github.com/ionic-team/vscode-ionic/issues).
 :::
