@@ -45,6 +45,8 @@ Populate `definitions.ts` with the following code:
 ```typescript
 import type { PluginListenerHandle } from '@capacitor/core';
 
+export declare type OrientationLockType = 'any' | 'natural' | 'landscape' | 'portrait' | 'portrait-primary' | 'portrait-secondary' | 'landscape-primary' | 'landscape-secondary';
+
 export interface ScreenOrientationPlugin {
   /**
    * Returns the screen's current orientation.
@@ -67,7 +69,7 @@ export interface ScreenOrientationPlugin {
   addListener(
     eventName: 'screenOrientationChange',
     listenerFunc: (orientation: { type: OrientationType }) => void,
-  ): Promise<PluginListenerHandle> & PluginListenerHandle;
+  ): Promise<PluginListenerHandle>;
 
   /**
    * Removes all listeners
