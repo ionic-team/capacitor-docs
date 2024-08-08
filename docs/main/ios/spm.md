@@ -10,17 +10,17 @@ slug: /ios/spm
 
 Swift Packages are Apple's new first-party tool for software dependacies. Traditionally Capacitor has used Cocoapods for managing depenacies internally and for plugins, however now is the time to move to a supported solution. 
 
-In Capcacitor 6, you can now choose between using Cocoapods or Swift Package Manager (SPM). Almost all current capacitor-team supported plugins support SPM, namely the plugins in <a href="https://github.com/ionic-team/capacitor-plugins">capacitor-plugins</a>.
+In Capacitor 6, you can now choose between using Cocoapods or Swift Package Manager (SPM). Almost all current capacitor-team supported plugins support SPM, namely the plugins in <a href="https://github.com/ionic-team/capacitor-plugins">capacitor-plugins</a>.
 
 We've tried our best to make sure you don't have to change much about how you work with Capacitor to use SPM, but there are a few things to understand.
 
 ### How it works
 
-When a Capcacitor project is using SPM we use a 'Base SPM' package that will serve as the place that references all of your projects dependancies:
+When a Capacitor project is using SPM we use a 'Base SPM' package that will serve as the place that references all of your projects dependancies:
 
 ![Base SPM Picture](../../../static/img/v6/docs/ios/spm/base-spm.png)
 
-The Capcacitor CLI will modify the CapAPP-SPM package when you sync new plugins. It is important you do not touch the contents here because the CLI can and will change things.
+The Capacitor CLI will modify the CapAPP-SPM package when you sync new plugins. It is important you do not touch the contents here because the CLI can and will change things.
 
 ### Using SPM in a new Capacitor project
 
