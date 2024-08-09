@@ -1,7 +1,7 @@
 ---
 title: Barcode Scanner Capacitor Plugin API
 description: Capacitor plugin using Outsystems Barcode libs
-custom_edit_url: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts
 sidebar_label: Barcode Scanner
 ---
@@ -100,7 +100,7 @@ Defines the structure of the result returned from a barcode scan.
 
 Defines the options for configuring a barcode scan.
 
-<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>, scanInstructions?: string, scanButton?: boolean, scanText?: string, cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>, scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>, android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>, }, web?: { showCameraSelection?: boolean, scannerFPS?: number } }</code>
+<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
 
 
 #### CapacitorBarcodeScannerTypeHint
