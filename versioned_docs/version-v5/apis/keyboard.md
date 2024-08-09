@@ -13,7 +13,7 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 ## Install
 
 ```bash
-npm install @capacitor/keyboard
+npm install @capacitor/keyboard@latest-5
 npx cap sync
 ```
 

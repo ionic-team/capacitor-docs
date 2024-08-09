@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 
 const API_DIR = new URL('../versioned_docs/version-v5/apis/', import.meta.url);
 
-const tag = 'latest';
+const tag = 'latest-5';
 
 const pluginApis = [
   'action-sheet',

@@ -13,7 +13,7 @@ The App API handles high level App state and events. For example, this API emits
 ## Install
 
 ```bash
-npm install @capacitor/app
+npm install @capacitor/app@latest-5
 npx cap sync
 ```
 
