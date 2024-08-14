@@ -1,7 +1,7 @@
 ---
 title: Status Bar Capacitor Plugin API
 description: The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/src/definitions.ts
 sidebar_label: Status Bar
 ---
@@ -77,7 +77,7 @@ const showStatusBar = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### setStyle(...)
 
@@ -207,9 +207,9 @@ This method is only supported on Android.
 
 #### AnimationOptions
 
-| Prop            | Type                                            | Description                                                                                         | Since |
-| --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----- |
-| **`animation`** | <code><a href="#animation">Animation</a></code> | The type of status bar animation used when showing or hiding. This option is only supported on iOS. | 1.0.0 |
+| Prop            | Type                                            | Description                                                                                         | Default                     | Since |
+| --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------- | ----- |
+| **`animation`** | <code><a href="#animation">Animation</a></code> | The type of status bar animation used when showing or hiding. This option is only supported on iOS. | <code>Animation.Fade</code> | 1.0.0 |
 
 
 #### StatusBarInfo

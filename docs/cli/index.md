@@ -26,16 +26,20 @@ npx cap [-V] [-h] [<command>]
 
 View all available CLI commands and options.
 
-- [`add`](/docs/cli/commands/add)
-- [`copy`](/docs/cli/commands/copy)
-- [`list`](/docs/cli/commands/list)
-- [`open`](/docs/cli/commands/open)
-- [`run`](/docs/cli/commands/run)
-- [`sync`](/docs/cli/commands/sync)
-- [`update`](/docs/cli/commands/update)
+- [`add`](/cli/commands/add.md)
+- [`build`](/cli/commands/build.md)
+- [`copy`](/cli/commands/copy.md)
+- `doctor`
+- [`init`](/cli/commands/init.md)
+- [`ls`](/cli/commands/ls.md)
+- `migrate`
+- [`open`](/cli/commands/open.md)
+- [`run`](/cli/commands/run.md)
+- [`sync`](/cli/commands/sync.md)
+- [`update`](/cli/commands/update.md)
 
 ## Additional Resources
 
-[Learn how to install the Capacitor CLI &#8250;](/docs/getting-started)
+[Learn how to install the Capacitor CLI &#8250;](/main/getting-started/installation.md)
 
-[Learn about the CLI workflow &#8250;](/docs/basics/workflow)
+[Learn about the CLI workflow &#8250;](/main/basics/workflow.md)

@@ -17,3 +17,8 @@ npx cap add <platform>
 <strong>Inputs:</strong>
 
 - `platform` (required): `android`, `ios`
+
+<strong>Options:</strong>
+
+iOS Only:
+- `--packagemanager`: `SPM`, `Cocoapods`

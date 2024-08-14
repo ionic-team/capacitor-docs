@@ -1,7 +1,7 @@
 ---
 title: Push Notifications Capacitor Plugin API
 description: The Push Notifications API provides access to native push notifications.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/src/definitions.ts
 sidebar_label: Push Notifications
 ---
@@ -37,11 +37,13 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
 The Push Notification API uses [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) SDK for handling notifications.  See [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client) and follow the instructions for creating a Firebase project and registering your application.  There is no need to add the Firebase SDK to your app or edit your app manifest - the Push Notifications provides that for you.  All that is required is your Firebase project's `google-services.json` file added to the module (app-level) directory of your app.
 
+Android 13 requires a permission check in order to receive push notifications.  You are required to call `checkPermissions()` and `requestPermissions()` accordingly, when targeting SDK 33.
+
 ### Variables
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `$firebaseMessagingVersion` version of `com.google.firebase:firebase-messaging` (default: `23.0.5`)
+- `firebaseMessagingVersion` version of `com.google.firebase:firebase-messaging` (default: `23.3.1`)
 
 ---
 
@@ -57,10 +59,31 @@ If no icon is specified Android will use the application icon, but push icon sho
 
 Android Studio has an icon generator you can use to create your Push Notifications icon.
 
+## Push Notification channel
+
+From Android 8.0 (API level 26) and higher, notification channels are supported and recommended. The SDK will derive the `channelId` for incoming push notifications in the following order:
+
+1. **Firstly it will check if the incoming notification has a `channelId` set.**
+   When sending a push notification from either the FCM dashboard, or through their API, it's possible to specify a `channelId`.
+2. **Then it will check for a possible given value in the `AndroidManifest.xml`.**
+   If you prefer to create and use your own default channel, set `default_notification_channel_id` to the ID of your notification channel object as shown; FCM will use this value whenever incoming messages do not explicitly set a notification channel.
+
+```xml
+<meta-data
+    android:name="com.google.firebase.messaging.default_notification_channel_id"
+    android:value="@string/default_notification_channel_id" />
+```
+
+3. **Lastly it will use the fallback `channelId` that the Firebase SDK provides for us.**
+   FCM provides a default notification channel with basic settings out of the box. This channel will be created by the Firebase SDK upon receiving the first push message.
+
+> **Warning**
+> When using option 1 or 2, you are still required to create a notification channel in code with an ID that matches the one used the chosen option. You can use [`createChannel(...)`](#createchannel) for this. If you don't do this, the SDK will fallback to option 3.
+
 ## Push notifications appearance in foreground
 
 <docgen-config>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 You can configure the way the push notifications are displayed when the app is in foreground.
 
@@ -165,6 +188,7 @@ const getDeliveredNotifications = async () => {
 <docgen-index>
 
 * [`register()`](#register)
+* [`unregister()`](#unregister)
 * [`getDeliveredNotifications()`](#getdeliverednotifications)
 * [`removeDeliveredNotifications(...)`](#removedeliverednotifications)
 * [`removeAllDeliveredNotifications()`](#removealldeliverednotifications)
@@ -173,10 +197,10 @@ const getDeliveredNotifications = async () => {
 * [`listChannels()`](#listchannels)
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions()`](#requestpermissions)
-* [`addListener('registration', ...)`](#addlistenerregistration)
-* [`addListener('registrationError', ...)`](#addlistenerregistrationerror)
-* [`addListener('pushNotificationReceived', ...)`](#addlistenerpushnotificationreceived)
-* [`addListener('pushNotificationActionPerformed', ...)`](#addlistenerpushnotificationactionperformed)
+* [`addListener('registration', ...)`](#addlistenerregistration-)
+* [`addListener('registrationError', ...)`](#addlistenerregistrationerror-)
+* [`addListener('pushNotificationReceived', ...)`](#addlistenerpushnotificationreceived-)
+* [`addListener('pushNotificationActionPerformed', ...)`](#addlistenerpushnotificationactionperformed-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -184,7 +208,7 @@ const getDeliveredNotifications = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### register()
 
@@ -199,6 +223,21 @@ This method will trigger the `'registration'` event with the push token or
 notification permissions, use `requestPermissions()` first.
 
 **Since:** 1.0.0
+
+--------------------
+
+
+### unregister()
+
+```typescript
+unregister() => Promise<void>
+```
+
+Unregister the app from push notifications.
+
+This will delete a firebase token on Android, and unregister APNS on iOS.
+
+**Since:** 5.0.0
 
 --------------------
 
@@ -311,7 +350,7 @@ checkPermissions() => Promise<PermissionStatus>
 
 Check permission to receive push notifications.
 
-On Android the status is always granted because you can always
+On Android 12 and below the status is always granted because you can always
 receive push notifications. If you need to check if the user allows
 to display notifications, use local-notifications plugin.
 
@@ -330,7 +369,7 @@ requestPermissions() => Promise<PermissionStatus>
 
 Request permission to receive push notifications.
 
-On Android it doesn't prompt for permission because you can always
+On Android 12 and below it doesn't prompt for permission because you can always
 receive push notifications.
 
 On iOS, the first time you use the function, it will prompt the user
@@ -348,7 +387,7 @@ the permission without prompting again.
 ### addListener('registration', ...)
 
 ```typescript
-addListener(eventName: 'registration', listenerFunc: (token: Token) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'registration', listenerFunc: (token: Token) => void) => Promise<PluginListenerHandle>
 ```
 
 Called when the push notification registration finishes without problems.
@@ -360,7 +399,7 @@ Provides the push notification token.
 | **`eventName`**    | <code>'registration'</code>                                 |
 | **`listenerFunc`** | <code>(token: <a href="#token">Token</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -370,7 +409,7 @@ Provides the push notification token.
 ### addListener('registrationError', ...)
 
 ```typescript
-addListener(eventName: 'registrationError', listenerFunc: (error: RegistrationError) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'registrationError', listenerFunc: (error: RegistrationError) => void) => Promise<PluginListenerHandle>
 ```
 
 Called when the push notification registration finished with problems.
@@ -382,7 +421,7 @@ Provides an error with the registration problem.
 | **`eventName`**    | <code>'registrationError'</code>                                                    |
 | **`listenerFunc`** | <code>(error: <a href="#registrationerror">RegistrationError</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -392,7 +431,7 @@ Provides an error with the registration problem.
 ### addListener('pushNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: PushNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: PushNotificationSchema) => void) => Promise<PluginListenerHandle>
 ```
 
 Called when the device receives a push notification.
@@ -402,7 +441,7 @@ Called when the device receives a push notification.
 | **`eventName`**    | <code>'pushNotificationReceived'</code>                                                              |
 | **`listenerFunc`** | <code>(notification: <a href="#pushnotificationschema">PushNotificationSchema</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -412,7 +451,7 @@ Called when the device receives a push notification.
 ### addListener('pushNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notification: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notification: ActionPerformed) => void) => Promise<PluginListenerHandle>
 ```
 
 Called when an action is performed on a push notification.
@@ -422,7 +461,7 @@ Called when an action is performed on a push notification.
 | **`eventName`**    | <code>'pushNotificationActionPerformed'</code>                                         |
 | **`listenerFunc`** | <code>(notification: <a href="#actionperformed">ActionPerformed</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 

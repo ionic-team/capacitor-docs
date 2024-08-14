@@ -27,7 +27,7 @@ Key: `NSLocationAlwaysUsageDescription`
 Name: `Privacy - Location When In Use Usage Description`
 Key: `NSLocationWhenInUseUsageDescription`
 
-Read about [Setting iOS Permissions](/docs/ios/configuration/) in the [iOS Guide](/docs/ios/) for more information on setting iOS permissions in Xcode
+Read about [Setting iOS Permissions](/ios/configuration.md) in the [iOS Guide](/ios/index.md) for more information on setting iOS permissions in Xcode
 
 ## Android Notes
 
@@ -42,7 +42,7 @@ This API requires the following permissions be added to your `AndroidManifest.xm
 
 The first two permissions ask for location data, both fine and coarse, and the last line is optional but necessary if your app _requires_ GPS to function. You may leave it out, though keep in mind that this may mean your app is installed on devices lacking GPS hardware.
 
-Read about [Setting Android Permissions](/docs/android/configuration/) in the [Android Guide](/docs/android/) for more information on setting Android permissions.
+Read about [Setting Android Permissions](/android/configuration.md) in the [Android Guide](/android/index.md) for more information on setting Android permissions.
 
 ## Example
 
@@ -109,7 +109,7 @@ Clear a given watch
 
 | Param         | Type                         |
 | ------------- | ---------------------------- |
-| **`options`** | <code>{ id: string; }</code> |
+| **`options`** | `{ id: string; }` |
 
 ---
 
@@ -120,7 +120,7 @@ Clear a given watch
 | Prop            | Type                                                                                                                                                    | Description                                             |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | **`timestamp`** | <code>number</code>                                                                                                                                     | Creation timestamp for coords                           |
-| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }</code> | The GPS coordinates along with the accuracy of the data |
+| **`coords`**    | `{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }` | The GPS coordinates along with the accuracy of the data |
 
 #### GeolocationOptions
 

@@ -30,10 +30,10 @@ ionic integrations enable capacitor
 
 Ionic Framework makes use of the APIs in the following plugins:
 
-- [**App**](/docs/v3/apis/app)
-- [**Haptics**](/docs/v3/apis/haptics)
-- [**Keyboard**](/docs/v3/apis/keyboard)
-- [**StatusBar**](/docs/v3/apis/status-bar)
+- [**App**](/apis/app.md)
+- [**Haptics**](/apis/haptics.md)
+- [**Keyboard**](/apis/keyboard.md)
+- [**StatusBar**](/apis/status-bar.md)
 
 For the best user experience, you should make sure these plugins are installed even if you don't import them in your app:
 
@@ -41,7 +41,7 @@ For the best user experience, you should make sure these plugins are installed e
 npm install @capacitor/app @capacitor/haptics @capacitor/keyboard @capacitor/status-bar
 ```
 
-If your Ionic app uses Cordova, you will want to read the [Migrating from Cordova to Capacitor guide](/docs/v3/cordova/migrating-from-cordova-to-capacitor) as well.
+If your Ionic app uses Cordova, you will want to read the [Migrating from Cordova to Capacitor guide](/main/cordova/migrating-from-cordova-to-capacitor.md) as well.
 
 ### Add Platforms
 
@@ -51,7 +51,7 @@ After Capacitor installed, you can add native platforms to your app:
 ionic capacitor add
 ```
 
-This will create a new directory in the root of your project for the native platform. This directory is a native project that should be considered a source artifact. Learn more about [native project management](/docs/v3/cordova#native-project-management).
+This will create a new directory in the root of your project for the native platform. This directory is a native project that should be considered a source artifact. Learn more about [native project management](/main/cordova/index.md#native-project-management).
 
 ## Workflow
 
@@ -63,7 +63,7 @@ Capacitor JavaScript libraries are bundled into your app, so the web asset build
 ionic build
 ```
 
-This creates the web asset directory that Capacitor copies into native projects, configured via `webDir` in the [Capacitor configuration](/docs/v3/config).
+This creates the web asset directory that Capacitor copies into native projects, configured via `webDir` in the [Capacitor configuration](/main/reference/config.md).
 
 ### Ionic CLI Capacitor Commands
 
@@ -75,4 +75,4 @@ The Ionic CLI has a variety of high-level commands that wrap the Capacitor CLI f
 - [`ionic capacitor sync`](https://ionicframework.com/docs/v3/cli/commands/capacitor-sync)
 - [`ionic capacitor open`](https://ionicframework.com/docs/v3/cli/commands/capacitor-open)
 
-[Learn more about development workflow in Capacitor &#8250;](/docs/v3/basics/workflow)
+[Learn more about development workflow in Capacitor &#8250;](/main/basics/workflow.md)

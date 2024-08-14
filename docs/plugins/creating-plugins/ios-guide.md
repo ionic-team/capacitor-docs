@@ -14,16 +14,15 @@ Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to in
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](/plugins/creating-plugins/overview.md) section of the Plugin guide.
 
-Next, open `echo/ios/Plugin.xcworkspace` in Xcode. You then want to navigate to the .swift file for your plugin.
+Next, open `Package.swift` in Xcode. You then want to navigate to the .swift files for your plugin.
 
-For example, for a plugin with the Plugin Class Name `Echo`, you should open `EchoPlugin.swift`.
+For example, for a plugin with the Plugin Class Name `EchoPlugin`, you should open `ios/Sources/EchoPlugin/EchoPlugin.swift` and `ios/Sources/EchoPlugin/Echo.swift`.
 
 ## Plugin Basics
 
-A Capacitor plugin for iOS is a simple Swift class that extends `CAPPlugin` and
-has some exported methods that will be callable from JavaScript.
+A Capacitor plugin for iOS has two simple Swift classes, one is implementation class that extends `NSObject`, where you should put the plugin logic and another that extends `CAPPlugin` and `CAPBridgedPlugin` and has some exported methods that will be callable from JavaScript and wraps the implementation methods.
 
 ### Simple Example
 
@@ -32,19 +31,40 @@ In the generated example, there is a simple echo plugin with an `echo` function 
 This example demonstrates a few core components of Capacitor plugins: receiving data from a Plugin Call, and returning
 data back to the caller:
 
+`Echo.swift`
+
+```swift
+import Foundation
+
+@objc public class Echo: NSObject {
+    @objc public func echo(_ value: String) -> String {
+        print(value)
+        return value
+    }
+}
+```
+
 `EchoPlugin.swift`
 
 ```swift
+import Foundation
 import Capacitor
 
 @objc(EchoPlugin)
-public class EchoPlugin: CAPPlugin {
-  @objc func echo(_ call: CAPPluginCall) {
-    let value = call.getString("value") ?? ""
-    call.resolve([
-        "value": value
-    ])
-  }
+public class EchoPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "EchoPlugin"
+    public let jsName = "Echo"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+    ]
+    private let implementation = Echo()
+
+    @objc func echo(_ call: CAPPluginCall) {
+        let value = call.getString("value") ?? ""
+        call.resolve([
+            "value": implementation.echo(value)
+        ])
+    }
 }
 ```
 
@@ -53,7 +73,7 @@ public class EchoPlugin: CAPPlugin {
 Each plugin method receives an instance of `CAPPluginCall` containing all the information of the plugin method invocation from the client.
 
 A client can send any data that can be JSON serialized, such as numbers, text, booleans, objects, and arrays. This data
-is accessible on the `options` field of the call instance, or by using convenience methods such as `getString` or `getObject`. Passing and accessing some of these values has some peculiarities to be aware of, as discussed [separately](/docs/core-apis/data-types#ios).
+is accessible on the `options` field of the call instance, or by using convenience methods such as `getString` or `getObject`. Passing and accessing some of these values has some peculiarities to be aware of, as discussed [separately](/main/reference/core-apis/data-types.md#ios).
 
 For example, here is how you'd get data passed to your method:
 
@@ -111,29 +131,27 @@ override public func load() {
 
 ### Export to Capacitor
 
-To make sure Capacitor can see your plugin, the plugin generator do two things: export your Swift class to Objective-C, and register it using the provided Capacitor Objective-C Macros.
+To make sure Capacitor can see your plugin, the plugin generator do two things: export your Swift class to Objective-C, and registers the plugin methods.
 
 To export your Swift class to Objective-C, the plugin generator adds `@objc(EchoPlugin)` above your Swift class, and add `@objc` before the `echo` method.
 
-To register the plugin, the plugin generator creates a file with a `.m` extension corresponding to your plugin (such as `EchoPlugin.m`) and use the `CAP_PLUGIN` to register the plugin and the `CAP_PLUGIN_METHOD` macro to register the `echo` method.
+To register the plugin methods, the plugin generator creates a `pluginMethods` array of `CAPPluginMethod` and registers the `echo` method.
 
-```objectivec
-#import <Capacitor/Capacitor.h>
-
-CAP_PLUGIN(EchoPlugin, "Echo",
-  CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
-)
+```swift
+public let pluginMethods: [CAPPluginMethod] = [
+    CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+]
 ```
 
-This makes `Echo` plugin, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
+This makes the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
 
-To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAP_PLUGIN_METHOD` entry in the `.m` file.
+To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAPPluginMethod` entry in the `pluginMethods` array.
 
 ## Permissions
 
 If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern.
 
-Before following this section, make sure you've set up your permission aliases and status interfaces. If you haven't, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+Before following this section, make sure you've set up your permission aliases and status interfaces. If you haven't, see the [Permissions section in the Web guide](/plugins/creating-plugins/web-guide.md#permissions).
 
 ### Implementing Permissions
 
@@ -158,7 +176,7 @@ Add the `checkPermissions()` and `requestPermissions()` methods to your Swift pl
 
 #### `checkPermissions()`
 
-This method should return the current status of permissions in your plugin, which should be a dictionary that matches the structure of the [permission status definition](/docs/plugins/web#permission-status-definitions) you defined. Typically, this information is available directly on the frameworks you're using.
+This method should return the current status of permissions in your plugin, which should be a dictionary that matches the structure of the [permission status definition](/plugins/creating-plugins/web-guide.md#permission-status-definitions) you defined. Typically, this information is available directly on the frameworks you're using.
 
 In the example below, we map the current authorization status from location services into a permission state and associate the `location` alias with that state.
 
@@ -264,7 +282,7 @@ let store = CNContactStore()
 
 In most cases, a plugin method will get invoked to perform a task and can finish immediately. But there are situations where you will need to keep the plugin call available so it can be accessed later. You might want to do this to periodically return data such as streaming live geolocation data, or to perform an asynchronous task.
 
-See [this guide on saving plugin calls](/docs/v3/core-apis/saving-calls) for more details on how to persist plugin calls.
+See [this guide on saving plugin calls](/main/reference/core-apis/saving-calls.md) for more details on how to persist plugin calls.
 
 ## Error Handling
 
@@ -327,11 +345,11 @@ const myPluginEventListener = await MyPlugin.addListener(
 myPluginEventListener.remove();
 ```
 
-> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/ios#triggerjsevent).
+> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/main/reference/core-apis/ios.md#triggerjsevent).
 
 ## Presenting Native Screens
 
-You can present native screens over the app by using [Capacitor's `UIViewController`](/docs/core-apis/ios#viewcontroller).
+You can present native screens over the app by using [Capacitor's `UIViewController`](/main/reference/core-apis/ios.md#viewcontroller).
 
 ## Override navigation
 

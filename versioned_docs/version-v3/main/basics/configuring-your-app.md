@@ -19,12 +19,12 @@ Additionally, since configuring a Capacitor project is no different from configu
 
 ## Capacitor Configuration
 
-Capacitor specific configuration is handled in the [Capacitor configuration file](/docs/v3/config). These generally don't modify native functionality, but control Capacitor's tooling.
+Capacitor specific configuration is handled in the [Capacitor configuration file](/main/reference/config.md). These generally don't modify native functionality, but control Capacitor's tooling.
 
 ## Native Configuration
 
 iOS and Android each have configuration guides walking through making common changes to their behavior:
 
-[Configuring iOS &#8250;](/docs/v3/ios/configuration)
+[Configuring iOS &#8250;](/main/ios/configuration.md)
 
-[Configuring Android &#8250;](/docs/v3/android/configuration)
+[Configuring Android &#8250;](/main/android/configuration.md)

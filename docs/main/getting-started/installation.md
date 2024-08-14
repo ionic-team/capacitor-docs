@@ -6,11 +6,11 @@ slug: /getting-started
 
 # Installing Capacitor
 
-There are two ways to create your Capacitor application. You can use the `@capacitor/create-app` package to create a Capacitor application from scratch, or you can add Capacitor to your already existing web project.
+You can create a new Capacitor application or add Capacitor to your existing web project. This can be done via CLI or using the [VS Code extension](vscode/getting-started).
 
-Remember to make sure your [environment is set up](/docs/getting-started/environment-setup) for the platforms you will be building for.
+Remember to make sure your [environment is set up](/main/getting-started/environment-setup.md) for the platforms you will be building for.
 
-## Creating a new Capacitor application
+## Create a new Capacitor app
 
 The `@capacitor/create-app` package can be used to quickly create a Capacitor application. You can run the following command in an empty directory to scaffold a new Capacitor application.
 
@@ -18,11 +18,9 @@ The `@capacitor/create-app` package can be used to quickly create a Capacitor ap
 npm init @capacitor/app
 ```
 
-## Adding Capacitor to your existing web application
+## Add Capacitor to your web app
 
-Capacitor was designed to drop into any modern JavaScript web app. However, your project needs to have the following three requirements in order to use Capacitor with your existing application.
-
-Your project must have...
+Capacitor was designed to drop into any modern JavaScript web app. However, your project needs to have the following three requirements in order to use Capacitor with your existing application:
 
 - A `package.json` file
 - A separate directory for built web assets such as `dist` or `www`
@@ -35,7 +33,7 @@ Your `index.html` file must have a `<head>` tag in order to properly inject Capa
 
 ### Install Capacitor
 
-In the root of your app, install Capacitor's main npm depdencies: the core JavaScript runtime and the command line interface (CLI).
+In the root of your app, install Capacitor's main npm dependencies: the core JavaScript runtime and the command line interface (CLI).
 
 ```bash
 npm i @capacitor/core
@@ -85,8 +83,8 @@ npx cap sync
 
 With your environment setup, and your project structure set up properly, you're ready to go! You can follow any of the links below if you need more specific documentation.
 
-[Get started with iOS &#8250;](/docs/ios)
+[Get started with iOS &#8250;](/main/ios/index.md)
 
-[Get started with Android &#8250;](/docs/android)
+[Get started with Android &#8250;](/main/android/index.md)
 
-[Developer Workflow Guide &#8250;](/docs/basics/workflow)
+[Developer Workflow Guide &#8250;](/main/basics/workflow.md)

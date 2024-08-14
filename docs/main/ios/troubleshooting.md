@@ -37,13 +37,13 @@ Sometimes, Xcode clings to old, outdated build artifacts. To start fresh, you'll
 
 To do this, open Xcode Preferences, choose the Locations tab, and click the small arrow next to your Derived Data path:
 
-![Locations](../../../static/img/v4/docs/ios/location-prefs.png)
+![Locations](../../../static/img/v6/docs/ios/location-prefs.png)
 
 This opens a Finder window to the location of Xcode's temporary Derived Data.
 
 Next, select all items in that directory and delete:
 
-![Deleting Derived Data](../../../static/img/v4/docs/ios/deleting-derived-data.png)
+![Deleting Derived Data](../../../static/img/v6/docs/ios/deleting-derived-data.png)
 
 Finally, do a rebuild in Xcode.
 
@@ -63,7 +63,7 @@ Perform a new build after running this command.
 
 Xcode sometimes gets stuck indexing forever. This unfortunate situation looks like this:
 
-![Xcode indexing](../../../static/img/v4/docs/ios/indexing.png)
+![Xcode indexing](../../../static/img/v6/docs/ios/indexing.png)
 
 The only solution is to Force Close Xcode (using Activity Monitor) and start it up again.
 
@@ -78,7 +78,7 @@ If you installed CocoaPods with `sudo gem install cocoapods` and you're using an
 ```
 
 This is a CocoaPods bug related to `ffi` not installing on Apple Silicon computers.
-We recommend using [Homebrew to installl CocoaPods](/docs/getting-started/environment-setup#homebrew).
+We recommend using [Homebrew to installl CocoaPods](/main/getting-started/environment-setup.md#homebrew).
 Alternatively, if you have Rosetta installed, you can install `ffi` on a `x86_64` architecture and run `pod install` using the simulated Intel architecture for the first time.
 
 ```

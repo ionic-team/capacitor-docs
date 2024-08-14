@@ -10,7 +10,7 @@ canonicalUrl: https://capacitorjs.com/docs/cli/sync
 
 ## Sync
 
-Run the [Copy](#copy) and [Update](#update) commands together.
+Run the [Copy](./copy.md) and [Update](./update.md) commands together.
 
 ```bash
 npx cap sync [options] [platform]

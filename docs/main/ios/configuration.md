@@ -13,9 +13,9 @@ slug: /ios/configuration
 
 The `Info.plist` file is the main configuration file for iOS apps. You may need to edit it whenever a Capacitor plugin requires new settings or permissions.
 
-To modify it, [open your project in Xcode](/docs/ios#opening-the-ios-project), select the **App** project and the **App** target, and click the **Info** tab.
+To modify it, [open your project in Xcode](/main/ios/index.md#opening-the-ios-project), select the **App** project and the **App** target, and click the **Info** tab.
 
-![Xcode info editor](../../../static/img/v4/docs/ios/xcode-info-editor.png)
+![Xcode info editor](../../../static/img/v6/docs/ios/xcode-info-editor.png)
 
 > You can show the true key names by right-clicking in the table and checking **Raw Keys & Values** in the context menu.
 >
@@ -35,17 +35,17 @@ Capabilities are used to enable key features that your app may need. You may nee
 
 Unlike other configuration options and usage descriptions, capabilities are _not_ configured in `Info.plist`.
 
-To add a new capability, [open your app in Xcode](/docs/ios#opening-the-ios-project), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
+To add a new capability, [open your app in Xcode](/main/ios/index.md#opening-the-ios-project), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
 
-![Xcode Capabilities](../../../static/img/v4/docs/ios/xcode-capabilities.png)
+![Xcode Capabilities](../../../static/img/v6/docs/ios/xcode-capabilities.png)
 
 ## Renaming your App
 
 You can't rename the `App` directory, but you can set the name of your app by renaming the **App** target.
 
-To rename the **App** target, [open your project in Xcode](/docs/ios#opening-the-ios-project), select the **App** project, and double-click the **App** target.
+To rename the **App** target, [open your project in Xcode](/main/ios/index.md#opening-the-ios-project), select the **App** project, and double-click the **App** target.
 
-![Xcode Target](../../../static/img/v4/docs/ios/xcode-target.png)
+![Xcode Target](../../../static/img/v6/docs/ios/xcode-target.png)
 
 Then, open `ios/App/Podfile` and rename the current target at the bottom of the file:
 
@@ -57,8 +57,8 @@ Then, open `ios/App/Podfile` and rename the current target at the bottom of the 
  end
 ```
 
-Finally, add the `scheme` attribute inside the `ios` object in the [Capacitor configuration file](/docs/config#schema).
+Finally, add the `scheme` attribute inside the `ios` object in the [Capacitor configuration file](/main/reference/config.md#schema).
 
 ## Deeplinks (aka Universal Links)
 
-For a Deep Links guide, [see here](/docs/guides/deep-links).
+For a Deep Links guide, [see here](/main/guides/deep-links.md).

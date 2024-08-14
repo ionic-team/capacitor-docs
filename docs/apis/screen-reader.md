@@ -1,7 +1,7 @@
 ---
 title: Screen Reader Capacitor Plugin API
 description: The Screen Reader API provides access to TalkBack/VoiceOver/etc. and provides simple text-to-speech capabilities for visual accessibility.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/src/definitions.ts
 sidebar_label: Screen Reader
 ---
@@ -22,7 +22,7 @@ npx cap sync
 ```typescript
 import { ScreenReader } from '@capacitor/screen-reader';
 
-ScreenReader.addListener('screenReaderStateChange', ({ value }) => {
+ScreenReader.addListener('stateChange', ({ value }) => {
   console.log(`Screen reader is now ${value ? 'on' : 'off'}`);
 });
 
@@ -43,7 +43,7 @@ const sayHello = async () => {
 
 * [`isEnabled()`](#isenabled)
 * [`speak(...)`](#speak)
-* [`addListener('stateChange', ...)`](#addlistenerstatechange)
+* [`addListener('stateChange', ...)`](#addlistenerstatechange-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -51,7 +51,7 @@ const sayHello = async () => {
 </docgen-index>
 
 <docgen-api>
-
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### isEnabled()
 
@@ -101,7 +101,7 @@ plugin](https://github.com/capacitor-community/text-to-speech).
 ### addListener('stateChange', ...)
 
 ```typescript
-addListener(eventName: 'stateChange', listener: StateChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'stateChange', listener: StateChangeListener) => Promise<PluginListenerHandle>
 ```
 
 Add a listener for when the screen reader is turned on or off.
@@ -116,7 +116,7 @@ Readers).
 | **`eventName`** | <code>'stateChange'</code>                                          |
 | **`listener`**  | <code><a href="#statechangelistener">StateChangeListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 

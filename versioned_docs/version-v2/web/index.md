@@ -14,7 +14,7 @@ Capacitor fully supports traditional web and Progressive Web Apps. In fact, usin
 
 Chances are, you already have Capacitor installed in your app if you're using Capacitor to build an iOS, or Android app. In capacitor, the `web` platform is just the web project that powers your app!
 
-If you don't have Capacitor installed yet, consult the [Installation](/docs/getting-started/) guide before continuing.
+If you don't have Capacitor installed yet, consult the [Installation](/getting-started/index.md) guide before continuing.
 
 #### Using Capacitor as a Module
 

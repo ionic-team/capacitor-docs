@@ -29,7 +29,7 @@ build command:
 npm run build
 ```
 
-This builds your Progressive Web App if you've configured <a href="/docs/basics/progressive-web-app">Progressive Web App</a> support already.
+This builds your Progressive Web App if you've configured [Progressive Web App](./progressive-web-app.md) support already.
 
 ## 2. Copying Web Code
 

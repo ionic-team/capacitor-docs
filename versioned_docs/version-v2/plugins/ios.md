@@ -15,7 +15,7 @@ Capacitor embraces standard iOS development tools for building iOS plugins. We b
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](/plugins.md) section of the Plugin guide.
 
 Next, open `your-plugin/ios/Plugin.xcworkspace` in Xcode.
 

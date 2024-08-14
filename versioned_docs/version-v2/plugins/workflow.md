@@ -75,7 +75,7 @@ Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
 }
 ```
 
-> Remember to export the plugin to Capacitor (to make it aware of the plugin) on [iOS](/docs/plugins/ios#export-to-capacitor) and [Android](/docs/plugins/android#export-to-capacitor).
+> Remember to export the plugin to Capacitor (to make it aware of the plugin) on [iOS](/plugins/ios.md#export-to-capacitor) and [Android](/plugins/android.md#export-to-capacitor).
 
 ## Local Testing
 

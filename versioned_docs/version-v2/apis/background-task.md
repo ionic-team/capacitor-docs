@@ -114,7 +114,7 @@ backgrounding the app.
 
 | Param         | Type                             |
 | ------------- | -------------------------------- |
-| **`options`** | <code>{ taskId: string; }</code> |
+| **`options`** | `{ taskId: string; }` |
 
 ---
 

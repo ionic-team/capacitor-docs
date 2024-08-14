@@ -25,7 +25,7 @@ export type MyPluginCallback = (message: MyData | null, err?: any) => void;
 export interface MyPlugin {
   method1(): Promise<void>;
   method2(): Promise<MyData>;
-  cmethod3(callback: MyPluginCallback): Promise<CallbackID>;
+  method3(callback: MyPluginCallback): Promise<CallbackID>;
 }
 ```
 
@@ -91,4 +91,4 @@ CAP_PLUGIN(MyPlugin, "MyPlugin",
 
 Callback methods take a function that will be invoked (potentially many times) from the native code and return a promise that will resolve with an identifier.
 
-On the native side, implementing a callback means you need to save the call so it can be invoked at a later time. The specifics of how to handle that [are discussed here.](/docs/v3/core-apis/saving-calls)
+On the native side, implementing a callback means you need to save the call so it can be invoked at a later time. The specifics of how to handle that [are discussed here.](/main/reference/core-apis/saving-calls.md)
