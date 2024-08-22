@@ -132,9 +132,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/src/definitions.ts',
-    tag: 'next',
+    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
   },
   {
     id: 'haptics',
