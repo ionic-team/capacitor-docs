@@ -10,6 +10,7 @@ const tag = 'latest';
 /**
  * @typedef {Object} PluginApi
  * @property {string} id
+ * @property {string} [title]
  * @property {boolean} isCore
  * @property {boolean} isExperimental
  * @property {string} npmScope
@@ -131,9 +132,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/src/definitions.ts',
-    tag: 'next',
+    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
   },
   {
     id: 'haptics',
@@ -151,6 +151,15 @@ const pluginApis = [
     description: 'The Capacitor Http API provides native http support via patching `fetch` and `XMLHttpRequest` to use native libraries.',
     editUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/http.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts',
+  },
+  {
+    id: 'inappbrowser',
+    title: 'InAppBrowser',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
   },
   {
     id: 'keyboard',
@@ -286,11 +295,11 @@ async function buildPluginApiDocs(plugin) {
  * @returns {string}
  */
 function createApiPage(plugin, readme, pkgJson) {
-  const title = `${toTitleCase(plugin.id)} Capacitor Plugin API`;
+  const title = `${plugin.title ?? toTitleCase(plugin.id)} Capacitor Plugin API`;
   const desc = plugin.description ? plugin.description : pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = plugin.editUrl;
   const editApiUrl = plugin.editApiUrl;
-  const sidebarLabel = toTitleCase(plugin.id);
+  const sidebarLabel = plugin.title ?? toTitleCase(plugin.id);
   return `
 ---
 title: ${title}
