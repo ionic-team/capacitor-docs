@@ -4,7 +4,7 @@ import { usePluginData } from '@docusaurus/useGlobalData';
 import OriginalTOC from '@theme-init/TOC';
 import React, { useEffect, useState } from 'react';
 import { PrismicRichText } from '@prismicio/react';
-import { useDoc } from '@docusaurus/theme-common/internal';
+import { useDoc } from '@docusaurus/plugin-content-docs/client';
 
 import styles from './index.module.scss';
 import clsx from 'clsx';
