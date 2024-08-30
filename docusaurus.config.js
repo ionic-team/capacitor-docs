@@ -264,10 +264,6 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-            if (locale != 'en') {
-              return 'https://crowdin.com/project/capacitor-docs';
-            }
-
             const cliRegex = /cli\/commands\/(.*)\.md/;
             const cliRegexPath = cliRegex.exec(docPath)?.[1];
 
