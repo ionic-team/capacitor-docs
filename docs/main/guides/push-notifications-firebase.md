@@ -145,6 +145,7 @@ ngOnInit() {
       }
     );
 }
+}
 ```
 
 Here is the full implementation of `home.page.ts`:
