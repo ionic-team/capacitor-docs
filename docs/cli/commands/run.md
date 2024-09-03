@@ -23,4 +23,5 @@ npx cap run [options] <platform>
 - `--no-sync`: do not run the sync command
 - `--scheme <schemeName>`: set the scheme of the iOS project
 - `--target <id>`: Run on a specific target device
-
+- `--host <host>`: Live Reload by serving the web view on the specified host
+- `--port <port>`: Live Reload by serving the web view on the specified port
