@@ -27,5 +27,5 @@ npx cap run [options] <platform>
 - `--live-reload`: Enable Live Reload
 - `--host <host>`: Live Reload by serving the web view on the specified host
 - `--port <port>`: Live Reload by serving the web view on the specified port
-- `--forwardPorts <port1,port2>`: Automatically run "adb reverse" for better live-reloading support
+- `--forwardPorts <port1:port2>`: Automatically run "adb reverse" for better live-reloading support
 
