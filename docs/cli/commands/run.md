@@ -22,6 +22,10 @@ npx cap run [options] <platform>
 - `--list`: Print a list of target devices available to the given platform
 - `--no-sync`: do not run the sync command
 - `--scheme <schemeName>`: set the scheme of the iOS project
+- `--configuration <name>`: Configuration name of the iOS Scheme
 - `--target <id>`: Run on a specific target device
+- `--live-reload`: Enable Live Reload
 - `--host <host>`: Live Reload by serving the web view on the specified host
 - `--port <port>`: Live Reload by serving the web view on the specified port
+- `--forwardPorts <port1,port2>`: Automatically run "adb reverse" for better live-reloading support
+
