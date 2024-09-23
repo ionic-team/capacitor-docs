@@ -102,7 +102,7 @@ Then, add the `ngOnInit()` method with some API methods to register and monitor 
 export class HomePage implements OnInit {
   ngOnInit() {
     console.log('Initializing HomePage');
-  
+
     // Request permission to use push notifications
     // iOS will prompt user and return if they granted permission or not
     // Android will just grant without prompting
@@ -114,7 +114,7 @@ export class HomePage implements OnInit {
         // Show some error
       }
     });
-  
+
     // On success, we should be able to receive notifications
     PushNotifications.addListener('registration',
       (token: Token) => {
