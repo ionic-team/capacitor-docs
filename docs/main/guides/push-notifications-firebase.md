@@ -100,8 +100,7 @@ Then, add the `ngOnInit()` method with some API methods to register and monitor 
 
 ```typescript
 export class HomePage implements OnInit {
-
-ngOnInit() {
+  ngOnInit() {
     console.log('Initializing HomePage');
 
     // Request permission to use push notifications
@@ -143,6 +142,7 @@ ngOnInit() {
         alert('Push action performed: ' + JSON.stringify(notification));
       }
     );
+  }
 }
 ```
 
