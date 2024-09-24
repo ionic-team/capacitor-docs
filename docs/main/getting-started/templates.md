@@ -13,4 +13,5 @@ The Ionic team has created various templates/proof of concept GitHub projects sh
 - [SolidJS](https://github.com/ionic-team/capacitor-solidjs-templates)
 - [Remix.run](https://github.com/ionic-team/capacitor-remix-templates)
 - [Next.js + Tailwind](https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter)
+- [Vue-vite + Tailwind](https://github.com/benchen216/vue-tailwind-ionic-capacitor-starter)
 - More coming soon!
