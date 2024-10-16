@@ -283,10 +283,11 @@ module.exports = {
           },
           breadcrumbs: false,
           exclude: ['README.md'],
-          lastVersion: 'current',
+          lastVersion: 'v6',
           versions: {
             current: {
-              label: 'v6',
+              label: 'v7',
+              banner: 'unreleased'
             },
           },
         },
