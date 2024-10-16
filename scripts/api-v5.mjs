@@ -38,12 +38,6 @@ const pluginApis = [
   'status-bar',
   'text-zoom',
   'toast',
-  {
-    id: 'watch',
-    isExperimental: true,
-    editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
-  },
 ];
 
 const isString = (value) => typeof value === 'string' || value instanceof String;
