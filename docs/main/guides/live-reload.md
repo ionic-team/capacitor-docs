@@ -69,3 +69,5 @@ npx cap open android
 Finally, click the Run button to launch the app and start using Live Reload.
 
 > Be careful not to commit the server config to source control.
+
+On android, make sure to add `android:usesCleartextTraffic="true"` inside the `application` properties in `AndroidManifest.xml` or the app won't be able to connect via HTTP.
