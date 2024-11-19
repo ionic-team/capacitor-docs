@@ -9,6 +9,8 @@ Capacitor collects anonymous telemetry data about general usage. This is an opt-
 
 You will be automatically enrolled after the Capacitor CLI successfully finishes its first command. You may opt-out at any time, wherein telemetry data will not be collected unless you opt back in. 
 
+> **Note:** Telemetry does not run in non-interactive mode. 
+
 ## Why?
 
 Anonymous usage data allows the team to gain insight into how Capacitor is being used. With this information, we can better prioritize fixes and features. It also provides the team with a better understanding of the developer experience.
