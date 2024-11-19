@@ -9,7 +9,7 @@ Capacitor collects anonymous telemetry data about general usage. This is an opt-
 
 You will be automatically enrolled after the Capacitor CLI successfully finishes its first command. You may opt-out at any time, wherein telemetry data will not be collected unless you opt back in. 
 
-> **Note:** Telemetry does not run in non-interactive mode. 
+> **Note:** Telemetry does not run in non-interactive environments, such as CI servers, ensuring no data is collected in those environments. 
 
 ## Why?
 
