@@ -5,9 +5,9 @@ contributors:
   - eric-horodyski
 ---
 
-Capacitor collects anonymous telemetry data about general usage. This is an opt-in program that provides insight to the Capacitor team to help improve the product. By opting in, you will be able to provide valuable insights that could shape the future of the product.
+Capacitor collects anonymous telemetry data about general usage. This is an opt-out program that provides insight to the Capacitor team to help improve the product. By providing usage data, you help provide valuable insights that could shape the future of the product.
 
-You will be asked after the Capacitor CLI successfully finishes its first command if you would like to enter the program. If you opt out, telemetry data will not be collected and you will not be asked again.
+You will be automatically enrolled after the Capacitor CLI successfully finishes its first command. You may opt-out at any time, wherein telemetry data will not be collected unless you opt back in. 
 
 ## Why?
 
