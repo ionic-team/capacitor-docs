@@ -206,7 +206,7 @@ module.exports = {
       type: 'category',
       label: 'CLI Documentation',
       collapsed: false,
-      items: ['cli/index', 'cli/hooks'],
+      items: ['cli/index', 'cli/hooks', 'cli/telemetry'],
     },
     {
       type: 'category',
