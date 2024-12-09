@@ -8,7 +8,7 @@ slug: /ios/spm
 
 # Swift Package Manager
 
-Swift Packages are Apple's new first-party tool for software dependacies. Traditionally Capacitor has used Cocoapods for managing depenacies internally and for plugins, however now is the time to move to a supported solution.
+Swift Packages are Apple's new first-party tool for software dependencies. Traditionally Capacitor has used Cocoapods for managing depenacies internally and for plugins, however now is the time to move to a supported solution.
 
 In Capacitor 6, you can now choose between using Cocoapods or Swift Package Manager (SPM). Almost all current capacitor-team supported plugins support SPM, namely the plugins in <a href="https://github.com/ionic-team/capacitor-plugins">capacitor-plugins</a>.
 
