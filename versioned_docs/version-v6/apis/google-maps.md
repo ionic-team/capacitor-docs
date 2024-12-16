@@ -1,8 +1,8 @@
 ---
 title: Google Maps Capacitor Plugin API
 description: Google maps on Capacitor
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/6.x/google-maps/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/google-maps/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts
 sidebar_label: Google Maps
 ---
 
