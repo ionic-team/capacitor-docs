@@ -1,7 +1,7 @@
 ---
 title: Filesystem Capacitor Plugin API
 description: The Filesystem API provides a NodeJS-like API for working with files on the device.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/filesystem/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/6.x/filesystem/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/filesystem/src/definitions.ts
 sidebar_label: Filesystem
 ---

@@ -1,7 +1,7 @@
 ---
 title: Background Runner Capacitor Plugin API
 description: Capacitor Background Runner
-editUrl: https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: Background Runner
 ---

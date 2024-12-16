@@ -1,7 +1,7 @@
 ---
 title: Push Notifications Capacitor Plugin API
 description: The Push Notifications API provides access to native push notifications.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/push-notifications/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/6.x/push-notifications/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/push-notifications/src/definitions.ts
 sidebar_label: Push Notifications
 ---

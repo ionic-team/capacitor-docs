@@ -1,7 +1,7 @@
 ---
 title: App Launcher Capacitor Plugin API
 description: The AppLauncher API allows to open other apps
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/app-launcher/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/6.x/app-launcher/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/app-launcher/src/definitions.ts
 sidebar_label: App Launcher
 ---
