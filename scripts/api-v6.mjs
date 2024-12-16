@@ -24,9 +24,9 @@ const pluginApis = [
   'geolocation',
   {
     id: 'google-maps',
-    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
+    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/6.x/plugin/README.md',
     editApiUrl:
-      'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
+      'https://github.com/ionic-team/capacitor-google-maps/blob/6.x/plugin/src/definitions.ts',
   },
   'haptics',
   'keyboard',
