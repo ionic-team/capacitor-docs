@@ -16,7 +16,7 @@ npm install @capacitor/assets --save-dev
 
 Provide icon and splash screen source images using this folder/filename structure:
 ```
-resources/
+assets/
 ├── icon-only.png
 ├── icon-foreground.png
 ├── icon-background.png
