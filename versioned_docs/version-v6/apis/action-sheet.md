@@ -1,8 +1,8 @@
 ---
 title: Action Sheet Capacitor Plugin API
 description: The Action Sheet API provides access to native Action Sheets, which come up from the bottom of the screen and display actions a user can take.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/action-sheet/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/action-sheet/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/6.x/action-sheet/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/action-sheet/src/definitions.ts
 sidebar_label: Action Sheet
 ---
 

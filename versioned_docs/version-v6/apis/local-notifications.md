@@ -1,8 +1,8 @@
 ---
 title: Local Notifications Capacitor Plugin API
 description: The Local Notifications API provides a way to schedule device notifications locally (i.e. without a server sending push notifications).
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/6.x/local-notifications/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/6.x/local-notifications/src/definitions.ts
 sidebar_label: Local Notifications
 ---
 

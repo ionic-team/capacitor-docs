@@ -1,10 +1,9 @@
-import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
-const API_DIR = new URL('../versioned_docs/version-v5/apis/', import.meta.url);
+const API_DIR = new URL('../versioned_docs/version-v6/apis/', import.meta.url);
 
-const tag = 'latest-5';
+const tag = 'latest';
 
 const pluginApis = [
   'action-sheet',
@@ -23,7 +22,12 @@ const pluginApis = [
   'dialog',
   'filesystem',
   'geolocation',
-  'google-maps',
+  {
+    id: 'google-maps',
+    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/6.x/plugin/README.md',
+    editApiUrl:
+      'https://github.com/ionic-team/capacitor-google-maps/blob/6.x/plugin/src/definitions.ts',
+  },
   'haptics',
   'keyboard',
   'local-notifications',
@@ -57,10 +61,10 @@ function createApiPage(plugin, readme, pkgJson) {
   const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
   const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = isString(plugin)
-    ? `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/README.md`
+    ? `https://github.com/ionic-team/capacitor-plugins/blob/6.x/${pluginId}/README.md`
     : plugin.editUrl;
   const editApiUrl = isString(plugin)
-    ? `https://github.com/ionic-team/capacitor-plugins/blob/5.x/${pluginId}/src/definitions.ts`
+    ? `https://github.com/ionic-team/capacitor-plugins/blob/6.x/${pluginId}/src/definitions.ts`
     : plugin.editApiUrl;
   const sidebarLabel = toTitleCase(pluginId);
 
@@ -78,7 +82,7 @@ function createApiPage(plugin, readme, pkgJson) {
 ---
 title: ${title}
 description: ${desc}
-editUrl: ${editUrl}
+custom_edit_url: ${editUrl}
 editApiUrl: ${editApiUrl}
 sidebar_label: ${sidebarLabel}${plugin.isExperimental ? ' 🧪' : ''}
 ---
