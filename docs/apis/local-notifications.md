@@ -32,6 +32,10 @@ Note that even if the permission is present, users can still disable exact notif
 
 On Android 14, there is a new permission called `USE_EXACT_ALARM`.  Use this permission to use exact alarms without needing to request permission from the user.  This should only be used if the use of exact alarms is central to your app's functionality.  Read more about the implications of using this permission [here](https://developer.android.com/reference/android/Manifest.permission#USE_EXACT_ALARM).
 
+From Android 15 onwards, users can install an app in the [Private space](https://developer.android.com/about/versions/15/features#private-space). Users can lock their private space at any time, which means that push notifications are not shown until the user unlocks it.
+It is not possible to detect if an app is installed in the private space. Therefore, if your app shows any critical notifications, inform your users to avoid installing the app in the private space.
+For more information about the behavior changes of your app related to the private space, refer to [Android documentation](https://developer.android.com/about/versions/15/behavior-changes-all#private-space-changes).
+
 ## Configuration
 
 <docgen-config>
