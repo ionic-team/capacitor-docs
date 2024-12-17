@@ -61,6 +61,7 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
+    tag: 'latest',
   },
   {
     id: 'browser',
@@ -134,6 +135,7 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
+    tag: 'latest',
   },
   {
     id: 'haptics',
@@ -160,6 +162,7 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
+    tag: 'latest',
   },
   {
     id: 'keyboard',
