@@ -16,7 +16,7 @@ We've tried our best to make sure you don't have to change much about how you wo
 
 ### How it works
 
-When a Capacitor project is using SPM we use a 'Base SPM' package that will serve as the place that references all of your projects dependancies:
+When a Capacitor project is using SPM we use a 'Base SPM' package that will serve as the place that references all of your projects dependencies:
 
 ![Base SPM Picture](/img/v6/docs/ios/spm/base-spm.png)
 
