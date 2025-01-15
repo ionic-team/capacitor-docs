@@ -315,12 +315,29 @@ sidebar_label: ${sidebarLabel}${plugin.isExperimental ? ' 🧪' : ''}
 ${readme}`.trim();
 }
 
+async function invalidateJSDELIVRCache(url) {
+  const rsp = await fetch(url.replace('cdn', 'purge'), { method: 'GET' });
+  let err = null;
+  let rspData = null;
+  try {
+    rspData = await rsp.json();
+  } catch (e) {
+    err = e;
+  }
+  // @ts-ignore
+  if (err !== null || rspData.status !== 'finished') {
+    console.error(err);
+    throw new Error("Failed to invalidate JSDELIVR cache for " + url);
+  }
+}
+
 /**
  * @param {PluginApi} plugin
  * @returns {Promise<string>}
  */
 async function getReadme(plugin) {
   const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${!plugin.isCore ? plugin.id : 'core'}@${plugin.tag ?? tag}/${plugin.isCore ? `${plugin.id}.md` : 'README.md'}`;
+  await invalidateJSDELIVRCache(url);
   const rsp = await fetch(url);
   return rsp.text();
 }
@@ -331,11 +348,13 @@ async function getReadme(plugin) {
  */
 async function getPkgJsonData(plugin) {
   const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${!plugin.isCore ? plugin.id : 'core'}@${plugin.tag ?? tag}/package.json`;
+  await invalidateJSDELIVRCache(url);
   const rsp = await fetch(url);
   return rsp.json();
 }
 
 async function main() {
+  console.log("Updating Plugin API Files...");
   await Promise.all(pluginApis.map(buildPluginApiDocs));
   console.log(`Plugin API Files Updated 🎸`);
 }
