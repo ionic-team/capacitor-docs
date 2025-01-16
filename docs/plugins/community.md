@@ -23,6 +23,11 @@ The [Capawesome](https://github.com/capawesome-team) GitHub org is another commu
 Among others, this includes [capacitor-firebase](https://github.com/capawesome-team/capacitor-firebase) and [capacitor-mlkit](https://github.com/capawesome-team/capacitor-mlkit).
 Check out the [Capawesome Blog](https://capawesome.io/blog/) or [Twitter](https://twitter.com/capawesomeio) to stay up to date.
 
+## Capgo
+
+[Capgo](https://github.com/Cap-go) is a community project led by Martin Donadieu, an Ionic Developer Expert, offering a diverse set of Capacitor plugins.
+These plugins enhance app functionality with features like [in-app purchases](https://github.com/Cap-go/native-purchases), [SQLite storage](https://github.com/Cap-go/capacitor-data-storage-sqlite), [native audio](https://github.com/Cap-go/native-audio), [geocoding](https://github.com/Cap-go/capacitor-nativegeocoder), [screen recording](https://github.com/Cap-go/capacitor-screen-recorder), and other device-specific capabilities. Capgo's plugins are designed to streamline development and improve app performance across various platforms. Check out the [Capgo website](https://capgo.app/) to explore the full range of plugins and stay updated on new releases.
+
 ## Cordova Ecosystem
 
 Capacitor has support for most Cordova plugins, so developers can use the [hundreds of existing Cordova plugins](https://cordova.apache.org/plugins/) in their Capacitor apps. While certain Cordova plugins are [not compatible](/plugins/cordova.md#known-incompatible-plugins) with Capacitor, most are, so it's worth trying one if there's no existing Capacitor-specific plugin available.
