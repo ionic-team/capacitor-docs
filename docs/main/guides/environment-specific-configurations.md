@@ -181,7 +181,6 @@ const baseConfig: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'My App',
   webDir: 'build',
-  bundledWebRuntime: false,
 };
 
 switch (process.env.NODE_ENV) {

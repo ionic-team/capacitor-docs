@@ -29,26 +29,7 @@ Most commonly, apps will be using a framework with a build system that supports 
 
 ### Using Capacitor as a Script Include
 
-To use the Capacitor runtime in a web app that is not using a build system or bundler/module loader, do the following:
-
-1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/main/reference/config.md)
-
-```json
-"bundledWebRuntime": true
-```
-
-2. Copy the Capacitor runtime bundle (`capacitor.js`) into your web assets directory
-
-```bash
-npx cap sync web
-```
-
-3. Import `capacitor.js` in `index.html` before other JavaScript
-
-```html
-<script src="capacitor.js"></script>
-<script src="your/app.js"></script>
-```
+This option is no longer available, please, use a JavaScript module bundler.
 
 ## Going Live
 
