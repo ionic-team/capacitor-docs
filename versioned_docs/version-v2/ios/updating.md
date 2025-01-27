@@ -27,7 +27,7 @@ npx cap sync ios
 
 To update the base structure of your Xcode project, view the [ios-template](https://github.com/ionic-team/capacitor/tree/master/ios-template) project in the Capacitor repo, under the tag corresponding to the latest stable release of Capacitor. The core project is kept simple on purpose: it shouldn't take much time to see what is different from the core project and your project.
 
-In particular, [AppDelegate.swift](https://github.com/ionic-team/capacitor/blob/master/ios-template/App/App/AppDelegate.swift) should be checked regularly for possible changes to iOS events.
+In particular, [AppDelegate.swift](https://github.com/ionic-team/capacitor/blob/2.x/ios-template/App/App/AppDelegate.swift) should be checked regularly for possible changes to iOS events.
 
 ### From 1.0.0 to 1.1.0
 
