@@ -22,7 +22,7 @@ Then from Android Studio click the "Sync Project with Gradle Files" button.
 
 ## Updating Android Project
 
-To update the base structure of your Android project, view the [android-template](https://github.com/ionic-team/capacitor/tree/master/android-template) project in the Capacitor repo, under the tag corresponding to the latest stable release of Capacitor. The core project is kept simple on purpose: it shouldn't take much time to see what is different from the core project and your project.
+To update the base structure of your Android project, view the [android-template](https://github.com/ionic-team/capacitor/tree/2.x/android-template) project in the Capacitor repo, under the tag corresponding to the latest stable release of Capacitor. The core project is kept simple on purpose: it shouldn't take much time to see what is different from the core project and your project.
 
 ### From 1.0.0 to 1.1.0
 
