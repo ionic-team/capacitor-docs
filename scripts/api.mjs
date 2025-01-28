@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 // @ts-ignore
 const API_DIR = new URL('../docs/apis/', import.meta.url);
 
-const tag = 'next';
+const tag = 'latest';
 
 /**
  * @typedef {Object} PluginApi
