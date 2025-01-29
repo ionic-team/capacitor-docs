@@ -125,8 +125,9 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    tag: 'latest'
   },
   {
     id: 'google-maps',
