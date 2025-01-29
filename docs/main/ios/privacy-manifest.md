@@ -15,10 +15,11 @@ Starting March 13th, 2024, App Store Connect will notify users when a new or upd
 Not all Applications will be flagged but certain plugins such as `@capacitor/filesystem` and `@capacitor/preferences` may necessitate a Privacy Manifest File. If you have received a notification:
 
 1. Update Capacitor to:
-a. `>= 6.0.0` for Capacitor 6
-b. `>= 5.7.4` for Capacitor 5
-c. `>= 4.8.2` for Capacitor 4
-d. Capacitor <= 3 is not supported
+a. `>= 7.0.0` for Capacitor 7
+b. `>= 6.0.0` for Capacitor 6
+c. `>= 5.7.4` for Capacitor 5
+d. `>= 4.8.2` for Capacitor 4
+e. Capacitor <= 3 is not supported
 2. Use either the VS Code Extension to create the privacy manifest file for your app or create it manually.
 
 ### VS Code Extension
