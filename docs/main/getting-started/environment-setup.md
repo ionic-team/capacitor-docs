@@ -124,7 +124,7 @@ Once you've installed the core requirements, as well as an Android SDK with Andr
 
 ### Android Studio
 
-Android Studio is Google's IDE for creating native Android applications. You can install Android Studio by going to the [Android Studio download page](https://developer.android.com/studio). Capacitor 6 requires a minimum of Android Studio 2024.2.1.
+Android Studio is Google's IDE for creating native Android applications. You can install Android Studio by going to the [Android Studio download page](https://developer.android.com/studio). Capacitor 7 requires a minimum of Android Studio 2024.2.1.
 
 ### Android SDK
 
