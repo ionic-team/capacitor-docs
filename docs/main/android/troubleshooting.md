@@ -89,7 +89,7 @@ To resolve, set `JAVA_HOME` as an environment or system variable using the path 
 On Mac, this can be updated in your `.zshrc` or `.bashrc` file or exported in your environment.
 
 ```bash
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 ```
 
 On Windows, you can set `JAVA_HOME` as a System Variable under your Environment Variables settings.
