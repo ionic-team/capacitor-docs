@@ -27,7 +27,7 @@ The following keyboard shortcuts can be used:
 
 ### Set Android Studio Location
 
-The extension will guess the location of Android Studio to be able to find the location for Java. You can set an alternative location by clicking `Settings` > `Advanced` and setting `Java Home` to another path. The default location is usually `/Applications/Android Studio.app/Contents/jre/Contents/Home`.
+The extension will guess the location of Android Studio to be able to find the location for Java. You can set an alternative location by clicking `Settings` > `Advanced` and setting `Java Home` to another path. The default location is usually `/Applications/Android Studio.app/Contents/jbr/Contents/Home`.
 
 ### Set Shell Path
 
