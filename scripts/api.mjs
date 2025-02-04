@@ -205,6 +205,14 @@ const pluginApis = [
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/preferences/src/definitions.ts',
   },
   {
+    id: 'privacy-screen',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/src/definitions.ts',
+  },
+  {
     id: 'push-notifications',
     isCore: false,
     isExperimental: false,

@@ -39,6 +39,7 @@ The API documentation for these plugins can be found below.
 - [Motion](/apis/motion.md)
 - [Network](/apis/network.md)
 - [Preferences](/apis/preferences.md)
+- [Privacy Screen](/apis/privacy-screen.md)
 - [Push Notifications](/apis/push-notifications.md)
 - [Screen Orientation](/apis/screen-orientation.md)
 - [Screen Reader](/apis/screen-reader.md)
