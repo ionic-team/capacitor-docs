@@ -71,9 +71,10 @@ npx cap add ios
 
 ### Sync your web code to your native project
 
-Once you've created your native projects, you can sync your web application to your native project by running the following command.
+Once you've created your native projects, you can build &amp; sync your web application to your native project by running the following commands.
 
 ```bash
+npm run build
 npx cap sync
 ```
 
