@@ -24,7 +24,7 @@ The Capacitor CLI will modify the CapAPP-SPM package when you sync new plugins. 
 
 ### Using SPM in a new Capacitor project
 
-First we'll start with our normal `npm init @capacitor/app`:
+First we'll start with our normal `npm init @capacitor/app@latest`:
 
 ![Demo Step 1](../../../static/img/v6/docs/ios/spm/demo-step1.png)
 
