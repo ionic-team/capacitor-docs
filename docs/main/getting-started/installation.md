@@ -15,7 +15,7 @@ Remember to make sure your [environment is set up](/main/getting-started/environ
 The `@capacitor/create-app` package can be used to quickly create a Capacitor application. You can run the following command in an empty directory to scaffold a new Capacitor application.
 
 ```bash
-npm init @capacitor/app
+npm init @capacitor/app@latest
 ```
 
 ## Add Capacitor to your web app
