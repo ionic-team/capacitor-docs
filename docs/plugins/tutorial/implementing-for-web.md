@@ -60,17 +60,52 @@ export class ScreenOrientationWeb
 Then implement the remaining methods as part of the `ScreenOrientationWeb` class:
 
 ```typescript
- async orientation(): Promise<{ type: OrientationType }> {
-   return { type: window.screen.orientation.type };
- }
+ async orientation(): Promise<ScreenOrientationResult> {
+    if (typeof screen === 'undefined' || !screen.orientation) {
+      throw this.unavailable(
+        'ScreenOrientation API not available in this browser',
+      );
+    }
+    return { type: screen.orientation.type };
+  }
 
- async lock(opts: { orientation: OrientationLockType }): Promise<void> {
-   await window.screen.orientation.lock(opts.orientation);
- }
+ async lock(options: OrientationLockOptions): Promise<void> {
+    if (
+      typeof screen === 'undefined' ||
+      !screen.orientation ||
+      !screen.orientation.lock
+    ) {
+      throw this.unavailable(
+        'ScreenOrientation API not available in this browser',
+      );
+    }
+    try {
+      await screen.orientation.lock(options.orientation);
+    } catch {
+      throw this.unavailable(
+        'ScreenOrientation API not available in this browser',
+      );
+    }
+  }
 
  async unlock(): Promise<void> {
-   window.screen.orientation.unlock();
- }
+    if (
+      typeof screen === 'undefined' ||
+      !screen.orientation ||
+      !screen.orientation.unlock
+    ) {
+      throw this.unavailable(
+        'ScreenOrientation API not available in this browser',
+      );
+    }
+    try {
+      screen.orientation.unlock();
+    } catch {
+      throw this.unavailable(
+        'ScreenOrientation API not available in this browser',
+      );
+    }
+  }
 ```
 
 ## Registering the web implementation
