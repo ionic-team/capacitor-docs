@@ -27,13 +27,13 @@ We might not be able to use the Screen Orientation Web API outright, but we can 
 
 | Method Name        | Input Parameters                            | Return Value                                           |
 | ------------------ | ------------------------------------------- | ------------------------------------------------------ |
-| orientation        |                                             | `Promise<{ type: OrientationType }>`                   |
-| lock               | `{ orientation: OrientationLockType }`      | `Promise<void>`                                        |
+| orientation        |                                             | `Promise<ScreenOrientationResult>`                   |
+| lock               | `options: OrientationLockOptions`      | `Promise<void>`                                        |
 | unlock             |                                             | `Promise<void>`                                        |
-| addListener        | `(orientation: { type: OrientationType }) ` | `Promise<PluginListenerHandle> & PluginListenerHandle` |
+| addListener        | `(orientation: ScreenOrientationResult)` | `Promise<PluginListenerHandle>` |
 | removeAllListeners |                                             | `Promise<void>`                                        |
 
-There is an added advantage here; we can use the `OrientationType` and `OrientationLockType` types available through TypeScript’s existing DOM typings.
+There is an added advantage here; we can use the `OrientationType` type available through TypeScript’s existing DOM typings. `OrientationLockType` is no longer available since Typescript 5.2+, so we will be providing a definition for it.
 
 Let's set up a directory to hold our plugin API. Create a new subfolder `src/plugins/screen-orientation` and add the following files within:
 
@@ -45,16 +45,37 @@ Populate `definitions.ts` with the following code:
 ```typescript
 import type { PluginListenerHandle } from '@capacitor/core';
 
+export interface OrientationLockOptions {
+  /**
+   * Note: Typescript v5.2+ users should import OrientationLockType from @capacitor/screen-orientation.
+   */
+  orientation: OrientationLockType;
+}
+
+export type OrientationLockType =
+  | 'any'
+  | 'natural'
+  | 'landscape'
+  | 'portrait'
+  | 'portrait-primary'
+  | 'portrait-secondary'
+  | 'landscape-primary'
+  | 'landscape-secondary';
+
+export interface ScreenOrientationResult {
+  type: OrientationType;
+}
+
 export interface ScreenOrientationPlugin {
   /**
    * Returns the screen's current orientation.
    */
-  orientation(): Promise<{ type: OrientationType }>;
+  orientation(): Promise<ScreenOrientationResult>;
 
   /**
    * Locks the screen orientation.
    */
-  lock(opts: { orientation: OrientationLockType }): Promise<void>;
+  lock(options: OrientationLockOptions): Promise<void>;
 
   /**
    * Unlocks the screen's orientation.
@@ -66,8 +87,8 @@ export interface ScreenOrientationPlugin {
    */
   addListener(
     eventName: 'screenOrientationChange',
-    listenerFunc: (orientation: { type: OrientationType }) => void,
-  ): Promise<PluginListenerHandle> & PluginListenerHandle;
+    listenerFunc: (orientation: ScreenOrientationResult) => void,
+  ): Promise<PluginListenerHandle>;
 
   /**
    * Removes all listeners
@@ -89,6 +110,9 @@ import type { ScreenOrientationPlugin } from './definitions';
 
 const ScreenOrientation = registerPlugin<ScreenOrientationPlugin>(
   'ScreenOrientation',
+  {
+    web: () => import('./web').then(m => new m.ScreenOrientationWeb()),
+  },
 );
 
 export * from './definitions';
