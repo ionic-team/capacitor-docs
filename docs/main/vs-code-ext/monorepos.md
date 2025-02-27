@@ -12,7 +12,7 @@ The extension supports many flavors of mono-repos and when detecting a monorepo 
 
 ## Supported Types
 The list of supported Monorepo types include:
-- **[NX](https://nx.dev/)** - which is often combined with [nxtend](https://nxtend.dev/docs/capacitor/overview) for Capacitor support
+- **[NX](https://nx.dev/)** - which is often combined with [nxext](https://nxext.dev/docs/capacitor/overview.html) for Capacitor support
 - **[NPM Workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces)** - Simple multi project support built into npm.
 - **[Yarn Workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/)** - Multi project support for [Yarn](https://yarnpkg.com/) (an alternative to npm).
 - **[Pnpm Workspaces](https://pnpm.io/workspaces)** - Multi project support for [pnpm](https://pnpm.io/) (an alternative to npm).
