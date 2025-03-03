@@ -10,6 +10,7 @@ const tag = 'latest';
 /**
  * @typedef {Object} PluginApi
  * @property {string} id
+ * @property {string} [title]
  * @property {boolean} isCore
  * @property {boolean} isExperimental
  * @property {string} npmScope
@@ -51,6 +52,15 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
     editApiUrl:
       'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    tag: 'latest',
+  },
+  {
+    id: 'barcode-scanner',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
     tag: 'latest',
   },
   {
@@ -115,17 +125,19 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/src/definitions.ts',
+    description: 'The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.',
+    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    tag: 'latest'
   },
   {
     id: 'google-maps',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/src/definitions.ts',
-    tag: 'next',
+    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
+    tag: 'latest',
   },
   {
     id: 'haptics',
@@ -143,6 +155,16 @@ const pluginApis = [
     description: 'The Capacitor Http API provides native http support via patching `fetch` and `XMLHttpRequest` to use native libraries.',
     editUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/http.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts',
+  },
+  {
+    id: 'inappbrowser',
+    title: 'InAppBrowser',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
+    tag: 'latest',
   },
   {
     id: 'keyboard',
@@ -183,6 +205,14 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/preferences/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/preferences/src/definitions.ts',
+  },
+  {
+    id: 'privacy-screen',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/src/definitions.ts',
   },
   {
     id: 'push-notifications',
@@ -278,21 +308,37 @@ async function buildPluginApiDocs(plugin) {
  * @returns {string}
  */
 function createApiPage(plugin, readme, pkgJson) {
-  const title = `${toTitleCase(plugin.id)} Capacitor Plugin API`;
+  const title = `${plugin.title ?? toTitleCase(plugin.id)} Capacitor Plugin API`;
   const desc = plugin.description ? plugin.description : pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = plugin.editUrl;
   const editApiUrl = plugin.editApiUrl;
-  const sidebarLabel = toTitleCase(plugin.id);
+  const sidebarLabel = plugin.title ?? toTitleCase(plugin.id);
   return `
 ---
 title: ${title}
 description: ${desc}
-editUrl: ${editUrl}
+custom_edit_url: ${editUrl}
 editApiUrl: ${editApiUrl}
 sidebar_label: ${sidebarLabel}${plugin.isExperimental ? ' 🧪' : ''}
 ---
 
 ${readme}`.trim();
+}
+
+async function invalidateJSDELIVRCache(url) {
+  const rsp = await fetch(url.replace('cdn', 'purge'), { method: 'GET' });
+  let err = null;
+  let rspData = null;
+  try {
+    rspData = await rsp.json();
+  } catch (e) {
+    err = e;
+  }
+  // @ts-ignore
+  if (err !== null || rspData.status !== 'finished') {
+    console.error(err);
+    throw new Error("Failed to invalidate JSDELIVR cache for " + url);
+  }
 }
 
 /**
@@ -301,6 +347,7 @@ ${readme}`.trim();
  */
 async function getReadme(plugin) {
   const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${!plugin.isCore ? plugin.id : 'core'}@${plugin.tag ?? tag}/${plugin.isCore ? `${plugin.id}.md` : 'README.md'}`;
+  await invalidateJSDELIVRCache(url);
   const rsp = await fetch(url);
   return rsp.text();
 }
@@ -311,11 +358,13 @@ async function getReadme(plugin) {
  */
 async function getPkgJsonData(plugin) {
   const url = `https://cdn.jsdelivr.net/npm/${plugin.npmScope}/${!plugin.isCore ? plugin.id : 'core'}@${plugin.tag ?? tag}/package.json`;
+  await invalidateJSDELIVRCache(url);
   const rsp = await fetch(url);
   return rsp.json();
 }
 
 async function main() {
+  console.log("Updating Plugin API Files...");
   await Promise.all(pluginApis.map(buildPluginApiDocs));
   console.log(`Plugin API Files Updated 🎸`);
 }

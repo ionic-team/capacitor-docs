@@ -29,6 +29,12 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'capacitor-docs',
   themeConfig: {
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
+      isCloseable: false,
+    },
     colorMode: {
       defaultMode: 'light',
     },
@@ -258,25 +264,12 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-            if (locale != 'en') {
-              return 'https://crowdin.com/project/capacitor-docs';
-            }
-
-            const apiRegex = /apis\/(.*)\.md/;
-            const apiRegexPath = apiRegex.exec(docPath)?.[1];
-
             const cliRegex = /cli\/commands\/(.*)\.md/;
             const cliRegexPath = cliRegex.exec(docPath)?.[1];
 
             const nativeRegex = /native\/(.*)\.md/;
             const nativeRegexPath = nativeRegex.exec(docPath)?.[1];
 
-            if (apiRegexPath) {
-              if (apiRegexPath === 'cookies' || apiRegexPath === 'http') {
-                return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/apis/${apiRegexPath}.md`;
-              }
-              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${apiRegexPath}/README.md`;
-            }
             if (cliRegexPath) {
               return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${cliRegexPath.replace(
                 '-',
@@ -293,7 +286,7 @@ module.exports = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: 'v6',
+              label: 'v7',
             },
           },
         },

@@ -15,10 +15,11 @@ Starting March 13th, 2024, App Store Connect will notify users when a new or upd
 Not all Applications will be flagged but certain plugins such as `@capacitor/filesystem` and `@capacitor/preferences` may necessitate a Privacy Manifest File. If you have received a notification:
 
 1. Update Capacitor to:
-a. `>= 6.0.0` for Capacitor 6
-b. `>= 5.7.4` for Capacitor 5
-c. `>= 4.8.2` for Capacitor 4
-d. Capacitor <= 3 is not supported
+a. `>= 7.0.0` for Capacitor 7
+b. `>= 6.0.0` for Capacitor 6
+c. `>= 5.7.4` for Capacitor 5
+d. `>= 4.8.2` for Capacitor 4
+e. Capacitor <= 3 is not supported
 2. Use either the VS Code Extension to create the privacy manifest file for your app or create it manually.
 
 ### VS Code Extension
@@ -37,7 +38,7 @@ The extension will then list all changes needed as recommendations titled *Missi
 
 You must select one of the reason codes to explain how you use the plugin. If you are unsure, click *Docs* to go to the Apple’s documentation on the explanations of each reason code.
 
-Please note that the VS Code extension has a set of rules for known plugins to help you. If you are still being rejected by Apple for missing privacy manifest reasons it may be that you are using a plugin that the extension does not know. You can open an issue on the [VS Code extension issue tracker](https://github.com/ionic-team/vscode-extension/issues).
+Please note that the VS Code extension has a set of rules for known plugins to help you. If you are still being rejected by Apple for missing privacy manifest reasons it may be that you are using a plugin that the extension does not know. You can open an issue on the [VS Code extension issue tracker](https://github.com/ionic-team/vscode-ionic/issues).
 
 ### Manual Steps
 
@@ -53,7 +54,7 @@ Check your app in the *Targets* list.
 
 Click *Create*.
 
-A filed called `PrivacyInfo.xcprivacy` will be created. This file is challenging to create interactively in the Xcode UI so it may be easier to edit it manually by right clicking it and choosing *Open with External Editor*.
+A file called `PrivacyInfo.xcprivacy` will be created. This file is challenging to create interactively in the Xcode UI so it may be easier to edit it manually by right clicking it and choosing *Open with External Editor*.
 
 As a sample file here is a `PrivacyInfo.xcprivacy` file that uses the UserDefaults API through its use of the `@capacitor/preferences` plugin.
 
