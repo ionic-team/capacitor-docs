@@ -88,9 +88,9 @@ Check if privacy screen is currently enabled
 
 #### PrivacyScreenConfig
 
-| Prop          | Type                                                                    |
-| ------------- | ----------------------------------------------------------------------- |
-| **`android`** | <code>{ dimBackground?: boolean; preventScreenshots?: boolean; }</code> |
-| **`ios`**     | <code>{ blurEffect?: 'light' \| 'dark' \| 'none'; }</code>              |
+| Prop          | Type                                                                                                                               |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **`android`** | <code>{ dimBackground?: boolean; preventScreenshots?: boolean; privacyModeOnActivityHidden?: 'none' \| 'dim' \| 'splash'; }</code> |
+| **`ios`**     | <code>{ blurEffect?: 'none' \| 'light' \| 'dark'; }</code>                                                                         |
 
 </docgen-api>
