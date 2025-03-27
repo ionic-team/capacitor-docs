@@ -1,30 +1,30 @@
 ---
-title: Capacitor Plugins
-description: Capacitor Plugins
-sidebar_label: Official Plugins
+标题：电容插件
+描述：电容插件
+sidebar_label：官方插件
 contributors:
-  - mlynch
-  - jcesarmobile
+  -mlynch
+  -jcesarmobile
   - ehorodyski-ionic
 slug: /apis
 ---
 
-# Official Plugins
+#官方插件
 
-The Official Plugins are a set of Capacitor plugins maintained by the Capacitor team that provide access to commonly used native APIs.
+官方插件是由电容团队维护的一组电容插件，它们提供对常用本地API的访问。
 
-The API documentation for these plugins can be found below.
+这些插件的API文档可以在下面找到。
 
-## List of Official Plugins
+##官方插件列表
 
-- [Action Sheet](/apis/action-sheet.md)
-- [App Launcher](/apis/app-launcher.md)
-- [App](/apis/app.md)
-- [Background Runner](/apis/background-runner.md)
-- [Barcode Scanner](/apis/barcode-scanner.md)
-- [Browser](/apis/browser.md)
-- [Camera](/apis/camera.md)
-- [Clipboard](/apis/clipboard.md)
+- [行动表](/apis/action-sheet.md)
+- [App发射器](/apis/app-launcher.md)
+- [应用程序](/apis/app.md)
+- [背景](/apis/background-runner.md)
+- [条形码扫描器](/apis/barcode-scanner.md)
+- [浏览器](/apis/browser.md)
+- [照相机](/apis/camera.md)
+- [剪贴板](/apis/clipboard.md)
 - [Cookies](/apis/cookies.md)
 - [Device](/apis/device.md)
 - [Dialog](/apis/dialog.md)
@@ -43,13 +43,13 @@ The API documentation for these plugins can be found below.
 - [Push Notifications](/apis/push-notifications.md)
 - [Screen Orientation](/apis/screen-orientation.md)
 - [Screen Reader](/apis/screen-reader.md)
-- [Share](/apis/share.md)
-- [Splash Screen](/apis/splash-screen.md)
-- [Status Bar](/apis/status-bar.md)
-- [Text Zoom](/apis/text-zoom.md)
-- [Toast](/apis/toast.md)
-- [Watch 🧪](/apis/watch.md)
+- [份额](/apis/share.md)
+- [闪屏](/apis/splash-screen.md)
+- [状态栏](/apis/status-bar.md)
+- [文本缩放](/apis/text-zoom.md)
+- [烤面包片](/apis/toast.md)
+- [手表](/apis/watch.md)
 
-## GitHub
+##吉斯丘
 
-You can find the source for these plugins [on GitHub](https://github.com/ionic-team/capacitor-plugins).
+您可以找到这些插件的源代码
