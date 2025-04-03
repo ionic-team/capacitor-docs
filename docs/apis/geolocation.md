@@ -56,7 +56,7 @@ Read about [Setting Permissions](https://capacitorjs.com/docs/android/configurat
 
 </docgen-index>
 
-  For list of error codes, see [Errors](#errors)
+For list of error codes, see [Errors](#errors)
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
