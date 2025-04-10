@@ -29,6 +29,7 @@ The API documentation for these plugins can be found below.
 - [Device](/apis/device.md)
 - [Dialog](/apis/dialog.md)
 - [Filesystem](/apis/filesystem.md)
+- [File Viewer](/apis/file-viewer.md)
 - [Geolocation](/apis/geolocation.md)
 - [Google Maps](/apis/google-maps.md)
 - [Haptics](/apis/haptics.md)
