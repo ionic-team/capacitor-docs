@@ -75,7 +75,7 @@ This tool will:
 
 After this is run, run a `npx cap sync` again.
 
-Then run `npx cap open ios` or open `App.xcodeproj` and you should see something similar to this:
+Then run `npx cap open ios` and you should see something similar to this:
 
 ![Migrate Step 1](../../../static/img/spm/xcode-step-1.png)
 
