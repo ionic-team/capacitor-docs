@@ -49,3 +49,5 @@ slug: /guides/community
 [Google Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/google-login-in-ionic-react-capacitor-apps/122)
 
 [Twitter Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/twitter-login-in-ionic-react-capacitor-app/121)
+
+[The Push Notifications Guide for Capacitor &#8250;](https://capawesome.io/blog/the-push-notifications-guide-for-capacitor/)
