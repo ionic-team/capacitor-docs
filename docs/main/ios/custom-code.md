@@ -73,7 +73,7 @@ const Echo = registerPlugin('Echo');
 export default Echo;
 ```
 
-> The first parameter to `registerPlugin()` is the plugin name, which must match the `jsName` macro in `EchoPlugin.swift`.
+> The first parameter to `registerPlugin()` is the plugin name, which must match the `jsName` in `EchoPlugin.swift`.
 
 **TypeScript**
 
