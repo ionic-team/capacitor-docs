@@ -1,36 +1,70 @@
-name: Generate Docs
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
-on:
-  workflow_dispatch
+const clowns = [
+  {
+    name: "Risadinha Macabra",
+    description: "Sempre ri... antes de atacar.",
+    image: "https://images.unsplash.com/photo-1601758123927-1951f1c31716?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    name: "Sangrino",
+    description: "Não gosta de balões, só de gritos.",
+    image: "https://images.unsplash.com/photo-1631361661020-42c11df2ec1f?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    name: "Cara-de-Faca",
+    description: "Sua maquiagem esconde cicatrizes... e intenções.",
+    image: "https://images.unsplash.com/photo-1604882354355-9b51c1342f80?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    name: "Pintado de Sangue",
+    description: "Seu nariz vermelho não é maquiagem...",
+    image: "https://images.unsplash.com/photo-1583267748595-2d05f1fdedb5?auto=format&fit=crop&w=300&q=80"
+  }
+];
 
-jobs:
-  generate-docs:
-    runs-on: "ubuntu-latest"
-    timeout-minutes: 30
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+export default function EvilClownApp() {
+  const [currentClown, setCurrentClown] = useState(null);
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
+  const showRandomClown = () => {
+    const randomIndex = Math.floor(Math.random() * clowns.length);
+    setCurrentClown(clowns[randomIndex]);
+  };
 
-      - name: Install dependencies
-        shell: bash
-        run: npm i
+  return (
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 space-y-6">
+      <motion.h1
+        className="text-4xl font-bold text-red-600"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Palhaços do Mal
+      </motion.h1>
+      <Button className="bg-red-700 hover:bg-red-800" onClick={showRandomClown}>
+        Ver Palhaço
+      </Button>
+      {currentClown && (
+        <motion.div
+          className="w-full max-w-sm"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Card className="bg-gray-900 border-red-700">
+            <img src={currentClown.image} alt={currentClown.name} className="w-full h-auto rounded-t-2xl" />
+            <CardContent className="p-4">
+              <h2 className="text-xl font-semibold text-red-500">{currentClown.name}</h2>
+              <p className="text-sm mt-2 text-gray-300">{currentClown.description}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      )}
+    </div>
+  );
+}
 
-      - name: Run Generate Docs Command
-        shell: bash
-        run: npm run generate-plugin-docs
 
-      - name: Git Diff Logging
-        shell: bash
-        run: git diff --name-only
-
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Docs Update Generated
