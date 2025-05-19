@@ -65,13 +65,12 @@ First, ensure you have a backup of the current state of your project, either in 
 
 ### Deleting your iOS Directory
 
-If you **have not manually changed your Xcode Project at all** one option to migrate is to delete the `ios` directory and then run `npx cap add ios --packagemanager SPM`. This will remove the CocoaPods template project and replace it with the SPM template project.  
-
+If you **have not manually changed your Xcode Project at all**, one option to migrate is to delete the `ios` directory and then run `npx cap add ios --packagemanager SPM`. This will remove the CocoaPods template project and replace it with the SPM template project.  
 ### Using our migration tool
 
 The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, one manual step is still required. In addition, projects with Cordova plugins will not be migrated correctly and neither will projects that use plugins that do not have SPM versions available.
 
-To start, run `npx cap migrate-to-spm` in the root of your project.
+To start, run `npx cap spm-migration-assistant` in the root of your project.
 
 This tool will:
   - Run `pod deintegrate` removing CocoaPods
@@ -105,8 +104,19 @@ When you are done, you should see a screen like this. At this point you're done 
 
 ![Migrate Step 6](../../../static/img/spm/xcode-step-6.png)
 
-Add debug.xconfig
+#### Adding debug.xcconfig to project 
 
+From the app info tab, select Add Configuration file...
+
+![XCConfig Step 1](../../../static/img/spm/xcconfig-step1.png)
+
+Then select the file called `debug.xcconfig`
+
+![XCConfig Step 2](../../../static/img/spm/xcconfig-step2.png)
+
+Finally select xcconfig as your selection
+
+![XCConfig Step 3](../../../static/img/spm/xcconfig-step3.png)
 
 ### Converting existing plugins to SPM
 
@@ -119,8 +129,6 @@ This tool will add the following required things to your main swift plugin file,
   - `identifer` will correspond to the first argument to the `CAP_PLUGIN` macro
   - `jsName` will correspond to the second argument to the `CAP_PLUGIN` macro
   - `pluginMethods` will be an array of the methods passed to the `CAP_PLUGIN` macro
-
-
 
 ### Troubleshooting
 
