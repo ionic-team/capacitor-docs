@@ -61,6 +61,12 @@ You can now use the App plugin normally.
 
 ## Using SPM in an existing Capacitor Project
 
+First, ensure you have a backup of the current state of your project, either in source control or elsewhere.
+
+### Deleting your iOS Directory
+
+If you **have not manually changed your Xcode Project at all** one option to migrate is to delete the `ios` directory and then run `npx cap add ios --packagemanager SPM`. This will remove the CocoaPods template project and replace it with the SPM template project.  
+
 ### Using our migration tool
 
 The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, one manual step is still required. In addition, projects with Cordova plugins will not be migrated correctly and neither will projects that use plugins that do not have SPM versions available.
@@ -99,9 +105,21 @@ When you are done, you should see a screen like this. At this point you're done 
 
 ![Migrate Step 6](../../../static/img/spm/xcode-step-6.png)
 
+Add debug.xconfig
+
+
 ### Converting existing plugins to SPM
 
-More details soon, but check this repository out: https://github.com/ionic-team/capacitor-plugin-converter
+If your plugin only contains Swift aside from the required `[Name]Plugin.m` and `[Name]Plugin.h` you can use the [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter)
+
+This tool will add the following required things to your main swift plugin file, `[Name]Plugin.swift`:
+
+- Add Conformance to the `CAPBridgedPlugin` protocol to your class
+- Add 3 variables to your class. `identifier`, `jsName`, and `pluginMethods`
+  - `identifer` will correspond to the first argument to the `CAP_PLUGIN` macro
+  - `jsName` will correspond to the second argument to the `CAP_PLUGIN` macro
+  - `pluginMethods` will be an array of the methods passed to the `CAP_PLUGIN` macro
+
 
 
 ### Troubleshooting
