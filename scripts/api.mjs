@@ -117,8 +117,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main//packages/plugin//src/definitions.ts',
   },
   {
     id: 'file-transfer',
