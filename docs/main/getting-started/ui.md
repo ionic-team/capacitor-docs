@@ -24,7 +24,7 @@ To get started, view the [using Capacitor with Ionic](./with-ionic) docs to lear
 
 ## Tailwind CSS
 
-[Tailwind CSS](https://tailwindcss.com/) is a popular CSS framework with companion UI template library that many Capacitor developers use to build great app experiences. Some of our favorite examples include [Reflect](https://reflect.app/) and [LogSnag](https://twitter.com/ImSh4yy/status/1615080429417103366?s=20&t=bmVrAb9PNFY6AQPNXwMFYA).
+[Tailwind CSS](https://tailwindcss.com/) is a popular CSS framework with companion UI template library that many Capacitor developers use to build great app experiences. Some of our favorite examples include [Reflect](https://reflect.app/) and [LogSnag](https://logsnag.com/).
 
 There are also some interesting Tailwind-focused Mobile UI frameworks, such as [Konsta UI](https://konstaui.com/).
 
