@@ -21,7 +21,7 @@ When a Capacitor project is using SPM we use a 'Base SPM' package that will serv
 
 ![Base SPM Picture](../../../static/img/v6/docs/ios/spm/base-spm.png)
 
-The Capacitor CLI will modify the CapAPP-SPM package when you sync new plugins. It is important you do not touch the contents here because the CLI can and will change things.
+The Capacitor CLI will modify the CapApp-SPM package when you sync new plugins. It is important you do not touch the contents here because the CLI can and will change things.
 
 ## Using SPM in a new Capacitor project
 
