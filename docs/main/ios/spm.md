@@ -68,7 +68,7 @@ First, ensure you have a backup of the current state of your project, either in 
 If you **have not manually changed your Xcode Project at all**, one option to migrate is to delete the `ios` directory and then run `npx cap add ios --packagemanager SPM`. This will remove the CocoaPods template project and replace it with the SPM template project.  
 ### Using our migration tool
 
-The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, one manual step is still required. In addition, projects with Cordova plugins will not be migrated correctly and neither will projects that use plugins that do not have SPM versions available.
+The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, two manual steps are still required. In addition, projects with Cordova plugins will not be migrated correctly and neither will projects that use plugins that do not have SPM versions available.
 
 To start, run `npx cap spm-migration-assistant` in the root of your project.
 
@@ -76,7 +76,8 @@ This tool will:
   - Run `pod deintegrate` removing CocoaPods
   - Delete the `Podfile`, `App.xcworkspace`, and `Podfile.lock`
   - Create a `CapApp-SPM` directory with the needed files
-  - Generate a `Package.swift` from your plugins, and warn you if any can't included. 
+  - Generate a `Package.swift` from your plugins, and warn you if any can't included.
+  - Add a `debug.xcconfig` to your ios project directory
 
 After this is run, run a `npx cap sync` again.
 
@@ -100,7 +101,7 @@ Click Add Package again when this screen shows up:
 
 ![Migrate Step 5](../../../static/img/spm/xcode-step-5.png)
 
-When you are done, you should see a screen like this. At this point you're done and can build and work as normal:
+When you are done, you should see a screen like this. Now, move onto the next section about Adding `debug.xconfig`
 
 ![Migrate Step 6](../../../static/img/spm/xcode-step-6.png)
 
@@ -118,6 +119,8 @@ Finally select xcconfig as your selection
 
 ![XCConfig Step 3](../../../static/img/spm/xcconfig-step3.png)
 
+At this point you're done and can build and work as normal.
+
 ### Converting existing plugins to SPM
 
 If your plugin only contains Swift aside from the required `[Name]Plugin.m` and `[Name]Plugin.h` you can use the [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter)
@@ -129,6 +132,10 @@ This tool will add the following required things to your main swift plugin file,
   - `identifer` will correspond to the first argument to the `CAP_PLUGIN` macro
   - `jsName` will correspond to the second argument to the `CAP_PLUGIN` macro
   - `pluginMethods` will be an array of the methods passed to the `CAP_PLUGIN` macro
+
+In addition, it move your files to match an SPM friendly layout, make fixes to your `package.json`, and delete unneeded files.
+
+See the documentation in the repository at [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter) for more.
 
 ### Troubleshooting
 
