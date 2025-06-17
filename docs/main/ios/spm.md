@@ -69,7 +69,7 @@ If you **have not manually changed your Xcode Project at all**, one option to mi
 
 ### Using our migration tool
 
-The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, two manual steps are still required. In addition, projects with Cordova plugins will not be migrated correctly and neither will projects that use plugins that do not have SPM versions available.
+The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, two manual steps are still required. Some things to note are: Projects with Cordova plugins should work, but may not be migrated correctly as we have to generate a `package.swift` file for them. In addition, projects that use capacitor plugins that do not have SPM versions available, will fail to work properly and will show a warning during migration and when running `npx cap sync`.
 
 To start, run `npx cap spm-migration-assistant` in the root of your project.
 
@@ -79,7 +79,6 @@ This tool will:
   - Create a `CapApp-SPM` directory with the needed files
   - Generate a `Package.swift` from your plugins, and warn you if any can't be included.
   - Add a `debug.xcconfig` to your ios project directory
-
 
 Then run `npx cap open ios` and you should see something similar to this:
 
@@ -132,8 +131,20 @@ This tool will add the following required things to your main swift plugin file,
   - `identifer` will correspond to the first argument to the `CAP_PLUGIN` macro
   - `jsName` will correspond to the second argument to the `CAP_PLUGIN` macro
   - `pluginMethods` will be an array of the methods passed to the `CAP_PLUGIN` macro
+- The following files will be removed as they are no longer needed:
+  - `Plugin.xcodeproj`
+  - `Plugin.xcworkspace`
+  - `Info.plist`
+  - `Podfile`
+- To fit SPM best practices, the Project files will be moved to `Sources` and `Tests` directories
+- The plugins `package.json` will get the following fixes:
+  - The files array will add these files or directories:
+    - `ios/Sources`
+    - `ios/Tests`
+    - `Package.swift`
+  - `verify:ios` will be changed to `xcodebuild -scheme YourPluginName -destination generic/platform=iOS` to allow it to continue to work as you expect.
+- Your plugin podspec will be changed so that `s.source_files` now points to the `Sources` director rather than the `Plugin` directory
 
-In addition, it move your files to match an SPM friendly layout, make fixes to your `package.json`, and delete unneeded files.
 
 See the documentation in the repository at [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter) for more.
 
