@@ -66,6 +66,7 @@ First, ensure you have a backup of the current state of your project, either in 
 ### Deleting your iOS Directory
 
 If you **have not manually changed your Xcode Project at all**, one option to migrate is to delete the `ios` directory and then run `npx cap add ios --packagemanager SPM`. This will remove the CocoaPods template project and replace it with the SPM template project.  
+
 ### Using our migration tool
 
 The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, two manual steps are still required. In addition, projects with Cordova plugins will not be migrated correctly and neither will projects that use plugins that do not have SPM versions available.
