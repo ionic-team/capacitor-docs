@@ -80,7 +80,6 @@ This tool will:
   - Generate a `Package.swift` from your plugins, and warn you if any can't be included.
   - Add a `debug.xcconfig` to your ios project directory
 
-After this is run, run a `npx cap sync` again.
 
 Then run `npx cap open ios` and you should see something similar to this:
 
