@@ -123,7 +123,7 @@ At this point you're done and can build and work as normal.
 
 ### Converting existing plugins to SPM
 
-If your plugin only contains Swift aside from the required `[Name]Plugin.m` and `[Name]Plugin.h` you can use the [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter)
+If your plugin only contains Swift aside from the required `[Name]Plugin.m` and `[Name]Plugin.h` you can use the [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter).
 
 This tool will add the following required things to your main swift plugin file, `[Name]Plugin.swift`:
 
