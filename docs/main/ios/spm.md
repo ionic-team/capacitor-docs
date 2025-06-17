@@ -76,7 +76,7 @@ This tool will:
   - Run `pod deintegrate` removing CocoaPods
   - Delete the `Podfile`, `App.xcworkspace`, and `Podfile.lock`
   - Create a `CapApp-SPM` directory with the needed files
-  - Generate a `Package.swift` from your plugins, and warn you if any can't included.
+  - Generate a `Package.swift` from your plugins, and warn you if any can't be included.
   - Add a `debug.xcconfig` to your ios project directory
 
 After this is run, run a `npx cap sync` again.
