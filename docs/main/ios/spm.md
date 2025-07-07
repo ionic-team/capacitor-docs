@@ -69,7 +69,7 @@ If you **have not manually changed your Xcode Project at all**, one option to mi
 
 ### Using our migration tool
 
-The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, two manual steps are still required. Some things to note are: Projects with Cordova plugins should work, but may not be migrated correctly as we have to generate a `package.swift` file for them. In addition, projects that use capacitor plugins that do not have SPM versions available, will fail to work properly and will show a warning during migration and when running `npx cap sync`.
+The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, two manual steps are still required. Some things to note are: Projects with Cordova plugins should work, but some plugins may not work correctly as we have to generate a `Package.swift` file for them. In addition, projects that use capacitor plugins that do not have SPM versions available, will fail to work properly and will show a warning about the incompatible plugins during migration and when running `npx cap sync`.
 
 To start, run `npx cap spm-migration-assistant` in the root of your project.
 
@@ -134,7 +134,8 @@ This tool will add the following required things to your main swift plugin file,
 - The following files will be removed as they are no longer needed:
   - `Plugin.xcodeproj`
   - `Plugin.xcworkspace`
-  - `Info.plist`
+  - `Plugin/Info.plist`
+  - `PluginTests/Info.plist`
   - `Podfile`
 - To fit SPM best practices, the Project files will be moved to `Sources` and `Tests` directories
 - The plugins `package.json` will get the following fixes:
@@ -143,7 +144,7 @@ This tool will add the following required things to your main swift plugin file,
     - `ios/Tests`
     - `Package.swift`
   - `verify:ios` will be changed to `xcodebuild -scheme YourPluginName -destination generic/platform=iOS` to allow it to continue to work as you expect.
-- Your plugin podspec will be changed so that `s.source_files` now points to the `Sources` director rather than the `Plugin` directory
+- Your plugin podspec will be changed so that `s.source_files` now points to the `Sources` directory rather than the `Plugin` directory
 
 
 See the documentation in the repository at [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter) for more.
