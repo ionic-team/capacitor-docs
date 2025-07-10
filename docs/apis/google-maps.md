@@ -987,30 +987,36 @@ A marker is an icon placed at a particular point on the map's surface.
 
 #### Point
 
-<a href="#point">Point</a> geometry object.
-https://tools.ietf.org/html/rfc7946#section-3.1.2
-
-| Prop              | Type                                          | Description                           |
-| ----------------- | --------------------------------------------- | ------------------------------------- |
-| **`type`**        | <code>'<a href="#point">Point</a>'</code>     | Specifies the type of GeoJSON object. |
-| **`coordinates`** | <code><a href="#position">Position</a></code> |                                       |
+| Prop    | Type                |
+| ------- | ------------------- |
+| **`x`** | <code>number</code> |
+| **`y`** | <code>number</code> |
 
 
 #### Polygon
 
-<a href="#polygon">Polygon</a> geometry object.
-https://tools.ietf.org/html/rfc7946#section-3.1.6
+For web, all the javascript <a href="#polygon">Polygon</a> options are available as
+Polygon extends google.maps.PolygonOptions.
+For iOS and Android only the config options declared on <a href="#polygon">Polygon</a> are available.
 
-| Prop              | Type                                          | Description                           |
-| ----------------- | --------------------------------------------- | ------------------------------------- |
-| **`type`**        | <code>'<a href="#polygon">Polygon</a>'</code> | Specifies the type of GeoJSON object. |
-| **`coordinates`** | <code>Position[][]</code>                     |                                       |
+| Prop                | Type                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`paths`**         | <code>any[] \| MVCArray&lt;any&gt;</code> | The ordered sequence of coordinates that designates a closed loop. Unlike polylines, a polygon may consist of one or more paths. As a result, the paths property may specify one or more arrays of &lt;code&gt;<a href="#latlng">LatLng</a>&lt;/code&gt; coordinates. Paths are closed automatically; do not repeat the first vertex of the path as the last vertex. Simple polygons may be defined using a single array of &lt;code&gt;<a href="#latlng">LatLng</a>&lt;/code&gt;s. More complex polygons may specify an array of arrays. Any simple arrays are converted into &lt;code&gt;&lt;a href="#MVCArray"&gt;MVCArray&lt;/a&gt;&lt;/code&gt;s. Inserting or removing &lt;code&gt;<a href="#latlng">LatLng</a>&lt;/code&gt;s from the &lt;code&gt;MVCArray&lt;/code&gt; will automatically update the polygon on the map. |
+| **`strokeColor`**   | <code>string</code>                       | The stroke color. All CSS3 colors are supported except for extended named colors.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **`strokeOpacity`** | <code>number</code>                       | The stroke opacity between 0.0 and 1.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **`strokeWeight`**  | <code>number</code>                       | The stroke width in pixels.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **`fillColor`**     | <code>string</code>                       | The fill color. All CSS3 colors are supported except for extended named colors.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **`fillOpacity`**   | <code>number</code>                       | The fill opacity between 0.0 and 1.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **`geodesic`**      | <code>boolean</code>                      | When &lt;code&gt;true&lt;/code&gt;, edges of the polygon are interpreted as geodesic and will follow the curvature of the Earth. When &lt;code&gt;false&lt;/code&gt;, edges of the polygon are rendered as straight lines in screen space. Note that the shape of a geodesic polygon may appear to change when dragged, as the dimensions are maintained relative to the surface of the earth.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **`clickable`**     | <code>boolean</code>                      | Indicates whether this &lt;code&gt;<a href="#polygon">Polygon</a>&lt;/code&gt; handles mouse events.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **`title`**         | <code>string</code>                       | Title, a short description of the overlay. Some overlays, such as markers, will display the title on the map. The title is also the default accessibility text. Only available on iOS.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **`tag`**           | <code>string</code>                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 
 #### Circle
 
 For web, all the javascript <a href="#circle">Circle</a> options are available as
-Polygon extends google.maps.CircleOptions.
+Circle extends google.maps.CircleOptions.
 For iOS and Android only the config options declared on <a href="#circle">Circle</a> are available.
 
 | Prop               | Type                 | Description                                                                                                                                                                            |
@@ -1178,29 +1184,6 @@ Controls for setting padding on the 'visible' region of the view.
 The callback function to be called when map events are emitted.
 
 <code>(data: T): void</code>
-
-
-#### Position
-
-A <a href="#position">Position</a> is an array of coordinates.
-https://tools.ietf.org/html/rfc7946#section-3.1.1
-Array should contain between two and three elements.
-The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values),
-but the current specification only allows X, Y, and (optionally) Z to be defined.
-
-Note: the type will not be narrowed down to `[number, number] | [number, number, number]` due to
-marginal benefits and the large impact of breaking change.
-
-See previous discussions on the type narrowing:
-- {@link https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590|Nov 2017}
-- {@link https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67773|Dec 2023}
-- {@link https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/71441| Dec 2024}
-
-One can use a
-{@link https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates|user-defined type guard that returns a type predicate}
-to determine if a position is a 2D or 3D position.
-
-<code>number[]</code>
 
 
 #### Marker
