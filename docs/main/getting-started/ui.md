@@ -1,47 +1,135 @@
----
-title: Building Your UI
-description: Popular UI options for building great Capacitor mobile apps
-slug: /getting-started/ui
----
+// KrushiLink - AI Powered Farming App (Next.js + Gemini + Tailwind + Firebase)
 
-# Building Your UI
+// 📁 Folder Structure Overview
+// - pages/
+//     index.tsx         --> Home UI
+//     api/chat.ts       --> Gemini API call
+// - components/
+//     ChatBox.tsx       --> Chat UI component
+//     WeatherCard.tsx   --> Weather info card (example)
+// - utils/
+//     firebase.ts       --> Firebase setup
+//     gemini.ts         --> Gemini setup
+// - .env.local          --> Secret API keys
 
-Capacitor apps are web apps at the core. But it takes a lot more than just wrapping a website to deliver a great native-quality mobile app. 
+//------------------------------------------------------
+// ✅ 1. .env.local (Place in root folder)
+//------------------------------------------------------
+GEMINI_API_KEY=your_gemini_api_key_here
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=xxx.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=xxx
 
-Today, teams have a variety of options for their app UI. Let's explore some of the most popular options.
+//------------------------------------------------------
+// ✅ 2. utils/gemini.ts
+//------------------------------------------------------
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-## Ionic Framework
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
-[Ionic Framework](https://ionicframework.com/) is a mobile-focused UI kit and set of utilities that enable web developers using Capacitor to get a native-quality app experience that follows platform conventions. Ionic Framework is created by the same company that makes Capacitor and is designed specifically with Capacitor in mind.
+export async function askGemini(prompt: string) {
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const result = await model.generateContent(prompt);
+  return result.response.text();
+}
 
-Today, Ionic Framework is our recommended UI framework for Capacitor, because we believe it will help teams achieve the highest quality native app experience. However, it is _not_ required to use it in your Capacitor apps.
+//------------------------------------------------------
+// ✅ 3. utils/firebase.ts
+//------------------------------------------------------
+import { initializeApp } from "firebase/app";
 
-Ionic Framework comes with native-quality transitions and routing for [Angular](https://ionicframework.com/docs/angular/navigation), [React](https://ionicframework.com/docs/react/navigation), and [Vue](https://ionicframework.com/docs/vue/navigation) with deep integration into the most popular routing solution in each framework. Additionally, Ionic comes with powerful components like [Modals](https://ionicframework.com/docs/api/modal), [Menus](https://ionicframework.com/docs/api/menu), [Lists](https://ionicframework.com/docs/api/list) along with powerful item features like [Sliding Items](https://ionicframework.com/docs/api/item-sliding), [Form inputs](https://ionicframework.com/docs/api/input), [Datetime pickers](https://ionicframework.com/docs/api/datetime), [Cards](https://ionicframework.com/docs/api/card), [Tabs](https://ionicframework.com/docs/api/tabs), [iOS-style condensed headers](https://ionicframework.com/docs/api/header#condensed-header), and [so much more](https://ionicframework.com/docs/components).
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+};
 
-Ionic Framework requires Angular, React, or Vue, so will only be a fit for teams using those technologies. 
+export const firebaseApp = initializeApp(firebaseConfig);
 
-To get started, view the [using Capacitor with Ionic](./with-ionic) docs to learn more.
+//------------------------------------------------------
+// ✅ 4. pages/api/chat.ts (API Route)
+//------------------------------------------------------
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { askGemini } from '@/utils/gemini';
 
-## Tailwind CSS
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { prompt } = req.body;
+  const reply = await askGemini(prompt);
+  res.status(200).json({ reply });
+}
 
-[Tailwind CSS](https://tailwindcss.com/) is a popular CSS framework with companion UI template library that many Capacitor developers use to build great app experiences. Some of our favorite examples include [Reflect](https://reflect.app/) and [LogSnag](https://twitter.com/ImSh4yy/status/1615080429417103366?s=20&t=bmVrAb9PNFY6AQPNXwMFYA).
+//------------------------------------------------------
+// ✅ 5. components/ChatBox.tsx
+//------------------------------------------------------
+import { useState } from 'react';
 
-There are also some interesting Tailwind-focused Mobile UI frameworks, such as [Konsta UI](https://konstaui.com/).
+export default function ChatBox() {
+  const [input, setInput] = useState("");
+  const [response, setResponse] = useState("");
 
-When using Tailwind, it's important to keep in mind that Tailwind does not provide mobile-style navigation and routing primitives, so teams will need to take care to build a UX that fits platform conventions. One way to do this is to mix Tailwind with Ionic Framework, as shown in this [Next.js + Tailwind + Ionic Framework + Capacitor template](https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter). Another would be to design a UX that avoids traditional forward/back navigation and instead uses tabs or modals. Finally, teams are free to build a custom navigation and routing experience if desired.
+  const sendPrompt = async () => {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: input }),
+    });
+    const data = await res.json();
+    setResponse(data.reply);
+  };
 
-## Framework7
+  return (
+    <div className="p-4 bg-white rounded-xl shadow-md max-w-xl mx-auto">
+      <h2 className="text-lg font-bold mb-2">Krushi AI Chatbot</h2>
+      <textarea
+        className="w-full border rounded-md p-2"
+        rows={3}
+        placeholder="Tamaro prashn lakhvo..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button
+        className="mt-2 bg-green-600 text-white px-4 py-2 rounded"
+        onClick={sendPrompt}
+      >
+        Puchho
+      </button>
+      <div className="mt-4 bg-gray-100 p-3 rounded">
+        <strong>Javab:</strong> {response}
+      </div>
+    </div>
+  );
+}
 
-[Framework7](https://framework7.io/) is a popular mobile-focused UI library created by the developer of [Swiper](https://swiperjs.com/), a powerful mobile touch slider library.
+//------------------------------------------------------
+// ✅ 6. pages/index.tsx (Main UI)
+//------------------------------------------------------
+import ChatBox from '@/components/ChatBox';
 
-## Quasar
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-green-50 p-8">
+      <h1 className="text-2xl font-bold text-center mb-4">🌾 KrushiLink - Smart Farming App</h1>
+      <ChatBox />
+    </main>
+  );
+}
 
-[Quasar](https://quasar.dev/) is a Vue.js framework with mobile-focused components and [official support for Capacitor](https://quasar.dev/quasar-cli-vite/developing-capacitor-apps/introduction#introduction).
+//------------------------------------------------------
+// ✅ 7. tailwind.config.js (required setup)
+//------------------------------------------------------
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
 
-## Material UI
-
-[Material UI](https://mui.com/) is a popular React-focused library implementing the Material Design guidelines.
-
-## Roll your own
-
-If you already have an existing UI kit or would like to implement your own, we recommend reviewing Ionic Framework and the other options presented here for inspiration. Capacitor provides a blank slate to build your dream, but if you choose to roll your own UI you are responsible for building a great experience that users expect. This can be challenging to do on top of building your app, so we generally recommend this only for very advanced teams or for web apps that are already mobile-optimized.
+//------------------------------------------------------
+// ✅ 8. Install Required Packages
+//------------------------------------------------------
+npm install next react react-dom tailwindcss postcss autoprefixer firebase @google/generative-ai
+npx tailwindcss init -p
