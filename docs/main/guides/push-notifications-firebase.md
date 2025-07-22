@@ -312,7 +312,7 @@ Your `Podfile` should look something like this:
 ```ruby
 require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
 
-platform :ios, '13.0'
+platform :ios, '14.0'
 use_frameworks!
 
 # workaround to avoid Xcode caching of Pods that requires
@@ -507,7 +507,7 @@ Choose `pushextension` from the list of Targets then:
 - Click `Signing & Capabilities`
 - Click `+ Capability`
 - Choose `Push Notifications`
-- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 13.0`
+- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 14.0`
 
 :::note
  If you do not change the deployment target for your extension then images will not appear on devices on an older version of iOS.

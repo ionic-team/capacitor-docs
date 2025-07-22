@@ -9,7 +9,7 @@ slug: /plugins/tutorial/web
 
 # Implementing for Web/PWAs
 
-While designing the plugin’s API, we found out that the web already supports screen orientation functionality (except on mobile devices, of course). You might be asking why what would be the purpose for our plugin to have a web implementation...couldn’t you programmatically detect if the user is on the web and use the <a href="https://whatwebcando.today/screen-orientation.html" target="_blank">Screen Orientation Web API</a>, otherwise, use the plugin?
+While designing the plugin’s API, we found out that the web already supports screen orientation functionality (except on mobile devices, of course). You might be asking: "What is the purpose of our plugin having a web implementation? Couldn’t we programmatically detect if the user is on the web and use the <a href="https://whatwebcando.today/screen-orientation.html" target="_blank">Screen Orientation Web API</a>, otherwise, use the plugin?"
 
 The mantra behind Web Native applications is "write once, run anywhere." This applies to plugins as well; developers using Capacitor plugins ought to be able to use the same plugin class and methods and have them implemented for all platforms.
 
@@ -70,17 +70,18 @@ Then implement the remaining methods as part of the `ScreenOrientationWeb` class
   }
 
  async lock(options: OrientationLockOptions): Promise<void> {
+    // See https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/1615
     if (
       typeof screen === 'undefined' ||
       !screen.orientation ||
-      !screen.orientation.lock
+      !(screen.orientation as any).lock
     ) {
       throw this.unavailable(
         'ScreenOrientation API not available in this browser',
       );
     }
     try {
-      await screen.orientation.lock(options.orientation);
+      await (screen.orientation as any).lock(options.orientation);
     } catch {
       throw this.unavailable(
         'ScreenOrientation API not available in this browser',
