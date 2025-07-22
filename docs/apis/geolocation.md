@@ -24,6 +24,14 @@ Apple requires privacy descriptions to be specified in `Info.plist` for location
 - `NSLocationAlwaysAndWhenInUseUsageDescription` (`Privacy - Location Always and When In Use Usage Description`)
 - `NSLocationWhenInUseUsageDescription` (`Privacy - Location When In Use Usage Description`)
 
+> [!NOTE]
+> This Capacitor plugin does not support background geolocation directly. However, it relies on
+> [`ion-ios-geolocation`](https://github.com/ionic-team/ion-ios-geolocation), which can report
+> location in the background. As a result, Apple requires you to include a
+> `NSLocationAlwaysAndWhenInUseUsageDescription` entry in your `Info.plist`. Since this permission
+> prompt won’t appear to users, you can safely use the same description string as for
+> `NSLocationWhenInUseUsageDescription`.
+
 Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
 
 ## Android
