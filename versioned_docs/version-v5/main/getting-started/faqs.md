@@ -30,9 +30,6 @@ Capacitor officially supports the following platforms:
 Capacitor also has community platforms to target cross platform desktop frameworks. The current community targets are the following.
 - Electron
   - https://github.com/capacitor-community/electron
-- Tauri (alpha)
-  - https://github.com/capacitor-community/tauri
-
 
 ## Do I need to use Ionic Framework with Capacitor?
 
