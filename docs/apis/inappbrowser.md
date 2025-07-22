@@ -216,9 +216,10 @@ Removes all listeners for the browser events.
 
 Defines the options for opening a URL in the web view.
 
-| Prop          | Type                                                      | Description                                                          |
-| ------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
-| **`options`** | <code><a href="#webviewoptions">WebViewOptions</a></code> | A structure containing some configurations to apply to the Web View. |
+| Prop                | Type                                                      | Description                                                          |
+| ------------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
+| **`options`**       | <code><a href="#webviewoptions">WebViewOptions</a></code> | A structure containing some configurations to apply to the Web View. |
+| **`customHeaders`** | <code>{ [key: string]: string; }</code>                   | A map of custom headers to be sent with the request.                 |
 
 
 #### WebViewOptions
