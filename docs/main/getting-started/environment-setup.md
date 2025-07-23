@@ -91,18 +91,7 @@ You can install CocoaPods directly with Ruby Gem. To install it, you can run the
 sudo gem install cocoapods
 ```
 
-However, installing CocoaPods this way **will not** work on Apple Silicon Macs. You will need to run CocoaPods through Rosetta enabled. To do this, you can run the following commands.
-
-```bash
-sudo arch -x86_64 gem install ffi
-```
-
-Then, whenever you want to update your application to use a newer version of your web code, you will need to run the following commands.
-
-```bash
-npx cap copy
-arch -x86_64 pod install
-```
+For running without sudo see [CocoaPods sudo-less installation docs](https://guides.cocoapods.org/using/getting-started.html#sudo-less-installation)
 
 ## Android Requirements
 
