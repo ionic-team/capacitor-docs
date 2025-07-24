@@ -124,27 +124,29 @@ At this point you're done and can build and work as normal.
 
 If your plugin only contains Swift aside from the required `[Name]Plugin.m` and `[Name]Plugin.h` you can use the [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter).
 
-This tool will add the following required things to your main swift plugin file, `[Name]Plugin.swift`:
+This tool will do the following changes:
 
-- Add Conformance to the `CAPBridgedPlugin` protocol to your class
-- Add 3 variables to your class. `identifier`, `jsName`, and `pluginMethods`
-  - `identifer` will correspond to the first argument to the `CAP_PLUGIN` macro
-  - `jsName` will correspond to the second argument to the `CAP_PLUGIN` macro
-  - `pluginMethods` will be an array of the methods passed to the `CAP_PLUGIN` macro
+- Add the following required things to your main swift plugin file, `[Name]Plugin.swift`:
+  - Add Conformance to the `CAPBridgedPlugin` protocol to your class.
+  - Add 3 variables to your class. `identifier`, `jsName`, and `pluginMethods`:
+    - `identifer` will correspond to the first argument to the `CAP_PLUGIN` macro.
+    - `jsName` will correspond to the second argument to the `CAP_PLUGIN` macro.
+    - `pluginMethods` will be an array of the methods passed to the `CAP_PLUGIN` macro.
+- A `Package.swift` file will be created at the root of your plugin folder.
 - The following files will be removed as they are no longer needed:
   - `Plugin.xcodeproj`
   - `Plugin.xcworkspace`
   - `Plugin/Info.plist`
   - `PluginTests/Info.plist`
   - `Podfile`
-- To fit SPM best practices, the Project files will be moved to `Sources` and `Tests` directories
-- The plugins `package.json` will get the following fixes:
+- To fit SPM best practices, the Project files will be moved to `Sources` and `Tests` directories.
+- The plugins `package.json` will get the following changes:
   - The files array will add these files or directories:
     - `ios/Sources`
     - `ios/Tests`
     - `Package.swift`
   - `verify:ios` will be changed to `xcodebuild -scheme YourPluginName -destination generic/platform=iOS` to allow it to continue to work as you expect.
-- Your plugin podspec will be changed so that `s.source_files` now points to the `Sources` directory rather than the `Plugin` directory
+- Your plugin podspec will be changed so that `s.source_files` now points to the `Sources` directory rather than the `Plugin` directory.
 
 
 See the documentation in the repository at [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter) for more.
