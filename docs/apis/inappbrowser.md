@@ -168,7 +168,7 @@ Closes the currently active browser. It can be used to close browsers launched t
 addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
 ```
 
-Adds a listener for the specified browser event.
+Adds a listener for the specified browser events, with no data being returned.
 
 | Param              | Type                                                | Description                                                                          |
 | ------------------ | --------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -186,12 +186,12 @@ Adds a listener for the specified browser event.
 addListener(eventName: 'browserPageNavigationCompleted', listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
 ```
 
-Adds a listener for the specified browser event.
+Adds a listener for the specified browser event, which receives data.
 
-| Param              | Type                                                                                                                           | Description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| **`eventName`**    | <code>'browserPageNavigationCompleted'</code>                                                                                  | The name of the browser event to listen for: 'browserPageNavigationCompleted'. |
-| **`listenerFunc`** | <code>(data: <a href="#browserpagenavigationcompletedeventdata">BrowserPageNavigationCompletedEventData</a>) =&gt; void</code> | The function to be called when the event occurs.                               |
+| Param              | Type                                                                                                                           | Description                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'browserPageNavigationCompleted'</code>                                                                                  | The name of the browser event to listen for: 'browserPageNavigationCompleted'. Applies only to openInWebView. |
+| **`listenerFunc`** | <code>(data: <a href="#browserpagenavigationcompletedeventdata">BrowserPageNavigationCompletedEventData</a>) =&gt; void</code> | The function to be called when the event occurs.                                                              |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
@@ -293,10 +293,10 @@ Defines the options for opening a URL in the system browser.
 
 #### AndroidBottomSheet
 
-| Prop          | Type                 | Description                                                                                                                                             |
-| ------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet. This will be a minimum of 50% of the screen's height. If no value is passed, we will default to the minimum value. |
-| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed.                                                                                                                 |
+| Prop          | Type                 | Description                                                                                                                                                                        |
+| ------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet, in pixels. Custom tabs will set the bottom height to at least 50% of the screen. If no value is passed, it will default to the minimum value. |
+| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed.                                                                                                                                            |
 
 
 #### iOSSystemBrowserOptions
