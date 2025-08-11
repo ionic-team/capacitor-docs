@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Voice Editor — Simple Web App</title>
+  <style>
+    :root{--bg:#000;--card:#111;--accent:#1db954;--muted:#999}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#eee;background:var(--bg)}
+    .wrap{max-width:980px;margin:28px auto;padding:20px;background:linear-gradient(180deg,#070707, #0b0b0b);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+    h1{margin:0 0 12px;font-size:20px}
+    .controls{display:flex;gap:12px;flex-wrap:wrap}
+    button{background:#111;border:1px solid #222;color:#eee;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.record{background:#8b0000}
+    .card{background:var(--card);padding:12px;border-radius:10px;border:1px solid #222}
+    .row{display:flex;gap:12px;align-items:center}
+    label{font-size:13px;color:var(--muted);min-width:70px}
+    input[type=range]{width:200px}
+    .wave{height:80px;background:#000;border-radius:6px;border:1px dashed #222;margin-top:10px}
+    .footer{margin-top:12px;color:var(--muted);font-size:13px}
+    .big{font-size:14px;padding:14px 18px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Voice Editor — Recorder + Bass, Volume, Turbo, Abridge</h1>
+
+    <div class="controls card">
+      <div class="row">
+        <button id="recordBtn" class="big record">Record</button>
+        <button id="stopBtn" class="big" disabled>Stop</button>
+        <button id="playBtn" class="big" disabled>Play</button>
+        <button id="downloadBtn" class="big" disabled>Download</button>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="row">
+        <label>Volume</label>
+        <input id="volume" type="range" min="0" max="2" value="1" step="0.01">
+        <span id="volVal">1.00</span>
+      </div>
+
+      <div class="row" style="margin-top:6px">
+        <label>Bass</label>
+        <input id="bass" type="range" min="0" max="24" value="0" step="0.1">
+        <span id="bassVal">0 dB</span>
+        <small style="color:var(--muted);margin-left:8px">(Low-shelf boost)</small>
+      </div>
+
+      <div class="row" style="margin-top:6px">
+        <label>Turbo</label>
+        <input id="turbo" type="range" min="1" max="2.5" step="0.05" value="1">
+        <span id="turboVal">1.00×</span>
+        <button id="applyTurbo" style="margin-left:8px">Apply Turbo (playback rate)</button>
+      </div>
+
+      <div class="row" style="margin-top:6px">
+        <label>Abridge</label>
+        <button id="abridgeBtn" disabled>Trim Silence</button>
+        <small style="color:var(--muted);margin-left:8px">(Detects leading/trailing silence and cuts)</small>
+      </div>
+
+      <div id="wave" class="wave card"></div>
+
+      <div class="footer">Tip: record, then try Bass and Volume sliders. Click "Trim Silence" to remove quiet sections at start/end for a concise clip.</div>
+    </div>
+  </div>
+
+<script>
+// Simple web audio voice editor (client-side only)
+let recBtn=document.getElementById('recordBtn');
+let stopBtn=document.getElementById('stopBtn');
+let playBtn=document.getElementById('playBtn');
+let downloadBtn=document.getElementById('downloadBtn');
+let abridgeBtn=document.getElementById('abridgeBtn');
+let volSlider=document.getElementById('volume');
+let volVal=document.getElementById('volVal');
+let bassSlider=document.getElementById('bass');
+let bassVal=document.getElementById('bassVal');
+let turboSlider=document.getElementById('turbo');
+let turboVal=document.getElementById('turboVal');
+let applyTurboBtn=document.getElementById('applyTurbo');
+let waveEl=document.getElementById('wave');
+
+let audioCtx, mediaStream, recorder; // recorder will be MediaRecorder
+let recordedChunks=[];
+let audioBuffer=null; // decoded buffer
+let sourceNode=null;
+let gainNode, bassNode;
+let currentPlaybackRate=1;
+
+function ensureAudioCtx(){
+  if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+}
+
+recBtn.onclick=async()=>{
+  try{
+    ensureAudioCtx();
+    mediaStream = await navigator.mediaDevices.getUserMedia({audio:true});
+    recorder = new MediaRecorder(mediaStream, {mimeType:'audio/webm'});
+    recordedChunks=[];
+    recorder.ondataavailable = e => { if(e.data.size>0) recordedChunks.push(e.data); };
+    recorder.onstop = async ()=>{
+      const blob = new Blob(recordedChunks,{type:'audio/webm'});
+      const arrayBuf = await blob.arrayBuffer();
+      ensureAudioCtx();
+      audioBuffer = await audioCtx.decodeAudioData(arrayBuf.slice(0));
+      drawWaveform();
+      playBtn.disabled=false; downloadBtn.disabled=false; abridgeBtn.disabled=false;
+    };
+    recorder.start();
+    recBtn.disabled=true; stopBtn.disabled=false; playBtn.disabled=true; downloadBtn.disabled=true; abridgeBtn.disabled=true;
+  }catch(err){
+    alert('Cannot access microphone: '+err.message);
+  }
+};
+
+stopBtn.onclick=()=>{
+  if(recorder && recorder.state==='recording') recorder.stop();
+  if(mediaStream){ mediaStream.getTracks().forEach(t=>t.stop()); }
+  recBtn.disabled=false; stopBtn.disabled=true;
+};
+
+function connectGraph(){
+  // create nodes each play
+  gainNode = audioCtx.createGain();
+  bassNode = audioCtx.createBiquadFilter();
+  bassNode.type='lowshelf';
+  bassNode.frequency.value = 200; // low shelf cutoff
+  bassNode.gain.value = parseFloat(bassSlider.value);
+  gainNode.gain.value = parseFloat(volSlider.value);
+  // connect: source -> bass -> gain -> destination
+  bassNode.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+}
+
+playBtn.onclick=async()=>{
+  if(!audioBuffer)return;
+  ensureAudioCtx();
+  if(sourceNode) try{ sourceNode.stop(); }catch(e){}
+  sourceNode = audioCtx.createBufferSource();
+  sourceNode.buffer = audioBuffer;
+  sourceNode.playbackRate.value = currentPlaybackRate;
+  connectGraph();
+  sourceNode.connect(bassNode);
+  sourceNode.start();
+};
+
+volSlider.oninput = ()=>{ volVal.textContent = parseFloat(volSlider.value).toFixed(2); if(gainNode) gainNode.gain.value = parseFloat(volSlider.value); };
+
+bassSlider.oninput = ()=>{ bassVal.textContent = parseFloat(bassSlider.value).toFixed(1)+ ' dB'; if(bassNode) bassNode.gain.value = parseFloat(bassSlider.value); };
+
+turboSlider.oninput = ()=>{ turboVal.textContent = parseFloat(turboSlider.value).toFixed(2)+ '×'; };
+
+applyTurboBtn.onclick = ()=>{ currentPlaybackRate = parseFloat(turboSlider.value); alert('Turbo applied: playback rate set to '+currentPlaybackRate.toFixed(2)); };
+
+// Download as WAV utility
+function interleave(inputL, inputR){
+  let length = inputL.length + inputR.length;
+  let result = new Float32Array(length);
+  let index = 0, inputIndex = 0;
+  while (index < length){
+    result[index++] = inputL[inputIndex];
+    result[index++] = inputR[inputIndex];
+    inputIndex++;
+  }
+  return result;
+}
+
+function writeWav(buffer, sampleRate){
+  const numOfChan = buffer.numberOfChannels;
+  const length = buffer.length * numOfChan * 2 + 44;
+  const bufferArr = new ArrayBuffer(length);
+  const view = new DataView(bufferArr);
+  function setUint16(offset, data){ view.setUint16(offset, data, true); }
+  function setUint32(offset, data){ view.setUint32(offset, data, true); }
+  // RIFF chunk descriptor
+  writeString(view, 0, 'RIFF');
+  setUint32(4, length - 8);
+  writeString(view, 8, 'WAVE');
+  // fmt sub-chunk
+  writeString(view, 12, 'fmt ');
+  setUint32(16, 16); // subchunk1Size
+  setUint16(20, 1); // PCM format
+  setUint16(22, numOfChan);
+  setUint32(24, sampleRate);
+  setUint32(28, sampleRate * numOfChan * 2);
+  setUint16(32, numOfChan * 2);
+  setUint16(34, 16);
+  // data
+  writeString(view, 36, 'data');
+  setUint32(40, length - 44);
+  // write interleaved data
+  let offset = 44;
+  const channels = [];
+  for(let i=0;i<numOfChan;i++) channels.push(buffer.getChannelData(i));
+  const interleaved = numOfChan===2 ? interleave(channels[0], channels[1]) : channels[0];
+  for (let i = 0; i < interleaved.length; i++, offset += 2){
+    let s = Math.max(-1, Math.min(1, interleaved[i]));
+    view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+  }
+  return new Blob([view], {type:'audio/wav'});
+  function writeString(dataview, offset, string){ for (let i = 0; i < string.length; i++){ dataview.setUint8(offset + i, string.charCodeAt(i)); } }
+}
+
+downloadBtn.onclick = ()=>{
+  if(!audioBuffer) return;
+  // apply current gain+bass to an offline rendering so the file contains processing
+  const offlineCtx = new OfflineAudioContext(audioBuffer.numberOfChannels, audioBuffer.length, audioBuffer.sampleRate);
+  const src = offlineCtx.createBufferSource();
+  src.buffer = audioBuffer;
+  const offBass = offlineCtx.createBiquadFilter(); offBass.type='lowshelf'; offBass.frequency.value=200; offBass.gain.value = parseFloat(bassSlider.value);
+  const offGain = offlineCtx.createGain(); offGain.gain.value = parseFloat(volSlider.value);
+  src.connect(offBass); offBass.connect(offGain); offGain.connect(offlineCtx.destination);
+  src.start();
+  offlineCtx.startRendering().then(renderedBuf=>{
+    const wav = writeWav(renderedBuf, renderedBuf.sampleRate);
+    const url = URL.createObjectURL(wav);
+    const a = document.createElement('a'); a.href=url; a.download='voice_edit.wav'; a.click();
+    URL.revokeObjectURL(url);
+  });
+};
+
+// Abridge: trim leading/trailing silence
+abridgeBtn.onclick = ()=>{
+  if(!audioBuffer) return;
+  const trimmed = trimSilence(audioBuffer, {threshold:0.01, minTrimMs:100});
+  if(trimmed){ audioBuffer = trimmed; drawWaveform(); alert('Silence trimmed. New duration: '+(audioBuffer.duration.toFixed(2))+'s'); }
+};
+
+function trimSilence(buffer, opts={threshold:0.01, minTrimMs:50}){
+  const threshold = opts.threshold || 0.01;
+  const sampleRate = buffer.sampleRate;
+  const chan = buffer.getChannelData(0);
+  const len = chan.length;
+  let start=0, end=len-1;
+  // find start
+  const minTrimSamples = (opts.minTrimMs||50)/1000*sampleRate;
+  for(let i=0;i<len;i++){
+    if(Math.abs(chan[i])>threshold){ start=i; break; }
+  }
+  for(let i=len-1;i>0;i--){ if(Math.abs(chan[i])>threshold){ end=i; break; } }
+  // enforce min trim
+  start = Math.max(0, start - minTrimSamples);
+  end = Math.min(len-1, end + minTrimSamples);
+  const newLen = end - start + 1;
+  if(newLen<=0) return buffer;
+  const newBuf = audioCtx.createBuffer(buffer.numberOfChannels, newLen, sampleRate);
+  for(let c=0;c<buffer.numberOfChannels;c++){
+    const old = buffer.getChannelData(c);
+    const ch = newBuf.getChannelData(c);
+    for(let i=0;i<newLen;i++) ch[i]=old[i+start];
+  }
+  return newBuf;
+}
+
+// draw basic waveform (mono mix)
+function drawWaveform(){
+  waveEl.innerHTML='';
+  const canvas = document.createElement('canvas');
+  canvas.width = waveEl.clientWidth; canvas.height = waveEl.clientHeight;
+  waveEl.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,canvas.width,canvas.height);
+  if(!audioBuffer) return;
+  const data = audioBuffer.getChannelData(0);
+  const step = Math.ceil(data.length / canvas.width);
+  const amp = canvas.height/2;
+  ctx.fillStyle='#222'; ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.lineWidth=1; ctx.strokeStyle='#0f9'; ctx.beginPath();
+  for(let i=0;i<canvas.width;i++){
+    let min=1.0; let max=-1.0;
+    for(let j=0;j<step;j++){
+      const datum = data[(i*step)+j]; if(datum<min) min=datum; if(datum>max) max=datum;
+    }
+    ctx.moveTo(i, (1+min)*amp);
+    ctx.lineTo(i, (1+max)*amp);
+  }
+  ctx.stroke();
+}
+
+// Resize waveform on window resize
+window.addEventListener('resize', ()=>{ if(audioBuffer) drawWaveform(); });
+
+</script>
+</body>
+</html>
