@@ -1,28 +1,347 @@
----
-title: Capacitor Plugins
-description: Capacitor Plugins
----
+import React, { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
+import { Mic, Phone, MapPin, BookOpen, Settings, ArrowLeft, Volume2, VolumeX, Sun, Moon, Send, PlayCircle, PauseCircle, Languages } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-import DocCard from '@theme/DocCard';
-import DocCardList from '@theme/DocCardList';
+// Utilidades de voz y reconocimiento
+const useTTS = (enabled: boolean, rate = 1) => {
+  const speak = (text: string) => {
+    if (!enabled) return;
+    const synth = window.speechSynthesis;
+    if (!synth) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = rate;
+    // Preferir voz en español si existe
+    const voices = synth.getVoices();
+    const esVoice = voices.find(v => v.lang?.toLowerCase().startsWith("es"));
+    if (esVoice) utterance.voice = esVoice;
+    synth.cancel();
+    synth.speak(utterance);
+  };
+  return { speak };
+};
 
-# Capacitor Plugins
+const useSpeechRecognition = (onResult: (text: string) => void) => {
+  const [supported, setSupported] = useState<boolean>(false);
+  const [listening, setListening] = useState<boolean>(false);
+  const recognitionRef = useRef<any>(null);
 
-Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
+  useEffect(() => {
+    const SR: any = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
+    if (SR) {
+      setSupported(true);
+      const rec = new SR();
+      rec.lang = "es-ES";
+      rec.continuous = false;
+      rec.interimResults = false;
+      rec.onresult = (e: any) => {
+        const text = e.results?.[0]?.[0]?.transcript || "";
+        onResult(text.toLowerCase());
+      };
+      rec.onend = () => setListening(false);
+      recognitionRef.current = rec;
+    }
+  }, [onResult]);
 
-<DocCardList>
-  <DocCard header="Official plugins" img="/img/v6/docs/capacitor-card.png" href="/apis">
-    <p>Official Plugins are maintained by the Capacitor Team</p>
-  </DocCard>
-  <DocCard header="Community plugins" img="/img/v6/docs/community-card.png" href="/plugins/community">
-    <p>Community Plugins are maintained by the Capacitor Community</p>
-  </DocCard>
-</DocCardList>
+  const start = () => {
+    if (!recognitionRef.current) return;
+    setListening(true);
+    recognitionRef.current.start();
+  };
 
-<br />
+  const stop = () => {
+    if (!recognitionRef.current) return;
+    setListening(false);
+    recognitionRef.current.stop();
+  };
 
-Web apps can access the full power of Native APIs with plugins. Plugins wrap common native operations that might use very different APIs across platforms while exposing a consistent, cross-platform API to JavaScript.
+  return { supported, listening, start, stop };
+};
 
-Additionally, the plugin capability in Capacitor makes it possible for teams with a mix of traditional native developers and web developers to work together on different parts of the app.
+// Componentes de UI grandes
+const BigAction = ({ icon: Icon, label, onClick }: { icon: any; label: string; onClick: () => void }) => (
+  <motion.button
+    onClick={onClick}
+    className="w-full h-32 rounded-2xl shadow-lg border bg-white/90 dark:bg-zinc-900 dark:border-zinc-800 flex items-center justify-center gap-4 text-2xl font-semibold"
+    whileTap={{ scale: 0.98 }}
+  >
+    <Icon className="w-10 h-10" />
+    <span>{label}</span>
+  </motion.button>
+);
 
-Capacitor automatically generates JavaScript hooks on the client, so most plugins only need to use Swift/Obj-C for iOS and/or Java/Kotlin for Android. Of course, adding custom JavaScript for a plugin is also possible.
+// Contenido educativo simple
+const pictureWords = [
+  { word: "agua", emoji: "💧" },
+  { word: "pan", emoji: "🍞" },
+  { word: "casa", emoji: "🏠" },
+  { word: "sol", emoji: "☀️" },
+  { word: "bus", emoji: "🚌" },
+  { word: "médico", emoji: "👩‍⚕️" },
+];
+
+export default function AccessibleApp() {
+  const [screen, setScreen] = useState<
+    "home" | "call" | "voice" | "learn" | "location" | "settings"
+  >("home");
+  const [ttsOn, setTtsOn] = useState(true);
+  const [contrast, setContrast] = useState(false);
+  const [dark, setDark] = useState(false);
+  const [message, setMessage] = useState("");
+  const [recording, setRecording] = useState(false);
+  const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [coords, setCoords] = useState<string>("");
+  const [rate, setRate] = useState(0.95);
+
+  // Voz
+  const { speak } = useTTS(ttsOn, rate);
+
+  // Comandos por voz
+  const { supported, listening, start, stop } = useSpeechRecognition((text) => {
+    if (text.includes("llamar")) setScreen("call");
+    else if (text.includes("mensaje")) setScreen("voice");
+    else if (text.includes("aprender")) setScreen("learn");
+    else if (text.includes("ubicación")) setScreen("location");
+    else if (text.includes("inicio")) setScreen("home");
+    else if (text.includes("configuración") || text.includes("ajustes")) setScreen("settings");
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
+  useEffect(() => {
+    if (screen === "home")
+      speak("Bienvenido. Diga: llamar, mensaje, aprender, ubicación o configuración.");
+    if (screen === "call") speak("Pantalla de llamadas. Toque un contacto para iniciar la llamada.");
+    if (screen === "voice") speak("Grabe un mensaje de voz y compártalo.");
+    if (screen === "learn") speak("Aprender palabras con dibujos. Toque una tarjeta para oírla.");
+    if (screen === "location") speak("Ver y compartir su ubicación.");
+    if (screen === "settings") speak("Ajustes de la aplicación.");
+  }, [screen, speak]);
+
+  // Grabación de audio simple (MediaRecorder)
+  const mediaRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+
+  const startRec = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const rec = new MediaRecorder(stream);
+      mediaRef.current = rec;
+      chunksRef.current = [];
+      rec.ondataavailable = (e) => e.data && chunksRef.current.push(e.data);
+      rec.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: "audio/webm" });
+        setAudioUrl(URL.createObjectURL(blob));
+      };
+      rec.start();
+      setRecording(true);
+      speak("Grabando. Toque detener para terminar.");
+    } catch (e) {
+      speak("No se pudo acceder al micrófono.");
+    }
+  };
+
+  const stopRec = () => {
+    mediaRef.current?.stop();
+    setRecording(false);
+  };
+
+  // Geolocalización
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      speak("La ubicación no está disponible en este dispositivo.");
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        const text = `Latitud ${latitude.toFixed(4)}, Longitud ${longitude.toFixed(4)}`;
+        setCoords(text);
+        speak(`Su ubicación es: ${text}`);
+      },
+      () => speak("No se pudo obtener su ubicación."),
+      { enableHighAccuracy: true, timeout: 8000 }
+    );
+  };
+
+  // Estilo de alto contraste
+  useEffect(() => {
+    const el = document.documentElement;
+    el.classList.toggle("contrast-more", contrast);
+  }, [contrast]);
+
+  const Container = ({ children }: { children: React.ReactNode }) => (
+    <div className="min-h-screen p-4 sm:p-6 md:p-8 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-950 dark:to-zinc-900">
+      <div className="max-w-3xl mx-auto grid gap-4">
+        <header className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Button variant="outline" className="rounded-2xl" onClick={() => setScreen("home")}>Inicio</Button>
+            <Button variant="ghost" className="rounded-2xl" onClick={() => setScreen("settings")}>
+              <Settings className="w-5 h-5" />
+            </Button>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" onClick={() => setTtsOn(!ttsOn)} className="rounded-2xl">
+              {ttsOn ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
+            </Button>
+            <Button variant="ghost" onClick={() => setDark(!dark)} className="rounded-2xl">
+              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </Button>
+            {supported && (
+              <Button variant={listening ? "default" : "secondary"} onClick={() => (listening ? stop() : start())} className="rounded-2xl">
+                <Mic className="w-5 h-5 mr-2" /> {listening ? "Escuchando…" : "Hablar"}
+              </Button>
+            )}
+          </div>
+        </header>
+        <main className="grid gap-4">{children}</main>
+      </div>
+    </div>
+  );
+
+  return (
+    <Container>
+      <AnimatePresence mode="wait">
+        {screen === "home" && (
+          <motion.div key="home" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="grid gap-4">
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle className="text-2xl">Aplicación fácil para quienes no leen</CardTitle>
+              </CardHeader>
+              <CardContent className="text-lg text-zinc-600 dark:text-zinc-300">
+                Use botones grandes, voz y dibujos para comunicarse sin leer.
+              </CardContent>
+            </Card>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <BigAction icon={Phone} label="Llamar" onClick={() => setScreen("call")} />
+              <BigAction icon={Send} label="Mensaje de voz" onClick={() => setScreen("voice")} />
+              <BigAction icon={MapPin} label="Ubicación" onClick={() => setScreen("location")} />
+              <BigAction icon={BookOpen} label="Aprender" onClick={() => setScreen("learn")} />
+            </div>
+          </motion.div>
+        )}
+
+        {screen === "call" && (
+          <motion.div key="call" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="grid gap-4">
+            <Button variant="outline" className="w-fit rounded-2xl" onClick={() => setScreen("home")}> <ArrowLeft className="w-4 h-4 mr-2"/> Atrás</Button>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { name: "Familia", phone: "+51 900 000 001", icon: Phone },
+                { name: "Doctor", phone: "+51 900 000 002", icon: Phone },
+                { name: "Trabajo", phone: "+51 900 000 003", icon: Phone },
+                { name: "Emergencia", phone: "105", icon: Phone },
+              ].map((c, i) => (
+                <BigAction key={i} icon={c.icon} label={c.name} onClick={() => {
+                  speak(`Llamando a ${c.name}`);
+                  // En móvil real: usar enlace tel:
+                  window.location.href = `tel:${c.phone}`;
+                }} />
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {screen === "voice" && (
+          <motion.div key="voice" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="grid gap-4">
+            <Button variant="outline" className="w-fit rounded-2xl" onClick={() => setScreen("home")}> <ArrowLeft className="w-4 h-4 mr-2"/> Atrás</Button>
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle>Grabar y enviar</CardTitle>
+              </CardHeader>
+              <CardContent className="grid gap-4">
+                <div className="flex items-center gap-3">
+                  {!recording ? (
+                    <Button className="rounded-2xl" onClick={startRec}>
+                      <PlayCircle className="w-5 h-5 mr-2" /> Grabar
+                    </Button>
+                  ) : (
+                    <Button variant="destructive" className="rounded-2xl" onClick={stopRec}>
+                      <PauseCircle className="w-5 h-5 mr-2" /> Detener
+                    </Button>
+                  )}
+                  {audioUrl && (
+                    <audio controls src={audioUrl} className="w-full" />
+                  )}
+                </div>
+                <div className="flex gap-2">
+                  <Input placeholder="Contacto o número" value={message} onChange={(e) => setMessage(e.target.value)} className="rounded-2xl" />
+                  <Button className="rounded-2xl" onClick={() => speak("Mensaje listo para compartir por su app de mensajería.")}>Enviar</Button>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
+        {screen === "location" && (
+          <motion.div key="location" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="grid gap-4">
+            <Button variant="outline" className="w-fit rounded-2xl" onClick={() => setScreen("home")}> <ArrowLeft className="w-4 h-4 mr-2"/> Atrás</Button>
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle>Mi ubicación</CardTitle>
+              </CardHeader>
+              <CardContent className="grid gap-4">
+                <Button className="rounded-2xl w-full h-14 text-lg" onClick={getLocation}><MapPin className="w-5 h-5 mr-2"/> Obtener ubicación</Button>
+                <div className="text-xl font-semibold min-h-[2.5rem]">{coords || "—"}</div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
+        {screen === "learn" && (
+          <motion.div key="learn" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="grid gap-4">
+            <Button variant="outline" className="w-fit rounded-2xl" onClick={() => setScreen("home")}> <ArrowLeft className="w-4 h-4 mr-2"/> Atrás</Button>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {pictureWords.map((w, i) => (
+                <motion.button key={i} onClick={() => speak(w.word)} whileTap={{ scale: 0.96 }} className="aspect-square rounded-2xl shadow-lg border bg-white dark:bg-zinc-900 flex flex-col items-center justify-center text-3xl gap-2">
+                  <span className="text-5xl" aria-hidden>{w.emoji}</span>
+                  <span className="text-xl">{w.word}</span>
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {screen === "settings" && (
+          <motion.div key="settings" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="grid gap-4">
+            <Button variant="outline" className="w-fit rounded-2xl" onClick={() => setScreen("home")}> <ArrowLeft className="w-4 h-4 mr-2"/> Atrás</Button>
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle>Configuración</CardTitle>
+              </CardHeader>
+              <CardContent className="grid gap-4 text-lg">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3"><Volume2 className="w-5 h-5"/><span>Voz activada</span></div>
+                  <Switch checked={ttsOn} onCheckedChange={() => setTtsOn(!ttsOn)} />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3"><Languages className="w-5 h-5"/><span>Velocidad de voz</span></div>
+                  <input type="range" min={0.7} max={1.2} step={0.05} value={rate} onChange={(e) => setRate(parseFloat(e.target.value))} className="w-40" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3"><Sun className="w-5 h-5"/><span>Alto contraste</span></div>
+                  <Switch checked={contrast} onCheckedChange={() => setContrast(!contrast)} />
+                </div>
+              </CardContent>
+            </Card>
+            {!supported && (
+              <Card className="rounded-2xl border-amber-300">
+                <CardHeader>
+                  <CardTitle className="text-amber-600">Nota</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  Este navegador no admite reconocimiento de voz. La app seguirá funcionando solo con botones y voz de salida.
+                </CardContent>
+              </Card>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Container>
+  );
+}
