@@ -4,6 +4,7 @@ description: Learn how to get Firebase Cloud Messaging working on iOS and Androi
 contributors:
   - bryplano
   - javebratt
+  - brian316
 slug: /guides/push-notifications-firebase
 ---
 
@@ -249,13 +250,44 @@ We don't need to _add_ any dependencies to our project because `@capacitor/push-
 
 ## iOS
 
-### Prerequisites
+To get Push Notifications working on iOS, there are a few steps to follow involving the Apple Developer Portal, Xcode, and Firebase. You must have a [paid Apple Developer account](https://developer.apple.com/). The modern approach is to use an APNs Authentication Key, which is a "set and forget" method that doesn't require yearly renewals like certificates.
 
-iOS push notifications are significantly more complicated to set up than Android. You must have a [paid Apple Developer account](https://developer.apple.com/) _and_ take care of the following items prior to being able to test push notifications with your iOS application:
+### Generate an APNs Auth Key (.p8) in Apple Developer
 
-1. [Setup the proper Development or Production certificates & provisioning profiles](https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7) for your iOS application in the Apple Developer Portal
-2. [Create an APNS certificate or key](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns) for either Development or Production in the Apple Developer Portal
-3. [Ensure Push Notification capabilities have been enabled](https://help.apple.com/xcode/mac/current/#/dev88ff319e7) in your application in Xcode
+1.  Go to [Apple Developer Portal → Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources/authkeys/list).
+2.  In the sidebar, click **Keys**.
+3.  Click the **+ (Add)** button.
+4.  Give your key a name (e.g. `FirebaseAPNsKey`).
+5.  Check **Apple Push Notifications service (APNs)**.
+6.  Click **Continue → Register**.
+7.  Download the `.p8` file (`AuthKey_XXXXXX.p8`). You can only download it once — keep it safe.
+
+### Collect the required values
+
+When you create the key, Apple shows:
+
+-   **Key ID** (something like `ABC123XYZ`)
+-   **Team ID** (find it in [Membership page](https://developer.apple.com/account) or in Xcode → Preferences → Account)
+-   **Bundle ID** (must match your iOS app’s identifier in Firebase + Xcode)
+
+### Upload to Firebase
+
+1.  Go to [Firebase Console](https://console.firebase.google.com/u/0/) → Project Settings → Cloud Messaging.
+2.  Under **Apple app configuration**, choose **APNs Authentication Key**.
+3.  Upload the `.p8` file.
+4.  Enter:
+    -   **Key ID**
+    -   **Team ID**
+    -   **Bundle ID** (the same as in Xcode & your Apple provisioning profile)
+5.  Save.
+
+### Update your iOS app
+
+In Xcode:
+
+-   Under Signing & Capabilities, add:
+    -   Push Notifications
+    -   Background Modes → Remote notifications
 
 ### Integrating Firebase with our native iOS app
 
@@ -267,9 +299,9 @@ To add iOS to your Firebase project, click the **Add App** button and select the
 
 The next screen will ask you for some information about your application.
 
-- Your **iOS bundle ID** should match the **appId** from your `capacitor.config.ts` file
-- We used `com.mydomain.myappname` for this Capacitor app ID, so that is what we'll use for this entry.
-- App Nickname and App Store ID are optional
+-   Your **iOS bundle ID** should match the **appId** from your `capacitor.config.ts` file
+-   We used `com.mydomain.myappname` for this Capacitor app ID, so that is what we'll use for this entry.
+-   App Nickname and App Store ID are optional
 
 Then click the **Register app** button.
 
