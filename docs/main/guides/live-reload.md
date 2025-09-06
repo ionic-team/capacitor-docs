@@ -47,6 +47,7 @@ npm run start
 ```
 
 > With react-scripts, use `HOST=0.0.0.0 npm run start`
+> With vite (e.g. Vue or SvelteKit), use `vite dev --host` to expose the server
 
 Within `capacitor.config.json`, create a `server` entry then configure the `url` field using the local web server's IP address and port:
 
