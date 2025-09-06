@@ -1,28 +1,28 @@
 ---
-title: Automated Configuration
-description: Automating the configuration and management of Capacitor projects for plugins, whitelabling, CI/CD, and more.
+title: 自动化配置
+description: 自动化配置和管理 Capacitor 项目，包括插件、白标化、CI/CD 等。
 contributors:
   - mlynch
 slug: /guides/automated-configuration
 ---
 
-# Automated Capacitor Project Configuration
+# Capacitor 项目自动化配置
 
-Many large-scale apps need to automate the configuration of their Capacitor project. This could mean incrementing iOS and Android build numbers, configuring manifest and plist files, adding build dependencies in Gradle files, modifying resources, and more.
+许多大型应用需要对 Capacitor 项目进行自动化配置。这可能包括递增 iOS 和 Android 的构建版本号、配置清单文件和 plist 文件、在 Gradle 文件中添加构建依赖、修改资源等操作。
 
-Capacitor comes with a two useful packages that can be used for managing projects: `@trapezedev/project` and `@trapezedev/configure`. `@trapezedev/project` is a lower-level project management library and `@trapezedev/configure` is an automated tool that uses the library under the hood but presents a more convenient configuration option for certain use cases.
+Capacitor 提供了两个实用的包来管理项目：`@trapezedev/project` 和 `@trapezedev/configure`。`@trapezedev/project` 是一个底层项目管理库，而 `@trapezedev/configure` 则是一个自动化工具，它在底层使用了该库，但为特定用例提供了更便捷的配置选项。
 
-Both projects and their documentation are available in the [Trapeze repo](https://github.com/ionic-team/trapeze).
+这两个项目及其文档都可以在 [Trapeze 仓库](https://github.com/ionic-team/trapeze) 中找到。
 
-## Project API
+## 项目 API
 
-The `@trapezedev/project` library provides a typed JavaScript interface for Capacitor projects and the native iOS and Android projects that they contain.
+`@trapezedev/project` 库为 Capacitor 项目及其包含的原生 iOS 和 Android 项目提供了一个类型化的 JavaScript 接口。
 
 ```typescript
 import { MobileProject, MobileProjectConfig } from '@trapezedev/project';
 
-// This takes a MobileProjectConfig
-// to know where the ios and android projects are
+// 这需要一个 MobileProjectConfig
+// 来了解 iOS 和 Android 项目的位置
 const config: MobileProjectConfig = {
   ios: {
     path: 'ios/App',
@@ -36,7 +36,7 @@ const project = new MobileProject(process.cwd(), config);
 await project.load();
 ```
 
-Once the project is loaded, operations can be performed against it. For example, here is how versions and build numbers can be managed:
+项目加载完成后，可以对其执行操作。例如，以下是如何管理版本和构建版本号：
 
 ```typescript
 await project.ios?.setVersion('App', 'Debug', '1.4.5');
@@ -50,21 +50,21 @@ await project.android?.getVersionCode();
 await project.android?.incrementVersionCode();
 ```
 
-The API works on a virtual filesystem to buffer changes without modifying files on the filesystem. When finished, to make sure changes are reflected in your files, run:
+该 API 在虚拟文件系统上工作，可以在不修改文件系统上的文件的情况下缓冲更改。完成后，为确保更改反映在文件中，请运行：
 
 ```typescript
 await project.commit();
 ```
 
-There are many other options this library can perform. To see the full list, consult the [project documentation](https://github.com/ionic-team/trapeze).
+该库还可以执行许多其他操作。要查看完整列表，请参阅 [项目文档](https://github.com/ionic-team/trapeze)。
 
-## Configuration Tool
+## 配置工具
 
-Along with the project API, `@trapezedev/configure` provides an automated, configuration-driven experience for applying the underlying operations in `@trapezedev/project`, but from a convenient yaml configuration file format. There are some additional features as well, such as the ability to require and supply variables to populate values in the final configuration, and a way to test and see changes before they are applied against your project source files.
+除了项目 API，`@trapezedev/configure` 还提供了一种自动化的、基于配置的体验，用于应用 `@trapezedev/project` 中的底层操作，但使用方便的 yaml 配置文件格式。还有一些额外的功能，例如需要并提供变量以填充最终配置中的值，以及一种在将更改应用于项目源文件之前测试和查看更改的方法。
 
-This tool is likely going to be most useful for Capacitor plugin authors that wish to publish a set of configuration changes their plugin requires, to avoid users having to manually configure their projects.
+对于希望发布其插件所需的一组配置更改以避免用户手动配置其项目的 Capacitor 插件作者来说，此工具可能最有用。
 
-This tool is meant to be used as an npm script that is then supplied with a yaml format that follows the [example configuration](https://github.com/ionic-team/trapeze/blob/main/examples/basic.yml):
+此工具旨在用作 npm 脚本，然后提供一个遵循 [示例配置](https://github.com/ionic-team/trapeze/blob/main/examples/basic.yml) 的 yaml 格式：
 
 ```json
 "scripts": {
@@ -76,4 +76,4 @@ This tool is meant to be used as an npm script that is then supplied with a yaml
 npm run cap-config
 ```
 
-Consult the [project documentation](https://github.com/ionic-team/trapeze) for more information on using this tool.
+有关使用此工具的更多信息，请参阅 [项目文档](https://github.com/ionic-team/trapeze)。

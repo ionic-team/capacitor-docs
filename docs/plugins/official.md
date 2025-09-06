@@ -1,7 +1,7 @@
 ---
 title: Capacitor Plugins
-description: Capacitor Plugins
-sidebar_label: Official Plugins
+description: Capacitor 插件
+sidebar_label: 官方插件
 contributors:
   - mlynch
   - jcesarmobile
@@ -9,49 +9,49 @@ contributors:
 slug: /apis
 ---
 
-# Official Plugins
+# 官方插件
 
-The Official Plugins are a set of Capacitor plugins maintained by the Capacitor team that provide access to commonly used native APIs.
+官方插件是由 Capacitor 团队维护的一套插件集合，提供了对常用原生 API 的访问。
 
-The API documentation for these plugins can be found below.
+这些插件的 API 文档可在下方找到。
 
-## List of Official Plugins
+## 官方插件列表
 
-- [Action Sheet](/apis/action-sheet.md)
-- [App Launcher](/apis/app-launcher.md)
-- [App](/apis/app.md)
-- [Background Runner](/apis/background-runner.md)
-- [Barcode Scanner](/apis/barcode-scanner.md)
-- [Browser](/apis/browser.md)
-- [Camera](/apis/camera.md)
-- [Clipboard](/apis/clipboard.md)
+- [操作表 (Action Sheet)](/apis/action-sheet.md)
+- [应用启动器 (App Launcher)](/apis/app-launcher.md)
+- [应用 (App)](/apis/app.md)
+- [后台运行器 (Background Runner)](/apis/background-runner.md)
+- [条码扫描器 (Barcode Scanner)](/apis/barcode-scanner.md)
+- [浏览器 (Browser)](/apis/browser.md)
+- [相机 (Camera)](/apis/camera.md)
+- [剪贴板 (Clipboard)](/apis/clipboard.md)
 - [Cookies](/apis/cookies.md)
-- [Device](/apis/device.md)
-- [Dialog](/apis/dialog.md)
-- [Filesystem](/apis/filesystem.md)
-- [File Transfer](/apis/file-transfer.md)
-- [File Viewer](/apis/file-viewer.md)
-- [Geolocation](/apis/geolocation.md)
-- [Google Maps](/apis/google-maps.md)
-- [Haptics](/apis/haptics.md)
-- [Http](/apis/http.md)
-- [InAppBrowser](/apis/inappbrowser.md)
-- [Keyboard](/apis/keyboard.md)
-- [Local Notifications](/apis/local-notifications.md)
-- [Motion](/apis/motion.md)
-- [Network](/apis/network.md)
-- [Preferences](/apis/preferences.md)
-- [Privacy Screen](/apis/privacy-screen.md)
-- [Push Notifications](/apis/push-notifications.md)
-- [Screen Orientation](/apis/screen-orientation.md)
-- [Screen Reader](/apis/screen-reader.md)
-- [Share](/apis/share.md)
-- [Splash Screen](/apis/splash-screen.md)
-- [Status Bar](/apis/status-bar.md)
-- [Text Zoom](/apis/text-zoom.md)
+- [设备 (Device)](/apis/device.md)
+- [对话框 (Dialog)](/apis/dialog.md)
+- [文件系统 (Filesystem)](/apis/filesystem.md)
+- [文件传输 (File Transfer)](/apis/file-transfer.md)
+- [文件查看器 (File Viewer)](/apis/file-viewer.md)
+- [地理位置 (Geolocation)](/apis/geolocation.md)
+- [谷歌地图 (Google Maps)](/apis/google-maps.md)
+- [触觉反馈 (Haptics)](/apis/haptics.md)
+- [HTTP](/apis/http.md)
+- [应用内浏览器 (InAppBrowser)](/apis/inappbrowser.md)
+- [键盘 (Keyboard)](/apis/keyboard.md)
+- [本地通知 (Local Notifications)](/apis/local-notifications.md)
+- [动作感知 (Motion)](/apis/motion.md)
+- [网络 (Network)](/apis/network.md)
+- [偏好设置 (Preferences)](/apis/preferences.md)
+- [隐私屏幕 (Privacy Screen)](/apis/privacy-screen.md)
+- [推送通知 (Push Notifications)](/apis/push-notifications.md)
+- [屏幕方向 (Screen Orientation)](/apis/screen-orientation.md)
+- [屏幕阅读器 (Screen Reader)](/apis/screen-reader.md)
+- [分享 (Share)](/apis/share.md)
+- [启动屏 (Splash Screen)](/apis/splash-screen.md)
+- [状态栏 (Status Bar)](/apis/status-bar.md)
+- [文本缩放 (Text Zoom)](/apis/text-zoom.md)
 - [Toast](/apis/toast.md)
 - [Watch 🧪](/apis/watch.md)
 
 ## GitHub
 
-You can find the source for these plugins [on GitHub](https://github.com/ionic-team/capacitor-plugins).
+你可以在 [GitHub](https://github.com/ionic-team/capacitor-plugins) 上找到这些插件的源代码。

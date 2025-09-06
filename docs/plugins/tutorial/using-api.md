@@ -1,40 +1,40 @@
 ---
-title: Building a Capacitor Plugin
-description: Building a Capacitor Plugin - Using the Plugin API
+title: 构建 Capacitor 插件
+description: 构建 Capacitor 插件 - 使用插件 API
 contributors:
   - eric-horodyski
-sidebar_label: Using the Plugin API
+sidebar_label: 使用插件 API
 slug: /plugins/tutorial/using-the-plugin-api
 ---
 
-# Using the Plugin API
+# 使用插件 API
 
-It makes sense to build out a user interface that exercises the plugin’s API before implementing screen orientation functionality. Essentially, we want to rig up a testing harness that allows us to test feature parity across platforms quickly.
+在实现屏幕方向功能之前，先构建一个调用插件 API 的用户界面是合理的做法。本质上，我们需要搭建一个测试框架，以便快速验证跨平台功能的兼容性。
 
-The focus of this walkthrough is how to build a Capacitor plugin, not how to build an Ionic Framework application, so you can just take the finished versions of the files needed and copy and paste their contents into your project:
+本教程的重点是介绍如何构建 Capacitor 插件，而非如何构建 Ionic Framework 应用，因此您可以直接获取所需文件的最终版本，并将其内容复制粘贴到您的项目中：
 
 - <a href="https://github.com/ionic-enterprise/capacitor-plugin-tutorial/blob/main/src/pages/Home.tsx" target="_blank">src/pages/Home.tsx</a>
 - <a href="https://github.com/ionic-enterprise/capacitor-plugin-tutorial/blob/main/src/pages/Home.css" target="_blank">src/pages/Home.css</a>
 
-Once copied over, serve the Capacitor app using the `ionic serve` command. Open up the browser’s Developer Tools, and you should see the following error:
+复制完成后，使用 `ionic serve` 命令启动 Capacitor 应用。打开浏览器的开发者工具，您应该会看到以下错误：
 
 ```bash
 Uncaught (in promise) ScreenOrientation does not have web implementation.
 ```
 
-That error checks out; we haven’t implemented code for any of the platforms yet. Keep the browser open. We will implement the web platform first. Before we do, let’s review relevant code from `Home.tsx`.
+这个错误符合预期，因为我们尚未为任何平台实现代码。请保持浏览器打开状态，我们将首先实现 Web 平台的支持。在此之前，让我们先回顾一下 `Home.tsx` 中的相关代码。
 
-## How is the plugin being used?
+## 插件是如何被使用的？
 
-**Tracking the screen orientation:**
+**追踪屏幕方向：**
 
 ```typescript
 const [orientation, setOrientation] = useState<string>('');
 ```
 
-The `orientation` state variable is used to hold the value of the screen’s orientation. It can be updated by calling `setOrientation`. Since we don’t know the current screen orientation when the code starts executing, it’s defaulted to an empty string. A string type is used to make it easier to tell the UI which design to display.
+`orientation` 状态变量用于存储屏幕方向的值，可通过调用 `setOrientation` 进行更新。由于代码开始执行时无法获知当前屏幕方向，因此默认设置为空字符串。使用字符串类型是为了更方便地告知 UI 应显示哪种设计。
 
-An event listener is established that updates `orientation` when `screenOrientationChange` is fired.
+当触发 `screenOrientationChange` 事件时，已设置的事件监听器会更新 `orientation` 的值。
 
 ```typescript
 ScreenOrientation.addListener('screenOrientationChange', res =>
@@ -42,7 +42,7 @@ ScreenOrientation.addListener('screenOrientationChange', res =>
 );
 ```
 
-The current screen orientation is obtained when the UI loads, and any listeners created (like the one above) are removed when the UI is removed from the DOM.
+UI 加载时会获取当前屏幕方向，并在 UI 从 DOM 中移除时清除所有已创建的监听器（如上述监听器）。
 
 ```typescript
 useEffect(() => {
@@ -54,41 +54,39 @@ useEffect(() => {
 }, []);
 ```
 
-Please don’t read too much into `useEffect` and the return function; those are React-specific syntax rules.
+请不必过分深究 `useEffect` 和返回函数，这些是 React 特定的语法规则。
 
-**Showing the correct design:**
+**显示正确的设计：**
 
-The `OrientationType` has two values for portrait orientation: `portrait-primary` and `portrait-secondary`. The same goes for landscape orientation. Our UI doesn’t care about the difference between them, only if it is landscape or portrait.
+`OrientationType` 为竖屏方向提供了两个值：`portrait-primary` 和 `portrait-secondary`。横屏方向也是如此。我们的 UI 不关心它们之间的差异，只关注是横屏还是竖屏。
 
 ```jsx
 {
   orientation.includes('portrait') &&
     {
-      /* Provide a button that will rotate and lock the screen orientation to landscape mode. */
+      /* 提供一个按钮，用于旋转并将屏幕方向锁定为横屏模式 */
     };
 }
 {
   orientation.includes('landscape') &&
     {
-      /* Let the user "sign" and unlock screen orientation through a confirmation button. */
+      /* 让用户通过确认按钮“签名”并解锁屏幕方向 */
     };
 }
-```
+**锁定和解锁屏幕方向：**
 
-**Locking and unlocking screen orientation:**
-
-The portrait design contains a button that will change the screen orientation and lock it when pressed.
+竖屏设计包含一个按钮，按下后将改变屏幕方向并将其锁定。
 
 ```typescript
 onClick={() => ScreenOrientation.lock({ orientation: "landscape-primary" })}
 ```
 
-Conversely, the landscape design contains a button that will unlock the screen orientation when pressed.
+相反，横屏设计包含一个按钮，按下后将解锁屏幕方向。
 
 ```typescript
 onClick={() => ScreenOrientation.unlock()}
 ```
 
-The rest of the code in `Home.tsx` and `Home.css` is purely cosmetic; we do not need to dig into that. Run `npm run build` so the new UI is used when we run the app on iOS or Android.
+`Home.tsx` 和 `Home.css` 中的其余代码纯粹是装饰性的，我们无需深入探讨。运行 `npm run build`，以便在 iOS 或 Android 上运行应用时使用新的 UI。
 
-We now have a user interface that exercises our plugin’s API, so let’s start implementing functionality! We will target the web first in our next step: the web implementation.
+现在我们有了一个调用插件 API 的用户界面，让我们开始实现功能吧！下一步我们将首先针对 Web 平台：Web 实现。

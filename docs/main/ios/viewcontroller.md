@@ -1,50 +1,50 @@
 ---
-title: Subclassing CAPBridgeViewController
-sidebar_label: Custom ViewController
-description: How to subclass CAPBridgeViewController
+title: 子类化 CAPBridgeViewController
+sidebar_label: 自定义 ViewController
+description: 如何子类化 CAPBridgeViewController
 contributors:
   - ikeith
 slug: /ios/viewcontroller
 ---
 
-# Custom ViewController
+# 自定义 ViewController
 
-Since Capacitor 3.0, you can subclass `CAPBridgeViewController` within your application. Most applications do not need this feature but it provides a supported mechanism for addressing some use-cases.
+自 Capacitor 3.0 起，您可以在应用程序中对 `CAPBridgeViewController` 进行子类化。大多数应用并不需要此功能，但它为处理某些使用场景提供了官方支持方案。
 
-## When to create a subclass
+## 何时需要创建子类
 
-Some examples of when subclassing would be necessary are overriding Capacitor's configuration values at run-time, changing the properties of the [`WKWebViewConfiguration`](https://developer.apple.com/documentation/webkit/wkwebviewconfiguration), subsituting a custom subclass of [`WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview) for Capacitor to use, integrating a 3rd party SDK that suggests adding code to [`viewDidLoad()`](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621495-viewdidload), manipulating native views before they appear onscreen, or [registering custom plugins](../ios/custom-code.md).
+需要进行子类化的典型场景包括：运行时覆盖 Capacitor 的配置值、修改 [`WKWebViewConfiguration`](https://developer.apple.com/documentation/webkit/wkwebviewconfiguration) 的属性、为 Capacitor 替换自定义的 [`WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview) 子类、集成需要在 [`viewDidLoad()`](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621495-viewdidload) 中添加代码的第三方 SDK、在原生视图显示前进行操控，或[注册自定义插件](../ios/custom-code.md)。
 
-If you do need to create a custom subclass, there are a couple of steps to get started.
+如需创建自定义子类，请按以下步骤操作：
 
-### Create `MyViewController.swift`
+### 创建 `MyViewController.swift`
 
-First, create a `MyViewController.swift` file by [opening Xcode](/main/ios/index.md#opening-the-ios-project), right-clicking on the **App** group (under the **App** target), selecting **New File...** from the context menu, choosing **Cocoa Touch Class** in the window, set the **Subclass of:** to `UIViewController` in the next screen, and save the file.
+首先通过[打开 Xcode](/main/ios/index.md#opening-the-ios-project) 创建 `MyViewController.swift` 文件：右键点击 **App** 组（位于 **App** 目标下），从上下文菜单中选择 **New File...**，在弹出的窗口中选择 **Cocoa Touch Class**，在后续界面中将 **Subclass of:** 设置为 `UIViewController`，最后保存文件。
 
-![New ViewController in Xcode](../../../static/img/v6/docs/ios/xcode-create-viewcontroller.png)
-![Name ViewController in Xcode](../../../static/img/v6/docs/ios/xcode-name-viewcontroller.png)
+![在 Xcode 中新建 ViewController](../../../static/img/v6/docs/ios/xcode-create-viewcontroller.png)
+![在 Xcode 中命名 ViewController](../../../static/img/v6/docs/ios/xcode-name-viewcontroller.png)
 
-### Edit `Main.storyboard`
+### 编辑 `Main.storyboard`
 
-Next, select the `Main.storyboard` file in the Project Navigator, select the **Bridge View Controller** in the **Bridge View Controller Scene**, select the **Identity Inspector** on the right, and change the name of the custom class to `MyViewController`.
+接着，在项目导航器中选中 `Main.storyboard` 文件，在 **Bridge View Controller Scene** 中选择 **Bridge View Controller**，在右侧选择 **Identity Inspector**，并将自定义类名更改为 `MyViewController`。
 
-![Editing Storyboard in Xcode](../../../static/img/v6/docs/ios/xcode-edit-storyboard.png)
+![在 Xcode 中编辑 Storyboard](../../../static/img/v6/docs/ios/xcode-edit-storyboard.png)
 
-### Edit `MyViewController.swift`
+### 编辑 `MyViewController.swift`
 
-Finally, select the `MyViewController.swift` file in the Project Navigator and edit it to import Capacitor and change the parent class:
+最后，在项目导航器中选中 `MyViewController.swift` 文件，编辑它以导入 Capacitor 并更改父类：
 
 ```swift
 import UIKit
 import Capacitor
 
 class MyViewController: CAPBridgeViewController {
-    // additional code
+    // 自定义代码
 }
 ```
 
-You're done!
+完成！
 
-### Next Steps
+### 后续步骤
 
-Xcode should have already created a `viewDidLoad()` method for you when it generated the file but look over the inline documentation in [`CAPBridgeViewController`](https://github.com/ionic-team/capacitor/blob/main/ios/Capacitor/Capacitor/CAPBridgeViewController.swift) to find the Capacitor-specific methods you might need. Anything marked `open` is explicitly exposed for subclasses to override.
+Xcode 在生成文件时应该已经为您创建了 `viewDidLoad()` 方法，但请查阅 [`CAPBridgeViewController`](https://github.com/ionic-team/capacitor/blob/main/ios/Capacitor/Capacitor/CAPBridgeViewController.swift) 中的内联文档，以找到您可能需要的 Capacitor 特定方法。任何标记为 `open` 的方法都明确允许子类进行重写。

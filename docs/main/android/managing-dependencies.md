@@ -1,3 +1,3 @@
-# Managing Android Dependencies in Capacitor
+# 在 Capacitor 中管理 Android 依赖项
 
-Coming soon.
+即将推出。

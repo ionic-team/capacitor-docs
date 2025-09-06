@@ -1,5 +1,5 @@
 ---
-title: CLI Command - cap update
+title: CLI 命令 - cap update
 description: Capacitor - cap update
 contributors:
   - dotNetkow
@@ -8,25 +8,25 @@ sidebar_label: update
 
 # Capacitor CLI - cap update
 
-Updates the native plugins and dependencies referenced in `package.json`.
+更新 `package.json` 中引用的原生插件和依赖项。
 
 ```bash
 npx cap update [<platform>]
 ```
 
-<strong>Inputs:</strong>
+<strong>输入参数：</strong>
 
-- `platform` (optional): `android`, `ios`
+- `platform`（可选）：`android`、`ios`
 
-<strong>Options:</strong>
+<strong>选项：</strong>
 
-- `--deployment`: Podfile.lock won't be deleted and pod install will use `--deployment` option.
+- `--deployment`：不删除 Podfile.lock，并且 pod install 将使用 `--deployment` 选项。
 
-## Hooks
+## 钩子函数
 
-The following hooks are available for update command:
+update 命令可使用以下钩子函数：
 
 - `capacitor:update:before`
 - `capacitor:update:after`
 
-[More information](../hooks)
+[更多信息](../hooks)

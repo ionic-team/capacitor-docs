@@ -1,30 +1,30 @@
 ---
-title: CLI Reference
-description: Reference documentation for the Capacitor CLI
+title: CLI 参考
+description: Capacitor CLI 参考文档
 contributors:
   - dotNetkow
-sidebar_label: Overview
+sidebar_label: 概览
 slug: /cli
 ---
 
 # Capacitor CLI
 
-The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps.
+Capacitor 命令行界面（CLI）工具用于开发 Capacitor 应用。
 
-## CLI Reference
+## CLI 参考
 
 ```bash
 npx cap [-V] [-h] [<command>]
 ```
 
-<strong>Options:</strong>
+<strong>选项：</strong>
 
-- `-V, --version` (optional): Output the version number
-- `-h, --help` (optional): Output usage information. Can be used with individual commands too.
+- `-V, --version`（可选）：输出版本号
+- `-h, --help`（可选）：输出使用信息。也可用于单个命令。
 
-### Command List
+### 命令列表
 
-View all available CLI commands and options.
+查看所有可用的 CLI 命令和选项。
 
 - [`add`](/cli/commands/add.md)
 - [`build`](/cli/commands/build.md)
@@ -38,8 +38,8 @@ View all available CLI commands and options.
 - [`sync`](/cli/commands/sync.md)
 - [`update`](/cli/commands/update.md)
 
-## Additional Resources
+## 额外资源
 
-[Learn how to install the Capacitor CLI &#8250;](/main/getting-started/installation.md)
+[了解如何安装 Capacitor CLI &#8250;](/main/getting-started/installation.md)
 
-[Learn about the CLI workflow &#8250;](/main/basics/workflow.md)
+[了解 CLI 工作流程 &#8250;](/main/basics/workflow.md)

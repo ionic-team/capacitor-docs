@@ -1,7 +1,7 @@
 ---
-title: Custom Native Android Code
-sidebar_label: Custom Native Code
-description: Custom Native Android Code
+title: 自定义原生 Android 代码
+sidebar_label: 自定义原生代码
+description: 自定义原生 Android 代码
 contributors:
   - mlynch
   - jcesarmobile
@@ -9,23 +9,23 @@ contributors:
 slug: /android/custom-code
 ---
 
-# Custom Native Android Code
+# 自定义原生 Android 代码
 
-With Capacitor, you are encouraged to write Java or Kotlin code to implement the native features your app needs.
+使用 Capacitor 时，我们鼓励您编写 Java 或 Kotlin 代码来实现应用所需的本机功能。
 
-There may not be [a Capacitor plugin](/plugins.mdx) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
+并非所有功能都有现成的 [Capacitor 插件](/plugins.mdx)——这完全没问题！您可以直接在应用中编写可供 WebView 访问的原生代码。
 
-## WebView-Accessible Native Code
+## 可供 WebView 访问的原生代码
 
-The easiest way to communicate between JavaScript and native code is to build a custom Capacitor plugin that is local to your app.
+在 JavaScript 和原生代码之间进行通信的最简单方法，是在您的应用中构建一个自定义的 Capacitor 插件。
 
 ### `EchoPlugin.java`
 
-First, create a `EchoPlugin.java` file by [opening Android Studio](/main/android/index.md#opening-the-android-project), expanding the **app** module and the **java** folder, right-clicking on your app's Java package, selecting **New** -> **Java Class** from the context menu, and creating the file.
+首先，通过[打开 Android Studio](/main/android/index.md#opening-the-android-project)、展开 **app** 模块和 **java** 文件夹、右键点击应用的 Java 包、从上下文菜单中选择 **New** -> **Java Class** 来创建 `EchoPlugin.java` 文件。
 
-![Android Studio app package](../../../static/img/v6/docs/android/studio-app-package.png)
+![Android Studio 应用包](../../../static/img/v6/docs/android/studio-app-package.png)
 
-Copy the following Java code into `EchoPlugin.java`:
+将以下 Java 代码复制到 `EchoPlugin.java` 中：
 
 ```java
 package com.example.myapp;
@@ -50,13 +50,13 @@ public class EchoPlugin extends Plugin {
 }
 ```
 
-### Register the Plugin
+### 注册插件
 
-We must register custom plugins on both Android and web so that Capacitor can bridge between Java and JavaScript.
+我们必须在 Android 和 Web 端都注册自定义插件，以便 Capacitor 能在 Java 和 JavaScript 之间建立桥梁。
 
 #### `MainActivity.java`
 
-In your app's `MainActivity.java`, use `registerPlugin()` or `registerPlugins()` to register your custom plugin(s).
+在应用的 `MainActivity.java` 中，使用 `registerPlugin()` 或 `registerPlugins()` 来注册您的自定义插件。
 
 ```diff
  public class MainActivity extends BridgeActivity {
@@ -70,7 +70,7 @@ In your app's `MainActivity.java`, use `registerPlugin()` or `registerPlugins()`
 
 #### JavaScript
 
-In JS, we use `registerPlugin()` from `@capacitor/core` to create an object which is linked to our Java plugin.
+在 JavaScript 中，我们使用来自 `@capacitor/core` 的 `registerPlugin()` 创建一个与 Java 插件关联的对象。
 
 ```typescript
 import { registerPlugin } from '@capacitor/core';
@@ -80,11 +80,11 @@ const Echo = registerPlugin('Echo');
 export default Echo;
 ```
 
-> The first parameter to `registerPlugin()` is the plugin name, which must match the `name` attribute of our `@CapacitorPlugin` annotation in `EchoPlugin.java`.
+> `registerPlugin()` 的第一个参数是插件名称，必须与 `EchoPlugin.java` 中 `@CapacitorPlugin` 注解的 `name` 属性一致。
 
 **TypeScript**
 
-We can define types on our linked object by defining an interface and using it in the call to `registerPlugin()`.
+我们可以通过定义一个接口并在调用 `registerPlugin()` 时使用它，来为关联的对象定义类型。
 
 ```diff
  import { registerPlugin } from '@capacitor/core';
@@ -99,11 +99,11 @@ We can define types on our linked object by defining an interface and using it i
  export default Echo;
 ```
 
-The generic parameter of `registerPlugin()` is what defines the structure of the linked object. You can use `registerPlugin<any>('Echo')` to ignore types if you need to. No judgment. ❤️
+`registerPlugin()` 的泛型参数定义了关联对象的结构。如果需要，您可以使用 `registerPlugin<any>('Echo')` 来忽略类型。我们不做评判。❤️
 
-### Use the Plugin
+### 使用插件
 
-Use the exported `Echo` object to call your plugin methods. The following snippet will call into Java on Android and print the result:
+使用导出的 `Echo` 对象来调用插件方法。以下代码片段将在 Android 上调用 Java 方法并打印结果：
 
 ```typescript
 import Echo from '../path/to/echo-plugin';
@@ -112,6 +112,6 @@ const { value } = await Echo.echo({ value: 'Hello World!' });
 console.log('Response from native:', value);
 ```
 
-### Next Steps
+### 下一步
 
-[Read the Android Plugin Guide &#8250;](/plugins/creating-plugins/android-guide.md)
+[阅读 Android 插件指南 &#8250;](/plugins/creating-plugins/android-guide.md)

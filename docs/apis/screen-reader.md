@@ -1,6 +1,6 @@
 ---
 title: Screen Reader Capacitor Plugin API
-description: The Screen Reader API provides access to TalkBack/VoiceOver/etc. and provides simple text-to-speech capabilities for visual accessibility.
+description: Screen Reader API 提供对 TalkBack/VoiceOver 等功能的访问，并为视觉无障碍提供简单的文本转语音功能。
 custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/src/definitions.ts
 sidebar_label: Screen Reader
@@ -8,32 +8,32 @@ sidebar_label: Screen Reader
 
 # @capacitor/screen-reader
 
-The Screen Reader API provides access to TalkBack/VoiceOver/etc. and provides simple text-to-speech capabilities for visual accessibility.
+Screen Reader API 提供对 TalkBack/VoiceOver 等功能的访问，并为视觉无障碍提供简单的文本转语音功能。
 
-## Install
+## 安装
 
 ```bash
 npm install @capacitor/screen-reader
 npx cap sync
 ```
 
-## Example
+## 示例
 
 ```typescript
 import { ScreenReader } from '@capacitor/screen-reader';
 
 ScreenReader.addListener('stateChange', ({ value }) => {
-  console.log(`Screen reader is now ${value ? 'on' : 'off'}`);
+  console.log(`屏幕阅读器当前${value ? '开启' : '关闭'}`);
 });
 
 const checkScreenReaderEnabled = async () => {
   const { value } = await ScreenReader.isEnabled();
 
-  console.log('Voice over enabled? ' + value);
+  console.log('语音朗读已启用？' + value);
 };
 
 const sayHello = async () => {
-  await ScreenReader.speak({ value: 'Hello World!' });
+  await ScreenReader.speak({ value: '你好，世界！' });
 };
 ```
 
@@ -45,8 +45,8 @@ const sayHello = async () => {
 * [`speak(...)`](#speak)
 * [`addListener('stateChange', ...)`](#addlistenerstatechange-)
 * [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
-* [Type Aliases](#type-aliases)
+* [接口](#interfaces)
+* [类型别名](#type-aliases)
 
 </docgen-index>
 
@@ -59,14 +59,13 @@ const sayHello = async () => {
 isEnabled() => Promise<{ value: boolean; }>
 ```
 
-Whether a Screen Reader is currently active.
+检测屏幕阅读器当前是否处于活动状态。
 
-This method is not supported on web (it is not possible to detect Screen
-Readers).
+此方法在 Web 平台上不受支持（无法检测屏幕阅读器）。
 
-**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+**返回值：** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
-**Since:** 1.0.0
+**自版本：** 1.0.0
 
 --------------------
 
@@ -77,23 +76,19 @@ Readers).
 speak(options: SpeakOptions) => Promise<void>
 ```
 
-Text-to-Speech functionality.
+文本转语音功能。
 
-This function will only work if a Screen Reader is currently active.
+此功能仅在屏幕阅读器处于活动状态时有效。
 
-On web, browsers must support the [SpeechSynthesis
-API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis), or
-this method will throw an error.
+在 Web 平台上，浏览器必须支持 [SpeechSynthesis API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)，否则此方法将抛出错误。
 
-For more text-to-speech capabilities, please see the [Capacitor Community
-Text-to-Speech
-plugin](https://github.com/capacitor-community/text-to-speech).
+如需更多文本转语音功能，请参阅 [Capacitor Community Text-to-Speech 插件](https://github.com/capacitor-community/text-to-speech)。
 
-| Param         | Type                                                  |
+| 参数          | 类型                                                  |
 | ------------- | ----------------------------------------------------- |
 | **`options`** | <code><a href="#speakoptions">SpeakOptions</a></code> |
 
-**Since:** 1.0.0
+**自版本：** 1.0.0
 
 --------------------
 
@@ -104,21 +99,20 @@ plugin](https://github.com/capacitor-community/text-to-speech).
 addListener(eventName: 'stateChange', listener: StateChangeListener) => Promise<PluginListenerHandle>
 ```
 
-Add a listener for when the screen reader is turned on or off.
+添加屏幕阅读器开关状态变化的监听器。
 
-This event used to be named `'accessibilityScreenReaderStateChange'`.
+此事件曾用名为 `'accessibilityScreenReaderStateChange'`。
 
-This method is not supported on web (it is not possible to detect Screen
-Readers).
+此方法在 Web 平台上不受支持（无法检测屏幕阅读器）。
 
-| Param           | Type                                                                |
+| 参数            | 类型                                                                |
 | --------------- | ------------------------------------------------------------------- |
 | **`eventName`** | <code>'stateChange'</code>                                          |
 | **`listener`**  | <code><a href="#statechangelistener">StateChangeListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**返回值：** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
-**Since:** 1.0.0
+**自版本：** 1.0.0
 
 --------------------
 
@@ -129,39 +123,39 @@ Readers).
 removeAllListeners() => Promise<void>
 ```
 
-Remove all the listeners that are attached to this plugin.
+移除附加到此插件的所有监听器。
 
-**Since:** 1.0.0
+**自版本：** 1.0.0
 
 --------------------
 
 
-### Interfaces
+### 接口
 
 
 #### SpeakOptions
 
-| Prop           | Type                | Description                                                                                                                                                               | Since |
+| 属性            | 类型                | 说明                                                                                                                                                               | 自版本 |
 | -------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`value`**    | <code>string</code> | The text to speak.                                                                                                                                                        | 1.0.0 |
-| **`language`** | <code>string</code> | The language to speak the text in, as its [ISO 639-1 Code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g.: "en"). This option is only supported on Android. | 1.0.0 |
+| **`value`**    | <code>string</code> | 要朗读的文本。                                                                                                                                                        | 1.0.0 |
+| **`language`** | <code>string</code> | 文本朗读的语言，使用其 [ISO 639-1 代码](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)（例如："en"）。此选项仅在 Android 上受支持。 | 1.0.0 |
 
 
 #### PluginListenerHandle
 
-| Prop         | Type                                      |
+| 属性         | 类型                                      |
 | ------------ | ----------------------------------------- |
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 #### ScreenReaderState
 
-| Prop        | Type                 | Description                                  | Since |
+| 属性        | 类型                 | 说明                                  | 自版本 |
 | ----------- | -------------------- | -------------------------------------------- | ----- |
-| **`value`** | <code>boolean</code> | Whether a Screen Reader is currently active. | 1.0.0 |
+| **`value`** | <code>boolean</code> | 屏幕阅读器当前是否处于活动状态。 | 1.0.0 |
 
 
-### Type Aliases
+### 类型别名
 
 
 #### StateChangeListener

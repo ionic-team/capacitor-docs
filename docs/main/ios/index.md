@@ -1,82 +1,82 @@
 ---
-title: Getting Started
-description: Communicate between JavaScript and Native Swift or Objective-C code
+title: 入门指南
+description: 在 JavaScript 与原生 Swift 或 Objective-C 代码之间实现通信
 slug: /ios
 contributors:
   - dotNetkow
   - mlynch
 ---
 
-# Capacitor iOS Documentation
+# Capacitor iOS 文档
 
-Capacitor features a native iOS runtime that enables developers to communicate between JavaScript and Native Swift or Objective-C code.
+Capacitor 提供原生的 iOS 运行时环境，使开发者能够在 JavaScript 与原生 Swift 或 Objective-C 代码之间进行通信。
 
-Capacitor iOS apps are configured and managed with Xcode and [CocoaPods](https://cocoapods.org/).
+Capacitor iOS 应用通过 Xcode 和 [CocoaPods](https://cocoapods.org/) 进行配置和管理。
 
-## iOS Support
+## iOS 支持
 
-iOS 14+ is supported. Xcode 16.0+ is required (see [Environment Setup](/main/getting-started/environment-setup.md#ios-requirements)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
+支持 iOS 14+ 系统。需要 Xcode 16.0+ 版本（详见[环境设置](/main/getting-started/environment-setup.md#ios-requirements)）。Capacitor 使用 [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)，而非已弃用的 [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)。
 
-## Adding the iOS Platform
+## 添加 iOS 平台
 
-First, install the `@capacitor/ios` package.
+首先，安装 `@capacitor/ios` 包。
 
 ```bash
 npm install @capacitor/ios
 ```
 
-Then, add the iOS platform.
+然后，添加 iOS 平台。
 
 ```bash
 npx cap add ios
 ```
 
-## Opening the iOS Project
+## 打开 iOS 项目
 
-To open the project in Xcode, run:
+要在 Xcode 中打开项目，请运行：
 
 ```bash
 npx cap open ios
 ```
 
-Alternatively, you can open Xcode manually by running:
+或者，您也可以手动运行以下命令打开 Xcode：
 
 ```bash
 open ios/App/App.xcworkspace
 ```
 
-## Running Your App
+## 运行您的应用
 
-You can either run your app on the command-line or with Xcode.
+您可以通过命令行或 Xcode 运行应用。
 
-### Running on the Command-Line
+### 在命令行中运行
 
-To run the project on a device or simulator, run:
+要在设备或模拟器上运行项目，请执行：
 
 ```bash
 npx cap run ios
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/cli/commands/run.md).
+该命令会提示您选择目标设备。[了解更多关于 `run` 命令的信息](/cli/commands/run.md)。
 
-### Running in Xcode
+### 在 Xcode 中运行
 
-In Xcode, first select the device or simulator and then click the play button to run your app.
+在 Xcode 中，首先选择设备或模拟器，然后点击播放按钮运行应用。
 
-![Running your app](../../../static/img/v6/docs/ios/running.png)
+![运行您的应用](../../../static/img/v6/docs/ios/running.png)
 
-## Troubleshooting
+## 故障排除
 
-If you encountered any issues while getting started, you can consult the [iOS Troubleshooting Guide](/main/ios/troubleshooting.md). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
+如果在入门过程中遇到任何问题，您可以查阅 [iOS 故障排除指南](/main/ios/troubleshooting.md)。如需帮助，欢迎[发起讨论](https://github.com/ionic-team/capacitor/discussions/)。
 
-## Next steps
+## 后续步骤
 
-You are now ready to continue developing and building your app. Use the various APIs available, Capacitor or Cordova plugins, or custom native code to build out the rest of your app.
+您现在可以继续开发和构建您的应用了。使用各种可用的 API、Capacitor 或 Cordova 插件，或自定义原生代码来完成应用的其余部分。
 
-## Further Reading
+## 延伸阅读
 
-Follow these guides for more information on each topic:
+如需了解更多相关信息，请参阅以下指南：
 
-[Configuring and setting permissions for iOS &#8250;](/main/ios/configuration.md)
+[配置 iOS 及设置权限 &#8250;](/main/ios/configuration.md)
 
-[Building Native Plugins for iOS &#8250;](/plugins/creating-plugins/ios-guide.md)
+[为 iOS 构建原生插件 &#8250;](/plugins/creating-plugins/ios-guide.md)

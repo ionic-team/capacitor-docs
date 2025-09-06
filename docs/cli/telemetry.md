@@ -1,48 +1,48 @@
 ---
 title: Telemetry
-description: Capacitor CLI Telemetry
+description: Capacitor CLI 遥测
 contributors:
   - eric-horodyski
 ---
 
-Capacitor collects anonymous telemetry data about general usage. This is an opt-out program that provides insight to the Capacitor team to help improve the product. By providing usage data, you help provide valuable insights that could shape the future of the product.
+Capacitor 会收集关于常规使用情况的匿名遥测数据。这是一个默认启用的项目，旨在帮助 Capacitor 团队深入了解产品使用情况以改进产品。通过提供使用数据，您将帮助提供可能塑造产品未来发展的宝贵见解。
 
-You will be automatically enrolled after the Capacitor CLI successfully finishes its first command. You may opt-out at any time, wherein telemetry data will not be collected unless you opt back in. 
+在 Capacitor CLI 成功完成首次命令后，您将自动加入此项目。您随时可以选择退出，选择退出后除非重新启用，否则将不再收集遥测数据。
 
-> **Note:** Telemetry does not run in non-interactive environments, such as CI servers, ensuring no data is collected in those scenarios. 
+> **注意：** 遥测功能不会在非交互式环境（如 CI 服务器）中运行，确保在这些场景下不会收集任何数据。
 
-## Why?
+## 为什么需要遥测？
 
-Anonymous usage data allows the team to gain insight into how Capacitor is being used. With this information, we can better prioritize fixes and features. It also provides the team with a better understanding of the developer experience.
+匿名使用数据能让团队深入了解 Capacitor 的使用情况。借助这些信息，我们可以更好地确定修复和功能的优先级。同时也能让团队更好地理解开发者的使用体验。
 
-## What is Collected?
+## 收集哪些数据？
 
-Usage data is entirely anonymous and will only include the following:
+使用数据完全匿名，仅包含以下内容：
 
-* Timestamp
-* Command name, arguments, and selected flags
-* Command duration
-* Error message (if the command failed, no stacktrace included)
-* Capacitor machine ID (anonymous, generated ID)
-* Project ID (anonymous, generated ID)
-* Your operating system (Mac, Linux, Windows)
-* Versions of: NodeJS, Capacitor CLI, core, and official platforms and plugins
+* 时间戳
+* 命令名称、参数和所选标志
+* 命令执行时长
+* 错误消息（如果命令失败，不包含堆栈跟踪）
+* Capacitor 机器 ID（匿名生成的 ID）
+* 项目 ID（匿名生成的 ID）
+* 您的操作系统（Mac、Linux、Windows）
+* 以下版本信息：NodeJS、Capacitor CLI、核心组件以及官方平台和插件
 
-## How to opt in or out
+## 如何启用或禁用
 
-You may opt out at any time from the program by running `npx cap telemetry off` in the root of your project:
+您随时可以在项目根目录运行 `npx cap telemetry off` 来选择退出此项目：
 
 ```bash
 npx cap telemetry off
 ```
 
-You can check the status by running the following command in the root of your project:
+您可以通过在项目根目录运行以下命令来检查状态：
 
 ```bash
 npx cap telemetry
 ```
 
-If you would like to rejoin the program and provide telemetry on your project then run the following command:
+如果您想重新加入项目并提供遥测数据，请运行以下命令：
 
 ```bash
 npx cap telemetry on

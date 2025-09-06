@@ -1,6 +1,6 @@
 ---
-title: Text Zoom Capacitor Plugin API
-description: The Text Zoom API provides the ability to change Web View text size for visual accessibility.
+title: Text Zoom Capacitor 插件 API
+description: Text Zoom API 提供了更改 Web View 文本大小的功能，以提升视觉可访问性。
 custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/src/definitions.ts
 sidebar_label: Text Zoom
@@ -8,9 +8,9 @@ sidebar_label: Text Zoom
 
 # @capacitor/text-zoom
 
-The Text Zoom API provides the ability to change Web View text size for visual accessibility.
+Text Zoom API 提供了更改 Web View 文本大小的功能，以提升视觉可访问性。
 
-**Note:** text-zoom plugin won't work on iPads unless `preferredContentMode` configuration is set to `mobile` in your [Capacitor configuration file](https://capacitorjs.com/docs/config).
+**注意：** 除非在 [Capacitor 配置文件](https://capacitorjs.com/docs/config) 中将 `preferredContentMode` 配置设置为 `mobile`，否则 text-zoom 插件在 iPad 上将无法工作。
 
 ```json
 {
@@ -20,7 +20,7 @@ The Text Zoom API provides the ability to change Web View text size for visual a
 }
 ```
 
-## Install
+## 安装
 
 ```bash
 npm install @capacitor/text-zoom
@@ -34,7 +34,7 @@ npx cap sync
 * [`get()`](#get)
 * [`getPreferred()`](#getpreferred)
 * [`set(...)`](#set)
-* [Interfaces](#interfaces)
+* [接口](#interfaces)
 
 </docgen-index>
 
@@ -47,13 +47,13 @@ npx cap sync
 get() => Promise<GetResult>
 ```
 
-Get the current zoom level.
+获取当前缩放级别。
 
-Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
+缩放级别以小数表示（例如 1.2 表示 120%）。
 
-**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
+**返回值：** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
 
-**Since:** 1.0.0
+**自版本：** 1.0.0
 
 --------------------
 
@@ -64,13 +64,13 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 getPreferred() => Promise<GetPreferredResult>
 ```
 
-Get the preferred zoom level.
+获取首选缩放级别。
 
-Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
+缩放级别以小数表示（例如 1.2 表示 120%）。
 
-**Returns:** <code>Promise&lt;<a href="#getpreferredresult">GetPreferredResult</a>&gt;</code>
+**返回值：** <code>Promise&lt;<a href="#getpreferredresult">GetPreferredResult</a>&gt;</code>
 
-**Since:** 1.0.0
+**自版本：** 1.0.0
 
 --------------------
 
@@ -81,40 +81,40 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 set(options: SetOptions) => Promise<void>
 ```
 
-Set the current zoom level.
+设置当前缩放级别。
 
-Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
+缩放级别以小数表示（例如 1.2 表示 120%）。
 
-| Param         | Type                                              |
+| 参数          | 类型                                                |
 | ------------- | ------------------------------------------------- |
 | **`options`** | <code><a href="#setoptions">SetOptions</a></code> |
 
-**Since:** 1.0.0
+**自版本：** 1.0.0
 
 --------------------
 
 
-### Interfaces
+### 接口
 
 
 #### GetResult
 
-| Prop        | Type                | Description                                        | Since |
+| 属性          | 类型                | 描述                                         | 自版本 |
 | ----------- | ------------------- | -------------------------------------------------- | ----- |
-| **`value`** | <code>number</code> | The current zoom level (represented as a decimal). | 1.0.0 |
+| **`value`** | <code>number</code> | 当前缩放级别（以小数表示）。 | 1.0.0 |
 
 
 #### GetPreferredResult
 
-| Prop        | Type                | Description                                          | Since |
+| 属性          | 类型                | 描述                                           | 自版本 |
 | ----------- | ------------------- | ---------------------------------------------------- | ----- |
-| **`value`** | <code>number</code> | The preferred zoom level (represented as a decimal). | 1.0.0 |
+| **`value`** | <code>number</code> | 首选缩放级别（以小数表示）。 | 1.0.0 |
 
 
 #### SetOptions
 
-| Prop        | Type                | Description                                    | Since |
+| 属性          | 类型                | 描述                                     | 自版本 |
 | ----------- | ------------------- | ---------------------------------------------- | ----- |
-| **`value`** | <code>number</code> | The new zoom level (represented as a decimal). | 1.0.0 |
+| **`value`** | <code>number</code> | 新的缩放级别（以小数表示）。 | 1.0.0 |
 
 </docgen-api>

@@ -1,20 +1,20 @@
 ---
 title: Splash Screens and Icons
-description: Use @capacitor/assets to generate resource images for native projects
+description: 使用 @capacitor/assets 为原生项目生成资源图片
 contributors:
   - dotNetkow
 slug: /guides/splash-screens-and-icons
 ---
 
-You can generate Splash Screens and Icons for your iOS, Android or Progressive Web Application using the [@capacitor/assets](https://github.com/ionic-team/capacitor-assets) tool.
+您可以使用 [@capacitor/assets](https://github.com/ionic-team/capacitor-assets) 工具为您的 iOS、Android 或渐进式 Web 应用生成启动画面（Splash Screens）和应用图标（Icons）。
 
-First, install `@capacitor/assets`:
+首先，安装 `@capacitor/assets`：
 
 ```bash
 npm install @capacitor/assets --save-dev
 ```
 
-Provide icon and splash screen source images using this folder/filename structure:
+按照以下文件夹/文件名结构提供图标和启动画面的源图片：
 ```
 assets/
 ├── icon-only.png
@@ -23,20 +23,20 @@ assets/
 ├── splash.png
 └── splash-dark.png
 ```
-- Icon files should be at least `1024px` x `1024px`. 
-- Splash screen files should be at least `2732px` x `2732px`. 
-- The format can be `jpg` or `png`.
+- 图标文件尺寸至少为 `1024px` x `1024px`
+- 启动画面文件尺寸至少为 `2732px` x `2732px`
+- 格式支持 `jpg` 或 `png`
 
-Then generate (which applies to your native projects or generates a PWA manifest file):
+然后执行生成命令（该命令会应用到您的原生项目或生成 PWA 清单文件）：
 ```shell
 npx capacitor-assets generate
 ```
 
-Alternatively you can generate for a specific platform with `--ios`, `--android` or `--pwa`.
+您也可以使用 `--ios`、`--android` 或 `--pwa` 参数为特定平台生成资源。
 
 :::note
-The community-maintained [VS Code Extension](../getting-started/vscode-extension.mdx) can also generate Splash Screen and Icon assets.
+社区维护的 [VS Code 扩展](../getting-started/vscode-extension.mdx) 同样可以生成启动画面和应用图标资源。
 :::
 
 ## Android 12+
-In Android 12 and above Google changed the way Splash Screens are displayed, using a smaller icon with colored background instead of a full screen image that was possible with Android 11 and below. Additional documentation about this change can be found at [developer.android.com](https://developer.android.com/develop/ui/views/launch/splash-screen).
+在 Android 12 及以上版本中，Google 改变了启动画面的显示方式，使用带有彩色背景的小图标替代了 Android 11 及以下版本支持的全屏图片。关于此变更的详细说明可在 [developer.android.com](https://developer.android.com/develop/ui/views/launch/splash-screen) 查看。

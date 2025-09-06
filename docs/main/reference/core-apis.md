@@ -1,20 +1,20 @@
 ---
 title: Capacitor APIs
-description: The APIs of Capacitor core
-sidebar_label: Core APIs
+description: Capacitor 核心 API
+sidebar_label: 核心 API
 slug: /core-apis
 ---
 
-# Capacitor APIs
+# Capacitor API
 
-Whether developing apps or plugins, the Capacitor API is an important addition to your toolbelt.
+无论是开发应用还是插件，Capacitor API 都是您工具箱中的重要补充。
 
-## Overview
+## 概览
 
-These docs are organized by platform.
+这些文档按平台组织：
 
 - [iOS](/main/reference/core-apis/ios.md)
 - [Android](/main/reference/core-apis/android.md)
 - [Web](/main/reference/core-apis/web.md)
-- [Data Types](/main/reference/core-apis/data-types.md)
-- [Saving Calls](/main/reference/core-apis/saving-calls.md)
+- [数据类型](/main/reference/core-apis/data-types.md)
+- [保存调用](/main/reference/core-apis/saving-calls.md)

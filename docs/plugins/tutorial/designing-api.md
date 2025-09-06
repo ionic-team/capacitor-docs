@@ -1,53 +1,53 @@
 ---
-title: Building a Capacitor Plugin
-description: Building a Capacitor Plugin - Designing the Plugin API
+title: 构建 Capacitor 插件
+description: 构建 Capacitor 插件 - 设计插件 API
 contributors:
   - eric-horodyski
-sidebar_label: Designing the Plugin API
+sidebar_label: 设计插件 API
 slug: /plugins/tutorial/designing-the-plugin-api
 ---
 
-# Designing the Plugin API
+# 设计插件 API
 
-The first - and arguably most important - step when building a Capacitor plugin is to design the API. The API is the contract we will adhere to when writing each platform’s specific implementation.
+构建 Capacitor 插件的第一步——也可以说是最重要的一步——就是设计 API。这份 API 将作为我们在编写各平台具体实现时需要遵循的契约。
 
-We can define the plugin API using TypeScript; it will serve as our contract when implementing and provides the niceties that come with TypeScript, such as code completion and type checking.
+我们可以使用 TypeScript 来定义插件 API；它既是我们实现时的契约规范，又能提供 TypeScript 带来的便利，比如代码补全和类型检查。
 
-## Wait, do you even need a plugin for that?
+## 等等，你真的需要为此开发插件吗？
 
-Believe it or not, modern web browsers can do many things that we think of as “native functionality,” such as checking battery status, speech recognition, and, yes, screen orientation. It’s not uncommon when building Web Native applications to see functionality that once required plugins to access are now available as Web APIs.
+信不信由你，现代 Web 浏览器已经能实现许多我们认为是「原生功能」的操作，比如检查电池状态、语音识别，没错，甚至包括屏幕方向。在构建 Web 原生应用时，经常会发现一些曾经需要插件才能实现的功能，如今已经作为 Web API 提供。
 
-> Before building a plugin for a particular feature, we recommend checking out sites such as <a href="https://whatwebcando.today/" target="_blank">What Web Can Do Today</a> to see if the functionality you are looking for is already available as a Web API.
+> 在为特定功能开发插件之前，我们建议先查看 <a href="https://whatwebcando.today/" target="_blank">What Web Can Do Today</a> 这类网站，确认你需要的功能是否已经作为 Web API 提供。
 
-If screen orientation already has a Web API, why would we go out of our way to build one? Taking a look at the <a href="https://whatwebcando.today/screen-orientation.html" target="_blank">Screen Orientation Web API</a> we can see that iOS does not implement the API (as of this writing), which means we will need to provide the implementation ourselves. As it relates to Android, we could just use the Screen Orientation Web API when our app runs on the Android platform - but we will implement screen orientation functionality natively for educational purposes.
+既然屏幕方向已经有 Web API，为什么我们还要专门开发一个呢？查看 <a href="https://whatwebcando.today/screen-orientation.html" target="_blank">Screen Orientation Web API</a> 可以发现，iOS 目前（截至本文撰写时）尚未实现该 API，这意味着我们需要自行提供实现。至于 Android 平台，我们本可以直接使用 Web API——但为了教学目的，我们将通过原生方式实现屏幕方向功能。
 
-## Defining the ScreenOrientation API
+## 定义 ScreenOrientation API
 
-We might not be able to use the Screen Orientation Web API outright, but we can model our plugin’s API against it:
+虽然无法直接使用 Screen Orientation Web API，但我们可以参照它来设计插件 API：
 
-| Method Name        | Input Parameters                            | Return Value                                           |
-| ------------------ | ------------------------------------------- | ------------------------------------------------------ |
-| orientation        |                                             | `Promise<ScreenOrientationResult>`                   |
-| lock               | `options: OrientationLockOptions`      | `Promise<void>`                                        |
-| unlock             |                                             | `Promise<void>`                                        |
+| 方法名             | 输入参数                               | 返回值                                               |
+| ------------------ | -------------------------------------- | ---------------------------------------------------- |
+| orientation        |                                        | `Promise<ScreenOrientationResult>`                 |
+| lock               | `options: OrientationLockOptions` | `Promise<void>`                                      |
+| unlock             |                                        | `Promise<void>`                                      |
 | addListener        | `(orientation: ScreenOrientationResult)` | `Promise<PluginListenerHandle>` |
-| removeAllListeners |                                             | `Promise<void>`                                        |
+| removeAllListeners |                                        | `Promise<void>`                                      |
 
-There is an added advantage here; we can use the `OrientationType` type available through TypeScript’s existing DOM typings. `OrientationLockType` is no longer available since Typescript 5.2+, so we will be providing a definition for it.
+这里还有一个额外优势：我们可以使用 TypeScript 现有 DOM 类型定义中的 `OrientationType`。由于 TypeScript 5.2+ 不再提供 `OrientationLockType`，我们需要自行定义它。
 
-Let's set up a directory to hold our plugin API. Create a new subfolder `src/plugins/screen-orientation` and add the following files within:
+现在让我们创建一个目录来存放插件 API。新建子文件夹 `src/plugins/screen-orientation` 并在其中添加以下文件：
 
 - `definitions.ts`
 - `index.ts`
 
-Populate `definitions.ts` with the following code:
+在 `definitions.ts` 中填入以下代码：
 
 ```typescript
 import type { PluginListenerHandle } from '@capacitor/core';
 
 export interface OrientationLockOptions {
   /**
-   * Note: Typescript v5.2+ users should import OrientationLockType from @capacitor/screen-orientation.
+   * 注意：TypeScript v5.2+ 用户应从 @capacitor/screen-orientation 导入 OrientationLockType。
    */
   orientation: OrientationLockType;
 }
@@ -68,22 +68,22 @@ export interface ScreenOrientationResult {
 
 export interface ScreenOrientationPlugin {
   /**
-   * Returns the screen's current orientation.
+   * 返回屏幕当前方向。
    */
   orientation(): Promise<ScreenOrientationResult>;
 
   /**
-   * Locks the screen orientation.
+   * 锁定屏幕方向。
    */
   lock(options: OrientationLockOptions): Promise<void>;
 
   /**
-   * Unlocks the screen's orientation.
+   * 解锁屏幕方向。
    */
   unlock(): Promise<void>;
 
   /**
-   * Listens for screen orientation changes.
+   * 监听屏幕方向变化。
    */
   addListener(
     eventName: 'screenOrientationChange',
@@ -91,17 +91,17 @@ export interface ScreenOrientationPlugin {
   ): Promise<PluginListenerHandle>;
 
   /**
-   * Removes all listeners
+   * 移除所有监听器。
    */
   removeAllListeners(): Promise<void>;
 }
 ```
 
-## Registering the ScreenOrientation plugin
+## 注册 ScreenOrientation 插件
 
-In order to use the plugin in the Capacitor application, we need to register it using the `registerPlugin()` module exported from `@capacitor/core`.
+为了在 Capacitor 应用中使用该插件，我们需要使用从 `@capacitor/core` 导出的 `registerPlugin()` 模块进行注册。
 
-Populate `index.ts` with the following code:
+在 `index.ts` 中填入以下代码：
 
 ```typescript
 import { registerPlugin } from '@capacitor/core';
@@ -114,6 +114,6 @@ export * from './definitions';
 export { ScreenOrientation };
 ```
 
-The code above creates an object linked to our plugin's implementation code.
+以上代码创建了一个与插件实现代码相关联的对象。
 
-Designing the API is complete; let’s build a user interface that will call it. In doing so, we will make testing easier as we implement each platform integration. Our next step: using the plugin API.
+API 设计已完成，接下来我们将构建一个调用该 API 的用户界面。这样在实现各平台集成时，测试将会更加方便。下一步：使用插件 API。

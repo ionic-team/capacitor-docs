@@ -1,6 +1,6 @@
 ---
-title: CLI Command - cap open
-description: Capacitor CLI command - cap open
+title: CLI 命令 - cap open
+description: Capacitor CLI 命令 - cap open
 contributors:
   - dotNetkow
 sidebar_label: open
@@ -8,12 +8,13 @@ sidebar_label: open
 
 # Capacitor CLI - cap open
 
-Opens the native project workspace in the specified native IDE (Xcode for iOS, Android Studio for Android).
+在指定的原生 IDE（iOS 使用 Xcode，Android 使用 Android Studio）中打开原生项目工作区。
 
 ```bash
 npx cap open <platform>
 ```
 
-<strong>Inputs:</strong>
+<strong>输入参数：</strong>
 
-- `platform` (required): `android`, `ios`
+- `platform`（必需）：`android`、`ios`
+  

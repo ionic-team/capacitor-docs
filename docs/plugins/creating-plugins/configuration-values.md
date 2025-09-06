@@ -1,21 +1,21 @@
 ---
-title: Configuration Values
-description: Capacitor Plugin Configuration Values
+title: 配置值
+description: Capacitor 插件配置值
 contributors:
   - eric-horodyski
-sidebar_label: Configuration Values
+sidebar_label: 配置值
 slug: /plugins/configuration-values
 ---
 
-# Configuration Values
+# 配置值
 
-When developing plugins, you can provide configuration values developers can set that impact how the plugin behaves at runtime. An example of a plugin configuration value is `launchShowDuration`, available through the `@capacitor/splash-screen` plugin, which sets how long to show the splash screen before hiding.
+开发插件时，您可以提供一些配置值，让开发者能够设置这些值来影响插件在运行时的行为。插件配置值的一个例子是 `launchShowDuration`，通过 `@capacitor/splash-screen` 插件提供，用于设置在隐藏启动画面之前显示多长时间。
 
-Capacitor plugin configuration values get set as part of the `plugins` property of a Capacitor configuration file.
+Capacitor 插件配置值在 Capacitor 配置文件的 `plugins` 属性中进行设置。
 
-## Defining Configuration Values
+## 定义配置值
 
-A Capacitor plugin can access configuration values defined under the plugin's name in the `plugins` property of a Capacitor configuration file.
+Capacitor 插件可以访问在 Capacitor 配置文件的 `plugins` 属性中、插件名称下定义的配置值。
 
 ```typescript
 {
@@ -30,11 +30,11 @@ A Capacitor plugin can access configuration values defined under the plugin's na
 }
 ```
 
-In the example above, the native implementation of the MyCoolPlugin plugin can access the configured values of `style` and `iconColor`.
+在上面的示例中，MyCoolPlugin 插件的原生实现可以访问配置的 `style` 和 `iconColor` 值。
 
-Capacitor configuration files support TypeScript. While not required, providing typing information defining and documenting configuration values available for your plugin is recommended.
+Capacitor 配置文件支持 TypeScript。虽然不是必需的，但建议提供类型信息来定义和记录插件可用的配置值。
 
-You can provide typing for your plugin's configuration values by extending the `PluginsConfig` interface provided by `@capacitor/cli`.
+您可以通过扩展 `@capacitor/cli` 提供的 `PluginsConfig` 接口来为插件的配置值提供类型定义。
 
 ```typescript
 /// <reference types="@capacitor/cli" />
@@ -43,7 +43,7 @@ declare module '@capacitor/cli' {
   export interface PluginsConfig {
     MyCoolPlugin?: {
       /**
-       * Override the cool theme style if your app doesn't support light/dark theme changes.
+       * 如果您的应用不支持浅色/深色主题切换，请覆盖此酷炫主题样式。
        *
        * @since 1.0.0
        * @example "light"
@@ -51,7 +51,7 @@ declare module '@capacitor/cli' {
       style?: 'dark' | 'light';
 
       /**
-       * Color of the cool icon in hex format, #RRGGBB or #RRGGBBAA.
+       * 酷炫图标的颜色，十六进制格式，如 #RRGGBB 或 #RRGGBBAA。
        *
        * @since 1.0.0
        * @default #ffffff
@@ -63,7 +63,7 @@ declare module '@capacitor/cli' {
 }
 ```
 
-We recommend placing this typing definition within your plugin's `definitions.ts` file. For your plugin consumers to access this typing information, they must be using TypeScript for their Capacitor configuration file and need to add a reference to the plugin's types in `capacitor.config.ts`:
+建议将此类型定义放在插件的 `definitions.ts` 文件中。为了让插件使用者能够访问此类型信息，他们必须在 Capacitor 配置文件中使用 TypeScript，并在 `capacitor.config.ts` 中添加对插件类型的引用：
 
 ```typescript
 /// <reference types="@capacitor-community/my-cool-plugin" />
@@ -82,27 +82,27 @@ const config: CapacitorConfig = {
 export default config;
 ```
 
-## Accessing Configuration Values
+## 访问配置值
 
-The Capacitor API contains the `getConfig()` utility method to access plugin configuration values from the native implementation of your plugin.
+Capacitor API 包含 `getConfig()` 实用方法，用于从插件的原生实现访问插件配置值。
 
-For iOS:
+对于 iOS：
 
 ```swift
 if let style = getConfig().getString("style") {
-  // Set the style
+  // 设置样式
 }
 ```
 
-For Android:
+对于 Android：
 
 ```Java
 String style = getConfig().getString("style");
 if(style) {
-  // Set the style
+  // 设置样式
 }
 ```
 
-Please note that you cannot enforce plugin consumers to provide configuration values, and plugin consumers can pass invalid data (especially if they use JSON-based Capacitor configuration).
+请注意，您不能强制插件使用者提供配置值，插件使用者可能会传递无效数据（尤其是当他们使用基于 JSON 的 Capacitor 配置时）。
 
-As a plugin developer, it is up to you to provide adequate documentation surrounding your plugin’s configuration values and gracefully fall back if plugin consumers do not provide configuration values or provide them with invalid input.
+作为插件开发者，您需要为插件的配置值提供充分的文档说明，并在插件使用者未提供配置值或提供无效输入时提供优雅的降级处理。

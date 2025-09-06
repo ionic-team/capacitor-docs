@@ -1,6 +1,6 @@
 ---
-title: CLI Command - cap init
-description: Capacitor CLI command - cap init
+title: CLI 命令 - cap init
+description: Capacitor CLI 命令 - cap init
 contributors:
   - thomasvidas
 sidebar_label: init
@@ -8,17 +8,17 @@ sidebar_label: init
 
 # Capacitor CLI - cap init
 
-Initialize Capacitor configuration by providing an app name, app ID, and an optional web directory for the existing web app.
+通过提供应用名称、应用 ID 以及现有 Web 应用的可选 Web 目录，初始化 Capacitor 配置。
 
 ```bash
 npx cap init <appName> <appID>
 ```
 
-<strong>Inputs:</strong>
+<strong>输入参数：</strong>
 
-- `appName` (required): The application's name
-- `appID` (required): The application's App ID; something like `com.example.appname`
+- `appName`（必填）：应用程序名称
+- `appID`（必填）：应用程序 ID；格式类似 `com.example.appname`
 
-<strong>Options:</strong>
+<strong>选项：</strong>
 
-- `--web-dir <value>`: The existing web application to use with initialization
+- `--web-dir <value>`：用于初始化的现有 Web 应用目录

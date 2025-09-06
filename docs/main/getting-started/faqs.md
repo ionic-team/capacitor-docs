@@ -1,67 +1,66 @@
 ---
 title: Frequently Asked Questions
-description: Common Capacitor questions
+description: 常见 Capacitor 问题
 slug: /getting-started/faqs
-sidebar_label: FAQs
+sidebar_label: 常见问题
 ---
 
-# FAQs
+# 常见问题
 
-Below are a list of commonly asked Capacitor questions. If you don't find an answer here, check out [our forum](https://forum.ionicframework.com) or [our Discord](https://ionic.link/discord). Check out the sidebar for a list of frequently asked questions 👉
+以下是关于 Capacitor 的常见问题列表。如果这里没有找到答案，请查看[我们的论坛](https://forum.ionicframework.com)或[Discord 社区](https://ionic.link/discord)。也可以查看侧边栏中的常见问题列表 👉
 
-## What platforms does Capacitor support?
+## Capacitor 支持哪些平台？
 
-Capacitor can target virtually any device with our official and community platforms.
+Capacitor 能够通过官方及社区平台支持几乎所有设备。
 
-### Official Platforms
+### 官方平台
 
-Capacitor officially supports the following platforms:
+Capacitor 官方支持以下平台：
 - iOS 14+
 - Android 6+
-  - Requires Chrome WebView 60+
-- Modern Web Browsers
+  - 需要 Chrome WebView 60+
+- 现代网页浏览器
   - Chrome
   - Firefox
   - Safari
   - Edge
 
-### Community Platforms
+### 社区平台
 
-Capacitor also has community platforms to target cross platform desktop frameworks. The current community targets are the following.
+Capacitor 还提供面向跨平台桌面框架的社区平台。当前的社区目标平台包括：
 - Electron
   - https://github.com/capacitor-community/electron
 
-## Do I need to use Ionic Framework with Capacitor?
+## 我必须配合 Ionic Framework 使用 Capacitor 吗？
 
-No! You don't! Capacitor works with **any** web application, not just ones built with other Ionic tools. If you want a specific look and feel for your Capacitor app, and Ionic Framework isn't the right UI toolkit for you, you shouldn't feel forced to use it. There are plenty of apps in both app stores that utilize Capacitor and not Ionic Framework.
+不！完全不需要！Capacitor 可与**任何** Web 应用程序配合使用，不仅限于基于其他 Ionic 工具构建的应用。如果你希望为 Capacitor 应用定制特定的外观和感觉，而 Ionic Framework 不符合你的 UI 工具包需求，不必强制使用它。应用商店中有许多应用使用 Capacitor 但未采用 Ionic Framework。
 
-## Where can I find plugins for my Capacitor project?
+## 在哪里可以找到适用于 Capacitor 项目的插件？
 
-To find plugins for your project, you should check the following places in this order.
+要查找项目所需的插件，建议按以下顺序查看这些资源：
 
-### Capacitor Community GitHub ⚡
+### Capacitor 社区 GitHub ⚡
 
-The [Capacitor Community GitHub organization](https://github.com/capacitor-community) lists plugins that our excellent community of developers creates. They are Capacitor first plugins that are actively developed and should work in any Capacitor 3+ project. If you need a plugin, this should be one of the first places you look.
+[Capacitor 社区 GitHub 组织](https://github.com/capacitor-community)列出了我们优秀开发者社区创建的插件。这些是专为 Capacitor 设计的插件，积极维护，并适用于任何 Capacitor 3+ 项目。如果你需要插件，这里应是首选之一。
 
 ### Awesome Capacitor 😎
 
-Like many other [Awesome lists](https://github.com/sindresorhus/awesome), [Awesome Capacitor](https://github.com/riderx/awesome-capacitor) is a community-curated list of great Capacitor plugins. If you can't find an official or community plugin, chances are that someone has already made the plugin you are looking for here.
+与其他许多[Awesome 列表](https://github.com/sindresorhus/awesome)类似，[Awesome Capacitor](https://github.com/riderx/awesome-capacitor)是一个社区精选的优质 Capacitor 插件列表。如果找不到官方或社区插件，很可能有人已经在这里创建了你需要的插件。
 
 ### Project Fugu 🐡
 
-[Project Fugu](https://www.chromium.org/teams/web-capabilities-fugu/) is the Chromium Team's [tracker](https://fugu-tracker.web.app/#shipped) of web APIs that have been added to Chromium browsers. While some features may not be supported on both Android and iOS, features like [Web Share](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) and [ContactsManager (Android Only)](https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager), may replace `@capacitor/share` or `@capacitor-community/contacts` for your use case.
+[Project Fugu](https://www.chromium.org/teams/web-capabilities-fugu/)是 Chromium 团队跟踪已添加到 Chromium 浏览器的 Web API 的[追踪器](https://fugu-tracker.web.app/#shipped)。虽然某些功能可能不兼容 Android 和 iOS，但像[Web Share](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API)和[ContactsManager（仅限 Android）](https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager)这样的功能，可能替代 `@capacitor/share` 或 `@capacitor-community/contacts` 来满足你的需求。
 
-You can [Can I Use...?](https://caniuse.com) to check if you can use these features on Android and iOS _without_ needing any native plugins.
+你可以使用[Can I Use...?](https://caniuse.com)来检查这些功能是否可以在 Android 和 iOS 上使用，而**无需**任何原生插件。
 
-### Cordova Plugins 🔌
+### Cordova 插件 🔌
 
-Did you know Capacitor supports Cordova plugins? If you are migrating off of Cordova, or have a Cordova plugin that doesn't have a Capacitor equivalent, you can use most Cordova plugins directly in Capacitor. You can [read our guide](https://capacitorjs.com/docs/plugins/cordova) on how to use Cordova plugins in Capacitor.
+你知道吗？Capacitor 支持 Cordova 插件。如果你正在从 Cordova 迁移，或者有一个没有等效 Capacitor 插件的 Cordova 插件，你可以直接在 Capacitor 中使用大多数 Cordova 插件。可以[阅读我们的指南](https://capacitorjs.com/docs/plugins/cordova)了解如何在 Capacitor 中使用 Cordova 插件。
 
-## Can I build iOS apps without a Mac with Capacitor?
+## 没有 Mac 可以用 Capacitor 构建 iOS 应用吗？
 
-Short answer, no. The longer answer is that while you can use cloud services like [Ionic AppFlow](https://ionic.io/appflow), you won't be able to test your application on a device or simulator. You should always be sure to test your application with a physical device to make sure that your Capacitor application is usable to people with Apple products.
+简短回答：不行。更详细的解释是，虽然你可以使用像[Ionic AppFlow](https://ionic.io/appflow)这样的云服务，但你无法在设备或模拟器上测试应用。你应该始终确保使用物理设备测试应用，以保证 Capacitor 应用对苹果产品用户是可用的。
 
-## Why do I get a blank screen when running on an Android emulator?
+## 为什么在 Android 模拟器上运行时出现空白屏幕？
 
-Capacitor requires Android 6 as well as a WebView version of 60 or higher. If you create an Android 6 or 7 emulator for example, the newest version of the WebView won't be installed, and you'll get a blank white screen. To get around this, you can install a newer Android emulator for testing your application.
-
+Capacitor 需要 Android 6 及以上版本，并且 WebView 版本需为 60 或更高。例如，如果你创建了一个 Android 6 或 7 的模拟器，可能不会安装最新版本的 WebView，导致出现空白屏幕。解决方法是安装一个较新的 Android 模拟器来测试你的应用。

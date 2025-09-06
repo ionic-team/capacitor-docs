@@ -1,52 +1,52 @@
 ---
 title: Environment Setup
-description: Setting up a development environment for Capacitor
+description: 设置 Capacitor 的开发环境
 slug: /getting-started/environment-setup
 ---
 
-# Environment Setup
+# 环境设置
 
-Capacitor has three officially supported application targets: Android, iOS, and Web. In order to create applications for all three platforms, you'll need to install all of the following dependencies. If you are not targeting one of the native mobile targets, you can skip the associated section.
+Capacitor 支持三个官方应用目标平台：Android、iOS 和 Web。要开发所有三个平台的应用，你需要安装以下所有依赖项。如果不需要针对某个原生移动平台，可以跳过相关部分。
 
-## Core Requirements
+## 核心要求
 
-In order to develop any application with Capacitor, you will need NodeJS 20 or higher installed. You can install Node by using the installer on [the Node website](https://nodejs.org), using [Volta](https://volta.sh/): a JavaScript tools manager, or installing it with a package manager like [homebrew](https://brew.sh/), or [Chocolatey](https://chocolatey.org/).
+要使用 Capacitor 开发任何应用程序，你需要安装 NodeJS 20 或更高版本。可以通过以下方式安装 Node：使用 [Node 官网](https://nodejs.org)的安装程序、使用 JavaScript 工具管理器 [Volta](https://volta.sh/)，或通过 [homebrew](https://brew.sh/) 或 [Chocolatey](https://chocolatey.org/) 等包管理器安装。
 
-Once you have installed Node, open your terminal of choice and type in the following command to make sure node is properly installed
+安装 Node 后，打开终端并输入以下命令以确保 Node 已正确安装：
 
 ```bash
 node --version
 # v20.9.0
 ```
 
-With Node installed, you can get started with creating Progressive Web Applications (PWA) with Capacitor.
+安装 Node 后，你就可以开始使用 Capacitor 开发渐进式 Web 应用（PWA）。
 
-## iOS Requirements
+## iOS 要求
 
-To build iOS apps, you will need **macOS**. While there are solutions like [Ionic Appflow](http://ionicframework.com/appflow) that can be used to perform iOS cloud builds if you don't have a Mac, it is highly recommended to have the tools available to you locally in order to properly test your Capacitor application.
+要构建 iOS 应用，你需要 **macOS** 系统。虽然如果你没有 Mac，可以使用 [Ionic Appflow](http://ionicframework.com/appflow) 等解决方案进行 iOS 云构建，但强烈建议在本地安装相关工具，以便正确测试 Capacitor 应用。
 
-In order to develop iOS applications using Capacitor, you will need four additional dependencies:
+要使用 Capacitor 开发 iOS 应用，你需要四个额外的依赖项：
 
 - Xcode
-- Xcode Command Line Tools
+- Xcode 命令行工具
 - Homebrew
 - Cocoapods
 
-Once you've installed the core requirements, as well as Xcode, Xcode Command Line Tools, and Cocoapods, you'll be able to create both iOS applications and PWAs.
+安装完核心要求以及 Xcode、Xcode 命令行工具和 Cocoapods 后，你将能够创建 iOS 应用和 PWA。
 
 ### Xcode
 
-Xcode is Apple's IDE for creating native macOS, iOS, and iPadOS applications. You can install Xcode by [using the Apple App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) on your Mac. Capacitor 7 requires a minimum of Xcode 16.0.
+Xcode 是 Apple 用于创建原生 macOS、iOS 和 iPadOS 应用的 IDE。你可以通过 [Apple App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) 在 Mac 上安装 Xcode。Capacitor 7 最低要求 Xcode 16.0。
 
-### Xcode Command Line Tools
+### Xcode 命令行工具
 
-The Xcode command line tools are additional tools not included with the core of Xcode that are required for building and testing your application. Once Xcode has been installed, you can install the Xcode Command Line Tools by running the following command in your terminal:
+Xcode 命令行工具是 Xcode 核心未包含的附加工具，用于构建和测试应用。安装 Xcode 后，可以在终端中运行以下命令来安装 Xcode 命令行工具：
 
 ```bash
 xcode-select --install
 ```
 
-After inputting your password and waiting for a few minutes for the packages to install, you can verify that the tools are installed by running the following command:
+输入密码并等待几分钟安装完成后，可以通过运行以下命令验证工具是否已安装：
 
 ```bash
 xcode-select -p
@@ -55,70 +55,70 @@ xcode-select -p
 
 ### Homebrew
 
-Homebrew is a package manager for macOS packages. You need to install it in order to install CocoaPods for both Intel and Apple Silicon Macs.
+Homebrew 是 macOS 的包管理器。你需要安装它才能为 Intel 和 Apple Silicon 芯片的 Mac 安装 CocoaPods。
 
-To install Homebrew, run the following bash command:
+要安装 Homebrew，请运行以下 bash 命令：
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 :::info
-Don't just trust us! This is how [brew.sh](https://brew.sh) recommends installing Homebrew.
+别只听我们的！这是 [brew.sh](https://brew.sh) 推荐的 Homebrew 安装方式。
 :::
 
-If you do not want to install Homebrew, alternative, but not recommended, instructions can be found below.
+如果不想安装 Homebrew，可以在下方找到替代（但不推荐）的安装说明。
 
 ### CocoaPods
 
-Cocoapods is an iOS dependency manager that Capacitor uses to install and manage native dependencies for your iOS project. You can install [CocoaPods](https://cocoapods.org/) by running the following command in your terminal
+CocoaPods 是 iOS 的依赖管理器，Capacitor 使用它来安装和管理 iOS 项目的原生依赖项。你可以在终端中运行以下命令安装 [CocoaPods](https://cocoapods.org/)：
 
 ```bash
 brew install cocoapods
 ```
 
-You can verify that CocoaPods has installed correctly by running the following command.
+可以通过运行以下命令验证 CocoaPods 是否已正确安装：
 
 ```bash
 pod --version
 # 1.12.1
 ```
 
-#### Installing CocoaPods without Homebrew
+#### 不使用 Homebrew 安装 CocoaPods
 
-You can install CocoaPods directly with Ruby Gem. To install it, you can run the following command.
+你可以直接使用 Ruby Gem 安装 CocoaPods。运行以下命令进行安装：
+
 ```
 sudo gem install cocoapods
 ```
 
-For running without sudo see [CocoaPods sudo-less installation docs](https://guides.cocoapods.org/using/getting-started.html#sudo-less-installation)
+如需无需 sudo 权限运行，请参阅 [CocoaPods 无 sudo 安装文档](https://guides.cocoapods.org/using/getting-started.html#sudo-less-installation)
 
-## Android Requirements
+## Android 要求
 
-In order to develop Android applications using Capacitor, you will need two additional dependencies:
+要使用 Capacitor 开发 Android 应用，你需要两个额外的依赖项：
 
 - Android Studio
-- An Android SDK installation
+- Android SDK 安装
 
 :::note
-You do not need to separately install the Java Development Kit (JDK). Android Studio
-will automatically install the proper JDK for you.
+你无需单独安装 Java 开发工具包（JDK）。Android Studio 会自动为你安装合适的 JDK。
 :::
 
-Once you've installed the core requirements, as well as an Android SDK with Android Studio, you'll be able to create both Android applications and PWAs.
+安装完核心要求以及 Android Studio 和 Android SDK 后，你将能够创建 Android 应用和 PWA。
 
 ### Android Studio
 
-Android Studio is Google's IDE for creating native Android applications. You can install Android Studio by going to the [Android Studio download page](https://developer.android.com/studio). Capacitor 7 requires a minimum of Android Studio 2024.2.1.
+Android Studio 是 Google 用于创建原生 Android 应用的 IDE。你可以访问 [Android Studio 下载页面](https://developer.android.com/studio)进行安装。Capacitor 7 最低要求 Android Studio 2024.2.1。
 
 ### Android SDK
 
-Once Android Studio has been installed, you need to install an Android SDK package.
+安装 Android Studio 后，你需要安装 Android SDK 包。
 
-Developing Android apps requires some Android SDK packages to be installed. Make sure to install the Android SDK Tools, and a version of the Android SDK Platforms for API 23 or greater.
+开发 Android 应用需要安装一些 Android SDK 包。确保安装 Android SDK Tools 以及 API 23 或更高版本的 Android SDK Platforms。
 
-In Android Studio, open **Tools -> SDK Manager** from the menu and install the platform versions you'd like to test with in the **SDK Platforms** tab:
+在 Android Studio 中，从菜单打开 **Tools -> SDK Manager**，然后在 **SDK Platforms** 选项卡中安装你想要测试的平台版本：
 
 ![SDK Platforms](/img/v6/docs/android/sdk-platforms.png)
 
-To get started, you only need to install one API version. In the above image, the SDKs for Android 9 (API 28) and Android 10 (API 29) are installed. The latest stable version is Android 15 (API 35).
+刚开始时，你只需要安装一个 API 版本。上图中安装了 Android 9 (API 28) 和 Android 10 (API 29) 的 SDK。最新稳定版本是 Android 15 (API 35)。

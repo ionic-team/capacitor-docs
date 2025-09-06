@@ -1,7 +1,7 @@
 ---
-title: iOS Troubleshooting Guide
-sidebar_label: Troubleshooting
-description: iOS Troubleshooting Guide
+title: iOS 疑难解答指南
+sidebar_label: 疑难解答
+description: iOS 疑难解答指南
 contributors:
   - dotNetkow
   - mlynch
@@ -9,70 +9,69 @@ contributors:
 slug: /ios/troubleshooting
 ---
 
-# iOS Troubleshooting Guide
+# iOS 疑难解答指南
 
-Creating a 100% perfect native management tool is nearly impossible, and sooner or later you'll run into various issues with some part of the iOS workflow.
+要打造一个百分之百完美的原生管理工具几乎是不可能的，在 iOS 工作流程中，你迟早会遇到各种问题。
 
-This guide attempts to document common iOS/Xcode issues with possible solutions.
+本指南旨在记录常见的 iOS/Xcode 问题及其可能的解决方案。
 
-## iOS Toolbox
+## iOS 工具箱
 
-Every iOS developer learns a few common techniques for debugging iOS issues, and you should incorporate these into your workflow:
+每位 iOS 开发者都会掌握一些常见的调试技巧，你应该将这些方法融入你的工作流程中：
 
-### Google, Google, Google
+### 谷歌搜索，再搜索，再搜索
 
-Any time you encounter an issue with iOS, or Xcode, your first step should be to copy and paste the error into a Google search.
+每当遇到 iOS 或 Xcode 的问题时，你的第一步应该是将错误信息复制粘贴到谷歌搜索中。
 
-Capacitor uses the standard iOS toolchain, so chances are if you run into something, many iOS developers have as well, and there's a solution out there.
+Capacitor 使用的是标准的 iOS 工具链，因此很可能你遇到的问题，许多 iOS 开发者也曾遇到过，并且已有解决方案。
 
-It could be as simple as updating a dependency, running clean, or removing Derived Data.
+可能只需要更新依赖、清理项目或删除 Derived Data 就能解决。
 
-### Clean/Rebuild
+### 清理与重建
 
-Cleaning and rebuilding can fix a number of build issues. Navigate to Product -> Clean Build Folder in the Xcode menu to clean your current build.
+清理并重新构建可以解决许多构建问题。在 Xcode 菜单中导航至 Product -> Clean Build Folder 来清理当前的构建。
 
-### Removing Derived Data
+### 删除 Derived Data
 
-Sometimes, Xcode clings to old, outdated build artifacts. To start fresh, you'll need to delete any Derived Data on disk.
+有时，Xcode 会保留旧的、过时的构建产物。要重新开始，你需要删除磁盘上的所有 Derived Data。
 
-To do this, open Xcode Preferences, choose the Locations tab, and click the small arrow next to your Derived Data path:
+为此，打开 Xcode 偏好设置，选择 Locations 标签页，然后点击 Derived Data 路径旁边的小箭头：
 
 ![Locations](../../../static/img/v6/docs/ios/location-prefs.png)
 
-This opens a Finder window to the location of Xcode's temporary Derived Data.
+这会打开一个 Finder 窗口，显示 Xcode 临时 Derived Data 的位置。
 
-Next, select all items in that directory and delete:
+接下来，选择该目录中的所有项目并删除：
 
 ![Deleting Derived Data](../../../static/img/v6/docs/ios/deleting-derived-data.png)
 
-Finally, do a rebuild in Xcode.
+最后，在 Xcode 中重新构建。
 
-## Error: Sandbox not in sync with the Podfile.lock
+## 错误：沙盒与 Podfile.lock 不同步
 
-This error can happen if CocoaPods hasn't been able to run to install your dependencies.
+如果 CocoaPods 未能运行以安装依赖项，可能会发生此错误。
 
-Run this to update your pods:
+运行以下命令来更新你的 pods：
 
 ```bash
 npx cap update ios
 ```
 
-Perform a new build after running this command.
+运行此命令后执行新的构建。
 
-## Indexing FOREVER
+## 无限索引
 
-Xcode sometimes gets stuck indexing forever. This unfortunate situation looks like this:
+Xcode 有时会陷入无限索引的状态。这种不幸的情况看起来像这样：
 
 ![Xcode indexing](../../../static/img/v6/docs/ios/indexing.png)
 
-The only solution is to Force Close Xcode (using Activity Monitor) and start it up again.
+唯一的解决方案是强制关闭 Xcode（使用活动监视器）并重新启动。
 
-## CocoaPods: Failed to connect to GitHub
+## CocoaPods：无法连接到 GitHub
 
-This error can happen on Macs with an old version of openssl and ruby installed, since GitHub
-restricted the allowed cryptographic protocols when accessing repos.
+在安装了旧版本 openssl 和 ruby 的 Mac 上可能会出现此错误，因为 GitHub 在访问仓库时限制了允许的加密协议。
 
-The solution is to update openssl and update Ruby:
+解决方案是更新 openssl 和 Ruby：
 
 ```bash
 brew install openssl
@@ -81,18 +80,18 @@ brew install ruby
 brew link --overwrite ruby
 ```
 
-Finally, make sure your `PATH` environment variable does not put `/usr/local/bin` after `$PATH`, but rather _before_ it.
+最后，确保你的 `PATH` 环境变量没有将 `/usr/local/bin` 放在 `$PATH` 之后，而是放在其之前。
 
-See [this StackOverflow issue](https://stackoverflow.com/questions/38993527/cocoapods-failed-to-connect-to-github-to-update-the-cocoapods-specs-specs-repo/48996424#48996424) for other possible solutions to this problem.
+关于此问题的其他可能解决方案，请参阅[此 StackOverflow 问题](https://stackoverflow.com/questions/38993527/cocoapods-failed-to-connect-to-github-to-update-the-cocoapods-specs-specs-repo/48996424#48996424)。
 
-## Plugin Not Implemented
+## 插件未实现
 
-On iOS, this can happen if Capacitor doesn't find the plugins or can't inject its code into the WebView.
+在 iOS 上，如果 Capacitor 找不到插件或无法将其代码注入到 WebView 中，可能会发生此问题。
 
-First of all, make sure the plugin is installed and appears in the `package.json`.
+首先，确保插件已安装并出现在 `package.json` 中。
 
-Then, run `npx cap sync ios`.
+然后，运行 `npx cap sync ios`。
 
-Finally, check that the plugin is in `ios/App/Podfile`. If the plugin is not listed, make sure your Podfile looks like [this one](https://github.com/ionic-team/capacitor/blob/main/ios-pods-template/App/Podfile) and run `npx cap sync` again.
+最后，检查插件是否在 `ios/App/Podfile` 中。如果插件未列出，请确保你的 Podfile 看起来像[这个示例](https://github.com/ionic-team/capacitor/blob/main/ios-pods-template/App/Podfile)，并再次运行 `npx cap sync`。
 
-If still getting the "Plugin not implemented" error, make sure you don't have `WKAppBoundDomains` key in `ios/App/App/Info.plist`, that prevents Capacitor's and Plugins code from injecting. Remove the key if not needed, or if it can't be removed, add `limitsNavigationsToAppBoundDomains` to your capacitor config file with `true` value inside the `ios` object.
+如果仍然遇到“插件未实现”错误，请确保 `ios/App/App/Info.plist` 中没有 `WKAppBoundDomains` 键，这会阻止 Capacitor 和插件代码的注入。如果不需要，请移除该键；如果无法移除，请在 capacitor 配置文件的 `ios` 对象中添加 `limitsNavigationsToAppBoundDomains` 并设置为 `true`。

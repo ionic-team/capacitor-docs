@@ -1,24 +1,24 @@
 ---
 title: Capacitor iOS API
-description: The API for Capacitor on iOS
+description: Capacitor 在 iOS 平台上的 API 接口
 slug: /core-apis/ios
 ---
 
 # Capacitor iOS API
 
-Capacitor iOS is the native runtime that powers Capacitor apps on iOS.
+Capacitor iOS 是为 Capacitor 应用提供支持的 iOS 原生运行时环境。
 
-## Bridge
+## 桥接器（Bridge）
 
-The iOS bridge is the heart of the Capacitor iOS library. There are several properties and methods available on the bridge which provide information or change behavior.
+iOS 桥接器是 Capacitor iOS 库的核心组件。桥接器提供了多个属性和方法，用于获取信息或改变行为。
 
-When registered with Capacitor, plugins have a weak reference to the bridge:
+当插件在 Capacitor 中注册后，会持有一个对桥接器的弱引用：
 
 ```swift
 self.bridge?
 ```
 
-> If your method requires the bridge, you can use a guard to unwrap it and perform an early exit:
+> 如果你的方法需要使用桥接器，可以使用 guard 语句进行解包并提前返回：
 >
 > ```swift
 > guard let bridge = self.bridge else { return }
@@ -32,9 +32,9 @@ self.bridge?
 var viewController: UIViewController? { get }
 ```
 
-This property contains the main view controller for Capacitor, which can be used to present native views over the app.
+此属性包含 Capacitor 的主视图控制器，可用于在应用上层展示原生视图。
 
-Examples:
+示例：
 
 ```swift
 DispatchQueue.main.async {
@@ -42,7 +42,7 @@ DispatchQueue.main.async {
 }
 ```
 
-On iPad devices it is possible to present popovers:
+在 iPad 设备上可以展示弹出框：
 
 ```swift
 self.setCenteredPopover(ourCustomViewController)
@@ -57,7 +57,7 @@ self.bridge.viewController.present(ourCustomViewController, animated: true, comp
 var config: InstanceConfiguration { get }
 ```
 
-This property contains the configuration object known to the Capacitor runtime.
+此属性包含 Capacitor 运行时已知的配置对象。
 
 ---
 
@@ -68,16 +68,16 @@ func triggerJSEvent(eventName: String, target: String)
 func triggerJSEvent(eventName: String, target: String, data: String)
 ```
 
-Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](/plugins/creating-plugins/ios-guide.md#plugin-events) instead.
+在 JavaScript 的 [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)（如 `window` 或 `document`）上触发事件。如果可能，建议优先使用[插件事件](/plugins/creating-plugins/ios-guide.md#plugin-events)。
 
-Examples:
+示例：
 
 ```swift
 bridge.triggerJSEvent(eventName: "myCustomEvent", target: "window")
 bridge.triggerJSEvent(eventName: "myCustomEvent", target: "document", data: "{ 'dataKey': 'dataValue' }")
 ```
 
-Note: `data` must be a serialized JSON string value.
+注意：`data` 必须是一个序列化的 JSON 字符串值。
 
 ---
 
@@ -87,12 +87,12 @@ Note: `data` must be a serialized JSON string value.
 func localURL(fromWebURL webURL: URL?) -> URL?
 ```
 
-Translate a URL from the web view into a file URL for native iOS.
+将来自 Web 视图的 URL 转换为适用于 iOS 原生的文件 URL。
 
-The web view may be handling several different types of URLs:
+Web 视图可能处理多种不同类型的 URL：
 
-- `res://` (shortcut scheme to web assets)
-- `file://` (fully qualified URL to file on the local device)
+- `res://`（指向 Web 资源的快捷方案）
+- `file://`（指向本地设备上文件的完整限定 URL）
 
 ---
 
@@ -102,16 +102,16 @@ The web view may be handling several different types of URLs:
 func portablePath(fromLocalURL localURL: URL?) -> URL?
 ```
 
-Translate a file URL for native iOS into a URL to load in the web view.
+将 iOS 原生的文件 URL 转换为可在 Web 视图中加载的 URL。
 
 ---
 
-## Passing data
+## 数据传递
 
-Notes on how to work with data that is passed between environments can be [found here](/main/reference/core-apis/data-types.md#ios).
+关于在不同环境间传递数据的工作方式说明，可[在此查看](/main/reference/core-apis/data-types.md#ios)。
 
 ---
 
-## Saving CAPPluginCall
+## 保存 CAPPluginCall
 
-Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/main/reference/core-apis/saving-calls.md).
+关于为异步或重复操作持久化插件调用的说明，可[在此查看](/main/reference/core-apis/saving-calls.md)。
