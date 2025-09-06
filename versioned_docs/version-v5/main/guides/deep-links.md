@@ -206,19 +206,40 @@ Next, create the site association file (`apple-app-site-association`).
 
 An example of the `apple-app-site-association` file is below. Be sure to replace `TEAMID.BUNDLEID` with your own IDs (example: `8L65AZE66A.com.netkosoft.beerswift`).
 
+
+
 ```json
-{
-  "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "TEAMID.BUNDLEID",
-        "paths": ["*"]
-      }
-    ]
-  }
+"applinks": {
+  "details": [
+    {
+      "appIDs": [ "ABCDE12345.com.example.app", "ABCDE12345.com.example.app2" ],
+      "components": [
+        {
+          "#": "no_universal_links",
+          "exclude": true,
+          "comment": "Matches any URL whose fragment equals no_universal_links and instructs the system not to open it as a universal link"
+        },
+        {
+          "/": "/buy/*",
+          "comment": "Matches any URL whose path starts with /buy/"
+        },
+        {
+          "/": "/help/website/*",
+          "exclude": true,
+          "comment": "Matches any URL whose path starts with /help/website/ and instructs the system not to open it as a universal link"
+        },
+        {
+          "/": "/help/*",
+          "?": { "articleNumber": "????" },
+          "comment": "Matches any URL whose path starts with /help/ and that has a query item with name 'articleNumber' and a value of exactly 4 characters"
+        }
+      ]
+    }
+  ]
 }
 ```
+
+Read more [in the apple docs](https://developer.apple.com/documentation/bundleresources/applinks)
 
 Next, upload the file to your web site (hosted on HTTPS), then validate that it's configured correctly using Apple's tool [here](https://search.developer.apple.com/appsearch-validation-tool/). The URL should follow this format: https://beerswift.app/.well-known/apple-app-site-association
 
