@@ -19,7 +19,7 @@ We've tried our best to make sure you don't have to change much about how you wo
 
 When a Capacitor project is using SPM we use a 'Base SPM' package that will serve as the place that references all of your projects dependencies:
 
-![Base SPM Picture](../../../static/img/v6/docs/ios/spm/base-spm.png)
+![Base SPM Picture](/img/v6/docs/ios/spm/base-spm.png)
 
 The Capacitor CLI will modify the CapApp-SPM package when you sync new plugins. It is important you do not touch the contents here because the CLI can and will change things.
 
@@ -27,7 +27,7 @@ The Capacitor CLI will modify the CapApp-SPM package when you sync new plugins. 
 
 First we'll start with our normal `npm init @capacitor/app@latest`:
 
-![Demo Step 1](../../../static/img/v6/docs/ios/spm/demo-step1.png)
+![Demo Step 1](/img/v6/docs/ios/spm/demo-step1.png)
 
 Now we want to add the iOS platform to our project:
 
@@ -47,7 +47,7 @@ Now you can use `npx cap open ios` to open the iOS project and run your app from
 
 ### Add and use a Capacitor Plugin with SPM
 
-So let's add a plugin to this project and do something with that plugin. 
+So let's add a plugin to this project and do something with that plugin.
 
 Start with installing the Capacitor App plugin:
 
@@ -65,7 +65,7 @@ First, ensure you have a backup of the current state of your project, either in 
 
 ### Deleting your iOS Directory
 
-If you **have not manually changed your Xcode Project at all**, one option to migrate is to delete the `ios` directory and then run `npx cap add ios --packagemanager SPM`. This will remove the CocoaPods template project and replace it with the SPM template project.  
+If you **have not manually changed your Xcode Project at all**, one option to migrate is to delete the `ios` directory and then run `npx cap add ios --packagemanager SPM`. This will remove the CocoaPods template project and replace it with the SPM template project.
 
 ### Using our migration tool
 
@@ -74,49 +74,50 @@ The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package 
 To start, run `npx cap spm-migration-assistant` in the root of your project.
 
 This tool will:
-  - Run `pod deintegrate` removing CocoaPods
-  - Delete the `Podfile`, `App.xcworkspace`, and `Podfile.lock`
-  - Create a `CapApp-SPM` directory with the needed files
-  - Generate a `Package.swift` from your plugins, and warn you if any can't be included.
-  - Add a `debug.xcconfig` to your ios project directory
+
+- Run `pod deintegrate` removing CocoaPods
+- Delete the `Podfile`, `App.xcworkspace`, and `Podfile.lock`
+- Create a `CapApp-SPM` directory with the needed files
+- Generate a `Package.swift` from your plugins, and warn you if any can't be included.
+- Add a `debug.xcconfig` to your ios project directory
 
 Then run `npx cap open ios` and you should see something similar to this:
 
-![Migrate Step 1](../../../static/img/spm/xcode-step-1.png)
+![Migrate Step 1](/img/spm/xcode-step-1.png)
 
 Highlight App, and Select the Package Dependencies tab, and on this page press the + symbol to add a dependency:
 
-![Migrate Step 2](../../../static/img/spm/xcode-step-2.png)
+![Migrate Step 2](/img/spm/xcode-step-2.png)
 
 You should see something similar to the below - select Add Local... from the dialog:
 
-![Migrate Step 3](../../../static/img/spm/xcode-step-3.png)
+![Migrate Step 3](/img/spm/xcode-step-3.png)
 
 Select CapApp-SPM in this dialog and click Add Package:
 
-![Migrate Step 4](../../../static/img/spm/xcode-step-4.png)
+![Migrate Step 4](/img/spm/xcode-step-4.png)
 
-Click Add Package again when this screen shows up: 
+Click Add Package again when this screen shows up:
 
-![Migrate Step 5](../../../static/img/spm/xcode-step-5.png)
+![Migrate Step 5](/img/spm/xcode-step-5.png)
 
 When you are done, you should see a screen like this. Now, move onto the next section about Adding `debug.xconfig`
 
-![Migrate Step 6](../../../static/img/spm/xcode-step-6.png)
+![Migrate Step 6](/img/spm/xcode-step-6.png)
 
-#### Adding debug.xcconfig to project 
+#### Adding debug.xcconfig to project
 
 From the app info tab, select Add Configuration file...
 
-![XCConfig Step 1](../../../static/img/spm/xcconfig-step1.png)
+![XCConfig Step 1](/img/spm/xcconfig-step1.png)
 
 Then select the file called `debug.xcconfig`
 
-![XCConfig Step 2](../../../static/img/spm/xcconfig-step2.png)
+![XCConfig Step 2](/img/spm/xcconfig-step2.png)
 
 Finally select xcconfig as your selection
 
-![XCConfig Step 3](../../../static/img/spm/xcconfig-step3.png)
+![XCConfig Step 3](/img/spm/xcconfig-step3.png)
 
 At this point you're done and can build and work as normal.
 
@@ -148,11 +149,10 @@ This tool will do the following changes:
   - `verify:ios` will be changed to `xcodebuild -scheme YourPluginName -destination generic/platform=iOS` to allow it to continue to work as you expect.
 - Your plugin podspec will be changed so that `s.source_files` now points to the `Sources` directory rather than the `Plugin` directory.
 
-
 See the documentation in the repository at [capacitor-plugin-converter](https://github.com/ionic-team/capacitor-plugin-converter) for more.
 
 ### Troubleshooting
 
 After adding plugins try to 'reset package caches' in Xcode:
 
-![Demo Step 1](../../../static/img/v6/docs/ios/spm/reset-package.png)
+![Demo Step 1](/img/v6/docs/ios/spm/reset-package.png)

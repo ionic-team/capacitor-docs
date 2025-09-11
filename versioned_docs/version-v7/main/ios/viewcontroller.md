@@ -21,14 +21,14 @@ If you do need to create a custom subclass, there are a couple of steps to get s
 
 First, create a `MyViewController.swift` file by [opening Xcode](/main/ios/index.md#opening-the-ios-project), right-clicking on the **App** group (under the **App** target), selecting **New File...** from the context menu, choosing **Cocoa Touch Class** in the window, set the **Subclass of:** to `UIViewController` in the next screen, and save the file.
 
-![New ViewController in Xcode](../../../static/img/v6/docs/ios/xcode-create-viewcontroller.png)
-![Name ViewController in Xcode](../../../static/img/v6/docs/ios/xcode-name-viewcontroller.png)
+![New ViewController in Xcode](/img/v6/docs/ios/xcode-create-viewcontroller.png)
+![Name ViewController in Xcode](/img/v6/docs/ios/xcode-name-viewcontroller.png)
 
 ### Edit `Main.storyboard`
 
 Next, select the `Main.storyboard` file in the Project Navigator, select the **Bridge View Controller** in the **Bridge View Controller Scene**, select the **Identity Inspector** on the right, and change the name of the custom class to `MyViewController`.
 
-![Editing Storyboard in Xcode](../../../static/img/v6/docs/ios/xcode-edit-storyboard.png)
+![Editing Storyboard in Xcode](/img/v6/docs/ios/xcode-edit-storyboard.png)
 
 ### Edit `MyViewController.swift`
 
