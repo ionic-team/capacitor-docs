@@ -160,8 +160,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/main/src/definitions.ts',
   },
   {
     id: 'http',
