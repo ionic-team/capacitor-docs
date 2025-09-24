@@ -187,8 +187,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/main/src/definitions.ts',
   },
   {
     id: 'local-notifications',
