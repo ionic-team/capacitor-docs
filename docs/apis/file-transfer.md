@@ -1,8 +1,8 @@
 ---
 title: File Transfer Capacitor Plugin API
 description: The FileTransfer API provides mechanisms for downloading and uploading files.
-custom_edit_url: https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-file-transfer/blob/next/packages/capacitor-plugin/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-file-transfer/next/main/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: File Transfer
 ---
 
