@@ -58,6 +58,7 @@ const pluginApis = [
   },
   {
     id: 'inappbrowser',
+    title: 'InAppBrowser',
     editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
   },
@@ -99,7 +100,8 @@ async function buildPluginApiDocs(plugin) {
 
 function createApiPage(plugin, readme, pkgJson) {
   const pluginId = isString(plugin) ? plugin : plugin.id;
-  const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
+  const pluginName = isString(plugin) || !plugin.title ? toTitleCase(pluginId) : plugin.title
+  const title = `${pluginName} Capacitor Plugin API`;
   const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = isString(plugin)
     ? `https://github.com/ionic-team/capacitor-plugins/blob/7.x/${pluginId}/README.md`
@@ -107,7 +109,7 @@ function createApiPage(plugin, readme, pkgJson) {
   const editApiUrl = isString(plugin)
     ? `https://github.com/ionic-team/capacitor-plugins/blob/7.x/${pluginId}/src/definitions.ts`
     : plugin.editApiUrl;
-  const sidebarLabel = toTitleCase(pluginId);
+  const sidebarLabel = pluginName;
 
   // // escape right curly brace in inline code blocks for MDX v3 compatability
   // const regexp = /[<|(&lt;)]code>(.*)[<|(&lt;)]\/code>/g;
