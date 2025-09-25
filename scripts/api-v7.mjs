@@ -15,25 +15,66 @@ const pluginApis = [
     editApiUrl:
       'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
+  {
+    id: 'barcode-scanner',
+    editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
+  },
   'browser',
   'camera',
   'clipboard',
   'device',
   'dialog',
-  'filesystem',
-  'geolocation',
+  {
+    id: 'filesystem',
+    editUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
+  {
+    id: 'file-transfer',
+    editUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
+  {
+    id: 'file-viewer',
+    editUrl: 'https://github.com/ionic-team/capacitor-file-viewer/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-file-viewer/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
+  {
+    id: 'geolocation',
+    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
   {
     id: 'google-maps',
     editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
     editApiUrl:
       'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
   },
-  'haptics',
-  'keyboard',
+  {
+    id: 'haptics',
+    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/haptics/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/haptics/src/definitions.ts',
+  },
+  {
+    id: 'inappbrowser',
+    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
+  },
+  {
+    id: 'keyboard',
+    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/keyboard/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/keyboard/src/definitions.ts',
+  },
   'local-notifications',
   'motion',
   'network',
   'preferences',
+  {
+    id: 'privacy-screen',
+    editUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/src/definitions.ts'
+  },
   'push-notifications',
   'screen-orientation',
   'screen-reader',
