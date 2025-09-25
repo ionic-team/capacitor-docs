@@ -1,8 +1,8 @@
 ---
 title: Preferences Capacitor Plugin API
 description: The Preferences API provides a simple key/value persistent store for lightweight data.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/preferences/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/preferences/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/7.x/preferences/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/7.x/preferences/src/definitions.ts
 sidebar_label: Preferences
 ---
 

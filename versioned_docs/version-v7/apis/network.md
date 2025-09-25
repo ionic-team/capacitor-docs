@@ -1,8 +1,8 @@
 ---
 title: Network Capacitor Plugin API
 description: The Network API provides network and connectivity information.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/network/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/network/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/7.x/network/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/7.x/network/src/definitions.ts
 sidebar_label: Network
 ---
 

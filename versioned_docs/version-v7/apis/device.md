@@ -1,8 +1,8 @@
 ---
 title: Device Capacitor Plugin API
 description: The Device API exposes internal information about the device, such as the model and operating system version, along with user information such as unique ids.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/device/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/device/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/7.x/device/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/7.x/device/src/definitions.ts
 sidebar_label: Device
 ---
 
