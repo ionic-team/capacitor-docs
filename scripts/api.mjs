@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 // @ts-ignore
 const API_DIR = new URL('../docs/apis/', import.meta.url);
 
-const tag = 'latest';
+const tag = 'next';
 
 /**
  * @typedef {Object} PluginApi
@@ -144,7 +144,6 @@ const pluginApis = [
     description: 'The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.',
     editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/next/packages/capacitor-plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/next/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest'
   },
   {
     id: 'google-maps',
@@ -180,7 +179,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'keyboard',
