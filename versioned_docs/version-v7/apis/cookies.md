@@ -1,8 +1,8 @@
 ---
 title: Cookies Capacitor Plugin API
 description: The Capacitor Cookies API provides native cookie support via patching `document.cookie` to use native libraries.
-custom_edit_url: https://github.com/ionic-team/capacitor/blob/main/core/cookies.md
-editApiUrl: https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts
+custom_edit_url: https://github.com/ionic-team/capacitor/blob/7.x/core/cookies.md
+editApiUrl: https://github.com/ionic-team/capacitor/blob/7.x/core/src/core-plugins.ts
 sidebar_label: Cookies
 ---
 
