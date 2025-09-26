@@ -20,7 +20,7 @@ module.exports = {
     },
   },
   markdown: {
-    format: 'detect'
+    format: 'detect',
   },
   onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
@@ -289,10 +289,11 @@ module.exports = {
           },
           breadcrumbs: false,
           exclude: ['README.md'],
-          lastVersion: 'current',
+          lastVersion: 'v7',
           versions: {
             current: {
-              label: 'v7',
+              label: 'v8',
+              banner: 'unreleased',
             },
           },
         },
