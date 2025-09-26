@@ -140,6 +140,12 @@ module.exports = {
           type: 'localeDropdown',
           position: 'right',
           dropdownItemsAfter: [
+             {
+              to: 'https://capacitor.xuxo.top/docs',
+              label: '简体中文',
+              target: '_blank',
+              rel: null,
+            },
             {
               to: 'https://capacitorjs.jp/docs',
               label: '日本語',
