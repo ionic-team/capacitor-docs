@@ -182,7 +182,7 @@ App.addListener('appUrlOpen', function (event: URLOpenListenerEvent) {
 
   // We only push to the route if there is a slug present
   if (slug) {
-    router.push({slug);
+    router.push(slug);
   }
 });
 ```
