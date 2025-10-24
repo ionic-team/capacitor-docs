@@ -1,0 +1,36 @@
+name: Generate Docs
+
+on:
+  workflow_dispatch
+
+jobs:
+  generate-docs:
+    runs-on: "ubuntu-latest"
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        shell: bash
+        run: npm i
+
+      - name: Run Generate Docs Command
+        shell: bash
+        run: npm run generate-plugin-docs
+
+      - name: Git Diff Logging
+        shell: bash
+        run: git diff --name-only
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Docs Update Generated

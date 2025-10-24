@@ -20,7 +20,7 @@ module.exports = {
     },
   },
   markdown: {
-    format: 'detect'
+    format: 'detect',
   },
   onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
@@ -29,6 +29,12 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'capacitor-docs',
   themeConfig: {
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
+      isCloseable: false,
+    },
     colorMode: {
       defaultMode: 'light',
     },
@@ -258,10 +264,6 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-            if (locale != 'en') {
-              return 'https://crowdin.com/project/capacitor-docs';
-            }
-
             const cliRegex = /cli\/commands\/(.*)\.md/;
             const cliRegexPath = cliRegex.exec(docPath)?.[1];
 
@@ -281,10 +283,11 @@ module.exports = {
           },
           breadcrumbs: false,
           exclude: ['README.md'],
-          lastVersion: 'current',
+          lastVersion: 'v7',
           versions: {
             current: {
-              label: 'v6',
+              label: 'v8',
+              banner: 'unreleased',
             },
           },
         },

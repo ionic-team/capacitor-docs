@@ -20,9 +20,7 @@ For the purposes of registering and monitoring for push notifications from Fireb
 
 Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/main/getting-started/environment-setup.md) before continuing.
 
-To test push notifications on iOS, Apple requires that you have [a paid Apple Developer account](https://developer.apple.com/) and a _physical_ iOS device.
-
-If you are running into issues or your console throws warnings about outdated or deprecated packages, make sure that you're on the latest stable versions of Node, Android Studio, and Xcode.
+To test push notifications on iOS, Apple requires that you have [a paid Apple Developer account](https://developer.apple.com/).
 
 Also, we're using Firebase for push notifications, so if you're using other Cordova plugins that use the Firebase SDK make sure they're using the latest versions.
 
@@ -42,20 +40,21 @@ Next, let's use the CLI to create a new Ionic Angular app based on the **blank**
 ionic start capApp blank --type=angular
 ```
 
-On the prompt asking to integrate your new app with Capacitor, type `y` and press enter. That will add Capacitor and the Capacitor CLI to our new application.
-
 Once the application has been created successfully, switch to the newly created project directory:
 
 ```bash
 cd capApp/
 ```
 
-Finish up by running `npx cap init`, which will allow us to fill out our app information.
+Finish up by editing the `appId` in `capacitor.config.ts`.
 
-```bash
-npx cap init
-? App name: CapApp
-? App Package ID: com.mydomain.myappname
+```diff
+const config: CapacitorConfig = {
+- appId: 'io.ionic.starter',
++ appId: 'com.mydomain.myappnam',
+  appName: 'capApp',
+  webDir: 'www'
+};
 ```
 
 ## Building the App & Adding Platforms
@@ -69,8 +68,8 @@ ionic build
 Next, let's add the iOS and Android platforms to our app.
 
 ```bash
-npx cap add ios
-npx cap add android
+ionic cap add ios
+ionic cap add android
 ```
 
 Upon running these commands, both `android` and `ios` folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your Ionic app (i.e., check them into source control).
@@ -101,8 +100,7 @@ Then, add the `ngOnInit()` method with some API methods to register and monitor 
 
 ```typescript
 export class HomePage implements OnInit {
-
-ngOnInit() {
+  ngOnInit() {
     console.log('Initializing HomePage');
 
     // Request permission to use push notifications
@@ -144,6 +142,7 @@ ngOnInit() {
         alert('Push action performed: ' + JSON.stringify(notification));
       }
     );
+  }
 }
 ```
 
@@ -232,7 +231,7 @@ Go to the Project Overview page for your Firebase project and at the top, click 
 
 The next screen will ask you for some information about your application.
 
-- Your **Android package name** should match the **appId** from your `capacitor.config.json` file
+- Your **Android package name** should match the **appId** from your `capacitor.config.ts` file
 - We used `com.mydomain.myappname` for this Capacitor app ID, so that is what we'll use for this entry.
 - Nickname and Debug Signing Certificate are optional
 
@@ -246,7 +245,7 @@ Download the `google-services.json` file to your local machine. Then move the fi
 
 ![Google Services JSON Location for Android](../../../static/img/v6/docs/guides/firebase-push-notifications/google-services-location-android.png)
 
-We don't need to _add_ any dependencies to our project because Capacitor projects automatically include a version of `firebase-messaging` in it's `build.gradle` file.
+We don't need to _add_ any dependencies to our project because `@capacitor/push-notifications` automatically include a version of `firebase-messaging` in it's `build.gradle` file.
 
 ## iOS
 
@@ -257,7 +256,6 @@ iOS push notifications are significantly more complicated to set up than Android
 1. [Setup the proper Development or Production certificates & provisioning profiles](https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7) for your iOS application in the Apple Developer Portal
 2. [Create an APNS certificate or key](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns) for either Development or Production in the Apple Developer Portal
 3. [Ensure Push Notification capabilities have been enabled](https://help.apple.com/xcode/mac/current/#/dev88ff319e7) in your application in Xcode
-4. Have a physical iOS device as per the guidelines in the [Environment Setup](/main/getting-started/environment-setup.md) documentation
 
 ### Integrating Firebase with our native iOS app
 
@@ -269,7 +267,7 @@ To add iOS to your Firebase project, click the **Add App** button and select the
 
 The next screen will ask you for some information about your application.
 
-- Your **iOS bundle ID** should match the **appId** from your `capacitor.config.json` file
+- Your **iOS bundle ID** should match the **appId** from your `capacitor.config.ts` file
 - We used `com.mydomain.myappname` for this Capacitor app ID, so that is what we'll use for this entry.
 - App Nickname and App Store ID are optional
 
@@ -299,13 +297,13 @@ To do this, we need to modify the `Podfile`, which can be found in Xcode under `
 
 ![Podfile Location iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/podfile-location-ios.png)
 
-We need to add Firebase to the CocoaPods provided for our App target. To do that, add `pod Firebase/Messaging` to your `target 'App'` section, like so:
+We need to add Firebase to the CocoaPods provided for our App target. To do that, add `pod FirebaseMessaging` to your `target 'App'` section, like so:
 
 ```ruby
 target 'App' do
   capacitor_pods
   # Add your Pods here
-  pod 'Firebase/Messaging' # Add this line
+  pod 'FirebaseMessaging' # Add this line
 end
 ```
 
@@ -314,7 +312,7 @@ Your `Podfile` should look something like this:
 ```ruby
 require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
 
-platform :ios, '13.0'
+platform :ios, '14.0'
 use_frameworks!
 
 # workaround to avoid Xcode caching of Pods that requires
@@ -325,12 +323,17 @@ install! 'cocoapods', :disable_input_output_paths => true
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
+  pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
+  pod 'CapacitorHaptics', :path => '../../node_modules/@capacitor/haptics'
+  pod 'CapacitorKeyboard', :path => '../../node_modules/@capacitor/keyboard'
+  pod 'CapacitorPushNotifications', :path => '../../node_modules/@capacitor/push-notifications'
+  pod 'CapacitorStatusBar', :path => '../../node_modules/@capacitor/status-bar'
 end
 
 target 'App' do
   capacitor_pods
   # Add your Pods here
-  pod 'Firebase/Messaging'
+  pod 'FirebaseMessaging'
 end
 
 post_install do |installer|
@@ -355,7 +358,8 @@ To connect to Firebase when your iOS app starts up, you need to add the followin
 First, add an `import` at the top of the file:
 
 ```swift
-import Firebase
+import FirebaseCore
+import FirebaseMessaging
 ```
 
 ... and then add the configuration method for Firebase to initialization code to your `AppDelegate.swift` file, in the `application(didFinishLaunchingWithOptions)` method.
@@ -388,7 +392,8 @@ Your completed `AppDelegate.swift` file should look something like this:
 ```swift
 import UIKit
 import Capacitor
-import Firebase
+import FirebaseCore
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -502,7 +507,7 @@ Choose `pushextension` from the list of Targets then:
 - Click `Signing & Capabilities`
 - Click `+ Capability`
 - Choose `Push Notifications`
-- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 13.0`
+- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 14.0`
 
 :::note
  If you do not change the deployment target for your extension then images will not appear on devices on an older version of iOS.
@@ -511,7 +516,7 @@ Choose `pushextension` from the list of Targets then:
 To add Firebase Messaging to the extension open your `Podfile` and add:
 ```ruby
 target 'pushextension' do
-  pod 'Firebase/Messaging'
+  pod 'FirebaseMessaging'
 end
 ```
 

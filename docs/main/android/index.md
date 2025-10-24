@@ -16,7 +16,7 @@ Capacitor Android apps are configured and managed through Android Studio.
 
 ## Android Support
 
-API 22+ (Android 5.1 or later) is supported, which represents [over 99% of the Android market](https://gs.statcounter.com/android-version-market-share/mobile-tablet/worldwide). Capacitor requires an Android WebView with Chrome version 60 or later. On Android 5-6, and 10+ Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7-9, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) provides the WebView.
+API 23+ (Android 6 or later) is supported, which represents around 99% of the Android market. Capacitor requires an Android WebView with Chrome version 60 or later. On Android 6, and 10+ Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7-9, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) provides the WebView.
 
 ## Adding the Android Platform
 
@@ -46,7 +46,7 @@ Alternatively, you can open Android Studio and import the `android/` directory a
 
 You can either run your app on the command-line or with Android Studio.
 
-> To use an Android Emulator you must use an API 24+ system image. The System WebView does not automatically update on emulators. Physical devices should work as low as API 21 as long as their System WebView is updated.
+> To use an Android Emulator you must use an API 24+ system image. The System WebView does not automatically update on emulators. Physical devices should work as low as API 23 as long as their System WebView is updated.
 
 ### Running on the Command-Line
 

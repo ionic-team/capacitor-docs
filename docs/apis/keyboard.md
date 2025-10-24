@@ -1,8 +1,8 @@
 ---
 title: Keyboard Capacitor Plugin API
 description: The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-keyboard/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-keyboard/blob/next/src/definitions.ts
 sidebar_label: Keyboard
 ---
 
@@ -380,11 +380,11 @@ Remove all native listeners for this plugin.
 
 #### KeyboardStyle
 
-| Members       | Value                  | Description                                                                                                                                                                                                                                 | Since |
-| ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`Dark`**    | <code>'DARK'</code>    | Dark keyboard.                                                                                                                                                                                                                              | 1.0.0 |
-| **`Light`**   | <code>'LIGHT'</code>   | Light keyboard.                                                                                                                                                                                                                             | 1.0.0 |
-| **`Default`** | <code>'DEFAULT'</code> | On iOS 13 and newer the keyboard style is based on the device appearance. If the device is using Dark mode, the keyboard will be dark. If the device is using Light mode, the keyboard will be light. On iOS 12 the keyboard will be light. | 1.0.0 |
+| Members       | Value                  | Description                                                                                                                                                                       | Since |
+| ------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`Dark`**    | <code>'DARK'</code>    | Dark keyboard.                                                                                                                                                                    | 1.0.0 |
+| **`Light`**   | <code>'LIGHT'</code>   | Light keyboard.                                                                                                                                                                   | 1.0.0 |
+| **`Default`** | <code>'DEFAULT'</code> | The keyboard style is based on the device appearance. If the device is using Dark mode, the keyboard will be dark. If the device is using Light mode, the keyboard will be light. | 1.0.0 |
 
 
 #### KeyboardResize

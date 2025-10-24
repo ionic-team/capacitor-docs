@@ -13,7 +13,7 @@ The Splash Screen API provides methods for showing or hiding a Splash image.
 ## Install
 
 ```bash
-npm install @capacitor/splash-screen
+npm install @capacitor/splash-screen@latest-5
 npx cap sync
 ```
 

@@ -28,9 +28,6 @@ The status bar visibility defaults to visible and the style defaults to
 `Style.Default`. You can change these defaults by adding
 `UIStatusBarHidden` and/or `UIStatusBarStyle` in `Info.plist`.
 
-`setBackgroundColor` and `setOverlaysWebView` are currently not supported on
-iOS devices.
-
 ## Example
 
 ```typescript
@@ -41,7 +38,7 @@ window.addEventListener('statusTap', function () {
   console.log('statusbar tapped');
 });
 
-// Display content under transparent status bar (Android only)
+// Display content under transparent status bar
 StatusBar.setOverlaysWebView({ overlay: true });
 
 const setStatusBarStyleDark = async () => {
@@ -60,6 +57,57 @@ const showStatusBar = async () => {
   await StatusBar.show();
 };
 ```
+
+## Configuration
+
+<docgen-config>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+These config values are available:
+
+| Prop                  | Type                 | Description                                                                                                                                                                                                                                                                                                                                                                      | Default              | Since |
+| --------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----- |
+| **`overlaysWebView`** | <code>boolean</code> | Whether the statusbar is overlaid or not. For applications targeting Android 15, this property has no effect unless the property windowOptOutEdgeToEdgeEnforcement is added to the application layout file. Otherwise, the application assumes always overlays as true. More details in https://developer.android.com/reference/android/R.attr#windowOptOutEdgeToEdgeEnforcement | <code>true</code>    | 1.0.0 |
+| **`style`**           | <code>string</code>  | <a href="#style">Style</a> of the text of the status bar.                                                                                                                                                                                                                                                                                                                        | <code>default</code> | 1.0.0 |
+| **`backgroundColor`** | <code>string</code>  | Color of the background of the statusbar in hex format, #RRGGBB. Doesn't work if `overlaysWebView` is true.                                                                                                                                                                                                                                                                      | <code>#000000</code> | 1.0.0 |
+
+### Examples
+
+In `capacitor.config.json`:
+
+```json
+{
+  "plugins": {
+    "StatusBar": {
+      "overlaysWebView": false,
+      "style": "DARK",
+      "backgroundColor": "#ffffffff"
+    }
+  }
+}
+```
+
+In `capacitor.config.ts`:
+
+```ts
+/// <reference types="@capacitor/status-bar" />
+
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  plugins: {
+    StatusBar: {
+      overlaysWebView: false,
+      style: "DARK",
+      backgroundColor: "#ffffffff",
+    },
+  },
+};
+
+export default config;
+```
+
+</docgen-config>
 
 ## API
 
@@ -103,8 +151,6 @@ setBackgroundColor(options: BackgroundColorOptions) => Promise<void>
 ```
 
 Set the background color of the status bar.
-
-This method is only supported on Android.
 
 | Param         | Type                                                                      |
 | ------------- | ------------------------------------------------------------------------- |
@@ -177,8 +223,6 @@ setOverlaysWebView(options: SetOverlaysWebViewOptions) => Promise<void>
 Set whether or not the status bar should overlay the webview to allow usage
 of the space underneath it.
 
-This method is only supported on Android.
-
 | Param         | Type                                                                            |
 | ------------- | ------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#setoverlayswebviewoptions">SetOverlaysWebViewOptions</a></code> |
@@ -200,9 +244,9 @@ This method is only supported on Android.
 
 #### BackgroundColorOptions
 
-| Prop        | Type                | Description                                                                                 | Since |
-| ----------- | ------------------- | ------------------------------------------------------------------------------------------- | ----- |
-| **`color`** | <code>string</code> | A hex color to which the status bar color is set. This option is only supported on Android. | 1.0.0 |
+| Prop        | Type                | Description                                       | Since |
+| ----------- | ------------------- | ------------------------------------------------- | ----- |
+| **`color`** | <code>string</code> | A hex color to which the status bar color is set. | 1.0.0 |
 
 
 #### AnimationOptions
@@ -214,12 +258,12 @@ This method is only supported on Android.
 
 #### StatusBarInfo
 
-| Prop           | Type                                    | Description                                                                         | Since |
-| -------------- | --------------------------------------- | ----------------------------------------------------------------------------------- | ----- |
-| **`visible`**  | <code>boolean</code>                    | Whether the status bar is visible or not.                                           | 1.0.0 |
-| **`style`**    | <code><a href="#style">Style</a></code> | The current status bar style.                                                       | 1.0.0 |
-| **`color`**    | <code>string</code>                     | The current status bar color. This option is only supported on Android.             | 1.0.0 |
-| **`overlays`** | <code>boolean</code>                    | Whether the statusbar is overlaid or not. This option is only supported on Android. | 1.0.0 |
+| Prop           | Type                                    | Description                               | Since |
+| -------------- | --------------------------------------- | ----------------------------------------- | ----- |
+| **`visible`**  | <code>boolean</code>                    | Whether the status bar is visible or not. | 1.0.0 |
+| **`style`**    | <code><a href="#style">Style</a></code> | The current status bar style.             | 1.0.0 |
+| **`color`**    | <code>string</code>                     | The current status bar color.             | 1.0.0 |
+| **`overlays`** | <code>boolean</code>                    | Whether the statusbar is overlaid or not. | 1.0.0 |
 
 
 #### SetOverlaysWebViewOptions
@@ -234,11 +278,11 @@ This method is only supported on Android.
 
 #### Style
 
-| Members       | Value                  | Description                                                                                                                                                                                                                                            | Since |
-| ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| **`Dark`**    | <code>'DARK'</code>    | Light text for dark backgrounds.                                                                                                                                                                                                                       | 1.0.0 |
-| **`Light`**   | <code>'LIGHT'</code>   | Dark text for light backgrounds.                                                                                                                                                                                                                       | 1.0.0 |
-| **`Default`** | <code>'DEFAULT'</code> | The style is based on the device appearance. If the device is using Dark mode, the statusbar text will be light. If the device is using Light mode, the statusbar text will be dark. On Android the default will be the one the app was launched with. | 1.0.0 |
+| Members       | Value                  | Description                                                                                                                                                                          | Since |
+| ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **`Dark`**    | <code>'DARK'</code>    | Light text for dark backgrounds.                                                                                                                                                     | 1.0.0 |
+| **`Light`**   | <code>'LIGHT'</code>   | Dark text for light backgrounds.                                                                                                                                                     | 1.0.0 |
+| **`Default`** | <code>'DEFAULT'</code> | The style is based on the device appearance. If the device is using Dark mode, the statusbar text will be light. If the device is using Light mode, the statusbar text will be dark. | 1.0.0 |
 
 
 #### Animation

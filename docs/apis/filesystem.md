@@ -1,8 +1,8 @@
 ---
 title: Filesystem Capacitor Plugin API
 description: The Filesystem API provides a NodeJS-like API for working with files on the device.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-filesystem/blob/next/packages/capacitor-plugin/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-filesystem/blob/next/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: Filesystem
 ---
 
@@ -50,6 +50,64 @@ For detailed steps on how to do this, please see the [Capacitor Docs](https://ca
 </plist>
 ```
 
+## Migrating from downloadFile to File Transfer plugin
+
+As of version 7.1.0, the `downloadFile` functionality in the Filesystem plugin has been deprecated in favor of the new [@capacitor/file-transfer](https://capacitorjs.com/docs/apis/file-transfer) plugin.
+
+### Installing the File Transfer plugin
+
+```bash
+npm install @capacitor/file-transfer
+npx cap sync
+```
+
+### Migration example
+
+Before (using Filesystem plugin):
+
+```typescript
+import { Filesystem, Directory } from '@capacitor/filesystem';
+
+await Filesystem.downloadFile({
+  url: 'https://example.com/file.pdf',
+  path: 'downloaded-file.pdf',
+  directory: Directory.Documents,
+  progress: true
+});
+
+// Progress events
+Filesystem.addListener('progress', (progress) => {
+  console.log(`Downloaded ${progress.bytes} of ${progress.contentLength}`);
+});
+```
+
+After (using File Transfer plugin):
+
+```typescript
+import { FileTransfer } from '@capacitor/file-transfer';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+
+// First get the full file path using Filesystem
+const fileInfo = await Filesystem.getUri({
+  directory: Directory.Documents,
+  path: 'downloaded-file.pdf'
+});
+
+// Then use the FileTransfer plugin to download
+await FileTransfer.downloadFile({
+  url: 'https://example.com/file.pdf',
+  path: fileInfo.uri,
+  progress: true
+});
+
+// Progress events
+FileTransfer.addListener('progress', (progress) => {
+  console.log(`Downloaded ${progress.bytes} of ${progress.contentLength}`);
+});
+```
+
+The File Transfer plugin offers improved reliability, better error handling with specific error codes, and also adds upload functionality.
+
 ## iOS
 
 To have files appear in the Files app, you must also set the following keys to `YES` in `Info.plist`:
@@ -83,12 +141,12 @@ Additionally, the Filesystem API supports using full `file://` paths, or reading
 ## Example
 
 ```typescript
-import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Filesystem, Directory, Encoding } from "@capacitor/filesystem";
 
 const writeSecretFile = async () => {
   await Filesystem.writeFile({
-    path: 'secrets/text.txt',
-    data: 'This is a test',
+    path: "secrets/text.txt",
+    data: "This is a test",
     directory: Directory.Documents,
     encoding: Encoding.UTF8,
   });
@@ -96,17 +154,17 @@ const writeSecretFile = async () => {
 
 const readSecretFile = async () => {
   const contents = await Filesystem.readFile({
-    path: 'secrets/text.txt',
+    path: "secrets/text.txt",
     directory: Directory.Documents,
     encoding: Encoding.UTF8,
   });
 
-  console.log('secrets:', contents);
+  console.log("secrets:", contents);
 };
 
 const deleteSecretFile = async () => {
   await Filesystem.deleteFile({
-    path: 'secrets/text.txt',
+    path: "secrets/text.txt",
     directory: Directory.Documents,
   });
 };
@@ -116,10 +174,10 @@ const readFilePath = async () => {
   // read binary data (base64 encoded) from plugins that return File URIs, such as
   // the Camera.
   const contents = await Filesystem.readFile({
-    path: 'file:///var/mobile/Containers/Data/Application/22A433FD-D82D-4989-8BE6-9FC49DEA20BB/Documents/text.txt',
+    path: "file:///var/mobile/Containers/Data/Application/22A433FD-D82D-4989-8BE6-9FC49DEA20BB/Documents/text.txt",
   });
 
-  console.log('data:', contents);
+  console.log("data:", contents);
 };
 ```
 
@@ -127,7 +185,10 @@ const readFilePath = async () => {
 
 <docgen-index>
 
+* [`checkPermissions()`](#checkpermissions)
+* [`requestPermissions()`](#requestpermissions)
 * [`readFile(...)`](#readfile)
+* [`readFileInChunks(...)`](#readfileinchunks)
 * [`writeFile(...)`](#writefile)
 * [`appendFile(...)`](#appendfile)
 * [`deleteFile(...)`](#deletefile)
@@ -138,8 +199,6 @@ const readFilePath = async () => {
 * [`stat(...)`](#stat)
 * [`rename(...)`](#rename)
 * [`copy(...)`](#copy)
-* [`checkPermissions()`](#checkpermissions)
-* [`requestPermissions()`](#requestpermissions)
 * [`downloadFile(...)`](#downloadfile)
 * [`addListener('progress', ...)`](#addlistenerprogress-)
 * [`removeAllListeners()`](#removealllisteners)
@@ -149,8 +208,44 @@ const readFilePath = async () => {
 
 </docgen-index>
 
+For list of existing error codes, see [Errors](#errors).
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### checkPermissions()
+
+```typescript
+checkPermissions() => Promise<PermissionStatus>
+```
+
+Check read/write permissions.
+Required on Android, only when using <a href="#directory">`Directory.Documents`</a> or
+`Directory.ExternalStorage`.
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### requestPermissions()
+
+```typescript
+requestPermissions() => Promise<PermissionStatus>
+```
+
+Request read/write permissions.
+Required on Android, only when using <a href="#directory">`Directory.Documents`</a> or
+`Directory.ExternalStorage`.
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
 
 ### readFile(...)
 
@@ -167,6 +262,29 @@ Read a file from disk
 **Returns:** <code>Promise&lt;<a href="#readfileresult">ReadFileResult</a>&gt;</code>
 
 **Since:** 1.0.0
+
+--------------------
+
+
+### readFileInChunks(...)
+
+```typescript
+readFileInChunks(options: ReadFileInChunksOptions, callback: ReadFileInChunksCallback) => Promise<CallbackID>
+```
+
+Read a file from disk, in chunks.
+Native only (not available in web).
+Use the callback to receive each read chunk.
+If empty chunk is returned, it means file has been completely read.
+
+| Param          | Type                                                                          |
+| -------------- | ----------------------------------------------------------------------------- |
+| **`options`**  | <code><a href="#readfileinchunksoptions">ReadFileInChunksOptions</a></code>   |
+| **`callback`** | <code><a href="#readfileinchunkscallback">ReadFileInChunksCallback</a></code> |
+
+**Returns:** <code>Promise&lt;string&gt;</code>
+
+**Since:** 7.1.0
 
 --------------------
 
@@ -308,7 +426,7 @@ Return data about a file
 | ------------- | --------------------------------------------------- |
 | **`options`** | <code><a href="#statoptions">StatOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#statresult">StatResult</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#fileinfo">FileInfo</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -351,40 +469,6 @@ Copy a file or directory
 --------------------
 
 
-### checkPermissions()
-
-```typescript
-checkPermissions() => Promise<PermissionStatus>
-```
-
-Check read/write permissions.
-Required on Android, only when using <a href="#directory">`Directory.Documents`</a> or
-`Directory.ExternalStorage`.
-
-**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
-
-**Since:** 1.0.0
-
---------------------
-
-
-### requestPermissions()
-
-```typescript
-requestPermissions() => Promise<PermissionStatus>
-```
-
-Request read/write permissions.
-Required on Android, only when using <a href="#directory">`Directory.Documents`</a> or
-`Directory.ExternalStorage`.
-
-**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
-
-**Since:** 1.0.0
-
---------------------
-
-
 ### downloadFile(...)
 
 ```typescript
@@ -392,6 +476,9 @@ downloadFile(options: DownloadFileOptions) => Promise<DownloadFileResult>
 ```
 
 Perform a http request to a server and download the file to the specified destination.
+
+This method has been deprecated since version 7.1.0.
+We recommend using the @capacitor/file-transfer plugin instead, in conjunction with this plugin.
 
 | Param         | Type                                                                |
 | ------------- | ------------------------------------------------------------------- |
@@ -411,6 +498,9 @@ addListener(eventName: 'progress', listenerFunc: ProgressListener) => Promise<Pl
 ```
 
 Add a listener to file download progress events.
+
+This method has been deprecated since version 7.1.0.
+We recommend using the @capacitor/file-transfer plugin instead, in conjunction with this plugin.
 
 | Param              | Type                                                          |
 | ------------------ | ------------------------------------------------------------- |
@@ -432,12 +522,22 @@ removeAllListeners() => Promise<void>
 
 Remove all listeners for this plugin.
 
+This method has been deprecated since version 7.1.0.
+We recommend using the @capacitor/file-transfer plugin instead, in conjunction with this plugin.
+
 **Since:** 5.2.0
 
 --------------------
 
 
 ### Interfaces
+
+
+#### PermissionStatus
+
+| Prop                | Type                                                        |
+| ------------------- | ----------------------------------------------------------- |
+| **`publicStorage`** | <code><a href="#permissionstate">PermissionState</a></code> |
 
 
 #### ReadFileResult
@@ -454,6 +554,13 @@ Remove all listeners for this plugin.
 | **`path`**      | <code>string</code>                             | The path of the file to read                                                                                                                                                | 1.0.0 |
 | **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to read the file from                                                                                                              | 1.0.0 |
 | **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to read data as string | 1.0.0 |
+
+
+#### ReadFileInChunksOptions
+
+| Prop            | Type                | Description                  | Since |
+| --------------- | ------------------- | ---------------------------- | ----- |
+| **`chunkSize`** | <code>number</code> | Size of the chunks in bytes. | 7.1.0 |
 
 
 #### WriteFileResult
@@ -521,11 +628,11 @@ Remove all listeners for this plugin.
 
 | Prop        | Type                               | Description                                                                          | Since |
 | ----------- | ---------------------------------- | ------------------------------------------------------------------------------------ | ----- |
-| **`name`**  | <code>string</code>                | Name of the file or directory.                                                       |       |
+| **`name`**  | <code>string</code>                | Name of the file or directory.                                                       | 7.1.0 |
 | **`type`**  | <code>'file' \| 'directory'</code> | Type of the file.                                                                    | 4.0.0 |
 | **`size`**  | <code>number</code>                | Size of the file in bytes.                                                           | 4.0.0 |
-| **`ctime`** | <code>number</code>                | Time of creation in milliseconds. It's not available on Android 7 and older devices. | 4.0.0 |
-| **`mtime`** | <code>number</code>                | Time of last modification in milliseconds.                                           | 4.0.0 |
+| **`ctime`** | <code>number</code>                | Time of creation in milliseconds. It's not available on Android 7 and older devices. | 7.1.0 |
+| **`mtime`** | <code>number</code>                | Time of last modification in milliseconds.                                           | 7.1.0 |
 | **`uri`**   | <code>string</code>                | The uri of the file.                                                                 | 4.0.0 |
 
 
@@ -552,17 +659,6 @@ Remove all listeners for this plugin.
 | **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to get the file under | 1.0.0 |
 
 
-#### StatResult
-
-| Prop        | Type                               | Description                                                                          | Since |
-| ----------- | ---------------------------------- | ------------------------------------------------------------------------------------ | ----- |
-| **`type`**  | <code>'file' \| 'directory'</code> | Type of the file.                                                                    | 1.0.0 |
-| **`size`**  | <code>number</code>                | Size of the file in bytes.                                                           | 1.0.0 |
-| **`ctime`** | <code>number</code>                | Time of creation in milliseconds. It's not available on Android 7 and older devices. | 1.0.0 |
-| **`mtime`** | <code>number</code>                | Time of last modification in milliseconds.                                           | 1.0.0 |
-| **`uri`**   | <code>string</code>                | The uri of the file                                                                  | 1.0.0 |
-
-
 #### StatOptions
 
 | Prop            | Type                                            | Description                                                    | Since |
@@ -586,13 +682,6 @@ Remove all listeners for this plugin.
 | Prop      | Type                | Description                            | Since |
 | --------- | ------------------- | -------------------------------------- | ----- |
 | **`uri`** | <code>string</code> | The uri where the file was copied into | 4.0.0 |
-
-
-#### PermissionStatus
-
-| Prop                | Type                                                        |
-| ------------------- | ----------------------------------------------------------- |
-| **`publicStorage`** | <code><a href="#permissionstate">PermissionState</a></code> |
 
 
 #### DownloadFileResult
@@ -632,14 +721,31 @@ Remove all listeners for this plugin.
 ### Type Aliases
 
 
-#### RenameOptions
-
-<code><a href="#copyoptions">CopyOptions</a></code>
-
-
 #### PermissionState
 
 <code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
+
+
+#### ReadFileInChunksCallback
+
+Callback for receiving chunks read from a file, or error if something went wrong.
+
+<code>(chunkRead: <a href="#readfileresult">ReadFileResult</a> | null, err?: any): void</code>
+
+
+#### CallbackID
+
+<code>string</code>
+
+
+#### StatResult
+
+<code><a href="#fileinfo">FileInfo</a></code>
+
+
+#### RenameOptions
+
+<code><a href="#copyoptions">CopyOptions</a></code>
 
 
 #### ProgressListener
@@ -654,14 +760,17 @@ A listener function that receives progress events.
 
 #### Directory
 
-| Members               | Value                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Since |
-| --------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`Documents`**       | <code>'DOCUMENTS'</code>        | The Documents directory. On iOS it's the app's documents directory. Use this directory to store user-generated content. On Android it's the Public Documents folder, so it's accessible from other apps. It's not accesible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml`. On Android 11 or newer the app can only access the files/folders the app created. | 1.0.0 |
-| **`Data`**            | <code>'DATA'</code>             | The Data directory. On iOS it will use the Documents directory. On Android it's the directory holding application files. Files will be deleted when the application is uninstalled.                                                                                                                                                                                                                                                                                                       | 1.0.0 |
-| **`Library`**         | <code>'LIBRARY'</code>          | The Library directory. On iOS it will use the Library directory. On Android it's the directory holding application files. Files will be deleted when the application is uninstalled.                                                                                                                                                                                                                                                                                                      | 1.1.0 |
-| **`Cache`**           | <code>'CACHE'</code>            | The Cache directory. Can be deleted in cases of low memory, so use this directory to write app-specific files. that your app can re-create easily.                                                                                                                                                                                                                                                                                                                                        | 1.0.0 |
-| **`External`**        | <code>'EXTERNAL'</code>         | The external directory. On iOS it will use the Documents directory. On Android it's the directory on the primary shared/external storage device where the application can place persistent files it owns. These files are internal to the applications, and not typically visible to the user as media. Files will be deleted when the application is uninstalled.                                                                                                                        | 1.0.0 |
-| **`ExternalStorage`** | <code>'EXTERNAL_STORAGE'</code> | The external storage directory. On iOS it will use the Documents directory. On Android it's the primary shared/external storage directory. It's not accesible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml`. It's not accesible on Android 11 or newer.                                                                                                      | 1.0.0 |
+| Members               | Value                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Since |
+| --------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **`Documents`**       | <code>'DOCUMENTS'</code>        | The Documents directory. On iOS it's the app's documents directory. Use this directory to store user-generated content. On Android it's the Public Documents folder, so it's accessible from other apps. It's not accessible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml`. On Android 11 or newer the app can only access the files/folders the app created. | 1.0.0 |
+| **`Data`**            | <code>'DATA'</code>             | The Data directory. On iOS it will use the Documents directory. On Android it's the directory holding application files. Files will be deleted when the application is uninstalled.                                                                                                                                                                                                                                                                                                        | 1.0.0 |
+| **`Library`**         | <code>'LIBRARY'</code>          | The Library directory. On iOS it will use the Library directory. On Android it's the directory holding application files. Files will be deleted when the application is uninstalled.                                                                                                                                                                                                                                                                                                       | 1.1.0 |
+| **`Cache`**           | <code>'CACHE'</code>            | The Cache directory. Can be deleted in cases of low memory, so use this directory to write app-specific files. that your app can re-create easily.                                                                                                                                                                                                                                                                                                                                         | 1.0.0 |
+| **`External`**        | <code>'EXTERNAL'</code>         | The external directory. On iOS it will use the Documents directory. On Android it's the directory on the primary shared/external storage device where the application can place persistent files it owns. These files are internal to the applications, and not typically visible to the user as media. Files will be deleted when the application is uninstalled.                                                                                                                         | 1.0.0 |
+| **`ExternalStorage`** | <code>'EXTERNAL_STORAGE'</code> | The external storage directory. On iOS it will use the Documents directory. On Android it's the primary shared/external storage directory. It's not accessible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml`. It's not accessible on Android 11 or newer.                                                                                                     | 1.0.0 |
+| **`ExternalCache`**   | <code>'EXTERNAL_CACHE'</code>   | The external cache directory. On iOS it will use the Documents directory. On Android it's the primary shared/external cache.                                                                                                                                                                                                                                                                                                                                                               | 7.1.0 |
+| **`LibraryNoCloud`**  | <code>'LIBRARY_NO_CLOUD'</code> | The Library directory without cloud backup. Used in iOS. On Android it's the directory holding application files.                                                                                                                                                                                                                                                                                                                                                                          | 7.1.0 |
+| **`Temporary`**       | <code>'TEMPORARY'</code>        | A temporary directory for iOS. On Android it's the directory holding the application cache.                                                                                                                                                                                                                                                                                                                                                                                                | 7.1.0 |
 
 
 #### Encoding
@@ -673,3 +782,22 @@ A listener function that receives progress events.
 | **`UTF16`** | <code>'utf16'</code> | Sixteen-bit UCS Transformation Format, byte order identified by an optional byte-order mark This encoding is only supported on Android.  | 1.0.0 |
 
 </docgen-api>
+
+### Errors
+
+Since version 7.1.0, the plugin returns specific errors with specific codes on native Android and iOS. Web does not follow this standard for errors.
+
+The following table list all the plugin errors:
+
+| Error code        | Platform(s)      | Message                      |
+|-------------------|------------------|------------------------------|
+| OS-PLUG-FILE-0004 | iOS              | Cordova / Capacitor bridge isn’t initialized. |
+| OS-PLUG-FILE-0005 | Android, iOS     | The method input parameters aren’t valid. |
+| OS-PLUG-FILE-0006 | Android, iOS     | Invalid path was provided. |
+| OS-PLUG-FILE-0007 | Android          | Unable to perform file operation, user denied permission request. |
+| OS-PLUG-FILE-0008 | Android, iOS     | Operation failed because file does not exist. |
+| OS-PLUG-FILE-0009 | Android          | Operation not supported for provided input. |
+| OS-PLUG-FILE-0010 | Android, iOS     | Directory already exists, cannot be overwritten. |
+| OS-PLUG-FILE-0011 | Android, iOS     | Missing parent directory – possibly recursive=false was passed or parent directory creation failed. |
+| OS-PLUG-FILE-0012 | Android, iOS     | Cannot delete directory with children; received recursive=false but directory has contents. |
+| OS-PLUG-FILE-0013 | Android, iOS     | The operation failed with an error. |

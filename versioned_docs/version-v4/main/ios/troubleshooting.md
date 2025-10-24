@@ -78,7 +78,7 @@ If you installed CocoaPods with `sudo gem install cocoapods` and you're using an
 ```
 
 This is a CocoaPods bug related to `ffi` not installing on Apple Silicon computers.
-We recommend using [Homebrew to installl CocoaPods](/main/getting-started/environment-setup.md#homebrew).
+We recommend using [Homebrew to install CocoaPods](/main/getting-started/environment-setup.md#homebrew).
 Alternatively, if you have Rosetta installed, you can install `ffi` on a `x86_64` architecture and run `pod install` using the simulated Intel architecture for the first time.
 
 ```
@@ -114,6 +114,6 @@ First of all, make sure the plugin is installed and appears in the `package.json
 
 Then, run `npx cap sync ios`.
 
-Finally, check that the plugin is in `ios/App/Podfile`. If the plugin is not listed, make sure your Podfile looks like [this one](https://github.com/ionic-team/capacitor/blob/main/ios-template/App/Podfile) and run `npx cap sync` again.
+Finally, check that the plugin is in `ios/App/Podfile`. If the plugin is not listed, make sure your Podfile looks like [this one](https://github.com/ionic-team/capacitor/blob/4.x/ios-template/App/Podfile) and run `npx cap sync` again.
 
 If still getting the "Plugin not implemented" error, make sure you don't have `WKAppBoundDomains` key in `ios/App/App/Info.plist`, that prevents Capacitor's and Plugins code from injecting. Remove the key if not needed, or if it can't be removed, add `limitsNavigationsToAppBoundDomains` to your capacitor config file with `true` value inside the `ios` object.

@@ -37,7 +37,7 @@ The extension will then list all changes needed as recommendations titled *Missi
 
 You must select one of the reason codes to explain how you use the plugin. If you are unsure, click *Docs* to go to the Apple’s documentation on the explanations of each reason code.
 
-Please note that the VS Code extension has a set of rules for known plugins to help you. If you are still being rejected by Apple for missing privacy manifest reasons it may be that you are using a plugin that the extension does not know. You can open an issue on the [VS Code extension issue tracker](https://github.com/ionic-team/vscode-extension/issues).
+Please note that the VS Code extension has a set of rules for known plugins to help you. If you are still being rejected by Apple for missing privacy manifest reasons it may be that you are using a plugin that the extension does not know. You can open an issue on the [VS Code extension issue tracker](https://github.com/ionic-team/vscode-ionic/issues).
 
 ### Manual Steps
 
@@ -53,7 +53,7 @@ Check your app in the *Targets* list.
 
 Click *Create*.
 
-A filed called `PrivacyInfo.xcprivacy` will be created. This file is challenging to create interactively in the Xcode UI so it may be easier to edit it manually by right clicking it and choosing *Open with External Editor*.
+A file called `PrivacyInfo.xcprivacy` will be created. This file is challenging to create interactively in the Xcode UI so it may be easier to edit it manually by right clicking it and choosing *Open with External Editor*.
 
 As a sample file here is a `PrivacyInfo.xcprivacy` file that uses the UserDefaults API through its use of the `@capacitor/preferences` plugin.
 
