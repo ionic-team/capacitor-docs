@@ -246,7 +246,7 @@ The following table list all the plugin errors:
 | OS-PLUG-GLOC-0007 | Android, iOS | Location services are not enabled. |
 | OS-PLUG-GLOC-0008 | iOS          | Application's use of location services was restricted. |
 | OS-PLUG-GLOC-0009 | Android      | Request to enable location was denied. |
-| OS-PLUG-GLOC-0010 | Android      | Could not obtain location in time. Try with a higher timeout. |
+| OS-PLUG-GLOC-0010 | Android, iOS | Could not obtain location in time. Try with a higher timeout. |
 | OS-PLUG-GLOC-0011 | Android      | Timeout needs to be a positive value. |
 | OS-PLUG-GLOC-0012 | Android      | WatchId not found. |
 | OS-PLUG-GLOC-0013 | Android      | WatchId needs to be provided. |
