@@ -53,12 +53,14 @@ xcode-select -p
 
 ### Optional dependencies
 
-The following dependencies are not required if you are creating a new application iOS using Capacitor 8 or later.
+The following dependencies are optional for using Capacitor on iOS.
 
-Starting with Capacitor 8, Swift Package Manager (SPM) is the default dependency manager for iOS. If you are on an older version of Capacitor, or you are working with plugins that do not support SPM yet, you'll need these two dependencies as well:
+If you need to use CocoaPods as a dependency manager for native iOS packages, then you should install these two package managers:
 
 - Homebrew
 - CocoaPods
+
+We recommend using [Swift Package Manager](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs) (SPM) as the dependency manager for iOS. If you don't have need for CocoaPods, then you can use SPM and do not have to install the two dependencies.
 
 #### Homebrew
 
