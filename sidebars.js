@@ -10,7 +10,7 @@ module.exports = {
         'main/getting-started/installation',
         'main/getting-started/ui',
         'main/getting-started/with-ionic',
-        'main/getting-started/vscode-extension',        
+        'main/getting-started/vscode-extension',
         'main/getting-started/templates',
         'main/getting-started/faqs',
       ],
@@ -32,6 +32,7 @@ module.exports = {
       label: 'Upgrade Guides',
       collapsed: false,
       items: [
+        'main/updating/plugins/8-0',
         'main/updating/7-0',
         'main/updating/plugins/7-0',
         'main/updating/6-0',
