@@ -60,7 +60,7 @@ If you need to use CocoaPods as a dependency manager for native iOS packages, th
 - Homebrew
 - CocoaPods
 
-We recommend using [Swift Package Manager](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs) (SPM) as the dependency manager for iOS. If you don't have need for CocoaPods, then you can use SPM and do not have to install the two dependencies.
+We recommend using [Swift Package Manager](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs) (SPM) as the dependency manager for iOS. If you don't need CocoaPods, then you can use SPM and skip the install of those two dependencies.
 
 #### Homebrew
 
@@ -80,7 +80,7 @@ If you do not want to install Homebrew, alternative, but not recommended, instru
 
 #### CocoaPods
 
-CocoaPods was the default iOS dependency manager in Capacitor 7 and earlier. Since Capacitor 8, the default has been replaced with SPM, but you can still use CocoaPods as an alternative if your project needs it.
+CocoaPods was the default iOS dependency manager in Capacitor 7 and earlier. Since Capacitor 8, the default has been replaced with SPM, but you can still use CocoaPods as an alternative if your project needs it, by passing `--packagemanager CocoaPods` to `npx cap add ios` command.
 
 You can install [CocoaPods](https://cocoapods.org/) by running the following command in your terminal
 
