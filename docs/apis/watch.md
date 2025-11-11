@@ -29,7 +29,7 @@ The Capacitor Watch plugin allows you to define a UI for a watch in your web cod
 
 This currently only supports iOS. This guide assumes you've already added iOS to your capcacitor project.
 
-Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app<->watch communcation like real devices do.
+Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app<->watch communication like real devices do.
 
 ## Install
 
@@ -55,7 +55,7 @@ Add the 'Background Modes' and 'Push Notification' capabilities. Then in the Bac
 
 Step 3
 
-Open `AppDelegate.swift` and add `import WatchConnectivity`  and `import CapactiorWatch` to the top of the file, and the following code inside the `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)` method:
+Open `AppDelegate.swift` and add `import WatchConnectivity`  and `import CapacitorWatch` to the top of the file, and the following code inside the `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)` method:
 
 ```swift
 assert(WCSession.isSupported(), "This sample requires Watch Connectivity support!")
@@ -83,7 +83,7 @@ We're going to add the code that makes Capacitor Watch work in the watch applica
 
 If you are using <b>Xcode 15 or beyond</b> you then need to add the Capacitor Watch Swift Package from your node_modules:
 
-First go to the project package dependancies
+First go to the project package dependencies
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/spm-project-dependancies.png" />
 
@@ -99,7 +99,7 @@ Then in the column on the right pick your watch app to be the target and click '
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/spm-pick-target.png" />
 
-Once this is done your Package Dependancies should look like this:
+Once this is done your Package Dependencies should look like this:
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/spm-finished.png" />
 
@@ -216,7 +216,7 @@ async function counterIncrement() {
 }
 ```
 
-# Persistance on the Watch
+# Persistence on the Watch
 
 Capacitor Watch will persist the last UI you sent with `updateWatchUI()`. State from `updateWatchData()` is NOT preserved.
 
