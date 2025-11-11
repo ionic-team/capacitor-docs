@@ -177,7 +177,7 @@ Will produce this:
 
 This article provides a great summary on the native methods and their implications: https://alexanderweiss.dev/blog/2023-01-18-three-ways-to-communicate-via-watchconnectivity
 
-On the phone side, you can implement these methods using the Capacitor Background Runner Plugin (https://github.com/ionic-team/capacitor-background-runner). Currently the watch plugin will mainly handle the `didReceiveUserInfo` method, and you can recieve envents from the watch while your app is in the background using the following code in your runner.js:
+On the phone side, you can implement these methods using the Capacitor Background Runner Plugin (https://github.com/ionic-team/capacitor-background-runner). Currently the watch plugin will mainly handle the `didReceiveUserInfo` method, and you can receive events from the watch while your app is in the background using the following code in your runner.js:
 
 ```javascript
 addEventListener("WatchConnectivity_didReceiveUserInfo", (args) => {
@@ -185,7 +185,7 @@ addEventListener("WatchConnectivity_didReceiveUserInfo", (args) => {
 })
 ```
 
-You can also implment the `runCommand` event listener for foreground procesing:
+You can also implement the `runCommand` event listener for foreground processing:
 
 ```typescript
 Watch.addListener("runCommand", (data: {command: string}) => {
@@ -193,7 +193,7 @@ Watch.addListener("runCommand", (data: {command: string}) => {
 })
 ```
 
-The commands are the 2nd paramter in the `Button()` definition of the watch UI. This can be any string.
+The commands are the 2nd parameter in the `Button()` definition of the watch UI. This can be any string.
 
 ## Updating watch data
 
