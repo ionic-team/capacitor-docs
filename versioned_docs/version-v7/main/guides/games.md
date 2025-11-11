@@ -1,6 +1,6 @@
 ---
 title: Games
-description: Game development wiht Capacitor
+description: Game development with Capacitor
 slug: /guides/games
 ---
 

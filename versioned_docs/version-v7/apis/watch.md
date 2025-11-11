@@ -29,7 +29,7 @@ The Capacitor Watch plugin allows you to define a UI for a watch in your web cod
 
 This currently only supports iOS. This guide assumes you've already added iOS to your capcacitor project.
 
-Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app<->watch communcation like real devices do.
+Also note - all of this will only work with an actual Apple Watch. Simulators don't allow the app<->watch communication like real devices do.
 
 ## Install
 
@@ -55,7 +55,7 @@ Add the 'Background Modes' and 'Push Notification' capabilities. Then in the Bac
 
 Step 3
 
-Open `AppDelegate.swift` and add `import WatchConnectivity`  and `import CapactiorWatch` to the top of the file, and the following code inside the `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)` method:
+Open `AppDelegate.swift` and add `import WatchConnectivity`  and `import CapacitorWatch` to the top of the file, and the following code inside the `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)` method:
 
 ```swift
 assert(WCSession.isSupported(), "This sample requires Watch Connectivity support!")
@@ -83,7 +83,7 @@ We're going to add the code that makes Capacitor Watch work in the watch applica
 
 If you are using <b>Xcode 15 or beyond</b> you then need to add the Capacitor Watch Swift Package from your node_modules:
 
-First go to the project package dependancies
+First go to the project package dependencies
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/spm-project-dependancies.png" />
 
@@ -99,7 +99,7 @@ Then in the column on the right pick your watch app to be the target and click '
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/spm-pick-target.png" />
 
-Once this is done your Package Dependancies should look like this:
+Once this is done your Package Dependencies should look like this:
 
 <img src="https://raw.githubusercontent.com/ionic-team/CapacitorWatch/main/img/spm-finished.png" />
 
@@ -151,7 +151,7 @@ You can still develop your iOS app like a normal capacitor app, but getting thin
 
 The right half of this bar lets you pick the destination device or simulator. You will need to pick the watch paired with the phone and then hit the 'Run' button or use the 'cmd+r' run shortcut.
 
-There can be some challenges in syncing the watch and phone apps. Sometimes you will get an error in the xcode console complaining the compainion app is not present. The best solution in this case is to re-build and re-install the apps on both devices.
+There can be some challenges in syncing the watch and phone apps. Sometimes you will get an error in the xcode console complaining the companion app is not present. The best solution in this case is to re-build and re-install the apps on both devices.
 
 ## Building the watch UI and sending it to the watch
 
@@ -177,7 +177,7 @@ Will produce this:
 
 This article provides a great summary on the native methods and their implications: https://alexanderweiss.dev/blog/2023-01-18-three-ways-to-communicate-via-watchconnectivity
 
-On the phone side, you can implement these methods using the Capacitor Background Runner Plugin (https://github.com/ionic-team/capacitor-background-runner). Currently the watch plugin will mainly handle the `didReceiveUserInfo` method, and you can recieve envents from the watch while your app is in the background using the following code in your runner.js:
+On the phone side, you can implement these methods using the Capacitor Background Runner Plugin (https://github.com/ionic-team/capacitor-background-runner). Currently the watch plugin will mainly handle the `didReceiveUserInfo` method, and you can receive events from the watch while your app is in the background using the following code in your runner.js:
 
 ```javascript
 addEventListener("WatchConnectivity_didReceiveUserInfo", (args) => {
@@ -185,7 +185,7 @@ addEventListener("WatchConnectivity_didReceiveUserInfo", (args) => {
 })
 ```
 
-You can also implment the `runCommand` event listener for foreground procesing:
+You can also implement the `runCommand` event listener for foreground processing:
 
 ```typescript
 Watch.addListener("runCommand", (data: {command: string}) => {
@@ -193,7 +193,7 @@ Watch.addListener("runCommand", (data: {command: string}) => {
 })
 ```
 
-The commands are the 2nd paramter in the `Button()` definition of the watch UI. This can be any string.
+The commands are the 2nd parameter in the `Button()` definition of the watch UI. This can be any string.
 
 ## Updating watch data
 
@@ -216,7 +216,7 @@ async function counterIncrement() {
 }
 ```
 
-# Persistance on the Watch
+# Persistence on the Watch
 
 Capacitor Watch will persist the last UI you sent with `updateWatchUI()`. State from `updateWatchData()` is NOT preserved.
 

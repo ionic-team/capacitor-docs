@@ -504,7 +504,7 @@ Get access to device location information.
 
 Interact with a watch paired with this app
 
-sendMessage, transferUserInfo and updateApplicationContext are raw routes to the WCSession delegate methods, but have no effects currently in a CapactiorWatch Watch application.
+sendMessage, transferUserInfo and updateApplicationContext are raw routes to the WCSession delegate methods, but have no effects currently in a CapacitorWatch Watch application.
 They could be used if a native watch app is developed as a companion app to a Capacitor app
 
 | Prop                           | Type                                                                     | Description                                                                                                                                                 |
