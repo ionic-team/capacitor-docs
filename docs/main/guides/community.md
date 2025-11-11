@@ -44,8 +44,8 @@ slug: /guides/community
 
 [Music Playback in Capacitor App with Ionic &#8250;](https://enappd.com/blog/play-music-in-ionic-capacitor-apps/112)
 
-[Facebook Login in Capacitor App with Ionic React &#8250;](https://enappd.com/blog/facebook-login-in-ionic-react-capacitor-apps/118)
+[Facebook Login in Capacitor App &#8250;](https://capgo.app/docs/plugins/social-login/facebook/)
 
-[Google Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/google-login-in-ionic-react-capacitor-apps/122)
+[Apple Login in Capacitor App &#8250;](https://capgo.app/docs/plugins/social-login/apple/general/)
 
-[Twitter Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/twitter-login-in-ionic-react-capacitor-app/121)
+[Google Login in Capacitor Apps &#8250;](https://capgo.app/docs/plugins/social-login/google/general/)
