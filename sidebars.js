@@ -32,6 +32,7 @@ module.exports = {
       label: 'Upgrade Guides',
       collapsed: false,
       items: [
+        'main/updating/8-0',
         'main/updating/7-0',
         'main/updating/plugins/7-0',
         'main/updating/6-0',
