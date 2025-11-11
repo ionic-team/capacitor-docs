@@ -151,7 +151,7 @@ You can still develop your iOS app like a normal capacitor app, but getting thin
 
 The right half of this bar lets you pick the destination device or simulator. You will need to pick the watch paired with the phone and then hit the 'Run' button or use the 'cmd+r' run shortcut.
 
-There can be some challenges in syncing the watch and phone apps. Sometimes you will get an error in the xcode console complaining the compainion app is not present. The best solution in this case is to re-build and re-install the apps on both devices.
+There can be some challenges in syncing the watch and phone apps. Sometimes you will get an error in the xcode console complaining the companion app is not present. The best solution in this case is to re-build and re-install the apps on both devices.
 
 ## Building the watch UI and sending it to the watch
 
