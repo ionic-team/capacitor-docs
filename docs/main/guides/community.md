@@ -20,6 +20,8 @@ slug: /guides/community
 
 [Using the Capacitor in Vue.js app &#8250;](https://akhromieiev.com/tutorials/using-capacitor-in-vue-js-app/)
 
+[Using the Capacitor in React.js app &#8250;](https://capgo.app/blog/creating-mobile-apps-with-react-and-capacitor/)
+
 ## APIs
 
 [Camera: Building an Ionic Framework Camera App](/main/guides/ionic-framework-app.md)
