@@ -147,6 +147,12 @@ This makes the `echo` method available to the Capacitor web runtime, indicating 
 
 To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAPPluginMethod` entry in the `pluginMethods` array.
 
+Capacitor defines three `returnType` values in `ios/Capacitor/Capacitor/JSExport.swift`, and each one changes how the generated JavaScript wrapper calls into native code:
+
+- `CAPPluginReturnNone`: fire-and-forget methods that return immediately through `nativeCallback` and do not keep a promise/callback open.
+- `CAPPluginReturnPromise`: the standard promise-based bridge where you resolve or reject once per invocation.
+- `CAPPluginReturnCallback`: for streaming data. Capacitor adds a `_callback` parameter to your Swift method and keeps the JavaScript callback alive until you finish.
+
 ## Permissions
 
 If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern.
