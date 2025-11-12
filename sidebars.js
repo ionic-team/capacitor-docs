@@ -33,6 +33,7 @@ module.exports = {
       collapsed: false,
       items: [
         'main/updating/plugins/8-0',
+        'main/updating/8-0',
         'main/updating/7-0',
         'main/updating/plugins/7-0',
         'main/updating/6-0',
