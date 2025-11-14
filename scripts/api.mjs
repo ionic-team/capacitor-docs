@@ -276,6 +276,15 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/src/definitions.ts',
   },
+    {
+    id: 'system-bars',
+    isCore: true,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    description: 'The System Bars API provides methods for configuring the style and visibility of the device System Bars / Status Bar.',
+    editUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/system-bars.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts',
+  },
   {
     id: 'text-zoom',
     isCore: false,

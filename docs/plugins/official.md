@@ -48,6 +48,7 @@ The API documentation for these plugins can be found below.
 - [Share](/apis/share.md)
 - [Splash Screen](/apis/splash-screen.md)
 - [Status Bar](/apis/status-bar.md)
+- [System Bars](/apis/system-bars.md)
 - [Text Zoom](/apis/text-zoom.md)
 - [Toast](/apis/toast.md)
 - [Watch 🧪](/apis/watch.md)
