@@ -25,14 +25,12 @@ With Node installed, you can get started with creating Progressive Web Applicati
 
 To build iOS apps, you will need **macOS**. While there are solutions like [Ionic Appflow](http://ionicframework.com/appflow) that can be used to perform iOS cloud builds if you don't have a Mac, it is highly recommended to have the tools available to you locally in order to properly test your Capacitor application.
 
-In order to develop iOS applications using Capacitor, you will need four additional dependencies:
+In order to develop iOS applications using Capacitor, you will need two additional dependencies:
 
 - Xcode
 - Xcode Command Line Tools
-- Homebrew
-- Cocoapods
 
-Once you've installed the core requirements, as well as Xcode, Xcode Command Line Tools, and Cocoapods, you'll be able to create both iOS applications and PWAs.
+Once you've installed the core requirements, as well as Xcode, Xcode Command Line Tools, you'll be able to create both iOS applications and PWAs.
 
 ### Xcode
 
@@ -53,7 +51,18 @@ xcode-select -p
 # /Applications/Xcode.app/Contents/Developer
 ```
 
-### Homebrew
+### Optional dependencies
+
+The following dependencies are optional for using Capacitor on iOS.
+
+If you need to use CocoaPods as a dependency manager for native iOS packages, then you should install these two package managers:
+
+- Homebrew
+- CocoaPods
+
+We recommend using [Swift Package Manager](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs) (SPM) as the dependency manager for iOS. If you don't need CocoaPods, then you can use SPM and skip the install of those two dependencies.
+
+#### Homebrew
 
 Homebrew is a package manager for macOS packages. You need to install it in order to install CocoaPods for both Intel and Apple Silicon Macs.
 
@@ -69,9 +78,11 @@ Don't just trust us! This is how [brew.sh](https://brew.sh) recommends installin
 
 If you do not want to install Homebrew, alternative, but not recommended, instructions can be found below.
 
-### CocoaPods
+#### CocoaPods
 
-Cocoapods is an iOS dependency manager that Capacitor uses to install and manage native dependencies for your iOS project. You can install [CocoaPods](https://cocoapods.org/) by running the following command in your terminal
+CocoaPods was the default iOS dependency manager in Capacitor 7 and earlier. Since Capacitor 8, the default has been replaced with SPM, but you can still use CocoaPods as an alternative if your project needs it, by passing `--packagemanager CocoaPods` to `npx cap add ios` command.
+
+You can install [CocoaPods](https://cocoapods.org/) by running the following command in your terminal
 
 ```bash
 brew install cocoapods
@@ -84,7 +95,7 @@ pod --version
 # 1.12.1
 ```
 
-#### Installing CocoaPods without Homebrew
+##### Installing CocoaPods without Homebrew
 
 You can install CocoaPods directly with Ruby Gem. To install it, you can run the following command.
 ```
