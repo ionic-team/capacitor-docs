@@ -40,7 +40,7 @@ export default function TOC({ ...props }) {
           target={activeAd.ad_url.target}
           // onClick={e => trackClick(activeAd.ad_id, e)}
         >
-          {/* Reponsive image since Prismic supports it out of the box */}
+          {/* Responsive image since Prismic supports it out of the box */}
           <picture>
             <source media="(min-width: 37.5em)" src={activeAd.ad_image.url} />
             <source src={activeAd.ad_image['1x'].url} />
