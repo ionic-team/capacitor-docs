@@ -305,13 +305,13 @@ Select your App on the left side and select package dependencies on the right, a
 
 ![SPM-FB-Step1](../../../static/img/spm/firebase/firebase-spm-step1.png)
 
-Then, bring up the package search box
+Then, select the plus icon to add a new package, something like the below should be shown.
 
 ![SPM-FB-Step2a](../../../static/img/spm/firebase/firebase-spm-step2a.png)
 
-and search for `https://github.com/firebase/firebase-ios-sdk`
+In the search box, enter `https://github.com/firebase/firebase-ios-sdk`, then select "Add Package."
 
-![SPM-FB-Step2b](../../../static/img/spm/firebase/firebase-spm-step2a.png)
+![SPM-FB-Step2b](../../../static/img/spm/firebase/firebase-spm-step2b.png)
 
 Now scroll and add Firebase Messaging to the App target.
 
