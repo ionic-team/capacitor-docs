@@ -297,7 +297,7 @@ The Push Notification API on iOS makes use of either Swift Package Manager or Co
 
 #### Using Swift Package Manager (SPM)
 
-To add the SDK using SPM, you'll need to make a modification to your `App/App.xcproject`
+To add the SDK using SPM, you'll need to make a modification to your `ios/App/App.xcodeproj`
 
 First, open `App/App.xcproject` in Xcode by runnning `npx cap open ios` or double click the file in finder.
 
