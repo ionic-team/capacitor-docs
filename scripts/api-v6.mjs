@@ -48,7 +48,6 @@ const isString = (value) => typeof value === 'string' || value instanceof String
 
 async function buildPluginApiDocs(plugin) {
   const pluginId = isString(plugin) ? plugin : plugin.id;
-  console.log(pluginId);
   const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
   const apiContent = createApiPage(plugin, readme, pkgJson);
