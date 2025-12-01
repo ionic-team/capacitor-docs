@@ -293,7 +293,7 @@ npx cap open ios
 
 ### Add the Firebase SDK
 
-The Push Notification API on iOS makes use of either Swift Package Manager or CocoaPods for dependency managment. We need to tell them to make use of Firebase.
+The Push Notification API on iOS makes use of either Swift Package Manager or CocoaPods for dependency management. We need to tell them to make use of Firebase.
 
 #### Using Swift Package Manager (SPM)
 
