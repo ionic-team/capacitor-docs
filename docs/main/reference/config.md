@@ -331,17 +331,6 @@ export interface CapacitorConfig {
      * @default true
      */
     resolveServiceWorkerRequests?: boolean;
-
-    /**
-     * If set to "force", margins will be adjusted for edge to edge regardless of any other settings.
-     * If set to "auto", or is missing, will check for Android 15 and the setting of [windowOptOutEdgeToEdgeEnforcement](https://developer.android.com/reference/android/R.attr#windowOptOutEdgeToEdgeEnforcement) and will adjust margins if on Android 15 and windowOptOutEdgeToEdgeEnforcement is false/missing.
-     * If set to "disable", will not adjust margins at all.
-     * In Capacitor 8, this default will be changed to 'auto'
-     *
-     * @since 7.1.0
-     * @default disable
-     */
-    adjustMarginsForEdgeToEdge?: 'auto' | 'force' | 'disable';
   };
 
   ios?: {
@@ -528,27 +517,27 @@ export interface CapacitorConfig {
       /**
        * The signing style to use when building the app for distribution.
        *
-       * @since 7.0.0
+       * @since 7.1.0
        * @default 'automatic'
        */
       signingStyle?: 'automatic' | 'manual';
       /**
        * The method used by xcodebuild to export the archive
        *
-       * @since 7.0.0
+       * @since 7.1.0
        * @default 'app-store-connect'
        */
       exportMethod?: string;
       /**
        * A certificate name, SHA-1 hash, or automatic selector to use for signing for iOS builds.
        *
-       * @since 7.0.0
+       * @since 7.1.0
        */
       signingCertificate?: string;
       /**
        * A provisioning profile name or UUID for iOS builds.
        *
-       * @since 7.0.0
+       * @since 7.1.0
        */
       provisioningProfile?: string;
     };
@@ -644,6 +633,15 @@ export interface CapacitorConfig {
      * @default null
      */
     errorPath?: string;
+
+    /**
+     * Append a path to the app URL.
+     *
+     * Allows loading from other paths than the default `/index.html`.
+     * @since 7.3.0
+     * @default null
+     */
+    appStartPath?: string;
   };
 
   cordova?: {
@@ -663,6 +661,15 @@ export interface CapacitorConfig {
      * @since 1.3.0
      */
     preferences?: { [key: string]: string | undefined };
+
+    /**
+     * Fail on cap update/sync if the CLI detects that a cordova plugin
+     * has uninstalled dependencies.
+     *
+     * @default false
+     * @since 7.4.0
+     */
+    failOnUninstalledPlugins?: boolean;
   };
 
   /**
@@ -725,6 +732,45 @@ export interface PluginsConfig {
      * @default false
      */
     enabled?: boolean;
+  };
+
+  /**
+   * System Bars plugin configuration
+   *
+   * @since 8.0.0
+   */
+  SystemBars?: {
+    /**
+     * Disables the injection of device css insets into the web view.
+     *
+     * @default false
+     */
+    disableInsets?: boolean;
+    /**
+     * The style of the text and icons of the system bars.
+     *
+     * This option is only supported on Android.
+     *
+     * @default `DEFAULT`
+     */
+    style?: string;
+
+    /**
+     * Hide the system bars on start.
+     *
+     * @default false
+     */
+    hidden?: boolean;
+
+    /**
+     * The type of status bar animation used when showing or hiding.
+     *
+     * This option is only supported on iOS.
+     *
+     * @default 'FADE'
+     *
+     */
+    animation?: 'FADE' | 'NONE';
   };
 }
 ```
