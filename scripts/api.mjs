@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 // @ts-ignore
 const API_DIR = new URL('../docs/apis/', import.meta.url);
 
-const tag = 'next';
+const tag = 'latest';
 
 /**
  * @typedef {Object} PluginApi
@@ -52,7 +52,6 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
     editApiUrl:
       'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'barcode-scanner',
@@ -61,7 +60,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'browser',
@@ -117,24 +115,24 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/next/packages/capacitor-plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/next/packages/capacitor-plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
   {
     id: 'file-transfer',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/next/packages/capacitor-plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/next/packages/capacitor-plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
   {
     id: 'file-viewer',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-file-viewer/blob/next/packages/capacitor-plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-file-viewer/blob/next/packages/capacitor-plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-file-viewer/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-file-viewer/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
   {
     id: 'geolocation',
@@ -142,8 +140,8 @@ const pluginApis = [
     isExperimental: false,
     npmScope: '@capacitor',
     description: 'The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.',
-    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/next/packages/capacitor-plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/next/packages/capacitor-plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
   {
     id: 'google-maps',
@@ -152,15 +150,14 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'haptics',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/next/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/next/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/main/src/definitions.ts',
   },
   {
     id: 'http',
@@ -177,16 +174,16 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
   },
   {
     id: 'keyboard',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/next/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/next/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/main/src/definitions.ts',
   },
   {
     id: 'local-notifications',
@@ -225,8 +222,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/next/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/next/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/src/definitions.ts',
   },
   {
     id: 'push-notifications',
@@ -308,7 +305,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest',
   },
 ];
 
