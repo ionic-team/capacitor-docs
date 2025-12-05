@@ -36,9 +36,7 @@ Your `index.html` file must have a `<head>` tag in order to properly inject Capa
 In the root of your app, install Capacitor's main npm dependencies: the core JavaScript runtime and the command line interface (CLI).
 
 ```bash
-npm i @capacitor/core
-npm i -D @capacitor/cli
-```
+npm install @capacitor/core @capacitor/cli
 
 ### Initialize your Capacitor config
 
@@ -59,8 +57,8 @@ You can customize the folder used by Capacitor by modifying the `webDir` variabl
 After the Capacitor core runtime is installed, you can install the Android and iOS platforms.
 
 ```bash
-npm i @capacitor/android @capacitor/ios
-```
+npx cap add android
+npx cap add ios
 
 Once the platforms have been added to your `package.json`, you can run the following commands to create your Android and iOS projects for your native application.
 
