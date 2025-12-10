@@ -24,6 +24,8 @@ npx cap run [options] <platform>
 - `--scheme <schemeName>`: set the scheme of the iOS project
 - `--configuration <name>`: Configuration name of the iOS Scheme
 - `--target <id>`: Run on a specific target device
+- `--target-name <name>`: Run on a specific target device by its name (ex: "iPhone 17 Pro", "John's iPhone")
+- `--target-name-sdk-version <version>`: Run on a target device by name with a specific sdk version when using --target-name, (ex: "26.0" for iOS 26 or "35" for Android API 35).  Useful for targets that have the same name but have different OS / SDK versions
 - `--live-reload`: Enable Live Reload
 - `-l`: Shorthand for `--live-reload`
 - `--host <host>`: Live Reload by loading the web view from the specified host
