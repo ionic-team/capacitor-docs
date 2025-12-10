@@ -1,8 +1,8 @@
 ---
 title: Keyboard Capacitor Plugin API
 description: The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
-custom_edit_url: https://github.com/ionic-team/capacitor-keyboard/blob/next/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-keyboard/blob/next/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-keyboard/blob/main/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-keyboard/blob/main/src/definitions.ts
 sidebar_label: Keyboard
 ---
 
@@ -127,7 +127,7 @@ the following events also work with `window.addEventListener`:
 show() => Promise<void>
 ```
 
-Show the keyboard. This method is alpha and may have issues.
+Show the keyboard.
 
 This method is only supported on Android.
 
@@ -372,7 +372,7 @@ Remove all native listeners for this plugin.
 
 | Prop                 | Type                | Description             | Since |
 | -------------------- | ------------------- | ----------------------- | ----- |
-| **`keyboardHeight`** | <code>number</code> | Height of the heyboard. | 1.0.0 |
+| **`keyboardHeight`** | <code>number</code> | Height of the keyboard. | 1.0.0 |
 
 
 ### Enums

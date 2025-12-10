@@ -4,6 +4,7 @@ description: Learn how to get Firebase Cloud Messaging working on iOS and Androi
 contributors:
   - bryplano
   - javebratt
+  - markemer
 slug: /guides/push-notifications-firebase
 ---
 
@@ -289,9 +290,38 @@ npx cap open ios
 
 ![Google Service Info Plist Location for iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/google-plist-location-ios.png)
 
-### Add the Firebase SDK via CocoaPods
 
-The Push Notification API on iOS makes use of CocoaPods - an iOS dependency management system - and we need to tell CocoaPods to make use of Firebase.
+### Add the Firebase SDK
+
+The Push Notification API on iOS makes use of either Swift Package Manager or CocoaPods for dependency management. We need to tell them to make use of Firebase.
+
+#### Using Swift Package Manager (SPM)
+
+To add the SDK using SPM, you'll need to make a modification to your `ios/App/App.xcodeproj`
+
+First, open `ios/App/App.xcodeproj` in Xcode by running `npx cap open ios` or double click the file in finder.
+
+Select your App on the left side and select package dependencies on the right, as shown below.
+
+![SPM-FB-Step1](../../../static/img/spm/firebase/firebase-spm-step1.png)
+
+Then, select the plus icon to add a new package, something like the below should be shown.
+
+![SPM-FB-Step2a](../../../static/img/spm/firebase/firebase-spm-step2a.png)
+
+In the search box, enter `https://github.com/firebase/firebase-ios-sdk`, then select "Add Package."
+
+![SPM-FB-Step2b](../../../static/img/spm/firebase/firebase-spm-step2b.png)
+
+Now scroll and add Firebase Messaging to the App target.
+
+![SPM-FB-Step3](../../../static/img/spm/firebase/firebase-spm-step3.png)
+
+Click "Add Package", and wait for processing to finish. When it has you should see something similar to this image.
+
+![SPM-FB-Step4](../../../static/img/spm/firebase/firebase-spm-step4.png)
+
+#### Using CocoaPods
 
 To do this, we need to modify the `Podfile`, which can be found in Xcode under `Pods`:
 
@@ -507,7 +537,7 @@ Choose `pushextension` from the list of Targets then:
 - Click `Signing & Capabilities`
 - Click `+ Capability`
 - Choose `Push Notifications`
-- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 14.0`
+- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 15.0`
 
 :::note
  If you do not change the deployment target for your extension then images will not appear on devices on an older version of iOS.
