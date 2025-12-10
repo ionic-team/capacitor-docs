@@ -16,8 +16,8 @@ Capacitor can target virtually any device with our official and community platfo
 ### Official Platforms
 
 Capacitor officially supports the following platforms:
-- iOS 14+
-- Android 6+
+- iOS 15+
+- Android 7+
   - Requires Chrome WebView 60+
 - Modern Web Browsers
   - Chrome
@@ -63,5 +63,5 @@ Short answer, no. The longer answer is that while you can use cloud services lik
 
 ## Why do I get a blank screen when running on an Android emulator?
 
-Capacitor requires Android 6 as well as a WebView version of 60 or higher. If you create an Android 6 or 7 emulator for example, the newest version of the WebView won't be installed, and you'll get a blank white screen. To get around this, you can install a newer Android emulator for testing your application.
+Capacitor requires Android 7 as well as a WebView version of 60 or higher. If you create an Android 7 emulator for example, the newest version of the WebView won't be installed, and you'll get a blank white screen. To get around this, you can install a newer Android emulator for testing your application.
 
