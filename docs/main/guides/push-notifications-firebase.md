@@ -537,7 +537,7 @@ Choose `pushextension` from the list of Targets then:
 - Click `Signing & Capabilities`
 - Click `+ Capability`
 - Choose `Push Notifications`
-- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 14.0`
+- Change the Deployment target from `iOS 16.4` (or whatever Xcode chose) to `iOS 15.0`
 
 :::note
  If you do not change the deployment target for your extension then images will not appear on devices on an older version of iOS.
