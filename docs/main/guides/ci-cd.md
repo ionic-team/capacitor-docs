@@ -40,6 +40,11 @@ For Capacitor developers, Appflow also offers the ability to push real-time upda
 
 For more details, see the [Appflow Documentation](https://ionicframework.com/docs/appflow).
 
+If you need a lighter-weight option that still runs inside GitHub Actions, the community has published sample workflows you can adopt quickly:
+
+- [Automatic Capacitor iOS Build with GitHub Action](https://capgo.app/blog/automatic-capacitor-ios-build-github-action/)
+- [Automatic Capacitor Android Build with GitHub Action](https://capgo.app/blog/automatic-capacitor-android-build-github-action/)
+
 ## Using a traditional CI/CD service with Appflow
 
 Appflow can replace a traditional CI/CD service since it performs web/JS builds and native mobile builds. However, it works great with a traditional CI/CD service.
