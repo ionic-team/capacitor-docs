@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 const API_DIR = new URL('../versioned_docs/version-v7/apis/', import.meta.url);
 
-const tag = 'latest';
+const tag = 'latest-7';
 
 /**
  * @typedef {Object} PluginApi
@@ -59,7 +59,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'browser',
@@ -142,7 +141,6 @@ const pluginApis = [
     description: 'The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.',
     editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest'
   },
   {
     id: 'google-maps',
@@ -151,7 +149,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'haptics',
@@ -178,7 +175,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'keyboard',
