@@ -1,8 +1,8 @@
 ---
 title: Geolocation Capacitor Plugin API
 description: The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.
-custom_edit_url: https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-geolocation/blob/7.x/packages/capacitor-plugin/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-geolocation/blob/7.x/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: Geolocation
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Barcode Scanner Capacitor Plugin API
 description: Capacitor plugin using Outsystems Barcode libs
-custom_edit_url: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-barcode-scanner/blob/2.x/plugin/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-barcode-scanner/blob/2.x/plugin/src/definitions.ts
 sidebar_label: Barcode Scanner
 ---
 
