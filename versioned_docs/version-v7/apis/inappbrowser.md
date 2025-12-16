@@ -13,7 +13,7 @@ The InAppBrowser Plugin provides a web browser view that allows you to load any 
 ## Install
 
 ```bash
-npm install @capacitor/inappbrowser
+npm install @capacitor/inappbrowser@latest-7
 npx cap sync
 ```
 

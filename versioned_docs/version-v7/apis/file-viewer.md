@@ -15,7 +15,7 @@ The media preview methods are currently only supported on iOS. It uses a built-i
 ## Install
 
 ```bash
-npm install @capacitor/file-viewer
+npm install @capacitor/file-viewer@latest-7
 npx cap sync
 ```
 

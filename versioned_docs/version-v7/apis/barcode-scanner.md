@@ -13,7 +13,7 @@ Capacitor plugin using Outsystems Barcode libs
 ## Install
 
 ```bash
-npm install @capacitor/barcode-scanner
+npm install @capacitor/barcode-scanner@latest-7
 npx cap sync
 ```
 

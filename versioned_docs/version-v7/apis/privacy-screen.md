@@ -15,7 +15,7 @@ The Privacy Screen plugin provides functionality to prevent sensitive informatio
 ## Install
 
 ```bash
-npm install @capacitor/privacy-screen
+npm install @capacitor/privacy-screen@latest-7
 npx cap sync
 ```
 
