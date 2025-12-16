@@ -1,8 +1,8 @@
 ---
 title: Background Runner Capacitor Plugin API
 description: Capacitor Background Runner
-custom_edit_url: https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-background-runner/blob/2.x/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-background-runner/blob/2.x/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: Background Runner
 ---
 
@@ -13,7 +13,7 @@ Background Runner provides an event-based standalone JavaScript environment for 
 ## Install
 
 ```bash
-npm install @capacitor/background-runner
+npm install @capacitor/background-runner@latest-7
 npx cap sync
 ```
 
