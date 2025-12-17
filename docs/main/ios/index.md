@@ -59,6 +59,14 @@ npx cap run ios
 
 The command will prompt you to select a target. [Learn more about `run`](/cli/commands/run.md).
 
+### Wireless iOS Devices
+
+To enable running on wireless iOS devices, make sure your device is paired with Finder and select the "Show this iPhone when on Wi-Fi" option:
+
+![Enabling wireless iPhone debugging](../../../static/img/wireless-iphone.png)
+
+Your device should now show up in the list of available devices provided by `npx cap run ios --list`.
+
 ### Running in Xcode
 
 In Xcode, first select the device or simulator and then click the play button to run your app.

@@ -8,6 +8,8 @@ sidebar_label: run
 
 This command first runs [`sync`](/cli/commands/sync.md), then it builds and deploys the native app to a target device of your choice.
 
+To enable running on wireless iOS devices, follow the instructions detailed [here](/main/ios/index.md#wireless-ios-devices).
+
 ```bash
 npx cap run [options] <platform>
 ```
