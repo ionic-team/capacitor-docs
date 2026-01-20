@@ -543,7 +543,15 @@ Choose `pushextension` from the list of Targets then:
  If you do not change the deployment target for your extension then images will not appear on devices on an older version of iOS.
 :::
 
-To add Firebase Messaging to the extension open your `Podfile` and add:
+To add Firebase Messaging to the extension:
+
+Using SPM:
+- Select the `pushextension` Target
+- Under `General`, `Frameworks and Libraries`, click the "Add items" button
+- Add `FirebaseMessaging`
+
+Using CocoaPods:
+Open your `Podfile` and add:
 ```ruby
 target 'pushextension' do
   pod 'FirebaseMessaging'
