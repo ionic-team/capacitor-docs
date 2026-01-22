@@ -549,11 +549,13 @@ We recommend using the @capacitor/file-transfer plugin instead, in conjunction w
 
 #### ReadFileOptions
 
-| Prop            | Type                                            | Description                                                                                                                                                                 | Since |
-| --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`path`**      | <code>string</code>                             | The path of the file to read                                                                                                                                                | 1.0.0 |
-| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to read the file from                                                                                                              | 1.0.0 |
-| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to read data as string | 1.0.0 |
+| Prop            | Type                                            | Description                                                                                                                                                                                            | Default         | Since |
+| --------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- | ----- |
+| **`path`**      | <code>string</code>                             | The path of the file to read                                                                                                                                                                           |                 | 1.0.0 |
+| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to read the file from                                                                                                                                         |                 | 1.0.0 |
+| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to read data as string                            |                 | 1.0.0 |
+| **`offset`**    | <code>number</code>                             | The offset to start reading the file from, in bytes. Native only (not available in web). Can be used in conjunction with length to partially read files.                                               | <code>0</code>  | 8.1.0 |
+| **`length`**    | <code>number</code>                             | The length of data to read, in bytes. Any non-positive value means to read to the end of the file. Native only (not available in web). Can be used in conjunction with offset to partially read files. | <code>-1</code> | 8.1.0 |
 
 
 #### ReadFileInChunksOptions
