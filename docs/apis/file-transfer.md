@@ -62,7 +62,7 @@ const fileInfo = await Filesystem.getUri({
 
 try {
     // Then use the FileTransfer plugin to upload
-    const result = await FileTransfer.downloadFile({
+    const result = await FileTransfer.uploadFile({
         url: 'https://example.com/upload_api',
         path: fileInfo.uri,
         chunkedMode: true,
