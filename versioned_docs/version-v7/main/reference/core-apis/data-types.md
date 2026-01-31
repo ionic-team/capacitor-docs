@@ -1,4 +1,4 @@
----
+ilx---
 title: Capacitor Data Types
 description: Data types in Capacitor
 slug: /core-apis/data-types
