@@ -62,3 +62,20 @@ Finally, add the `scheme` attribute inside the `ios` object in the [Capacitor co
 ## Deeplinks (aka Universal Links)
 
 For a Deep Links guide, [see here](/main/guides/deep-links.md).
+
+
+## iPadOS 26 
+Starting in iPadOS 26, Apple has added new window controls to make the experience more desktop-like.  These controls may overlap your app interface:
+![UIDesignRequiresCompatibility plist entry](../../../static/img/ipados-controls-overlap.png)
+
+To fix this add the following entry to your `Info.plist`:
+`UIDesignRequiresCompatibility = YES`:
+
+![UIDesignRequiresCompatibility plist entry](../../../static/img/ipados-controls-plist.png)
+
+This should prevent the controls from overlapping:
+![UIDesignRequiresCompatibility plist entry](../../../static/img/ipados-controls-fixed.png)
+
+
+Further control over the windowing controls will come in future versions of Capacitor.
+
