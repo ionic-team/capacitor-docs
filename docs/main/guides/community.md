@@ -49,3 +49,7 @@ slug: /guides/community
 [Google Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/google-login-in-ionic-react-capacitor-apps/122)
 
 [Twitter Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/twitter-login-in-ionic-react-capacitor-app/121)
+
+[Automatic Capacitor iOS Build with GitHub Action &#8250;](https://capgo.app/blog/automatic-capacitor-ios-build-github-action/)
+
+[Automatic Capacitor Android Build with GitHub Action &#8250;](https://capgo.app/blog/automatic-capacitor-android-build-github-action/)
