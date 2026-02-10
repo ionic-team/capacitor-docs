@@ -129,7 +129,7 @@ This tool will do the following changes:
 - Add the following required things to your main swift plugin file, `[Name]Plugin.swift`:
   - Add Conformance to the `CAPBridgedPlugin` protocol to your class.
   - Add 3 variables to your class. `identifier`, `jsName`, and `pluginMethods`:
-    - `identifer` will correspond to the first argument to the `CAP_PLUGIN` macro.
+    - `identifier` will correspond to the first argument to the `CAP_PLUGIN` macro.
     - `jsName` will correspond to the second argument to the `CAP_PLUGIN` macro.
     - `pluginMethods` will be an array of the methods passed to the `CAP_PLUGIN` macro.
 - A `Package.swift` file will be created at the root of your plugin folder.

@@ -1,8 +1,8 @@
 ---
 title: Google Maps Capacitor Plugin API
 description: Google maps on Capacitor
-custom_edit_url: https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-google-maps/7.x/main/plugin/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-google-maps/7.x/main/plugin/src/definitions.ts
 sidebar_label: Google Maps
 ---
 
@@ -13,7 +13,7 @@ Google maps on Capacitor
 ## Install
 
 ```bash
-npm install @capacitor/google-maps
+npm install @capacitor/google-maps@latest-7
 npx cap sync
 ```
 

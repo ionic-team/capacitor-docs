@@ -1,8 +1,8 @@
 ---
 title: Background Runner Capacitor Plugin API
 description: Capacitor Background Runner
-custom_edit_url: https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-background-runner/blob/2.x/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-background-runner/blob/2.x/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: Background Runner
 ---
 
@@ -13,7 +13,7 @@ Background Runner provides an event-based standalone JavaScript environment for 
 ## Install
 
 ```bash
-npm install @capacitor/background-runner
+npm install @capacitor/background-runner@latest-7
 npx cap sync
 ```
 
@@ -30,6 +30,18 @@ Once added, you must enable the `Background fetch` and `Background processing` m
 If you will be making use of Geolocation or Push Notifications, enable `Location updates` or `Remote notifications` respectively.
 
 ![Configure Background Modes in Xcode](https://github.com/ionic-team/capacitor-background-runner/raw/main/docs/configure_background_modes.png)
+
+You will also need to add the following entry into your `Info.plist` file:
+```
+<key>BGTaskSchedulerPermittedIdentifiers</key>
+<array>
+  <string>com.example.background.task</string>
+</array>
+```
+
+Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode.
+
+Make sure you use the same id that you use for `BGTaskSchedulerPermittedIdentifiers` (for example "com.example.background.task") in the `label` field in the plugin configuration.
 
 After enabling the Background Modes capability, add the following to your app's `AppDelegate.swift`:
 
@@ -72,8 +84,6 @@ Apple requires privacy descriptions to be specified in `Info.plist` for location
 
 - `NSLocationAlwaysUsageDescription` (`Privacy - Location Always Usage Description`)
 - `NSLocationWhenInUseUsageDescription` (`Privacy - Location When In Use Usage Description`)
-
-Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
 
 ## Android
 
