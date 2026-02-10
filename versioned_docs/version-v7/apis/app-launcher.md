@@ -26,7 +26,7 @@ Example:
 ## Install
 
 ```bash
-npm install @capacitor/app-launcher
+npm install @capacitor/app-launcher@latest-7
 npx cap sync
 ```
 

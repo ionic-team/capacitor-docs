@@ -1,8 +1,8 @@
 ---
 title: InAppBrowser Capacitor Plugin API
 description: The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security. It offers three different ways to open URLs; in a WebView, in an in-app system browser (Custom Tabs for Android and SFSafariViewController for iOS), and in the device's default browser.
-custom_edit_url: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts
 sidebar_label: InAppBrowser
 ---
 
@@ -165,7 +165,7 @@ Closes the currently active browser. It can be used to close browsers launched t
 ### addListener('browserClosed' | 'browserPageLoaded', ...)
 
 ```typescript
-addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: "browserClosed" | "browserPageLoaded", listenerFunc: () => void) => Promise<PluginListenerHandle>
 ```
 
 Adds a listener for the specified browser events, with no data being returned.
@@ -183,7 +183,7 @@ Adds a listener for the specified browser events, with no data being returned.
 ### addListener('browserPageNavigationCompleted', ...)
 
 ```typescript
-addListener(eventName: 'browserPageNavigationCompleted', listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
+addListener(eventName: "browserPageNavigationCompleted", listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
 ```
 
 Adds a listener for the specified browser event, which receives data.

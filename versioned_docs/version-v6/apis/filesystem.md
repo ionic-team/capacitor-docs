@@ -13,7 +13,7 @@ The Filesystem API provides a NodeJS-like API for working with files on the devi
 ## Install
 
 ```bash
-npm install @capacitor/filesystem
+npm install @capacitor/filesystem@latest-6
 npx cap sync
 ```
 

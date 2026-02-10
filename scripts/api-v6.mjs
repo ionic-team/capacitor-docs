@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 const API_DIR = new URL('../versioned_docs/version-v6/apis/', import.meta.url);
 
-const tag = 'latest';
+const tag = 'latest-6';
 
 const pluginApis = [
   'action-sheet',
@@ -11,9 +11,9 @@ const pluginApis = [
   'app-launcher',
   {
     id: 'background-runner',
-    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
+    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/README.md',
     editApiUrl:
-      'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
+      'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/packages/capacitor-plugin/src/definitions.ts',
   },
   'browser',
   'camera',
