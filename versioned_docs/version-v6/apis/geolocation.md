@@ -13,7 +13,7 @@ The Geolocation API provides simple methods for getting and tracking the current
 ## Install
 
 ```bash
-npm install @capacitor/geolocation
+npm install @capacitor/geolocation@latest-6
 npx cap sync
 ```
 
