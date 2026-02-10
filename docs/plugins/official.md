@@ -15,6 +15,26 @@ The Official Plugins are a set of Capacitor plugins maintained by the Capacitor 
 
 The API documentation for these plugins can be found below.
 
+## Versioning
+
+### npm Tags (`latest` and `latest-X`)
+
+Capacitor provides special npm distribution tags to make installing compatible plugin versions easier.
+
+- The `latest` tag installs the most recent plugin version available.
+- Use `latest-X` (for example, `latest-7`) to install the most recent version of official Capacitor plugins compatible with Capacitor X.
+- These tags express Capacitor version compatibility, not the plugin's own version number. A plugin may be at v2 or v3 and still be the correct release for `latest-7`.
+- These tags are intended for use in `npm install` commands and will resolve to the appropriate range in your `package.json`.
+- This tagging convention applies to official Capacitor plugins and may not be consistently supported by community plugins.
+
+**Example:**
+```bash
+npm install @capacitor/camera@latest
+# example: v8.0.1
+npm install @capacitor/device@latest-7
+# example: v7.0.2
+```
+
 ## List of Official Plugins
 
 - [Action Sheet](/apis/action-sheet.md)
@@ -48,6 +68,7 @@ The API documentation for these plugins can be found below.
 - [Share](/apis/share.md)
 - [Splash Screen](/apis/splash-screen.md)
 - [Status Bar](/apis/status-bar.md)
+- [System Bars](/apis/system-bars.md)
 - [Text Zoom](/apis/text-zoom.md)
 - [Toast](/apis/toast.md)
 - [Watch 🧪](/apis/watch.md)
