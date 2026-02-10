@@ -68,13 +68,13 @@ To use certain location features, the SDK requires the following permissions to 
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `googleMapsPlayServicesVersion`: version of `com.google.android.gms:play-services-maps` (default: `18.2.0`)
-- `googleMapsUtilsVersion`: version of `com.google.maps.android:android-maps-utils` (default: `3.8.2`)
-- `googleMapsKtxVersion`: version of `com.google.maps.android:maps-ktx` (default: `5.0.0`)
-- `googleMapsUtilsKtxVersion`: version of `com.google.maps.android:maps-utils-ktx` (default: `5.0.0`)
-- `kotlinxCoroutinesVersion`: version of `org.jetbrains.kotlinx:kotlinx-coroutines-android` and `org.jetbrains.kotlinx:kotlinx-coroutines-core` (default: `1.7.3`)
-- `androidxCoreKTXVersion`: version of `androidx.core:core-ktx` (default: `1.12.0`)
-- `kotlin_version`: version of `org.jetbrains.kotlin:kotlin-stdlib` (default: `1.9.10`)
+- `googleMapsPlayServicesVersion`: version of `com.google.android.gms:play-services-maps` (default: `19.2.0`)
+- `googleMapsUtilsVersion`: version of `com.google.maps.android:android-maps-utils` (default: `3.19.1`)
+- `googleMapsKtxVersion`: version of `com.google.maps.android:maps-ktx` (default: `5.2.1`)
+- `googleMapsUtilsKtxVersion`: version of `com.google.maps.android:maps-utils-ktx` (default: `5.2.1`)
+- `kotlinxCoroutinesVersion`: version of `org.jetbrains.kotlinx:kotlinx-coroutines-android` and `org.jetbrains.kotlinx:kotlinx-coroutines-core` (default: `1.10.2`)
+- `androidxCoreKTXVersion`: version of `androidx.core:core-ktx` (default: `1.17.0`)
+- `kotlin_version`: version of `org.jetbrains.kotlin:kotlin-stdlib` (default: `2.2.20`)
 
 
 ## Usage
@@ -251,6 +251,25 @@ const MyMap: React.FC = () => {
 }
 
 export default MyMap;
+```
+
+You may need to create a `*.d.ts` file for the custom element in React:
+
+```ts
+// custom-elements.d.ts
+
+declare module "react" {
+  namespace JSX {
+    interface IntrinsicElements {
+      "capacitor-google-map": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
+  }
+}
+
+export {};
 ```
 
 ### Vue
@@ -1277,7 +1296,7 @@ The callback function to be called when map events are emitted.
 
 #### Marker
 
-Supports markers of either either "legacy" or "advanced" types.
+Supports markers of either "legacy" or "advanced" types.
 
 <code>google.maps.<a href="#marker">Marker</a> | google.maps.marker.AdvancedMarkerElement</code>
 

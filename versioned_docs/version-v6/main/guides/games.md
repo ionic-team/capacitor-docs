@@ -1,6 +1,6 @@
 ---
 title: Games
-description: Game development wiht Capacitor
+description: Game development with Capacitor
 slug: /guides/games
 ---
 
@@ -12,7 +12,7 @@ We generally recommend building with a game engine, which will provide primitive
 
 ## Phaser + Capacitor
 
-[Phaser](https://phaser.io/) is one of the most popular web-based game development engines. Capacitor and Phaser form the foundation of popular games like [Vampire Survivors](https://store.steampowered.com/app/1794680/Vampire_Survivors/).
+[Phaser](https://phaser.io/) is one of the most popular web-based game development engines.
 
-To get started building games with Capacitor and Phaser, see the [Capacitor + Phaser Starter template](https://github.com/ionic-team/capacitor-starters/tree/main/phaser), which includes consideration for mobile device scaling and defaulting to landscape mode.
+To get started building games with Capacitor and Phaser, see the [Bring your Phaser game to iOS and Android with Capacitor](https://phaser.io/tutorials/bring-your-phaser-game-to-ios-and-android-with-capacitor)
 

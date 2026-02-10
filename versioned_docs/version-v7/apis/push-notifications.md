@@ -13,7 +13,7 @@ The Push Notifications API provides access to native push notifications.
 ## Install
 
 ```bash
-npm install @capacitor/push-notifications
+npm install @capacitor/push-notifications@latest-7
 npx cap sync
 ```
 
