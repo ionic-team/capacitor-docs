@@ -27,7 +27,7 @@ we recommend taking a look at a SQLite-based solution. One such solution is [Ion
 ## Install
 
 ```bash
-npm install @capacitor/preferences
+npm install @capacitor/preferences@latest-6
 npx cap sync
 ```
 
