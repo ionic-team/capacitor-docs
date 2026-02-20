@@ -179,6 +179,16 @@ const readFilePath = async () => {
 
   console.log("data:", contents);
 };
+
+const appendBinaryData = async () => {
+  // Here's an example of appending binary data, which should be sent to the plugin
+  //  as base64 encoded, and without providing any `Encoding`.
+  await Filesystem.appendFile({
+    path: "file.bin",
+    directory: Directory.Cache,
+    data: "VGhpcyBpcyBtZWFudCB0byByZXByZXNlbnQgYSBCaW5hcnkgRGF0YSBleGFtcGxlIGVuY29kZWQgaW4gQmFzZTY0Lg=="
+  });
+};
 ```
 
 ## API
@@ -549,11 +559,13 @@ We recommend using the @capacitor/file-transfer plugin instead, in conjunction w
 
 #### ReadFileOptions
 
-| Prop            | Type                                            | Description                                                                                                                                                                 | Since |
-| --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`path`**      | <code>string</code>                             | The path of the file to read                                                                                                                                                | 1.0.0 |
-| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to read the file from                                                                                                              | 1.0.0 |
-| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to read data as string | 1.0.0 |
+| Prop            | Type                                            | Description                                                                                                                                                                                            | Default         | Since |
+| --------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- | ----- |
+| **`path`**      | <code>string</code>                             | The path of the file to read                                                                                                                                                                           |                 | 1.0.0 |
+| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to read the file from                                                                                                                                         |                 | 1.0.0 |
+| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to read data as string                            |                 | 1.0.0 |
+| **`offset`**    | <code>number</code>                             | The offset to start reading the file from, in bytes. Native only (not available in web). Can be used in conjunction with length to partially read files.                                               | <code>0</code>  | 8.1.0 |
+| **`length`**    | <code>number</code>                             | The length of data to read, in bytes. Any non-positive value means to read to the end of the file. Native only (not available in web). Can be used in conjunction with offset to partially read files. | <code>-1</code> | 8.1.0 |
 
 
 #### ReadFileInChunksOptions
@@ -572,23 +584,23 @@ We recommend using the @capacitor/file-transfer plugin instead, in conjunction w
 
 #### WriteFileOptions
 
-| Prop            | Type                                            | Description                                                                                                                                               | Default            | Since |
-| --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
-| **`path`**      | <code>string</code>                             | The path of the file to write                                                                                                                             |                    | 1.0.0 |
-| **`data`**      | <code>string \| Blob</code>                     | The data to write Note: Blob data is only supported on Web.                                                                                               |                    | 1.0.0 |
-| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to store the file in                                                                                             |                    | 1.0.0 |
-| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to write data as string |                    | 1.0.0 |
-| **`recursive`** | <code>boolean</code>                            | Whether to create any missing parent directories.                                                                                                         | <code>false</code> | 1.0.0 |
+| Prop            | Type                                            | Description                                                                                                                                                                                                                                                                                                                                      | Default            | Since |
+| --------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | ----- |
+| **`path`**      | <code>string</code>                             | The path of the file to write                                                                                                                                                                                                                                                                                                                    |                    | 1.0.0 |
+| **`data`**      | <code>string \| Blob</code>                     | The data to write Note: Blob data is only supported on Web.                                                                                                                                                                                                                                                                                      |                    | 1.0.0 |
+| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to store the file in                                                                                                                                                                                                                                                                                    |                    | 1.0.0 |
+| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to write the file in. If not provided, binary data will be written. For this, you must provide data as base64 encoded, so that the plugin can decode it before writing to disk. If you do not provide encoding and use non-base64 data, an error will be thrown. Pass <a href="#encoding">Encoding.UTF8</a> to write data as string |                    | 1.0.0 |
+| **`recursive`** | <code>boolean</code>                            | Whether to create any missing parent directories.                                                                                                                                                                                                                                                                                                | <code>false</code> | 1.0.0 |
 
 
 #### AppendFileOptions
 
-| Prop            | Type                                            | Description                                                                                                                                               | Since |
-| --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`path`**      | <code>string</code>                             | The path of the file to append                                                                                                                            | 1.0.0 |
-| **`data`**      | <code>string</code>                             | The data to write                                                                                                                                         | 1.0.0 |
-| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to store the file in                                                                                             | 1.0.0 |
-| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to write data as string | 1.0.0 |
+| Prop            | Type                                            | Description                                                                                                                                                                                                                                                                                                                                        | Since |
+| --------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`path`**      | <code>string</code>                             | The path of the file to append                                                                                                                                                                                                                                                                                                                     | 1.0.0 |
+| **`data`**      | <code>string</code>                             | The data to append                                                                                                                                                                                                                                                                                                                                 | 1.0.0 |
+| **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to store the file in                                                                                                                                                                                                                                                                                      | 1.0.0 |
+| **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to append to the file. If not provided, binary data will be appended. For this, you must provide data as base64 encoded, so that the plugin can decode it before writing to disk. If you do not provide encoding and use non-base64 data, an error will be thrown. Pass <a href="#encoding">Encoding.UTF8</a> to write data as string | 1.0.0 |
 
 
 #### DeleteFileOptions
