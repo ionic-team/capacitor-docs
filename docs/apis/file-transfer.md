@@ -39,7 +39,14 @@ try {
         progress: true
     });
 } catch(error) {
-    // handle error - see `FileTransferError` interface for what error information is returned
+    if (error.code === 'OS-PLUG-FLTR-0010') {
+      // HTTP error - see `FileTransferError` for details on fields available in `errorData`
+      let errorData = error.data;
+      this.showError('Upload failed: ' + errorData.httpStatus + '; ' + errorData.body);
+    } else {
+      // other errors - use `error.code` and `error.message` for more information.
+      this.showError('Upload failed: ' + error.code + '; ' + error.message);
+    }
 }
 
 // Progress events
@@ -75,10 +82,16 @@ try {
     });
     // get server response and other info from result - see `UploadFileResult` interface
 } catch(error) {
-    // handle error - see `FileTransferError` interface for what error information is returned
+    if (error.code === 'OS-PLUG-FLTR-0010') {
+      // HTTP error - see `FileTransferError` for details on fields available in `errorData`
+      let errorData = error.data;
+      this.showError('Upload failed: ' + errorData.httpStatus + '; ' + errorData.body);
+    } else {
+      // other errors - use `error.code` and `error.message` for more information.
+      this.showError('Upload failed: ' + error.code + '; ' + error.message);
+    }
 }
 ```
-
 
 ## API
 
@@ -107,6 +120,9 @@ downloadFile(options: DownloadFileOptions) => Promise<DownloadFileResult>
 
 Perform an HTTP request to a server and download the file to the specified destination.
 
+If the server returns an HTTP error (e.g. 404, 500, etc.), the promise will be rejected.
+To get information about the HTTP error response when running on Android and iOS (not applicable to web), use the <a href="#filetransfererror">`FileTransferError`</a> interface available at `error.data` attribute.
+
 | Param         | Type                                                                |
 | ------------- | ------------------------------------------------------------------- |
 | **`options`** | <code><a href="#downloadfileoptions">DownloadFileOptions</a></code> |
@@ -124,7 +140,10 @@ Perform an HTTP request to a server and download the file to the specified desti
 uploadFile(options: UploadFileOptions) => Promise<UploadFileResult>
 ```
 
-Perform an HTTP request to upload a file to a server
+Perform an HTTP request to upload a file to a server.
+
+If the server returns an HTTP error (e.g. 404, 500, etc.), the promise will be rejected.
+To get information about the HTTP error response when running Android and iOS (not applicable to web), use the <a href="#filetransfererror">`FileTransferError`</a> interface available at `error.data` attribute.
 
 | Param         | Type                                                            |
 | ------------- | --------------------------------------------------------------- |
@@ -249,6 +268,20 @@ Remove all listeners for this plugin.
 | **`bytes`**            | <code>number</code>                 | The number of bytes transferred so far.                                                                                             | 1.0.0 |
 | **`contentLength`**    | <code>number</code>                 | The total number of bytes associated with the file transfer.                                                                        | 1.0.0 |
 | **`lengthComputable`** | <code>boolean</code>                | Whether or not the contentLength value is relevant. In some situations, the total number of bytes may not be possible to determine. | 1.0.0 |
+
+
+#### FileTransferError
+
+| Prop             | Type                                    | Description                                                                             | Since |
+| ---------------- | --------------------------------------- | --------------------------------------------------------------------------------------- | ----- |
+| **`code`**       | <code>string</code>                     | Code identifying the error: OS-PLUG-FLTR-XXXX                                           | 1.0.0 |
+| **`message`**    | <code>string</code>                     | Message informing of what went wrong                                                    | 1.0.0 |
+| **`source`**     | <code>string</code>                     | The source for the file transfer operation (a url for download, a file path for upload) | 1.0.0 |
+| **`target`**     | <code>string</code>                     | The target of the file transfer operation (a file path for download, a url for upload)  | 1.0.0 |
+| **`httpStatus`** | <code>number</code>                     | HTTP status code of the server response (if available)                                  | 1.0.0 |
+| **`headers`**    | <code>{ [key: string]: string; }</code> | HTTP headers from the server response (if available)                                    | 1.0.0 |
+| **`body`**       | <code>string</code>                     | HTTP error response body from the server (if available)                                 | 1.0.0 |
+| **`exception`**  | <code>string</code>                     | Exception message thrown on native side (if available)                                  | 1.0.0 |
 
 </docgen-api>
 
