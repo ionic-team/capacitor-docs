@@ -280,13 +280,14 @@ _Note: This is **not** the same file used for your Android app._
 
 Download the `GoogleService-Info.plist` provided to your local machine.
 
-You'll then want to open Xcode...
+You'll then want to open Xcode, as you **have to** add it through Xcode, _else it won't be recognize_ ...
 
 ```bash
 npx cap open ios
 ```
 
-... and move the `.plist` file into your Xcode project as instructed by Firebase, ensuring to add it to all targets.
+... and move the `.plist` file into your Xcode project as instructed by Firebase, ensuring to add it to all targets.  
+
 
 ![Google Service Info Plist Location for iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/google-plist-location-ios.png)
 
