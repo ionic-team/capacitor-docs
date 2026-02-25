@@ -25,8 +25,8 @@ Check out the [Capawesome Blog](https://capawesome.io/blog/) or [Twitter](https:
 
 ## Capgo
 
-[Capgo](https://github.com/Cap-go) is a community project led by Martin Donadieu, an Ionic Developer Expert, offering a diverse set of Capacitor plugins.
-These plugins enhance app functionality with features like [in-app purchases](https://github.com/Cap-go/native-purchases), [SQLite storage](https://github.com/Cap-go/capacitor-data-storage-sqlite), [native audio](https://github.com/Cap-go/native-audio), [geocoding](https://github.com/Cap-go/capacitor-nativegeocoder), [screen recording](https://github.com/Cap-go/capacitor-screen-recorder), and other device-specific capabilities. Capgo's plugins are designed to streamline development and improve app performance across various platforms. Check out the [Capgo website](https://capgo.app/) to explore the full range of plugins and stay updated on new releases.
+[Capgo](https://github.com/Cap-go) is a community project offering a diverse set of Capacitor plugins.
+These plugins enhance app functionality with features like [over-the-air updates](https://github.com/Cap-go/capacitor-updater/), [in-app purchases](https://github.com/Cap-go/native-purchases), [Social Login](https://github.com/Cap-go/capacitor-social-login), [in-app browser](https://github.com/Cap-go/capacitor-inappbrowser), [camera preview](https://github.com/Cap-go/capacitor-camera-preview/), and other device-specific capabilities. Capgo's plugins are designed to streamline development and improve app performance across various platforms. Check out the [Capgo website](https://capgo.app/) to explore the full range of plugins and stay updated on new releases.
 
 ## Cordova Ecosystem
 
