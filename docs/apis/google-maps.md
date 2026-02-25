@@ -29,15 +29,6 @@ The Google Maps SDK supports the use of showing the users current location via `
 
 Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode.
 
-### Minimum Deployment Target
-
-Version 6 of this plugin has a minimum deployment target of iOS 14.0. You will need to edit `ios/App/Podfile` and change the following line from 13.0 to 14.0:
-```
-platform :ios, '14.0'
-```
-
-Additionally, you will need to open your project in XCode and in the `Build Settings` tab for your `Project` and for each `Target` set the `iOS Deployment Target` to `iOS 14.0` or higher.
-
 ### Typescript Configuration
 
 Your project will also need have `skipLibCheck` set to `true` in `tsconfig.json`.
@@ -77,13 +68,13 @@ To use certain location features, the SDK requires the following permissions to 
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `googleMapsPlayServicesVersion`: version of `com.google.android.gms:play-services-maps` (default: `18.2.0`)
-- `googleMapsUtilsVersion`: version of `com.google.maps.android:android-maps-utils` (default: `3.8.2`)
-- `googleMapsKtxVersion`: version of `com.google.maps.android:maps-ktx` (default: `5.0.0`)
-- `googleMapsUtilsKtxVersion`: version of `com.google.maps.android:maps-utils-ktx` (default: `5.0.0`)
-- `kotlinxCoroutinesVersion`: version of `org.jetbrains.kotlinx:kotlinx-coroutines-android` and `org.jetbrains.kotlinx:kotlinx-coroutines-core` (default: `1.7.3`)
-- `androidxCoreKTXVersion`: version of `androidx.core:core-ktx` (default: `1.12.0`)
-- `kotlin_version`: version of `org.jetbrains.kotlin:kotlin-stdlib` (default: `1.9.10`)
+- `googleMapsPlayServicesVersion`: version of `com.google.android.gms:play-services-maps` (default: `19.2.0`)
+- `googleMapsUtilsVersion`: version of `com.google.maps.android:android-maps-utils` (default: `3.19.1`)
+- `googleMapsKtxVersion`: version of `com.google.maps.android:maps-ktx` (default: `5.2.1`)
+- `googleMapsUtilsKtxVersion`: version of `com.google.maps.android:maps-utils-ktx` (default: `5.2.1`)
+- `kotlinxCoroutinesVersion`: version of `org.jetbrains.kotlinx:kotlinx-coroutines-android` and `org.jetbrains.kotlinx:kotlinx-coroutines-core` (default: `1.10.2`)
+- `androidxCoreKTXVersion`: version of `androidx.core:core-ktx` (default: `1.17.0`)
+- `kotlin_version`: version of `org.jetbrains.kotlin:kotlin-stdlib` (default: `2.2.20`)
 
 
 ## Usage
@@ -262,6 +253,76 @@ const MyMap: React.FC = () => {
 export default MyMap;
 ```
 
+You may need to create a `*.d.ts` file for the custom element in React:
+
+```ts
+// custom-elements.d.ts
+
+declare module "react" {
+  namespace JSX {
+    interface IntrinsicElements {
+      "capacitor-google-map": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
+  }
+}
+
+export {};
+```
+
+### Vue
+
+```vue
+<script lang="ts" setup>
+import { ref, shallowRef, useTemplateRef } from 'vue'
+import { GoogleMap } from '@capacitor/google-maps'
+
+const mapRef = useTemplateRef<HTMLElement>('mapRef')
+const newMap = shallowRef<GoogleMap>()
+
+async function createMap() {
+  if (!mapRef.value) return
+
+  newMap.value = await GoogleMap.create({
+    id: 'my-cool-map',
+    element: mapRef.value,
+    apiKey: import.meta.env.VITE_YOUR_API_KEY_HERE,
+    config: {
+      center: {
+        lat: 33.6,
+        lng: -117.9,
+      },
+      zoom: 8,
+    },
+  })
+}
+</script>
+
+<template>
+  <capacitor-google-map
+    ref="mapRef"
+    style="display: inline-block; width: 275px; height: 400px"
+  ></capacitor-google-map>
+  <button @click="createMap()">Create Map</button>
+</template>
+
+```
+
+make sure you need enable [recognize native custom elements](https://vuejs.org/guide/extras/web-components.html#using-custom-elements-in-vue) like 
+
+```ts
+// vite.config.mts > plugins
+Vue({
+  template: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag.startsWith('capacitor-')
+    },
+  },
+}),
+```
+
 ### Javascript
 
 ```html
@@ -308,6 +369,8 @@ export default MyMap;
 * [`disableTouch()`](#disabletouch)
 * [`enableClustering(...)`](#enableclustering)
 * [`disableClustering()`](#disableclustering)
+* [`addTileOverlay(...)`](#addtileoverlay)
+* [`removeTileOverlay(...)`](#removetileoverlay)
 * [`addMarker(...)`](#addmarker)
 * [`addMarkers(...)`](#addmarkers)
 * [`removeMarker(...)`](#removemarker)
@@ -406,6 +469,34 @@ enableClustering(minClusterSize?: number | undefined) => Promise<void>
 ```typescript
 disableClustering() => Promise<void>
 ```
+
+--------------------
+
+
+### addTileOverlay(...)
+
+```typescript
+addTileOverlay(tileOverlay: TileOverlay) => Promise<{ id: string; }>
+```
+
+| Param             | Type                                                |
+| ----------------- | --------------------------------------------------- |
+| **`tileOverlay`** | <code><a href="#tileoverlay">TileOverlay</a></code> |
+
+**Returns:** <code>Promise&lt;{ id: string; }&gt;</code>
+
+--------------------
+
+
+### removeTileOverlay(...)
+
+```typescript
+removeTileOverlay(id: string) => Promise<void>
+```
+
+| Param    | Type                |
+| -------- | ------------------- |
+| **`id`** | <code>string</code> |
 
 --------------------
 
@@ -924,20 +1015,25 @@ For web, all the javascript Google Maps options are available as
 GoogleMapConfig extends google.maps.MapOptions.
 For iOS and Android only the config options declared on <a href="#googlemapconfig">GoogleMapConfig</a> are available.
 
-| Prop                   | Type                                      | Description                                                                                                                                               | Default            | Since |
-| ---------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
-| **`width`**            | <code>number</code>                       | Override width for native map.                                                                                                                            |                    |       |
-| **`height`**           | <code>number</code>                       | Override height for native map.                                                                                                                           |                    |       |
-| **`x`**                | <code>number</code>                       | Override absolute x coordinate position for native map.                                                                                                   |                    |       |
-| **`y`**                | <code>number</code>                       | Override absolute y coordinate position for native map.                                                                                                   |                    |       |
-| **`center`**           | <code><a href="#latlng">LatLng</a></code> | Default location on the Earth towards which the camera points.                                                                                            |                    |       |
-| **`zoom`**             | <code>number</code>                       | Sets the zoom of the map.                                                                                                                                 |                    |       |
-| **`androidLiteMode`**  | <code>boolean</code>                      | Enables image-based lite mode on Android.                                                                                                                 | <code>false</code> |       |
-| **`devicePixelRatio`** | <code>number</code>                       | Override pixel ratio for native map.                                                                                                                      |                    |       |
-| **`styles`**           | <code>MapTypeStyle[] \| null</code>       | Styles to apply to each of the default map types. Note that for satellite, hybrid and terrain modes, these styles will only apply to labels and geometry. |                    | 4.3.0 |
-| **`mapId`**            | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for Web.        |                    | 5.4.0 |
-| **`androidMapId`**     | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for Android.    |                    | 5.4.0 |
-| **`iOSMapId`**         | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for iOS.        |                    | 5.4.0 |
+| Prop                   | Type                                      | Description                                                                                                                                                                                                                                                                                                                                               | Default            | Since |
+| ---------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
+| **`width`**            | <code>number</code>                       | Override width for native map.                                                                                                                                                                                                                                                                                                                            |                    |       |
+| **`height`**           | <code>number</code>                       | Override height for native map.                                                                                                                                                                                                                                                                                                                           |                    |       |
+| **`x`**                | <code>number</code>                       | Override absolute x coordinate position for native map.                                                                                                                                                                                                                                                                                                   |                    |       |
+| **`y`**                | <code>number</code>                       | Override absolute y coordinate position for native map.                                                                                                                                                                                                                                                                                                   |                    |       |
+| **`center`**           | <code><a href="#latlng">LatLng</a></code> | Default location on the Earth towards which the camera points.                                                                                                                                                                                                                                                                                            |                    |       |
+| **`zoom`**             | <code>number</code>                       | Sets the zoom of the map.                                                                                                                                                                                                                                                                                                                                 |                    |       |
+| **`androidLiteMode`**  | <code>boolean</code>                      | Enables image-based lite mode on Android.                                                                                                                                                                                                                                                                                                                 | <code>false</code> |       |
+| **`devicePixelRatio`** | <code>number</code>                       | Override pixel ratio for native map.                                                                                                                                                                                                                                                                                                                      |                    |       |
+| **`styles`**           | <code>MapTypeStyle[] \| null</code>       | Styles to apply to each of the default map types. Note that for satellite, hybrid and terrain modes, these styles will only apply to labels and geometry.                                                                                                                                                                                                 |                    | 4.3.0 |
+| **`mapId`**            | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for Web.                                                                                                                                                                                                        |                    | 5.4.0 |
+| **`androidMapId`**     | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for Android.                                                                                                                                                                                                    |                    | 5.4.0 |
+| **`iOSMapId`**         | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for iOS.                                                                                                                                                                                                        |                    | 5.4.0 |
+| **`maxZoom`**          | <code>number \| null</code>               | The maximum zoom level which will be displayed on the map. If omitted, or set to &lt;code&gt;null&lt;/code&gt;, the maximum zoom from the current map type is used instead. Valid zoom values are numbers from zero up to the supported &lt;a href="https://developers.google.com/maps/documentation/javascript/maxzoom"&gt;maximum zoom level&lt;/a&gt;. |                    |       |
+| **`minZoom`**          | <code>number \| null</code>               | The minimum zoom level which will be displayed on the map. If omitted, or set to &lt;code&gt;null&lt;/code&gt;, the minimum zoom from the current map type is used instead. Valid zoom values are numbers from zero up to the supported &lt;a href="https://developers.google.com/maps/documentation/javascript/maxzoom"&gt;maximum zoom level&lt;/a&gt;. |                    |       |
+| **`mapTypeId`**        | <code>string \| null</code>               | The initial Map mapTypeId. Defaults to &lt;code&gt;ROADMAP&lt;/code&gt;.                                                                                                                                                                                                                                                                                  |                    |       |
+| **`heading`**          | <code>number \| null</code>               | The heading for aerial imagery in degrees measured clockwise from cardinal direction North. Headings are snapped to the nearest available angle for which imagery is available.                                                                                                                                                                           |                    |       |
+| **`restriction`**      | <code>MapRestriction \| null</code>       | Defines a boundary that restricts the area of the map accessible to users. When set, a user can only pan and zoom while the camera view stays inside the limits of the boundary.                                                                                                                                                                          |                    |       |
 
 
 #### LatLng
@@ -955,6 +1051,18 @@ An interface representing a pair of latitude and longitude coordinates.
 | Prop        | Type                |
 | ----------- | ------------------- |
 | **`mapId`** | <code>string</code> |
+
+
+#### TileOverlay
+
+A tile overlay is an image placed on top of your map at a specific zoom level. Available on iOS, Android and Web
+
+| Prop          | Type                 | Description                                                                                                                                                               | Default                |
+| ------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| **`url`**     | <code>string</code>  | A string representing the tile url. Should contain `{x}`, `{y}` and `{z}` so they can be replaced with actual values for x, y and zoom. Available on iOS, Android and Web |                        |
+| **`opacity`** | <code>number</code>  | The opacity of the tile overlay, between 0 (completely transparent) and 1 inclusive. Available on iOS, Android and Web                                                    | <code>undefined</code> |
+| **`visible`** | <code>boolean</code> | Controls whether this tile overlay should be visible. Available only on Android                                                                                           | <code>undefined</code> |
+| **`zIndex`**  | <code>number</code>  | The zIndex of the tile overlay. Available on iOS and Android                                                                                                              | <code>undefined</code> |
 
 
 #### Marker
@@ -987,30 +1095,36 @@ A marker is an icon placed at a particular point on the map's surface.
 
 #### Point
 
-<a href="#point">Point</a> geometry object.
-https://tools.ietf.org/html/rfc7946#section-3.1.2
-
-| Prop              | Type                                          | Description                           |
-| ----------------- | --------------------------------------------- | ------------------------------------- |
-| **`type`**        | <code>'<a href="#point">Point</a>'</code>     | Specifies the type of GeoJSON object. |
-| **`coordinates`** | <code><a href="#position">Position</a></code> |                                       |
+| Prop    | Type                |
+| ------- | ------------------- |
+| **`x`** | <code>number</code> |
+| **`y`** | <code>number</code> |
 
 
 #### Polygon
 
-<a href="#polygon">Polygon</a> geometry object.
-https://tools.ietf.org/html/rfc7946#section-3.1.6
+For web, all the javascript <a href="#polygon">Polygon</a> options are available as
+Polygon extends google.maps.PolygonOptions.
+For iOS and Android only the config options declared on <a href="#polygon">Polygon</a> are available.
 
-| Prop              | Type                                          | Description                           |
-| ----------------- | --------------------------------------------- | ------------------------------------- |
-| **`type`**        | <code>'<a href="#polygon">Polygon</a>'</code> | Specifies the type of GeoJSON object. |
-| **`coordinates`** | <code>Position[][]</code>                     |                                       |
+| Prop                | Type                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`paths`**         | <code>any[] \| MVCArray&lt;any&gt;</code> | The ordered sequence of coordinates that designates a closed loop. Unlike polylines, a polygon may consist of one or more paths. As a result, the paths property may specify one or more arrays of &lt;code&gt;<a href="#latlng">LatLng</a>&lt;/code&gt; coordinates. Paths are closed automatically; do not repeat the first vertex of the path as the last vertex. Simple polygons may be defined using a single array of &lt;code&gt;<a href="#latlng">LatLng</a>&lt;/code&gt;s. More complex polygons may specify an array of arrays. Any simple arrays are converted into &lt;code&gt;&lt;a href="#MVCArray"&gt;MVCArray&lt;/a&gt;&lt;/code&gt;s. Inserting or removing &lt;code&gt;<a href="#latlng">LatLng</a>&lt;/code&gt;s from the &lt;code&gt;MVCArray&lt;/code&gt; will automatically update the polygon on the map. |
+| **`strokeColor`**   | <code>string</code>                       | The stroke color. All CSS3 colors are supported except for extended named colors.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **`strokeOpacity`** | <code>number</code>                       | The stroke opacity between 0.0 and 1.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **`strokeWeight`**  | <code>number</code>                       | The stroke width in pixels.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **`fillColor`**     | <code>string</code>                       | The fill color. All CSS3 colors are supported except for extended named colors.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **`fillOpacity`**   | <code>number</code>                       | The fill opacity between 0.0 and 1.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **`geodesic`**      | <code>boolean</code>                      | When &lt;code&gt;true&lt;/code&gt;, edges of the polygon are interpreted as geodesic and will follow the curvature of the Earth. When &lt;code&gt;false&lt;/code&gt;, edges of the polygon are rendered as straight lines in screen space. Note that the shape of a geodesic polygon may appear to change when dragged, as the dimensions are maintained relative to the surface of the earth.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **`clickable`**     | <code>boolean</code>                      | Indicates whether this &lt;code&gt;<a href="#polygon">Polygon</a>&lt;/code&gt; handles mouse events.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **`title`**         | <code>string</code>                       | Title, a short description of the overlay. Some overlays, such as markers, will display the title on the map. The title is also the default accessibility text. Only available on iOS.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **`tag`**           | <code>string</code>                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 
 #### Circle
 
 For web, all the javascript <a href="#circle">Circle</a> options are available as
-Polygon extends google.maps.CircleOptions.
+Circle extends google.maps.CircleOptions.
 For iOS and Android only the config options declared on <a href="#circle">Circle</a> are available.
 
 | Prop               | Type                 | Description                                                                                                                                                                            |
@@ -1180,20 +1294,9 @@ The callback function to be called when map events are emitted.
 <code>(data: T): void</code>
 
 
-#### Position
-
-A <a href="#position">Position</a> is an array of coordinates.
-https://tools.ietf.org/html/rfc7946#section-3.1.1
-Array should contain between two and three elements.
-The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values),
-but the current specification only allows X, Y, and (optionally) Z to be defined.
-
-<code>number[]</code>
-
-
 #### Marker
 
-Supports markers of either either "legacy" or "advanced" types.
+Supports markers of either "legacy" or "advanced" types.
 
 <code>google.maps.<a href="#marker">Marker</a> | google.maps.marker.AdvancedMarkerElement</code>
 

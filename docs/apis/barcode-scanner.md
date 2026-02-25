@@ -27,9 +27,13 @@ ext {
 }
 ```
 
+Note: Android with `ZXING` scanning library supports all formats, while `MLKIT` supports all except `MAXICODE`, `RSS_14`, `RSS_EXPANDED` and `UPC_EAN_EXTENSION` - using one of these in `hint` will default to scanning any format.
+
 #### iOS
 
 The barcode scanner uses the camera on the device. Ensure you configure the Privacy - Camera Usage Description in your Info.plist file so that your application can access the device's camera.
+
+Note: iOS supports all formats except `MAXICODE` and `UPC_EAN_EXTENSION` - using them in `hint` will default to scanning any format. Also, Apple Vision does not distinguish between `UPC_A` and `EAN_13`, so specifying one of these in `hint` will allow to scan both.
 
 ---
 
@@ -48,6 +52,12 @@ The barcode scanner uses the camera on the device. Ensure you configure the Priv
 
 Interface defining the contract for a plugin capable of scanning barcodes.
 Requires implementation of the scanBarcode method, which initiates a barcode scan with given options.
+
+Starting in Android targetSdk 36, the scanOrientation parameter has no effect for large screens (e.g. tablets) on Android 16 and higher.
+You may opt-out of this behavior in your app by adding `<property android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY" android:value="true" />` to your `AndroidManifest.xml` inside `<application>` or `<activity>`.
+Keep in mind though that this opt-out is temporary and will no longer work for Android 17. Android discourages setting specific orientations for large screens.
+Regular Android phones are unaffected by this change.
+For more information check the Android docs at https://developer.android.com/about/versions/16/behavior-changes-16#adaptive-layouts
 
 ### scanBarcode(...)
 
@@ -71,14 +81,7 @@ scanBarcode(options: CapacitorBarcodeScannerOptions) => Promise<CapacitorBarcode
 
 Defines the structure of the result returned from a barcode scan.
 
-<code>{ ScanResult: string }</code>
-
-
-#### CapacitorBarcodeScannerOptions
-
-Defines the options for configuring a barcode scan.
-
-<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
+<code>{ ScanResult: string; format: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; }</code>
 
 
 #### CapacitorBarcodeScannerTypeHint
@@ -89,6 +92,13 @@ Type definition combining <a href="#html5qrcodesupportedformats">Html5QrcodeSupp
 to represent the hint for the type of barcode to be scanned.
 
 <code><a href="#html5qrcodesupportedformats">Html5QrcodeSupportedFormats</a> | <a href="#capacitorbarcodescannertypehintalloption">CapacitorBarcodeScannerTypeHintALLOption</a></code>
+
+
+#### CapacitorBarcodeScannerOptions
+
+Defines the options for configuring a barcode scan.
+
+<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
 
 
 ### Enums
@@ -145,7 +155,7 @@ to represent the hint for the type of barcode to be scanned.
 
 | Members     | Value                |
 | ----------- | -------------------- |
-| **`ZXING`** | <code>'zxing'</code> |
-| **`MLKIT`** | <code>'mlkit'</code> |
+| **`ZXING`** | <code>"zxing"</code> |
+| **`MLKIT`** | <code>"mlkit"</code> |
 
 </docgen-api>

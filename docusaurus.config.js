@@ -20,7 +20,7 @@ module.exports = {
     },
   },
   markdown: {
-    format: 'detect'
+    format: 'detect',
   },
   onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
@@ -286,7 +286,7 @@ module.exports = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: 'v7',
+              label: 'v8',
             },
           },
         },

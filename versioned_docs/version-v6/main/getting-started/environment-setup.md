@@ -8,10 +8,6 @@ slug: /getting-started/environment-setup
 
 Capacitor has three officially supported application targets: Android, iOS, and Web. In order to create applications for all three platforms, you'll need to install all of the following dependencies. If you are not targeting one of the native mobile targets, you can skip the associated section.
 
-:::info
-Do you need to support Desktops? You can use Capacitor to build [Windows](https://ionic.io/docs/windows/usage) or [Electron](https://github.com/capacitor-community/electron) apps as well!
-:::
-
 ## Core Requirements
 
 In order to develop any application with Capacitor, you will need NodeJS 18 or higher installed. You can install Node by using the installer on [the Node website](https://nodejs.org), using [Volta](https://volta.sh/): a JavaScript tools manager, or installing it with a package manager like [homebrew](https://brew.sh/), or [Chocolatey](https://chocolatey.org/).

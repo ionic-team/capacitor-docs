@@ -52,7 +52,6 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/README.md',
     editApiUrl:
       'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'barcode-scanner',
@@ -61,7 +60,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'browser',
@@ -117,8 +115,16 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/src/definitions.ts',
+  },
+  {
+    id: 'file-transfer',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
   {
     id: 'file-viewer',
@@ -134,9 +140,8 @@ const pluginApis = [
     isExperimental: false,
     npmScope: '@capacitor',
     description: 'The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.',
-    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/README.md',
+    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest'
   },
   {
     id: 'google-maps',
@@ -145,15 +150,14 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'haptics',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/main/src/definitions.ts',
   },
   {
     id: 'http',
@@ -172,15 +176,14 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
-    tag: 'latest',
   },
   {
     id: 'keyboard',
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-keyboard/blob/main/src/definitions.ts',
   },
   {
     id: 'local-notifications',
@@ -270,6 +273,15 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/src/definitions.ts',
   },
+    {
+    id: 'system-bars',
+    isCore: true,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    description: 'The System Bars API provides methods for configuring the style and visibility of the device System Bars / Status Bar.',
+    editUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/system-bars.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor/blob/main/core/src/core-plugins.ts',
+  },
   {
     id: 'text-zoom',
     isCore: false,
@@ -293,7 +305,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest',
   },
 ];
 

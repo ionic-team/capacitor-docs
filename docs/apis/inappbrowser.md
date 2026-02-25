@@ -165,10 +165,10 @@ Closes the currently active browser. It can be used to close browsers launched t
 ### addListener('browserClosed' | 'browserPageLoaded', ...)
 
 ```typescript
-addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: "browserClosed" | "browserPageLoaded", listenerFunc: () => void) => Promise<PluginListenerHandle>
 ```
 
-Adds a listener for the specified browser event.
+Adds a listener for the specified browser events, with no data being returned.
 
 | Param              | Type                                                | Description                                                                          |
 | ------------------ | --------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -183,15 +183,15 @@ Adds a listener for the specified browser event.
 ### addListener('browserPageNavigationCompleted', ...)
 
 ```typescript
-addListener(eventName: 'browserPageNavigationCompleted', listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
+addListener(eventName: "browserPageNavigationCompleted", listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
 ```
 
-Adds a listener for the specified browser event.
+Adds a listener for the specified browser event, which receives data.
 
-| Param              | Type                                                                                                                           | Description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| **`eventName`**    | <code>'browserPageNavigationCompleted'</code>                                                                                  | The name of the browser event to listen for: 'browserPageNavigationCompleted'. |
-| **`listenerFunc`** | <code>(data: <a href="#browserpagenavigationcompletedeventdata">BrowserPageNavigationCompletedEventData</a>) =&gt; void</code> | The function to be called when the event occurs.                               |
+| Param              | Type                                                                                                                           | Description                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'browserPageNavigationCompleted'</code>                                                                                  | The name of the browser event to listen for: 'browserPageNavigationCompleted'. Applies only to openInWebView. |
+| **`listenerFunc`** | <code>(data: <a href="#browserpagenavigationcompletedeventdata">BrowserPageNavigationCompletedEventData</a>) =&gt; void</code> | The function to be called when the event occurs.                                                              |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
@@ -216,9 +216,10 @@ Removes all listeners for the browser events.
 
 Defines the options for opening a URL in the web view.
 
-| Prop          | Type                                                      | Description                                                          |
-| ------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
-| **`options`** | <code><a href="#webviewoptions">WebViewOptions</a></code> | A structure containing some configurations to apply to the Web View. |
+| Prop                | Type                                                      | Description                                                          |
+| ------------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
+| **`options`**       | <code><a href="#webviewoptions">WebViewOptions</a></code> | A structure containing some configurations to apply to the Web View. |
+| **`customHeaders`** | <code>{ [key: string]: string; }</code>                   | A map of custom headers to be sent with the request.                 |
 
 
 #### WebViewOptions
@@ -250,14 +251,15 @@ Defines the options for opening a URL in the web view.
 
 #### iOSWebViewOptions
 
-| Prop                               | Type                                                  | Description                                                                                                                                                                                                    |
-| ---------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`allowOverScroll`**              | <code>boolean</code>                                  | Turns on the Web View bounce property.                                                                                                                                                                         |
-| **`enableViewportScale`**          | <code>boolean</code>                                  | Prevents viewport scaling through a meta tag.                                                                                                                                                                  |
-| **`allowInLineMediaPlayback`**     | <code>boolean</code>                                  | Allows in-line HTML5 media playback, displaying within the browser window rather than a device-specific playback interface. Note: The HTML's video element must also include the webkit-playsinline attribute. |
-| **`surpressIncrementalRendering`** | <code>boolean</code>                                  | Waits until all new view content is received before being rendered.                                                                                                                                            |
-| **`viewStyle`**                    | <code><a href="#iosviewstyle">iOSViewStyle</a></code> | Sets the presentation style of the Web View.                                                                                                                                                                   |
-| **`animationEffect`**              | <code><a href="#iosanimation">iOSAnimation</a></code> | Sets the transition style of the Web View.                                                                                                                                                                     |
+| Prop                                      | Type                                                  | Description                                                                                                                                                                                                    |
+| ----------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`allowOverScroll`**                     | <code>boolean</code>                                  | Turns on the Web View bounce property.                                                                                                                                                                         |
+| **`enableViewportScale`**                 | <code>boolean</code>                                  | Prevents viewport scaling through a meta tag.                                                                                                                                                                  |
+| **`allowInLineMediaPlayback`**            | <code>boolean</code>                                  | Allows in-line HTML5 media playback, displaying within the browser window rather than a device-specific playback interface. Note: The HTML's video element must also include the webkit-playsinline attribute. |
+| **`surpressIncrementalRendering`**        | <code>boolean</code>                                  | Waits until all new view content is received before being rendered.                                                                                                                                            |
+| **`viewStyle`**                           | <code><a href="#iosviewstyle">iOSViewStyle</a></code> | Sets the presentation style of the Web View.                                                                                                                                                                   |
+| **`animationEffect`**                     | <code><a href="#iosanimation">iOSAnimation</a></code> | Sets the transition style of the Web View.                                                                                                                                                                     |
+| **`allowsBackForwardNavigationGestures`** | <code>boolean</code>                                  | Enables back and forward swipe gestures in the Web View.                                                                                                                                                       |
 
 
 #### OpenInSystemBrowserParameterModel
@@ -291,10 +293,10 @@ Defines the options for opening a URL in the system browser.
 
 #### AndroidBottomSheet
 
-| Prop          | Type                 | Description                                                                                                                                             |
-| ------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet. This will be a minimum of 50% of the screen's height. If no value is passed, we will default to the minimum value. |
-| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed.                                                                                                                 |
+| Prop          | Type                 | Description                                                                                                                                                                        |
+| ------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet, in pixels. Custom tabs will set the bottom height to at least 50% of the screen. If no value is passed, it will default to the minimum value. |
+| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed.                                                                                                                                            |
 
 
 #### iOSSystemBrowserOptions

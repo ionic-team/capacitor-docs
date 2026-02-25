@@ -31,6 +31,18 @@ If you will be making use of Geolocation or Push Notifications, enable `Location
 
 ![Configure Background Modes in Xcode](https://github.com/ionic-team/capacitor-background-runner/raw/main/docs/configure_background_modes.png)
 
+You will also need to add the following entry into your `Info.plist` file:
+```
+<key>BGTaskSchedulerPermittedIdentifiers</key>
+<array>
+  <string>com.example.background.task</string>
+</array>
+```
+
+Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode.
+
+Make sure you use the same id that you use for `BGTaskSchedulerPermittedIdentifiers` (for example "com.example.background.task") in the `label` field in the plugin configuration.
+
 After enabling the Background Modes capability, add the following to your app's `AppDelegate.swift`:
 
 At the top of the file, under `import Capacitor` add:
@@ -72,8 +84,6 @@ Apple requires privacy descriptions to be specified in `Info.plist` for location
 
 - `NSLocationAlwaysUsageDescription` (`Privacy - Location Always Usage Description`)
 - `NSLocationWhenInUseUsageDescription` (`Privacy - Location When In Use Usage Description`)
-
-Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
 
 ## Android
 
@@ -277,7 +287,7 @@ Visit [Don't kill my app!](https://dontkillmyapp.com) for more information on th
 
 ## Limitations of Background Tasks
 
-It’s not possible to run persistent, always running background services on mobile operating systems. Due to the limitations imposed by iOS and Android designed to reduce battery and data consumption, background tasks are constrained with various limitations that you must keep in mind while designing and implementing your background task.
+It's not possible to run persistent, always running background services on mobile operating systems. Due to the limitations imposed by iOS and Android designed to reduce battery and data consumption, background tasks are constrained with various limitations that you must keep in mind while designing and implementing your background task.
 
 ### iOS
 
@@ -297,6 +307,8 @@ It’s not possible to run persistent, always running background services on mob
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions(...)`](#requestpermissions)
 * [`dispatchEvent(...)`](#dispatchevent)
+* [`addListener('backgroundRunnerNotificationReceived', ...)`](#addlistenerbackgroundrunnernotificationreceived-)
+* [`removeNotificationListeners()`](#removenotificationlisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 
@@ -358,6 +370,41 @@ Dispatches an event to the configured runner.
 --------------------
 
 
+### addListener('backgroundRunnerNotificationReceived', ...)
+
+```typescript
+addListener(eventName: 'backgroundRunnerNotificationReceived', listenerFunc: (event: NotificationActionEvent) => void) => any
+```
+
+Add a listener for notification actions.
+
+| Param              | Type                                                                                            |
+| ------------------ | ----------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'backgroundRunnerNotificationReceived'</code>                                             |
+| **`listenerFunc`** | <code>(event: <a href="#notificationactionevent">NotificationActionEvent</a>) =&gt; void</code> |
+
+**Returns:** <code>any</code>
+
+**Since:** 2.1.1
+
+--------------------
+
+
+### removeNotificationListeners()
+
+```typescript
+removeNotificationListeners() => any
+```
+
+Remove notification action listeners for this plugin.
+
+**Returns:** <code>any</code>
+
+**Since:** 2.1.1
+
+--------------------
+
+
 ### Interfaces
 
 
@@ -383,6 +430,21 @@ Dispatches an event to the configured runner.
 | **`label`**   | <code>string</code>                  | The runner label to dispatch the event to  | 1.0.0 |
 | **`event`**   | <code>string</code>                  | The name of the registered event listener. | 1.0.0 |
 | **`details`** | <code>{ [key: string]: any; }</code> |                                            |       |
+
+
+#### NotificationActionEvent
+
+| Prop                 | Type                |
+| -------------------- | ------------------- |
+| **`actionTypeId`**   | <code>string</code> |
+| **`notificationId`** | <code>number</code> |
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                      |
+| ------------ | ------------------------- |
+| **`remove`** | <code>() =&gt; any</code> |
 
 
 ### Type Aliases
