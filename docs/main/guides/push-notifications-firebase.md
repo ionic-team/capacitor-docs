@@ -487,7 +487,7 @@ _Note: On iOS, you will see a popup asking you to allow notifications for your a
 
 If your app successfully registers and you followed the code above, you should see an alert with a success message!
 
-Now we'll test to see if the notifications are received by our device. To send a notification, in Firebase, go to the **Cloud Messaging** section under the Grow header in the project pane.
+Now we'll test to see if the notifications are received by our device. To send a notification, in Firebase, go to the **Messaging** section under the Project shortcuts header in the project sidepanel.
 
 Next, select the **New Notification** button.
 
