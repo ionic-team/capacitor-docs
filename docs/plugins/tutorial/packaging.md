@@ -29,6 +29,7 @@ npx @capacitor/create-plugin \
   --repo "https://ionic.io" \
   --license "MIT" \
   --description "Work with the screen orientation in a common way for iOS, Android, and web"
+  --android-lang java
 ```
 
 When prompted to provide a directory, use the default by pressing Enter. When asked for the author’s name, use your own!
