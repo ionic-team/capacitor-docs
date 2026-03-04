@@ -28,7 +28,7 @@ npx @capacitor/create-plugin \
   --class-name ScreenOrientation \
   --repo "https://ionic.io" \
   --license "MIT" \
-  --description "Work with the screen orientation in a common way for iOS, Android, and web"
+  --description "Work with the screen orientation in a common way for iOS, Android, and web" \
   --android-lang java
 ```
 
