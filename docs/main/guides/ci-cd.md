@@ -42,8 +42,8 @@ For more details, see the [Appflow Documentation](https://ionicframework.com/doc
 
 If you need a lighter-weight option that still runs inside GitHub Actions, the community has published sample workflows you can adopt quickly:
 
-- [Automatic Capacitor iOS Build with GitHub Action](https://capgo.app/blog/automatic-capacitor-ios-build-github-action/)
-- [Automatic Capacitor Android Build with GitHub Action](https://capgo.app/blog/automatic-capacitor-android-build-github-action/)
+- [Automatic Capacitor iOS Build with GitHub Actions](https://capgo.app/blog/automatic-capacitor-ios-build-github-action/)
+- [Automatic Capacitor Android Build with GitHub Actions](https://capgo.app/blog/automatic-capacitor-android-build-github-action/)
 
 ## Using a traditional CI/CD service with Appflow
 
