@@ -147,7 +147,7 @@ This makes the `echo` method available to the Capacitor web runtime, indicating 
 
 To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAPPluginMethod` entry in the `pluginMethods` array.
 
-Capacitor defines three `returnType` values in `ios/Capacitor/Capacitor/JSExport.swift`, and each one changes how the generated JavaScript wrapper calls into native code:
+Capacitor defines three `returnType` values in [`JSExport.swift`](https://github.com/ionic-team/capacitor/blob/main/ios/Capacitor/Capacitor/JSExport.swift), and each one changes how the generated JavaScript wrapper calls into native code:
 
 - `CAPPluginReturnNone`: fire-and-forget methods that return immediately through `nativeCallback` and do not keep a promise/callback open.
 - `CAPPluginReturnPromise`: the standard promise-based bridge where you resolve or reject once per invocation.
