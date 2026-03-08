@@ -22,7 +22,6 @@ slug: /guides/community
 
 [Using the Capacitor in SvelteKit app &#8250;](https://capgo.app/blog/creating-mobile-apps-with-sveltekit-and-capacitor/)
 
-
 ## APIs
 
 [Camera: Building an Ionic Framework Camera App](/main/guides/ionic-framework-app.md)
