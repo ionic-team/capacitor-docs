@@ -151,7 +151,7 @@ Capacitor defines three `returnType` values in [`JSExport.swift`](https://github
 
 - `CAPPluginReturnNone`: methods that don't return a value to JavaScript and complete immediately (mapped to `Promise<void>`), without keeping a long‑lived callback open.
 - `CAPPluginReturnPromise`: the standard promise-based bridge where you resolve or reject once per invocation.
-- `CAPPluginReturnCallback`: for streaming data. Capacitor adds a `_callback` parameter to your Swift method and keeps the JavaScript callback alive until you finish.
+- `CAPPluginReturnCallback`: for streaming or repeated data. Use the associated `CAPPluginCall` (for example, with `call.keepAlive = true` and the saving-calls pattern) to keep the JavaScript callback alive until you are done and release the call.
 
 ## Permissions
 
