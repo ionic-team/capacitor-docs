@@ -147,6 +147,12 @@ This makes the `echo` method available to the Capacitor web runtime, indicating 
 
 To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAPPluginMethod` entry in the `pluginMethods` array.
 
+Capacitor currently exposes three `returnType` values in [`JSExport.swift`](https://github.com/ionic-team/capacitor/blob/main/ios/Capacitor/Capacitor/JSExport.swift) that control how the generated JavaScript proxies interact with native code:
+
+- `CAPPluginReturnNone`: Use for calls that don't return a value. The generated JS still returns a `Promise<void>` that resolves with no value (and can reject on error), and it uses `nativeCallback` immediately without expecting further data.
+- `CAPPluginReturnPromise`: The default. The generated JS returns a `Promise` that you must resolve or reject once per call.
+- `CAPPluginReturnCallback`: Use when you want to push multiple updates back to the web side (for example, streaming or progress updates). The generated JS uses a callback-style API and keeps the callback alive while your native plugin keeps the associated `CAPPluginCall` alive (for example by setting `call.keepAlive = true` or using the “saving calls” API) and explicitly finishes it when no more updates will be sent.
+
 ## Permissions
 
 If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern.
