@@ -120,7 +120,7 @@ public class MyPlugin: CAPPlugin {
 
 ### Presenting Native Screens
 
-To present a Native Screen over the Capacitor screen we need to acces the Capacitor's View Controller.
+To present a Native Screen over the Capacitor screen we need to access the Capacitor's View Controller.
 To access the Capacitor's View Controller, we have to use the `CAPBridge` object available on `CAPPlugin` class.
 
 We can use the `UIViewController` to present Native View Controllers over it like this:
