@@ -151,7 +151,7 @@ Capacitor currently exposes three `returnType` values in `ios/Capacitor/Capacito
 
 - `CAPPluginReturnNone`: Use for fire-and-forget calls that neither resolve nor reject a JavaScript promise. The generated JS uses `nativeCallback` immediately and expects no further data.
 - `CAPPluginReturnPromise`: The default. The generated JS returns a `Promise` that you must resolve or reject once per call.
-- `CAPPluginReturnCallback`: Use when you want to push multiple updates back to the web side. Capacitor automatically appends a `_callback` argument to your method, and the generated JS keeps the callback alive until you explicitly finish.
+- `CAPPluginReturnCallback`: Use when you want to push multiple updates back to the web side (for example, streaming or progress updates). The generated JS uses a callback-style API and keeps the callback alive while your native plugin keeps the associated `CAPPluginCall` alive (for example by setting `call.keepAlive = true` or using the “saving calls” API) and explicitly finishes it when no more updates will be sent.
 
 ## Permissions
 
