@@ -149,7 +149,7 @@ To add more methods to your plugin, create them in the `.swift` plugin class wit
 
 Capacitor defines three `returnType` values in [`JSExport.swift`](https://github.com/ionic-team/capacitor/blob/main/ios/Capacitor/Capacitor/JSExport.swift), and each one changes how the generated JavaScript wrapper calls into native code:
 
-- `CAPPluginReturnNone`: fire-and-forget methods that return immediately through `nativeCallback` and do not keep a promise/callback open.
+- `CAPPluginReturnNone`: methods that don't return a value to JavaScript and complete immediately (mapped to `Promise<void>`), without keeping a long‑lived callback open.
 - `CAPPluginReturnPromise`: the standard promise-based bridge where you resolve or reject once per invocation.
 - `CAPPluginReturnCallback`: for streaming data. Capacitor adds a `_callback` parameter to your Swift method and keeps the JavaScript callback alive until you finish.
 
