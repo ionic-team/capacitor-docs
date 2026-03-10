@@ -1,0 +1,28 @@
+---
+title: Capacitor 插件
+description: Capacitor 插件
+---
+
+import DocCard from '@theme/DocCard';
+import DocCardList from '@theme/DocCardList';
+
+# Capacitor 插件
+
+Capacitor 中的插件使 JavaScript 能够直接与原生 API 交互。
+
+<DocCardList>
+  <DocCard header="官方插件" img="/img/v6/docs/capacitor-card.png" href="/apis">
+    <p>官方插件由 Capacitor 团队维护</p>
+  </DocCard>
+  <DocCard header="社区插件" img="/img/v6/docs/community-card.png" href="/plugins/community">
+    <p>社区插件由 Capacitor 社区维护</p>
+  </DocCard>
+</DocCardList>
+
+<br />
+
+Web 应用可以通过插件访问原生 API 的全部功能。插件封装了常见的原生操作，这些操作在不同平台上可能使用非常不同的 API，同时向 JavaScript 暴露一致的跨平台 API。
+
+此外，Capacitor 的插件功能使传统原生开发者和 Web 开发者混合的团队能够在应用的不同部分上协同工作。
+
+Capacitor 自动在客户端上生成 JavaScript 钩子，因此大多数插件只需要在 iOS 上使用 Swift/Obj-C，和/或在 Android 上使用 Java/Kotlin。当然，也可以为插件添加自定义 JavaScript。
