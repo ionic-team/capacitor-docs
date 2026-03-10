@@ -1,0 +1,79 @@
+---
+title: PWA 元素
+description: 使用 PWA 元素
+contributors:
+  - dotNetkow
+  - mlynch
+slug: /web/pwa-elements
+---
+
+# PWA 元素
+
+某些 Capacitor 插件(如 `Camera` 或 `Toast`)在非原生运行时提供基于 Web 的 UI。例如,在 Web 上运行时调用 `Camera.getPhoto()` 将加载响应式拍照体验:
+
+![PWA 元素](/img/v6/docs/pwa-elements.png)
+
+此 UI 使用 Web 组件实现。由于这些元素被 [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) 封装,这些组件不应与您自己的 UI 冲突。
+
+## 安装
+
+要启用这些控件,您必须将 `@ionic/pwa-elements` 添加到您的应用中。
+
+典型的安装包括导入包并注册元素,或在应用的 `index.html` 的 `<head>` 中添加脚本标签:
+
+#### 导入 PWA 元素
+
+```bash
+npm install @ionic/pwa-elements
+```
+
+然后,根据您选择的框架,在正确的时间导入元素加载器并调用它:
+
+##### React
+
+`main.tsx` 或 `index.tsx` 或 `index.js`:
+
+```tsx
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+// 在渲染调用之前调用元素加载器
+defineCustomElements(window);
+```
+
+##### Vue
+
+`main.ts`:
+
+```typescript
+// 在 createApp() 行之上
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+defineCustomElements(window);
+```
+
+##### Angular
+
+`main.ts`:
+
+```typescript
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+// 在 bootstrapModule/bootstrapApplication 调用之前调用元素加载器
+defineCustomElements(window);
+if (environment.production) {
+  enableProdMode();
+}
+```
+
+#### 通过脚本标签包含
+
+PWA 元素可以通过 `index.html` 中的脚本标签包含。但是,请记住这不适用于离线场景:
+
+```html
+<script
+  type="module"
+  src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+></script>
+```

@@ -1,0 +1,120 @@
+---
+title: 文本缩放 Capacitor 插件 API
+description: 文本缩放 API 提供了更改 Web 视图文本大小以实现视觉辅助功能的能力。
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/src/definitions.ts
+sidebar_label: 文本缩放
+---
+
+# @capacitor/text-zoom
+
+文本缩放 API 提供了更改 Web 视图文本大小以实现视觉辅助功能的能力。
+
+**注意：** 除非在你的 [Capacitor 配置文件](https://capacitorjs.com/docs/config)中将 `preferredContentMode` 配置设置为 `mobile`,否则 text-zoom 插件在 iPad 上不起作用。
+
+```json
+{
+  "ios": {
+    "preferredContentMode": "mobile"
+  }
+}
+```
+
+## 安装
+
+```bash
+npm install @capacitor/text-zoom
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
+* [`get()`](#get)
+* [`getPreferred()`](#getpreferred)
+* [`set(...)`](#set)
+* [Interfaces](#interfaces)
+
+</docgen-index>
+
+<docgen-api>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### get()
+
+```typescript
+get() => Promise<GetResult>
+```
+
+获取当前缩放级别。
+
+缩放级别以小数表示(例如 1.2 是 120%)。
+
+**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### getPreferred()
+
+```typescript
+getPreferred() => Promise<GetPreferredResult>
+```
+
+获取首选缩放级别。
+
+缩放级别以小数表示(例如 1.2 是 120%)。
+
+**Returns:** <code>Promise&lt;<a href="#getpreferredresult">GetPreferredResult</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### set(...)
+
+```typescript
+set(options: SetOptions) => Promise<void>
+```
+
+设置当前缩放级别。
+
+缩放级别以小数表示(例如 1.2 是 120%)。
+
+| Param         | Type                                              |
+| ------------- | ------------------------------------------------- |
+| **`options`** | <code><a href="#setoptions">SetOptions</a></code> |
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### Interfaces
+
+
+#### GetResult
+
+| Prop        | Type                | Description                      | Since |
+| ----------- | ------------------- | -------------------------------- | ----- |
+| **`value`** | <code>number</code> | 当前缩放级别(以小数表示)。               | 1.0.0 |
+
+
+#### GetPreferredResult
+
+| Prop        | Type                | Description                      | Since |
+| ----------- | ------------------- | -------------------------------- | ----- |
+| **`value`** | <code>number</code> | 首选缩放级别(以小数表示)。               | 1.0.0 |
+
+
+#### SetOptions
+
+| Prop        | Type                | Description                   | Since |
+| ----------- | ------------------- | ----------------------------- | ----- |
+| **`value`** | <code>number</code> | 新缩放级别(以小数表示)。               | 1.0.0 |
+
+</docgen-api>
