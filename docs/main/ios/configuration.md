@@ -77,5 +77,5 @@ This should prevent the controls from overlapping:
 ![UIDesignRequiresCompatibility plist entry](../../../static/img/ipados-controls-fixed.png)
 
 
-Further control over the windowing controls will come in future versions of Capacitor.
+This is a temporary fix until we add further configuration over the windowing controls in future versions of Capacitor.
 
