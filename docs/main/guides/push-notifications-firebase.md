@@ -288,7 +288,6 @@ npx cap open ios
 
 ... and move the `.plist` file into your Xcode project as instructed by Firebase, ensuring to add it to all targets.  
 
-
 ![Google Service Info Plist Location for iOS](../../../static/img/v6/docs/guides/firebase-push-notifications/google-plist-location-ios.png)
 
 
