@@ -44,7 +44,7 @@ Using the Ionic extension, you can run the VS Code debugger on Web, Android, and
 
 ![Capacitor Debugging Example Image](/img/v6/docs/getting-started/ionic-vs-code-debugging.jpg)
 
-Using the options under the Debug folder, you can set breakpoints for both web and native code. Debugging for web will launch a seperate web browser instance that is debuggable (Google Chrome by Default). You can also choose Microsoft Edge from the settings option. On Android, the webview instances will be listed in the "Debug" folder and debuggable in a similar way to Web.
+Using the options under the Debug folder, you can set breakpoints for both web and native code. Debugging for web will launch a separate web browser instance that is debuggable (Google Chrome by Default). You can also choose Microsoft Edge from the settings option. On Android, the webview instances will be listed in the "Debug" folder and debuggable in a similar way to Web.
 
 ## Doing More
 
