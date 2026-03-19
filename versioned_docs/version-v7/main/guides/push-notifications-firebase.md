@@ -255,7 +255,7 @@ _Note: This is **not** the same file used for your Android app._
 
 Download the `GoogleService-Info.plist` provided to your local machine.
 
-You'll then want to open Xcode...
+You'll then **have to** open Xcode...
 
 ```bash
 npx cap open ios
