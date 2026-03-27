@@ -10,7 +10,7 @@ sidebar_label: Browser
 
 The Browser API provides the ability to open an in-app browser and subscribe to browser events.
 
-On iOS, this uses `SFSafariViewController` and is compliant with leading OAuth service in-app-browser requirements.
+On iOS, this uses `SFSafariViewController`.
 
 ## Install
 
