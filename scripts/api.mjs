@@ -74,8 +74,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/camera/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/camera/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-camera/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-camera/blob/main/src/definitions.ts',
   },
   {
     id: 'clipboard',
