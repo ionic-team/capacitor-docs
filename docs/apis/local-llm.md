@@ -1,6 +1,6 @@
 ---
 title: Local LLM Plugin API
-description: Provide Watch interfaces and communication
+description: Run large language models entirely on-device using Apple Intelligence (Foundation Models) on iOS and Gemini Nano on Android
 custom_edit_url: https://github.com/ionic-team/capacitor-local-llm/blob/main/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-local-llm/blob/main/src/definitions.ts
 sidebar_label: Local LLM 🧪
