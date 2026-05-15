@@ -72,6 +72,7 @@ npm install @capacitor/device@latest-7
 - [Text Zoom](/apis/text-zoom.md)
 - [Toast](/apis/toast.md)
 - [Watch 🧪](/apis/watch.md)
+- [Local LLM 🧪](/apis/local-llm.md)
 
 ## GitHub
 
