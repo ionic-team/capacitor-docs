@@ -1,6 +1,6 @@
 ---
-title: Local LLM Plugin API
-description: Run large language models entirely on-device using Apple Intelligence (Foundation Models) on iOS and Gemini Nano on Android
+title: Local LLM Capacitor Plugin API
+description: A Capacitor plugin for running on-device LLMs, with support for text generation, image generation, and session management on iOS and Android.
 custom_edit_url: https://github.com/ionic-team/capacitor-local-llm/blob/main/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-local-llm/blob/main/src/definitions.ts
 sidebar_label: Local LLM 🧪
@@ -8,7 +8,8 @@ sidebar_label: Local LLM 🧪
 
 # @capacitor/local-llm
 
-_CapacitorLABS_ - This project is experimental. Support is not provided. Please open issues when needed.
+> [!WARNING]  
+> CapacitorLABS - This project is experimental. Support is not provided. Please open issues when needed.
 
 Run large language models entirely on-device using Apple Intelligence (Foundation Models) on iOS and Gemini Nano on Android. No network requests, no API keys, no data leaving the device.
 
