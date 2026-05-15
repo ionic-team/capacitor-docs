@@ -308,6 +308,7 @@ const pluginApis = [
   },
   {
     id: 'local-llm',
+    title: "Local LLM",
     isCore: false,
     isExperimental: true,
     npmScope: '@capacitor',
