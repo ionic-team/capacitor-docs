@@ -306,6 +306,15 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
     editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
   },
+  {
+    id: 'local-llm',
+    title: "Local LLM",
+    isCore: false,
+    isExperimental: true,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-local-llm/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-local-llm/blob/main/src/definitions.ts',
+  }
 ];
 
 /**
