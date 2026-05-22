@@ -28,7 +28,7 @@ ADB is used when debugging Android devices. The Location of the Android Debug Br
 
 ### Other Features
 
-Click the `...` button next to `Project` to show a list of expermental features:
+Click the `...` button next to `Project` to show a list of experimental features:
 - **Migrate from NPM to PNPM** - Your project will be switched to use pnpm as its package manager.
 - **Switch from WebPack to ESBuild** - Your Angular project will be switched to use the ESBuild option.
 - **Rebuild Node Modules** - The `node_modules` folder will be deleted and `npm install` will be run to restore the folder.

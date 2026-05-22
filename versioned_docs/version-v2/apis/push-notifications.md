@@ -13,11 +13,11 @@ canonicalUrl: https://capacitorjs.com/docs/apis/push-notifications
 
 The Push Notifications API provides methods for registering a device to receive notifications from a server, along with processing received notifications and responding to them. In contrast, the [Local Notifications](/apis/local-notifications.md) API provides means for offline, local notification scheduling and processing.
 
-## Enabling Push Notifications Capabilites
+## Enabling Push Notifications Capabilities
 
 On iOS you must enable Push Notifications Capabilities in your project to enable the Push Notifications plugin to work. To do so, go to the `Capabilities` section of the app project and switch the `Push Notifications` button from `OFF` to the `ON` position.
 
-This change adds the push capabilites to the app and creates an entitlements file in the project.
+This change adds the push capabilities to the app and creates an entitlements file in the project.
 
 ![Enabling Push Notifications Capabilities](../../../static/img/v3/docs/ios/enable-push-capabilities.png)
 
