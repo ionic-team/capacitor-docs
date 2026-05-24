@@ -57,6 +57,7 @@ npm install @capacitor/device@latest-7
 - [Http](/apis/http.md)
 - [InAppBrowser](/apis/inappbrowser.md)
 - [Keyboard](/apis/keyboard.md)
+- [Local LLM 🧪](/apis/local-llm.md)
 - [Local Notifications](/apis/local-notifications.md)
 - [Motion](/apis/motion.md)
 - [Network](/apis/network.md)
