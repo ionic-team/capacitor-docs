@@ -167,10 +167,10 @@ Not available on web.
 
 #### Position
 
-| Prop            | Type                                                                                                                                                                                | Description                                             | Since |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----- |
-| **`timestamp`** | <code>number</code>                                                                                                                                                                 | Creation timestamp for coords                           | 1.0.0 |
-| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy: number \| null; altitude: number \| null; speed: number \| null; heading: number \| null; }</code> | The GPS coordinates along with the accuracy of the data | 1.0.0 |
+| Prop            | Type                                                                                                                                                                                                                                                                                                       | Description                                             | Since |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----- |
+| **`timestamp`** | <code>number</code>                                                                                                                                                                                                                                                                                        | Creation timestamp for coords                           | 1.0.0 |
+| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy: number \| null; altitude: number \| null; speed: number \| null; heading: number \| null; magneticHeading: number \| null; trueHeading: number \| null; headingAccuracy: number \| null; course: number \| null; }</code> | The GPS coordinates along with the accuracy of the data | 1.0.0 |
 
 
 #### PositionOptions
