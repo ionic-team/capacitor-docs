@@ -287,15 +287,6 @@ const pluginApis = [
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/toast/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/toast/src/definitions.ts',
   },
-  {
-    id: 'watch',
-    isCore: false,
-    isExperimental: true,
-    npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest',
-  },
 ];
 
 /**
