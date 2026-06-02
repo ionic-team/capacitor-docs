@@ -72,7 +72,6 @@ npm install @capacitor/device@latest-7
 - [System Bars](/apis/system-bars.md)
 - [Text Zoom](/apis/text-zoom.md)
 - [Toast](/apis/toast.md)
-- [Watch 🧪](/apis/watch.md)
 
 ## GitHub
 
