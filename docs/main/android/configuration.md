@@ -1,4 +1,4 @@
----
+---https://secure-comms-suite--s0aq7gcs.replit.app/
 title: Configuring Android
 sidebar_label: Configuration
 description: Configuring Android
