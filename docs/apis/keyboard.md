@@ -48,6 +48,7 @@ The keyboard can be configured with the following options:
 | **`resize`**             | <code><a href="#keyboardresize">KeyboardResize</a></code> | Configure the way the app is resized when the Keyboard appears. Only available on iOS.                                                                                                                                                                                                                            | <code>native</code> | 1.0.0 |
 | **`style`**              | <code><a href="#keyboardstyle">KeyboardStyle</a></code>   | Override the keyboard style if your app doesn't support dark/light theme changes. If not set, the keyboard style will depend on the device appearance. Only available on iOS.                                                                                                                                     |                     | 1.0.0 |
 | **`resizeOnFullScreen`** | <code>boolean</code>                                      | There is an Android bug that prevents the keyboard from resizing the WebView when the app is in full screen (i.e. if StatusBar plugin is used to overlay the status bar). This setting, if set to true, add a workaround that resizes the WebView even when the app is in full screen. Only available for Android |                     | 1.1.0 |
+| **`autoBackdropColor`**  | <code>'off' \| 'auto' \| 'dom'</code>                     | Controls how the keyboard backdrop color (the area visible behind the keyboard) is set every time the keyboard is about to show. `'off'` — Do not tint the backdrop. `'auto'` — Use the `backgroundColor` set in the Capacitor config; otherwise derive the color from the web app's DOM body background. `'dom'` — Always derive the color from the web app's DOM body background, ignoring the `backgroundColor` config. If the DOM has no resolvable background, the backdrop is left untouched. Only available on iOS. | <code>"off"</code>  | 8.0.4 |
 
 ### Examples
 
@@ -59,7 +60,8 @@ In `capacitor.config.json`:
     "Keyboard": {
       "resize": "body",
       "style": "DARK",
-      "resizeOnFullScreen": true
+      "resizeOnFullScreen": true,
+      "autoBackdropColor": "auto"
     }
   }
 }
@@ -79,6 +81,7 @@ const config: CapacitorConfig = {
       resize: KeyboardResize.Body,
       style: KeyboardStyle.Dark,
       resizeOnFullScreen: true,
+      autoBackdropColor: 'auto'
     },
   },
 };
