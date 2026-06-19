@@ -34,6 +34,7 @@
     "@prismicio/client": "^6.4.2",
     "@prismicio/react": "~2.2.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-copy-page-button": "^0.8.3",
     "node-fetch": "^3.3.2",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.2.0",
