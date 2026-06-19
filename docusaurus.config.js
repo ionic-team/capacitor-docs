@@ -237,6 +237,7 @@ module.exports = {
     },
   },
   plugins: [
+    'docusaurus-plugin-copy-page-button',
     function (context, options) {
       return {
         name: 'ionic-docs-ads',
