@@ -1,93 +1,64 @@
----
-title: Capacitor Web API
-description: The API for Capacitor on web
-slug: /core-apis/web
----
+import React from "react";
+import { Pill, Search, ShoppingCart, User } from "lucide-react";
 
-# Capacitor Web API
+export const Header = () => {
+  return (
+    <header
+      className="sticky top-0 z-50 bg-white border-b border-[var(--brand-border)]"
+      data-testid="site-header"
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between gap-4">
+        
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div
+            className="w-10 h-10 rounded-lg flex items-center justify-center"
+            style={{ background: "var(--brand-primary)" }}
+          >
+            <Pill className="w-5 h-5 text-white" />
+          </div>
+          <span
+            className="font-bold text-xl"
+            style={{ color: "var(--brand-primary)" }}
+          >
+            MediCart
+          </span>
+        </div>
 
-Capacitor has several JavaScript utilities useful for ensuring apps run successfully across multiple platforms with the same codebase. To use them, import Capacitor then call the desired utility function:
+        {/* Search Bar */}
+        <div className="hidden md:flex flex-1 max-w-xl relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Search medicines, wellness products..."
+            className="w-full pl-10 pr-4 py-2 border border-[var(--brand-border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]"
+          />
+        </div>
 
-## Capacitor Object
+        {/* Navigation */}
+        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
+          <a href="/">Home</a>
+          <a href="/medicines">Medicines</a>
+          <a href="/wellness">Wellness</a>
+          <a href="/devices">Devices</a>
+          <a href="/offers">Offers</a>
+        </nav>
 
-The `Capacitor` object is a container for several utility functions. It is available at `window.Capacitor`, but the preferred usage for modern JavaScript apps is to import it:
+        {/* Actions */}
+        <div className="flex items-center gap-4">
+          <button className="relative">
+            <ShoppingCart className="w-6 h-6" />
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5">
+              0
+            </span>
+          </button>
 
-```typescript
-import { Capacitor } from '@capacitor/core';
-```
-
-### convertFileSrc(...)
-
-```typescript
-convertFileSrc: (filePath: string) => string;
-```
-
-Convert a device filepath into a Web View-friendly path.
-
-Capacitor apps are served on a different protocol than device files. To avoid difficulties between these protocols, paths to device files must be rewritten. For example, on Android, `file:///path/to/device/file` must be rewritten as `http://localhost/_capacitor_file_/path/to/device/file` before being used in the Web View.
-
-```typescript
-// file:///path/to/device/photo.jpg
-const savedPhotoFile = await Filesystem.writeFile({
-  path: "myFile.jpg",
-  data: base64Data,
-  directory: FilesystemDirectory.Data
-});
-
-// http://localhost/path/to/device/photo.jpg
-const savedPhoto = Capacitor.convertFileSrc(savedPhotoFile.uri),
-document.getElementById("savedPhoto").src = savedPhoto;
-```
-
-```html
-<img id="savedPhoto" />
-```
-
-### getPlatform()
-
-```typescript
-getPlatform: () => string;
-```
-
-Get the name of the platform the app is currently running on: `web`, `ios`, `android`.
-
-```typescript
-if (Capacitor.getPlatform() === 'ios') {
-  // do something
-}
-```
-
-### isNativePlatform()
-
-```typescript
-isNativePlatform: () => boolean;
-```
-
-Check whether the currently running platform is native (`ios`, `android`).
-
-```typescript
-if (Capacitor.isNativePlatform()) {
-  // do something
-}
-```
-
-### isPluginAvailable(...)
-
-```typescript
-isPluginAvailable: (name: string) => boolean;
-```
-
-Check if a plugin is available on the currently running platform. The plugin name is used in the plugin registry, which means it also works with custom plugins.
-
-```typescript
-const isAvailable = Capacitor.isPluginAvailable('Camera');
-
-if (!isAvailable) {
-  // Have the user upload a file instead
-} else {
-  // Otherwise, make the call:
-  const image = await Camera.getPhoto({
-    resultType: CameraResultType.Uri,
-  });
-}
-```
+          <button className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[var(--brand-border)]">
+            <User className="w-4 h-4" />
+            <span className="hidden md:inline">Login</span>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
