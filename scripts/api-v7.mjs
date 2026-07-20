@@ -47,7 +47,7 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/README.md',
+    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/packages/capacitor-plugin/README.md',
     editApiUrl:
       'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/packages/capacitor-plugin/src/definitions.ts',
   },
