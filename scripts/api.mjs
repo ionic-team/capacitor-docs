@@ -70,6 +70,14 @@ const pluginApis = [
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/browser/src/definitions.ts',
   },
   {
+    id: 'calendar',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-calendar/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-calendar/blob/main/src/definitions.ts',
+  },
+  {
     id: 'camera',
     isCore: false,
     isExperimental: false,
@@ -84,6 +92,14 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/src/definitions.ts',
+  },
+  {
+    id: 'contacts',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-contacts/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-contacts/blob/main/src/definitions.ts',
   },
   {
     id: 'cookies',
