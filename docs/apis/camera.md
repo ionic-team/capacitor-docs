@@ -1,8 +1,8 @@
 ---
 title: Camera Capacitor Plugin API
 description: The Camera API provides the ability to take a photo with the camera or choose an existing one from the photo album.
-custom_edit_url: https://github.com/ionic-team/capacitor-camera/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-camera/blob/main/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-camera/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-camera/blob/next/src/definitions.ts
 sidebar_label: Camera
 ---
 
@@ -76,8 +76,8 @@ Additionally, because the Camera API launches a separate Activity to handle taki
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `androidxExifInterfaceVersion`: version of `androidx.exifinterface:exifinterface` (default: `1.4.1`)
-- `androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.13.0`)
+- `androidxExifInterfaceVersion`: version of `androidx.exifinterface:exifinterface` (default: `1.4.2`)
+- `androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.14.0`)
 
 ## PWA Notes
 
