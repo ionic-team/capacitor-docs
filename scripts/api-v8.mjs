@@ -131,8 +131,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-filesystem/blob/main/src/definitions.ts',
   },
   {
     id: 'file-transfer',
@@ -156,8 +156,8 @@ const pluginApis = [
     isExperimental: false,
     npmScope: '@capacitor',
     description: 'The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along with altitude, heading, and speed information if available.',
-    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-geolocation/blob/main/src/definitions.ts',
   },
   {
     id: 'google-maps',
