@@ -13,7 +13,9 @@
   "redirects": [
     { "source": "/", "destination": "/docs" },
     { "source": "/docs/apis/storage", "destination": "/docs/apis/preferences" },
-    { "source": "/docs/cli/commands/list", "destination": "/docs/cli/commands/ls" }
+    { "source": "/docs/cli/commands/list", "destination": "/docs/cli/commands/ls" },
+    { "source": "/docs/v8", "destination": "/docs" },
+    { "source": "/docs/v8/:match*", "destination": "/docs/:match*" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },
