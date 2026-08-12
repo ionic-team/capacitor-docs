@@ -28,10 +28,6 @@ npx cap run [options] <platform>
 - `--target <id>`: Run on a specific target device
 - `--target-name <name>`: Run on a specific target device by its name (ex: "iPhone 17 Pro", "John's iPhone")
 - `--target-name-sdk-version <version>`: Run on a target device by name with a specific sdk version when using --target-name, (ex: "26.0" for iOS 26 or "35" for Android API 35).  Useful for targets that have the same name but have different OS / SDK versions
-- `--live-reload`: Set live-reload URL via CLI (uses defaults, overrides `server.url` config)
-- `-l`: Shorthand for `--live-reload`
-- `--host <host>`: Configure host for live-reload URL (used with `--live-reload`)
-- `--port <port>`: Configure port for live-reload URL (used with `--live-reload`)
-- `--https`: Use https:// instead of http:// for live-reload URL (used with `--live-reload`)
+- `--url <url>`: Load an external URL in the Web View, useful for live-reload (overrides `server.url` config)
 - `--forwardPorts <port1:port2>`: Automatically run "adb reverse" for better live-reloading support
 

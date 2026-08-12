@@ -8,7 +8,7 @@ slug: /android/setting-target-sdk
 All Android applications must specify a target SDK version, or the version of Android that the application is designed to run on. Each year, Google releases updates to the Android operating system and subsequently bumps the version number that applications are required to target. Typically, [this date is August 31st](https://support.google.com/googleplay/android-developer/answer/11926878?hl=en) of each year. Because of this, it is important to keep your application up to date with the latest version of Android. In a Capacitor application, this is done by specifying your target SDK in the `/android/variables.gradle` file.
 
 ```groovy
-targetSdkVersion = 36
+targetSdkVersion = 37
 ```
 
 ## Capacitor Android Requirements
