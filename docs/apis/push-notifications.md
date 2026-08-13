@@ -1,8 +1,8 @@
 ---
 title: Push Notifications Capacitor Plugin API
 description: The Push Notifications API provides access to native push notifications.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/next/push-notifications/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/next/push-notifications/src/definitions.ts
 sidebar_label: Push Notifications
 ---
 
@@ -69,7 +69,7 @@ Android Studio has an icon generator you can use to create your Push Notificatio
 
 ## Push Notification channel
 
-From Android 8.0 (API level 26) and higher, notification channels are supported and recommended. The SDK will derive the `channelId` for incoming push notifications in the following order:
+The SDK will derive the `channelId` for incoming push notifications in the following order:
 
 1. **Firstly it will check if the incoming notification has a `channelId` set.**
    When sending a push notification from either the FCM dashboard, or through their API, it's possible to specify a `channelId`.
@@ -95,9 +95,9 @@ From Android 8.0 (API level 26) and higher, notification channels are supported 
 
 You can configure the way the push notifications are displayed when the app is in foreground.
 
-| Prop                      | Type                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Since |
-| ------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`presentationOptions`** | <code>PresentationOption[]</code> | This is an array of strings you can combine. Possible values in the array are: - `badge`: badge count on the app icon is updated (default value) - `sound`: the device will ring/vibrate when the push notification is received - `alert`: **Deprecated on iOS.** Use `banner` and `list` instead. On Android, this value is still used to display the notification. - `banner`: the push notification is displayed as a banner. On Android, defaults to the same behavior as `alert`. - `list`: the push notification is displayed in the notification center. On Android, defaults to the same behavior as `alert`. An empty array can be provided if none of the options are desired. badge is only available for iOS. | 1.0.0 |
+| Prop                      | Type                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Since |
+| ------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`presentationOptions`** | <code>PresentationOption[]</code> | This is an array of strings you can combine. Possible values in the array are: - `badge`: badge count on the app icon is updated (default value) - `sound`: the device will ring/vibrate when the push notification is received - `alert`: the push notification is displayed in a native dialog. Only available on Android. - `banner`: the push notification is displayed as a banner. On Android, defaults to the same behavior as `alert`. - `list`: the push notification is displayed in the notification center. On Android, defaults to the same behavior as `alert`. An empty array can be provided if none of the options are desired. badge is only available for iOS. | 1.0.0 |
 
 ### Examples
 
@@ -303,7 +303,7 @@ createChannel(channel: Channel) => Promise<void>
 
 Create a notification channel.
 
-Only available on Android O or newer (SDK 26+).
+Only available on Android.
 
 | Param         | Type                                        |
 | ------------- | ------------------------------------------- |
@@ -322,7 +322,7 @@ deleteChannel(args: { id: string; }) => Promise<void>
 
 Delete a notification channel.
 
-Only available on Android O or newer (SDK 26+).
+Only available on Android.
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
@@ -341,7 +341,7 @@ listChannels() => Promise<ListChannelsResult>
 
 List the available notification channels.
 
-Only available on Android O or newer (SDK 26+).
+Only available on Android.
 
 **Returns:** <code>Promise&lt;<a href="#listchannelsresult">ListChannelsResult</a>&gt;</code>
 
