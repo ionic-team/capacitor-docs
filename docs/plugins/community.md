@@ -26,7 +26,7 @@ Check out the [Capawesome Blog](https://capawesome.io/blog/) or [Twitter](https:
 ## Capgo
 
 The [Capgo](https://github.com/Cap-go) GitHub org maintains a large collection of free, open-source Capacitor plugins for the community.
-Among others, this includes [capacitor-social-login](https://github.com/Cap-go/capacitor-social-login).
+Among others, this includes [capacitor-social-login](https://github.com/Cap-go/capacitor-social-login) and [capgo-skills](https://github.com/Cap-go/capgo-skills).
 See the [Capgo plugin directory](https://capgo.app/plugins) for 150+ plugins.
 Check out the [Capgo Blog](https://capgo.app/blog/) to stay up to date.
 
