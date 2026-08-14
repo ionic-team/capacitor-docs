@@ -17,18 +17,18 @@ The official [Capacitor Community](https://github.com/capacitor-community) GitHu
 
 [Explore the Capacitor Community &#8250;](https://github.com/capacitor-community)
 
-## Capawesome
-
-The [Capawesome](https://github.com/capawesome-team) GitHub org is another community project by one of our Ionic Developer Experts with the goal of providing awesome Capacitor plugins for the entire community.
-Among others, this includes [capacitor-firebase](https://github.com/capawesome-team/capacitor-firebase) and [capacitor-mlkit](https://github.com/capawesome-team/capacitor-mlkit).
-Check out the [Capawesome Blog](https://capawesome.io/blog/) or [Twitter](https://twitter.com/capawesomeio) to stay up to date.
-
 ## Capgo
 
 The [Capgo](https://github.com/Cap-go) GitHub org maintains a large collection of free, open-source Capacitor plugins for the community.
 Among others, this includes [capacitor-social-login](https://github.com/Cap-go/capacitor-social-login) and [Capgo AI agents skills](https://github.com/Cap-go/capgo-skills).
 See the [Capgo plugin directory](https://capgo.app/plugins) for 150+ plugins.
 Check out the [Capgo Blog](https://capgo.app/blog/) to stay up to date.
+
+## Capawesome
+
+The [Capawesome](https://github.com/capawesome-team) GitHub org is another community project by one of our Ionic Developer Experts with the goal of providing awesome Capacitor plugins for the entire community.
+Among others, this includes [capacitor-firebase](https://github.com/capawesome-team/capacitor-firebase) and [capacitor-mlkit](https://github.com/capawesome-team/capacitor-mlkit).
+Check out the [Capawesome Blog](https://capawesome.io/blog/) or [Twitter](https://twitter.com/capawesomeio) to stay up to date.
 
 ## Cordova Ecosystem
 
