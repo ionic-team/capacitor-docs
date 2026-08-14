@@ -26,7 +26,7 @@ Check out the [Capawesome Blog](https://capawesome.io/blog/) or [Twitter](https:
 ## Capgo
 
 [Capgo](https://capgo.app) maintains a large collection of free, open-source Capacitor plugins for the community.
-See the [Capgo plugin directory](https://capgo.app/plugins) for 130+ plugins, or browse the [Cap-go GitHub org](https://github.com/Cap-go).
+See the [Capgo plugin directory](https://capgo.app/plugins) for 150+ plugins, or browse the [Cap-go GitHub org](https://github.com/Cap-go).
 
 ## Cordova Ecosystem
 
