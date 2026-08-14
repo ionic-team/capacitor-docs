@@ -1,8 +1,8 @@
 ---
 title: Keyboard Capacitor Plugin API
 description: The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-keyboard/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-keyboard/blob/next/src/definitions.ts
 sidebar_label: Keyboard
 ---
 
@@ -41,13 +41,14 @@ Keyboard.addListener('keyboardDidHide', () => {
 
 ## Configuration
 
-On iOS, the keyboard can be configured with the following options:
+The keyboard can be configured with the following options:
 
 | Prop                     | Type                                                      | Description                                                                                                                                                                                                                                                                                                       | Default             | Since |
 | ------------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----- |
 | **`resize`**             | <code><a href="#keyboardresize">KeyboardResize</a></code> | Configure the way the app is resized when the Keyboard appears. Only available on iOS.                                                                                                                                                                                                                            | <code>native</code> | 1.0.0 |
 | **`style`**              | <code><a href="#keyboardstyle">KeyboardStyle</a></code>   | Override the keyboard style if your app doesn't support dark/light theme changes. If not set, the keyboard style will depend on the device appearance. Only available on iOS.                                                                                                                                     |                     | 1.0.0 |
 | **`resizeOnFullScreen`** | <code>boolean</code>                                      | There is an Android bug that prevents the keyboard from resizing the WebView when the app is in full screen (i.e. if StatusBar plugin is used to overlay the status bar). This setting, if set to true, add a workaround that resizes the WebView even when the app is in full screen. Only available for Android |                     | 1.1.0 |
+| **`autoBackdropColor`**  | <code>'off' \| 'auto' \| 'dom'</code>                     | Controls how the keyboard backdrop color (the area visible behind the keyboard) is set every time the keyboard is about to show. `'off'` — Do not tint the backdrop. `'auto'` — Use the `backgroundColor` set in the Capacitor config; otherwise derive the color from the web app's DOM body background. `'dom'` — Always derive the color from the web app's DOM body background, ignoring the `backgroundColor` config. If the DOM has no resolvable background, the backdrop is left untouched. Only available on iOS. | <code>"off"</code>  | 8.0.4 |
 
 ### Examples
 
@@ -59,7 +60,8 @@ In `capacitor.config.json`:
     "Keyboard": {
       "resize": "body",
       "style": "DARK",
-      "resizeOnFullScreen": true
+      "resizeOnFullScreen": true,
+      "autoBackdropColor": "auto"
     }
   }
 }
@@ -79,6 +81,7 @@ const config: CapacitorConfig = {
       resize: KeyboardResize.Body,
       style: KeyboardStyle.Dark,
       resizeOnFullScreen: true,
+      autoBackdropColor: 'auto'
     },
   },
 };
@@ -127,7 +130,7 @@ the following events also work with `window.addEventListener`:
 show() => Promise<void>
 ```
 
-Show the keyboard. This method is alpha and may have issues.
+Show the keyboard.
 
 This method is only supported on Android.
 
@@ -372,7 +375,7 @@ Remove all native listeners for this plugin.
 
 | Prop                 | Type                | Description             | Since |
 | -------------------- | ------------------- | ----------------------- | ----- |
-| **`keyboardHeight`** | <code>number</code> | Height of the heyboard. | 1.0.0 |
+| **`keyboardHeight`** | <code>number</code> | Height of the keyboard. | 1.0.0 |
 
 
 ### Enums
@@ -380,11 +383,11 @@ Remove all native listeners for this plugin.
 
 #### KeyboardStyle
 
-| Members       | Value                  | Description                                                                                                                                                                                                                                 | Since |
-| ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`Dark`**    | <code>'DARK'</code>    | Dark keyboard.                                                                                                                                                                                                                              | 1.0.0 |
-| **`Light`**   | <code>'LIGHT'</code>   | Light keyboard.                                                                                                                                                                                                                             | 1.0.0 |
-| **`Default`** | <code>'DEFAULT'</code> | On iOS 13 and newer the keyboard style is based on the device appearance. If the device is using Dark mode, the keyboard will be dark. If the device is using Light mode, the keyboard will be light. On iOS 12 the keyboard will be light. | 1.0.0 |
+| Members       | Value                  | Description                                                                                                                                                                       | Since |
+| ------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`Dark`**    | <code>'DARK'</code>    | Dark keyboard.                                                                                                                                                                    | 1.0.0 |
+| **`Light`**   | <code>'LIGHT'</code>   | Light keyboard.                                                                                                                                                                   | 1.0.0 |
+| **`Default`** | <code>'DEFAULT'</code> | The keyboard style is based on the device appearance. If the device is using Dark mode, the keyboard will be dark. If the device is using Light mode, the keyboard will be light. | 1.0.0 |
 
 
 #### KeyboardResize

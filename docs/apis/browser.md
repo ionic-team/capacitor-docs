@@ -1,8 +1,8 @@
 ---
 title: Browser Capacitor Plugin API
 description: The Browser API provides the ability to open an in-app browser and subscribe to browser events.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/browser/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/browser/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/next/browser/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/next/browser/src/definitions.ts
 sidebar_label: Browser
 ---
 
@@ -10,7 +10,7 @@ sidebar_label: Browser
 
 The Browser API provides the ability to open an in-app browser and subscribe to browser events.
 
-On iOS, this uses `SFSafariViewController` and is compliant with leading OAuth service in-app-browser requirements.
+On iOS, this uses `SFSafariViewController`.
 
 ## Install
 
@@ -25,7 +25,7 @@ npx cap sync
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `androidxBrowserVersion`: version of `androidx.browser:browser` (default: `1.7.0`)
+- `androidxBrowserVersion`: version of `androidx.browser:browser` (default: `1.9.0`)
 
 ## Example
 
@@ -76,9 +76,7 @@ Open a page with the specified options.
 close() => Promise<void>
 ```
 
-Web & iOS only: Close an open browser window.
-
-No-op on other platforms.
+Close an open browser window.
 
 **Since:** 1.0.0
 

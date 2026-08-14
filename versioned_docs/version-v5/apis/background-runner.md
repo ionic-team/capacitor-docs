@@ -33,6 +33,11 @@ If you will be making use of Geolocation or Push Notifications, enable `Location
 
 After enabling the Background Modes capability, add the following to your app's `AppDelegate.swift`:
 
+At the top of the file, under `import Capacitor` add:
+```swift
+import CapacitorBackgroundRunner
+```
+
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -72,6 +77,23 @@ Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configura
 
 ## Android
 
+Insert the following line to `android/app/build.gradle`:
+
+```diff
+...
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
++		dirs '../../node_modules/@capacitor/background-runner/android/src/main/libs', 'libs'
+    }
+}
+...
+
+```
+
+If you are upgrading from 1.0.5 with an existing Android project, be sure to delete the `android-js-engine-release.aar` from `android/src/main/libs`.
+
 ### Geolocation
 
 This API requires the following permissions be added to your `AndroidManifest.xml`:
@@ -101,9 +123,15 @@ Note that even if the permission is present, users can still disable exact notif
 
 Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
 
+## About Background Runner
+During the course of building complex applications, its sometimes necessary to perform work while the application is not in the foreground.  The challenge with standard Capacitor applications is that the webview is not available when these background events occur, requiring you to write native code to handle these events. This is where the Background Runner plugin comes in.
+
+Background Runner makes it easy to write JavaScript code to handle native background events.  All you need to do is create your runner JavaScript file and [define your configuration](#configuring-background-runner), then the Background Runner plugin will automatically configure and schedule a native background task that will be executed according to your config and the rules of the platform.  No modification to your UI code is necessary.
+
+
 ## Using Background Runner
 
-Background Runner is an event based JavaScript environment that emits events to a javascript runner file that you designate in your `capacitor.config.ts` file. If the runner finds a event handler corresponding to incoming event in your runner file, it will execute the event handler, then shutdown once `resolve()` or `reject()` are called (or if the OS force kills your process).
+Background Runner contains a headless JavaScript environment that calls event handlers in javascript file that you designate in your `capacitor.config.ts` file. If the runner finds a event handler corresponding to incoming event in your runner file, it will execute the event handler, then shutdown once `resolve()` or `reject()` are called (or if the OS force kills your process).
 
 #### Example Runner JS File
 
@@ -148,24 +176,69 @@ addEventListener('remoteNotification', (resolve, reject, args) => {
 
 Calling `resolve()` \ `reject()` is **required** within every event handler called by the runner. Failure to do this could result in your runner being killed by the OS if your event is called while the app is in the background. If the app is in the foreground, async calls to `dispatchEvent` may not resolve.
 
+For more real world examples of using Background Runner, check out the [Background Runner Test App](https://github.com/ionic-team/background-runner-testapp).
+
 ## Configuring Background Runner
 
-On load, Background Runner will automatically register a background task that will be scheduled and ran once your app is backgrounded. The settings for this behavior is defined in your `capacitor.config.ts` file:
+<docgen-config>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+On load, Background Runner will automatically register a
+background task that will be scheduled and run once your app is
+backgrounded.
+
+| Prop            | Type                 | Description                                                                                                                                                                                          | Since |
+| --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`label`**     | <code>string</code>  | The name of the runner, used in logs.                                                                                                                                                                | 1.0.0 |
+| **`src`**       | <code>string</code>  | The path to the runner JavaScript file, relative to the app bundle.                                                                                                                                  | 1.0.0 |
+| **`event`**     | <code>string</code>  | The name of the event that will be called when the OS executes the background task.                                                                                                                  | 1.0.0 |
+| **`repeat`**    | <code>boolean</code> | If background task should repeat based on the interval set in `interval`.                                                                                                                            | 1.0.0 |
+| **`interval`**  | <code>number</code>  | The number of minutes after the the app is put into the background in which the background task should begin. If `repeat` is true, this also specifies the number of minutes between each execution. | 1.0.0 |
+| **`autoStart`** | <code>boolean</code> | Automatically register and schedule background task on app load.                                                                                                                                     | 1.0.0 |
+
+### Examples
+
+In `capacitor.config.json`:
+
+```json
+{
+  "plugins": {
+    "BackgroundRunner": {
+      "label": "com.example.background.task",
+      "src": "runners/background.js",
+      "event": "myCustomEvent",
+      "repeat": true,
+      "interval": 15,
+      "autoStart": true
+    }
+  }
+}
+```
+
+In `capacitor.config.ts`:
 
 ```ts
+/// <reference types="@capacitor/background-runner" />
+
+import { CapacitorConfig } from '@capacitor/cli';
+
 const config: CapacitorConfig = {
   plugins: {
     BackgroundRunner: {
-      label: 'com.example.background.task',
-      src: 'background.js',
-      event: 'myCustomEvent',
+      label: "com.example.background.task",
+      src: "runners/background.js",
+      event: "myCustomEvent",
       repeat: true,
-      interval: 2,
-      autoStart: false,
+      interval: 15,
+      autoStart: true,
     },
   },
 };
+
+export default config;
 ```
+
+</docgen-config>
 
 ## JavaScript API
 
@@ -210,6 +283,7 @@ It’s not possible to run persistent, always running background services on mob
 
 - Each invocation of your task has approximately up to 30 seconds of runtime before you must call `completed()` or your task is killed.
 - While you can set an interval to define when your task runs after the app is backgrounded, or how often it should run, this is not guaranteed. iOS will determine when and how often you task will ultimately run, determined in part by how often you app is used.
+- Background tasks are not executed in the simulator.
 
 ### Android
 
@@ -268,7 +342,7 @@ Request permission to display local notifications.
 ### dispatchEvent(...)
 
 ```typescript
-dispatchEvent(options: DispatchEventOptions) => any
+dispatchEvent<T = void>(options: DispatchEventOptions) => any
 ```
 
 Dispatches an event to the configured runner.
@@ -367,7 +441,7 @@ A simple string key / value store backed by UserDefaults on iOS and Shared Prefe
 | Prop         | Type                                                 | Description                            | Since |
 | ------------ | ---------------------------------------------------- | -------------------------------------- | ----- |
 | **`set`**    | <code>(key: string, value: string) =&gt; void</code> | Set a string value with the given key. | 1.0.0 |
-| **`get`**    | <code>(key: string) =&gt; string</code>              | Get a string value for the given key.  | 1.0.0 |
+| **`get`**    | <code>(key: string) =&gt; { value: string; }</code>  | Get a string value for the given key.  | 1.0.0 |
 | **`remove`** | <code>(key: string) =&gt; void</code>                | Remove a value with the given key.     | 1.0.0 |
 
 
@@ -410,7 +484,7 @@ Get access to device location information.
 
 | Prop                     | Type                                                                                   | Description                          | Since |
 | ------------------------ | -------------------------------------------------------------------------------------- | ------------------------------------ | ----- |
-| **`getCurrentLocation`** | <code>() =&gt; <a href="#getcurrentpositionresult">GetCurrentPositionResult</a></code> | Get the device's last known location | 1.0.0 |
+| **`getCurrentPosition`** | <code>() =&gt; <a href="#getcurrentpositionresult">GetCurrentPositionResult</a></code> | Get the device's last known location | 1.0.0 |
 
 
 #### GetCurrentPositionResult
@@ -441,5 +515,6 @@ They could be used if a native watch app is developed as a companion app to a Ca
 | **`isReachable`**              | <code>boolean</code>                                                     | Checks to see if the compaion watch is reachable                                                                                                            |
 | **`updateWatchUI`**            | <code>(options: { watchUI: string; }) =&gt; void</code>                  | Replaces the current UI on the watch with what is specified here.                                                                                           |
 | **`updateWatchData`**          | <code>(options: { data: { [key: string]: string; }; }) =&gt; void</code> | Updates the data the watch is using to display variables in text and button fields                                                                          |
+
 
 </capacitor-api-docs>

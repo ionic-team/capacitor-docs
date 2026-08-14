@@ -1,8 +1,8 @@
 ---
 title: Splash Screen Capacitor Plugin API
 description: The Splash Screen API provides methods for showing or hiding a Splash image.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/next/splash-screen/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/next/splash-screen/src/definitions.ts
 sidebar_label: Splash Screen
 ---
 
@@ -35,7 +35,7 @@ The Android 12 Splash Screen API can't be disabled on Android 12+ as it's part o
 **NOTE**: On Android 12 and Android 12L devices the Splash Screen image is not showing when launched from third party launchers such as Nova Launcher, MIUI, Realme Launcher, OPPO Launcher, etc., from app info in Settings App, or from IDEs such as Android Studio.
 **[Google Issue Tracker](https://issuetracker.google.com/issues/205021357)**
 **[Google Issue Tracker](https://issuetracker.google.com/issues/207386164)**
-Google have fixed those problems on Android 13 but they won't be backport the fixes to Android 12 and Android 12L.
+Google has fixed those problems on Android 13 but they won't backport the fixes to Android 12 and Android 12L.
 Launcher related issues might get fixed by a launcher update.
 If you still find issues related to the Splash Screen on Android 13, please, report them to [Google](https://issuetracker.google.com/).
 
@@ -106,7 +106,7 @@ These config values are available:
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----- |
 | **`launchShowDuration`**        | <code>number</code>                                                                                                           | How long to show the launch splash screen when autoHide is enabled (in ms)                                                                                                                                                                              | <code>500</code>    | 1.0.0 |
 | **`launchAutoHide`**            | <code>boolean</code>                                                                                                          | Whether to auto hide the splash after launchShowDuration.                                                                                                                                                                                               | <code>true</code>   | 1.0.0 |
-| **`launchFadeOutDuration`**     | <code>number</code>                                                                                                           | Duration for the fade out animation of the launch splash screen (in ms) Only available for Android, when using the Android 12 Splash Screen API.                                                                                                        | <code>200</code>    | 4.2.0 |
+| **`launchFadeOutDuration`**     | <code>number</code>                                                                                                           | Duration for the fade out animation of the launch splash screen (in ms) On Android, only available when using the Android 12 Splash Screen API.                                                                                                         | <code>0</code>      | 4.2.0 |
 | **`backgroundColor`**           | <code>string</code>                                                                                                           | Color of the background of the Splash Screen in hex format, #RRGGBB or #RRGGBBAA. Doesn't work if `useDialog` is true or on launch when using the Android 12 API.                                                                                       |                     | 1.0.0 |
 | **`androidSplashResourceName`** | <code>string</code>                                                                                                           | Name of the resource to be used as Splash Screen. Doesn't work on launch when using the Android 12 API. Only available on Android.                                                                                                                      | <code>splash</code> | 1.0.0 |
 | **`androidScaleType`**          | <code>'CENTER' \| 'CENTER_CROP' \| 'CENTER_INSIDE' \| 'FIT_CENTER' \| 'FIT_END' \| 'FIT_START' \| 'FIT_XY' \| 'MATRIX'</code> | The [ImageView.ScaleType](https://developer.android.com/reference/android/widget/ImageView.ScaleType) used to scale the Splash Screen image. Doesn't work if `useDialog` is true or on launch when using the Android 12 API. Only available on Android. | <code>FIT_XY</code> | 1.0.0 |
@@ -193,7 +193,7 @@ To use splash screen images named something other than `splash.png`, set `androi
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `coreSplashScreenVersion` version of `androidx.core:core-splashscreen` (default: `1.0.1`)
+- `coreSplashScreenVersion` version of `androidx.core:core-splashscreen` (default: `1.2.0`)
 
 ## Example Guides
 
