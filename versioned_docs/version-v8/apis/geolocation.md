@@ -33,7 +33,7 @@ location in the background. As a result, Apple requires you to include a
 prompt won’t appear to users, you can safely use the same description string as for
 `NSLocationWhenInUseUsageDescription`.
 
-:::info
+:::
 
 Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
 
@@ -54,7 +54,7 @@ The first two permissions ask for location data, both fine and coarse, and the l
 
 If you only require approximate location (variable accuracy but usually around 2 kilometers), you may just declare `ACCESS_COARSE_LOCATION` and `<uses-feature`, and use `enableHighAccuracy=false` when requesting location
 
-:::note
+:::
 
 Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
 
