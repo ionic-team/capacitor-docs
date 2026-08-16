@@ -1,8 +1,8 @@
 ---
 title: File Viewer Capacitor Plugin API
 description: The FileViewer API provides mechanisms for opening files and previewing media. Not available on web.
-custom_edit_url: https://github.com/ionic-team/capacitor-file-viewer/blob/main/packages/capacitor-plugin/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-file-viewer/blob/main/packages/capacitor-plugin/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-file-viewer/blob/next/packages/capacitor-plugin/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-file-viewer/blob/next/packages/capacitor-plugin/src/definitions.ts
 sidebar_label: File Viewer
 ---
 
@@ -224,6 +224,6 @@ The plugin returns the following errors with specific codes on native Android an
 | OS-PLUG-FLVW-0008 | Android, iOS     | Could not open the file. |
 | OS-PLUG-FLVW-0009 | Android, iOS     | Invalid parameters. |
 | OS-PLUG-FLVW-0010 | Android          | There is no app to open this file. |
-| OS-PLUG-FLVW-0011 | iOS              | Cordova / Capacitor bridge isn’t initialized. |
+| OS-PLUG-FLVW-0011 | iOS              | Capacitor bridge isn’t initialized. |
 | OS-PLUG-FLVW-0012 | iOS              | The download failed. |
 | OS-PLUG-FLVW-0013 | iOS              | The file has no extension. |

@@ -1,0 +1,135 @@
+---
+title: Environment Setup
+description: Setting up a development environment for Capacitor
+slug: /getting-started/environment-setup
+---
+
+# Environment Setup
+
+Capacitor has three officially supported application targets: Android, iOS, and Web. In order to create applications for all three platforms, you'll need to install all of the following dependencies. If you are not targeting one of the native mobile targets, you can skip the associated section.
+
+## Core Requirements
+
+In order to develop any application with Capacitor, you will need NodeJS 22 or higher installed. You can install Node by using the installer on [the Node website](https://nodejs.org), using [Volta](https://volta.sh/): a JavaScript tools manager, or installing it with a package manager like [homebrew](https://brew.sh/), or [Chocolatey](https://chocolatey.org/).
+
+Once you have installed Node, open your terminal of choice and type in the following command to make sure node is properly installed
+
+```bash
+node --version
+# v22.21.1
+```
+
+With Node installed, you can get started with creating Progressive Web Applications (PWA) with Capacitor.
+
+## iOS Requirements
+
+To build iOS apps, you will need **macOS**. While there are solutions like [Ionic Appflow](http://ionicframework.com/appflow) that can be used to perform iOS cloud builds if you don't have a Mac, it is highly recommended to have the tools available to you locally in order to properly test your Capacitor application.
+
+In order to develop iOS applications using Capacitor, you will need two additional dependencies:
+
+- Xcode
+- Xcode Command Line Tools
+
+Once you've installed the core requirements, as well as Xcode, Xcode Command Line Tools, you'll be able to create both iOS applications and PWAs.
+
+### Xcode
+
+Xcode is Apple's IDE for creating native macOS, iOS, and iPadOS applications. You can install Xcode by [using the Apple App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) on your Mac. Capacitor 8 requires a minimum of Xcode 26.0.
+
+### Xcode Command Line Tools
+
+The Xcode command line tools are additional tools not included with the core of Xcode that are required for building and testing your application. Once Xcode has been installed, you can install the Xcode Command Line Tools by running the following command in your terminal:
+
+```bash
+xcode-select --install
+```
+
+After inputting your password and waiting for a few minutes for the packages to install, you can verify that the tools are installed by running the following command:
+
+```bash
+xcode-select -p
+# /Applications/Xcode.app/Contents/Developer
+```
+
+### Optional dependencies
+
+The following dependencies are optional for using Capacitor on iOS.
+
+If you need to use CocoaPods as a dependency manager for native iOS packages, then you should install these two package managers:
+
+- Homebrew
+- CocoaPods
+
+We recommend using [Swift Package Manager](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs) (SPM) as the dependency manager for iOS. If you don't need CocoaPods, then you can use SPM and skip the install of those two dependencies.
+
+#### Homebrew
+
+Homebrew is a package manager for macOS packages. You need to install it in order to install CocoaPods for both Intel and Apple Silicon Macs.
+
+To install Homebrew, run the following bash command:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+:::info
+Don't just trust us! This is how [brew.sh](https://brew.sh) recommends installing Homebrew.
+:::
+
+If you do not want to install Homebrew, alternative, but not recommended, instructions can be found below.
+
+#### CocoaPods
+
+CocoaPods was the default iOS dependency manager in Capacitor 7 and earlier. Since Capacitor 8, the default has been replaced with SPM, but you can still use CocoaPods as an alternative if your project needs it, by passing `--packagemanager CocoaPods` to `npx cap add ios` command.
+
+You can install [CocoaPods](https://cocoapods.org/) by running the following command in your terminal
+
+```bash
+brew install cocoapods
+```
+
+You can verify that CocoaPods has installed correctly by running the following command.
+
+```bash
+pod --version
+# 1.12.1
+```
+
+##### Installing CocoaPods without Homebrew
+
+You can install CocoaPods directly with Ruby Gem. To install it, you can run the following command.
+```
+sudo gem install cocoapods
+```
+
+For running without sudo see [CocoaPods sudo-less installation docs](https://guides.cocoapods.org/using/getting-started.html#sudo-less-installation)
+
+## Android Requirements
+
+In order to develop Android applications using Capacitor, you will need two additional dependencies:
+
+- Android Studio
+- An Android SDK installation
+
+:::note
+You do not need to separately install the Java Development Kit (JDK). Android Studio
+will automatically install the proper JDK for you.
+:::
+
+Once you've installed the core requirements, as well as an Android SDK with Android Studio, you'll be able to create both Android applications and PWAs.
+
+### Android Studio
+
+Android Studio is Google's IDE for creating native Android applications. You can install Android Studio by going to the [Android Studio download page](https://developer.android.com/studio). Capacitor 8 requires a minimum of Android Studio 2025.2.1.
+
+### Android SDK
+
+Once Android Studio has been installed, you need to install an Android SDK package.
+
+Developing Android apps requires some Android SDK packages to be installed. Make sure to install the Android SDK Tools, and a version of the Android SDK Platforms for API 24 or greater.
+
+In Android Studio, open **Tools -> SDK Manager** from the menu and install the platform versions you'd like to test with in the **SDK Platforms** tab:
+
+![SDK Platforms](/img/v6/docs/android/sdk-platforms.png)
+
+To get started, you only need to install one API version. In the above image, the SDKs for Android 9 (API 28) and Android 10 (API 29) are installed. The latest stable version is Android 16 (API 36).
