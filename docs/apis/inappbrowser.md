@@ -32,6 +32,30 @@ ext {
 }
 ```
 
+#### LocalStorage Isolation
+The `openInWebView` option provides isolation for `localStorage` and `cookies` to ensure that content loaded in the InAppBrowser does not interfere with the main application's storage.
+
+- **iOS**: Storage is isolated by default.
+- **Android (API 28+)**: Storage is **isolated by default** by running the InAppBrowser in a separate process (`:OSInAppBrowser`) with a dedicated data directory suffix.
+- **Android (API < 28)**: Storage is **shared** with the main application due to platform limitations.
+
+### Opting-out of Isolation (Android)
+If your use case requires sharing `localStorage` or `cookies` between the main app and the InAppBrowser on Android, you can opt-out of isolation by setting `isIsolated: false` in the `android` options.
+
+:::caution
+
+Disabling isolation reduces the security of your app by allowing potentially untrusted web content to access your application's private storage (Cookies, LocalStorage, etc.). Use this only if absolutely necessary.
+
+:::
+
+:::warning
+
+**Breaking Change (Android)**: Apps upgrading to this version will lose any existing `localStorage` or cookies previously stored by the InAppBrowser on the first run. This is because the WebView now runs in a separate process with its own data directory. Users may need to re-authenticate with websites that relied on persisted session data.
+
+:::
+
+---
+
 ## Usage Example
 #### Open In External Browser
 ```typescript
@@ -247,6 +271,7 @@ Defines the options for opening a URL in the web view.
 | **`allowZoom`**    | <code>boolean</code> | Shows the Android browser's zoom controls.                                                                                                 |
 | **`hardwareBack`** | <code>boolean</code> | Uses the hardware back button to navigate backwards through the Web View's history. If there is no previous page, the Web View will close. |
 | **`pauseMedia`**   | <code>boolean</code> | Makes the Web View pause/resume with the app to stop background audio.                                                                     |
+| **`isIsolated`**   | <code>boolean</code> | Whether to run the InAppBrowser in an isolated process. Android only. Defaults to true.                                                    |
 
 
 #### iOSWebViewOptions
