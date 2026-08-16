@@ -1,8 +1,8 @@
 ---
 title: Browser Capacitor Plugin API
 description: The Browser API provides the ability to open an in-app browser and subscribe to browser events.
-custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/browser/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/browser/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/next/browser/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/next/browser/src/definitions.ts
 sidebar_label: Browser
 ---
 
@@ -76,9 +76,7 @@ Open a page with the specified options.
 close() => Promise<void>
 ```
 
-Web & iOS only: Close an open browser window.
-
-No-op on other platforms.
+Close an open browser window.
 
 **Since:** 1.0.0
 

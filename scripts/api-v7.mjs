@@ -47,7 +47,7 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/README.md',
+    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/packages/capacitor-plugin/README.md',
     editApiUrl:
       'https://github.com/ionic-team/capacitor-background-runner/blob/2.x/packages/capacitor-plugin/src/definitions.ts',
   },
@@ -286,15 +286,6 @@ const pluginApis = [
     npmScope: '@capacitor',
     editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/toast/README.md',
     editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/7.x/toast/src/definitions.ts',
-  },
-  {
-    id: 'watch',
-    isCore: false,
-    isExperimental: true,
-    npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/CapacitorWatch/blob/main/packages/capacitor-plugin/src/definitions.ts',
-    tag: 'latest',
   },
 ];
 
