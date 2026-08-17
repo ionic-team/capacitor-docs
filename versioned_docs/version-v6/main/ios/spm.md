@@ -44,7 +44,7 @@ Now you can use `npx cap open ios` to open the iOS project and run your app from
 
 ---
 
-### Add and use a Capactior Plugin with SPM
+### Add and use a Capacitor Plugin with SPM
 
 So let's add a plugin to this project and do something with that plugin.
 

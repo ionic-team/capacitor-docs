@@ -13,7 +13,7 @@ export const useScript = (src: string) => {
         return;
       }
       // Fetch existing script element by src
-      // It may have been added by another intance of this hook
+      // It may have been added by another instance of this hook
       let script = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement;
       if (!script) {
         // Create script
