@@ -213,8 +213,9 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/next/local-notifications/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-plugins/blob/next/local-notifications/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-local-notifications/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-local-notifications/blob/main/src/definitions.ts',
+    tag: 'latest',
   },
   {
     id: 'motion',
