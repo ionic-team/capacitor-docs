@@ -141,7 +141,7 @@ schedule(options: ScheduleOptions) => Promise<ScheduleResult>
 
 <a href="#schedule">Schedule</a> one or more local notifications.
 
-On both platforms this now requests the notification permission it needs
+Starting on version 8.3.0 this requests the notification permission it needs
 before scheduling if it has not been granted yet (Android 13+
 `POST_NOTIFICATIONS`, iOS `UNUserNotificationCenter` authorization). Apps
 that already call `requestPermissions()` beforehand are unaffected.
