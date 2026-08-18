@@ -11,6 +11,10 @@ All Android applications must specify a target SDK version, or the version of An
 targetSdkVersion = 37
 ```
 
+:::note
+Starting with Capacitor 9, AGP 9 infers `targetSdkVersion` from `compileSdkVersion` in your app's `build.gradle` when it isn't set explicitly there, so the two are always equal. `variables.gradle` still defines `targetSdkVersion` for reference and for library modules, but it's no longer read from your app's `defaultConfig`.
+:::
+
 ## Capacitor Android Requirements
 
 In Capacitor, the Android target SDK version is strongly tied to the major version of Capacitor. This means that while you could change the target SDK to a higher version and rebuild your application, there's a very strong likelihood that your application will experience issues not otherwise present. The Capacitor team releases a new major version of Capacitor every year that includes support for the new target SDK version to ensure that applications remain compliant with Google's requirements. For this reason, it is important to keep your application up to date with the latest major version of Capacitor.
@@ -21,6 +25,7 @@ The following table shows the target SDK versions that are supported by Capacito
 
 | Capacitor Android | Target SDK Version |
 | ----------------- | ------------------ |
+| 9.x               | 37                 |
 | 8.x               | 36                 |
 | 7.x               | 35                 |
 | 6.x               | 34                 |

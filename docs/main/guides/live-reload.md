@@ -73,5 +73,5 @@ Finally, click the Run button to launch the app and start using Live Reload.
 Alternatively to setting `url` in `capacitor.config.json`, you can set the live reload url directly from the CLI when running the app from the command line:
 
 ```bash
-npx cap run android --url http://192.168.1.68:8100
+npx cap run --url http://192.168.1.68:8100
 ```
