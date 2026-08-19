@@ -56,6 +56,7 @@ npm install @capacitor/device@latest-7
 - [Geolocation](/apis/geolocation.md)
 - [Google Maps](/apis/google-maps.md)
 - [Haptics](/apis/haptics.md)
+- [Health Fitness](/apis/health-fitness.md)
 - [Http](/apis/http.md)
 - [InAppBrowser](/apis/inappbrowser.md)
 - [Keyboard](/apis/keyboard.md)

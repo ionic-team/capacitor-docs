@@ -182,6 +182,15 @@ const pluginApis = [
     editApiUrl: 'https://github.com/ionic-team/capacitor-haptics/blob/next/src/definitions.ts',
   },
   {
+    id: 'health-fitness',
+    isCore: false,
+    isExperimental: false,
+    npmScope: '@capacitor',
+    editUrl: 'https://github.com/ionic-team/capacitor-health-fitness/blob/main/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-health-fitness/blob/main/src/definitions.ts',
+    tag: 'latest',
+  },
+  {
     id: 'http',
     isCore: true,
     isExperimental: false,
