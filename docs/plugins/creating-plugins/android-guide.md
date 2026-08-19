@@ -139,7 +139,7 @@ Before following this section, make sure you've set up your permission aliases a
 
 ### Annotation Changes
 
-> Still using `@NativePlugin`? See the [upgrade guide](/main/updating/plugins/3-0.md#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
+> The `@NativePlugin` annotation was removed in Capacitor 9. If your plugin still uses it, see the [upgrade guide](/main/updating/plugins/3-0.md#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
 
 ```diff
  @CapacitorPlugin(
