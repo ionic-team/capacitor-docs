@@ -16,8 +16,8 @@ Capacitor can target virtually any device with our official and community platfo
 ### Official Platforms
 
 Capacitor officially supports the following platforms:
-- iOS 15+
-- Android 7+
+- iOS 16+
+- Android 8+
   - Requires Chrome WebView 60+
 - Modern Web Browsers
   - Chrome
