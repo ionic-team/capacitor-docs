@@ -18,7 +18,11 @@ slug: /guides/community
 
 [Capacitor Workflow for iOS and Android Apps &#8250;](https://www.youtube.com/watch?v=oXbRcpsytGQ)
 
-[Using the Capacitor in Vue.js app &#8250;](https://akhromieiev.com/tutorials/using-capacitor-in-vue-js-app/)
+[Using Capacitor in Vue.js app &#8250;](https://akhromieiev.com/tutorials/using-capacitor-in-vue-js-app/)
+
+[Using Capacitor in Next.js app &#8250;](https://capgo.app/blog/building-a-native-mobile-app-with-nextjs-and-capacitor/)
+
+[Using Capacitor in Nuxt.js app &#8250;](https://capgo.app/blog/building-a-native-mobile-app-with-nuxt-and-capacitor/)
 
 ## APIs
 
