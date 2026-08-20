@@ -8,7 +8,7 @@ sidebar_label: Contacts
 
 # @capacitor/contacts
 
-Access, search, pick, create, update and remove device contacts.
+Access, search, pick, create, update and remove device contacts. Not available on web.
 
 ## Install
 
