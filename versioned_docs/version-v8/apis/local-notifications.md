@@ -97,6 +97,31 @@ export default config;
 
 If the device has entered [Doze](https://developer.android.com/training/monitoring-device-state/doze-standby) mode, your application may have restricted capabilities. If you need your notification to fire even during Doze, schedule your notification by using `allowWhileIdle: true`. Make use of `allowWhileIdle` judiciously, as these notifications [can only fire once per 9 minutes, per app.](https://developer.android.com/training/monitoring-device-state/doze-standby#assessing_your_app)
 
+## Errors
+
+Starting on version 8.3.0, the plugin returns structured errors on Android and iOS. Each error has a `code` (e.g. `OS-PLUG-LNOT-0001`) and a `message` with a human-readable description. Codes 0001, 0002, 0005, 0006, 0011 and 0012 mean the same thing on both platforms; every other code is platform-specific.
+
+| Error code | Platform(s) | Description |
+|---|---|---|
+| OS-PLUG-LNOT-0001 | Android, iOS | Must provide a notifications array as the notifications option. |
+| OS-PLUG-LNOT-0002 | Android, iOS | Notification is missing an identifier. |
+| OS-PLUG-LNOT-0003 | iOS | Unable to build the notification content. |
+| OS-PLUG-LNOT-0004 | iOS | Unable to create the notification, trigger construction failed. |
+| OS-PLUG-LNOT-0005 | Android, iOS | Notifications are not enabled on this device. |
+| OS-PLUG-LNOT-0006 | Android, iOS | Invalid color provided. Must be a hex string (e.g. #ff0000). |
+| OS-PLUG-LNOT-0007 | Android | Provided notification format is invalid. |
+| OS-PLUG-LNOT-0008 | Android | Invalid date format sent to the plugin. |
+| OS-PLUG-LNOT-0009 | Android | The identifier must be a 32-bit integer. |
+| OS-PLUG-LNOT-0010 | iOS | Unable to schedule the notification. |
+| OS-PLUG-LNOT-0011 | Android, iOS | Expected notifications to be a list of notification objects. |
+| OS-PLUG-LNOT-0012 | Android, iOS | Must provide an ids array. |
+| OS-PLUG-LNOT-0013 | iOS | Unable to request notification permission. |
+| OS-PLUG-LNOT-0014 | Android | Invalid JSON object sent to the plugin. |
+| OS-PLUG-LNOT-0015 | Android | Channel is missing an identifier. |
+| OS-PLUG-LNOT-0016 | Android | Channel is missing a name. |
+| OS-PLUG-LNOT-0017 | Android | Unable to schedule an exact alarm due to lack of permissions. Scheduled as an inexact alarm instead. |
+| OS-PLUG-LNOT-0018 | Android | Unable to schedule an exact alarm due to lack of permissions. |
+
 ## API
 
 <docgen-index>
