@@ -57,10 +57,4 @@ Once Xcode launches, you can build your app binary through the standard Xcode wo
 ### Android
 
 Android relies on Android Studio (or, optionally, the Android CLI tools) to build the app:
-
-```bash
-npx cap copy android
-npx cap open android
-```
-
-Once Android Studio launches, you can build your app through the standard Android Studio workflow.
+https://stitch.withgoogle.com/projects/5902574421678106357
