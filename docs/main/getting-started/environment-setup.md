@@ -120,7 +120,7 @@ Once you've installed the core requirements, as well as an Android SDK with Andr
 
 ### Android Studio
 
-Android Studio is Google's IDE for creating native Android applications. You can install Android Studio by going to the [Android Studio download page](https://developer.android.com/studio). Capacitor 9 requires a minimum of Android Studio 2025.3.3.
+Android Studio is Google's IDE for creating native Android applications. You can install Android Studio by going to the [Android Studio download page](https://developer.android.com/studio). Capacitor 9 requires a minimum of Android Studio 2026.1.1.
 
 ### Android SDK
 
