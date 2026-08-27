@@ -8,7 +8,7 @@ sidebar_label: Calendar
 
 # @capacitor/calendar
 
-Create, find, modify and remove events in the device calendar.
+Create, find, modify and remove events in the device calendar. Not available on web.
 
 ## Install
 
