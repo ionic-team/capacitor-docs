@@ -39,7 +39,7 @@ const ConnectionBadge = () => {
 };
 ```
 
-Plugins that ask for permissions expose them as a hook as well:
+Plugins that ask for permissions expose them as a hook as well (make sure you’ve installed the relevant plugin too, e.g. `npm install @capacitor/geolocation`):
 
 ```tsx
 import { useGeolocationPermissions, useWatchPosition } from '@capawesome/capacitor-react-hooks/capacitor/geolocation';
