@@ -62,7 +62,7 @@ You'll also need to ensure your mobile device has been enabled for debugging.
 
 The remote logging feature will send all calls to `console.log` (and `console.error` etc) to the VS Code `output` window. This makes debugging your app when it is running on a device easier as you do not have to attach to its web view.
 
-To use this feature install Nexus Browser on the device ([App Store](https://apps.apple.com/us/app/nexus-web-browser/id6445866986) or [Play Store](https://play.google.com/store/apps/details?id=com.nexusconcepts.nexus)) and Run your app for web in VS Code. If the device is on the same Wifi network it will detect your app and allow you to launch it.
+To use this feature install WebNative on the device ([App Store](https://apps.apple.com/us/app/webnative/id6445866986) or [Play Store](https://play.google.com/store/apps/details?id=com.nexusconcepts.nexus)) and Run your app for web in VS Code. If the device is on the same Wifi network it will detect your app and allow you to launch it.
 
 :::tip
 Select `Settings` > `Logging` to filter what is logged to the output window.
