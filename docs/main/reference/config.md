@@ -241,9 +241,9 @@ export interface CapacitorConfig {
     initialFocus?: boolean;
 
     /**
-     * The minimum supported webview version on Android supported by your app.
+     * The minimum supported webview version on Android for your app.
      *
-     * The minimum supported cannot be lower than version `55`, which is required for Capacitor.
+     * This minimum version cannot be lower than version `55`, which is required for Capacitor.
      *
      * If the device uses a lower WebView version, an error message will be shown on Logcat.
      * If `server.errorPath` is configured, the WebView will redirect to that file, so can be
