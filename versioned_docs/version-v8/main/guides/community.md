@@ -20,6 +20,8 @@ slug: /guides/community
 
 [Using the Capacitor in Vue.js app &#8250;](https://akhromieiev.com/tutorials/using-capacitor-in-vue-js-app/)
 
+[Capacitor Edge-to-Edge & Safe Areas: The Complete Guide &#8250;](https://capawesome.io/blog/capacitor-edge-to-edge-and-safe-areas-guide)
+
 ## APIs
 
 [Camera: Building an Ionic Framework Camera App](/main/guides/ionic-framework-app.md)
@@ -33,6 +35,10 @@ slug: /guides/community
 [Using the Capacitor Browser API to open urls &#8250;](https://akhromieiev.com/tutorials/using-the-capacitor-browser-api-to-open-links/)
 
 [Network Detection with Capacitor in Ionic project &#8250;](https://akhromieiev.com/tutorials/network-detection-capacitor/)
+
+[Barcode Scanning: How to Build an Ionic Barcode Scanner with Capacitor &#8250;](https://capawesome.io/blog/how-to-build-an-ionic-barcode-scanner-with-capacitor)
+
+[Device Sensors: The Complete Guide to Capacitor Device Sensors &#8250;](https://capawesome.io/blog/capacitor-device-sensors-guide)
 
 ## Integrations
 
@@ -49,3 +55,5 @@ slug: /guides/community
 [Google Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/google-login-in-ionic-react-capacitor-apps/122)
 
 [Twitter Login in Capacitor Apps with Ionic React &#8250;](https://enappd.com/blog/twitter-login-in-ionic-react-capacitor-app/121)
+
+[Firebase Authentication in Capacitor: Setup & Best Practices &#8250;](https://capawesome.io/blog/capacitor-firebase-authentication-guide/)
