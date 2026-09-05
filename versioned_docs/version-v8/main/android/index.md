@@ -1,4 +1,4 @@
----
+---https://app.emergent.sh/chat
 title: Capacitor Android Documentation
 sidebar_label: Getting Started
 slug: /android
