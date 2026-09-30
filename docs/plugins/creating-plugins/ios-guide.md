@@ -145,7 +145,7 @@ public let pluginMethods: [CAPPluginMethod] = [
 
 This makes the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
 
-To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAPPluginMethod` entry in the `pluginMethods` array.
+To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAPPluginMethod` entry in the `pluginMethods` array. See [Method Types](/plugins/method-types) for each `returnType` and the matching TypeScript signature to declare in `src/definitions.ts`.
 
 ## Permissions
 
