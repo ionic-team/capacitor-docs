@@ -225,7 +225,7 @@ Make a Http DELETE Request to a server using native libraries.
 
 | Prop          | Type                                                | Description                                       |
 | ------------- | --------------------------------------------------- | ------------------------------------------------- |
-| **`url`**     | <code>string</code>                                 | The response URL recieved from the Http response. |
+| **`url`**     | <code>string</code>                                 | The response URL received from the Http response. |
 | **`status`**  | <code>number</code>                                 | The status code received from the Http response.  |
 | **`data`**    | <code>any</code>                                    | Additional data received with the Http response.  |
 | **`headers`** | <code><a href="#httpheaders">HttpHeaders</a></code> | The headers received from the Http response.      |

@@ -41,7 +41,7 @@ npx cap sync
 
 ## Updating Ionic Native Plugins
 
-Similiar to the installation steps. Update the Ionic Native JavaScript library, remove then re-add the Cordova plugin, then update your project:
+Similar to the installation steps. Update the Ionic Native JavaScript library, remove then re-add the Cordova plugin, then update your project:
 
 ```bash
 npm install @ionic-native/javascript-package-name@2
