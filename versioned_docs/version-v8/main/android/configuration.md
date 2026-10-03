@@ -87,3 +87,4 @@ package="com.getcapacitor.myapp">
 ```
 
 Generally, the plugin you choose to use will ask you to set a permission. Add it in this file.
+
