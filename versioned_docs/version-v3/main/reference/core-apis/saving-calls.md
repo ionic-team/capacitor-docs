@@ -1,3 +1,4 @@
+<img width="1024" height="1024" alt="34699" src="https://github.com/user-attachments/assets/83554097-3d3f-446a-a7d2-e83a59ef7046" />
 ---
 title: Persisting Plugin Calls
 description: How to save plugin calls in Capacitor
