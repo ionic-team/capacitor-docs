@@ -119,6 +119,15 @@ export interface CapacitorConfig {
    */
   initialFocus?: boolean;
 
+  /**
+   * If set, will include Cordova support libraries regardless
+   * of whether or not they are needed by plugins.
+   *
+   * @since 9.0.0
+   * @default false
+   */
+  forceCordovaInclusion?: boolean;
+
   android?: {
     /**
      * Specify a custom path to the native Android project.
@@ -600,6 +609,52 @@ export interface CapacitorConfig {
          * @since 8.4.0
          */
         packageOptions?: { [pluginId: string]: PackageOptions };
+
+        /**
+         * Override which Capacitor Swift package the generated `Package.swift` depends on.
+         *
+         * By default the generated package pins the git tag matching the installed
+         * `@capacitor/ios` version, which is correct for both stable and pre-release versions
+         * and matches what CocoaPods resolves.
+         *
+         * Set this only when developing against an unreleased Capacitor, such as a local
+         * checkout or a feature branch. Exactly one of `path`, `branch`, `revision`, `exact`,
+         * or `from` must be set. `path` points at the repository root (the directory containing
+         * `Package.swift`) and may be relative to the app.
+         *
+         * The `CAPACITOR_IOS_PACKAGE` environment variable takes precedence over this setting,
+         * so a checkout can be redirected without editing committed configuration.
+         *
+         * Note that `branch` and `revision` builds are not reproducible and decouple the native
+         * code from the `@capacitor/core` JavaScript bridge it is versioned against.
+         *
+         * @since 9.0.0
+         * @example { "path": "../capacitor" }
+         * @example { "branch": "next" }
+         */
+        capacitorPackage?: {
+          /**
+           * Repository to fetch from. Ignored when `path` is set.
+           *
+           * @default 'https://github.com/ionic-team/capacitor'
+           */
+          url?: string;
+
+          /** Path to a local Capacitor repository root. */
+          path?: string;
+
+          /** Branch to track. */
+          branch?: string;
+
+          /** Exact commit to pin. */
+          revision?: string;
+
+          /** Exact version tag to pin. */
+          exact?: string;
+
+          /** Minimum version tag, allowing compatible upgrades. */
+          from?: string;
+        };
       };
     };
   };
@@ -806,13 +861,33 @@ export interface PluginsConfig {
      *
      * This option is only supported on Android.
      *
-     * `css` = Injects CSS variables (`--safe-area-inset-*`) containing correct safe area inset values into the webview.
+     * `native` = (recommended) For older Chromium versions (< v140) this embeds the webview with padding and sets the `env(safe-area-inset-*)` variables to `0px`. For newer Chromium versions (>= v140) this makes sure the webview adheres to the `viewport-fit` meta tag. If set to `viewport-fit="cover"` this will make the webview edge-to-edge and the `env(safe-area-inset-*)` variables will contain the correct values. With those values you could set padding for example so make sure the webview is shown correctly.
      *
-     * `disable` = Disable CSS variables injection.
+     * `css` = This is the same as `native`, but it also injects CSS variables (`--safe-area-inset-*`) containing correct safe area inset values into the webview.
      *
-     * @default "css"
+     * `disable` = (not recommended) Disable safe area insets handling completely.
+     * This shifts the responsibility from Capacitor to your own code to handle the insets.
+     * Be aware that this might result in a visually broken UI if your native app code and the content loaded into the webview do not correctly handle safe area insets.
+     *
+     * @default "native"
      */
-    insetsHandling?: 'css' | 'disable';
+    insetsHandling?: 'native' | 'css' | 'disable';
+
+    /**
+     * Set an initial value for the to be detected `viewport-fit=` meta tag value.
+     * For most apps that support edge-to-edge this value will eventually be `cover`.
+     * Therefore you might want to set this value to `cover` to help prevent layout jumps and glitches.
+     * If you know the value to be `cover` initially, you can set it here.
+     * The value will always end up correctly, no matter what you set here,
+     * as long as `insetsHandling` is set to `native` or `css`.
+     * It only exists to help prevent layout jumps and glitches.
+     *
+     * This option is only supported on Android.
+     *
+     * @default undefined
+     */
+    initialViewportFitValueHint?: 'auto' | 'contain' | 'cover';
+
     /**
      * The style of the text and icons of the system bars.
      *
@@ -861,3 +936,4 @@ The Capacitor CLI will find dependencies on your system automatically. In the ev
 
 - `CAPACITOR_ANDROID_STUDIO_PATH`: The path to Android Studio executable on your system.
 - `CAPACITOR_COCOAPODS_PATH`: The path to the `pod` binary on your system.
+- `CAPACITOR_IOS_PACKAGE`: Overrides which Capacitor Swift package the generated `Package.swift` depends on. Takes precedence over `experimental.ios.spm.capacitorPackage`.
