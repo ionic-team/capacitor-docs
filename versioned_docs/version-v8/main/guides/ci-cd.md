@@ -48,4 +48,4 @@ To use it in this way, use webhooks to send built assets to Appflow on each comm
 
 ## Other Mobile CI/CD Options
 
-There are other services for Mobile CI/CD, though none focused on Capacitor. Whichever CI/CD service you prefer, Capacitor can integrate with it as Capacitor apps are just native apps. However, for remote live updates of Capacitor apps, [Appflow](https://ionic.io/appflow) is the only service with this feature.
+There are other services for Mobile CI/CD, though none focused on Capacitor. Whichever CI/CD service you prefer, Capacitor can integrate with it as Capacitor apps are just native apps. For remote live updates of the web layer, Appflow is Ionic's official option. Community live-update plugins also exist, including `@capgo/capacitor-updater`.
