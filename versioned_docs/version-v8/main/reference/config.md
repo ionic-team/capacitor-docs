@@ -832,6 +832,7 @@ export interface PluginsConfig {
      * @default undefined
      */
     initialViewportFitValueHint?: 'auto' | 'contain' | 'cover';
+    
     /**
      * The style of the text and icons of the system bars.
      *
