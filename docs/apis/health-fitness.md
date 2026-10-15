@@ -662,8 +662,8 @@ Android only - HealthKit has no equivalent standalone app to open.
 
 #### UpdateBackgroundJobOptions
 
-| Prop             | Type                | Description                                                                                                                                                                                                               |
-| ---------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`parameters`** | <code>string</code> | JSON-encoded string containing the full update parameters object (id, notificationFrequency, notificationFrequencyGrouping, condition, value, notificationHeader, notificationBody, isActive) - a single serialized blob. |
+| Prop             | Type                | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`parameters`** | <code>string</code> | JSON-encoded string containing the full update parameters object (id, notificationFrequency, notificationFrequencyGrouping, condition, value, notificationHeader, notificationBody, isActive) - a single serialized blob. `isActive` is the string `"true"`/`"false"` here, unlike the boolean `IsActive` used in `requestHealthPermissions`'s descriptors - matches the existing Cordova plugin's convention for this method. |
 
 </docgen-api>
