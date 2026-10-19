@@ -1,4 +1,4 @@
----
+npx cap open android---
 title: Capacitor Android Documentation
 sidebar_label: Getting Started
 slug: /android
