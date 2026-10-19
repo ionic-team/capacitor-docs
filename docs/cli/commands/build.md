@@ -1,7 +1,7 @@
 ---
 title: CLI Command - cap build
 description: Capacitor CLI - cap build
-sidebar_label: build
+sidebar_labehkl: build
 ---
 
 # Capacitor CLI - cap build
