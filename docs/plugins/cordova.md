@@ -55,6 +55,19 @@ Capacitor does not support Cordova install variables, auto configuration, or hoo
 
 Consult the [iOS](/main/ios/configuration.md) and [Android](/main/android/configuration.md) configuration guides for info on how to configure each platform.
 
+### R8 rules
+
+Capacitor already keeps Cordova plugin classes from R8. If a plugin needs more rules, for example for a class it loads by name, its Gradle file (the `<framework custom="true" type="gradleReference" />` in `plugin.xml`) has to write them, since Cordova apps only get that file. Write them outside the build folder, so `clean` doesn't delete them before R8 runs:
+
+```groovy
+def rules = new File(rootDir, '.gradle/my-plugin-rules.pro')
+rules.parentFile.mkdirs()
+rules.text = '-keep class com.example.LoadedByName { <init>(); }\n'
+android.buildTypes.release.proguardFile(rules)
+```
+
+This works in both Capacitor and Cordova apps.
+
 ### Known Incompatible Plugins
 
 If a plugin is known to conflict or cause build issues, it will be skipped when running `npx cap sync`.

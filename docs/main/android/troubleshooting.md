@@ -120,20 +120,59 @@ Also, if you are migrating from Capacitor 1 or 2, make sure you enabled the [aut
 
 If still getting the "Plugin not implemented" error, make sure you are not using service workers, that prevents Capacitor's and Plugins code from injecting. Or if you want to use them, you can use [this workaround](https://github.com/ionic-team/capacitor/issues/1655#issuecomment-579229390) for making the injection work.
 
-## Using Proguard
+## Using R8
 
-ProGuard is a tool used to shrink, obfuscate, and reduce the size of your app. It is enabled by setting the `minifyEnabled` option in `build.gradle` to `true`. This process can sometimes lead to issues in Capacitor when using a plugin or some custom native code that relies on its code being being readable at run time, such as code reflection. ProGuard scans code to try and optimize and shrink the size of an app and sometimes this process can remove classes or methods that are important for the functionality of a plugin.
+R8 shrinks, optimizes and obfuscates your app's code when `minifyEnabled` is `true` in the release block of `app/build.gradle`. It's on by default in Capacitor 9 apps. To turn it off, set `minifyEnabled false`.
 
-As of Capacitor v3.2.3 there are ProGuard rules included in Capacitor that cover the core functionality of Capacitor plugins, permissions, and activity results. If you are using an earlier version of Capacitor than v3.2.3, add [the following rules](https://github.com/ionic-team/capacitor/blob/main/android/capacitor/proguard-rules.pro) to your Android project's `proguard-rules.pro` file. Those rules should resolve problems with any of the core Capacitor features and core plugins.
+Capacitor and the official plugins ship the rules they need, so most apps don't need rules of their own. R8 only runs in release builds, so test a release build before publishing.
 
-If you still encounter any issues after adding those rules, try to identify the source plugin or native code and add a rule to cover the specific plugin code, for example:
+### When something fails only in release
 
-```
--keep class com.mythirdpartyplugin.** { *; }
-```
-
-If you are certain a Capacitor plugin is causing the ProGuard issue the following ProGuard rule will cover any plugin class code, if you don't mind all plugins being exempt from ProGuard processing:
+R8 removes or renames code it can't see being used, such as classes looked up by name, code called from native code, and Gson models without `@SerializedName`. Find the class in the error and add a keep rule for it to `app/proguard-rules.pro`:
 
 ```
--keep public class * extends com.getcapacitor.Plugin
+-keep class com.example.MyModel { <fields>; }
+```
+
+Keep the rule as narrow as you can, since keeping a whole package stops R8 from optimizing all of it. If the class comes from a plugin, report it to the plugin's author so the plugin can ship the rule.
+
+If the release build fails with "Missing classes", add the rules R8 lists in `app/build/outputs/mapping/release/missing_rules.txt`.
+
+### Libraries with old keep rules
+
+AGP 9 no longer keeps a constructor just because its class is kept. Older versions of these libraries relied on that, so they fail at runtime under R8. If your app's own dependencies bring one of them, upgrade it or add its rule to `app/proguard-rules.pro`:
+
+| Library | Fixed in | Rule |
+| :------ | :------- | :--- |
+| Room | 2.7 | `-keep class * extends androidx.room.RoomDatabase { <init>(); }` |
+| WorkManager | 2.10 | `-keepclassmembers class * extends androidx.work.InputMerger { <init>(); }` |
+| firebase-components, used by Firebase and ML Kit | 18.0.1 | `-keep class * implements com.google.firebase.components.ComponentRegistrar { <init>(); }` |
+
+If another library fails the same way, copy its class-only keep rule into `app/proguard-rules.pro` and add `{ <init>(); }` to it.
+
+### Stack traces
+
+R8 writes the map of renamed classes and methods to `app/build/outputs/mapping/release/mapping.txt` and adds it to your AAB, where Google Play reads it. The Crashlytics Gradle plugin uploads it too. To decode a stack trace yourself, use [retrace](https://developer.android.com/tools/retrace).
+
+### Resource shrinking
+
+`shrinkResources` stays off by default. Google Play's code optimization scores only measure your app's code, so resource shrinking barely changes them, though Play Console lists it as off. If you turn it on, keep the resources your app only reads by name, such as notification icons and sounds named in `capacitor.config.json`, with a file like `app/src/main/res/raw/keep.xml`:
+
+```xml
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@drawable/ic_stat_notify" />
+```
+
+### Capacitor 8
+
+Capacitor 8 apps have R8 off by default. To turn it on, use Capacitor 8.5.4 or later and also switch to `proguard-android-optimize.txt`, since `proguard-android.txt` turns off R8's optimizations:
+
+```diff
+buildTypes {
+    release {
+-       minifyEnabled false
+-       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
++       minifyEnabled true
++       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+}
 ```
