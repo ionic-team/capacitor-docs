@@ -29,7 +29,7 @@ If you are not using TypeScript in your project, you can use a `capacitor.config
 
 ## ES modules
 
-`capacitor.config.ts` and `capacitor.config.js` can use `import.meta` and top-level `await`. If your `package.json` sets `"type": "module"`, a `capacitor.config.js` must use `export default` instead of `module.exports`.
+`capacitor.config.ts` and `capacitor.config.js` can use `import.meta` and top-level `await`. A `capacitor.config.ts` that uses them must import `CapacitorConfig` with `import type`, as in the example above. If your `package.json` sets `"type": "module"`, a `capacitor.config.js` must use `export default` instead of `module.exports`.
 
 ## Schema
 
