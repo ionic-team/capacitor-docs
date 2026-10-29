@@ -14,7 +14,7 @@ The Capacitor configuration file is used to set high-level options for Capacitor
 This is an example `capacitor.config.ts` file:
 
 ```typescript
-import { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.company.appname',
@@ -26,6 +26,10 @@ export default config;
 ```
 
 If you are not using TypeScript in your project, you can use a `capacitor.config.json` file in the same way.
+
+## ES modules
+
+`capacitor.config.ts` and `capacitor.config.js` can use `import.meta` and top-level `await`. A `capacitor.config.ts` that uses them must import `CapacitorConfig` with `import type`, as in the example above. If your `package.json` sets `"type": "module"`, a `capacitor.config.js` must use `export default` instead of `module.exports`.
 
 ## Schema
 
