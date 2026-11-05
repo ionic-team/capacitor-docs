@@ -75,3 +75,31 @@ Alternatively to setting `url` in `capacitor.config.json`, you can set the live 
 ```bash
 npx cap run --url http://192.168.1.68:8100
 ```
+
+## Live Reload on Android 17
+
+On Android 17 (API level 37), apps that target API 37 can't connect to devices on the local network unless they hold the `ACCESS_LOCAL_NETWORK` permission. Live Reload loads your app from your computer's address on the local network, so this applies to it too. It affects both `server.url` in `capacitor.config.json` and `npx cap run --url`, including the `server` entry that the Ionic CLI creates for you.
+
+Without the permission, the Web View can't load the page and shows `net::ERR_LOCAL_NETWORK_PERMISSION_MISSING`. Android doesn't show a permission dialog, because the page that would request the permission is the one that fails to load. A cached copy of the page can still load, so clear your app's data if you're not sure whether the permission is in effect.
+
+To work around this during development, use one of the following:
+
+- **Forward the port over USB.** With the device connected by USB, the Web View loads the page from `localhost` instead of the local network, so it doesn't need the permission:
+
+  ```bash
+  npx cap run android --url http://localhost:8100 --forwardPorts 8100:8100
+  ```
+
+  Replace `8100` with the port of your dev server. `--forwardPorts` runs `adb reverse` for you.
+
+- **Grant the permission with `adb`.** Run the following once the app is installed, replacing `com.example.app` with your app's package ID:
+
+  ```bash
+  adb shell pm grant com.example.app android.permission.ACCESS_LOCAL_NETWORK
+  ```
+
+  The permission is revoked again if you clear the app's data or uninstall the app, so run the command again after that.
+
+- **Grant the permission in the device settings.** Open **Settings** > **Apps** > your app > **Permissions** > **Nearby devices** and choose **Allow**. The permission appears there when your app declares it in `AndroidManifest.xml`, even if the app never requests it at runtime. The exact menu names can vary by device.
+
+Apps that load their content from a local network address in production, by setting `server.url` to one, have the same restriction. Their users have to grant the permission in the device settings. See [Accessing Devices on the Local Network](/main/android/configuration.md#accessing-devices-on-the-local-network) for more about the permission.
