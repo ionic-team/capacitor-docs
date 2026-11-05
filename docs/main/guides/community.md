@@ -24,6 +24,12 @@ slug: /guides/community
 
 [Using Capacitor in Nuxt.js app &#8250;](https://capgo.app/blog/building-a-native-mobile-app-with-nuxt-and-capacitor/)
 
+[Using Capacitor in SvelteKit app &#8250;](https://www.otakit.app/blog/sveltekit-to-ios-android-with-capacitor)
+
+[Using Capacitor in Angular app &#8250;](https://www.otakit.app/blog/angular-to-ios-android-with-capacitor)
+
+[Using Capacitor in Astro app &#8250;](https://www.otakit.app/blog/astro-to-ios-android-with-capacitor)
+
 ## APIs
 
 [Camera: Building an Ionic Framework Camera App](/main/guides/ionic-framework-app.md)
