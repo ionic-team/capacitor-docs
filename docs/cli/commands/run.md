@@ -30,5 +30,4 @@ npx cap run [options] <platform>
 - `--target-name-sdk-version <version>`: Run on a target device by name with a specific sdk version when using --target-name, (ex: "26.0" for iOS 26 or "35" for Android API 35).  Useful for targets that have the same name but have different OS / SDK versions
 - `--url <url>`: Load an external URL in the Web View, useful for live-reload (overrides `server.url` config)
 - `--forwardPorts <port1:port2>`: Automatically run "adb reverse" for better live-reloading support
-- `--allow-local-network`: Android only. Declare and grant the `ACCESS_LOCAL_NETWORK` permission (Android 17+) for this run, so a page loaded from a local network address, such as a live reload URL, can load. See [Live Reload on Android 17](/main/guides/live-reload.md#live-reload-on-android-17)
 
