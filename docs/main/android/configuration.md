@@ -90,7 +90,7 @@ Generally, the plugin you choose to use will ask you to set a permission. Add it
 
 ## Accessing Devices on the Local Network
 
-Android 17 (API level 37) introduces the `ACCESS_LOCAL_NETWORK` runtime permission. Apps that target API 37 or higher need it to connect to devices on the local network (LAN), such as a local server, a printer, or a smart-home device. Connections to the internet are not affected, and nothing changes on devices running Android 16 or lower.
+Android 17 (API level 37) introduces the `ACCESS_LOCAL_NETWORK` runtime permission. From Capacitor 9 onwards, apps need this permission to connect to devices on the local network (LAN), such as a local server, a printer, or a smart-home device. Connections to the internet are not affected, and nothing changes on devices running Android 16 or lower.
 
 Without the permission, connections to local network addresses fail without a clear error. HTTP requests (including `CapacitorHttp`, `fetch` and `XMLHttpRequest`), WebSocket connections and TCP connections time out, and UDP sockets fail with `EPERM`.
 
