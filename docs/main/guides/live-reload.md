@@ -78,7 +78,7 @@ npx cap run --url http://192.168.1.68:8100
 
 ## Live Reload on Android 17
 
-On Android 17 (API level 37), apps that target API 37 can't connect to devices on the local network unless they hold the `ACCESS_LOCAL_NETWORK` permission. Live Reload can load your app from your computer's address on the local network, so this applies to it too. It affects both `server.url` in `capacitor.config.json` and `npx cap run --url`, including the `server` entry that the Ionic CLI creates for you.
+On Android 17 (API level 37), apps that target API 37 can't connect to devices on the local network unless they hold the `ACCESS_LOCAL_NETWORK` permission. Live Reload can load your app from your computer's address on the local network, so this applies to it too. It affects both `server.url` in `capacitor.config.json` and `npx cap run --url`, including the `server` entry that the CLI creates for you.
 
 Without the permission, the Web View can't load the page and shows `net::ERR_LOCAL_NETWORK_PERMISSION_MISSING`. Android doesn't show a permission dialog, because the page that would request the permission is the one that fails to load. A cached copy of the page can still load, so clear your app's data if you're not sure whether the permission is in effect.
 
