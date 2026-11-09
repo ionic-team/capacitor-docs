@@ -82,7 +82,15 @@ On Android 17 (API level 37), apps that target API 37 can't connect to devices o
 
 Without the permission, the Web View can't load the page and shows `net::ERR_LOCAL_NETWORK_PERMISSION_MISSING`. Android doesn't show a permission dialog, because the page that would request the permission is the one that fails to load. A cached copy of the page can still load, so clear your app's data if you're not sure whether the permission is in effect.
 
-To work around this during development, use one of the following:
+To avoid this during development, add `--allowLocalNetwork` to `cap run`:
+
+```bash
+npx cap run android --url http://192.168.1.68:8100 --allowLocalNetwork
+```
+
+The CLI declares the permission in the app only while it builds, so your `AndroidManifest.xml` is left as it was. After installing the app it grants the permission with `adb` and restarts the app so the page loads. It also works when `server.url` in `capacitor.config.json` is a local network address and you don't pass `--url`. On devices below Android 17 the option does nothing.
+
+The option only applies to apps you run with `cap run`. If you can't use it, for example because you run the app from Android Studio, use one of the following workarounds instead:
 
 - **Forward the port over USB.** With the device connected by USB, the Web View loads the page from `localhost` instead of the local network, so it doesn't need the permission:
 
