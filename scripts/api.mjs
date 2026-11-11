@@ -49,9 +49,9 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/README.md',
+    editUrl: 'https://github.com/ionic-team/capacitor-background-runner/blob/next/packages/capacitor-plugin/README.md',
     editApiUrl:
-      'https://github.com/ionic-team/capacitor-background-runner/blob/main/packages/capacitor-plugin/src/definitions.ts',
+      'https://github.com/ionic-team/capacitor-background-runner/blob/next/packages/capacitor-plugin/src/definitions.ts',
     tag: 'latest',
   },
   {
@@ -59,8 +59,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/next/plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-barcode-scanner/blob/next/plugin/src/definitions.ts',
     tag: 'latest',
   },
   {
@@ -76,8 +76,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-calendar/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-calendar/blob/main/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-calendar/blob/next/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-calendar/blob/next/src/definitions.ts',
   },
   {
     id: 'camera',
@@ -100,8 +100,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-contacts/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-contacts/blob/main/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-contacts/blob/next/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-contacts/blob/next/src/definitions.ts',
   },
   {
     id: 'cookies',
@@ -141,8 +141,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/main/packages/capacitor-plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/next/packages/capacitor-plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-file-transfer/blob/next/packages/capacitor-plugin/src/definitions.ts',
   },
   {
     id: 'file-viewer',
@@ -166,8 +166,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/main/plugin/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/next/plugin/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-google-maps/blob/next/plugin/src/definitions.ts',
     tag: 'latest',
   },
   {
@@ -183,8 +183,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-health-fitness/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-health-fitness/blob/main/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-health-fitness/blob/next/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-health-fitness/blob/next/src/definitions.ts',
     tag: 'latest',
   },
   {
@@ -202,8 +202,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/src/definitions.ts',
   },
   {
     id: 'keyboard',
@@ -218,8 +218,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-local-notifications/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-local-notifications/blob/main/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-local-notifications/blob/next/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-local-notifications/blob/next/src/definitions.ts',
     tag: 'latest',
   },
   {
@@ -251,8 +251,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: false,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/main/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/next/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-privacy-screen/blob/next/src/definitions.ts',
     tag: 'latest',
   },
   {
@@ -334,8 +334,8 @@ const pluginApis = [
     isCore: false,
     isExperimental: true,
     npmScope: '@capacitor',
-    editUrl: 'https://github.com/ionic-team/capacitor-local-llm/blob/main/README.md',
-    editApiUrl: 'https://github.com/ionic-team/capacitor-local-llm/blob/main/src/definitions.ts',
+    editUrl: 'https://github.com/ionic-team/capacitor-local-llm/blob/next/README.md',
+    editApiUrl: 'https://github.com/ionic-team/capacitor-local-llm/blob/next/src/definitions.ts',
     tag: 'latest',
   }
 ];

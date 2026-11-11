@@ -1,8 +1,8 @@
 ---
 title: Health Fitness Capacitor Plugin API
 description: Access Android Health Connect and Apple HealthKit data for health and fitness apps.
-custom_edit_url: https://github.com/ionic-team/capacitor-health-fitness/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-health-fitness/blob/main/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-health-fitness/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-health-fitness/blob/next/src/definitions.ts
 sidebar_label: Health Fitness
 ---
 
