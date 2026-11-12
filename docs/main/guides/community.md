@@ -24,7 +24,7 @@ slug: /guides/community
 
 [Using Capacitor in Nuxt.js app &#8250;](https://capgo.app/blog/building-a-native-mobile-app-with-nuxt-and-capacitor/)
 
-[Ionic Testing: Unit, End-to-End and Real Device Tests &#8250;](https://www.testmuai.com/blog/ionic-testing/)
+[Real Device Testing on 50,000+ iOS and Android Devices &#8250;](https://www.testmuai.com/real-device-cloud/)
 
 ## APIs
 
