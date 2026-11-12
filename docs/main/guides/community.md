@@ -24,6 +24,8 @@ slug: /guides/community
 
 [Using Capacitor in Nuxt.js app &#8250;](https://capgo.app/blog/building-a-native-mobile-app-with-nuxt-and-capacitor/)
 
+[Real Device Testing on 50,000+ iOS and Android Devices &#8250;](https://www.testmuai.com/real-device-cloud/)
+
 ## APIs
 
 [Camera: Building an Ionic Framework Camera App](/main/guides/ionic-framework-app.md)
