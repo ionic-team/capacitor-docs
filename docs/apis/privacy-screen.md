@@ -1,8 +1,8 @@
 ---
 title: Privacy Screen Capacitor Plugin API
 description: The Privacy Screen plugin provides functionality to prevent sensitive information from being visible in app switchers and when leaving an app.
-custom_edit_url: https://github.com/ionic-team/capacitor-privacy-screen/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-privacy-screen/blob/main/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-privacy-screen/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-privacy-screen/blob/next/src/definitions.ts
 sidebar_label: Privacy Screen
 ---
 

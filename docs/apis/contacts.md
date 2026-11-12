@@ -1,8 +1,8 @@
 ---
 title: Contacts Capacitor Plugin API
 description: Access, search, pick, create, update and remove device contacts.
-custom_edit_url: https://github.com/ionic-team/capacitor-contacts/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-contacts/blob/main/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-contacts/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-contacts/blob/next/src/definitions.ts
 sidebar_label: Contacts
 ---
 

@@ -266,12 +266,13 @@ Defines the options for opening a URL in the web view.
 
 #### AndroidWebViewOptions
 
-| Prop               | Type                 | Description                                                                                                                                |
-| ------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`allowZoom`**    | <code>boolean</code> | Shows the Android browser's zoom controls.                                                                                                 |
-| **`hardwareBack`** | <code>boolean</code> | Uses the hardware back button to navigate backwards through the Web View's history. If there is no previous page, the Web View will close. |
-| **`pauseMedia`**   | <code>boolean</code> | Makes the Web View pause/resume with the app to stop background audio.                                                                     |
-| **`isIsolated`**   | <code>boolean</code> | Whether to run the InAppBrowser in an isolated process. Android only. Defaults to true.                                                    |
+| Prop                     | Type                  | Description                                                                                                                                                                                                                                                                                                  |
+| ------------------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`allowZoom`**          | <code>boolean</code>  | Shows the Android browser's zoom controls.                                                                                                                                                                                                                                                                   |
+| **`hardwareBack`**       | <code>boolean</code>  | Uses the hardware back button to navigate backwards through the Web View's history. If there is no previous page, the Web View will close.                                                                                                                                                                   |
+| **`pauseMedia`**         | <code>boolean</code>  | Makes the Web View pause/resume with the app to stop background audio.                                                                                                                                                                                                                                       |
+| **`isIsolated`**         | <code>boolean</code>  | Whether to run the InAppBrowser in an isolated process. Android only. Defaults to true.                                                                                                                                                                                                                      |
+| **`successUrlPatterns`** | <code>string[]</code> | Regex patterns checked against each finished page load; matching one closes the Web View natively, independent of whether the host app's JS is able to react. Android only. Useful for redirect-based flows with a known "done" URL where you want the Web View to close reliably as soon as that URL loads. |
 
 
 #### iOSWebViewOptions
