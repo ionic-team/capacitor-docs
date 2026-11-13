@@ -24,9 +24,15 @@ First, create a `MyViewController.swift` file by [opening Xcode](/main/ios/index
 ![New ViewController in Xcode](../../../static/img/v6/docs/ios/xcode-create-viewcontroller.png)
 ![Name ViewController in Xcode](../../../static/img/v6/docs/ios/xcode-name-viewcontroller.png)
 
-### Edit `Main.storyboard`
+### Use it as the root view controller
 
-Next, select the `Main.storyboard` file in the Project Navigator, select the **Bridge View Controller** in the **Bridge View Controller Scene**, select the **Identity Inspector** on the right, and change the name of the custom class to `MyViewController`.
+Since Capacitor 8.5, `SceneDelegate.swift` creates the root view controller in code, and the view controller in `Main.storyboard` is never loaded. Select `SceneDelegate.swift` in the Project Navigator and replace `CAPBridgeViewController()` with your subclass:
+
+```swift
+window?.rootViewController = MyViewController()
+```
+
+If your project has not adopted UIScene yet (it has no `SceneDelegate.swift`), set the class in `Main.storyboard` instead: select the `Main.storyboard` file in the Project Navigator, select the **Bridge View Controller** in the **Bridge View Controller Scene**, select the **Identity Inspector** on the right, and change the name of the custom class to `MyViewController`.
 
 ![Editing Storyboard in Xcode](../../../static/img/v6/docs/ios/xcode-edit-storyboard.png)
 
