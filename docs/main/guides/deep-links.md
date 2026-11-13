@@ -196,7 +196,7 @@ iOS configuration involves creating a site association file and configuring the 
 
 ### Create Site Association File
 
-First, log into the [Apple Developer site](https://developer.apple.com). Navigate to the "Certificates, Identifiers, & Profiles" section and select your app's identifier. Note the Team ID and Bundle ID, and under Capabilities, toggle "Associated Domains" then save:
+First, log into the [Apple Developer site](https://developer.apple.com). Navigate to the "Certificates, Identifiers, & Profiles" section and select your app's identifier. Note the App ID Prefix (usually the same as your Team ID) and Bundle ID, and under Capabilities, toggle "Associated Domains" then save:
 
 ![iOS Identifier Config](../../../static/img/v6/docs/guides/deep-links/ios-config.png)
 
@@ -204,7 +204,7 @@ Next, create the site association file (`apple-app-site-association`).
 
 > Note: Despite being a JSON file, do not save it with a file extension.
 
-An example of the `apple-app-site-association` file is below. Be sure to replace `TEAMID.BUNDLEID` with your own IDs (example: `8L65AZE66A.com.netkosoft.beerswift`).
+An example of the `apple-app-site-association` file is below. Be sure to replace `APPIDPREFIX.BUNDLEID` with your own IDs (example: `8L65AZE66A.com.netkosoft.beerswift`).
 
 ```json
 {
@@ -212,7 +212,7 @@ An example of the `apple-app-site-association` file is below. Be sure to replace
     "apps": [],
     "details": [
       {
-        "appID": "TEAMID.BUNDLEID",
+        "appID": "APPIDPREFIX.BUNDLEID",
         "paths": ["*"]
       }
     ]
