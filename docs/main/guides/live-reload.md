@@ -86,14 +86,6 @@ When you use `npx cap run android --url`, the CLI sets this up for you on device
 
 If you don't use `--url`, for example because you set `server.url` in `capacitor.config.json` and run the app from Android Studio, use one of the following workarounds:
 
-- **Forward the port over USB.** With the device connected by USB, the Web View loads the page from `localhost` instead of the local network, so it doesn't need the permission:
-
-  ```bash
-  npx cap run android --url http://localhost:8100 --forwardPorts 8100:8100
-  ```
-
-  Replace `8100` with the port of your dev server. `--forwardPorts` runs `adb reverse` for you.
-
 - **Grant the permission with `adb`.** Your app must declare the permission in `AndroidManifest.xml` for this to work. Run the following once the app is installed, replacing `com.example.app` with your app's package ID:
 
   ```bash
