@@ -1,8 +1,8 @@
 ---
 title: InAppBrowser Capacitor Plugin API
 description: The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security. It offers three different ways to open URLs; in a WebView, in an in-app system browser (Custom Tabs for Android and SFSafariViewController for iOS), and in the device's default browser.
-custom_edit_url: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/main/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-os-inappbrowser/blob/next/src/definitions.ts
 sidebar_label: InAppBrowser
 ---
 
@@ -22,21 +22,13 @@ npx cap sync
 - iOS
 - Android
 
-#### Android
-
-The InAppBrowser plugin requires a minimum Android SDK target of 26. This is higher than the default that comes with your Capacitor application. You can update this value in your `android/variables.gradle` file.
-
-```gradle
-ext {
-    minSdkVersion = 26
-}
-```
+### Android
 
 #### LocalStorage Isolation
 The `openInWebView` option provides isolation for `localStorage` and `cookies` to ensure that content loaded in the InAppBrowser does not interfere with the main application's storage.
 
 - **iOS**: Storage is isolated by default.
-- **Android (API 28+)**: Storage is **isolated by default** by running the InAppBrowser in a separate process (`:OSInAppBrowser`) with a dedicated data directory suffix.
+- **Android (API 28+)**: Storage is **isolated by default since version 4.0.0** by running the InAppBrowser in a separate process (`:OSInAppBrowser`) with a dedicated data directory suffix.
 - **Android (API < 28)**: Storage is **shared** with the main application due to platform limitations.
 
 ### Opting-out of Isolation (Android)
@@ -50,7 +42,27 @@ Disabling isolation reduces the security of your app by allowing potentially unt
 
 :::warning
 
-**Breaking Change (Android)**: Apps upgrading to this version will lose any existing `localStorage` or cookies previously stored by the InAppBrowser on the first run. This is because the WebView now runs in a separate process with its own data directory. Users may need to re-authenticate with websites that relied on persisted session data.
+**Breaking Change (Android)**: Apps upgrading to version 4.0.0 or higher will lose any existing `localStorage` or cookies previously stored by the InAppBrowser on the first run. This is because the WebView now runs in a separate process with its own data directory. Users may need to re-authenticate with websites that relied on persisted session data.
+
+:::
+
+#### Permissions (Android)
+The plugin declares the following permissions in its own Android manifest, so they are merged into your app automatically: `INTERNET`, `CAMERA`, `RECORD_AUDIO` and `MODIFY_AUDIO_SETTINGS`.
+
+:::warning
+
+**Breaking Change (Android)**: As of version 5.0.0, the plugin no longer declares `ACCESS_COARSE_LOCATION` and `ACCESS_FINE_LOCATION`. These are sensitive permissions that are not part of the plugin's core functionality, so they should not be added to your app unless you need them.
+
+If your app doesn't declare them, geolocation requests from pages loaded in the Web View are denied. If you rely on location access in the Web View, add the permissions to your app's `android/app/src/main/AndroidManifest.xml`:
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```
+
+You can declare only one of them (e.g. coarse location only) if that is enough for your use case. The plugin requests only the location permissions that your app has declared.
+
+Location is a sensitive permission for Google Play. If you add these permissions yourself, you may need to submit a declaration in the Play Console justifying why your app needs them. See Google's article on [permissions and APIs that access sensitive information](https://support.google.com/googleplay/android-developer/answer/9799150) for the requirements.
 
 :::
 
@@ -266,12 +278,13 @@ Defines the options for opening a URL in the web view.
 
 #### AndroidWebViewOptions
 
-| Prop               | Type                 | Description                                                                                                                                |
-| ------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`allowZoom`**    | <code>boolean</code> | Shows the Android browser's zoom controls.                                                                                                 |
-| **`hardwareBack`** | <code>boolean</code> | Uses the hardware back button to navigate backwards through the Web View's history. If there is no previous page, the Web View will close. |
-| **`pauseMedia`**   | <code>boolean</code> | Makes the Web View pause/resume with the app to stop background audio.                                                                     |
-| **`isIsolated`**   | <code>boolean</code> | Whether to run the InAppBrowser in an isolated process. Android only. Defaults to true.                                                    |
+| Prop                     | Type                  | Description                                                                                                                                                                                                                                                                                                  |
+| ------------------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`allowZoom`**          | <code>boolean</code>  | Shows the Android browser's zoom controls.                                                                                                                                                                                                                                                                   |
+| **`hardwareBack`**       | <code>boolean</code>  | Uses the hardware back button to navigate backwards through the Web View's history. If there is no previous page, the Web View will close.                                                                                                                                                                   |
+| **`pauseMedia`**         | <code>boolean</code>  | Makes the Web View pause/resume with the app to stop background audio.                                                                                                                                                                                                                                       |
+| **`isIsolated`**         | <code>boolean</code>  | Whether to run the InAppBrowser in an isolated process. Android only. Defaults to true.                                                                                                                                                                                                                      |
+| **`successUrlPatterns`** | <code>string[]</code> | Regex patterns checked against each finished page load; matching one closes the Web View natively, independent of whether the host app's JS is able to react. Android only. Useful for redirect-based flows with a known "done" URL where you want the Web View to close reliably as soon as that URL loads. |
 
 
 #### iOSWebViewOptions

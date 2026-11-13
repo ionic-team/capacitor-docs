@@ -87,3 +87,31 @@ package="com.getcapacitor.myapp">
 ```
 
 Generally, the plugin you choose to use will ask you to set a permission. Add it in this file.
+
+## Accessing Devices on the Local Network
+
+Android 17 (API level 37) introduces the `ACCESS_LOCAL_NETWORK` runtime permission. From Capacitor 9 onwards, apps need this permission to connect to devices on the local network (LAN), such as a local server, a printer, or a smart-home device. Connections to the internet are not affected, and nothing changes on devices running Android 16 or lower.
+
+Without the permission, connections to local network addresses fail without a clear error. HTTP requests (including `CapacitorHttp`, `fetch` and `XMLHttpRequest`), WebSocket connections and TCP connections time out, and UDP sockets fail with `EPERM`.
+
+To access local network devices:
+
+1. Declare the permission in `AndroidManifest.xml`, inside the `<manifest>` tag:
+
+   ```xml
+   <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK" />
+   ```
+
+   Older Android versions ignore this entry.
+
+2. Request the permission at runtime, before your app's first request to a local network address. Capacitor doesn't include a plugin for this. You can use a community plugin that requests it, or [write your own Capacitor plugin](/main/android/custom-code.md) that declares the permission and uses the [permission request flow](/plugins/creating-plugins/android-guide.md#permissions). Android shows the standard permission dialog, which describes the permission as access to "Nearby devices" and doesn't mention the local network.
+
+Once granted, the permission applies to the whole app, including requests made from the Web View and from native code. If the user denies the request twice, Android stops showing the dialog and they have to grant the permission in the system settings instead: **Settings** > **Apps** > your app > **Permissions** > **Nearby devices**. The exact menu names can vary by device.
+
+:::note
+Plain HTTP requests to local network addresses also require cleartext traffic to be enabled for your app. See the [Android documentation on opting in to cleartext traffic](https://developer.android.com/privacy-and-security/security-config#CleartextTrafficOptIn).
+:::
+
+:::note
+The permission is also required when the Web View loads your app from a local network address, for example when using [Live Reload](/main/guides/live-reload.md) or setting `server.url` to a local address. In that case the page can't load at all, so your app can't request the permission itself. See [Live Reload on Android 17](/main/guides/live-reload.md#live-reload-on-android-17) for how to work around this.
+:::

@@ -1,8 +1,8 @@
 ---
 title: Calendar Capacitor Plugin API
 description: Create, find, modify and remove events in the device calendar.
-custom_edit_url: https://github.com/ionic-team/capacitor-calendar/blob/main/README.md
-editApiUrl: https://github.com/ionic-team/capacitor-calendar/blob/main/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-calendar/blob/next/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-calendar/blob/next/src/definitions.ts
 sidebar_label: Calendar
 ---
 
