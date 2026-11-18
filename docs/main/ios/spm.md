@@ -69,7 +69,7 @@ If you **have not manually changed your Xcode Project at all**, one option to mi
 
 ### Using our migration tool
 
-The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, two manual steps are still required. Some things to note are: Projects with Cordova plugins should work, but some plugins may not work correctly as we have to generate a `Package.swift` file for them. In addition, projects that use capacitor plugins that do not have SPM versions available, will fail to work properly and will show a warning about the incompatible plugins during migration and when running `npx cap sync`.
+The Capacitor CLI has a command to help migrate from CocoaPods to Swift Package Manager. However, one manual step is still required. Some things to note are: Projects with Cordova plugins should work, but some plugins may not work correctly as we have to generate a `Package.swift` file for them. In addition, projects that use capacitor plugins that do not have SPM versions available, will fail to work properly and will show a warning about the incompatible plugins during migration and when running `npx cap sync`.
 
 To start, run `npx cap spm-migration-assistant` in the root of your project.
 
@@ -78,7 +78,6 @@ This tool will:
   - Delete the `Podfile`, `App.xcworkspace`, and `Podfile.lock`
   - Create a `CapApp-SPM` directory with the needed files
   - Generate a `Package.swift` from your plugins, and warn you if any can't be included.
-  - Add a `debug.xcconfig` to your ios project directory
 
 Then run `npx cap open ios` and you should see something similar to this:
 
@@ -100,23 +99,9 @@ Click Add Package again when this screen shows up:
 
 ![Migrate Step 5](../../../static/img/spm/xcode-step-5.png)
 
-When you are done, you should see a screen like this. Now, move onto the next section about Adding `debug.xconfig`
+When you are done, you should see a screen like this:
 
 ![Migrate Step 6](../../../static/img/spm/xcode-step-6.png)
-
-#### Adding debug.xcconfig to project 
-
-From the app info tab, select Add Configuration file...
-
-![XCConfig Step 1](../../../static/img/spm/xcconfig-step1.png)
-
-Then select the file called `debug.xcconfig`
-
-![XCConfig Step 2](../../../static/img/spm/xcconfig-step2.png)
-
-Finally select xcconfig as your selection
-
-![XCConfig Step 3](../../../static/img/spm/xcconfig-step3.png)
 
 At this point you're done and can build and work as normal.
 
