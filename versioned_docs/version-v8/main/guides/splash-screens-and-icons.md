@@ -14,6 +14,10 @@ First, install `@capacitor/assets`:
 npm install @capacitor/assets --save-dev
 ```
 
+:::info
+With npm 12, use `@capacitor/assets` 4.0.0 or later. Earlier versions rely on an install script that npm 12 blocks. See [npm 12](/main/getting-started/environment-setup.md#npm-12).
+:::
+
 Provide icon and splash screen source images using this folder/filename structure:
 ```
 assets/

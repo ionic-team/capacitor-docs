@@ -21,6 +21,33 @@ node --version
 
 With Node installed, you can get started with creating Progressive Web Applications (PWA) with Capacitor.
 
+### npm 12
+
+npm 12 changes two defaults that affect Capacitor projects. If you use yarn or pnpm, this section doesn't apply.
+
+#### Blocked install scripts
+
+npm 12 doesn't run the install scripts of your dependencies until you approve them. `npm install` still succeeds, so the first sign of a problem is usually a failed build or a feature that doesn't work at runtime.
+
+Run `npx cap doctor` to list the packages whose install scripts npm blocked. `npx cap migrate` reports them too. To allow them, approve each package, then rebuild:
+
+```bash
+npm install-scripts approve <package>
+npm rebuild
+```
+
+Approving a package doesn't run its scripts, so don't skip `npm rebuild`. Approvals are pinned to an exact version, so repeat this after upgrading the package.
+
+#### Git dependencies
+
+npm 12 refuses to install packages from git repositories and fails with `EALLOWGIT`. To try a Capacitor fix before it's released, install the `nightly` or `dev` version from npm instead of installing from GitHub:
+
+```bash
+npm install @capacitor/core@nightly
+```
+
+If you genuinely need a git dependency, pass `--allow-git=root` to allow the git dependencies listed in your project's `package.json`.
+
 ## iOS Requirements
 
 To build iOS apps, you will need **macOS**. While there are solutions like [Ionic Appflow](http://ionicframework.com/appflow) that can be used to perform iOS cloud builds if you don't have a Mac, it is highly recommended to have the tools available to you locally in order to properly test your Capacitor application.
