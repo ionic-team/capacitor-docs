@@ -7,7 +7,7 @@ contributors:
   - jcesarmobile
 slug: /android/configuration
 ---
-
+mandoubakmed app
 # Configuring Android
 
 ## Configuring `AndroidManifest.xml`
