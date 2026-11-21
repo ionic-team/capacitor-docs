@@ -34,9 +34,11 @@ Once built, you can add the platforms.
 
 ```bash
 npm install @capacitor/ios @capacitor/android
-npx cap add ios
+npx cap add ios --packagemanager SPM
 npx cap add android
 ```
+
+This example uses [Swift Package Manager (SPM)](/main/ios/spm.md) for iOS.
 
 ## Setup a new iOS scheme
 
@@ -68,9 +70,15 @@ Return to the _General_ portion of the project's settings. Ensure you have the "
 
 Make sure these values are different than what exists for the default "App" target. Target-specific values get stored in the target's associated `Info.plist` file. Following this guide, that file is `App QA-Info.plist`.
 
-### Update the Podfile and sync the App
+### Link the Swift package (SPM)
 
-Exit Xcode; you can use your preferred IDE going forward.
+In the "App QA" target, go to **General** > **Frameworks, Libraries, and Embedded Content** and make sure the existing `CapApp-SPM` package product is listed. If it is missing, use **+** to add it to this target.
+
+Keep using the existing `ios/App/CapApp-SPM` package. Capacitor updates its `Package.swift` when you sync.
+
+### Update the Podfile (CocoaPods)
+
+If your project uses CocoaPods, exit Xcode before editing the Podfile.
 
 Open `/ios/App/Podfile` and duplicate the code block for the "App" target, replacing "App" with "App QA" for the duplicate entry like so:
 
@@ -87,7 +95,9 @@ target 'App QA' do
 end
 ```
 
-Run `npx cap sync` to sync plugins with the "App QA" target.
+### Sync iOS
+
+For either package manager, run `npx cap sync ios` to copy the web assets and update the native dependencies.
 
 ### Add iOS-specific Capacitor configuration
 
