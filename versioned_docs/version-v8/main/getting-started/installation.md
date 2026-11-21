@@ -62,6 +62,14 @@ After the Capacitor core runtime is installed, you can install the Android and i
 npm i @capacitor/android @capacitor/ios
 ```
 
+Before creating the native projects, build your web app with your framework's build command. For example, many projects use:
+
+```bash
+npm run build
+```
+
+Make sure the build output directory matches `webDir` in your [Capacitor Config](/docs/config). `npx cap add` uses this directory for the initial sync; if it is missing, the native project is still created, but sync is skipped with a warning.
+
 Once the platforms have been added to your `package.json`, you can run the following commands to create your Android and iOS projects for your native application.
 
 ```bash
