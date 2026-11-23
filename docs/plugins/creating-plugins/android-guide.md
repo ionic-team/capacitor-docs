@@ -29,7 +29,7 @@ After generating a plugin, right click the Java plugin class in Android Studio a
 ## Plugin Basics
 
 A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and has a `@CapacitorPlugin()` annotation.
-It has some methods with `@PluginMethod()` annotation that will be callable from JavaScript.
+It has some methods with `@PluginMethod()` annotation that will be callable from JavaScript. See [Method Types](/plugins/method-types) for each return type and the matching TypeScript signature to declare in `src/definitions.ts`.
 
 Once your plugin is generated, you can start editing it by opening the file with the Plugin class name you choose on the generator.
 
