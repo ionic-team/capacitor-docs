@@ -24,6 +24,8 @@ slug: /guides/community
 
 [Using Capacitor in Nuxt.js app &#8250;](https://capgo.app/blog/building-a-native-mobile-app-with-nuxt-and-capacitor/)
 
+[Transforming a Lovable App to Mobile with Capacitor &#8250;](https://capgo.app/blog/transform-lovable-dev-app-to-mobile-with-capacitor/)
+
 ## APIs
 
 [Camera: Building an Ionic Framework Camera App](/main/guides/ionic-framework-app.md)
