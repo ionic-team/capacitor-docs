@@ -37,6 +37,7 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      respectPrefersColorScheme: true,
     },
     logo: {
       alt: 'Site Logo',
