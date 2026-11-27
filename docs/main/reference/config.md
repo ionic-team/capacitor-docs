@@ -779,12 +779,15 @@ export interface PluginsConfig {
   /**
    * Plugin configuration by class name.
    *
+   * Every plugin accepts `disabled` (see `PluginConfig`), for example
+   * `{ plugins: { MyPlugin: { disabled: true } } }`.
+   *
    * @since 1.0.0
    */
   [key: string]:
-    | {
+    | (PluginConfig & {
         [key: string]: any;
-      }
+      })
     | undefined;
 
   /**
@@ -792,9 +795,12 @@ export interface PluginsConfig {
    *
    * @since 4.3.0
    */
-  CapacitorCookies?: {
+  CapacitorCookies?: PluginConfig & {
     /**
      * Enable CapacitorCookies to override the global `document.cookie` on native.
+     *
+     * This only controls the patching. The plugin's own methods work either
+     * way; use `disabled` to stop the plugin from loading.
      *
      * @default false
      */
@@ -806,9 +812,12 @@ export interface PluginsConfig {
    *
    * @since 4.3.0
    */
-  CapacitorHttp?: {
+  CapacitorHttp?: PluginConfig & {
     /**
      * Enable CapacitorHttp to override the global `fetch` and `XMLHttpRequest` on native.
+     *
+     * This only controls the patching. The plugin's own methods work either
+     * way; use `disabled` to stop the plugin from loading.
      *
      * @default false
      */
@@ -820,7 +829,7 @@ export interface PluginsConfig {
    *
    * @since 8.0.0
    */
-  SystemBars?: {
+  SystemBars?: PluginConfig & {
     /**
      * Specifies how to handle problematic insets on Android.
      *
@@ -879,6 +888,31 @@ export interface PluginsConfig {
      */
     animation?: 'FADE' | 'NONE';
   };
+}
+
+export interface PluginConfig {
+  /**
+   * Prevent the plugin's native implementation from being registered and
+   * loaded on iOS and Android.
+   *
+   * A disabled plugin is not available to the app:
+   * `Capacitor.isPluginAvailable()` returns `false` and calls to its methods
+   * fail as unimplemented.
+   *
+   * This is different from the `enabled` option of `CapacitorHttp` and
+   * `CapacitorCookies`, which only controls the patching of `fetch`,
+   * `XMLHttpRequest` and `document.cookie`. `disabled: true` takes precedence
+   * over `enabled: true`.
+   *
+   * Plugins that declare their own configuration type don't list `disabled`,
+   * so TypeScript rejects it in `capacitor.config.ts`. Set it in
+   * `capacitor.config.json` instead, or cast the plugin's configuration, for
+   * example `SplashScreen: { disabled: true } as any`.
+   *
+   * @since 9.1.0
+   * @default false
+   */
+  disabled?: boolean;
 }
 
 export interface PackageOptions {
